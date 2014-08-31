@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package dslVersion="1.0.0.0" 
+        Id="71ce27ed-13c8-4fc9-8c1a-78057fc92639" 
+        solutionId="71ce27ed-13c8-4fc9-8c1a-78057fc92639" 
+        xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel" 
+        name="LongAn.DVC"
+        sharePointProductVersion="15.0">
+</package>
