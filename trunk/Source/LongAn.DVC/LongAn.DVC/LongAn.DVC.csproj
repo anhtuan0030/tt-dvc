@@ -51,9 +51,30 @@
     <Reference Include="Microsoft.SharePoint.Client.ServerRuntime" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Features\LongAn.DVC.Site\LongAn.DVC.Site.EventReceiver.cs">
+      <DependentUpon>LongAn.DVC.Site.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\LongAn.DVC.Web\LongAn.DVC.Web.EventReceiver.cs">
+      <DependentUpon>LongAn.DVC.Web.feature</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="ContentTypes\DeNghiCapPhepXeContentType\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{c3b9f414-0818-40f5-85cd-04a0bc5cdaa4}</SharePointProjectItemId>
+    </None>
+    <None Include="ContentTypes\SiteColumns\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{bb0763a5-65db-426a-a9ed-92f8a0b74364}</SharePointProjectItemId>
+    </None>
+    <None Include="ContentTypes\YeuCauBoSungContentType\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{46abb5d8-ea14-4b1e-821c-492d10b59ba8}</SharePointProjectItemId>
+    </None>
+    <None Include="Features\LongAn.DVC.Web\LongAn.DVC.Web.feature">
+      <FeatureId>{581ea75c-979a-44bb-96a6-78deb4fa1b0f}</FeatureId>
+    </None>
+    <None Include="Features\LongAn.DVC.Site\LongAn.DVC.Site.feature">
+      <FeatureId>{d4d9a687-e054-4bf6-8aa3-9e5bf52fec28}</FeatureId>
+    </None>
     <None Include="key.snk" />
     <None Include="Package\Package.package">
       <PackageId>{71ce27ed-13c8-4fc9-8c1a-78057fc92639}</PackageId>
@@ -63,7 +84,21 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Features\" />
+    <Folder Include="ListDefinitions\" />
+    <Folder Include="WebParts\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ContentTypes\DeNghiCapPhepXeContentType\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="ContentTypes\SiteColumns\Elements.xml" />
+    <Content Include="ContentTypes\YeuCauBoSungContentType\Elements.xml" />
+    <Content Include="Features\LongAn.DVC.Web\LongAn.DVC.Web.Template.xml">
+      <DependentUpon>LongAn.DVC.Web.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\LongAn.DVC.Site\LongAn.DVC.Site.Template.xml">
+      <DependentUpon>LongAn.DVC.Site.feature</DependentUpon>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
