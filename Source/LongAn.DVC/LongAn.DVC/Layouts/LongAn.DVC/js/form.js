@@ -2,8 +2,8 @@
  * Created by 
  */
 
-//Check upload file
-function PreSaveAction()
+//Check upload file: 0-newform, 1-editform
+function PreSaveAction(formType)
 {
     $(".ms-formvalidation").remove();
     var result = true;
@@ -16,14 +16,17 @@ function PreSaveAction()
             result = false;
         }
     });
-    //File upload
-    $("[id*='fileUpload']").each(function () {
-        if ($(this).val() == "") {
-            var errorHtml = '<span class="ms-formvalidation"><span role="alert">Chưa attach file đính kèm<br></span></span>';
-            $(this).after(errorHtml);
-            result = false;
-        }
-    });
+    if (formType == 0)
+    {
+        //File upload
+        $("[id*='fileUpload']").each(function () {
+            if ($(this).val() == "") {
+                var errorHtml = '<span class="ms-formvalidation"><span role="alert">Chưa attach file đính kèm<br></span></span>';
+                $(this).after(errorHtml);
+                result = false;
+            }
+        });
+    }
     return result;
 }
 

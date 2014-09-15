@@ -62,7 +62,7 @@
                                             <SharePoint:FieldLabel ID="FieldLabel1"  FieldName="KinhGui" ControlMode="Display"  runat="server"  />
                                         </div>
                                         <div class="field-required-data col-lg-9 col-md-9 col-sm-9 col-xs-9">
-                                            <SharePoint:FormField  runat="server" ID="fldRequiredKinhGui"  ControlMode="Display"  FieldName="KinhGui"  /> 
+                                            <SharePoint:FormField  runat="server" ID="FormField1"  ControlMode="Display"  FieldName="KinhGui"  /> 
                                         </div>
                                         <%--<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
                                             <span class="star">(*)</span>
@@ -73,7 +73,7 @@
                                             <SharePoint:FieldLabel ID="FieldLabel2" FieldName="CaNhanToChuc" ControlMode="Display" runat="server"  />
                                         </div>
                                         <div class="field-required-data col-lg-9 col-md-9 col-sm-9 col-xs-9">
-                                            <SharePoint:FormField  runat="server" ID="fldRequiredCaNhanToChuc" ControlMode="Display" FieldName="CaNhanToChuc" /> 
+                                            <SharePoint:FormField  runat="server" ID="FormField2" ControlMode="Display" FieldName="CaNhanToChuc" /> 
                                         </div>
                                         <%--<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
                                             <span class="star">(*)</span>
@@ -379,7 +379,7 @@
                                             <span title="This is a required field." class="ms-accentText"> *</span>
                                         </div>
                                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" id="divFileUpload1" runat="server">
-                                            <asp:FileUpload ID="fileUpload1" runat="server" />
+                                            <asp:FileUpload ID="fileUpload1" runat="server" Visible="false"/>
                                         </div>
                                         <%--<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
                                             <span class="star">(*)</span>
@@ -392,7 +392,7 @@
                                             <span title="This is a required field." class="ms-accentText"> *</span>
                                         </div>
                                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" id="divFileUpload2" runat="server">
-                                            <asp:FileUpload ID="fileUpload2" runat="server" />
+                                            <asp:FileUpload ID="fileUpload2" runat="server" Visible="false"/>
                                         </div>
                                         <%--<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
                                             <span class="star">(*)</span>
@@ -404,7 +404,7 @@
                                             <span title="This is a required field." class="ms-accentText"> *</span>
                                         </div>
                                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" id="divFileUpload3" runat="server">
-                                            <asp:FileUpload ID="fileUpload3" runat="server" />
+                                            <asp:FileUpload ID="fileUpload3" runat="server" Visible="false"/>
                                         </div>
                                         <%--<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
                                             <span class="star">(*)</span>
@@ -416,7 +416,7 @@
                                             <span title="This is a required field." class="ms-accentText"> *</span>
                                         </div>
                                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" id="divFileUpload4" runat="server">
-                                            <asp:FileUpload ID="fileUpload4" runat="server" />
+                                            <asp:FileUpload ID="fileUpload4" runat="server" Visible="false"/>
                                         </div>
                                         <%--<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
                                             <span class="star">(*)</span>
@@ -424,13 +424,14 @@
                                     </div>
                                 </div>
                                 <div class="pull-right">
-                                    <asp:Button ID="btnSave" OnClientClick="if (!PreSaveItem()) return false;" CssClass="button" runat="server" Text="Lưu" />
-                                    <asp:Button ID="btnGuiHoSo" runat="server" Text="Gửi hồ sơ" CssClass="button" />
-                                    <asp:Button ID="btnChuyenHoSo" runat="server" Text="Chuyển hồ sơ" CssClass="button" />
-                                    <asp:Button ID="btnPhanCongHoSo" runat="server" Text="Phân công hồ sơ" CssClass="button" />
-                                    <asp:Button ID="btnTrinhLanhDao" runat="server" Text="Trình lãnh đạo" CssClass="button" />
-                                    <asp:Button ID="btnDuyetHoSo" runat="server" Text="Duyệt hồ sơ" CssClass="button" />
-                                    <asp:Button ID="btnTraHoSo" runat="server" Text="Từ chối" CssClass="button" />
+                                    <asp:Button ID="btnSave" OnClientClick="if (!PreSaveItem(1)) return false;" CssClass="button" runat="server" Text="Lưu" Visible="false" />
+                                    <asp:Button ID="btnGuiHoSo" OnClientClick="if (!PreSaveItem(1)) return false;" runat="server" Text="Gửi hồ sơ" CssClass="button" Visible="false"/>
+                                    <asp:Button ID="btnTrinhXuLy" runat="server" Text="Trình xử lý" CssClass="button" Visible="false"/>
+                                    <asp:Button ID="btnPhanCongHoSo" runat="server" Text="Phân công hồ sơ" CssClass="button" Visible="false"/>
+                                    <asp:Button ID="btnTrinhTruongPhong" runat="server" Text="Trình trưởng/phó P.QLHT" CssClass="button" Visible="false"/>
+                                    <asp:Button ID="btnTrinhLanhDao" runat="server" Text="Trình lãnh đạo" CssClass="button" Visible="false"/>
+                                    <asp:Button ID="btnDuyetHoSo" runat="server" Text="Duyệt hồ sơ" CssClass="button" Visible="false"/>
+                                    <asp:Button ID="btnTraHoSo" runat="server" Text="Trả về" CssClass="button" Visible="false"/>
                                     <asp:Button ID="btnCancel" runat="server" Text="Đóng" CssClass="button" />
                                 </div>
                                 <div class="clearfix"></div>

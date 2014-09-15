@@ -19,7 +19,6 @@
 <link rel="stylesheet" href="/_layouts/15/LongAn.DVC/css/main.css"/>
 <script type="text/javascript" src="/_layouts/15/LongAn.DVC/js/jquery.js"></script>
 <script type="text/javascript" src="/_layouts/15/LongAn.DVC/js/jquery-ui.min.js"></script>
-<script type="text/javascript" src="/_layouts/15/LongAn.DVC/js/datepicker-vi.js"></script>
 <script type="text/javascript" src="/_layouts/15/LongAn.DVC/js/form.js"></script>
 
 <style type="text/css">
@@ -424,7 +423,8 @@
                                     </div>
                                 </div>
                                 <div class="pull-right">
-                                    <asp:Button ID="btnSave" OnClientClick="if (!PreSaveItem()) return false;" CssClass="button" runat="server" Text="Thêm mới" />
+                                    <asp:Button ID="btnSave" OnClientClick="if (!PreSaveItem(0)) return false;" CssClass="button" runat="server" Text="Thêm mới" />
+                                    <asp:Button ID="btnGuiHoSo" OnClientClick="if (!PreSaveItem(0)) return false;" CssClass="button" runat="server" Text="Gửi hồ sơ" />
                                     <asp:Button ID="btnCancel" runat="server" Text="Làm lại" CssClass="button" />
                                 </div>
                                 <div class="clearfix"></div>

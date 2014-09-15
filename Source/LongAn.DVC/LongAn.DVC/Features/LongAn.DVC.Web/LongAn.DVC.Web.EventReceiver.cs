@@ -29,7 +29,8 @@ namespace LongAn.DVC.Features.Web
             try
             {
                 //Set list permission
-                SPList deNghi = web.GetList(Constants.ListUrlDeNghiCapPhep);
+                var deNghiUrl = (SPContext.Current.Web.ServerRelativeUrl + Constants.ListUrlDeNghiCapPhep).Replace("//", "/");
+                SPList deNghi = web.GetList(deNghiUrl);
                 if (deNghi != null)
                 {
                     if (!deNghi.HasUniqueRoleAssignments)

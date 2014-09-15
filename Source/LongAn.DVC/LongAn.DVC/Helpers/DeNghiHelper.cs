@@ -1,5 +1,6 @@
 ﻿using CamlexNET;
 using LongAn.DVC.Common;
+using LongAn.DVC.Common.Extensions;
 using Microsoft.SharePoint;
 using System;
 using System.Collections.Generic;
@@ -26,15 +27,22 @@ namespace LongAn.DVC.Helpers
                     {
                         using (SPWeb web = site.OpenWeb(SPContext.Current.Web.ID))
                         {
+                            web.AllowUnsafeUpdates = true;
                             //Stream stream = fileUpload.PostedFile.InputStream;
-                            var attachmentFile = web.GetFolder(Constants.ListUrlDeNghiAttachment);
+                            var deNghiAttachmentUrl = (SPContext.Current.Web.ServerRelativeUrl + Constants.ListUrlDeNghiAttachment).Replace("//", "/");
+                            var attachmentFile = web.GetFolder(deNghiAttachmentUrl);
                             var files = attachmentFile.Files;
                             var documentMetadata = new System.Collections.Hashtable {
                                { Constants.FieldTitle, string.Format("{0}_{1}", deNghiId, loaiAttachment) },
                                { Constants.FieldDeNghi, deNghiId },
                                 { Constants.FieldLoaiAttachment, loaiAttachment }
                            };
-                            var currentFile = files.Add(string.Format("{0}/{1}_{2}", Constants.ListUrlDeNghiAttachment, DateTime.Now.ToString("yyyyMMddhhmmss"), fileUpload.FileName), fileUpload.FileContent, documentMetadata, true, false);
+                            var currentFile = files.Add(string.Format("{0}/{1}_{2}", deNghiAttachmentUrl, DateTime.Now.ToString("yyyyMMddhhmmssfff"), fileUpload.FileName), 
+                                fileUpload.FileContent, 
+                                documentMetadata,
+                                true, 
+                                false);
+                            web.AllowUnsafeUpdates = false;
                         }
                     }
                 });
@@ -62,15 +70,19 @@ namespace LongAn.DVC.Helpers
                                                     && (string)x[Constants.FieldLoaiAttachment] == type)
                                     .OrderBy(x => new[] { x["ID"] as Camlex.Asc })
                                     .ToSPQuery();
-                var deNghiAttachmentList = SPContext.Current.Web.GetList(Constants.ListUrlDeNghiAttachment);
+                var deNghiUrl = (SPContext.Current.Web.ServerRelativeUrl + Constants.ListUrlDeNghiAttachment).Replace("//", "/");
+                var deNghiAttachmentList = SPContext.Current.Web.GetList(deNghiUrl);
                 var deNghiAttachmentItems = deNghiAttachmentList.GetItems(caml).GetDataTable();
-                for (int i = 0; i < deNghiAttachmentItems.Rows.Count; i++)
+                var rowCount = deNghiAttachmentItems.Rows.Count;
+                for (int i = 0; i < rowCount; i++)
                 {
                     HyperLink link = new HyperLink();
                     link.Text = deNghiAttachmentItems.Rows[i]["LinkFileName"].ToString();
-                    link.NavigateUrl = string.Format("{0}/{1}", Constants.ListUrlDeNghiAttachment, deNghiAttachmentItems.Rows[i]["LinkFileName"]);
+                    link.NavigateUrl = string.Format("{0}/{1}", deNghiUrl, deNghiAttachmentItems.Rows[i]["LinkFileName"]);
                     link.Target = "_blank";
                     div.Controls.Add(link);
+                    if (i < rowCount - 1)
+                        div.Controls.Add(new LiteralControl("<br />"));
                 }
             }
             catch (Exception ex)
@@ -78,6 +90,40 @@ namespace LongAn.DVC.Helpers
                 LoggingServices.LogException(ex);
             }
             LoggingServices.LogMessage("End LoadAttachments: ItemId: " + itemId + ", type: " + type);
+        }
+
+        public static CapXuLy CurrentUserRole(SPWeb spWeb, SPUser user)
+        {
+            CapXuLy result = CapXuLy.CaNhanToChuc;
+            try
+            {
+                SPSecurity.RunWithElevatedPrivileges(delegate()
+                {
+                    using (SPSite site = new SPSite(spWeb.Site.ID))
+                    {
+                        using (SPWeb web = site.OpenWeb(spWeb.ID))
+                        {
+                            var groupNhanVienTiepNhan = web.SiteGroups[Constants.ConfGroupNhanVienTiepNhan];
+                            var groupCanBoXuLy = web.SiteGroups[Constants.ConfGroupCanBoXuLy];
+                            var groupTruongPhoPhong = web.SiteGroups[Constants.ConfGroupTruongPhoPhong];
+                            var groupLanhDaoSo = web.SiteGroups[Constants.ConfGroupTruongPhoPhong];
+                            if (user.InGroup(groupNhanVienTiepNhan))
+                                result = CapXuLy.NhanVienTiepNhan;
+                            else if (user.InGroup(groupCanBoXuLy))
+                                result = CapXuLy.NhanVienTiepNhan;
+                            else if (user.InGroup(groupTruongPhoPhong))
+                                result = CapXuLy.TruongPhoPhong;
+                            else if (user.InGroup(groupLanhDaoSo))
+                                result = CapXuLy.LanhDaoSo;
+                        }
+                    }
+                });
+            }
+            catch (Exception ex)
+            {
+                LoggingServices.LogException(ex);
+            }
+            return result;
         }
     }
 }

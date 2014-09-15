@@ -34,7 +34,7 @@
                 <div class="clearfix"></div>
             </div>
             <h2 class="page-header">
-                DANH SÁCH HỒ SƠ ĐÃ TIẾP NHẬN
+                <asp:Literal ID="literalTitle" runat="server"></asp:Literal>
             </h2>
             <div class="the-form">
                 <div class="row line">
@@ -43,12 +43,6 @@
                     </div>
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                         <button class="button search">Tìm kiếm (*)</button>
-                    </div>
-                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                        <a href="#" class="button task">Hiển thị tất cả</a>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                        <a href="#" class="button advantage">Tìm kiếm nâng cao</a>
                     </div>
                 </div>
                 <div class="row">
@@ -63,73 +57,51 @@
                 <a class="button add-new" href="#">Thêm mới</a>
             </div>
             <div class="clearfix"></div>
+
             <table class="the-table">
                 <tr>
-                    <th>ID</th>
-                    <th>Biên nhận (*)</th>
-                    <th>Ngày đăng ký</th>
+                    <th>Biên nhận</th>
+                    <th>Cá nhân tổ chức</th>
                     <th>Đơn vị đăng ký</th>
-                    <th>Loại cấp phép</th>
-                    <th style="width: 50px;">Đính kèm</th>
+                    <th>Loại </th>
+                    <th>Ngày đăng ký</th>
                     <th></th>
                     <th></th>
                     <th></th>
-                    <th><input type="checkbox" id="check-all"/></th>
+                    <th></th>
                 </tr>
-                <tr>
-                    <td>46</td>
-                    <td>SGTVTLA-00000033</td>
-                    <td>22/08/2014</td>
-                    <td>
-                        Công ty Tin học ABC
-                    </td>
-                    <td>
-                        Cấp giấy phép A
-                    </td>
-                    <td>
-                        <a href="#" class="button attachment just-icon"></a>
-                    </td>
-                    <td>
-                        <a href="#" class="button printer just-icon"></a>
-                    </td>
-                    <td>
-                        <a href="#" class="button view just-icon"></a>
-                    </td>
-                    <td>
-                        <a href="#" class="button edit just-icon"></a>
-                    </td>
-                    <td>
-                        <label><input type="checkbox"/>Xóa</label>
-                    </td>
-                </tr>
-                <tr>
-                    <td>46</td>
-                    <td>SGTVTLA-00000033</td>
-                    <td>22/08/2014</td>
-                    <td>
-                        Công ty Tin học ABC
-                    </td>
-                    <td>
-                        Cấp giấy phép A
-                    </td>
-                    <td>
-                        <a href="#" class="button attachment just-icon"></a>
-                    </td>
-                    <td>
-                        <a href="#" class="button printer just-icon"></a>
-                    </td>
-                    <td>
-                        <a href="#" class="button view just-icon"></a>
-                    </td>
-                    <td>
-                        <a href="#" class="button edit just-icon"></a>
-                    </td>
-                    <td>
-                        <label><input type="checkbox"/>Xóa</label>
-                    </td>
-                </tr>
+                <asp:Repeater ID="rptDeNghi" runat="server">
+                    <ItemTemplate>
+                        <tr>
+                            <td>46</td>
+                            <td>SGTVTLA-00000033</td>
+                            <td>22/08/2014</td>
+                            <td>
+                                Công ty Tin học ABC
+                            </td>
+                            <td>
+                                Cấp giấy phép A
+                            </td>
+                            <td>
+                                <a href="#" class="button attachment just-icon"></a>
+                            </td>
+                            <td>
+                                <a href="#" class="button printer just-icon"></a>
+                            </td>
+                            <td>
+                                <a href="#" class="button view just-icon"></a>
+                            </td>
+                            <td>
+                                <a href="#" class="button edit just-icon"></a>
+                            </td>
+                            <td>
+                                <label><input type="checkbox"/>Xóa</label>
+                            </td>
+                        </tr>
+                    </ItemTemplate>
+                </asp:Repeater>
             </table>
-            <a href="#" class="button remove danger inline-block">Xóa mục đã chọn</a>
+            
             <div class="pag pull-right">
                 <label for="go-to">Trang</label>
                 <button class="button begin small"></button>
@@ -139,12 +111,6 @@
                 <button class="button end small"></button>
                 <div class="clearfix"></div>
                 Kết quả: 1 to 12 of 12
-            </div>
-            <div class="clearfix"></div>
-            <div class="pull-right" style="margin-top: 15px;">
-                <a href="#" class="button excel inline">Xuất ra file Excel</a>
-                <a href="#" class="button word inline">Xuất ra file Word</a>
-                <div class="clearfix"></div>
             </div>
             <div class="clearfix"></div>
         </div>
