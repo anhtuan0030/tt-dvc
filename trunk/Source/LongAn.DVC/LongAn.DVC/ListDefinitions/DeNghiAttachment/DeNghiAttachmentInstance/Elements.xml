@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Elements xmlns="http://schemas.microsoft.com/sharepoint/">
-  <ListInstance Title="DeNghiAttachment" OnQuickLaunch="FALSE" 
+  <ListInstance Title="Đề nghị attachment" OnQuickLaunch="FALSE" 
                 TemplateType="10000" 
                 Url="Lists/DeNghiAttachment" 
                 Description="" 
-                Hidden="FALSE">
+                Hidden="TRUE">
   </ListInstance>
 </Elements>

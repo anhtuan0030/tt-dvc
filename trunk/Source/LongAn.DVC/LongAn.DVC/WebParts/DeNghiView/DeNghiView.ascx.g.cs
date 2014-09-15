@@ -39,10 +39,76 @@ namespace LongAn.DVC.WebParts.DeNghiView {
     
     public partial class DeNghiView {
         
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        protected global::System.Web.UI.WebControls.Literal literalTitle;
+        
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        protected global::System.Web.UI.WebControls.Repeater rptDeNghi;
+        
         [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebPartCodeGenerator", "12.0.0.0")]
         public static implicit operator global::System.Web.UI.TemplateControl(DeNghiView target) 
         {
             return target == null ? null : target.TemplateControl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.Literal @__BuildControlliteralTitle() {
+            global::System.Web.UI.WebControls.Literal @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.Literal();
+            this.literalTitle = @__ctrl;
+            @__ctrl.ID = "literalTitle";
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private void @__BuildControl__control2(System.Web.UI.Control @__ctrl) {
+            System.Web.UI.IParserAccessor @__parser = ((System.Web.UI.IParserAccessor)(@__ctrl));
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl(@"
+                        <tr>
+                            <td>46</td>
+                            <td>SGTVTLA-00000033</td>
+                            <td>22/08/2014</td>
+                            <td>
+                                Công ty Tin học ABC
+                            </td>
+                            <td>
+                                Cấp giấy phép A
+                            </td>
+                            <td>
+                                <a href=""#"" class=""button attachment just-icon""></a>
+                            </td>
+                            <td>
+                                <a href=""#"" class=""button printer just-icon""></a>
+                            </td>
+                            <td>
+                                <a href=""#"" class=""button view just-icon""></a>
+                            </td>
+                            <td>
+                                <a href=""#"" class=""button edit just-icon""></a>
+                            </td>
+                            <td>
+                                <label><input type=""checkbox""/>Xóa</label>
+                            </td>
+                        </tr>
+                    "));
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.Repeater @__BuildControlrptDeNghi() {
+            global::System.Web.UI.WebControls.Repeater @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.Repeater();
+            this.rptDeNghi = @__ctrl;
+            @__ctrl.ItemTemplate = new System.Web.UI.CompiledTemplateBuilder(new System.Web.UI.BuildTemplateMethod(this.@__BuildControl__control2));
+            @__ctrl.ID = "rptDeNghi";
+            return @__ctrl;
         }
         
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
@@ -72,67 +138,67 @@ namespace LongAn.DVC.WebParts.DeNghiView {
                         "button large-button done\">Hồ sơ hoàn thành</a>\n                <a href=\"#\" class" +
                         "=\"button large-button stat\">Báo cáo, thống kê</a>\n                <div class=\"cl" +
                         "earfix\"></div>\n            </div>\n            <h2 class=\"page-header\">\n         " +
-                        "       DANH SÁCH HỒ SƠ ĐÃ TIẾP NHẬN\n            </h2>\n            <div class=\"th" +
-                        "e-form\">\n                <div class=\"row line\">\n                    <div class=\"" +
-                        "col-lg-4 col-md-4 col-sm-4 col-xs-4\">\n                        <input type=\"text\"" +
-                        " name=\"s\" id=\"s\"/>\n                    </div>\n                    <div class=\"co" +
-                        "l-lg-2 col-md-2 col-sm-2 col-xs-2\">\n                        <button class=\"butto" +
-                        "n search\">Tìm kiếm (*)</button>\n                    </div>\n                    <" +
-                        "div class=\"col-lg-2 col-md-2 col-sm-2 col-xs-2\">\n                        <a href" +
-                        "=\"#\" class=\"button task\">Hiển thị tất cả</a>\n                    </div>\n        " +
-                        "            <div class=\"col-lg-3 col-md-3 col-sm-3 col-xs-3\">\n                  " +
-                        "      <a href=\"#\" class=\"button advantage\">Tìm kiếm nâng cao</a>\n               " +
-                        "     </div>\n                </div>\n                <div class=\"row\">\n           " +
-                        "         <div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-12\">\n                 " +
-                        "       <label><input type=\"radio\" name=\"match\"/>Tìm chính xác</label>\n          " +
-                        "              <label><input type=\"radio\" name=\"match\"/>Tất cả</label>\n          " +
-                        "              <label><input type=\"radio\" name=\"match\"/>Từ bất kỳ</label>\n       " +
-                        "             </div>\n                </div>\n            </div>\n            <div c" +
-                        "lass=\"pull-right\">\n                <a class=\"button add-new\" href=\"#\">Thêm mới</" +
-                        "a>\n            </div>\n            <div class=\"clearfix\"></div>\n            <tabl" +
-                        "e class=\"the-table\">\n                <tr>\n                    <th>ID</th>\n      " +
-                        "              <th>Biên nhận (*)</th>\n                    <th>Ngày đăng ký</th>\n " +
-                        "                   <th>Đơn vị đăng ký</th>\n                    <th>Loại cấp phép" +
-                        "</th>\n                    <th style=\"width: 50px;\">Đính kèm</th>\n               " +
-                        "     <th></th>\n                    <th></th>\n                    <th></th>\n     " +
-                        "               <th><input type=\"checkbox\" id=\"check-all\"/></th>\n                " +
-                        "</tr>\n                <tr>\n                    <td>46</td>\n                    <" +
-                        "td>SGTVTLA-00000033</td>\n                    <td>22/08/2014</td>\n               " +
-                        "     <td>\n                        Công ty Tin học ABC\n                    </td>\n" +
-                        "                    <td>\n                        Cấp giấy phép A\n               " +
-                        "     </td>\n                    <td>\n                        <a href=\"#\" class=\"b" +
-                        "utton attachment just-icon\"></a>\n                    </td>\n                    <" +
-                        "td>\n                        <a href=\"#\" class=\"button printer just-icon\"></a>\n  " +
-                        "                  </td>\n                    <td>\n                        <a href" +
-                        "=\"#\" class=\"button view just-icon\"></a>\n                    </td>\n              " +
-                        "      <td>\n                        <a href=\"#\" class=\"button edit just-icon\"></a" +
-                        ">\n                    </td>\n                    <td>\n                        <la" +
-                        "bel><input type=\"checkbox\"/>Xóa</label>\n                    </td>\n              " +
-                        "  </tr>\n                <tr>\n                    <td>46</td>\n                   " +
-                        " <td>SGTVTLA-00000033</td>\n                    <td>22/08/2014</td>\n             " +
-                        "       <td>\n                        Công ty Tin học ABC\n                    </td" +
-                        ">\n                    <td>\n                        Cấp giấy phép A\n             " +
-                        "       </td>\n                    <td>\n                        <a href=\"#\" class=" +
-                        "\"button attachment just-icon\"></a>\n                    </td>\n                   " +
-                        " <td>\n                        <a href=\"#\" class=\"button printer just-icon\"></a>\n" +
-                        "                    </td>\n                    <td>\n                        <a hr" +
-                        "ef=\"#\" class=\"button view just-icon\"></a>\n                    </td>\n            " +
-                        "        <td>\n                        <a href=\"#\" class=\"button edit just-icon\"><" +
-                        "/a>\n                    </td>\n                    <td>\n                        <" +
-                        "label><input type=\"checkbox\"/>Xóa</label>\n                    </td>\n            " +
-                        "    </tr>\n            </table>\n            <a href=\"#\" class=\"button remove dang" +
-                        "er inline-block\">Xóa mục đã chọn</a>\n            <div class=\"pag pull-right\">\n  " +
-                        "              <label for=\"go-to\">Trang</label>\n                <button class=\"bu" +
-                        "tton begin small\"></button>\n                <button class=\"button prev small\"></" +
-                        "button>\n                <input type=\"text\" id=\"go-to\" value=\"1\" class=\"small\"/>\n" +
-                        "                <button class=\"button next small\"></button>\n                <but" +
-                        "ton class=\"button end small\"></button>\n                <div class=\"clearfix\"></d" +
-                        "iv>\n                Kết quả: 1 to 12 of 12\n            </div>\n            <div c" +
-                        "lass=\"clearfix\"></div>\n            <div class=\"pull-right\" style=\"margin-top: 15" +
-                        "px;\">\n                <a href=\"#\" class=\"button excel inline\">Xuất ra file Excel" +
-                        "</a>\n                <a href=\"#\" class=\"button word inline\">Xuất ra file Word</a" +
-                        ">\n                <div class=\"clearfix\"></div>\n            </div>\n            <d" +
-                        "iv class=\"clearfix\"></div>\n        </div>\n    </div>\n</div>"));
+                        "       "));
+            global::System.Web.UI.WebControls.Literal @__ctrl1;
+            @__ctrl1 = this.@__BuildControlliteralTitle();
+            @__parser.AddParsedSubObject(@__ctrl1);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl(@"
+            </h2>
+            <div class=""the-form"">
+                <div class=""row line"">
+                    <div class=""col-lg-4 col-md-4 col-sm-4 col-xs-4"">
+                        <input type=""text"" name=""s"" id=""s""/>
+                    </div>
+                    <div class=""col-lg-2 col-md-2 col-sm-2 col-xs-2"">
+                        <button class=""button search"">Tìm kiếm (*)</button>
+                    </div>
+                </div>
+                <div class=""row"">
+                    <div class=""col-lg-12 col-md-12 col-sm-12 col-xs-12"">
+                        <label><input type=""radio"" name=""match""/>Tìm chính xác</label>
+                        <label><input type=""radio"" name=""match""/>Tất cả</label>
+                        <label><input type=""radio"" name=""match""/>Từ bất kỳ</label>
+                    </div>
+                </div>
+            </div>
+            <div class=""pull-right"">
+                <a class=""button add-new"" href=""#"">Thêm mới</a>
+            </div>
+            <div class=""clearfix""></div>
+
+            <table class=""the-table"">
+                <tr>
+                    <th>Biên nhận</th>
+                    <th>Cá nhân tổ chức</th>
+                    <th>Đơn vị đăng ký</th>
+                    <th>Loại </th>
+                    <th>Ngày đăng ký</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                "));
+            global::System.Web.UI.WebControls.Repeater @__ctrl2;
+            @__ctrl2 = this.@__BuildControlrptDeNghi();
+            @__parser.AddParsedSubObject(@__ctrl2);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl(@"
+            </table>
+            
+            <div class=""pag pull-right"">
+                <label for=""go-to"">Trang</label>
+                <button class=""button begin small""></button>
+                <button class=""button prev small""></button>
+                <input type=""text"" id=""go-to"" value=""1"" class=""small""/>
+                <button class=""button next small""></button>
+                <button class=""button end small""></button>
+                <div class=""clearfix""></div>
+                Kết quả: 1 to 12 of 12
+            </div>
+            <div class=""clearfix""></div>
+        </div>
+    </div>
+</div>"));
         }
         
         [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +

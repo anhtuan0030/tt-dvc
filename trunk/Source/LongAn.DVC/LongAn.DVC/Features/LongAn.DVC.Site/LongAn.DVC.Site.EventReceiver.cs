@@ -63,6 +63,7 @@ namespace LongAn.DVC.Features.Site
                 {
                     web.AllowUnsafeUpdates = true;
                     roleDef.BasePermissions =
+                    SPBasePermissions.AddListItems |
                     SPBasePermissions.EditListItems |
                     SPBasePermissions.ViewListItems |
                     SPBasePermissions.ViewPages |

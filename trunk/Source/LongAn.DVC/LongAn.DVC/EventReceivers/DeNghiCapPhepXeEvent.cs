@@ -1,5 +1,6 @@
 ﻿using CamlexNET;
 using LongAn.DVC.Common;
+using LongAn.DVC.Common.Extensions;
 using Microsoft.SharePoint;
 using System;
 using System.Collections.Generic;
@@ -19,16 +20,39 @@ namespace LongAn.DVC.EventReceivers
         public override void ItemAdded(SPItemEventProperties properties)
         {
             base.ItemAdded(properties);
+
+            #region Generate BienNhan
             using (DisableItemEvent disableItem = new DisableItemEvent())
             {
                 var currentItem = properties.ListItem;
                 var namDeNghi = DateTime.Now.ToString("yyyy");
                 var soThuTuBienNhan = GenerateBienNhan(properties.Web);
-                currentItem[Constants.FieldTitle] = namDeNghi + GenerateBienNhan(properties.Web);
+                currentItem[Constants.FieldTitle] = Constants.ConfMaLinhVucSGTVT + namDeNghi + GenerateBienNhan(properties.Web);
                 currentItem[Constants.FieldNamDeNghi] = namDeNghi;
                 currentItem[Constants.FieldSoThuTuBienNhan] = int.Parse(soThuTuBienNhan);
                 currentItem.SystemUpdate();
             }
+            #endregion Generate BienNhan
+
+            #region Update permission
+            SPUser currentUser = properties.Web.CurrentUser;
+            SPSecurity.RunWithElevatedPrivileges(delegate()
+            {
+                using (SPSite site = new SPSite(properties.Web.Site.ID))
+                {
+                    using (SPWeb web = site.OpenWeb(properties.Web.ID))
+                    {
+                        SPListItem currentItem = web.Lists[properties.ListId].GetItemById(properties.ListItemId);
+                        SPRoleDefinitionCollection roleDefinitions = web.RoleDefinitions;
+                        SPRoleDefinition editNotDeleteRoleDefinition = roleDefinitions[Constants.ConfPermissionDeNghi];
+                        currentItem.BreakRoleInheritance(true);
+                        currentItem.SetPermissions(currentUser, editNotDeleteRoleDefinition);
+                        SPGroup group = web.SiteGroups[Constants.ConfGroupNguoiDung];
+                        currentItem.RemovePermissions(group);
+                    }
+                }
+            });
+            #endregion Update permission
         }
 
         public override void ItemUpdating(SPItemEventProperties properties)
