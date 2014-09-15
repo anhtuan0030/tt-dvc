@@ -8,6 +8,7 @@ namespace LongAn.DVC.Common
 {
     public enum CapXuLy
     {
+        CaNhanToChuc = 0,
         NhanVienTiepNhan = 1,
         TruongPhoPhong = 2,
         CanBoXuLy = 3,
@@ -17,17 +18,29 @@ namespace LongAn.DVC.Common
 
     public enum TrangThaiXuLy
     {
-        TaoMoi,
-        ChoBoSung,
-        ChoDuyet,
-        DaDuyet,
-        TuChoi
+        KhoiTao,
+        DaTiepNhan,
+        ChoXuLy,
+        DaPhanCong,
+        ChoTruongPhongDuyet,
+        ChoLanhDaoDuyet,
+        HoSoDuocDuyet,
+        HoSoBiTuChoi
+        //TaoMoi,
+        //ChoBoSung,
+        //ChoDuyet,
+        //DaDuyet,
+        //TuChoi
     }
 
     public class Constants
     {
         //Configurations
         public const string ConfSoThuTuBienNhan = "0000000";
+
+        public const string ConfViewStateCapXuLy = "CapXuLy";
+
+        public const string ConfMaLinhVucSGTVT = "812";
 
         public const string ConfGroupNguoiDung = "DVC Người dùng";
         public const string ConfGroupNhanVienTiepNhan = "DVC Nhân viên tiếp nhận";
