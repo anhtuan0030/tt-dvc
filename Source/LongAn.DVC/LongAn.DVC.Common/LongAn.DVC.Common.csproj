@@ -51,6 +51,15 @@
     <Reference Include="Microsoft.SharePoint.Client.ServerRuntime" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Constants.cs" />
+    <Compile Include="Extensions\SPListExtensions.cs" />
+    <Compile Include="Extensions\SPListItemExtensions.cs" />
+    <Compile Include="Extensions\SPSiteExtensions.cs" />
+    <Compile Include="Extensions\SPUserExtensions.cs" />
+    <Compile Include="Extensions\SPWebExtensions.cs" />
+    <Compile Include="Utilities\DisableItemEvent.cs" />
+    <Compile Include="Utilities\Enums.cs" />
+    <Compile Include="Utilities\LoggingServices.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
