@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<webParts>
+  <webPart xmlns="http://schemas.microsoft.com/WebPart/v3">
+    <metaData>
+      <type name="LongAn.DVC.WebParts.DeNghiView.DeNghiView, $SharePoint.Project.AssemblyFullName$" />
+      <importErrorMessage>$Resources:core,ImportErrorMessage;</importErrorMessage>
+    </metaData>
+    <data>
+      <properties>
+        <property name="Title" type="string">Đề nghị cấp phép</property>
+        <property name="Description" type="string">Đề nghị View Visual Web Part</property>
+        <property name="TextProperty1" type="string">My Custom Property Value</property>
+      </properties>
+    </data>
+  </webPart>
+</webParts>

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <!-- Parent ContentType: Item (0x01) -->
+  <ContentType ID="0x0100917AC04E109C4B40860348D0389E041F"
+               Name="Đề Nghị Cấp Phép Xe Content Type"
+               Group="[DVC]"
+               Description="Đề nghị cấp phép xe Content Type"
+               Version="0">
+    <FieldRefs>
+    </FieldRefs>
+  </ContentType>
+</Elements>

@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <Field Type="Text" ID="{9513D269-2FC2-4AA2-9916-91BF6150AD7A}" Name="KinhGui" StaticName="KinhGui"
+         DisplayName="Kính gửi" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" Group="[LA-DVC]" />
+
+  <Field Type="Text" ID="{2294FC9A-F4B1-46DB-B29C-EC434401B9D3}" Name="CaNhanToChuc" StaticName="CaNhanToChuc"
+         DisplayName="Cá nhân tổ chức" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" Group="[LA-DVC]" />
+
+  <Field Type="Text" ID="{E34DBB36-0535-4474-ABB0-C8812B51CDD0}" Name="DiaChi" StaticName="DiaChi"
+         DisplayName="Địa chỉ" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" Group="[LA-DVC]" />
+
+  <Field Type="Text" ID="{62402081-8AC4-4980-BCF4-6654C6DC202F}" Name="DienThoai" StaticName="DienThoai"
+           DisplayName="Điện thoại" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" Group="[LA-DVC]" />
+
+  <Field Type="Text" ID="{F3B44ED0-68B5-47A5-8866-62DB7D6FB688}" Name="LoaiXe" StaticName="LoaiXe"
+           DisplayName="Loại xe" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" Group="[LA-DVC]" />
+
+  <Field Type="Text" ID="{C8F0CA07-A2BC-490D-A354-1B0C944385F1}" Name="NhanHieuXe" StaticName="NhanHieuXe"
+           DisplayName="Nhãn hiệu xe" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" Group="[LA-DVC]" />
+
+  <Field Type="Text" ID="{E70C6770-473A-4B8D-BFE0-A89BBCA82342}" Name="BienSoDangKy" StaticName="BienSoDangKy"
+             DisplayName="Biển số đăng ký" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" Group="[LA-DVC]" />
+
+  <Field Type="Text" ID="{AA267C6E-5988-4C75-9E59-598286104EBA}" Name="NhanHieuRoMooc" StaticName="NhanHieuRoMooc"
+             DisplayName="Nhãn hiệu sơ mi rơ mooc (hoặc rơ mooc)" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" Group="[LA-DVC]" />
+
+  <Field Type="Text" ID="{0C67282D-5BC7-4AEB-BC5F-BB90C3257E75}" Name="BienSoDangKyRoMooc" StaticName="BienSoDangKyRoMooc"
+             DisplayName="Biển số đăng ký của sơ mi rơ mooc (hoặc rơ mooc)" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" Group="[LA-DVC]" />
+
+  <Field Type="Text" ID="{134950CD-4998-4C22-987F-1D8CFA34FA0C}" Name="KichThuocBaoXe" StaticName="KichThuocBaoXe"
+               DisplayName="Kích thước bao của xe kể cả sơ mi rơ mooc: Dài x Rộng x Cao (m)" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" Group="[LA-DVC]" />
+
+  <Field Type="Text" ID="{834164F7-B5C2-47C8-9376-43A70D9DE961}" Name="KichThuocBaoRoMooc" StaticName="KichThuocBaoRoMooc"
+               DisplayName="Kích thước bao của rơ mooc: Dài x Rộng x Cao (m)" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" Group="[LA-DVC]" />
+
+  <Field Type="Text" ID="{FF52F227-33C2-4EB1-B3CE-453D037C92A7}" Name="TaiTrongThietKeXe" StaticName="TaiTrongThietKeXe"
+               DisplayName="Tải trọng thiết kế của xe (hoặc xe kéo sơ mi rơ mooc) (tấn)" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" Group="[LA-DVC]" />
+
+  <Field Type="Text" ID="{A8357F3D-7823-4CD1-A491-47DED234075F}" Name="TaiTrongThietKeRoMooc" StaticName="TaiTrongThietKeRoMooc"
+               DisplayName="Tải trọng thiết kế của rơ mooc (tấn)" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" Group="[LA-DVC]" />
+
+  <Field Type="Text" ID="{1DA3C223-675F-4152-AF57-5375DCEB07D8}" Name="TrongLuongBanThanXe" StaticName="TrongLuongBanThanXe"
+                 DisplayName="Trọng lượng bản thân xe (tấn)" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" Group="[LA-DVC]" />
+
+  <Field Type="Text" ID="{2C06D195-481D-4CC6-ADE9-3BFB65F0684E}" Name="TrongLuongBanThanRoMooc" StaticName="TrongLuongBanThanRoMooc"
+                 DisplayName="Trọng lượng bản thân sơ mi rơ mooc (tấn)" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" Group="[LA-DVC]" />
+
+  <Field Type="Text" ID="{856E40B0-CB6B-4FEC-8CFA-756F37AB30E0}" Name="SoTrucCuaXe" StaticName="SoTrucCuaXe"
+                 DisplayName="Số trục của xe" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" Group="[LA-DVC]" />
+
+  <Field Type="Text" ID="{49DFEA85-E271-473F-841B-FBA52EA74BCD}" Name="SoTrucSauCuaXe" StaticName="SoTrucSauCuaXe"
+                 DisplayName="Số trục sau của xe" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" Group="[LA-DVC]" />
+
+  <Field Type="Text" ID="{75033C20-90AF-4AB9-BDDB-FC6A246C2900}" Name="SoTrucCuaRoMooc" StaticName="SoTrucCuaRoMooc"
+                 DisplayName="Số trục của sơ mi rơ mooc" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" Group="[LA-DVC]" />
+
+  <Field Type="Text" ID="{0EED505B-343E-4E62-9A20-860EED7D10E2}" Name="SoTrucSauCuaRoMooc" StaticName="SoTrucSauCuaRoMooc"
+                 DisplayName="Số trục sau của sơ mi rơ mooc" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" Group="[LA-DVC]" />
+
+  <Field Type="Text" ID="{30097175-0A1A-428F-8B7D-EED2AE7F647D}" Name="LoaiHang" StaticName="LoaiHang"
+                 DisplayName="Loại hàng" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" Group="[LA-DVC]" />
+
+  <Field Type="Text" ID="{4EA5A706-6DEB-4CA8-B8BC-41C8D22C3C42}" Name="TrongLuongHangXinCho" StaticName="TrongLuongHangXinCho"
+                   DisplayName="Trọng lượng hàng xin chở" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" Group="[LA-DVC]" />
+
+  <Field Type="Text" ID="{9431B8A1-1A0E-4E8C-9CA1-A7DA36EE009F}" Name="ChieuRongToanBoXeKhiXepHang" StaticName="ChieuRongToanBoXeKhiXepHang"
+                   DisplayName="Chiều rộng toàn bộ xe khi xếp hàng (m)" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" Group="[LA-DVC]" />
+
+  <Field Type="Text" ID="{9CB2C36C-779A-45C1-9D6C-36F5A085ABB5}" Name="HangVuotHaiBenThungXe" StaticName="HangVuotHaiBenThungXe"
+                   DisplayName="Hàng vượt hai bên thung xe (m)" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" Group="[LA-DVC]" />
+
+  <Field Type="Text" ID="{060F7A10-C9F8-47F1-A48D-A55DFB61BB66}" Name="ChieuDaiToanBoXeKhiXepHang" StaticName="ChieuDaiToanBoXeKhiXepHang"
+                   DisplayName="Chiều dài toàn bộ xe khi xếp hàng (m)" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" Group="[LA-DVC]" />
+
+  <Field Type="Text" ID="{08AA6332-C419-4DD6-BE03-17F2BBBD09AA}" Name="ChieuCaoToanBoXeKhiXepHang" StaticName="ChieuCaoToanBoXeKhiXepHang"
+                   DisplayName="Chiều cao toàn bộ xe khi xếp hàng (m)" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" Group="[LA-DVC]" />
+
+  <Field Type="Text" ID="{D7BEFB72-BF46-4954-AD34-30A70042287C}" Name="HangVuotPhiaTruocThungXe" StaticName="HangVuotPhiaTruocThungXe"
+                   DisplayName="Hàng vượt phía trước thùng xe (m)" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" Group="[LA-DVC]" />
+
+  <Field Type="Text" ID="{6EC3D58E-FC71-44CD-9C52-8F3AE264B630}" Name="HangVuotPhiaSauThungXe" StaticName="HangVuotPhiaSauThungXe"
+                   DisplayName="Hàng vượt phía sau thùng xe (m)" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" Group="[LA-DVC]" />
+
+  <Field Type="Text" ID="{980D2BC0-8F5B-4C6D-89E8-33D1FECE1018}" Name="TrucDon" StaticName="TrucDon"
+                   DisplayName="Trục đơn (tấn)" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" Group="[LA-DVC]" />
+
+  <Field Type="Text" ID="{7164B2EB-C744-4D63-B365-C932DF351258}" Name="TrucKep" StaticName="TrucKep"
+                   DisplayName="Trục kép (tấn)" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" Group="[LA-DVC]" />
+
+  <Field Type="Text" ID="{3D661CDF-B9EF-47FD-A84A-98EB464BECDC}" Name="TrucBa" StaticName="TrucBa"
+                   DisplayName="Trục ba (tấn)" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" Group="[LA-DVC]" />
+
+  <Field Type="Text" ID="{CD8984FA-EA67-4CF3-95B6-F25D5C4E8507}" Name="KhoangCachGiuaHaiTamTruc" StaticName="KhoangCachGiuaHaiTamTruc"
+                   DisplayName="Khoảng cách giữa hai tâm trục, d=" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" Group="[LA-DVC]" />
+
+  <Field Type="Text" ID="{B12D4C04-1C74-4033-855E-025BD139594E}" Name="KhoangCachGiuaHaiTamTrucLienKe" StaticName="KhoangCachGiuaHaiTamTrucLienKe"
+         DisplayName="Khoảng cách giữa hai tâm trục liền kề, d=" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" Group="[LA-DVC]" />
+
+  <Field Type="Text" ID="{C7C1C91B-8133-48BA-AFCB-C112F78DD9F3}" Name="NoiDi" StaticName="NoiDi"
+         DisplayName="Nơi đi (ghi cụ thể Km)" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" Group="[LA-DVC]" />
+
+  <Field Type="Text" ID="{C94538F7-5AB3-4FFD-9BF6-EF198AC673E8}" Name="NoiDen" StaticName="NoiDen"
+         DisplayName="Nơi đến (ghi cụ thể Km)" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" Group="[LA-DVC]" />
+
+  <Field Type="Note" ID="{707F5F74-7CD7-4D42-847B-2680868977A4}" Name="TuyenDuongVanChuyen"  StaticName="TuyenDuongVanChuyen"
+       DisplayName="Tuyến đường vận chuyển (ghi đầy đủ, cụ thể tên từng đoạn tuyến đường bộ, các vị trí chuyển hường)" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" NumLines="6" RichText="FALSE" Sortable="FALSE" Group="[LA-DVC]"/>
+
+  <Field Type="DateTime" ID="{826D5EF2-7F88-4320-94AF-4DF360D6B7B2}" Name="ThoiGiaDeNghiLuuHanhTu" StaticName="ThoiGiaDeNghiLuuHanhTu"
+         DisplayName="Từ ngày" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" Format="DateOnly" FriendlyDisplayFormat="Disabled" Group="[LA-DVC]" >
+    <Default>[today]</Default>
+  </Field>
+
+  <Field Type="DateTime" ID="{D6AA5635-D989-4ECD-84C4-DF45778F2B24}" Name="ThoiGiaDeNghiLuuHanhDen" StaticName="ThoiGiaDeNghiLuuHanhDen"
+         DisplayName="Đến ngày" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" Format="DateOnly" FriendlyDisplayFormat="Disabled" Group="[LA-DVC]" >
+    <Default>[today]</Default>
+  </Field>
+
+  <Field Type="User" ID="{06EF1F2D-AADC-478A-9FB4-31C672AD0F7A}" Name="DeNghiOwner" StaticName="DeNghiOwner" 
+         DisplayName="Người đề nghị" List="UserInfo" Required="FALSE" EnforceUniqueValues="FALSE" ShowField="ImnName" 
+         UserSelectionMode="PeopleOnly" UserSelectionScope="0"  Group="[LA-DVC]" />
+
+  <Field Type="Text" ID="{30CCB8BF-723D-46A0-B44F-CACBD3A6082D}" Name="TrangThai" StaticName="TrangThai"
+         DisplayName="Trạng thái" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" 
+         Group="[LA-DVC]" />
+
+  <Field Type="Text" ID="{9CBE3507-6F79-4E21-80D6-72EB534E7C5F}" Name="CapDuyet" StaticName="CapDuyet"
+         DisplayName="Cấp duyệt" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255"
+         Group="[LA-DVC]" />
+
+  <Field Type="Boolean" ID="{7DB94E06-B240-45D3-854A-D8FF7710F891}" Name="NopTrucTiep" StaticName="NopTrucTiep" 
+         DisplayName="Nộp trực tiếp" EnforceUniqueValues="FALSE" Indexed="FALSE" Group="[LA-DVC]" >
+    <Default>0</Default>
+  </Field>
+
+  <Field Type="Text" ID="{DCDF7E67-C385-4840-BCE5-E82BFF1FBC0C}" Name="DeNghiGUID" StaticName="DeNghiGUID"
+         DisplayName="DeNghiGUID" Required="FALSE" Hidden="TRUE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255"
+         Group="[LA-DVC]" />
+
+  <Field Type="Text" ID="{B26051F8-701F-41BD-86BA-C39B972FC114}" Name="NamDeNghi" StaticName="NamDeNghi"
+         DisplayName="Năm đề nghị" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255"
+         Group="[LA-DVC]" />
+
+  <Field Type="Text" ID="{C685DDD9-57D5-4B59-9F00-80DEBB73586F}" Name="SoThuTuBienNhan" StaticName="SoThuTuBienNhan"
+         DisplayName="SoThuTuBienNhan" Required="FALSE" Hidden="TRUE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255"
+         Group="[LA-DVC]" />
+
+  <Field Type="Lookup" ID="{713CEB2E-2D14-4FDF-BA98-DAABFA61C504}" Name="DeNghi" StaticName="DeNghi"
+         DisplayName="Đề nghị" Required="FALSE" EnforceUniqueValues="FALSE" List="Lists/DeNghiCapPhepXe"
+         ShowField="Title" UnlimitedLengthInDocumentLibrary="FALSE" RelationshipDeleteBehavior="None"
+         Group="[LA-DVC]" />
+
+  <Field Type="Text" ID="{D845F8A0-CFF9-4430-A159-B02F616165D8}" Name="LoaiAttachment" StaticName="LoaiAttachment"
+         DisplayName="Loại attachment" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255"
+         Group="[LA-DVC]" />
+  
+</Elements>

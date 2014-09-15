@@ -1,7 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="71ce27ed-13c8-4fc9-8c1a-78057fc92639" solutionId="71ce27ed-13c8-4fc9-8c1a-78057fc92639" resetWebServer="false" sharePointProductVersion="15.0" name="LongAn.DVC" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+  <assemblies>
+    <projectOutputAssembly location="LongAn.DVC.Common.dll" deploymentTarget="GlobalAssemblyCache" projectPath="..\LongAn.DVC.Common\LongAn.DVC.Common.csproj" />
+    <customAssembly location="Camlex.NET.dll" deploymentTarget="GlobalAssemblyCache" sourcePath="Libs\Camlex.NET.dll" />
+  </assemblies>
   <features>
     <featureReference itemId="d4d9a687-e054-4bf6-8aa3-9e5bf52fec28" />
     <featureReference itemId="581ea75c-979a-44bb-96a6-78deb4fa1b0f" />
   </features>
+  <projectItems>
+    <projectItemReference itemId="f8fd9a64-c763-4233-8b90-24407d721b2c" />
+    <projectItemReference itemId="63f3bd6e-81ab-4ca6-9ff1-2a04a2c99eb3" />
+  </projectItems>
 </package>

@@ -2,6 +2,8 @@ using System;
 using System.Runtime.InteropServices;
 using System.Security.Permissions;
 using Microsoft.SharePoint;
+using LongAn.DVC.Common.Extensions;
+using LongAn.DVC.Common;
 
 namespace LongAn.DVC.Features.Site
 {
@@ -17,11 +19,69 @@ namespace LongAn.DVC.Features.Site
     {
         // Uncomment the method below to handle the event raised after a feature has been activated.
 
-        //public override void FeatureActivated(SPFeatureReceiverProperties properties)
-        //{
-        //}
+        public override void FeatureActivated(SPFeatureReceiverProperties properties)
+        {
+            var site = (SPSite)properties.Feature.Parent;
+            CreateGroup(site.RootWeb);
+            EnsurePermissionLevel(site.RootWeb, Constants.ConfPermissionDeNghi, Constants.ConfPermissionDeNghiDes);
+        }
 
+        private void CreateGroup(SPWeb web)
+        {
+            web.CreateNewGroup(Constants.ConfGroupNguoiDung, Constants.ConfGroupNguoiDung, SPRoleType.Reader);
+            web.CreateNewGroup(Constants.ConfGroupNhanVienTiepNhan, Constants.ConfGroupNhanVienTiepNhan, SPRoleType.Reader);
+            web.CreateNewGroup(Constants.ConfGroupTruongPhoPhong, Constants.ConfGroupTruongPhoPhong, SPRoleType.Reader);
+            web.CreateNewGroup(Constants.ConfGroupCanBoXuLy, Constants.ConfGroupCanBoXuLy, SPRoleType.Reader);
+            web.CreateNewGroup(Constants.ConfGroupLanhDaoSo, Constants.ConfGroupLanhDaoSo, SPRoleType.Reader);
+            try
+            {
+                SPGroup authenticatedGroup = web.SiteGroups[Constants.ConfGroupNguoiDung];
+                authenticatedGroup.Users.Add("NT Authority\\Authenticated Users", string.Empty, "Authenticated Users", string.Empty);
+            }
+            catch (Exception ex)
+            {
+                LoggingServices.LogException(ex);
+            }
+        }
 
+        private void EnsurePermissionLevel(SPWeb web, string name, string description)
+        {
+            try
+            {
+                SPRoleDefinition roleDef = new SPRoleDefinition();
+
+                bool isNotExist = true;
+                foreach (SPRoleDefinition role in web.RoleDefinitions)
+                {
+                    if (role.Name == name)
+                    {
+                        isNotExist = false;
+                        break;
+                    }
+                }
+                if (isNotExist)
+                {
+                    web.AllowUnsafeUpdates = true;
+                    roleDef.BasePermissions =
+                    SPBasePermissions.EditListItems |
+                    SPBasePermissions.ViewListItems |
+                    SPBasePermissions.ViewPages |
+                    SPBasePermissions.Open |
+                    SPBasePermissions.ViewFormPages |
+                    SPBasePermissions.OpenItems;
+                    roleDef.Name = name;
+                    roleDef.Description = description;
+                    web.RoleDefinitions.Add(roleDef);
+                    web.Update();
+                    web.AllowUnsafeUpdates = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                LoggingServices.LogException(ex);
+            }
+        }
+       
         // Uncomment the method below to handle the event raised before a feature is deactivated.
 
         //public override void FeatureDeactivating(SPFeatureReceiverProperties properties)
