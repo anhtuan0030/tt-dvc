@@ -1,0 +1,160 @@
+@color-1: #ebe9d8;
+@color-2: #858a70;
+@color-3: #dde6ed;
+@color-4: #303257;
+
+@color-5: #01648d;
+@color-6: #0293bf;
+@color-7: #eaeaea;
+@color-8: #2870e6;
+@color-9: #fafafa;
+
+
+.border-radius(@radius: 3px){
+  border-radius: @radius;
+  -moz-border-radius: @radius;
+  -webkit-border-radius: @radius;
+  -ms-border-radius: @radius;
+  -o-border-radius: @radius;
+}
+body{
+  min-width: 1280px;
+}
+.container{
+  max-width: 1024px;
+}
+a{
+  text-decoration: none;
+}
+.mr-form{
+  input[type="text"], select{
+    width: 100%;
+  }
+  textarea{
+    width: 100%;
+    height: 80px;
+  }
+  .star{
+    color: red;
+  }
+  .row{
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+}
+
+body.default{
+  .mr-form{
+    .panel-1, .panel-2{
+      padding: 20px 10px;
+      margin-top: 15px;
+      margin-bottom: 15px
+    }
+    .panel-1{
+      background: @color-1;;
+    }
+    .panel-2{
+      .border-radius();
+      border: 1px solid @color-2;
+    }
+    label{
+      font-size: 12px;
+      font-weight: normal;
+    }
+    input[type="text"], input[type="password"]{
+      border: 1px solid @color-2;
+      padding-left: 5px;
+      padding-right: 5px;
+      .border-radius();
+    }
+  }
+  h1{
+    background: @color-3;
+    color: @color-4;
+    text-transform: uppercase;
+    padding: 10px;
+    font-size: 13px;
+  }
+  h2{
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  h3{
+    font-size: 12px;
+    font-weight: bold;
+  }
+}
+body.style-1{
+  .mr-form{
+    .panel-1, .panel-2{
+      padding: 20px 10px;
+      margin-top: 15px;
+      margin-bottom: 15px
+    }
+    .panel-1{
+      background: @color-9;;
+    }
+    .panel-2{
+      .border-radius();
+      border: 1px solid @color-2;
+    }
+    label{
+      color: @color-5;
+      display: block;
+      margin-top: 5px;
+      font-weight: normal;
+    }
+    input[type="text"], input[type="password"]{
+      border: 1px solid @color-5;
+      width: 100%;
+      margin-top: 5px;
+    }
+    button{
+      border: none;
+      background: @color-6;
+      color: #fff;
+      display: inline-block;
+      padding: 5px 10px;
+      text-align: center;
+      &:hover{
+        background: @color-5;
+      }
+    }
+  }
+  h1{
+    background: @color-3;
+    color: @color-4;
+    text-transform: uppercase;
+    padding: 10px;
+    font-size: 13px;
+  }
+  h2{
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  h3{
+    font-size: 12px;
+    font-weight: bold;
+  }
+}
+body.default, body.style-1{
+  .date-picker{
+    input[type="text"]{
+      width: 80px;
+      float: left;
+      margin-right: 8px;
+    }
+    img{
+      float: left;
+      margin-right: 5px;
+      margin-top: 4px;
+    }
+    &:after{
+      clear: both;
+      content: ' ';
+      display: block;
+    }
+  }
+}

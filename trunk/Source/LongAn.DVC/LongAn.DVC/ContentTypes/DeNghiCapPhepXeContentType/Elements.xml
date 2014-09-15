@@ -7,6 +7,105 @@
                Description="Đề nghị cấp phép xe Content Type"
                Version="0">
     <FieldRefs>
+      <FieldRef ID="{fa564e0f-0c70-4ab9-b863-0177e6ddd247}" Name="Title" />
+      <FieldRef ID="{9513D269-2FC2-4AA2-9916-91BF6150AD7A}" Name="KinhGui" />
+      <FieldRef ID="{2294FC9A-F4B1-46DB-B29C-EC434401B9D3}" Name="CaNhanToChuc" />
+      <FieldRef ID="{E34DBB36-0535-4474-ABB0-C8812B51CDD0}" Name="DiaChi" />
+      <FieldRef ID="{62402081-8AC4-4980-BCF4-6654C6DC202F}" Name="DienThoai" />
+      <FieldRef ID="{F3B44ED0-68B5-47A5-8866-62DB7D6FB688}" Name="LoaiXe" />
+      <FieldRef ID="{C8F0CA07-A2BC-490D-A354-1B0C944385F1}" Name="NhanHieuXe" />
+      <FieldRef ID="{E70C6770-473A-4B8D-BFE0-A89BBCA82342}" Name="BienSoDangKy" />
+      <FieldRef ID="{AA267C6E-5988-4C75-9E59-598286104EBA}" Name="NhanHieuRoMooc" />
+      <FieldRef ID="{0C67282D-5BC7-4AEB-BC5F-BB90C3257E75}" Name="BienSoDangKyRoMooc" />
+      <FieldRef ID="{134950CD-4998-4C22-987F-1D8CFA34FA0C}" Name="KichThuocBaoXe" />
+      <FieldRef ID="{834164F7-B5C2-47C8-9376-43A70D9DE961}" Name="KichThuocBaoRoMooc" />
+      <FieldRef ID="{FF52F227-33C2-4EB1-B3CE-453D037C92A7}" Name="TaiTrongThietKeXe" />
+      <FieldRef ID="{A8357F3D-7823-4CD1-A491-47DED234075F}" Name="TaiTrongThietKeRoMooc" />
+      <FieldRef ID="{1DA3C223-675F-4152-AF57-5375DCEB07D8}" Name="TrongLuongBanThanXe" />
+      <FieldRef ID="{2C06D195-481D-4CC6-ADE9-3BFB65F0684E}" Name="TrongLuongBanThanRoMooc" />
+      <FieldRef ID="{856E40B0-CB6B-4FEC-8CFA-756F37AB30E0}" Name="SoTrucCuaXe" />
+      <FieldRef ID="{49DFEA85-E271-473F-841B-FBA52EA74BCD}" Name="SoTrucSauCuaXe" />
+      <FieldRef ID="{75033C20-90AF-4AB9-BDDB-FC6A246C2900}" Name="SoTrucCuaRoMooc" />
+      <FieldRef ID="{0EED505B-343E-4E62-9A20-860EED7D10E2}" Name="SoTrucSauCuaRoMooc" />
+      <FieldRef ID="{30097175-0A1A-428F-8B7D-EED2AE7F647D}" Name="LoaiHang" />
+      <FieldRef ID="{4EA5A706-6DEB-4CA8-B8BC-41C8D22C3C42}" Name="TrongLuongHangXinCho" />
+      <FieldRef ID="{9431B8A1-1A0E-4E8C-9CA1-A7DA36EE009F}" Name="ChieuRongToanBoXeKhiXepHang" />
+      <FieldRef ID="{9CB2C36C-779A-45C1-9D6C-36F5A085ABB5}" Name="HangVuotHaiBenThungXe" />
+      <FieldRef ID="{060F7A10-C9F8-47F1-A48D-A55DFB61BB66}" Name="ChieuDaiToanBoXeKhiXepHang" />
+      <FieldRef ID="{08AA6332-C419-4DD6-BE03-17F2BBBD09AA}" Name="ChieuCaoToanBoXeKhiXepHang" />
+      <FieldRef ID="{D7BEFB72-BF46-4954-AD34-30A70042287C}" Name="HangVuotPhiaTruocThungXe" />
+      <FieldRef ID="{6EC3D58E-FC71-44CD-9C52-8F3AE264B630}" Name="HangVuotPhiaSauThungXe" />
+      <FieldRef ID="{980D2BC0-8F5B-4C6D-89E8-33D1FECE1018}" Name="TrucDon" />
+      <FieldRef ID="{7164B2EB-C744-4D63-B365-C932DF351258}" Name="TrucKep" />
+      <FieldRef ID="{3D661CDF-B9EF-47FD-A84A-98EB464BECDC}" Name="TrucBa" />
+      <FieldRef ID="{CD8984FA-EA67-4CF3-95B6-F25D5C4E8507}" Name="KhoangCachGiuaHaiTamTruc" />
+      <FieldRef ID="{B12D4C04-1C74-4033-855E-025BD139594E}" Name="KhoangCachGiuaHaiTamTrucLienKe" />
+      <FieldRef ID="{C7C1C91B-8133-48BA-AFCB-C112F78DD9F3}" Name="NoiDi" />
+      <FieldRef ID="{C94538F7-5AB3-4FFD-9BF6-EF198AC673E8}" Name="NoiDen" />
+      <FieldRef ID="{707F5F74-7CD7-4D42-847B-2680868977A4}" Name="TuyenDuongVanChuyen" />
+      <FieldRef ID="{826D5EF2-7F88-4320-94AF-4DF360D6B7B2}" Name="ThoiGiaDeNghiLuuHanhTu" />
+      <FieldRef ID="{D6AA5635-D989-4ECD-84C4-DF45778F2B24}" Name="ThoiGiaDeNghiLuuHanhDen" />
+      <FieldRef ID="{06EF1F2D-AADC-478A-9FB4-31C672AD0F7A}" Name="DeNghiOwner" />
+      <FieldRef ID="{30CCB8BF-723D-46A0-B44F-CACBD3A6082D}" Name="TrangThai" />
+      <FieldRef ID="{9CBE3507-6F79-4E21-80D6-72EB534E7C5F}" Name="CapDuyet" />
+      <FieldRef ID="{DCDF7E67-C385-4840-BCE5-E82BFF1FBC0C}" Name="DeNghiGUID" />
+      <FieldRef ID="{B26051F8-701F-41BD-86BA-C39B972FC114}" Name="NamDeNghi" />
+      <FieldRef ID="{C685DDD9-57D5-4B59-9F00-80DEBB73586F}" Name="SoThuTuBienNhan" />
     </FieldRefs>
+    <XmlDocuments>
+      <XmlDocument NamespaceURI="http://schemas.microsoft.com/sharepoint/events">
+        <Receivers xmlns:spe="http://schemas.microsoft.com/sharepoint/events">
+
+          <Receiver>
+            <Name>ItemAddingDN</Name>
+            <Type>ItemAdding</Type>
+            <SequenceNumber>10000</SequenceNumber>
+            <Assembly>$SharePoint.Project.AssemblyFullName$</Assembly>
+            <Class>LongAn.DVC.EventReceivers.DeNghiCapPhepXeEvent</Class>
+          </Receiver>
+
+          <Receiver>
+            <Name>ItemAddedDN</Name>
+            <Type>ItemAdded</Type>
+            <SequenceNumber>10000</SequenceNumber>
+            <Assembly>$SharePoint.Project.AssemblyFullName$</Assembly>
+            <Class>LongAn.DVC.EventReceivers.DeNghiCapPhepXeEvent</Class>
+            <Synchronization>Synchronous</Synchronization>
+          </Receiver>
+
+          <Receiver>
+            <Name>ItemUpdatingDN</Name>
+            <Type>ItemUpdating</Type>
+            <SequenceNumber>10000</SequenceNumber>
+            <Assembly>$SharePoint.Project.AssemblyFullName$</Assembly>
+            <Class>LongAn.DVC.EventReceivers.DeNghiCapPhepXeEvent</Class>
+          </Receiver>
+
+          <Receiver>
+            <Name>ItemUpdatedDN</Name>
+            <Type>ItemUpdated</Type>
+            <SequenceNumber>10000</SequenceNumber>
+            <Assembly>$SharePoint.Project.AssemblyFullName$</Assembly>
+            <Class>LongAn.DVC.EventReceivers.DeNghiCapPhepXeEvent</Class>
+          </Receiver>
+
+          <Receiver>
+            <Name>ItemDeletingDN</Name>
+            <Type>ItemDeleting</Type>
+            <SequenceNumber>10000</SequenceNumber>
+            <Assembly>$SharePoint.Project.AssemblyFullName$</Assembly>
+            <Class>LongAn.DVC.EventReceivers.DeNghiCapPhepXeEvent</Class>
+          </Receiver>
+
+        </Receivers>
+      </XmlDocument>
+      <XmlDocument NamespaceURI="http://schemas.microsoft.com/sharepoint/v3/contenttype/forms">
+        <FormTemplates xmlns="http://schemas.microsoft.com/sharepoint/v3/contenttype/forms">
+          <New>DeNghiCapPhepXeNewTemplate</New>
+          <Edit>DeNghiCapPhepXeEditTemplate</Edit>
+          <Display>DeNghiCapPhepXeDispTemplate</Display>
+        </FormTemplates>
+      </XmlDocument>
+    </XmlDocuments>
   </ContentType>
 </Elements>

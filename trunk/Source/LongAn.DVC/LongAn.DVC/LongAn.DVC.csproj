@@ -41,33 +41,87 @@
     <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Camlex.NET, Version=3.6.0.0, Culture=neutral, PublicKeyToken=831792d54d5285b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libs\Camlex.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.CommandUI, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.Web.CommandUI.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="Microsoft.SharePoint" />
     <Reference Include="Microsoft.SharePoint.Client.ServerRuntime" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ControlTemplates\LongAn.DVC\DeNghiCapPhepXeDispForm.ascx.cs">
+      <DependentUpon>DeNghiCapPhepXeDispForm.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ControlTemplates\LongAn.DVC\DeNghiCapPhepXeDispForm.ascx.designer.cs">
+      <DependentUpon>DeNghiCapPhepXeDispForm.ascx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlTemplates\LongAn.DVC\DeNghiCapPhepXeEditForm.ascx.cs">
+      <DependentUpon>DeNghiCapPhepXeEditForm.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ControlTemplates\LongAn.DVC\DeNghiCapPhepXeEditForm.ascx.designer.cs">
+      <DependentUpon>DeNghiCapPhepXeEditForm.ascx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlTemplates\LongAn.DVC\DeNghiCapPhepXeNewForm.ascx.cs">
+      <DependentUpon>DeNghiCapPhepXeNewForm.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ControlTemplates\LongAn.DVC\DeNghiCapPhepXeNewForm.ascx.designer.cs">
+      <DependentUpon>DeNghiCapPhepXeNewForm.ascx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EventReceivers\DeNghiCapPhepXeEvent.cs" />
     <Compile Include="Features\LongAn.DVC.Site\LongAn.DVC.Site.EventReceiver.cs">
       <DependentUpon>LongAn.DVC.Site.feature</DependentUpon>
     </Compile>
     <Compile Include="Features\LongAn.DVC.Web\LongAn.DVC.Web.EventReceiver.cs">
       <DependentUpon>LongAn.DVC.Web.feature</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\DeNghiHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WebParts\DeNghiNew\DeNghiNew.ascx.cs">
+      <DependentUpon>DeNghiNew.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebParts\DeNghiNew\DeNghiNew.ascx.g.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DeNghiNew.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebParts\DeNghiView\DeNghiView.ascx.cs">
+      <DependentUpon>DeNghiView.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebParts\DeNghiView\DeNghiView.ascx.g.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DeNghiView.ascx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="ContentTypes\DeNghiCapPhepXeContentType\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{c3b9f414-0818-40f5-85cd-04a0bc5cdaa4}</SharePointProjectItemId>
     </None>
-    <None Include="ContentTypes\SiteColumns\SharePointProjectItem.spdata">
-      <SharePointProjectItemId>{bb0763a5-65db-426a-a9ed-92f8a0b74364}</SharePointProjectItemId>
+    <None Include="ContentTypes\SiteColumn\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{aa3ce8fd-b1c6-4cd8-8fce-eca431dba944}</SharePointProjectItemId>
     </None>
     <None Include="ContentTypes\YeuCauBoSungContentType\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{46abb5d8-ea14-4b1e-821c-492d10b59ba8}</SharePointProjectItemId>
+    </None>
+    <None Include="ControlTemplates\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{f8fd9a64-c763-4233-8b90-24407d721b2c}</SharePointProjectItemId>
     </None>
     <None Include="Features\LongAn.DVC.Web\LongAn.DVC.Web.feature">
       <FeatureId>{581ea75c-979a-44bb-96a6-78deb4fa1b0f}</FeatureId>
@@ -76,29 +130,187 @@
       <FeatureId>{d4d9a687-e054-4bf6-8aa3-9e5bf52fec28}</FeatureId>
     </None>
     <None Include="key.snk" />
+    <None Include="Layouts\LongAn.DVC\css\bootstrap-theme.css.map" />
+    <None Include="Layouts\LongAn.DVC\css\bootstrap.css.map" />
+    <None Include="Layouts\LongAn.DVC\fonts\glyphicons-halflings-regular.eot" />
+    <None Include="Layouts\LongAn.DVC\fonts\glyphicons-halflings-regular.ttf" />
+    <None Include="Layouts\LongAn.DVC\fonts\glyphicons-halflings-regular.woff" />
+    <None Include="Layouts\LongAn.Form\css\bootstrap-theme.css.map" />
+    <None Include="Layouts\LongAn.Form\css\bootstrap.css.map" />
+    <None Include="Layouts\LongAn.Form\css\form.main.less" />
+    <None Include="Layouts\LongAn.Form\css\main.less" />
+    <None Include="Layouts\LongAn.Form\fonts\glyphicons-halflings-regular.eot" />
+    <None Include="Layouts\LongAn.Form\fonts\glyphicons-halflings-regular.ttf" />
+    <None Include="Layouts\LongAn.Form\fonts\glyphicons-halflings-regular.woff" />
+    <None Include="Layouts\LongAn.Form\images\.DS_Store" />
+    <None Include="Layouts\LongAn.Form\images\FlaticonDownload.zip" />
+    <None Include="Layouts\LongAn.Form\js\detectizr.min.map" />
+    <None Include="Layouts\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{63f3bd6e-81ab-4ca6-9ff1-2a04a2c99eb3}</SharePointProjectItemId>
+    </None>
+    <None Include="ListDefinitions\DeNghiAttachment\DeNghiAttachmentInstance\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{707aa773-7d0f-43e0-b8c4-0cfc5c7db66a}</SharePointProjectItemId>
+    </None>
+    <None Include="ListDefinitions\DeNghiAttachment\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{503de2b7-c77a-4a73-b92c-d8be298f9fe1}</SharePointProjectItemId>
+    </None>
+    <None Include="ListDefinitions\DeNghiCapPhepXe\DeNghiCapPhepXeInstance\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{c369409a-1c8e-45e6-be4c-f240a3810690}</SharePointProjectItemId>
+    </None>
+    <None Include="ListDefinitions\DeNghiCapPhepXe\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{f03876fc-47a0-4348-8677-e3e4e6d63cc3}</SharePointProjectItemId>
+    </None>
     <None Include="Package\Package.package">
       <PackageId>{71ce27ed-13c8-4fc9-8c1a-78057fc92639}</PackageId>
     </None>
     <None Include="Package\Package.Template.xml">
       <DependentUpon>Package.package</DependentUpon>
     </None>
+    <None Include="WebParts\DeNghiNew\DeNghiNew.webpart" />
+    <None Include="WebParts\DeNghiNew\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{13d9cfdf-de55-4d1a-bf24-580aeae7fcd3}</SharePointProjectItemId>
+    </None>
+    <None Include="WebParts\DeNghiView\DeNghiView.webpart" />
+    <None Include="WebParts\DeNghiView\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{597ec043-dd6d-4c6f-973d-32be70673ba8}</SharePointProjectItemId>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="ListDefinitions\" />
-    <Folder Include="WebParts\" />
+    <ProjectReference Include="..\LongAn.DVC.Common\LongAn.DVC.Common.csproj">
+      <Project>{ab96c9c7-818b-4b7f-bb03-18644e9f8a88}</Project>
+      <Name>LongAn.DVC.Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="ContentTypes\DeNghiCapPhepXeContentType\Elements.xml">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="ContentTypes\SiteColumns\Elements.xml" />
+    <Content Include="ContentTypes\SiteColumn\Elements.xml" />
     <Content Include="ContentTypes\YeuCauBoSungContentType\Elements.xml" />
+    <Content Include="ControlTemplates\LADVCTemplate.ascx" />
+    <Content Include="ControlTemplates\LongAn.DVC\DeNghiCapPhepXeDispForm.ascx" />
+    <Content Include="ControlTemplates\LongAn.DVC\DeNghiCapPhepXeEditForm.ascx" />
+    <Content Include="ControlTemplates\LongAn.DVC\DeNghiCapPhepXeNewForm.ascx" />
     <Content Include="Features\LongAn.DVC.Web\LongAn.DVC.Web.Template.xml">
       <DependentUpon>LongAn.DVC.Web.feature</DependentUpon>
     </Content>
     <Content Include="Features\LongAn.DVC.Site\LongAn.DVC.Site.Template.xml">
       <DependentUpon>LongAn.DVC.Site.feature</DependentUpon>
     </Content>
+    <Content Include="Layouts\LongAn.DVC\css\bootstrap-non-responsive.min.css" />
+    <Content Include="Layouts\LongAn.DVC\css\bootstrap-theme.css" />
+    <Content Include="Layouts\LongAn.DVC\css\bootstrap-theme.min.css" />
+    <Content Include="Layouts\LongAn.DVC\css\bootstrap.css" />
+    <Content Include="Layouts\LongAn.DVC\css\bootstrap.min.css" />
+    <Content Include="Layouts\LongAn.DVC\css\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Layouts\LongAn.DVC\css\images\ui-bg_flat_0_eeeeee_40x100.png" />
+    <Content Include="Layouts\LongAn.DVC\css\images\ui-bg_flat_55_ffffff_40x100.png" />
+    <Content Include="Layouts\LongAn.DVC\css\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Layouts\LongAn.DVC\css\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Layouts\LongAn.DVC\css\images\ui-bg_highlight-soft_100_f6f6f6_1x100.png" />
+    <Content Include="Layouts\LongAn.DVC\css\images\ui-bg_highlight-soft_25_0073ea_1x100.png" />
+    <Content Include="Layouts\LongAn.DVC\css\images\ui-bg_highlight-soft_50_dddddd_1x100.png" />
+    <Content Include="Layouts\LongAn.DVC\css\images\ui-icons_0073ea_256x240.png" />
+    <Content Include="Layouts\LongAn.DVC\css\images\ui-icons_454545_256x240.png" />
+    <Content Include="Layouts\LongAn.DVC\css\images\ui-icons_666666_256x240.png" />
+    <Content Include="Layouts\LongAn.DVC\css\images\ui-icons_ff0084_256x240.png" />
+    <Content Include="Layouts\LongAn.DVC\css\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Layouts\LongAn.DVC\css\jquery-ui.min.css" />
+    <Content Include="Layouts\LongAn.DVC\css\jquery-ui.structure.min.css" />
+    <Content Include="Layouts\LongAn.DVC\css\jquery-ui.theme.min.css" />
+    <Content Include="Layouts\LongAn.DVC\css\main.css" />
+    <Content Include="Layouts\LongAn.DVC\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Layouts\LongAn.DVC\images\calendar.png" />
+    <Content Include="Layouts\LongAn.DVC\js\bootstrap.js" />
+    <Content Include="Layouts\LongAn.DVC\js\bootstrap.min.js" />
+    <Content Include="Layouts\LongAn.DVC\js\datepicker-vi.js" />
+    <Content Include="Layouts\LongAn.DVC\js\jquery-ui.min.js" />
+    <Content Include="Layouts\LongAn.DVC\js\jquery.js" />
+    <Content Include="Layouts\LongAn.DVC\js\form.js" />
+    <Content Include="Layouts\LongAn.DVC\js\scripts.js" />
+    <Content Include="Layouts\LongAn.Form\css\bootstrap-non-responsive.min.css" />
+    <Content Include="Layouts\LongAn.Form\css\bootstrap-theme.css" />
+    <Content Include="Layouts\LongAn.Form\css\bootstrap-theme.min.css" />
+    <Content Include="Layouts\LongAn.Form\css\bootstrap.css" />
+    <Content Include="Layouts\LongAn.Form\css\bootstrap.min.css" />
+    <Content Include="Layouts\LongAn.Form\css\form.main.css" />
+    <Content Include="Layouts\LongAn.Form\css\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Layouts\LongAn.Form\css\images\ui-bg_flat_0_eeeeee_40x100.png" />
+    <Content Include="Layouts\LongAn.Form\css\images\ui-bg_flat_55_ffffff_40x100.png" />
+    <Content Include="Layouts\LongAn.Form\css\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Layouts\LongAn.Form\css\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Layouts\LongAn.Form\css\images\ui-bg_highlight-soft_100_f6f6f6_1x100.png" />
+    <Content Include="Layouts\LongAn.Form\css\images\ui-bg_highlight-soft_25_0073ea_1x100.png" />
+    <Content Include="Layouts\LongAn.Form\css\images\ui-bg_highlight-soft_50_dddddd_1x100.png" />
+    <Content Include="Layouts\LongAn.Form\css\images\ui-icons_0073ea_256x240.png" />
+    <Content Include="Layouts\LongAn.Form\css\images\ui-icons_454545_256x240.png" />
+    <Content Include="Layouts\LongAn.Form\css\images\ui-icons_666666_256x240.png" />
+    <Content Include="Layouts\LongAn.Form\css\images\ui-icons_ff0084_256x240.png" />
+    <Content Include="Layouts\LongAn.Form\css\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Layouts\LongAn.Form\css\jquery-ui.min.css" />
+    <Content Include="Layouts\LongAn.Form\css\jquery-ui.structure.min.css" />
+    <Content Include="Layouts\LongAn.Form\css\jquery-ui.theme.min.css" />
+    <Content Include="Layouts\LongAn.Form\css\main.css" />
+    <Content Include="Layouts\LongAn.Form\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Layouts\LongAn.Form\images\add-file.png" />
+    <Content Include="Layouts\LongAn.Form\images\add.png" />
+    <Content Include="Layouts\LongAn.Form\images\added.png" />
+    <Content Include="Layouts\LongAn.Form\images\advantage.png" />
+    <Content Include="Layouts\LongAn.Form\images\attachment.png" />
+    <Content Include="Layouts\LongAn.Form\images\backup.png" />
+    <Content Include="Layouts\LongAn.Form\images\calculator.png" />
+    <Content Include="Layouts\LongAn.Form\images\calendar.png" />
+    <Content Include="Layouts\LongAn.Form\images\calendar2.png" />
+    <Content Include="Layouts\LongAn.Form\images\done.png" />
+    <Content Include="Layouts\LongAn.Form\images\edit4.png" />
+    <Content Include="Layouts\LongAn.Form\images\end.png" />
+    <Content Include="Layouts\LongAn.Form\images\excel.png" />
+    <Content Include="Layouts\LongAn.Form\images\home.png" />
+    <Content Include="Layouts\LongAn.Form\images\index_logo.png" />
+    <Content Include="Layouts\LongAn.Form\images\item.png" />
+    <Content Include="Layouts\LongAn.Form\images\more7.png" />
+    <Content Include="Layouts\LongAn.Form\images\next.png" />
+    <Content Include="Layouts\LongAn.Form\images\prev.png" />
+    <Content Include="Layouts\LongAn.Form\images\printer.png" />
+    <Content Include="Layouts\LongAn.Form\images\process.png" />
+    <Content Include="Layouts\LongAn.Form\images\remove.png" />
+    <Content Include="Layouts\LongAn.Form\images\restore.png" />
+    <Content Include="Layouts\LongAn.Form\images\search.png" />
+    <Content Include="Layouts\LongAn.Form\images\start.png" />
+    <Content Include="Layouts\LongAn.Form\images\stat.png" />
+    <Content Include="Layouts\LongAn.Form\images\task.png" />
+    <Content Include="Layouts\LongAn.Form\images\up.png" />
+    <Content Include="Layouts\LongAn.Form\images\waiting.png" />
+    <Content Include="Layouts\LongAn.Form\images\word.png" />
+    <Content Include="Layouts\LongAn.Form\js\bootstrap.js" />
+    <Content Include="Layouts\LongAn.Form\js\bootstrap.min.js" />
+    <Content Include="Layouts\LongAn.Form\js\datepicker-vi.js" />
+    <Content Include="Layouts\LongAn.Form\js\detectizr.min.js" />
+    <Content Include="Layouts\LongAn.Form\js\jquery-ui.min.js" />
+    <Content Include="Layouts\LongAn.Form\js\jquery.js" />
+    <Content Include="Layouts\LongAn.Form\js\modernizr.js" />
+    <Content Include="Layouts\LongAn.Form\js\scripts.js" />
+    <Content Include="Libs\Camlex.NET.dll" />
+    <Content Include="ListDefinitions\DeNghiAttachment\DeNghiAttachmentInstance\Elements.xml" />
+    <Content Include="ListDefinitions\DeNghiAttachment\EditDlg.htm" />
+    <Content Include="ListDefinitions\DeNghiAttachment\Elements.xml" />
+    <Content Include="ListDefinitions\DeNghiAttachment\FileDlg.htm" />
+    <Content Include="ListDefinitions\DeNghiAttachment\Repair.aspx" />
+    <Content Include="ListDefinitions\DeNghiAttachment\Schema.xml" />
+    <Content Include="ListDefinitions\DeNghiAttachment\Upload.aspx" />
+    <Content Include="ListDefinitions\DeNghiCapPhepXe\DeNghiCapPhepXeInstance\Elements.xml" />
+    <Content Include="ListDefinitions\DeNghiCapPhepXe\Elements.xml" />
+    <Content Include="ListDefinitions\DeNghiCapPhepXe\Schema.xml" />
+    <Content Include="WebParts\DeNghiNew\DeNghiNew.ascx">
+      <Generator>SharePointWebPartCodeGenerator</Generator>
+      <LastGenOutput>DeNghiNew.ascx.g.cs</LastGenOutput>
+    </Content>
+    <Content Include="WebParts\DeNghiNew\Elements.xml" />
+    <Content Include="WebParts\DeNghiView\DeNghiView.ascx">
+      <Generator>SharePointWebPartCodeGenerator</Generator>
+      <LastGenOutput>DeNghiView.ascx.g.cs</LastGenOutput>
+    </Content>
+    <Content Include="WebParts\DeNghiView\Elements.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

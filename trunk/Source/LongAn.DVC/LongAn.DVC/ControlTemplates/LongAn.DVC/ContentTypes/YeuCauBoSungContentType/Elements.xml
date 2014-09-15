@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <!-- Parent ContentType: Item (0x01) -->
+  <ContentType ID="0x0100A07B8BDEEA02467C8B3C855B2FB9D8C2"
+               Name="Yêu Cầu Bổ Sung Content Type"
+               Group="[DVC]"
+               Description="Yêu cầu bổ sung Content Type"
+               Version="0">
+    <FieldRefs>
+    </FieldRefs>
+  </ContentType>
+</Elements>

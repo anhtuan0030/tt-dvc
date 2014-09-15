@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="71ce27ed-13c8-4fc9-8c1a-78057fc92639" solutionId="71ce27ed-13c8-4fc9-8c1a-78057fc92639" resetWebServer="false" sharePointProductVersion="15.0" name="LongAn.DVC" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+  <features>
+    <featureReference itemId="d4d9a687-e054-4bf6-8aa3-9e5bf52fec28" />
+    <featureReference itemId="581ea75c-979a-44bb-96a6-78deb4fa1b0f" />
+  </features>
+</package>
