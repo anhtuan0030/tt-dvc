@@ -35,7 +35,7 @@ namespace LongAn.DVC.Common
         public const string ConfGroupCanBoXuLy = "DVC Cán bộ xử lý";
         public const string ConfGroupLanhDaoSo = "DVC Lãnh đạo sở";
 
-        public const string ConfPermissionDeNghi = "Add, Edit List Item";
+        public const string ConfPermissionDeNghi = "Add Edit List Item";
         public const string ConfPermissionDeNghiDes = "Can add, edit but not delete list item";
         //List url
         public const string ListUrlDeNghiCapPhep = "/Lists/DeNghiCapPhepXe";
