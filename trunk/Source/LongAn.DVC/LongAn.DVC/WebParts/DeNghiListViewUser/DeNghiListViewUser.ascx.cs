@@ -93,13 +93,6 @@ namespace LongAn.DVC.WebParts.DeNghiListViewUser
         public string DeNghiTitle { get; set; }
 
         [WebBrowsable(true),
-         WebDisplayName("Trạng thái xử lý"),
-         WebDescription("This Accepts number Input"),
-         Personalizable(PersonalizationScope.Shared),
-         Category("LongAn.DVC")]
-        public int TrangThai { get; set; }
-
-        [WebBrowsable(true),
          WebDisplayName("Phân trang"),
          WebDescription("This Accepts number Input"),
          Personalizable(PersonalizationScope.Shared),
@@ -155,7 +148,7 @@ namespace LongAn.DVC.WebParts.DeNghiListViewUser
 
         private void BindItemsList()
         {
-            DataTable dataTable = this.GetDeNghi(TrangThai);
+            DataTable dataTable = this.GetDeNghi();
             try
             {
                 divPagging.Visible = false;
@@ -275,19 +268,23 @@ namespace LongAn.DVC.WebParts.DeNghiListViewUser
                     var viewUrl = string.Format(Constants.ConfLinkDispForm, deNghiUrl, commandAgrument, currentPage);
                     lbtViewItem.OnClientClick = viewUrl;
 
-                    LinkButton lbtEditItem = (LinkButton)e.Item.FindControl("lbtEditItem");
-                    var editUrl = string.Format(Constants.ConfLinkEditForm, deNghiUrl, commandAgrument, currentPage);
-                    lbtEditItem.OnClientClick = editUrl;
+                    var trangThai = int.Parse(rowView[Constants.FieldTrangThai].ToString());
+                    if (trangThai == (int)TrangThaiXuLy.KhoiTao || trangThai == (int)TrangThaiXuLy.HoSoBiTuChoi)
+                    {
+                        LinkButton lbtEditItem = (LinkButton)e.Item.FindControl("lbtEditItem");
+                        var editUrl = string.Format(Constants.ConfLinkEditForm, deNghiUrl, commandAgrument, currentPage);
+                        lbtEditItem.OnClientClick = editUrl;
 
-                    LinkButton lbtDeleteItem = (LinkButton)e.Item.FindControl("lbtDeleteItem");
-                    lbtDeleteItem.CommandName = "OnDeleteItemClick";
-                    lbtDeleteItem.CommandArgument = commandAgrument;
-                    lbtDeleteItem.OnClientClick = "if (!confirm('Bạn có chắc chắn muốn xóa hồ sơ này không?')) return false;";
+                        LinkButton lbtDeleteItem = (LinkButton)e.Item.FindControl("lbtDeleteItem");
+                        lbtDeleteItem.CommandName = "OnDeleteItemClick";
+                        lbtDeleteItem.CommandArgument = commandAgrument;
+                        lbtDeleteItem.OnClientClick = "if (!confirm('Bạn có chắc chắn muốn xóa hồ sơ này không?')) return false;";
 
-                    LinkButton lbtNopHoSo = (LinkButton)e.Item.FindControl("lbtNopHoSo");
-                    lbtNopHoSo.CommandName = "OnNopHoSoClick";
-                    lbtNopHoSo.CommandArgument = commandAgrument;
-                    lbtNopHoSo.OnClientClick = "if (!confirm('Bạn có chắc chắn muốn nộp hồ sơ này không?')) return false;";
+                        LinkButton lbtNopHoSo = (LinkButton)e.Item.FindControl("lbtNopHoSo");
+                        lbtNopHoSo.CommandName = "OnNopHoSoClick";
+                        lbtNopHoSo.CommandArgument = commandAgrument;
+                        lbtNopHoSo.OnClientClick = "if (!confirm('Bạn có chắc chắn muốn nộp hồ sơ này không?')) return false;";
+                    }
                 }
             }
             catch (Exception ex)
@@ -316,6 +313,7 @@ namespace LongAn.DVC.WebParts.DeNghiListViewUser
                             }
                         }
                     });
+                    this.GetDeNghi();
                 }
                 catch (Exception ex)
                 {
@@ -334,6 +332,7 @@ namespace LongAn.DVC.WebParts.DeNghiListViewUser
                     deNghiItem[Constants.FieldTrangThai] = (int)TrangThaiXuLy.DaTiepNhan;
                     deNghiItem[Constants.FieldCapDuyet] = (int)CapXuLy.NhanVienTiepNhan;
                     deNghiItem.Update();
+                    this.GetDeNghi();
                 }
                 catch (Exception ex)
                 {
@@ -343,23 +342,17 @@ namespace LongAn.DVC.WebParts.DeNghiListViewUser
             }
         }
 
-        DataTable GetDeNghi(int trangThaiXuLy)
+        DataTable GetDeNghi()
         {
             DataTable dataTable = null;
-            var currentUserRole = CapXuLy.CaNhanToChuc;
-            if (ViewState[Constants.ConfViewStateCapXuLy] == null)
-            {
-                currentUserRole = DeNghiHelper.CurrentUserRole(SPContext.Current.Web, SPContext.Current.Web.CurrentUser);
-                ViewState[Constants.ConfViewStateCapXuLy] = currentUserRole;
-            }
-            else
-                currentUserRole = (CapXuLy)ViewState[Constants.ConfViewStateCapXuLy];
             try
             {
-                LoggingServices.LogMessage("Begin GetDeNghi, Cap Duyet: " + currentUserRole + ", Trang Thai Xu Ly: " + trangThaiXuLy);
-                SPQuery caml = Camlex.Query().Where(x => (string)x[Constants.FieldTrangThai] == trangThaiXuLy.ToString())
+                LoggingServices.LogMessage("Begin GetDeNghi - current user");
+                SPQuery caml = Camlex.Query().Where(x => x["Author"] == (DataTypes.UserId)SPContext.Current.Web.CurrentUser.ID.ToString())
                                                     .OrderBy(x => new[] { x["ID"] as Camlex.Desc })
                                                     .ToSPQuery();
+                //caml.ViewFields = string.Concat("<FieldRef Name='ID' />",                                    
+                //                                "<FieldRef Name='Supervisor' />");
                 var deNghiUrl = (SPContext.Current.Web.ServerRelativeUrl + Constants.ListUrlDeNghiCapPhep).Replace("//", "/");
                 var deNghiList = SPContext.Current.Web.GetList(deNghiUrl);
                 dataTable = deNghiList.GetItems(caml).GetDataTable();
@@ -368,7 +361,7 @@ namespace LongAn.DVC.WebParts.DeNghiListViewUser
             {
                 LoggingServices.LogException(ex);
             }
-            LoggingServices.LogMessage("End GetDeNghi, Cap Duyet: " + currentUserRole + ", Trang Thai Xu Ly: " + trangThaiXuLy);
+            LoggingServices.LogMessage("End GetDeNghi - current user");
             return dataTable;
         }
     }

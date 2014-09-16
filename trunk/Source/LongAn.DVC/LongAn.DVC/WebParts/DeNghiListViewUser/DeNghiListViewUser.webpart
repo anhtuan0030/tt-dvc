@@ -10,7 +10,6 @@
         <property name="Title" type="string">Đề nghị list view </property>
         <property name="Description" type="string">Đề nghị list view Visual Web Part</property>
         <property name="DeNghiTitle" type="string">Danh sách đề nghị đã tiếp nhận</property>
-        <property name="TrangThai" type="int">0</property>
         <property name="PageSize" type="int">1</property>
       </properties>
     </data>

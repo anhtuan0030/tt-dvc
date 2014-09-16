@@ -44,7 +44,7 @@
                 </tr>
                 <asp:Repeater ID="repeaterLists" runat="server"  OnItemCommand="repeaterLists_ItemCommand" OnItemDataBound="repeaterLists_ItemDataBound">
                     <ItemTemplate>
-                        <tr class="<%#(((RepeaterItem)Container).ItemIndex+1) % 2 == 0 ? "odd" : "even" %>">
+                        <tr class="<%#(((RepeaterItem)Container).ItemIndex+1) % 2 == 0 ? "even" : "odd" %>">
                             <td>
                                 <asp:Literal ID="literalSTT" runat="server" Text="<%#(((RepeaterItem)Container).ItemIndex+1) %>"></asp:Literal>
                             </td>
@@ -61,13 +61,13 @@
                                 <asp:LinkButton ID="lbtViewItem" CssClass="button view just-icon" runat="server"></asp:LinkButton>
                             </td>
                             <td>
-                                <asp:LinkButton ID="lbtEditItem" CssClass="button edit just-icon" runat="server"></asp:LinkButton>
+                                <asp:LinkButton ID="lbtEditItem" CssClass="button edit just-icon" Enabled="false" runat="server"></asp:LinkButton>
                             </td>
                             <td>
-                                <asp:LinkButton ID="lbtDeleteItem" CssClass="button remove danger just-icon" runat="server"></asp:LinkButton>
+                                <asp:LinkButton ID="lbtDeleteItem" CssClass="button remove danger just-icon" Enabled="false" runat="server"></asp:LinkButton>
                             </td>
                             <td>
-                                <asp:LinkButton ID="lbtNopHoSo" CssClass="button up just-icon" runat="server"></asp:LinkButton>
+                                <asp:LinkButton ID="lbtNopHoSo" CssClass="button up just-icon" Enabled="false" runat="server"></asp:LinkButton>
                             </td>
                         </tr>
                     </ItemTemplate>

@@ -70,7 +70,7 @@
                 </tr>
                 <asp:Repeater ID="repeaterLists" runat="server"  OnItemCommand="repeaterLists_ItemCommand" OnItemDataBound="repeaterLists_ItemDataBound">
                     <ItemTemplate>
-                        <tr class="<%#(((RepeaterItem)Container).ItemIndex+1) % 2 == 0 ? "odd" : "even" %>">
+                        <tr class="<%#(((RepeaterItem)Container).ItemIndex+1) % 2 == 0 ? "even" : "odd" %>">
                             <td>
                                 <asp:Literal ID="literalSTT" runat="server" Text="<%#(((RepeaterItem)Container).ItemIndex+1) %>"></asp:Literal>
                             </td>

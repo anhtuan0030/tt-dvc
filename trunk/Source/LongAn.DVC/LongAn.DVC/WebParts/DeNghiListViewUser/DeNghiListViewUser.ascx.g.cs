@@ -128,7 +128,7 @@ namespace LongAn.DVC.WebParts.DeNghiListViewUser {
             System.Web.UI.DataBoundLiteralControl target;
             target = ((System.Web.UI.DataBoundLiteralControl)(sender));
             Container = ((System.Web.UI.WebControls.RepeaterItem)(target.BindingContainer));
-            target.SetDataBoundString(0, global::System.Convert.ToString((((RepeaterItem)Container).ItemIndex+1) % 2 == 0 ? "odd" : "even", global::System.Globalization.CultureInfo.CurrentCulture));
+            target.SetDataBoundString(0, global::System.Convert.ToString((((RepeaterItem)Container).ItemIndex+1) % 2 == 0 ? "even" : "odd", global::System.Globalization.CultureInfo.CurrentCulture));
         }
         
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
@@ -210,6 +210,7 @@ namespace LongAn.DVC.WebParts.DeNghiListViewUser {
             @__ctrl.ApplyStyleSheetSkin(this.Page);
             @__ctrl.ID = "lbtEditItem";
             @__ctrl.CssClass = "button edit just-icon";
+            @__ctrl.Enabled = false;
             return @__ctrl;
         }
         
@@ -223,6 +224,7 @@ namespace LongAn.DVC.WebParts.DeNghiListViewUser {
             @__ctrl.ApplyStyleSheetSkin(this.Page);
             @__ctrl.ID = "lbtDeleteItem";
             @__ctrl.CssClass = "button remove danger just-icon";
+            @__ctrl.Enabled = false;
             return @__ctrl;
         }
         
@@ -236,6 +238,7 @@ namespace LongAn.DVC.WebParts.DeNghiListViewUser {
             @__ctrl.ApplyStyleSheetSkin(this.Page);
             @__ctrl.ID = "lbtNopHoSo";
             @__ctrl.CssClass = "button up just-icon";
+            @__ctrl.Enabled = false;
             return @__ctrl;
         }
         
