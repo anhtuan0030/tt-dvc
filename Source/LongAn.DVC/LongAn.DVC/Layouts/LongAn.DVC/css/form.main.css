@@ -212,19 +212,19 @@ input[type="text"].small {
   float: left;
   margin-right: 15px;
 }
-#searchform {
+searchform {
   border: 1px solid #dedede;
   padding: 25px;
   margin-top: 15px;
   margin-bottom: 15px;
 }
-#searchform .button {
+searchform .button {
   width: 100%;
 }
-#searchform .row.line {
+searchform .row.line {
   margin-bottom: 15px;
 }
-#searchform label {
+searchform label {
   margin-right: 15px;
 }
 .the-form {
