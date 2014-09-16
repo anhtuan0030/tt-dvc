@@ -46,7 +46,9 @@
 			<td align="right"><asp:Label ID="EmailLabel" AssociatedControlID="Email" runat="server" /></td>
             <td>
                 <asp:TextBox ID="Email" runat="server"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="EmailRequired" runat="server" ControlToValidate="Email" Display="Dynamic"></asp:RequiredFieldValidator></td>
+                <asp:RequiredFieldValidator ID="EmailRequired" runat="server" ControlToValidate="Email" Display="Dynamic"></asp:RequiredFieldValidator>
+                <asp:RegularExpressionValidator ID="EmailRegexValidator" runat="server" ControlToValidate="Email" Display="Dynamic" ErrorMessage="Email không hợp lệ" ValidationExpression="^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$"></asp:RegularExpressionValidator>
+            </td>
 		</tr>
         <tr id="QuestionRow" runat="server" visible="false">
 			<td align="right"><asp:Label ID="QuestionLabel" AssociatedControlID="Question" runat="server" /></td>
