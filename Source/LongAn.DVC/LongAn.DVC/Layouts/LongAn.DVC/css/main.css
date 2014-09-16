@@ -143,3 +143,35 @@ body.default .date-picker:after,
   display: block;
 }
 */
+
+/**********************/
+/* CUSTOM MASTER PAGE */
+/**********************/
+/*** Default setup ***/
+#contentBox{
+	min-width: auto !important;
+}
+
+#s4-bodyContainer{
+	/* defines 960px by using 80em = 80 * 16px (Default Font Size) */
+	width: 960px;
+	width: 60rem;
+	margin:auto;
+	/* background color of the content */
+	background-color: white;
+}
+/*** Fix for the dialogs ***/
+.ms-dialog #s4-workspace{
+	background-color: white;
+}
+.ms-dialog #s4-bodyContainer{
+	margin: 0px;
+	width: auto;
+}
+.ms-dlgContent #s4-bodyContainer{
+	width: auto;
+}
+/*** clear fix ***/
+.clearfix{
+	clear: both;
+}
