@@ -54,7 +54,10 @@
           <FieldRef ID="{D6AA5635-D989-4ECD-84C4-DF45778F2B24}" Name="ThoiGiaDeNghiLuuHanhDen" />
           
           <FieldRef ID="{06EF1F2D-AADC-478A-9FB4-31C672AD0F7A}" Name="DeNghiOwner" />
+          <FieldRef ID="{F1A09FF4-C3CE-486B-BA16-DF114E6325FD}" Name="LoaiDeNghi" />
+          
           <FieldRef ID="{30CCB8BF-723D-46A0-B44F-CACBD3A6082D}" Name="TrangThai" />
+          <FieldRef ID="{C2F882CA-8CC4-404B-A78F-16BE30FDA4AB}" Name="TrangThaiText" />
           <FieldRef ID="{9CBE3507-6F79-4E21-80D6-72EB534E7C5F}" Name="CapDuyet" />
           
           <FieldRef ID="{DCDF7E67-C385-4840-BCE5-E82BFF1FBC0C}" Name="DeNghiGUID" />
@@ -241,9 +244,25 @@
          DisplayName="Người đề nghị" List="UserInfo" Required="FALSE" EnforceUniqueValues="FALSE" ShowField="ImnName"
          UserSelectionMode="PeopleOnly" UserSelectionScope="0"  Group="[LA-DVC]" />
 
+      <Field Type="Lookup" ID="{F1A09FF4-C3CE-486B-BA16-DF114E6325FD}" Name="LoaiDeNghi" StaticName="LoaiDeNghi"
+         DisplayName="Loại đề nghị" Required="FALSE" EnforceUniqueValues="FALSE" List="Lists/LoaiDeNghi"
+         ShowField="Title" UnlimitedLengthInDocumentLibrary="FALSE" RelationshipDeleteBehavior="None"
+         Group="[LA-DVC]" >
+        <Default>1</Default>
+      </Field>
+
       <Field Type="Text" ID="{30CCB8BF-723D-46A0-B44F-CACBD3A6082D}" Name="TrangThai" StaticName="TrangThai"
              DisplayName="Trạng thái" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255"
              Group="[LA-DVC]" />
+
+      <Field Type="Calculated" ID="{C2F882CA-8CC4-404B-A78F-16BE30FDA4AB}" Name="TrangThaiText" StaticName="TrangThaiText"
+         DisplayName="Trạng thái" EnforceUniqueValues="FALSE" Indexed="FALSE" Format="DateOnly" LCID="1033" ResultType="Text"
+         ReadOnly="TRUE" Group="[LA-DVC]">
+        <Formula>=IF(TrangThai="0","Khởi tạo",IF(TrangThai="1","Đã tiếp nhận",IF(TrangThai="6","Đã duyệt",IF(TrangThai="7","Từ chối","Đang xử lý"))))</Formula>
+        <FieldRefs>
+          <FieldRef Name="TrangThai" />
+        </FieldRefs>
+      </Field>
 
       <Field Type="Text" ID="{9CBE3507-6F79-4E21-80D6-72EB534E7C5F}" Name="CapDuyet" StaticName="CapDuyet"
              DisplayName="Cấp duyệt" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255"

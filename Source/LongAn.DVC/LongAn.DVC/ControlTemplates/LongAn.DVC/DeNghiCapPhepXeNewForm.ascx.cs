@@ -29,7 +29,7 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
 
         void btnGuiHoSo_Click(object sender, EventArgs e)
         {
-            SaveItem(TrangThaiXuLy.DaTiepNhan);
+            SaveItem(TrangThaiXuLy.DaTiepNhan, CapXuLy.NhanVienTiepNhan);
         }
 
         protected void DeNghiSaveHandler(object sender, EventArgs e)
@@ -44,14 +44,14 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
 
         void btnSave_Click(object sender, EventArgs e)
         {
-            SaveItem(TrangThaiXuLy.KhoiTao);
+            SaveItem(TrangThaiXuLy.KhoiTao, CapXuLy.CaNhanToChuc);
         }
         protected void Page_Load(object sender, EventArgs e)
         {
             
         }
 
-        void SaveItem(TrangThaiXuLy trangThai)
+        void SaveItem(TrangThaiXuLy trangThai, CapXuLy capXuLy)
         {
             try
             {
@@ -67,6 +67,7 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
                 string deNghiGuid = Guid.NewGuid().ToString();
                 SPContext.Current.ListItem[Constants.FieldDeNghiGUID] = deNghiGuid;
                 SPContext.Current.ListItem[Constants.FieldTrangThai] = (int)trangThai;
+                SPContext.Current.ListItem[Constants.FieldTrangThai] = (int)capXuLy;
                 SaveButton.SaveItem(SPContext.Current, false, "Thêm mới / gửi đề nghị");
                 var deNghiList = SPContext.Current.List;
                 int itemId = 0;
