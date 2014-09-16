@@ -34,7 +34,7 @@
             <h2 class="page-header">
                 <asp:Literal ID="literalDeNghiTitle" runat="server"></asp:Literal>
             </h2>
-            <div class="the-form">
+            <div class="the-form searchform">
                 <div class="row line">
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                         <asp:TextBox ID="txtTuKhoa" runat="server"></asp:TextBox>
