@@ -6,8 +6,5 @@ using System.Threading.Tasks;
 
 namespace LongAn.DVC.Common
 {
-    public enum TrangThaiDuyet
-    {
-
-    }
+    
 }
