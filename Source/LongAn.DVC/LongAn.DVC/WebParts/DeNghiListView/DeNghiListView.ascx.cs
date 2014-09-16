@@ -266,6 +266,12 @@ namespace LongAn.DVC.WebParts.DeNghiListView
                     Literal literalCaNhanToChuc = (Literal)e.Item.FindControl("literalCaNhanToChuc");
                     literalCaNhanToChuc.Text = rowView[Constants.FieldCaNhanToChuc].ToString();
 
+                    Literal literalLoaiCapPhep = (Literal)e.Item.FindControl("literalLoaiCapPhep");
+                    literalLoaiCapPhep.Text = rowView[Constants.FieldLoaiDeNghi].ToString();
+
+                    Literal literalNgayDeNghi = (Literal)e.Item.FindControl("literalNgayDeNghi");
+                    literalNgayDeNghi.Text = rowView[Constants.FieldCreated].ToString();
+
                     LinkButton lbtViewItem = (LinkButton)e.Item.FindControl("lbtViewItem");
                     //lbtViewItem.CommandName = "ClickLinkButton";
                     //lbtViewItem.CommandArgument = commandAgrument;

@@ -632,9 +632,9 @@ namespace LongAn.DVC.WebParts.DeNghiListView {
             global::System.Web.UI.WebControls.Literal @__ctrl7;
             @__ctrl7 = this.@__BuildControlliteralDeNghiTitle();
             @__parser.AddParsedSubObject(@__ctrl7);
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\n            </h2>\n            <div class=\"the-form\">\n                <div class=" +
-                        "\"row line\">\n                    <div class=\"col-lg-4 col-md-4 col-sm-4 col-xs-4\"" +
-                        ">\n                        "));
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\n            </h2>\n            <div class=\"the-form searchform\">\n                " +
+                        "<div class=\"row line\">\n                    <div class=\"col-lg-4 col-md-4 col-sm-" +
+                        "4 col-xs-4\">\n                        "));
             global::System.Web.UI.WebControls.TextBox @__ctrl8;
             @__ctrl8 = this.@__BuildControltxtTuKhoa();
             @__parser.AddParsedSubObject(@__ctrl8);
