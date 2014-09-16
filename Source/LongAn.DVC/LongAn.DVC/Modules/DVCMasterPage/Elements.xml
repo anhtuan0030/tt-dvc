@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <Module Name="DVCMasterPage">
+    <File Path="DVCMasterPage\DVC.master" Url="_catalogs/masterpage/DVC.master" />
+  </Module>
+</Elements>
