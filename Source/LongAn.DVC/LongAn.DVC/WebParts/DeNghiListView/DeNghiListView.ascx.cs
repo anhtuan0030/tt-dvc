@@ -322,6 +322,8 @@ namespace LongAn.DVC.WebParts.DeNghiListView
                 SPQuery caml = Camlex.Query().Where(x => (string)x[Constants.FieldTrangThai] == trangThaiXuLy.ToString())
                                                     .OrderBy(x => new[] { x["ID"] as Camlex.Desc })
                                                     .ToSPQuery();
+                //caml.ViewFields = string.Concat("<FieldRef Name='ID' />",                                    
+                //                                "<FieldRef Name='Supervisor' />");
                 var deNghiUrl = (SPContext.Current.Web.ServerRelativeUrl + Constants.ListUrlDeNghiCapPhep).Replace("//", "/");
                 var deNghiList = SPContext.Current.Web.GetList(deNghiUrl);
                 dataTable = deNghiList.GetItems(caml).GetDataTable();
