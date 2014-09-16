@@ -39,8 +39,7 @@ namespace LongAn.DVC.FormsBasedAuthentication.Resources {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("LongAn.DVC.FormsBasedAuthentication.Resources.FBAPackMembershipRequestWebP" +
-                            "art", typeof(FBAPackMembershipRequestWebPart).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("LongAn.DVC.FormsBasedAuthentication.Resources.FBAPackMembershipRequestWebPart", typeof(FBAPackMembershipRequestWebPart).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -431,7 +430,7 @@ namespace LongAn.DVC.FormsBasedAuthentication.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Password and Confirm Password must match..
+        ///   Looks up a localized string similar to Xác nhận mật khẩu không trùng Mật khẩu..
         /// </summary>
         internal static string ConfirmPasswordCompareErrorMessage_DefaultValue {
             get {
@@ -467,7 +466,7 @@ namespace LongAn.DVC.FormsBasedAuthentication.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Confirm Password:.
+        ///   Looks up a localized string similar to Xác nhận mật khẩu:.
         /// </summary>
         internal static string ConfirmPasswordLabelText_DefaultValue {
             get {
@@ -503,7 +502,7 @@ namespace LongAn.DVC.FormsBasedAuthentication.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Confirm Password is required..
+        ///   Looks up a localized string similar to Xác nhận mật khẩu không được để trống..
         /// </summary>
         internal static string ConfirmPasswordRequiredErrorMessage_DefaultValue {
             get {
@@ -575,7 +574,7 @@ namespace LongAn.DVC.FormsBasedAuthentication.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Continue.
+        ///   Looks up a localized string similar to Tiếp tục.
         /// </summary>
         internal static string ContinueButtonText_DefaultValue {
             get {
@@ -683,7 +682,7 @@ namespace LongAn.DVC.FormsBasedAuthentication.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Create User.
+        ///   Looks up a localized string similar to Tạo tài khoản.
         /// </summary>
         internal static string CreateUserButtonText_DefaultValue {
             get {
@@ -863,7 +862,7 @@ namespace LongAn.DVC.FormsBasedAuthentication.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The email you have entered is already in use. Please select another..
+        ///   Looks up a localized string similar to Email này đã được sử dụng. Vui lòng chọn email khác..
         /// </summary>
         internal static string DuplicateEmailErrorMessage_DefaultValue {
             get {
@@ -899,7 +898,7 @@ namespace LongAn.DVC.FormsBasedAuthentication.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The user name you have entered is already in use. Please select another..
+        ///   Looks up a localized string similar to Tên đăng nhập đã được sử dụng. Vui lòng chọn tên khác..
         /// </summary>
         internal static string DuplicateUserNameErrorMessage_DefaultValue {
             get {
@@ -1079,7 +1078,7 @@ namespace LongAn.DVC.FormsBasedAuthentication.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please enter a different email.
+        ///   Looks up a localized string similar to Vui lòng kiểm tra và nhập lại email..
         /// </summary>
         internal static string EmailRegularExpressionErrorMessage_DefaultValue {
             get {
@@ -1115,7 +1114,7 @@ namespace LongAn.DVC.FormsBasedAuthentication.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Email is required..
+        ///   Looks up a localized string similar to Trường yêu cầu nhập dữ liệu..
         /// </summary>
         internal static string EmailRequiredErrorMessage_DefaultValue {
             get {
@@ -1187,7 +1186,7 @@ namespace LongAn.DVC.FormsBasedAuthentication.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to First Name: .
+        ///   Looks up a localized string similar to Họ: .
         /// </summary>
         internal static string FirstNameLabelText_DefaultValue {
             get {
@@ -1223,7 +1222,7 @@ namespace LongAn.DVC.FormsBasedAuthentication.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to *.
+        ///   Looks up a localized string similar to Trường yêu cầu nhập dữ liệu..
         /// </summary>
         internal static string FirstNameRequiredErrorMessage_DefaultValue {
             get {
@@ -1313,7 +1312,7 @@ namespace LongAn.DVC.FormsBasedAuthentication.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Characters: .
+        ///   Looks up a localized string similar to Nhập mã xác nhận: .
         /// </summary>
         internal static string HipCharactersLabelText_DefaultValue {
             get {
@@ -1385,7 +1384,7 @@ namespace LongAn.DVC.FormsBasedAuthentication.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Type the characters in the picture below..
+        ///   Looks up a localized string similar to Nhập mã xác nhận như trong hình bên dưới..
         /// </summary>
         internal static string HipInstructionsLabelText_DefaultValue {
             get {
@@ -1457,7 +1456,7 @@ namespace LongAn.DVC.FormsBasedAuthentication.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The picture contains 6 characters..
+        ///   Looks up a localized string similar to Mã xác nhận gồm 6 ký tự..
         /// </summary>
         internal static string HipPictureDescription_DefaultValue {
             get {
@@ -1493,7 +1492,7 @@ namespace LongAn.DVC.FormsBasedAuthentication.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Picture: .
+        ///   Looks up a localized string similar to Mã xác nhận: .
         /// </summary>
         internal static string HipPictureLabelText_DefaultValue {
             get {
@@ -1529,7 +1528,7 @@ namespace LongAn.DVC.FormsBasedAuthentication.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Can&apos;t see the word?.
+        ///   Looks up a localized string similar to Đổi mã xác nhận.
         /// </summary>
         internal static string HipResetLabelText_DefaultValue {
             get {
@@ -1637,7 +1636,7 @@ namespace LongAn.DVC.FormsBasedAuthentication.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please enter a valid email address..
+        ///   Looks up a localized string similar to Vui lòng nhập email hợp lệ..
         /// </summary>
         internal static string InvalidEmailErrorMessage_DefaultValue {
             get {
@@ -1745,7 +1744,7 @@ namespace LongAn.DVC.FormsBasedAuthentication.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Last Name: .
+        ///   Looks up a localized string similar to Tên: .
         /// </summary>
         internal static string LastNameLabelText_DefaultValue {
             get {
@@ -1781,7 +1780,7 @@ namespace LongAn.DVC.FormsBasedAuthentication.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to *.
+        ///   Looks up a localized string similar to Trường yêu cầu nhập dữ liệu..
         /// </summary>
         internal static string LastNameRequiredErrorMessage_DefaultValue {
             get {
@@ -1862,7 +1861,7 @@ namespace LongAn.DVC.FormsBasedAuthentication.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Password:.
+        ///   Looks up a localized string similar to Mật khẩu:.
         /// </summary>
         internal static string PasswordLabelText_DefaultValue {
             get {
@@ -1898,7 +1897,7 @@ namespace LongAn.DVC.FormsBasedAuthentication.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Password is required..
+        ///   Looks up a localized string similar to Mật khẩu không được để trống..
         /// </summary>
         internal static string PasswordRequiredErrorMessage_DefaultValue {
             get {
@@ -2006,7 +2005,7 @@ namespace LongAn.DVC.FormsBasedAuthentication.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to *.
+        ///   Looks up a localized string similar to Trường yêu cầu nhập dữ liệu..
         /// </summary>
         internal static string RequiredFieldText_DefaultValue {
             get {
@@ -2078,7 +2077,7 @@ namespace LongAn.DVC.FormsBasedAuthentication.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to User Name: .
+        ///   Looks up a localized string similar to Tên đăng nhập: .
         /// </summary>
         internal static string UserNameLabelText_DefaultValue {
             get {
@@ -2114,7 +2113,7 @@ namespace LongAn.DVC.FormsBasedAuthentication.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to User name is required..
+        ///   Looks up a localized string similar to Tên đăng nhập không được bỏ trống..
         /// </summary>
         internal static string UserNameRequiredErrorMessage_DefaultValue {
             get {
