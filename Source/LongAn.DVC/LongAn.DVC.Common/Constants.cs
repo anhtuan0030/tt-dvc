@@ -48,6 +48,10 @@ namespace LongAn.DVC.Common
         public const string ConfGroupCanBoXuLy = "DVC Cán bộ xử lý";
         public const string ConfGroupLanhDaoSo = "DVC Lãnh đạo sở";
 
+        public const string ConfLinkDispForm = "javascript:OpenPopUpPage('{0}/DispForm.aspx?ID={1}&Source={2}');return false;";
+        public const string ConfLinkEditForm = "javascript:OpenPopUpPage('{0}/EditForm.aspx?ID={1}&Source={2}');return false;";
+        public const string ConfLinkNewForm = "javascript:OpenPopUpPage('{0}/NewForm.aspx?Source={1}');return false;";
+
         public const string ConfPermissionDeNghi = "Add Edit List Item";
         public const string ConfPermissionDeNghiDes = "Can add, edit but not delete list item";
         //List url
@@ -60,13 +64,17 @@ namespace LongAn.DVC.Common
         public const string AttachmentCMND = "CMND";
 
         public const string FieldTitle = "Title";
+        public const string FieldCreated = "Created";
 
         //DeNghi attachments
+        public const string FieldLoaiDeNghi = "LoaiDeNghi";
         public const string FieldTrangThai = "TrangThai";
+        public const string FieldTrangThaiText = "TrangThaiText";
         public const string FieldCapDuyet = "CapDuyet";
         public const string FieldDeNghi = "DeNghi";
         public const string FieldLoaiAttachment = "LoaiAttachment";
         //De nghi
+        public const string FieldCaNhanToChuc = "CaNhanToChuc";
         public const string FieldDeNghiGUID = "DeNghiGUID";
         public const string FieldNamDeNghi = "NamDeNghi";
         public const string FieldSoThuTuBienNhan = "SoThuTuBienNhan";
