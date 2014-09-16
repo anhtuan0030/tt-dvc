@@ -160,6 +160,10 @@
     <None Include="ListDefinitions\DeNghiCapPhepXe\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{f03876fc-47a0-4348-8677-e3e4e6d63cc3}</SharePointProjectItemId>
     </None>
+    <None Include="Modules\DVCMasterPage\DVC.master" />
+    <None Include="Modules\DVCMasterPage\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{de056ed3-43f9-4dfe-8c29-0ea15883980a}</SharePointProjectItemId>
+    </None>
     <None Include="Package\Package.package">
       <PackageId>{71ce27ed-13c8-4fc9-8c1a-78057fc92639}</PackageId>
     </None>
@@ -301,6 +305,7 @@
     <Content Include="ListDefinitions\DeNghiCapPhepXe\DeNghiCapPhepXeInstance\Elements.xml" />
     <Content Include="ListDefinitions\DeNghiCapPhepXe\Elements.xml" />
     <Content Include="ListDefinitions\DeNghiCapPhepXe\Schema.xml" />
+    <Content Include="Modules\DVCMasterPage\Elements.xml" />
     <Content Include="WebParts\DeNghiNew\DeNghiNew.ascx">
       <Generator>SharePointWebPartCodeGenerator</Generator>
       <LastGenOutput>DeNghiNew.ascx.g.cs</LastGenOutput>
@@ -312,6 +317,7 @@
     </Content>
     <Content Include="WebParts\DeNghiView\Elements.xml" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
