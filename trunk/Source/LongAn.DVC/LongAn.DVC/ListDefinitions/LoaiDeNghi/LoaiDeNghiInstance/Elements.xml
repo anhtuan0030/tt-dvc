@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <ListInstance Title="Loại đề nghị" 
+                OnQuickLaunch="TRUE" 
+                TemplateType="10002" 
+                Url="Lists/LoaiDeNghi"
+                Description="Loại đề nghị">
+    <Data>
+      <Rows>
+        <Row>
+          <Field Name="ID">1</Field>
+          <Field Name="Title">Cấp phép xe quá khổ, quá tải</Field>
+          <Field Name="MoTa">Cấp phép xe quá khổ, quá tải</Field>
+        </Row>
+      </Rows>
+    </Data>
+  </ListInstance>
+</Elements>
