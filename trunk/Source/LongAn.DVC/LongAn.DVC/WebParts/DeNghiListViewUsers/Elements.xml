@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/" >
+  <Module Name="DeNghiListViewUsers" List="113" Url="_catalogs/wp">
+    <File Path="DeNghiListViewUsers\DeNghiListViewUsers.webpart" Url="LongAn.DVC_DeNghiListViewUsers.webpart" Type="GhostableInLibrary" >
+      <Property Name="Group" Value="[LongAn.DVC]" />
+    </File>
+  </Module>
+</Elements>

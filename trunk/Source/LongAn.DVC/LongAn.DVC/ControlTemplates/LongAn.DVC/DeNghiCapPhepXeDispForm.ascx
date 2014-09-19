@@ -18,9 +18,6 @@
 <link rel="stylesheet" href="/_layouts/15/LongAn.DVC/css/bootstrap-theme.min.css"/>
 <link rel="stylesheet" href="/_layouts/15/LongAn.DVC/css/main.css"/>
 <script type="text/javascript" src="/_layouts/15/LongAn.DVC/js/jquery.js"></script>
-<script type="text/javascript" src="/_layouts/15/LongAn.DVC/js/jquery-ui.min.js"></script>
-<script type="text/javascript" src="/_layouts/15/LongAn.DVC/js/datepicker-vi.js"></script>
-<script type="text/javascript" src="/_layouts/15/LongAn.DVC/js/form.js"></script>
 
 <style type="text/css">
     #s4-ribbonrow{

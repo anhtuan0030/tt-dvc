@@ -93,14 +93,21 @@
       <DependentUpon>LongAn.DVC.Web.feature</DependentUpon>
     </Compile>
     <Compile Include="Helpers\DeNghiHelper.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WebParts\DeNghiListViewUser\DeNghiListViewUser.ascx.cs">
-      <DependentUpon>DeNghiListViewUser.ascx</DependentUpon>
+    <Compile Include="Layouts\LongAn.DVC\PhanCongHoSo.aspx.cs">
+      <DependentUpon>PhanCongHoSo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="WebParts\DeNghiListViewUser\DeNghiListViewUser.ascx.g.cs">
+    <Compile Include="Layouts\LongAn.DVC\PhanCongHoSo.aspx.designer.cs">
+      <DependentUpon>PhanCongHoSo.aspx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WebParts\DeNghiListViewUsers\DeNghiListViewUsers.ascx.cs">
+      <DependentUpon>DeNghiListViewUsers.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebParts\DeNghiListViewUsers\DeNghiListViewUsers.ascx.g.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DeNghiListViewUser.ascx</DependentUpon>
+      <DependentUpon>DeNghiListViewUsers.ascx</DependentUpon>
     </Compile>
     <Compile Include="WebParts\DeNghiListView\DeNghiListView.ascx.cs">
       <DependentUpon>DeNghiListView.ascx</DependentUpon>
@@ -169,9 +176,9 @@
     <None Include="Package\Package.Template.xml">
       <DependentUpon>Package.package</DependentUpon>
     </None>
-    <None Include="WebParts\DeNghiListViewUser\DeNghiListViewUser.webpart" />
-    <None Include="WebParts\DeNghiListViewUser\SharePointProjectItem.spdata">
-      <SharePointProjectItemId>{eec235df-fb36-4fd4-807e-1915099f1a4c}</SharePointProjectItemId>
+    <None Include="WebParts\DeNghiListViewUsers\DeNghiListViewUsers.webpart" />
+    <None Include="WebParts\DeNghiListViewUsers\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{4e3fcc52-b736-4147-b6ef-c1f6bc1ce63c}</SharePointProjectItemId>
     </None>
     <None Include="WebParts\DeNghiListView\DeNghiListView.webpart" />
     <None Include="WebParts\DeNghiListView\SharePointProjectItem.spdata">
@@ -261,8 +268,10 @@
     <Content Include="Layouts\LongAn.DVC\js\jquery-ui.min.js" />
     <Content Include="Layouts\LongAn.DVC\js\jquery.js" />
     <Content Include="Layouts\LongAn.DVC\js\form.js" />
+    <Content Include="Layouts\LongAn.DVC\js\laform.js" />
     <Content Include="Layouts\LongAn.DVC\js\modernizr.js" />
     <Content Include="Layouts\LongAn.DVC\js\scripts.js" />
+    <Content Include="Layouts\LongAn.DVC\PhanCongHoSo.aspx" />
     <Content Include="Libs\Camlex.NET.dll" />
     <Content Include="ListDefinitions\DeNghiAttachment\DeNghiAttachmentInstance\Elements.xml" />
     <Content Include="ListDefinitions\DeNghiAttachment\EditDlg.htm" />
@@ -277,12 +286,12 @@
     <Content Include="ListDefinitions\LoaiDeNghi\Elements.xml" />
     <Content Include="ListDefinitions\LoaiDeNghi\LoaiDeNghiInstance\Elements.xml" />
     <Content Include="ListDefinitions\LoaiDeNghi\Schema.xml" />
-	<Content Include="Modules\DVCMasterPage\Elements.xml" />
-    <Content Include="WebParts\DeNghiListViewUser\DeNghiListViewUser.ascx">
+    <Content Include="Modules\DVCMasterPage\Elements.xml" />
+    <Content Include="WebParts\DeNghiListViewUsers\DeNghiListViewUsers.ascx">
       <Generator>SharePointWebPartCodeGenerator</Generator>
-      <LastGenOutput>DeNghiListViewUser.ascx.g.cs</LastGenOutput>
+      <LastGenOutput>DeNghiListViewUsers.ascx.g.cs</LastGenOutput>
     </Content>
-    <Content Include="WebParts\DeNghiListViewUser\Elements.xml" />
+    <Content Include="WebParts\DeNghiListViewUsers\Elements.xml" />
     <Content Include="WebParts\DeNghiListView\DeNghiListView.ascx">
       <Generator>SharePointWebPartCodeGenerator</Generator>
       <LastGenOutput>DeNghiListView.ascx.g.cs</LastGenOutput>
