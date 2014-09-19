@@ -267,7 +267,6 @@
     <Content Include="Layouts\LongAn.DVC\js\detectizr.min.js" />
     <Content Include="Layouts\LongAn.DVC\js\jquery-ui.min.js" />
     <Content Include="Layouts\LongAn.DVC\js\jquery.js" />
-    <Content Include="Layouts\LongAn.DVC\js\form.js" />
     <Content Include="Layouts\LongAn.DVC\js\laform.js" />
     <Content Include="Layouts\LongAn.DVC\js\modernizr.js" />
     <Content Include="Layouts\LongAn.DVC\js\scripts.js" />
