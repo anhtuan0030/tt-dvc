@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<webParts>
+  <webPart xmlns="http://schemas.microsoft.com/WebPart/v3">
+    <metaData>
+      <type name="LongAn.DVC.WebParts.DeNghiListViewUsers.DeNghiListViewUsers, $SharePoint.Project.AssemblyFullName$" />
+      <importErrorMessage>$Resources:core,ImportErrorMessage;</importErrorMessage>
+    </metaData>
+    <data>
+      <properties>
+        <property name="Title" type="string">Đề nghị list view users</property>
+        <property name="Description" type="string">Đề nghị list view users</property>
+        <property name="DeNghiTitle" type="string">Danh sách đề nghị của tôi</property>
+        <property name="PageSize" type="int">1</property>
+      </properties>
+    </data>
+  </webPart>
+</webParts>

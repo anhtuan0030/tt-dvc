@@ -18,8 +18,8 @@
 <link rel="stylesheet" href="/_layouts/15/LongAn.DVC/css/bootstrap-theme.min.css"/>
 <link rel="stylesheet" href="/_layouts/15/LongAn.DVC/css/main.css"/>
 <script type="text/javascript" src="/_layouts/15/LongAn.DVC/js/jquery.js"></script>
-<script type="text/javascript" src="/_layouts/15/LongAn.DVC/js/jquery-ui.min.js"></script>
-<script type="text/javascript" src="/_layouts/15/LongAn.DVC/js/form.js"></script>
+<script type="text/javascript" src="/_layouts/15/datepicker.js"></script>
+<script type="text/javascript" src="/_layouts/15/LongAn.DVC/js/laform.js"></script>
 
 <style type="text/css">
     #s4-ribbonrow{
@@ -61,7 +61,7 @@
                                             <SharePoint:FieldLabel ID="FieldLabel1"  FieldName="KinhGui"  runat="server"  />
                                         </div>
                                         <div class="field-required-data col-lg-9 col-md-9 col-sm-9 col-xs-9">
-                                            <SharePoint:FormField  runat="server" ID="fldRequiredKinhGui" CssClass="field-required"  FieldName="KinhGui"  /> 
+                                            <SharePoint:FormField  runat="server" ID="FormField1" CssClass="field-required"  FieldName="KinhGui"  /> 
                                         </div>
                                         <%--<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
                                             <span class="star">(*)</span>
@@ -72,7 +72,7 @@
                                             <SharePoint:FieldLabel ID="FieldLabel2" FieldName="CaNhanToChuc"  runat="server"  />
                                         </div>
                                         <div class="field-required-data col-lg-9 col-md-9 col-sm-9 col-xs-9">
-                                            <SharePoint:FormField  runat="server" ID="fldRequiredCaNhanToChuc" CssClass="field-required" FieldName="CaNhanToChuc" /> 
+                                            <SharePoint:FormField  runat="server" ID="FormField2" CssClass="field-required" FieldName="CaNhanToChuc" /> 
                                         </div>
                                         <%--<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
                                             <span class="star">(*)</span>
