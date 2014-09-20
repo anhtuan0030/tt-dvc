@@ -113,14 +113,14 @@
                                 <asp:LinkButton ID="lbtViewItem" ToolTip="Xem chi tiết" CssClass="button view just-icon" runat="server"></asp:LinkButton>
                             </td>
                             <td>
-                                <asp:LinkButton ID="lblDisable1" Enabled="false" ToolTip="Disable" CssClass="button view just-icon" style="display:block;" runat="server"></asp:LinkButton>
+                                <asp:LinkButton ID="lblDisable1" Enabled="false" ToolTip="Disable" CssClass="button just-icon" style="display:block;" runat="server"></asp:LinkButton>
                                 <asp:LinkButton ID="lbtChuyenTruongPhong" ToolTip="Chuyển trưởng/phó P.QLHT" CssClass="button up just-icon" style="display:none;" runat="server"></asp:LinkButton>
                                 <asp:LinkButton ID="lbtTrinhTruongPhoPQLHT" ToolTip="Trình trưởng/phó P.QLHT" CssClass="button up just-icon" style="display:none;" runat="server"></asp:LinkButton>
                                 <asp:LinkButton ID="lbtTrinhLanhDaoSo" ToolTip="Trình lãnh đạo duyệt" CssClass="button up just-icon" style="display:none;" runat="server"></asp:LinkButton>
                                 <asp:LinkButton ID="lbtDuyetHoSo" ToolTip="Duyệt hồ sơ" CssClass="button up just-icon" style="display:none;" runat="server"></asp:LinkButton>
                             </td>
                             <td>
-                                <asp:LinkButton ID="lblDisable2" Enabled="false" ToolTip="Disable" CssClass="button view just-icon" style="display:block;" runat="server"></asp:LinkButton>
+                                <asp:LinkButton ID="lblDisable2" Enabled="false" ToolTip="Disable" CssClass="button just-icon" style="display:block;" runat="server"></asp:LinkButton>
                                 <asp:LinkButton ID="lbtYeuCauBoSung" ToolTip="Yêu cầu bổ sung hồ sơ" CssClass="button edit just-icon" style="display:none;" runat="server"></asp:LinkButton>
                                 <asp:LinkButton ID="lbtPhanCongHoSo" ToolTip="Phân công hồ sơ" CssClass="button edit just-icon" style="display:none;" runat="server"></asp:LinkButton>
                                 <asp:LinkButton ID="lbtTuChoiHoSo" ToolTip="Trả / Từ chối duyệt" CssClass="button edit just-icon" style="display:none;" runat="server"></asp:LinkButton>
