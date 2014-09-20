@@ -13,16 +13,8 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
     {
         protected override void OnInit(EventArgs e)
         {
-            base.OnInit(e);
+            FormField1.ControlMode = SPControlMode.Display;
             btnCancel.Click += btnCancel_Click;
-            btnSave.Click += btnSave_Click;
-            btnGuiHoSo.Click += btnGuiHoSo_Click;
-            btnTrinhXuLy.Click += btnTrinhXuLy_Click;
-            btnPhanCongHoSo.Click += btnPhanCongHoSo_Click;
-            btnTrinhTruongPhong.Click += btnTrinhTruongPhong_Click;
-            btnTrinhLanhDao.Click += btnTrinhLanhDao_Click;
-            btnDuyetHoSo.Click += btnDuyetHoSo_Click;
-            btnTraHoSo.Click += btnTraHoSo_Click;
             //
             var currentStatus = int.Parse(SPContext.Current.ListItem[Constants.FieldTrangThai].ToString());
             var currentUserRole = CapXuLy.CaNhanToChuc;
@@ -34,128 +26,17 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
             else
                 currentUserRole = (CapXuLy)ViewState[Constants.ConfViewStateCapXuLy];
 
-            switch (currentUserRole)
+            if (currentUserRole == CapXuLy.CaNhanToChuc && 
+                (currentStatus == (int)TrangThaiXuLy.KhoiTao || 
+                currentStatus == (int)TrangThaiXuLy.HoSoChoBoSung ||
+                currentStatus == (int)TrangThaiXuLy.HoSoBiTuChoi))
             {
-                case CapXuLy.CaNhanToChuc:
-                    if (currentStatus == (int)TrangThaiXuLy.KhoiTao ||
-                        currentStatus == (int)TrangThaiXuLy.HoSoBiTuChoi)
-                    {
-                        btnSave.Visible = true;
-                        btnGuiHoSo.Visible = true;
-                        fileUpload1.Visible = true;
-                        fileUpload2.Visible = true;
-                        fileUpload3.Visible = true;
-                        fileUpload4.Visible = true;
-
-                        #region Enable form field
-                        var controlModeEdit = Microsoft.SharePoint.WebControls.SPControlMode.Edit;
-                        FormField1.ControlMode = controlModeEdit;
-                        FormField2.ControlMode = controlModeEdit;
-                        FormField3.ControlMode = controlModeEdit;
-                        FormField4.ControlMode = controlModeEdit;
-                        FormField5.ControlMode = controlModeEdit;
-                        FormField6.ControlMode = controlModeEdit;
-                        FormField7.ControlMode = controlModeEdit;
-                        FormField8.ControlMode = controlModeEdit;
-                        FormField9.ControlMode = controlModeEdit;
-                        FormField10.ControlMode = controlModeEdit;
-                        FormField11.ControlMode = controlModeEdit;
-                        FormField12.ControlMode = controlModeEdit;
-                        FormField13.ControlMode = controlModeEdit;
-                        FormField14.ControlMode = controlModeEdit;
-                        FormField15.ControlMode = controlModeEdit;
-                        FormField16.ControlMode = controlModeEdit;
-                        FormField17.ControlMode = controlModeEdit;
-                        FormField18.ControlMode = controlModeEdit;
-                        FormField19.ControlMode = controlModeEdit;
-                        FormField20.ControlMode = controlModeEdit;
-                        FormField21.ControlMode = controlModeEdit;
-                        FormField22.ControlMode = controlModeEdit;
-                        FormField23.ControlMode = controlModeEdit;
-                        FormField24.ControlMode = controlModeEdit;
-                        FormField25.ControlMode = controlModeEdit;
-                        FormField26.ControlMode = controlModeEdit;
-                        FormField27.ControlMode = controlModeEdit;
-                        FormField28.ControlMode = controlModeEdit;
-                        FormField29.ControlMode = controlModeEdit;
-                        FormField30.ControlMode = controlModeEdit;
-                        FormField31.ControlMode = controlModeEdit;
-                        FormField32.ControlMode = controlModeEdit;
-                        FormField33.ControlMode = controlModeEdit;
-                        FormField34.ControlMode = controlModeEdit;
-                        FormField35.ControlMode = controlModeEdit;
-                        FormField36.ControlMode = controlModeEdit;
-                        FormField37.ControlMode = controlModeEdit;
-                        #endregion Enable form field
-                    }
-                    break;
-                case CapXuLy.NhanVienTiepNhan:
-                    if (currentStatus == (int)TrangThaiXuLy.DaTiepNhan)
-                    {
-                        btnTrinhXuLy.Visible = true;
-                        btnTraHoSo.Visible = true;
-                    }
-                    break;
-                case CapXuLy.CanBoXuLy:
-                    if (currentStatus == (int)TrangThaiXuLy.ChoXuLy)
-                    {
-                        btnTrinhTruongPhong.Visible = true;
-                        btnTraHoSo.Visible = true;
-                    }
-                    break;
-                case CapXuLy.TruongPhoPhong:
-                    if (currentStatus == (int)TrangThaiXuLy.ChoTruongPhongDuyet)
-                    {
-                        btnTrinhLanhDao.Visible = true;
-                        btnTraHoSo.Visible = true;
-                    }
-                    else if (currentStatus == (int)TrangThaiXuLy.ChoXuLy)
-                    {
-                        btnPhanCongHoSo.Visible = true;
-                    }
-                    break;
-                case CapXuLy.LanhDaoSo:
-                    if (currentStatus == (int)TrangThaiXuLy.ChoLanhDaoDuyet)
-                    {
-                        btnDuyetHoSo.Visible = true;
-                        btnTraHoSo.Visible = true;
-                    }
-                    break;
-                case CapXuLy.VanPhongSo:
-                    break;
-                default:
-                    break;
+                btnSave.Visible = true;
+                btnGuiHoSo.Visible = true;
+                btnSave.Click += btnSave_Click;
+                btnGuiHoSo.Click += btnGuiHoSo_Click;
             }
-        }
-
-        void btnTraHoSo_Click(object sender, EventArgs e)
-        {
-            UpdateItem(TrangThaiXuLy.HoSoBiTuChoi);
-        }
-
-        void btnDuyetHoSo_Click(object sender, EventArgs e)
-        {
-            UpdateItem(TrangThaiXuLy.HoSoDuocDuyet);
-        }
-
-        void btnTrinhLanhDao_Click(object sender, EventArgs e)
-        {
-            UpdateItem(TrangThaiXuLy.ChoLanhDaoDuyet);
-        }
-
-        void btnTrinhTruongPhong_Click(object sender, EventArgs e)
-        {
-            UpdateItem(TrangThaiXuLy.ChoTruongPhongDuyet);
-        }
-
-        void btnPhanCongHoSo_Click(object sender, EventArgs e)
-        {
-            //throw new NotImplementedException();
-        }
-
-        void btnTrinhXuLy_Click(object sender, EventArgs e)
-        {
-            UpdateItem(TrangThaiXuLy.ChoXuLy);
+            base.OnInit(e);
         }
 
         void btnGuiHoSo_Click(object sender, EventArgs e)

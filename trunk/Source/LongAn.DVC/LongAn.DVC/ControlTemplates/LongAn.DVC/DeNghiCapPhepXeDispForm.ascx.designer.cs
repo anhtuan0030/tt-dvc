@@ -31,13 +31,13 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC {
         protected global::Microsoft.SharePoint.WebControls.FieldLabel FieldLabel1;
         
         /// <summary>
-        /// fldRequiredKinhGui control.
+        /// FormField1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Microsoft.SharePoint.WebControls.FormField fldRequiredKinhGui;
+        protected global::Microsoft.SharePoint.WebControls.FormField FormField1;
         
         /// <summary>
         /// FieldLabel2 control.
@@ -49,13 +49,13 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC {
         protected global::Microsoft.SharePoint.WebControls.FieldLabel FieldLabel2;
         
         /// <summary>
-        /// fldRequiredCaNhanToChuc control.
+        /// FormField2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Microsoft.SharePoint.WebControls.FormField fldRequiredCaNhanToChuc;
+        protected global::Microsoft.SharePoint.WebControls.FormField FormField2;
         
         /// <summary>
         /// FieldLabel3 control.
@@ -697,6 +697,15 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl divFileUpload1;
         
         /// <summary>
+        /// fileUpload1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload fileUpload1;
+        
+        /// <summary>
         /// divFileUpload2 control.
         /// </summary>
         /// <remarks>
@@ -704,6 +713,15 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl divFileUpload2;
+        
+        /// <summary>
+        /// fileUpload2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload fileUpload2;
         
         /// <summary>
         /// divFileUpload3 control.
@@ -715,6 +733,15 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl divFileUpload3;
         
         /// <summary>
+        /// fileUpload3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload fileUpload3;
+        
+        /// <summary>
         /// divFileUpload4 control.
         /// </summary>
         /// <remarks>
@@ -722,6 +749,87 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl divFileUpload4;
+        
+        /// <summary>
+        /// fileUpload4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload fileUpload4;
+        
+        /// <summary>
+        /// btnTrinhXuLy control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnTrinhXuLy;
+        
+        /// <summary>
+        /// btnYeuCauBoSung control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnYeuCauBoSung;
+        
+        /// <summary>
+        /// btnPhanCongHoSo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnPhanCongHoSo;
+        
+        /// <summary>
+        /// btnTrinhTruongPhong control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnTrinhTruongPhong;
+        
+        /// <summary>
+        /// btnTrinhLanhDao control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnTrinhLanhDao;
+        
+        /// <summary>
+        /// btnDuyetHoSo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnDuyetHoSo;
+        
+        /// <summary>
+        /// btnTraHoSo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnTraHoSo;
+        
+        /// <summary>
+        /// btnCancel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnCancel;
         
         /// <summary>
         /// toolBarTbl control.

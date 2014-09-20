@@ -6,28 +6,36 @@
 <%@ Import Namespace="Microsoft.SharePoint" %> 
 <%@ Register Tagprefix="WebPartPages" Namespace="Microsoft.SharePoint.WebPartPages" Assembly="Microsoft.SharePoint, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %>
 <%@ Control Language="C#" AutoEventWireup="true" CodeBehind="DeNghiListViewUsers.ascx.cs" Inherits="LongAn.DVC.WebParts.DeNghiListViewUsers.DeNghiListViewUsers" %>
-<link rel="stylesheet" href="/_layouts/15/LongAn.DVC/css/bootstrap.min.css"/>
-<!--[if lt IE9]>
-<link rel="stylesheet" href="/_layouts/15/LongAn.DVC/css/bootstrap-non-responsive.min.css"/>
-<![endif]-->
-<link rel="stylesheet" href="/_layouts/15/LongAn.DVC/css/jquery-ui.structure.min.css"/>
-<link rel="stylesheet" href="/_layouts/15/LongAn.DVC/css/jquery-ui.min.css"/>
-<link rel="stylesheet" href="/_layouts/15/LongAn.DVC/css/bootstrap-theme.min.css"/>
-<link rel="stylesheet" href="/_layouts/15/LongAn.DVC/css/form.main.css"/>
+<link rel="stylesheet" href="/_layouts/15/LongAn.DVC.Form/css/normalize.css"/>
+<link rel="stylesheet" href="/_layouts/15/LongAn.DVC.Form/css/fluid_grid.css"/>
+<link rel="stylesheet" href="/_layouts/15/LongAn.DVC.Form/css/jquery-ui.min.css"/>
+<link rel="stylesheet" href="/_layouts/15/LongAn.DVC.Form/css/superfish.css"/>
+<link rel="stylesheet" href="/_layouts/15/LongAn.DVC.Form/css/main.css"/>
 <script src="/_layouts/15/LongAn.DVC/js/jquery.js"></script>
 
-<div class="container1">
-    <div class="row">
-        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
-            <h2 class="page-header">
-                <asp:Literal ID="literalDeNghiTitle" runat="server"></asp:Literal>
-            </h2>
-            
-            <div class="pull-right">
-                <asp:LinkButton ID="lbtAddNew" CssClass="button add-new" runat="server">Thêm mới</asp:LinkButton>
-            </div>
-            <div class="clearfix"></div>
 
+<div class="container_12">
+	<div class="row">
+		<div class="grid_12" id="main-frame">
+			<%--<div id="top-control">
+				<a href="#" class="button large-button home">Trang chủ</a>
+				<a href="#" class="button large-button add-new">Thêm mới hồ sơ</a>
+				<a href="#" class="button large-button added">Hồ sơ đã tiếp nhận</a>
+				<a href="#" class="button large-button process">Hồ sơ đang xử lý</a>
+				<a href="#" class="button large-button waiting">Hồ sơ chờ cấp phép</a>
+				<a href="#" class="button large-button done">Hồ sơ hoàn thành</a>
+				<a href="#" class="button large-button stat">Báo cáo, thống kê</a>
+				<div class="clear"></div>
+			</div>--%>
+			<h2 class="page-header">
+				<asp:Literal ID="literalDeNghiTitle" runat="server"></asp:Literal>
+			</h2>
+		
+			<div class="pull-right">
+				<asp:LinkButton ID="lbtAddNew" CssClass="button add-new" runat="server">Thêm mới</asp:LinkButton>
+			</div>
+			<div class="clearfix"></div>
+			
             <table class="the-table">
                 <tr>
                     <th>STT</th>
@@ -74,8 +82,8 @@
                     </ItemTemplate>
                 </asp:Repeater>
             </table>
-            
-            <div id="divPagging" visible="false" runat="server" class="pag pull-right">
+
+			<div id="divPagging" visible="false" runat="server" class="pag pull-right">
                 <%--<button class="button begin small"></button>--%>
                 <asp:LinkButton ID="lbtnFirst" runat="server" CssClass="button begin small" CausesValidation="false" OnClick="lbtnFirst_Click"></asp:LinkButton>
                 <%--<button class="button prev small"></button>--%>
@@ -94,8 +102,8 @@
                 <%--<button class="button end small"></button>--%>
                 <div class="clearfix"></div>
             </div>
-            
-            <div class="clearfix"></div>
-        </div>
-    </div>
+			<div class="clear"></div>
+		</div>
+	</div>
+	<div class="clear"></div>
 </div>
