@@ -519,7 +519,7 @@ namespace LongAn.DVC.WebParts.DeNghiListView {
             @__ctrl.ID = "lblDisable1";
             @__ctrl.Enabled = false;
             @__ctrl.ToolTip = "Disable";
-            @__ctrl.CssClass = "button view just-icon";
+            @__ctrl.CssClass = "button just-icon";
             ((System.Web.UI.IAttributeAccessor)(@__ctrl)).SetAttribute("style", "display:block;");
             return @__ctrl;
         }
@@ -595,7 +595,7 @@ namespace LongAn.DVC.WebParts.DeNghiListView {
             @__ctrl.ID = "lblDisable2";
             @__ctrl.Enabled = false;
             @__ctrl.ToolTip = "Disable";
-            @__ctrl.CssClass = "button view just-icon";
+            @__ctrl.CssClass = "button just-icon";
             ((System.Web.UI.IAttributeAccessor)(@__ctrl)).SetAttribute("style", "display:block;");
             return @__ctrl;
         }
