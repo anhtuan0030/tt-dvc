@@ -516,10 +516,11 @@ namespace LongAn.DVC.WebParts.DeNghiListView {
             @__ctrl = new global::System.Web.UI.WebControls.LinkButton();
             @__ctrl.TemplateControl = this;
             @__ctrl.ApplyStyleSheetSkin(this.Page);
-            @__ctrl.ID = "lbtChuyenTruongPhong";
-            @__ctrl.ToolTip = "Chuyển trưởng/phó P.QLHT";
+            @__ctrl.ID = "lblDisable1";
+            @__ctrl.Enabled = false;
+            @__ctrl.ToolTip = "Disable";
             @__ctrl.CssClass = "button view just-icon";
-            @__ctrl.Visible = false;
+            ((System.Web.UI.IAttributeAccessor)(@__ctrl)).SetAttribute("style", "display:block;");
             return @__ctrl;
         }
         
@@ -531,10 +532,10 @@ namespace LongAn.DVC.WebParts.DeNghiListView {
             @__ctrl = new global::System.Web.UI.WebControls.LinkButton();
             @__ctrl.TemplateControl = this;
             @__ctrl.ApplyStyleSheetSkin(this.Page);
-            @__ctrl.ID = "lbtTrinhTruongPhoPQLHT";
-            @__ctrl.ToolTip = "Trình trưởng/phó P.QLHT";
-            @__ctrl.CssClass = "button view just-icon";
-            @__ctrl.Visible = false;
+            @__ctrl.ID = "lbtChuyenTruongPhong";
+            @__ctrl.ToolTip = "Chuyển trưởng/phó P.QLHT";
+            @__ctrl.CssClass = "button up just-icon";
+            ((System.Web.UI.IAttributeAccessor)(@__ctrl)).SetAttribute("style", "display:none;");
             return @__ctrl;
         }
         
@@ -546,10 +547,10 @@ namespace LongAn.DVC.WebParts.DeNghiListView {
             @__ctrl = new global::System.Web.UI.WebControls.LinkButton();
             @__ctrl.TemplateControl = this;
             @__ctrl.ApplyStyleSheetSkin(this.Page);
-            @__ctrl.ID = "lbtTrinhLanhDaoSo";
-            @__ctrl.ToolTip = "Trình lãnh đạo duyệt";
-            @__ctrl.CssClass = "button view just-icon";
-            @__ctrl.Visible = false;
+            @__ctrl.ID = "lbtTrinhTruongPhoPQLHT";
+            @__ctrl.ToolTip = "Trình trưởng/phó P.QLHT";
+            @__ctrl.CssClass = "button up just-icon";
+            ((System.Web.UI.IAttributeAccessor)(@__ctrl)).SetAttribute("style", "display:none;");
             return @__ctrl;
         }
         
@@ -561,10 +562,10 @@ namespace LongAn.DVC.WebParts.DeNghiListView {
             @__ctrl = new global::System.Web.UI.WebControls.LinkButton();
             @__ctrl.TemplateControl = this;
             @__ctrl.ApplyStyleSheetSkin(this.Page);
-            @__ctrl.ID = "lbtDuyetHoSo";
-            @__ctrl.ToolTip = "Duyệt hồ sơ";
-            @__ctrl.CssClass = "button view just-icon";
-            @__ctrl.Visible = false;
+            @__ctrl.ID = "lbtTrinhLanhDaoSo";
+            @__ctrl.ToolTip = "Trình lãnh đạo duyệt";
+            @__ctrl.CssClass = "button up just-icon";
+            ((System.Web.UI.IAttributeAccessor)(@__ctrl)).SetAttribute("style", "display:none;");
             return @__ctrl;
         }
         
@@ -576,10 +577,10 @@ namespace LongAn.DVC.WebParts.DeNghiListView {
             @__ctrl = new global::System.Web.UI.WebControls.LinkButton();
             @__ctrl.TemplateControl = this;
             @__ctrl.ApplyStyleSheetSkin(this.Page);
-            @__ctrl.ID = "lbtYeuCauBoSung";
-            @__ctrl.ToolTip = "Yêu cầu bổ sung hồ sơ";
-            @__ctrl.CssClass = "button view just-icon";
-            @__ctrl.Visible = false;
+            @__ctrl.ID = "lbtDuyetHoSo";
+            @__ctrl.ToolTip = "Duyệt hồ sơ";
+            @__ctrl.CssClass = "button up just-icon";
+            ((System.Web.UI.IAttributeAccessor)(@__ctrl)).SetAttribute("style", "display:none;");
             return @__ctrl;
         }
         
@@ -591,10 +592,11 @@ namespace LongAn.DVC.WebParts.DeNghiListView {
             @__ctrl = new global::System.Web.UI.WebControls.LinkButton();
             @__ctrl.TemplateControl = this;
             @__ctrl.ApplyStyleSheetSkin(this.Page);
-            @__ctrl.ID = "lbtPhanCongHoSo";
-            @__ctrl.ToolTip = "Phân công hồ sơ";
+            @__ctrl.ID = "lblDisable2";
+            @__ctrl.Enabled = false;
+            @__ctrl.ToolTip = "Disable";
             @__ctrl.CssClass = "button view just-icon";
-            @__ctrl.Visible = false;
+            ((System.Web.UI.IAttributeAccessor)(@__ctrl)).SetAttribute("style", "display:block;");
             return @__ctrl;
         }
         
@@ -606,9 +608,40 @@ namespace LongAn.DVC.WebParts.DeNghiListView {
             @__ctrl = new global::System.Web.UI.WebControls.LinkButton();
             @__ctrl.TemplateControl = this;
             @__ctrl.ApplyStyleSheetSkin(this.Page);
+            @__ctrl.ID = "lbtYeuCauBoSung";
+            @__ctrl.ToolTip = "Yêu cầu bổ sung hồ sơ";
+            @__ctrl.CssClass = "button edit just-icon";
+            ((System.Web.UI.IAttributeAccessor)(@__ctrl)).SetAttribute("style", "display:none;");
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.LinkButton @__BuildControl__control17() {
+            global::System.Web.UI.WebControls.LinkButton @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.LinkButton();
+            @__ctrl.TemplateControl = this;
+            @__ctrl.ApplyStyleSheetSkin(this.Page);
+            @__ctrl.ID = "lbtPhanCongHoSo";
+            @__ctrl.ToolTip = "Phân công hồ sơ";
+            @__ctrl.CssClass = "button edit just-icon";
+            ((System.Web.UI.IAttributeAccessor)(@__ctrl)).SetAttribute("style", "display:none;");
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.LinkButton @__BuildControl__control18() {
+            global::System.Web.UI.WebControls.LinkButton @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.LinkButton();
+            @__ctrl.TemplateControl = this;
+            @__ctrl.ApplyStyleSheetSkin(this.Page);
             @__ctrl.ID = "lbtTuChoiHoSo";
             @__ctrl.ToolTip = "Trả / Từ chối duyệt";
-            @__ctrl.CssClass = "button view just-icon";
+            @__ctrl.CssClass = "button edit just-icon";
+            ((System.Web.UI.IAttributeAccessor)(@__ctrl)).SetAttribute("style", "display:none;");
             return @__ctrl;
         }
         
@@ -665,12 +698,12 @@ namespace LongAn.DVC.WebParts.DeNghiListView {
             global::System.Web.UI.WebControls.LinkButton @__ctrl11;
             @__ctrl11 = this.@__BuildControl__control13();
             @__parser.AddParsedSubObject(@__ctrl11);
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                            </td>\r\n                            <td>\r\n          " +
-                        "                      "));
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                                "));
             global::System.Web.UI.WebControls.LinkButton @__ctrl12;
             @__ctrl12 = this.@__BuildControl__control14();
             @__parser.AddParsedSubObject(@__ctrl12);
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                                "));
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                            </td>\r\n                            <td>\r\n          " +
+                        "                      "));
             global::System.Web.UI.WebControls.LinkButton @__ctrl13;
             @__ctrl13 = this.@__BuildControl__control15();
             @__parser.AddParsedSubObject(@__ctrl13);
@@ -678,6 +711,14 @@ namespace LongAn.DVC.WebParts.DeNghiListView {
             global::System.Web.UI.WebControls.LinkButton @__ctrl14;
             @__ctrl14 = this.@__BuildControl__control16();
             @__parser.AddParsedSubObject(@__ctrl14);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                                "));
+            global::System.Web.UI.WebControls.LinkButton @__ctrl15;
+            @__ctrl15 = this.@__BuildControl__control17();
+            @__parser.AddParsedSubObject(@__ctrl15);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                                "));
+            global::System.Web.UI.WebControls.LinkButton @__ctrl16;
+            @__ctrl16 = this.@__BuildControl__control18();
+            @__parser.AddParsedSubObject(@__ctrl16);
             @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                            </td>\n                        </tr>\r\n              " +
                         "      "));
         }
@@ -733,21 +774,21 @@ namespace LongAn.DVC.WebParts.DeNghiListView {
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
         [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
             "artCodeGenerator", "12.0.0.0")]
-        private global::System.Web.UI.WebControls.LinkButton @__BuildControl__control18() {
+        private global::System.Web.UI.WebControls.LinkButton @__BuildControl__control20() {
             global::System.Web.UI.WebControls.LinkButton @__ctrl;
             @__ctrl = new global::System.Web.UI.WebControls.LinkButton();
             @__ctrl.TemplateControl = this;
             @__ctrl.ApplyStyleSheetSkin(this.Page);
             @__ctrl.ID = "lnkbtnPaging";
             @__ctrl.CommandName = "Paging";
-            @__ctrl.DataBinding += new System.EventHandler(this.@__DataBinding__control18);
+            @__ctrl.DataBinding += new System.EventHandler(this.@__DataBinding__control20);
             return @__ctrl;
         }
         
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
         [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
             "artCodeGenerator", "12.0.0.0")]
-        public void @__DataBinding__control18(object sender, System.EventArgs e) {
+        public void @__DataBinding__control20(object sender, System.EventArgs e) {
             System.Web.UI.WebControls.LinkButton dataBindingExpressionBuilderTarget;
             System.Web.UI.WebControls.RepeaterItem Container;
             dataBindingExpressionBuilderTarget = ((System.Web.UI.WebControls.LinkButton)(sender));
@@ -759,11 +800,11 @@ namespace LongAn.DVC.WebParts.DeNghiListView {
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
         [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
             "artCodeGenerator", "12.0.0.0")]
-        private void @__BuildControl__control17(System.Web.UI.Control @__ctrl) {
+        private void @__BuildControl__control19(System.Web.UI.Control @__ctrl) {
             System.Web.UI.IParserAccessor @__parser = ((System.Web.UI.IParserAccessor)(@__ctrl));
             @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                        "));
             global::System.Web.UI.WebControls.LinkButton @__ctrl1;
-            @__ctrl1 = this.@__BuildControl__control18();
+            @__ctrl1 = this.@__BuildControl__control20();
             @__parser.AddParsedSubObject(@__ctrl1);
             @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                    "));
         }
@@ -775,7 +816,7 @@ namespace LongAn.DVC.WebParts.DeNghiListView {
             global::System.Web.UI.WebControls.Repeater @__ctrl;
             @__ctrl = new global::System.Web.UI.WebControls.Repeater();
             this.repeaterPage = @__ctrl;
-            @__ctrl.ItemTemplate = new System.Web.UI.CompiledTemplateBuilder(new System.Web.UI.BuildTemplateMethod(this.@__BuildControl__control17));
+            @__ctrl.ItemTemplate = new System.Web.UI.CompiledTemplateBuilder(new System.Web.UI.BuildTemplateMethod(this.@__BuildControl__control19));
             @__ctrl.ID = "repeaterPage";
             @__ctrl.ItemCommand -= new System.Web.UI.WebControls.RepeaterCommandEventHandler(this.repeaterPage_ItemCommand);
             @__ctrl.ItemCommand += new System.Web.UI.WebControls.RepeaterCommandEventHandler(this.repeaterPage_ItemCommand);
@@ -927,8 +968,8 @@ namespace LongAn.DVC.WebParts.DeNghiListView {
             @__ctrl13 = this.@__BuildControltxtSoDienThoai();
             @__parser.AddParsedSubObject(@__ctrl13);
             @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n\t\t\t\t\t</div>\r\n                    <div class=\"grid_1\">&nbsp;</div>\r\n\t\t\t\t\t<div cl" +
-                        "ass=\"grid_1\">\r\n\t\t\t\t\t\tNgày đề nghị\r\n\t\t\t\t\t</div>\r\n\t\t\t\t\t<div class=\"grid_2\">\r\n\t\t\t\t\t" +
-                        "\t"));
+                        "ass=\"grid_1\">\r\n\t\t\t\t\t\tNgày đề nghị:\r\n\t\t\t\t\t</div>\r\n\t\t\t\t\t<div class=\"grid_2\">\r\n\t\t\t\t" +
+                        "\t\t"));
             global::Microsoft.SharePoint.WebControls.DateTimeControl @__ctrl14;
             @__ctrl14 = this.@__BuildControldtcNgayDeNghiTu();
             @__parser.AddParsedSubObject(@__ctrl14);

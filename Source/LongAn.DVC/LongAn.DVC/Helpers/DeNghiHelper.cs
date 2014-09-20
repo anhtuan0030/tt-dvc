@@ -77,7 +77,7 @@ namespace LongAn.DVC.Helpers
                 for (int i = 0; i < rowCount; i++)
                 {
                     HyperLink link = new HyperLink();
-                    link.Text = deNghiAttachmentItems.Rows[i]["LinkFileName"].ToString();
+                    link.Text = "File đính kèm " + i;
                     link.NavigateUrl = string.Format("{0}/{1}", deNghiUrl, deNghiAttachmentItems.Rows[i]["LinkFileName"]);
                     link.Target = "_blank";
                     div.Controls.Add(link);
@@ -110,7 +110,7 @@ namespace LongAn.DVC.Helpers
                             if (user.InGroup(groupNhanVienTiepNhan))
                                 result = CapXuLy.NhanVienTiepNhan;
                             else if (user.InGroup(groupCanBoXuLy))
-                                result = CapXuLy.NhanVienTiepNhan;
+                                result = CapXuLy.CanBoXuLy;
                             else if (user.InGroup(groupTruongPhoPhong))
                                 result = CapXuLy.TruongPhoPhong;
                             else if (user.InGroup(groupLanhDaoSo))

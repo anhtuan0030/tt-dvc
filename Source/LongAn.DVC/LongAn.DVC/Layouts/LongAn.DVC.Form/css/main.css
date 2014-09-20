@@ -624,8 +624,8 @@ input[type="text"].small {
 .the-form input[type="text"] {
   width: 100%;
   border: 1px solid #01648d;
-  padding-top: 9px;
-  padding-bottom: 8px;
+  padding-top: 5px;
+  padding-bottom: 3px;
   padding-left: 10px;
   padding-right: 10px;
 }
