@@ -20,12 +20,13 @@ namespace LongAn.DVC.Common
     {
         KhoiTao,
         DaTiepNhan,
-        ChoXuLy,
+        ChoXuLy, //chưa phân công
         DaPhanCong,
         ChoTruongPhongDuyet,
         ChoLanhDaoDuyet,
         HoSoDuocDuyet,
-        HoSoBiTuChoi
+        HoSoBiTuChoi,
+        HoSoChoBoSung
         //TaoMoi,
         //ChoBoSung,
         //ChoDuyet,
