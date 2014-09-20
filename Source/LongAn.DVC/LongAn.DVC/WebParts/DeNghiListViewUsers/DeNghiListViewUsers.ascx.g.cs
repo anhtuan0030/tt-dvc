@@ -115,7 +115,7 @@ namespace LongAn.DVC.WebParts.DeNghiListViewUsers {
             @__ctrl = new global::System.Web.UI.DataBoundLiteralControl(2, 1);
             @__ctrl.TemplateControl = this;
             @__ctrl.SetStaticString(0, "\r\n                        <tr class=\"");
-            @__ctrl.SetStaticString(1, "\">\n                            <td>\r\n                                ");
+            @__ctrl.SetStaticString(1, "\">\r\n                            <td>\r\n                                ");
             @__ctrl.DataBinding += new System.EventHandler(this.@__DataBind__control3);
             return @__ctrl;
         }
@@ -261,48 +261,48 @@ namespace LongAn.DVC.WebParts.DeNghiListViewUsers {
             global::System.Web.UI.WebControls.Literal @__ctrl2;
             @__ctrl2 = this.@__BuildControl__control4();
             @__parser.AddParsedSubObject(@__ctrl2);
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                            </td>\n                            <td>\r\n           " +
-                        "                     "));
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                            </td>\r\n                            <td>\r\n          " +
+                        "                      "));
             global::System.Web.UI.WebControls.Literal @__ctrl3;
             @__ctrl3 = this.@__BuildControl__control5();
             @__parser.AddParsedSubObject(@__ctrl3);
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                            </td>\n                            <td>\r\n           " +
-                        "                     "));
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                            </td>\r\n                            <td>\r\n          " +
+                        "                      "));
             global::System.Web.UI.WebControls.Literal @__ctrl4;
             @__ctrl4 = this.@__BuildControl__control6();
             @__parser.AddParsedSubObject(@__ctrl4);
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                            </td>\n                            <td>\r\n           " +
-                        "                     "));
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                            </td>\r\n                            <td>\r\n          " +
+                        "                      "));
             global::System.Web.UI.WebControls.Literal @__ctrl5;
             @__ctrl5 = this.@__BuildControl__control7();
             @__parser.AddParsedSubObject(@__ctrl5);
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                            </td>\n                            <td>\r\n           " +
-                        "                     "));
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                            </td>\r\n                            <td>\r\n          " +
+                        "                      "));
             global::System.Web.UI.WebControls.Literal @__ctrl6;
             @__ctrl6 = this.@__BuildControl__control8();
             @__parser.AddParsedSubObject(@__ctrl6);
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\n                            </td>\n                            <td>\r\n            " +
-                        "                    "));
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                            </td>\r\n                            <td>\r\n          " +
+                        "                      "));
             global::System.Web.UI.WebControls.LinkButton @__ctrl7;
             @__ctrl7 = this.@__BuildControl__control9();
             @__parser.AddParsedSubObject(@__ctrl7);
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                            </td>\n                            <td>\n            " +
-                        "                    "));
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                            </td>\r\n                            <td>\r\n          " +
+                        "                      "));
             global::System.Web.UI.WebControls.LinkButton @__ctrl8;
             @__ctrl8 = this.@__BuildControl__control10();
             @__parser.AddParsedSubObject(@__ctrl8);
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\n                            </td>\n                            <td>\n             " +
-                        "                   "));
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                            </td>\r\n                            <td>\r\n          " +
+                        "                      "));
             global::System.Web.UI.WebControls.LinkButton @__ctrl9;
             @__ctrl9 = this.@__BuildControl__control11();
             @__parser.AddParsedSubObject(@__ctrl9);
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\n                            </td>\n                            <td>\n             " +
-                        "                   "));
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                            </td>\r\n                            <td>\r\n          " +
+                        "                      "));
             global::System.Web.UI.WebControls.LinkButton @__ctrl10;
             @__ctrl10 = this.@__BuildControl__control12();
             @__parser.AddParsedSubObject(@__ctrl10);
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\n                            </td>\n                        </tr>\r\n               " +
-                        "     "));
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                            </td>\r\n                        </tr>\r\n             " +
+                        "       "));
         }
         
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
@@ -446,27 +446,27 @@ namespace LongAn.DVC.WebParts.DeNghiListViewUsers {
             @__ctrl.Visible = false;
             ((System.Web.UI.IAttributeAccessor)(@__ctrl)).SetAttribute("class", "pag pull-right");
             System.Web.UI.IParserAccessor @__parser = ((System.Web.UI.IParserAccessor)(@__ctrl));
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\n                \n                "));
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                \r\n                "));
             global::System.Web.UI.WebControls.LinkButton @__ctrl1;
             @__ctrl1 = this.@__BuildControllbtnFirst();
             @__parser.AddParsedSubObject(@__ctrl1);
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\n                \n                "));
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                \r\n                "));
             global::System.Web.UI.WebControls.LinkButton @__ctrl2;
             @__ctrl2 = this.@__BuildControllbtnPrevious();
             @__parser.AddParsedSubObject(@__ctrl2);
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\n                "));
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                "));
             global::System.Web.UI.WebControls.Repeater @__ctrl3;
             @__ctrl3 = this.@__BuildControlrepeaterPage();
             @__parser.AddParsedSubObject(@__ctrl3);
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\n                "));
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                "));
             global::System.Web.UI.WebControls.LinkButton @__ctrl4;
             @__ctrl4 = this.@__BuildControllbtnNext();
             @__parser.AddParsedSubObject(@__ctrl4);
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\n                \n                "));
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                \r\n                "));
             global::System.Web.UI.WebControls.LinkButton @__ctrl5;
             @__ctrl5 = this.@__BuildControllbtnLast();
             @__parser.AddParsedSubObject(@__ctrl5);
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\n                \n                <div class=\"clearfix\"></div>\n            "));
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                \r\n                <div class=\"clearfix\"></div>\r\n            "));
             return @__ctrl;
         }
         
@@ -476,33 +476,31 @@ namespace LongAn.DVC.WebParts.DeNghiListViewUsers {
         private void @__BuildControlTree(global::LongAn.DVC.WebParts.DeNghiListViewUsers.DeNghiListViewUsers @__ctrl) {
             System.Web.UI.IParserAccessor @__parser = ((System.Web.UI.IParserAccessor)(@__ctrl));
             @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl(@"
-<link rel=""stylesheet"" href=""/_layouts/15/LongAn.DVC/css/bootstrap.min.css""/>
-<!--[if lt IE9]>
-<link rel=""stylesheet"" href=""/_layouts/15/LongAn.DVC/css/bootstrap-non-responsive.min.css""/>
-<![endif]-->
-<link rel=""stylesheet"" href=""/_layouts/15/LongAn.DVC/css/jquery-ui.structure.min.css""/>
-<link rel=""stylesheet"" href=""/_layouts/15/LongAn.DVC/css/jquery-ui.min.css""/>
-<link rel=""stylesheet"" href=""/_layouts/15/LongAn.DVC/css/bootstrap-theme.min.css""/>
-<link rel=""stylesheet"" href=""/_layouts/15/LongAn.DVC/css/form.main.css""/>
+<link rel=""stylesheet"" href=""/_layouts/15/LongAn.DVC.Form/css/normalize.css""/>
+<link rel=""stylesheet"" href=""/_layouts/15/LongAn.DVC.Form/css/fluid_grid.css""/>
+<link rel=""stylesheet"" href=""/_layouts/15/LongAn.DVC.Form/css/jquery-ui.min.css""/>
+<link rel=""stylesheet"" href=""/_layouts/15/LongAn.DVC.Form/css/superfish.css""/>
+<link rel=""stylesheet"" href=""/_layouts/15/LongAn.DVC.Form/css/main.css""/>
 <script src=""/_layouts/15/LongAn.DVC/js/jquery.js""></script>
 
-<div class=""container1"">
-    <div class=""row"">
-        <div class=""col-lg-9 col-md-9 col-sm-9 col-xs-9"">
-            <h2 class=""page-header"">
-                "));
+
+<div class=""container_12"">
+	<div class=""row"">
+		<div class=""grid_12"" id=""main-frame"">
+			
+			<h2 class=""page-header"">
+				"));
             global::System.Web.UI.WebControls.Literal @__ctrl1;
             @__ctrl1 = this.@__BuildControlliteralDeNghiTitle();
             @__parser.AddParsedSubObject(@__ctrl1);
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\n            </h2>\n            \n            <div class=\"pull-right\">\r\n           " +
-                        "     "));
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n\t\t\t</h2>\r\n\t\t\r\n\t\t\t<div class=\"pull-right\">\r\n\t\t\t\t"));
             global::System.Web.UI.WebControls.LinkButton @__ctrl2;
             @__ctrl2 = this.@__BuildControllbtAddNew();
             @__parser.AddParsedSubObject(@__ctrl2);
             @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl(@"
-            </div>
-            <div class=""clearfix""></div>
-
+			</div>
+			<div class=""clearfix""></div>
+			
             <table class=""the-table"">
                 <tr>
                     <th>STT</th>
@@ -519,12 +517,12 @@ namespace LongAn.DVC.WebParts.DeNghiListViewUsers {
             global::System.Web.UI.WebControls.Repeater @__ctrl3;
             @__ctrl3 = this.@__BuildControlrepeaterLists();
             @__parser.AddParsedSubObject(@__ctrl3);
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\n            </table>\n            \n            "));
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n            </table>\r\n\r\n\t\t\t"));
             global::System.Web.UI.HtmlControls.HtmlGenericControl @__ctrl4;
             @__ctrl4 = this.@__BuildControldivPagging();
             @__parser.AddParsedSubObject(@__ctrl4);
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\n            \n            <div class=\"clearfix\"></div>\n        </div>\n    </div>\n" +
-                        "</div>"));
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n\t\t\t<div class=\"clear\"></div>\r\n\t\t</div>\r\n\t</div>\r\n\t<div class=\"clear\"></div>\r\n</" +
+                        "div>"));
         }
         
         [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +

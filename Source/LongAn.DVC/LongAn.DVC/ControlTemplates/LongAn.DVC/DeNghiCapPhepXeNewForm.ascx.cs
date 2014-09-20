@@ -24,7 +24,14 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
             //}
             btnSave.Click += btnSave_Click;
             btnGuiHoSo.Click += btnGuiHoSo_Click;
+            btnCancel.Click += btnCancel_Click;
             SPContext.Current.FormContext.OnSaveHandler += new EventHandler(DeNghiSaveHandler);
+        }
+
+        void btnCancel_Click(object sender, EventArgs e)
+        {
+            //Close popup
+            DeNghiHelper.ClosePopup(this.Page);
         }
 
         void btnGuiHoSo_Click(object sender, EventArgs e)

@@ -1,0 +1,313 @@
+body {
+  min-width: 980px;
+}
+.inline-block {
+  display: inline-block;
+}
+#logo {
+  color: #fff;
+  border-bottom: 1px solid #fff;
+  margin-bottom: 20px;
+}
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+.container1 {
+  padding-left: 0px;
+  padding-right: 15px;
+}
+.button {
+  background-color: #01648d;
+  border: none;
+  display: block;
+  padding: 5px;
+  color: #fff;
+  text-align: center;
+  background-repeat: no-repeat;
+}
+.button:hover {
+  background-color: #0293bf;
+  color: #fff;
+}
+.button.danger {
+  background-color: #b32200;
+}
+.button.danger:hover {
+  background-color: #ff3100;
+}
+.button.view {
+  background-image: url(../images/more7.png);
+  background-position: 5px center;
+  padding-left: 25px;
+}
+.button.edit {
+  background-image: url(../images/edit4.png);
+  background-position: 5px center;
+  padding-left: 25px;
+}
+.button.search {
+  background-image: url(../images/search.png);
+  background-position: 5px center;
+  padding-left: 25px;
+}
+.button.excel {
+  background-image: url(../images/excel.png);
+  background-position: 5px center;
+  padding-left: 25px;
+}
+.button.word {
+  background-image: url(../images/word.png);
+  background-position: 5px center;
+  padding-left: 25px;
+}
+.button.add-new {
+  background-image: url(../images/add.png);
+  background-position: 5px center;
+  padding-left: 25px;
+}
+.button.task {
+  background-image: url(../images/task.png);
+  background-position: 5px center;
+  padding-left: 25px;
+}
+.button.calendar {
+  background-image: url(../images/calendar2.png);
+  background-position: 5px center;
+  padding-left: 25px;
+}
+.button.calculator {
+  background-image: url(../images/calculator.png);
+  background-position: 5px center;
+  padding-left: 25px;
+}
+.button.remove {
+  background-image: url(../images/remove.png);
+  background-position: 5px center;
+  padding-left: 25px;
+}
+.button.up {
+  background-image: url(../images/up.png);
+  background-position: 5px center;
+  padding-left: 25px;
+}
+.button.advantage {
+  background-image: url(../images/advantage.png);
+  background-position: 5px center;
+  padding-left: 25px;
+}
+.button.attachment {
+  background-image: url(../images/attachment.png);
+  background-position: 5px center;
+  padding-left: 25px;
+}
+.button.printer {
+  background-image: url(../images/printer.png);
+  background-position: 5px center;
+  padding-left: 25px;
+}
+.button.just-icon {
+  padding: 20px 10px;
+  background-position: center center;
+  display: block;
+}
+.button.just-icon:before {
+  display: block;
+  content: ' ';
+}
+.button.inline-block {
+  display: inline-block;
+}
+.button.large-button {
+  background-position: center 10px;
+  padding-top: 45px;
+  text-align: center;
+  font-size: 12px;
+}
+.button.large-button.home {
+  background-image: url(../images/home.png);
+}
+.button.large-button.backup {
+  background-image: url(../images/backup.png);
+}
+.button.large-button.restore {
+  background-image: url(../images/restore.png);
+}
+.button.large-button.add-new {
+  background-image: url(../images/add-file.png);
+}
+.button.large-button.added {
+  background-image: url(../images/add-file.png);
+}
+.button.large-button.process {
+  background-image: url(../images/process.png);
+}
+.button.large-button.waiting {
+  background-image: url(../images/waiting.png);
+}
+.button.large-button.done {
+  background-image: url(../images/done.png);
+}
+.button.large-button.stat {
+  background-image: url(../images/stat.png);
+}
+.button.large-button.add-new {
+  padding-left: 5px;
+}
+.button.small {
+  width: 32px;
+  height: 32px;
+  padding: 5px 10px;
+  background-position: center center;
+}
+.button.small.next {
+  background-image: url(../images/next.png);
+}
+.button.small.prev {
+  background-image: url(../images/prev.png);
+}
+.button.small.begin {
+  background-image: url(../images/start.png);
+}
+.button.small.end {
+  background-image: url(../images/end.png);
+}
+.button.inline {
+  float: left;
+  margin-left: 15px;
+}
+.button.disabled {
+  background-color: #c0c0c0!important;
+}
+.button.disabled:hover {
+  background-color: #c0c0c0!important;
+  cursor: default;
+}
+input[type="text"].small {
+  width: 30px;
+}
+.pag {
+  margin-top: 15px;
+}
+.pag button,
+.pag a,
+.pag input,
+.pag label {
+  float: left;
+  margin-right: 3px;
+  height: 32px;
+  line-height: 32px;
+}
+.pag label {
+  margin-right: 15px;
+}
+.pag:after {
+  clear: both;
+  display: block;
+  content: ' ';
+}
+#top-control {
+  margin-top: 15px;
+}
+#top-control .button {
+  float: left;
+  margin-right: 15px;
+}
+#searchform {
+  border: 1px solid #dedede;
+  padding: 15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+#searchform .button {
+  width: 90%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+#searchform .row.line {
+  margin-bottom: 15px;
+}
+#searchform label {
+  margin-right: 15px;
+}
+.the-form {
+  margin-bottom: 15px;
+}
+.the-form input[type="text"] {
+  width: 100%;
+  border: 1px solid #01648d;
+  padding-top: 9px;
+  padding-bottom: 8px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.the-table {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  width: 100%;
+}
+.the-table td,
+.the-table th {
+  padding: 5px 10px;
+  border-bottom: 1px solid #eaeaea;
+}
+.the-table th {
+  background: #01648d;
+  color: #fff;
+  text-align: center;
+  font-weight: normal;
+}
+.the-table .even {
+  background: #dedede;
+}
+#sidebar {
+  background-color: #5a5a5a;
+  min-height: 700px;
+}
+#sidebar h4 {
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 18px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+#sidebar .admin-menu {
+  padding-left: 0px;
+  list-style: none;
+}
+#sidebar .admin-menu li a {
+  background: #1b1b1b;
+  color: #fff;
+  display: block;
+  padding: 10px;
+}
+#sidebar .admin-menu li a:hover {
+  background-color: #0293bf;
+}
+#sidebar .admin-menu li.active a {
+  background-color: #0293bf;
+}
+#sidebar .admin-list {
+  list-style: none;
+  padding-left: 0px;
+}
+#sidebar .admin-list li {
+  background: url(../images/item.png) no-repeat 15px center;
+  padding-left: 45px;
+  margin-bottom: 10px;
+}
+#sidebar .admin-list li:hover {
+  background-color: #0293bf;
+}
+#sidebar .admin-list li a {
+  color: #fff;
+}
+#footer {
+  text-align: center;
+  background: #2870e6;
+  color: #fff;
+}

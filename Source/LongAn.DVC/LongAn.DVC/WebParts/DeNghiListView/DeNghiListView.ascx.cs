@@ -54,10 +54,10 @@ namespace LongAn.DVC.WebParts.DeNghiListView
                 literalDeNghiTitle.Text = DeNghiTitle;
                 if (CurrentUserRole == (int)CapXuLy.NhanVienTiepNhan)
                 {
+                    divAddNew.Visible = true;
                     var deNghiUrl = (SPContext.Current.Web.ServerRelativeUrl + Constants.ListUrlDeNghiCapPhep).Replace("//", "/");
                     var currentPage = SPUtility.GetPageUrlPath(HttpContext.Current);
                     var viewUrl = string.Format(Constants.ConfLinkNewForm, deNghiUrl, currentPage);
-                    lbtAddNew.Visible = true;
                     lbtAddNew.OnClientClick = viewUrl;   
                 }
                 hplTrangChu.NavigateUrl = LinkTrangChu;
@@ -68,6 +68,7 @@ namespace LongAn.DVC.WebParts.DeNghiListView
                 hplHoSoChoCapPhep.NavigateUrl = LinkHoSoChoCapPhep;
                 hplHoSoDaCapPhep.NavigateUrl = LinkHoSoDaCapPhep;
                 hplHoSoBiTuChoi.NavigateUrl = LinkHoSoBiTuChoi;
+                hplThongKeBaoCao.NavigateUrl = LinkThongKeBaoCao;
             }
         }
 
@@ -228,6 +229,13 @@ namespace LongAn.DVC.WebParts.DeNghiListView
          Personalizable(PersonalizationScope.Shared),
          Category("LongAn.DVC")]
         public string LinkHoSoBiTuChoi { get; set; }
+
+        [WebBrowsable(true),
+         WebDisplayName("Link Thống kê báo cáo"),
+         WebDescription("This Accepts text Input"),
+         Personalizable(PersonalizationScope.Shared),
+         Category("LongAn.DVC")]
+        public string LinkThongKeBaoCao { get; set; }
 
         #endregion WebPart Properties
 
