@@ -44,7 +44,7 @@
 ]]>
       </AllUsersWebPart>
     </File>
-    <File Path="DVCPages\BlankPage.aspx" Url="RegisterAccount1.aspx" Type="GhostableInLibrary" IgnoreIfAlreadyExists="FALSE" >
+    <File Path="DVCPages\BlankPage.aspx" Url="DangKyTaiKhoan.aspx" Type="GhostableInLibrary" IgnoreIfAlreadyExists="FALSE" >
       <Property Name="Title" Value="Đăng ký tài khoản"/>
       <Property Name="PublishingPageLayout" Value="~SiteCollection/_catalogs/masterpage/DVCWebPartPage_Home.aspx, DVC WebPart page - Home"/>
 
