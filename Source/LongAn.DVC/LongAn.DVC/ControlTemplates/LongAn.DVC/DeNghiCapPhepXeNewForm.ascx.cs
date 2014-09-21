@@ -30,8 +30,10 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
 
         void btnCancel_Click(object sender, EventArgs e)
         {
-            //Close popup
-            DeNghiHelper.ClosePopup(this.Page);
+            var redirectUrl = Request.QueryString["Source"];
+            if (redirectUrl == null || string.IsNullOrEmpty(redirectUrl.ToString()))
+                redirectUrl = "/";
+            Response.Redirect(redirectUrl);
         }
 
         void btnGuiHoSo_Click(object sender, EventArgs e)
@@ -98,9 +100,12 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
                 DeNghiHelper.SaveFileAttachment(fileUpload3, itemId, Constants.AttachmentGiayCamKet);
                 DeNghiHelper.SaveFileAttachment(fileUpload4, itemId, Constants.AttachmentCMND);
                 //Redirect to page
-                //longOperation.End(string.Empty);
+                var redirectUrl = Request.QueryString["Source"];
+                if (redirectUrl == null || string.IsNullOrEmpty(redirectUrl.ToString()))
+                    redirectUrl = "/";
+                longOperation.End(redirectUrl);
                 //Close popup
-                DeNghiHelper.ClosePopup(this.Page);
+                //DeNghiHelper.ClosePopup(this.Page);
             }
             catch (Exception ex)
             {

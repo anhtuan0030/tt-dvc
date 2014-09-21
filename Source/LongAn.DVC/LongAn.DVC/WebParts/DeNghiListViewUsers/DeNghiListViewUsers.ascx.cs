@@ -38,10 +38,17 @@ namespace LongAn.DVC.WebParts.DeNghiListViewUsers
                 this.BindItemsList();
                 //Link & Title
                 literalDeNghiTitle.Text = DeNghiTitle;
+                #region Using popup
                 var deNghiUrl = (SPContext.Current.Web.ServerRelativeUrl + Constants.ListUrlDeNghiCapPhep).Replace("//", "/");
                 var currentPage = SPUtility.GetPageUrlPath(HttpContext.Current);
-                var viewUrl = string.Format(Constants.ConfLinkNewForm, deNghiUrl, currentPage);
-                lbtAddNew.OnClientClick = viewUrl;
+                //var viewUrl = string.Format(Constants.ConfLinkNewForm, deNghiUrl, currentPage);
+                //lbtAddNew.OnClientClick = viewUrl;
+                #endregion Using popup
+                var viewUrl = string.Format(Constants.ConfLinkPageNewForm, deNghiUrl, currentPage);
+                hplAddNew.NavigateUrl = viewUrl;
+                hplTrangChu.NavigateUrl = LinkTrangChu;
+                hplDanhSachDeNghi.NavigateUrl = LinkDanhSachHoSo;
+                hplThongTinHuongDan.NavigateUrl = LinkThongTinHuongDan;
             }
         }
 
@@ -120,6 +127,27 @@ namespace LongAn.DVC.WebParts.DeNghiListViewUsers
          Personalizable(PersonalizationScope.Shared),
          Category("LongAn.DVC")]
         public int PageSize { get; set; }
+
+        [WebBrowsable(true),
+         WebDisplayName("Link Trang chủ"),
+         WebDescription("This Accepts text Input"),
+         Personalizable(PersonalizationScope.Shared),
+         Category("LongAn.DVC")]
+        public string LinkTrangChu { get; set; }
+
+        [WebBrowsable(true),
+         WebDisplayName("Link Danh sách hồ sơ"),
+         WebDescription("This Accepts text Input"),
+         Personalizable(PersonalizationScope.Shared),
+         Category("LongAn.DVC")]
+        public string LinkDanhSachHoSo { get; set; }
+
+        [WebBrowsable(true),
+         WebDisplayName("Link Thông tin hướng dẫn"),
+         WebDescription("This Accepts text Input"),
+         Personalizable(PersonalizationScope.Shared),
+         Category("LongAn.DVC")]
+        public string LinkThongTinHuongDan { get; set; }
         #endregion WebPart Properties
         
         protected void repeaterPage_ItemCommand(object source, RepeaterCommandEventArgs e)
@@ -270,11 +298,11 @@ namespace LongAn.DVC.WebParts.DeNghiListViewUsers
 
                     var deNghiUrl = (SPContext.Current.Web.ServerRelativeUrl + Constants.ListUrlDeNghiCapPhep).Replace("//", "/");
                     var currentPage = SPUtility.GetPageUrlPath(HttpContext.Current);
-                    LinkButton lbtViewItem = (LinkButton)e.Item.FindControl("lbtViewItem");
-                    var viewUrl = string.Format(Constants.ConfLinkDispForm, deNghiUrl, commandAgrument, currentPage);
-                    lbtViewItem.OnClientClick = viewUrl;
+                    HyperLink lbtViewItem = (HyperLink)e.Item.FindControl("lbtViewItem");
+                    var viewUrl = string.Format(Constants.ConfLinkPageDispForm, deNghiUrl, commandAgrument, currentPage);
+                    lbtViewItem.NavigateUrl = viewUrl;
 
-                    LinkButton lbtEditItem = (LinkButton)e.Item.FindControl("lbtEditItem");
+                    HyperLink lbtEditItem = (HyperLink)e.Item.FindControl("lbtEditItem");
                     LinkButton lbtDeleteItem = (LinkButton)e.Item.FindControl("lbtDeleteItem");
                     LinkButton lbtNopHoSo = (LinkButton)e.Item.FindControl("lbtNopHoSo");
                     var trangThai = int.Parse(rowView[Constants.FieldTrangThai].ToString());
@@ -282,7 +310,7 @@ namespace LongAn.DVC.WebParts.DeNghiListViewUsers
                     {
                         
                         var editUrl = string.Format(Constants.ConfLinkEditForm, deNghiUrl, commandAgrument, currentPage);
-                        lbtEditItem.OnClientClick = editUrl;
+                        lbtEditItem.NavigateUrl = editUrl;
                         lbtDeleteItem.CommandName = "OnDeleteItemClick";
                         lbtDeleteItem.CommandArgument = commandAgrument;
                         lbtDeleteItem.OnClientClick = "if (!confirm('Bạn có chắc chắn muốn xóa hồ sơ này không?')) return false;";
@@ -292,9 +320,15 @@ namespace LongAn.DVC.WebParts.DeNghiListViewUsers
                     }
                     else
                     {
-                        lbtEditItem.Enabled = false;
-                        lbtDeleteItem.Enabled = false;
-                        lbtNopHoSo.Enabled = false;
+                        lbtEditItem.Style.Add("display", "none");
+                        lbtDeleteItem.Style.Add("display", "none");
+                        lbtNopHoSo.Style.Add("display", "none");
+                        LinkButton lbtDisable1 = (LinkButton)e.Item.FindControl("lbtDisable1");
+                        lbtDisable1.Style.Add("display", "block");
+                        LinkButton lbtDisable2 = (LinkButton)e.Item.FindControl("lbtDisable2");
+                        lbtDisable2.Style.Add("display", "block");
+                        LinkButton lbtDisable3 = (LinkButton)e.Item.FindControl("lbtDisable3");
+                        lbtDisable3.Style.Add("display", "block");
                     }
                 }
             }

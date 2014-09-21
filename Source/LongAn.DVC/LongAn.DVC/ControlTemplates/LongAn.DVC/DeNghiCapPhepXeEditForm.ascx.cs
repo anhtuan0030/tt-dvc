@@ -13,7 +13,6 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
     {
         protected override void OnInit(EventArgs e)
         {
-            FormField1.ControlMode = SPControlMode.Display;
             btnCancel.Click += btnCancel_Click;
             //
             var currentStatus = int.Parse(SPContext.Current.ListItem[Constants.FieldTrangThai].ToString());
@@ -61,18 +60,18 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
             DeNghiHelper.SaveFileAttachment(fileUpload3, itemId, Constants.AttachmentGiayCamKet);
             DeNghiHelper.SaveFileAttachment(fileUpload4, itemId, Constants.AttachmentCMND);
             //Redirect to page
-            var isDlg = Request.QueryString["IsDlg"];
-            if (isDlg != null && isDlg.ToString() == "1")
-                //Close popup
-                DeNghiHelper.ClosePopup(this.Page);
-            else
-                longOperation.End(string.Empty);
+            var redirectUrl = Request.QueryString["Source"];
+            if (redirectUrl == null || string.IsNullOrEmpty(redirectUrl.ToString()))
+                redirectUrl = "/";
+            longOperation.End(redirectUrl);
         }
 
         void btnCancel_Click(object sender, EventArgs e)
         {
-            //Close popup
-            DeNghiHelper.ClosePopup(this.Page);
+            var redirectUrl = Request.QueryString["Source"];
+            if (redirectUrl == null || string.IsNullOrEmpty(redirectUrl.ToString()))
+                redirectUrl = "/";
+            Response.Redirect(redirectUrl);
         }
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -94,16 +93,20 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
             longOperation.LeadingHTML = "Please wait while the operation is running";
             longOperation.TrailingHTML = "Once the operation is finished you will be redirected to result page";
             longOperation.Begin();
-            //Save file upload
             SPContext.Current.ListItem[Constants.FieldTrangThai] = (int)trangThai;
+            SPContext.Current.ListItem[Constants.FieldCapDuyet] = (int)CapXuLy.NhanVienTiepNhan;
             SaveButton.SaveItem(SPContext.Current, false, "Updated by " + SPContext.Current.Web.CurrentUser.LoginName);
+            //Save file upload
+            var itemId = SPContext.Current.ItemId;
+            DeNghiHelper.SaveFileAttachment(fileUpload1, itemId, Constants.AttachmentGiayDangKy);
+            DeNghiHelper.SaveFileAttachment(fileUpload2, itemId, Constants.AttachmentGiayChungNhanKiemDinh);
+            DeNghiHelper.SaveFileAttachment(fileUpload3, itemId, Constants.AttachmentGiayCamKet);
+            DeNghiHelper.SaveFileAttachment(fileUpload4, itemId, Constants.AttachmentCMND);
             //Redirect to page
-            var isDlg = Request.QueryString["IsDlg"];
-            if (isDlg != null && isDlg.ToString() == "1")
-                //Close popup
-                DeNghiHelper.ClosePopup(this.Page);
-            else
-                longOperation.End(string.Empty);
+            var redirectUrl = Request.QueryString["Source"];
+            if (redirectUrl == null || string.IsNullOrEmpty(redirectUrl.ToString()))
+                redirectUrl = "/";
+            longOperation.End(redirectUrl);
         }
     }
 }

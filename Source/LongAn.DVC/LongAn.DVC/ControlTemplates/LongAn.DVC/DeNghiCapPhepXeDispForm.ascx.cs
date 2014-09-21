@@ -76,7 +76,10 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
 
         void btnCancel_Click(object sender, EventArgs e)
         {
-            DeNghiHelper.ClosePopup(this.Page);
+            var redirectUrl = Request.QueryString["Source"];
+            if (redirectUrl == null || string.IsNullOrEmpty(redirectUrl.ToString()))
+                redirectUrl = "/";
+            Response.Redirect(redirectUrl);
         }
 
         void btnDuyetHoSo_Click(object sender, EventArgs e)
@@ -135,12 +138,10 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
             spListItem[Constants.FieldTrangThai] = (int)trangThai;
             spListItem.Update();
             //Redirect to page
-            var isDlg = Request.QueryString["IsDlg"];
-            if (isDlg != null && isDlg.ToString() == "1")
-                //Close popup
-                DeNghiHelper.ClosePopup(this.Page);
-            else
-                longOperation.End(string.Empty);
+            var redirectUrl = Request.QueryString["Source"];
+            if (redirectUrl == null || string.IsNullOrEmpty(redirectUrl.ToString()))
+                redirectUrl = "/";
+            longOperation.End(redirectUrl);
         }
     }
 }

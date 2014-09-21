@@ -298,7 +298,7 @@
                                         </div>
                                         <div class="clear"></div>
                                     </div>
-                                    <h3>Tải trọng lớn nhất được phân bố lên trục xe sau khi xếp hàng hóa lên xe:</h3>
+                                    <h2>Tải trọng lớn nhất được phân bố lên trục xe sau khi xếp hàng hóa lên xe:</h2>
 
                                     <div class="row">
                                         <div class="grid_3">
@@ -383,7 +383,7 @@
                                 </div>
 
                                 <div class="panel-2">
-                                    <h5>Danh sách tập tin đính kèm cho hồ sơ</h5>
+                                    <h2>Danh sách tập tin đính kèm cho hồ sơ</h2>
 
                                     <div class="row">
                                         <div class="grid_8">
@@ -426,6 +426,49 @@
                                         </div>
                                         <div class="clear"></div>
                                     </div>
+                                </div>
+
+                                <div class="panel-2" id="divPhanCongHoSo">
+                                    <h2>Phân công hồ sơ</h2>
+
+                                    <div class="row">
+                                        <div class="grid_2">
+                                            Cán bộ xử lý
+                                            <span title="This is a required field." class="ms-accentText"> *</span>
+                                        </div>
+                                        <div class="grid_3">
+                                            <asp:DropDownList ID="ddlUsers" runat="server"></asp:DropDownList>
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                    
+                                </div>
+
+                                <div class="panel-2" id="divYeuCauBoSung">
+                                    <h2>Yêu cầu bổ sung</h2>
+
+                                    <div class="row">
+                                        <div class="grid_2">
+                                            Tiêu đề
+                                            <span title="This is a required field." class="ms-accentText"> *</span>
+                                        </div>
+                                        <div class="grid_9">
+                                            <asp:TextBox ID="txtTieuDe" runat="server"></asp:TextBox>
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="grid_2">
+                                            Diễn giải chi tiết
+                                            <span title="This is a required field." class="ms-accentText"> *</span>
+                                        </div>
+                                        <div class="grid_9">
+                                            <asp:TextBox ID="txtDienGiaiChiTiet" TextMode="MultiLine" runat="server"></asp:TextBox>
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                    
                                 </div>
 
                                 <div class="pull-right">

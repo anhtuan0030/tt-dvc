@@ -301,7 +301,7 @@
                                             </div>
                                             <div class="clear"></div>
                                         </div>
-                                        <h3>Tải trọng lớn nhất được phân bố lên trục xe sau khi xếp hàng hóa lên xe:</h3>
+                                        <h2>Tải trọng lớn nhất được phân bố lên trục xe sau khi xếp hàng hóa lên xe:</h2>
 
                                         <div class="row">
                                             <div class="grid_3">
@@ -386,7 +386,7 @@
                                     </div>
 
                                     <div class="panel-2">
-                                        <h5>Danh sách tập tin đính kèm cho hồ sơ</h5>
+                                        <h2>Danh sách tập tin đính kèm cho hồ sơ</h2>
 
                                         <div class="row">
                                             <div class="grid_8">
@@ -400,9 +400,8 @@
                                         </div>
                                         <div class="row">
                                             <div class="grid_8">
-                                                Giấy chứng nhận kiểm định an toàn kỹ thuật và bảo vệ môi trường phương tiện giao
-                                                                                    thông cơ giới đường bộ
-                                                                                <span title="This is a required field." class="ms-accentText"> *</span>
+                                                Giấy chứng nhận kiểm định an toàn kỹ thuật và bảo vệ môi trường phương tiện giao thông cơ giới đường bộ
+                                                <span title="This is a required field." class="ms-accentText"> *</span>
                                             </div>
                                             <div class="grid_3" id="divFileUpload2" runat="server">
                                                 <asp:FileUpload ID="fileUpload2" runat="server"/>
@@ -412,7 +411,7 @@
                                         <div class="row">
                                             <div class="grid_8">
                                                 Giấy cam kết của chủ phương tiện về quyền sở hữu phương tiện
-                                                                                <span title="This is a required field." class="ms-accentText"> *</span>
+                                                <span title="This is a required field." class="ms-accentText"> *</span>
                                             </div>
                                             <div class="grid_3"  id="divFileUpload3" runat="server">
                                                 <asp:FileUpload ID="fileUpload3" runat="server"/>
@@ -434,7 +433,7 @@
                                     <div class="pull-right">
                                         <asp:Button ID="btnSave" OnClientClick="if (!PreSaveItem(0)) return false;" CssClass="button" runat="server" Text="Thêm mới" />
                                         <asp:Button ID="btnGuiHoSo" OnClientClick="if (!PreSaveItem(0)) return false;" CssClass="button" runat="server" Text="Gửi hồ sơ" />
-                                        <asp:Button ID="btnCancel" runat="server" Text="Làm lại" CssClass="button" />
+                                        <asp:Button ID="btnCancel" runat="server" Text="Hủy" CssClass="button" />
                                     </div>
                                 </div>
                                 <div class="clearfix"></div>

@@ -77,7 +77,7 @@ namespace LongAn.DVC.Helpers
                 for (int i = 0; i < rowCount; i++)
                 {
                     HyperLink link = new HyperLink();
-                    link.Text = "File đính kèm " + i;
+                    link.Text = "File đính kèm " + (i+1);
                     link.NavigateUrl = string.Format("{0}/{1}", deNghiUrl, deNghiAttachmentItems.Rows[i]["LinkFileName"]);
                     link.Target = "_blank";
                     div.Controls.Add(link);
