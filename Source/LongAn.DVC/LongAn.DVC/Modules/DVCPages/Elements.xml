@@ -79,7 +79,7 @@
 
     <File Path="DVCPages\BlankPage.aspx" Url="DeNghiCapPhep.aspx" Type="GhostableInLibrary" IgnoreIfAlreadyExists="FALSE" >
       <Property Name="Title" Value="Đề nghị cấp phép"/>
-      <Property Name="PublishingPageLayout" Value="~SiteCollection/_catalogs/masterpage/DVCWebPartPage_Home.aspx, DVC WebPart page - Home"/>
+      <Property Name="PublishingPageLayout" Value="~SiteCollection/_catalogs/masterpage/DVCWebPartPage_Manage.aspx, DVC WebPart page - Manage"/>
 
       <AllUsersWebPart WebPartOrder ="0" WebPartZoneID ="Header">
         <![CDATA[ 
@@ -109,7 +109,7 @@
 
     <File Path="DVCPages\BlankPage.aspx" Url="HoSoDaTiepNhan.aspx" Type="GhostableInLibrary" IgnoreIfAlreadyExists="FALSE" >
       <Property Name="Title" Value="Hồ sơ đã tiếp nhận"/>
-      <Property Name="PublishingPageLayout" Value="~SiteCollection/_catalogs/masterpage/DVCWebPartPage_Home.aspx, DVC WebPart page - Home"/>
+      <Property Name="PublishingPageLayout" Value="~SiteCollection/_catalogs/masterpage/DVCWebPartPage_Manage.aspx, DVC WebPart page - Manage"/>
 
       <AllUsersWebPart WebPartOrder ="0" WebPartZoneID ="Header">
         <![CDATA[ 
@@ -147,7 +147,7 @@
 
     <File Path="DVCPages\BlankPage.aspx" Url="HoSoChoXuLy.aspx" Type="GhostableInLibrary" IgnoreIfAlreadyExists="FALSE" >
       <Property Name="Title" Value="Hồ sơ chờ xử lý"/>
-      <Property Name="PublishingPageLayout" Value="~SiteCollection/_catalogs/masterpage/DVCWebPartPage_Home.aspx, DVC WebPart page - Home"/>
+      <Property Name="PublishingPageLayout" Value="~SiteCollection/_catalogs/masterpage/DVCWebPartPage_Manage.aspx, DVC WebPart page - Manage"/>
       <AllUsersWebPart WebPartOrder ="0" WebPartZoneID ="Header">
         <![CDATA[ 
 <webParts>
@@ -184,7 +184,7 @@
 
     <File Path="DVCPages\BlankPage.aspx" Url="HoSoDangXuLy.aspx" Type="GhostableInLibrary" IgnoreIfAlreadyExists="FALSE" >
       <Property Name="Title" Value="Hồ sơ đang xử lý"/>
-      <Property Name="PublishingPageLayout" Value="~SiteCollection/_catalogs/masterpage/DVCWebPartPage_Home.aspx, DVC WebPart page - Home"/>
+      <Property Name="PublishingPageLayout" Value="~SiteCollection/_catalogs/masterpage/DVCWebPartPage_Manage.aspx, DVC WebPart page - Manage"/>
       <AllUsersWebPart WebPartOrder ="0" WebPartZoneID ="Header">
         <![CDATA[ 
 <webParts>
@@ -220,7 +220,7 @@
 
     <File Path="DVCPages\BlankPage.aspx" Url="HoSoChoDuyet.aspx" Type="GhostableInLibrary" IgnoreIfAlreadyExists="FALSE" >
       <Property Name="Title" Value="Hồ sơ chờ duyệt"/>
-      <Property Name="PublishingPageLayout" Value="~SiteCollection/_catalogs/masterpage/DVCWebPartPage_Home.aspx, DVC WebPart page - Home"/>
+      <Property Name="PublishingPageLayout" Value="~SiteCollection/_catalogs/masterpage/DVCWebPartPage_Manage.aspx, DVC WebPart page - Manage"/>
       <AllUsersWebPart WebPartOrder ="0" WebPartZoneID ="Header">
         <![CDATA[ 
 <webParts>
@@ -256,7 +256,7 @@
 
     <File Path="DVCPages\BlankPage.aspx" Url="HoSoChoCapPhep.aspx" Type="GhostableInLibrary" IgnoreIfAlreadyExists="FALSE" >
       <Property Name="Title" Value="Hồ sơ chờ cấp phép"/>
-      <Property Name="PublishingPageLayout" Value="~SiteCollection/_catalogs/masterpage/DVCWebPartPage_Home.aspx, DVC WebPart page - Home"/>
+      <Property Name="PublishingPageLayout" Value="~SiteCollection/_catalogs/masterpage/DVCWebPartPage_Manage.aspx, DVC WebPart page - Manage"/>
       <AllUsersWebPart WebPartOrder ="0" WebPartZoneID ="Header">
         <![CDATA[ 
 <webParts>
@@ -292,7 +292,7 @@
 
     <File Path="DVCPages\BlankPage.aspx" Url="HoSoDaCapPhep.aspx" Type="GhostableInLibrary" IgnoreIfAlreadyExists="FALSE" >
       <Property Name="Title" Value="Hồ sơ đã cấp phép"/>
-      <Property Name="PublishingPageLayout" Value="~SiteCollection/_catalogs/masterpage/DVCWebPartPage_Home.aspx, DVC WebPart page - Home"/>
+      <Property Name="PublishingPageLayout" Value="~SiteCollection/_catalogs/masterpage/DVCWebPartPage_Manage.aspx, DVC WebPart page - Manage"/>
       <AllUsersWebPart WebPartOrder ="0" WebPartZoneID ="Header">
         <![CDATA[ 
 <webParts>
@@ -328,7 +328,7 @@
 
     <File Path="DVCPages\BlankPage.aspx" Url="HoSoBiTuChoi.aspx" Type="GhostableInLibrary" IgnoreIfAlreadyExists="FALSE" >
       <Property Name="Title" Value="Hồ sơ bị từ chối"/>
-      <Property Name="PublishingPageLayout" Value="~SiteCollection/_catalogs/masterpage/DVCWebPartPage_Home.aspx, DVC WebPart page - Home"/>
+      <Property Name="PublishingPageLayout" Value="~SiteCollection/_catalogs/masterpage/DVCWebPartPage_Manage.aspx, DVC WebPart page - Manage"/>
       <AllUsersWebPart WebPartOrder ="0" WebPartZoneID ="Header">
         <![CDATA[ 
 <webParts>
@@ -364,7 +364,7 @@
 
     <File Path="DVCPages\BlankPage.aspx" Url="BaoCaoThongKe.aspx" Type="GhostableInLibrary" IgnoreIfAlreadyExists="FALSE" >
       <Property Name="Title" Value="Báo cáo thống kê"/>
-      <Property Name="PublishingPageLayout" Value="~SiteCollection/_catalogs/masterpage/DVCWebPartPage_Home.aspx, DVC WebPart page - Home"/>
+      <Property Name="PublishingPageLayout" Value="~SiteCollection/_catalogs/masterpage/DVCWebPartPage_Manage.aspx, DVC WebPart page - Manage"/>
     </File>
 
     <File Path="DVCPages\BlankPage.aspx" Url="TraCuuHoSo.aspx" Type="GhostableInLibrary" IgnoreIfAlreadyExists="FALSE" >
@@ -374,7 +374,7 @@
 
     <File Path="DVCPages\BlankPage.aspx" Url="DVCRedirect.aspx" Type="GhostableInLibrary" IgnoreIfAlreadyExists="FALSE" >
       <Property Name="Title" Value="DVCRedirect"/>
-      <Property Name="PublishingPageLayout" Value="~SiteCollection/_catalogs/masterpage/DVCWebPartPage_Home.aspx, DVC WebPart page - Home"/>
+      <Property Name="PublishingPageLayout" Value="~SiteCollection/_catalogs/masterpage/DVCWebPartPage_Manage.aspx, DVC WebPart page - Manage"/>
     </File>
   </Module>
 </Elements>
