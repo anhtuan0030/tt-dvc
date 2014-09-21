@@ -228,6 +228,8 @@ ul.bullet-1 li a {
 }
 #main-frame {
   margin-bottom: 30px;
+    top: 0px;
+    left: 0px;
 }
 .container {
   max-width: 1024px;

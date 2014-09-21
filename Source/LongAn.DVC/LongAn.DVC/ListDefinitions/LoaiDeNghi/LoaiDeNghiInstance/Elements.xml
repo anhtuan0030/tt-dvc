@@ -1,10 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Elements xmlns="http://schemas.microsoft.com/sharepoint/">
-  <ListInstance Title="Loại đề nghị" 
-                OnQuickLaunch="TRUE" 
-                TemplateType="10002" 
-                Url="Lists/LoaiDeNghi"
-                Description="Loại đề nghị">
+  <ListInstance Title="Loại đề nghị" OnQuickLaunch="TRUE" TemplateType="10002" Url="Lists/LoaiDeNghi" Description="Loại đề nghị">
     <Data>
       <Rows>
         <Row>

@@ -4,7 +4,10 @@
     <projectItemReference itemId="c3b9f414-0818-40f5-85cd-04a0bc5cdaa4" />
     <projectItemReference itemId="2c72d282-872c-4668-b93d-ada89634b206" />
     <projectItemReference itemId="4e3fcc52-b736-4147-b6ef-c1f6bc1ce63c" />
+    <projectItemReference itemId="aa3ce8fd-b1c6-4cd8-8fce-eca431dba944" />
     <projectItemReference itemId="de056ed3-43f9-4dfe-8c29-0ea15883980a" />
     <projectItemReference itemId="d3264ac3-0da2-4070-9cbe-243692e672b1" />
+    <projectItemReference itemId="59b1fafa-abee-4313-b46d-4bbf85d86457" />
+    <projectItemReference itemId="87d63147-3234-49c3-8c84-b42fce449e78" />
   </projectItems>
 </feature>

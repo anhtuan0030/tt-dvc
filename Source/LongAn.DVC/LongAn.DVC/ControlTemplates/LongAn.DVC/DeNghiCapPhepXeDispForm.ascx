@@ -246,6 +246,15 @@
                                     </div>
                                     <div class="row">
                                         <div class="grid_3">
+                                            <SharePoint:FieldLabel ID="flbLoaiCapPhep"  FieldName="LoaiCapPhep"  runat="server"  />
+                                        </div>
+                                        <div class="grid_8">
+                                            <SharePoint:FormField  runat="server" ID="fldLoaiCapPhep" FieldName="LoaiCapPhep" />
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="grid_3">
                                             <SharePoint:FieldLabel ID="FieldLabel21"  FieldName="TrongLuongHangXinCho"  runat="server"  />
                                         </div>
                                         <div class="grid_8">
@@ -419,7 +428,7 @@
                                     <div class="row">
                                         <div class="grid_8">
                                             Chứng minh nhân dân của người nộp
-                                                                            <span title="This is a required field." class="ms-accentText"> *</span>
+                                            <span title="This is a required field." class="ms-accentText"> *</span>
                                         </div>
                                         <div class="grid_3" id="divFileUpload4" runat="server">
                                             <asp:FileUpload ID="fileUpload4" runat="server" Visible="false"/>
@@ -428,7 +437,19 @@
                                     </div>
                                 </div>
 
-                                <div class="panel-2" id="divPhanCongHoSo">
+                                <div class="panel-2" id="divLoaiDuong" runat="server" visible="false">
+                                    <h2>Loại đường xin cấp phép</h2>
+
+                                    <div class="grid_2">
+                                        <SharePoint:FieldLabel ID="flbLoaiDuong"  FieldName="LoaiDuong"  runat="server"  />
+                                    </div>
+                                    <div class="grid_9 col-xs-2">
+                                        <SharePoint:FormField  runat="server" ID="fldLoaiDuong" FieldName="LoaiDuong" Visible="false"/>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+
+                                <div class="panel-2" id="divPhanCongHoSo" runat="server" visible="false">
                                     <h2>Phân công hồ sơ</h2>
 
                                     <div class="row">
@@ -444,7 +465,7 @@
                                     
                                 </div>
 
-                                <div class="panel-2" id="divYeuCauBoSung">
+                                <div class="panel-2" id="divYeuCauBoSung" runat="server" visible="false">
                                     <h2>Yêu cầu bổ sung</h2>
 
                                     <div class="row">
