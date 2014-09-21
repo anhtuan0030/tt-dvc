@@ -39,6 +39,9 @@ namespace LongAn.DVC.Common
         //Configurations
         public const string ConfSoThuTuBienNhan = "0000000";
 
+        public const string ConfQueryStringBS = "4709-95d5-994c89d0c201";
+        public const string ConfQueryStringPC = "4807-9ad4-764cded0c311";
+
         public const string ConfViewStateCapXuLy = "CapXuLy";
 
         public const string ConfMaLinhVucSGTVT = "812";
@@ -52,12 +55,16 @@ namespace LongAn.DVC.Common
         public const string ConfLinkDispForm = "javascript:OpenPopUpPage('{0}/DispForm.aspx?ID={1}&Source={2}');return false;";
         public const string ConfLinkEditForm = "javascript:OpenPopUpPage('{0}/EditForm.aspx?ID={1}&Source={2}');return false;";
         public const string ConfLinkNewForm = "javascript:OpenPopUpPage('{0}/NewForm.aspx?Source={1}');return false;";
+        public const string ConfLinkPageDispForm = "{0}/DispForm.aspx?ID={1}&Source={2}";
+        public const string ConfLinkPageEditForm = "{0}/EditForm.aspx?ID={1}&Source={2}";
+        public const string ConfLinkPageNewForm = "{0}/NewForm.aspx?Source={1}";
 
         public const string ConfPermissionDeNghi = "Add Edit List Item";
         public const string ConfPermissionDeNghiDes = "Can add, edit but not delete list item";
         //List url
         public const string ListUrlDeNghiCapPhep = "/Lists/DeNghiCapPhepXe";
         public const string ListUrlDeNghiAttachment = "/Lists/DeNghiAttachment";
+        public const string ListUrlYeuCauBoSung = "/Lists/YeuCauBoSung";
         //Loại attachments
         public const string AttachmentGiayDangKy = "GiayDangKy";
         public const string AttachmentGiayChungNhanKiemDinh = "GiayChungNhanKiemDinh";
@@ -68,6 +75,7 @@ namespace LongAn.DVC.Common
         public const string FieldCreated = "Created";
 
         //DeNghi attachments
+        public const string FieldDeNghiAdmin = "DeNghiAdmin";
         public const string FieldLoaiDeNghi = "LoaiDeNghi";
         public const string FieldTrangThai = "TrangThai";
         public const string FieldTrangThaiText = "TrangThaiText";
@@ -79,5 +87,6 @@ namespace LongAn.DVC.Common
         public const string FieldDeNghiGUID = "DeNghiGUID";
         public const string FieldNamDeNghi = "NamDeNghi";
         public const string FieldSoThuTuBienNhan = "SoThuTuBienNhan";
+        public const string FieldMoTa = "MoTa";
     }
 }
