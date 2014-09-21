@@ -178,9 +178,8 @@ namespace LongAn.DVC.FormsBasedAuthentication.Webparts.FBALoginWebPart {
             @__ctrl.ApplyStyleSheetSkin(this.Page);
             @__ctrl.ID = "CreateUserLink";
             @__ctrl.NavigateUrl = "/Pages/DangKyTaiKhoan.aspx";
-            @__ctrl.CssClass = "btn btn-default";
             System.Web.UI.IParserAccessor @__parser = ((System.Web.UI.IParserAccessor)(@__ctrl));
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("Đăng ký"));
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("Đăng ký tài khoản"));
             return @__ctrl;
         }
         
@@ -239,14 +238,13 @@ namespace LongAn.DVC.FormsBasedAuthentication.Webparts.FBALoginWebPart {
             global::System.Web.UI.WebControls.Button @__ctrl8;
             @__ctrl8 = this.@__BuildControl__control10();
             @__parser.AddParsedSubObject(@__ctrl8);
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                    </div>\r\n                    <div class=\"grid_6\">\r\n         " +
-                        "               "));
-            global::System.Web.UI.WebControls.HyperLink @__ctrl9;
-            @__ctrl9 = this.@__BuildControl__control11();
-            @__parser.AddParsedSubObject(@__ctrl9);
             @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                    </div>\r\n                    <div class=\"clear\"></div>\r\n    " +
                         "            </div>\r\n                <ul class=\"bullet-1\">\r\n                    <" +
                         "li>"));
+            global::System.Web.UI.WebControls.HyperLink @__ctrl9;
+            @__ctrl9 = this.@__BuildControl__control11();
+            @__parser.AddParsedSubObject(@__ctrl9);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("</li>\r\n                    <li>"));
             global::System.Web.UI.WebControls.HyperLink @__ctrl10;
             @__ctrl10 = this.@__BuildControl__control12();
             @__parser.AddParsedSubObject(@__ctrl10);
@@ -263,6 +261,7 @@ namespace LongAn.DVC.FormsBasedAuthentication.Webparts.FBALoginWebPart {
             @__ctrl.ApplyStyleSheetSkin(this.Page);
             @__ctrl.LayoutTemplate = new System.Web.UI.CompiledTemplateBuilder(new System.Web.UI.BuildTemplateMethod(this.@__BuildControl__control2));
             @__ctrl.ID = "Login1";
+            @__ctrl.Width = new System.Web.UI.WebControls.Unit(100D, global::System.Web.UI.WebControls.UnitType.Percentage);
             @__ctrl.FailureText = "Đăng nhập không thành công!";
             @__ctrl.CreateUserText = "Đăng ký";
             @__ctrl.CreateUserUrl = "/Pages/DangKyTaiKhoan.aspx";
