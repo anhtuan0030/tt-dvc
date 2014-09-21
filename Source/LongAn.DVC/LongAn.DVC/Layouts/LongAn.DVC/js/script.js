@@ -20,5 +20,4 @@ jQuery(document).ready(function($){
             regional: 'vi'
         });
     }
-
 });

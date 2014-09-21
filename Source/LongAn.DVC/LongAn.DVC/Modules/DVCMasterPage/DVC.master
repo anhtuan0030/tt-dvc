@@ -46,14 +46,6 @@
 <SharePoint:CssRegistration Name="/_layouts/15/LongAn.DVC/css/superfish.css" runat="server" />
 <SharePoint:CssRegistration Name="/_layouts/15/LongAn.DVC/css/main.css" runat="server" />
 
-<script language="javascript">
-_spBodyOnLoadFunctionNames.push("Hidesuite");
-function Hidesuite()
-{
-    document.getElementById('ctl00_fullscreenmodeBtn').style.visibility = 'hidden';
-}
-</script> 
-
 </head>
 
 <body>
@@ -242,7 +234,6 @@ function Hidesuite()
 	</div>
 </div>
 		<div id="ms-hcTest"></div>
-<SharePoint:SPSecurityTrimmedControl ID="SPRibbon" runat="server" PermissionsString="AddAndCustomizePages">
 		<div id="s4-ribbonrow">
 		<div id="globalNavBox" class="noindex">
 <div id="ribbonBox">
@@ -263,11 +254,11 @@ function Hidesuite()
 					Location="TabRowRight"
 					ID="RibbonTabRowRight"
 					CssClass="s4-trc-container s4-notdlg ms-core-defaultFont">
-					<SharePoint:SPSharePromotedActionButton runat="server"/>
+					<%--<SharePoint:SPSharePromotedActionButton runat="server"/>
 					<SharePoint:DelegateControl runat="server" ControlId="PromotedActions" AllowMultipleControls="true" />
-					<SharePoint:SPSyncPromotedActionButton runat="server"/>
+					<SharePoint:SPSyncPromotedActionButton runat="server"/>--%>
 					<SharePoint:PageStateActionButton id="PageStateActionButton" runat="server" Visible="false" />
-<span id="fullscreenmodebox" class="ms-qatbutton">
+<span id="fullscreenmodebox" class="ms-qatbutton" style="display:none;">
 	<span id="fullscreenmode">
 		<SharePoint:ThemedClusteredHoverImage
 			runat="server"
@@ -371,7 +362,6 @@ function Hidesuite()
 </SharePoint:AjaxDelta>
 		</div>
 		</div>
-</SharePoint:SPSecurityTrimmedControl>
 
 		<div id="s4-workspace" class="ms-core-overlay s4-nosetwidth">
 		<div class="container_12">
@@ -380,7 +370,7 @@ function Hidesuite()
 		
 		<!-- Begin Banner -->
         <div class="row">
-            <div class="">
+            <div class="grid_12">
                 <a href="/">
                     <img class="img-responsive" src="/_layouts/15/LongAn.DVC/images/banner.png" alt="banner"/>
                 </a>
@@ -391,7 +381,7 @@ function Hidesuite()
 
         <!-- Begin Menu -->
         <div class="row">
-            <div class="">
+            <div class="grid_12">
                 <div id="top-menu">
                     <ul class="sf-menu menu">
                         <li class="home"><a href="/">Trang chủ</a></li>

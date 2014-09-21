@@ -1,5 +1,7 @@
 ﻿<%@ Page language="C#"   Inherits="Microsoft.SharePoint.Publishing.PublishingLayoutPage,Microsoft.SharePoint.Publishing,Version=15.0.0.0,Culture=neutral,PublicKeyToken=71e9bce111e9429c" meta:webpartpageexpansion="full" meta:progid="SharePoint.WebPartPage.Document" %>
 <%@ Register Tagprefix="SharePointWebControls" Namespace="Microsoft.SharePoint.WebControls" Assembly="Microsoft.SharePoint, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %> <%@ Register Tagprefix="WebPartPages" Namespace="Microsoft.SharePoint.WebPartPages" Assembly="Microsoft.SharePoint, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %> <%@ Register Tagprefix="PublishingWebControls" Namespace="Microsoft.SharePoint.Publishing.WebControls" Assembly="Microsoft.SharePoint.Publishing, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %> <%@ Register Tagprefix="PublishingNavigation" Namespace="Microsoft.SharePoint.Publishing.Navigation" Assembly="Microsoft.SharePoint.Publishing, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %>
+<%@ Register tagprefix="FBALoginWebPart" namespace="LongAn.DVC.FormsBasedAuthentication.Webparts.FBALoginWebPart" assembly="LongAn.DVC.FormsBasedAuthentication, Version=1.0.0.0, Culture=neutral, PublicKeyToken=9dba9f460226d31d" %>
+
 <asp:Content ContentPlaceholderID="PlaceHolderAdditionalPageHead" runat="server">
 	<SharePointWebControls:CssRegistration name="<% $SPUrl:~sitecollection/Style Library/~language/Themable/Core Styles/pagelayouts15.css %>" runat="server"/>
 	<PublishingWebControls:EditModePanel runat="server">
@@ -29,7 +31,7 @@
 			<SharePointWebControls:TextField runat="server" FieldName="Title"/>
 		</PublishingWebControls:EditModePanel>
 		<div class="ms-table ms-fullWidth">
-			<div class="tableCol-75">
+			<div class="grid_9"> <%--tableCol-75--%>
 				<div class="cell-margin">
 					<WebPartPages:WebPartZone runat="server" Title="<%$Resources:cms,WebPartZoneTitle_Header%>" ID="Header"><ZoneTemplate></ZoneTemplate></WebPartPages:WebPartZone>
 				</div>
@@ -56,9 +58,20 @@
 					<WebPartPages:WebPartZone runat="server" Title="<%$Resources:cms,WebPartZoneTitle_Footer%>" ID="Footer"><ZoneTemplate></ZoneTemplate></WebPartPages:WebPartZone>
 				</div>
 			</div>
-			<div class="cell-margin tableCol-25">
-			<WebPartPages:WebPartZone runat="server" Title="<%$Resources:cms,WebPartZoneTitle_Right%>" ID="RightColumn" Orientation="Vertical"><ZoneTemplate></ZoneTemplate></WebPartPages:WebPartZone>
+			<div class="cell-margin grid_3"> <%--tableCol-25--%>
+                <FBALoginWebPart:FBALoginWebPart runat="server" ImportErrorMessage="$Resources:core,ImportErrorMessage;" Title="FBA Login Web Part" __MarkupType="vsattributemarkup" __WebPartId="{f6b518ad-0f88-4e23-ac81-2a3d45cd507d}" WebPart="true" __designer:IsClosed="false" id="g_f6b518ad_0f88_4e23_ac81_2a3d45cd507d"></FBALoginWebPart:FBALoginWebPart>
+
+                <a class="banner" href="#">
+                    <img class="img-responsive" src="/_layouts/15/LongAn.DVC/images/index_banner-07.png" alt="logo"/>
+                </a>
+                <a class="banner" href="#">
+                    <img class="img-responsive" src="/_layouts/15/LongAn.DVC/images/index_banner-08.png" alt="logo"/>
+                </a>
+                <a class="banner" href="#">
+                    <img class="img-responsive" src="/_layouts/15/LongAn.DVC/images/index_banner-09.png" alt="logo"/>
+                </a>
 			</div>
+            <div class="clear"></div>
 			<SharePointWebControls:ScriptBlock runat="server">
 			if(typeof(MSOLayout_MakeInvisibleIfEmpty) == 'function') 
 			{MSOLayout_MakeInvisibleIfEmpty();}</SharePointWebControls:ScriptBlock>

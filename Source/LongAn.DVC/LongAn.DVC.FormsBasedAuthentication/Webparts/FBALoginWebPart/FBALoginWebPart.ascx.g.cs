@@ -163,6 +163,7 @@ namespace LongAn.DVC.FormsBasedAuthentication.Webparts.FBALoginWebPart {
             @__ctrl.ID = "LoginButton";
             @__ctrl.CommandName = "Login";
             @__ctrl.Text = "Đăng nhập";
+            @__ctrl.CssClass = "btn btn-default";
             @__ctrl.ValidationGroup = "ctl00$Login1";
             return @__ctrl;
         }
@@ -176,7 +177,8 @@ namespace LongAn.DVC.FormsBasedAuthentication.Webparts.FBALoginWebPart {
             @__ctrl.TemplateControl = this;
             @__ctrl.ApplyStyleSheetSkin(this.Page);
             @__ctrl.ID = "CreateUserLink";
-            @__ctrl.NavigateUrl = "/registeraccount";
+            @__ctrl.NavigateUrl = "/Pages/DangKyTaiKhoan.aspx";
+            @__ctrl.CssClass = "btn btn-default";
             System.Web.UI.IParserAccessor @__parser = ((System.Web.UI.IParserAccessor)(@__ctrl));
             @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("Đăng ký"));
             return @__ctrl;
@@ -191,7 +193,7 @@ namespace LongAn.DVC.FormsBasedAuthentication.Webparts.FBALoginWebPart {
             @__ctrl.TemplateControl = this;
             @__ctrl.ApplyStyleSheetSkin(this.Page);
             @__ctrl.ID = "PasswordRecoveryLink";
-            @__ctrl.NavigateUrl = "/";
+            @__ctrl.NavigateUrl = "/Pages/KhoiPhucMatKhau.aspx";
             System.Web.UI.IParserAccessor @__parser = ((System.Web.UI.IParserAccessor)(@__ctrl));
             @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("Quên mật khẩu ?"));
             return @__ctrl;
@@ -202,69 +204,53 @@ namespace LongAn.DVC.FormsBasedAuthentication.Webparts.FBALoginWebPart {
             "artCodeGenerator", "12.0.0.0")]
         private void @__BuildControl__control2(System.Web.UI.Control @__ctrl) {
             System.Web.UI.IParserAccessor @__parser = ((System.Web.UI.IParserAccessor)(@__ctrl));
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl(@"
-        <table cellpadding=""1"" cellspacing=""0"" style=""border-collapse:collapse;"">
-            <tr>
-                <td>
-                    <table cellpadding=""0"">
-                        <tr>
-                            <td align=""center"" colspan=""2"">Đăng nhập</td>
-                        </tr>
-                        <tr>
-                            <td align=""right"">
-                                "));
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n        <div class=\"box icon-1\">\r\n            <div class=\"box-title\">\r\n        " +
+                        "        Đăng nhập\r\n            </div>\r\n            <div class=\"box-content form\"" +
+                        ">\r\n                "));
             global::System.Web.UI.WebControls.Label @__ctrl1;
             @__ctrl1 = this.@__BuildControl__control3();
             @__parser.AddParsedSubObject(@__ctrl1);
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                            </td>\r\n                            <td>\r\n          " +
-                        "                      "));
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                "));
             global::System.Web.UI.WebControls.TextBox @__ctrl2;
             @__ctrl2 = this.@__BuildControl__control4();
             @__parser.AddParsedSubObject(@__ctrl2);
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                                "));
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                "));
             global::System.Web.UI.WebControls.RequiredFieldValidator @__ctrl3;
             @__ctrl3 = this.@__BuildControl__control5();
             @__parser.AddParsedSubObject(@__ctrl3);
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                            </td>\r\n                        </tr>\r\n             " +
-                        "           <tr>\r\n                            <td align=\"right\">\r\n               " +
-                        "                 "));
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                "));
             global::System.Web.UI.WebControls.Label @__ctrl4;
             @__ctrl4 = this.@__BuildControl__control6();
             @__parser.AddParsedSubObject(@__ctrl4);
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                            </td>\r\n                            <td>\r\n          " +
-                        "                      "));
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                "));
             global::System.Web.UI.WebControls.TextBox @__ctrl5;
             @__ctrl5 = this.@__BuildControl__control7();
             @__parser.AddParsedSubObject(@__ctrl5);
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                                "));
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                "));
             global::System.Web.UI.WebControls.RequiredFieldValidator @__ctrl6;
             @__ctrl6 = this.@__BuildControl__control8();
             @__parser.AddParsedSubObject(@__ctrl6);
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                            </td>\r\n                        </tr>\r\n             " +
-                        "           <tr>\r\n                            <td align=\"center\" colspan=\"2\" styl" +
-                        "e=\"color:Red;\">\r\n                                "));
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                "));
             global::System.Web.UI.WebControls.Literal @__ctrl7;
             @__ctrl7 = this.@__BuildControl__control9();
             @__parser.AddParsedSubObject(@__ctrl7);
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                            </td>\r\n                        </tr>\r\n             " +
-                        "           <tr>\r\n                            <td align=\"right\" colspan=\"2\">\r\n   " +
-                        "                             "));
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                <div class=\"row\">\r\n                    <div class=\"grid_6\">\r\n  " +
+                        "                      "));
             global::System.Web.UI.WebControls.Button @__ctrl8;
             @__ctrl8 = this.@__BuildControl__control10();
             @__parser.AddParsedSubObject(@__ctrl8);
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                            </td>\r\n                        </tr>\r\n             " +
-                        "           <tr>\r\n                            <td colspan=\"2\">\r\n                 " +
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                    </div>\r\n                    <div class=\"grid_6\">\r\n         " +
                         "               "));
             global::System.Web.UI.WebControls.HyperLink @__ctrl9;
             @__ctrl9 = this.@__BuildControl__control11();
             @__parser.AddParsedSubObject(@__ctrl9);
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n<br />\r\n                                "));
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                    </div>\r\n                    <div class=\"clear\"></div>\r\n    " +
+                        "            </div>\r\n                <ul class=\"bullet-1\">\r\n                    <" +
+                        "li>"));
             global::System.Web.UI.WebControls.HyperLink @__ctrl10;
             @__ctrl10 = this.@__BuildControl__control12();
             @__parser.AddParsedSubObject(@__ctrl10);
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                            </td>\r\n                        </tr>\r\n             " +
-                        "       </table>\r\n                </td>\r\n            </tr>\r\n        </table>\r\n   " +
-                        " "));
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("</li>\r\n                </ul>\r\n            </div>\r\n        </div>\r\n    "));
         }
         
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
@@ -279,7 +265,7 @@ namespace LongAn.DVC.FormsBasedAuthentication.Webparts.FBALoginWebPart {
             @__ctrl.ID = "Login1";
             @__ctrl.FailureText = "Đăng nhập không thành công!";
             @__ctrl.CreateUserText = "Đăng ký";
-            @__ctrl.CreateUserUrl = "/registeraccount";
+            @__ctrl.CreateUserUrl = "/Pages/DangKyTaiKhoan.aspx";
             @__ctrl.DisplayRememberMe = false;
             @__ctrl.LoginButtonText = "Đăng nhập";
             @__ctrl.PasswordLabelText = "Mật khẩu:";

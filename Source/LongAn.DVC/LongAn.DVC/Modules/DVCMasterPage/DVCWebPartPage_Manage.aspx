@@ -29,7 +29,7 @@
 			<SharePointWebControls:TextField runat="server" FieldName="Title"/>
 		</PublishingWebControls:EditModePanel>
 		<div class="ms-table ms-fullWidth">
-			<div class="tableCol-75">
+			<div class="grid_9">
 				<div class="cell-margin">
 					<WebPartPages:WebPartZone runat="server" Title="<%$Resources:cms,WebPartZoneTitle_Header%>" ID="Header"><ZoneTemplate></ZoneTemplate></WebPartPages:WebPartZone>
 				</div>
@@ -56,9 +56,10 @@
 					<WebPartPages:WebPartZone runat="server" Title="<%$Resources:cms,WebPartZoneTitle_Footer%>" ID="Footer"><ZoneTemplate></ZoneTemplate></WebPartPages:WebPartZone>
 				</div>
 			</div>
-			<div class="cell-margin tableCol-25">
+			<div class="cell-margin grid_3">
 			<WebPartPages:WebPartZone runat="server" Title="<%$Resources:cms,WebPartZoneTitle_Right%>" ID="RightColumn" Orientation="Vertical"><ZoneTemplate></ZoneTemplate></WebPartPages:WebPartZone>
 			</div>
+            <div class="clear"></div>
 			<SharePointWebControls:ScriptBlock runat="server">
 			if(typeof(MSOLayout_MakeInvisibleIfEmpty) == 'function') 
 			{MSOLayout_MakeInvisibleIfEmpty();}</SharePointWebControls:ScriptBlock>

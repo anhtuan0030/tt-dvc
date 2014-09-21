@@ -11,7 +11,7 @@ a:hover {
   text-decoration: none;
 }*/
 .container_12 {
-  width: 990px;
+  width: 1000px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -700,11 +700,13 @@ input[type="text"].small {
 }
 
 #s4-bodyContainer{
-	width: 990px;
+	width: 1000px;
 
 	margin:auto;
 	/* background color of the content */
-    background-color: white;
+    /*background-color: white;*/
+
+    padding-bottom:0;
 }
 
 #s4-workspace{
@@ -742,4 +744,13 @@ input[type="text"].small {
 #contentBox {
   margin-left: 0;
   margin-right:0;
+}
+#ms-help {
+display:none;
+}
+
+.ms-core-menu-list li[text='About Me'] { display: none;}
+
+a.button:visited {
+  color: #fff ;
 }

@@ -145,7 +145,7 @@
     <value>Behavior</value>
   </data>
   <data name="AutoGeneratePassword_DefaultValue" xml:space="preserve">
-    <value>true</value>
+    <value>false</value>
   </data>
   <data name="AutoGeneratePassword_Description" xml:space="preserve">
     <value>Auto generates the users password. This is required when Review Membership Requests is enabled.</value>
@@ -703,7 +703,7 @@
     <value>Behavior</value>
   </data>
   <data name="LoginCreatedUser_DefaultValue" xml:space="preserve">
-    <value>false</value>
+    <value>true</value>
   </data>
   <data name="LoginCreatedUser_Description" xml:space="preserve">
     <value />
