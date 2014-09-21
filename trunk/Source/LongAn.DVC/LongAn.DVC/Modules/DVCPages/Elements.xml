@@ -372,7 +372,7 @@
       <Property Name="PublishingPageLayout" Value="~SiteCollection/_catalogs/masterpage/DVCWebPartPage_Home.aspx, DVC WebPart page - Home"/>
     </File>
 
-    <File Path="DVCPages\BlankPage.aspx" Url="DVCRedirect.aspx" Type="GhostableInLibrary" IgnoreIfAlreadyExists="FALSE" >
+    <File Path="DVCPages\BlankPage.aspx" Url="DVC.aspx" Type="GhostableInLibrary" IgnoreIfAlreadyExists="FALSE" >
       <Property Name="Title" Value="DVCRedirect"/>
       <Property Name="PublishingPageLayout" Value="~SiteCollection/_catalogs/masterpage/DVCWebPartPage_Manage.aspx, DVC WebPart page - Manage"/>
     </File>
