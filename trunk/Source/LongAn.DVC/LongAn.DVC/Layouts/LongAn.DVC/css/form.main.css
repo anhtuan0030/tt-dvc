@@ -23,7 +23,7 @@ a:hover {
   background-color: #01648d;
   border: none;
   display: block;
-  padding: 10px;
+  padding: 5px;
   color: #fff;
   text-align: center;
   background-repeat: no-repeat;
@@ -153,6 +153,9 @@ a:hover {
 .button.large-button.stat {
   background-image: url(../images/stat.png);
 }
+.button.large-button.add-new {
+  padding-left: 5px;
+}
 .button.small {
   width: 32px;
   height: 32px;
@@ -212,19 +215,21 @@ input[type="text"].small {
   float: left;
   margin-right: 15px;
 }
-searchform {
+#searchform {
   border: 1px solid #dedede;
-  padding: 25px;
+  padding: 15px;
   margin-top: 15px;
   margin-bottom: 15px;
 }
-searchform .button {
-  width: 100%;
+#searchform .button {
+  width: 90%;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
-searchform .row.line {
+#searchform .row.line {
   margin-bottom: 15px;
 }
-searchform label {
+#searchform label {
   margin-right: 15px;
 }
 .the-form {
@@ -303,7 +308,6 @@ searchform label {
 }
 #footer {
   text-align: center;
-  padding-top: 15px;
-  background: #5a5a5a;
+  background: #2870e6;
   color: #fff;
 }

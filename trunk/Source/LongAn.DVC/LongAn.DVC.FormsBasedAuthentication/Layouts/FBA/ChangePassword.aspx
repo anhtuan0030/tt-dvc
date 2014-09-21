@@ -1,6 +1,6 @@
 <%@ Assembly Name="$SharePoint.Project.AssemblyFullName$" %>
 <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ChangePassword.aspx.cs"
-    Inherits="LongAn.DVC.FormsBasedAuthentication.ChangePassword" DynamicMasterPageFile="~masterurl/default.master" %>
+    Inherits="LongAn.DVC.FormsBasedAuthentication.ChangePassword" DynamicMasterPageFile="~masterurl/custom.master" %>
 
 <%@ Register TagPrefix="SharePoint" Namespace="Microsoft.SharePoint.WebControls"
     Assembly="Microsoft.SharePoint, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %>
