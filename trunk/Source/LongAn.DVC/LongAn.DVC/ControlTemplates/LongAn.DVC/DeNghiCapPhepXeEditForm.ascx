@@ -298,7 +298,7 @@
                             </div>
                             <div class="clear"></div>
                         </div>
-                        <h3>Tải trọng lớn nhất được phân bố lên trục xe sau khi xếp hàng hóa lên xe:</h3>
+                        <h2>Tải trọng lớn nhất được phân bố lên trục xe sau khi xếp hàng hóa lên xe:</h2>
 
                         <div class="row">
                             <div class="grid_3">
@@ -383,7 +383,7 @@
                     </div>
 
                     <div class="panel-2">
-                        <h5>Danh sách tập tin đính kèm cho hồ sơ</h5>
+                        <h2>Danh sách tập tin đính kèm cho hồ sơ</h2>
 
                         <div class="row">
                             <div class="grid_8">

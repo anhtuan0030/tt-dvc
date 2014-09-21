@@ -57,8 +57,10 @@ namespace LongAn.DVC.WebParts.DeNghiListView
                     divAddNew.Visible = true;
                     var deNghiUrl = (SPContext.Current.Web.ServerRelativeUrl + Constants.ListUrlDeNghiCapPhep).Replace("//", "/");
                     var currentPage = SPUtility.GetPageUrlPath(HttpContext.Current);
-                    var viewUrl = string.Format(Constants.ConfLinkNewForm, deNghiUrl, currentPage);
-                    lbtAddNew.OnClientClick = viewUrl;   
+                    //var viewUrl = string.Format(Constants.ConfLinkNewForm, deNghiUrl, currentPage);
+                    //lbtAddNew.OnClientClick = viewUrl;
+                    var viewUrl = string.Format(Constants.ConfLinkPageNewForm, deNghiUrl, currentPage);
+                    hplAddNew.NavigateUrl = viewUrl;
                 }
                 hplTrangChu.NavigateUrl = LinkTrangChu;
                 hplHoSoDaTiepNhan.NavigateUrl = LinkHoSoDaTiepNhan;
@@ -183,56 +185,56 @@ namespace LongAn.DVC.WebParts.DeNghiListView
 
         [WebBrowsable(true),
          WebDisplayName("Link Hồ sơ đã tiếp nhận"),
-         WebDescription("This Accepts text Input"),
+         WebDescription("Một cửa đang tiếp nhận"),
          Personalizable(PersonalizationScope.Shared),
          Category("LongAn.DVC")]
         public string LinkHoSoDaTiepNhan { get; set; }
 
         [WebBrowsable(true),
-         WebDisplayName("Link Hồ sơ chờ phân công"),
-         WebDescription("This Accepts text Input"),
+         WebDisplayName("Link Hồ sơ chờ xử lý"),
+         WebDescription("Chờ Trưởng phó phòng phân công / Cán bộ xử lý"),
          Personalizable(PersonalizationScope.Shared),
          Category("LongAn.DVC")]
         public string LinkHoSoChoPhanCong { get; set; }
 
         [WebBrowsable(true),
-         WebDisplayName("Link Hồ sơ đã phân công"),
-         WebDescription("This Accepts text Input"),
+         WebDisplayName("Link Hồ sơ đang xử lý"),
+         WebDescription("Trưởng phó phòng đã phân công"),
          Personalizable(PersonalizationScope.Shared),
          Category("LongAn.DVC")]
         public string LinkHoSoDaPhanCong { get; set; }
 
         [WebBrowsable(true),
          WebDisplayName("Link Hồ sơ chờ duyệt"),
-         WebDescription("This Accepts text Input"),
+         WebDescription("Trình trưởng phó phòng QLHT"),
          Personalizable(PersonalizationScope.Shared),
          Category("LongAn.DVC")]
         public string LinkHoSoChoDuyet { get; set; }
 
         [WebBrowsable(true),
          WebDisplayName("Link Hồ sơ chờ cấp phép"),
-         WebDescription("This Accepts text Input"),
+         WebDescription("Trình lãnh đạo sở"),
          Personalizable(PersonalizationScope.Shared),
          Category("LongAn.DVC")]
         public string LinkHoSoChoCapPhep { get; set; }
 
         [WebBrowsable(true),
          WebDisplayName("Link Hồ sơ đã cấp phép"),
-         WebDescription("This Accepts text Input"),
+         WebDescription("Hồ sơ đã duyệt"),
          Personalizable(PersonalizationScope.Shared),
          Category("LongAn.DVC")]
         public string LinkHoSoDaCapPhep { get; set; }
 
         [WebBrowsable(true),
          WebDisplayName("Link Hồ sơ bị từ chối"),
-         WebDescription("This Accepts text Input"),
+         WebDescription("Hồ sơ bị từ chối"),
          Personalizable(PersonalizationScope.Shared),
          Category("LongAn.DVC")]
         public string LinkHoSoBiTuChoi { get; set; }
 
         [WebBrowsable(true),
          WebDisplayName("Link Thống kê báo cáo"),
-         WebDescription("This Accepts text Input"),
+         WebDescription("Thống kê báo cáo"),
          Personalizable(PersonalizationScope.Shared),
          Category("LongAn.DVC")]
         public string LinkThongKeBaoCao { get; set; }
@@ -460,13 +462,13 @@ namespace LongAn.DVC.WebParts.DeNghiListView
                     Literal literalNgayDeNghi = (Literal)e.Item.FindControl("literalNgayDeNghi");
                     literalNgayDeNghi.Text = rowView[Constants.FieldCreated].ToString();
 
-                    LinkButton lbtViewItem = (LinkButton)e.Item.FindControl("lbtViewItem");
+                    HyperLink lbtViewItem = (HyperLink)e.Item.FindControl("lbtViewItem");
                     //lbtViewItem.CommandName = "ClickLinkButton";
                     //lbtViewItem.CommandArgument = commandAgrument;
                     var deNghiUrl = (SPContext.Current.Web.ServerRelativeUrl + Constants.ListUrlDeNghiCapPhep).Replace("//", "/");
                     var currentPage = SPUtility.GetPageUrlPath(HttpContext.Current);
-                    var viewUrl = string.Format(Constants.ConfLinkDispForm, deNghiUrl, commandAgrument, currentPage);
-                    lbtViewItem.OnClientClick = viewUrl;
+                    var viewUrl = string.Format(Constants.ConfLinkPageDispForm, deNghiUrl, commandAgrument, currentPage);
+                    lbtViewItem.NavigateUrl = viewUrl;
 
                     switch (CurrentUserRole)
                     {
@@ -478,18 +480,19 @@ namespace LongAn.DVC.WebParts.DeNghiListView
                                 lbtChuyenTruongPhong.Style.Add("display", "block");
                                 lbtChuyenTruongPhong.CommandArgument = commandAgrument;
                                 lbtChuyenTruongPhong.OnClientClick = "if (!confirm('Bạn có chắc chắn muốn chuyển hồ sơ này không?')) return false;";
-                                LinkButton lblDisable2 = (LinkButton)e.Item.FindControl("lblDisable2");
-                                lblDisable2.Style.Add("display", "none");
+                                LinkButton lblDisable1 = (LinkButton)e.Item.FindControl("lblDisable1");
+                                lblDisable1.Style.Add("display", "none");
                             }
                             break;
                         case (int)CapXuLy.TruongPhoPhong:
                             if (TrangThai == (int)TrangThaiXuLy.ChoXuLy)
                             {
-                                LinkButton lbtPhanCongHoSo = (LinkButton)e.Item.FindControl("lbtPhanCongHoSo");
-                                lbtPhanCongHoSo.CommandName = "ClickPhanCongHoSo";
+                                HyperLink lbtPhanCongHoSo = (HyperLink)e.Item.FindControl("lbtPhanCongHoSo");
+                                //lbtPhanCongHoSo.CommandName = "ClickPhanCongHoSo";
                                 lbtPhanCongHoSo.Style.Add("display", "block");
-                                lbtPhanCongHoSo.CommandArgument = commandAgrument;
-                                lbtPhanCongHoSo.OnClientClick = "if (!confirm('Bạn có chắc chắn muốn chuyển hồ sơ này không?')) return false;";
+                                //lbtPhanCongHoSo.CommandArgument = commandAgrument;
+                                //lbtPhanCongHoSo.OnClientClick = "if (!confirm('Bạn có chắc chắn muốn chuyển hồ sơ này không?')) return false;";
+                                lbtPhanCongHoSo.NavigateUrl = viewUrl + "?PC=1"; ;
                                 LinkButton lblDisable2 = (LinkButton)e.Item.FindControl("lblDisable2");
                                 lblDisable2.Style.Add("display", "none");
                             }
@@ -513,11 +516,12 @@ namespace LongAn.DVC.WebParts.DeNghiListView
                         case (int)CapXuLy.CanBoXuLy:
                             if (TrangThai == (int)TrangThaiXuLy.ChoXuLy || TrangThai == (int)TrangThaiXuLy.DaPhanCong)
                             {
-                                LinkButton lbtYeuCauBoSung = (LinkButton)e.Item.FindControl("lbtYeuCauBoSung");
-                                lbtYeuCauBoSung.CommandName = "ClickYeuCauBoSung";
+                                HyperLink lbtYeuCauBoSung = (HyperLink)e.Item.FindControl("lbtYeuCauBoSung");
+                                //lbtYeuCauBoSung.CommandName = "ClickYeuCauBoSung";
                                 lbtYeuCauBoSung.Style.Add("display", "block");
-                                lbtYeuCauBoSung.CommandArgument = commandAgrument;
-                                lbtYeuCauBoSung.OnClientClick = "if (!confirm('Bạn có chắc chắn muốn yêu cầu hồ sơ này gửi bổ sung không?')) return false;";
+                                //lbtYeuCauBoSung.CommandArgument = commandAgrument;
+                                //lbtYeuCauBoSung.OnClientClick = "if (!confirm('Bạn có chắc chắn muốn yêu cầu hồ sơ này gửi bổ sung không?')) return false;";
+                                lbtYeuCauBoSung.NavigateUrl = viewUrl + "?BS=1";
 
                                 LinkButton lblDisable2 = (LinkButton)e.Item.FindControl("lblDisable2");
                                 lblDisable2.Style.Add("display", "none");

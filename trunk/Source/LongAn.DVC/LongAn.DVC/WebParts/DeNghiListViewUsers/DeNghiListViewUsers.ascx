@@ -17,22 +17,19 @@
 <div class="container_12">
 	<div class="row">
 		<div class="grid_12" id="main-frame">
-			<%--<div id="top-control">
-				<a href="#" class="button large-button home">Trang chủ</a>
-				<a href="#" class="button large-button add-new">Thêm mới hồ sơ</a>
-				<a href="#" class="button large-button added">Hồ sơ đã tiếp nhận</a>
-				<a href="#" class="button large-button process">Hồ sơ đang xử lý</a>
-				<a href="#" class="button large-button waiting">Hồ sơ chờ cấp phép</a>
-				<a href="#" class="button large-button done">Hồ sơ hoàn thành</a>
-				<a href="#" class="button large-button stat">Báo cáo, thống kê</a>
+			<div id="top-control">
+				<asp:HyperLink ID="hplTrangChu" CssClass="button large-button home" runat="server">Trang chủ</asp:HyperLink>
+                <asp:HyperLink ID="hplDanhSachDeNghi" CssClass="button large-button done" runat="server">Danh sách đề nghị</asp:HyperLink>
+                <asp:HyperLink ID="hplThongTinHuongDan" CssClass="button large-button stat" runat="server">Thông tin hướng dẫn</asp:HyperLink>
 				<div class="clear"></div>
-			</div>--%>
+			</div>
 			<h2 class="page-header">
 				<asp:Literal ID="literalDeNghiTitle" runat="server"></asp:Literal>
 			</h2>
 		
 			<div class="pull-right">
-				<asp:LinkButton ID="lbtAddNew" CssClass="button add-new" runat="server">Thêm mới</asp:LinkButton>
+				<%--<asp:LinkButton ID="lbtAddNew" CssClass="button add-new" runat="server">Thêm mới</asp:LinkButton>--%>
+                <asp:HyperLink ID="hplAddNew" CssClass="button add-new" runat="server">Thêm mới</asp:HyperLink>
 			</div>
 			<div class="clearfix"></div>
 			
@@ -67,16 +64,21 @@
                                 <asp:Literal ID="literalTrangThai" runat="server"></asp:Literal>
                             </td>
                             <td>
-                                <asp:LinkButton ID="lbtViewItem" CssClass="button view just-icon" runat="server"></asp:LinkButton>
+                                <%--<asp:LinkButton ID="lbtViewItem" CssClass="button view just-icon" runat="server"></asp:LinkButton>--%>
+                                <asp:HyperLink ID="lbtViewItem" ToolTip="Xem chi tiết đề nghị" CssClass="button view just-icon" runat="server"></asp:HyperLink>
                             </td>
                             <td>
-                                <asp:LinkButton ID="lbtEditItem" CssClass="button edit just-icon" runat="server"></asp:LinkButton>
+                                <%--<asp:LinkButton ID="lbtEditItem" CssClass="button edit just-icon" runat="server"></asp:LinkButton>--%>
+                                <asp:HyperLink ID="lbtEditItem" ToolTip="Chỉnh sửa đề nghị" CssClass="button view just-icon" runat="server"></asp:HyperLink>
+                                <asp:LinkButton ID="lbtDisable1" ToolTip="Disabled" Enabled="false" CssClass="button just-icon" style="display:none;" runat="server"></asp:LinkButton>
                             </td>
                             <td>
-                                <asp:LinkButton ID="lbtDeleteItem" CssClass="button remove danger just-icon" runat="server"></asp:LinkButton>
+                                <asp:LinkButton ID="lbtDeleteItem" ToolTip="Xóa đề nghị" CssClass="button remove danger just-icon" runat="server"></asp:LinkButton>
+                                <asp:LinkButton ID="lbtDisable2" ToolTip="Disabled" Enabled="false" CssClass="button just-icon" style="display:none;" runat="server"></asp:LinkButton>
                             </td>
                             <td>
-                                <asp:LinkButton ID="lbtNopHoSo" CssClass="button up just-icon" runat="server"></asp:LinkButton>
+                                <asp:LinkButton ID="lbtNopHoSo" ToolTip="Nộp hồ sơ" CssClass="button up just-icon" runat="server"></asp:LinkButton>
+                                <asp:LinkButton ID="lbtDisable3" ToolTip="Disabled" Enabled="false" CssClass="button just-icon" style="display:none;" runat="server"></asp:LinkButton>
                             </td>
                         </tr>
                     </ItemTemplate>

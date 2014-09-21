@@ -79,7 +79,8 @@
 				</div>
 			</div>
 			<div class="pull-right" id="divAddNew" visible="false" runat="server">
-				<asp:LinkButton ID="lbtAddNew" CssClass="button add-new" runat="server">Thêm mới</asp:LinkButton>
+				<%--<asp:LinkButton ID="lbtAddNew" CssClass="button add-new" runat="server">Thêm mới</asp:LinkButton>--%>
+                <asp:HyperLink ID="hplAddNew" CssClass="button add-new" runat="server">Thêm mới</asp:HyperLink>
 			</div>
 			<div class="clearfix"></div>
 			<table class="the-table">
@@ -110,7 +111,8 @@
                                 <asp:Literal ID="literalNgayDeNghi" runat="server"></asp:Literal>
                             </td>
                             <td>
-                                <asp:LinkButton ID="lbtViewItem" ToolTip="Xem chi tiết" CssClass="button view just-icon" runat="server"></asp:LinkButton>
+                                <%--<asp:LinkButton ID="lbtViewItem" ToolTip="Xem chi tiết" CssClass="button view just-icon" runat="server"></asp:LinkButton>--%>
+                                <asp:HyperLink ID="lbtViewItem" CssClass="button view just-icon" runat="server"></asp:HyperLink>
                             </td>
                             <td>
                                 <asp:LinkButton ID="lblDisable1" Enabled="false" ToolTip="Disable" CssClass="button just-icon" style="display:block;" runat="server"></asp:LinkButton>
@@ -121,8 +123,10 @@
                             </td>
                             <td>
                                 <asp:LinkButton ID="lblDisable2" Enabled="false" ToolTip="Disable" CssClass="button just-icon" style="display:block;" runat="server"></asp:LinkButton>
-                                <asp:LinkButton ID="lbtYeuCauBoSung" ToolTip="Yêu cầu bổ sung hồ sơ" CssClass="button edit just-icon" style="display:none;" runat="server"></asp:LinkButton>
-                                <asp:LinkButton ID="lbtPhanCongHoSo" ToolTip="Phân công hồ sơ" CssClass="button edit just-icon" style="display:none;" runat="server"></asp:LinkButton>
+                                <%--<asp:LinkButton ID="lbtYeuCauBoSung" ToolTip="Yêu cầu bổ sung hồ sơ" CssClass="button edit just-icon" style="display:none;" runat="server"></asp:LinkButton>--%>
+                                <asp:HyperLink ID="lbtYeuCauBoSung" ToolTip="Yêu cầu bổ sung hồ sơ" CssClass="button edit just-icon" style="display:none;" runat="server"></asp:HyperLink>
+                                <%--<asp:LinkButton ID="lbtPhanCongHoSo" ToolTip="Phân công hồ sơ" CssClass="button edit just-icon" style="display:none;" runat="server"></asp:LinkButton>--%>
+                                <asp:HyperLink ID="lbtPhanCongHoSo" ToolTip="Phân công hồ sơ" CssClass="button edit just-icon" style="display:none;" runat="server"></asp:HyperLink>
                                 <asp:LinkButton ID="lbtTuChoiHoSo" ToolTip="Trả / Từ chối duyệt" CssClass="button edit just-icon" style="display:none;" runat="server"></asp:LinkButton>
                             </td>
                         </tr>
