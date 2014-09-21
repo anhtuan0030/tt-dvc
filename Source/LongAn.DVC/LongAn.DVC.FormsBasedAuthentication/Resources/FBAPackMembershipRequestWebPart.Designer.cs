@@ -394,7 +394,7 @@ namespace LongAn.DVC.FormsBasedAuthentication.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Your registration request has been received..
+        ///   Looks up a localized string similar to Tài khoản của bạn đã được đăng ký thành công..
         /// </summary>
         internal static string CompleteSuccessText_DefaultValue {
             get {
@@ -1348,7 +1348,7 @@ namespace LongAn.DVC.FormsBasedAuthentication.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to *.
+        ///   Looks up a localized string similar to Vui lòng nhập Mã xác nhận.
         /// </summary>
         internal static string HipErrorMessage_DefaultValue {
             get {
@@ -1420,7 +1420,7 @@ namespace LongAn.DVC.FormsBasedAuthentication.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Picture characters may not be more than 20 characters..
+        ///   Looks up a localized string similar to Số ký tự không vượt quá 20 ký tự..
         /// </summary>
         internal static string HipLengthErrorMessage_DefaultValue {
             get {
@@ -2041,7 +2041,7 @@ namespace LongAn.DVC.FormsBasedAuthentication.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to An unexpected error has occurred. Please contact your administrator if this problem persists, or check the SharePoint log file for more details..
+        ///   Looks up a localized string similar to Có lỗi xảy ra trong quá trình đăng ký. Vui lòng thử lại sau..
         /// </summary>
         internal static string UnknownErrorMessage_DefaultValue {
             get {

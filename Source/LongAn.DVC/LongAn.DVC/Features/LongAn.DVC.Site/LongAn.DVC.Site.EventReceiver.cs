@@ -22,6 +22,13 @@ namespace LongAn.DVC.Features.Site
         public override void FeatureActivated(SPFeatureReceiverProperties properties)
         {
             var site = (SPSite)properties.Feature.Parent;
+
+
+            //provision DVC Master page
+            //site.RootWeb.MasterUrl = site.RootWeb.ServerRelativeUrl + "_catalogs/masterpage/DVC.master";
+            site.RootWeb.CustomMasterUrl = site.RootWeb.ServerRelativeUrl + "_catalogs/masterpage/DVC.master";
+            site.RootWeb.Update();
+
             CreateGroup(site.RootWeb);
             EnsurePermissionLevel(site.RootWeb, Constants.ConfPermissionDeNghi, Constants.ConfPermissionDeNghiDes);
         }
@@ -85,9 +92,13 @@ namespace LongAn.DVC.Features.Site
        
         // Uncomment the method below to handle the event raised before a feature is deactivated.
 
-        //public override void FeatureDeactivating(SPFeatureReceiverProperties properties)
-        //{
-        //}
+        public override void FeatureDeactivating(SPFeatureReceiverProperties properties)
+        {
+            var site = (SPSite)properties.Feature.Parent;
+            //site.RootWeb.MasterUrl = site.RootWeb.ServerRelativeUrl + "_catalogs/masterpage/seattle.master";
+            site.RootWeb.CustomMasterUrl = site.RootWeb.ServerRelativeUrl + "_catalogs/masterpage/seattle.master";
+            site.RootWeb.Update();
+        }
 
 
         // Uncomment the method below to handle the event raised after a feature has been installed.

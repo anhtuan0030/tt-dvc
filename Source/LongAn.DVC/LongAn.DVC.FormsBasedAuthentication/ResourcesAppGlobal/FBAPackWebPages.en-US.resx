@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AccountLockedHeaderText" xml:space="preserve">
     <value>Account Locked</value>
@@ -447,32 +447,32 @@
   &lt;xsl:template match="/"&gt;
     &lt;html&gt;
       &lt;head&gt;
-        &lt;title&gt;Membership Password Recovery&lt;/title&gt;
+        &lt;title&gt;Khôi phục mật khẩu&lt;/title&gt;
       &lt;/head&gt;
       &lt;body&gt;
         &lt;div&gt;
-            &lt;p&gt;You have requested this mail because you have forgotten your password to &lt;xsl:value-of select="MembershipRequest:get_SiteName()" /&gt;.&lt;/p&gt;
+            &lt;p&gt;Bạn nhận được email này vì đã sử dụng chức năng khôi phục mật khẩu trên website &lt;xsl:value-of select="MembershipRequest:get_SiteName()" /&gt;.&lt;/p&gt;
 
           &lt;p&gt;
-            Your user name is: &lt;xsl:value-of select="MembershipRequest:get_UserName()" /&gt;
+            Tên đăng nhập của bạn là: &lt;xsl:value-of select="MembershipRequest:get_UserName()" /&gt;
           &lt;/p&gt;
 
-          &lt;p&gt;Your temporary password is: &lt;xsl:value-of select="MembershipRequest:get_Password()" /&gt;&lt;/p&gt;
+          &lt;p&gt;Mật khẩu tạm thời của bạn là: &lt;xsl:value-of select="MembershipRequest:get_Password()" /&gt;&lt;/p&gt;
 
             &lt;p&gt;&lt;/p&gt;
 
             &lt;p&gt;
-                &lt;xsl:text&gt;Your temporary password can be changed immediately by logging onto the &lt;/xsl:text&gt;
+                &lt;xsl:text&gt;Bạn có thể truy cập vào &lt;/xsl:text&gt;
                 &lt;a&gt;
                     &lt;xsl:attribute name="href"&gt;
                         &lt;xsl:value-of select="MembershipRequest:get_ChangePasswordURL()" /&gt;
                     &lt;/xsl:attribute&gt;
-                    &lt;xsl:text&gt;Change Password Page&lt;/xsl:text&gt;
+                    &lt;xsl:text&gt;trang web Đổi mật khẩu&lt;/xsl:text&gt;
                 &lt;/a&gt;
-                &lt;xsl:text&gt; using your user name and temporary password.&lt;/xsl:text&gt;
+                &lt;xsl:text&gt; dùng các thông tin bên trên.&lt;/xsl:text&gt;
             &lt;/p&gt;
             &lt;p&gt;
-                &lt;xsl:text&gt;The ChangePassword page is located at &lt;/xsl:text&gt;
+                &lt;xsl:text&gt;Địa chỉ đổi mật khẩu tại &lt;/xsl:text&gt;
                 &lt;a&gt;
                     &lt;xsl:attribute name="href"&gt;
                         &lt;xsl:value-of select="MembershipRequest:get_ChangePasswordURL()" /&gt;
@@ -483,7 +483,7 @@
 
             &lt;/p&gt;
 
-            &lt;p&gt;Thank you.&lt;/p&gt;
+            &lt;p&gt;Xin cám ơn.&lt;/p&gt;
         &lt;/div&gt;
       &lt;/body&gt;
     &lt;/html&gt;
@@ -559,11 +559,11 @@
   &lt;xsl:template match="/"&gt;
     &lt;html&gt;
       &lt;head&gt;
-        &lt;title&gt;Password Reset for &lt;xsl:value-of select="MembershipRequest:get_UserName()" /&gt;&lt;/title&gt;
+        &lt;title&gt;Mật khẩu đã được thay đổi cho tài khoản &lt;xsl:value-of select="MembershipRequest:get_UserName()" /&gt;&lt;/title&gt;
       &lt;/head&gt;
       &lt;body&gt;
         &lt;div&gt;
-			&lt;p&gt;Your new password is: &lt;xsl:value-of select="MembershipRequest:get_Password()" /&gt;&lt;/p&gt;
+			&lt;p&gt;Mật khẩu mới là: &lt;xsl:value-of select="MembershipRequest:get_Password()" /&gt;&lt;/p&gt;
         &lt;/div&gt;
       &lt;/body&gt;
     &lt;/html&gt;

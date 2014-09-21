@@ -229,7 +229,7 @@
     <value>Display</value>
   </data>
   <data name="CompleteSuccessText_DefaultValue" xml:space="preserve">
-    <value>Your registration request has been received.</value>
+    <value>Tài khoản của bạn đã được đăng ký thành công.</value>
   </data>
   <data name="CompleteSuccessText_Description" xml:space="preserve">
     <value />
@@ -469,7 +469,7 @@
     <value>Validation</value>
   </data>
   <data name="EmailRequiredErrorMessage_DefaultValue" xml:space="preserve">
-    <value>Trường yêu cầu nhập dữ liệu..</value>
+    <value>Trường yêu cầu nhập dữ liệu.</value>
   </data>
   <data name="EmailRequiredErrorMessage_Description" xml:space="preserve">
     <value />
@@ -547,7 +547,7 @@
     <value>Validation</value>
   </data>
   <data name="HipErrorMessage_DefaultValue" xml:space="preserve">
-    <value>*</value>
+    <value>Vui lòng nhập Mã xác nhận</value>
   </data>
   <data name="HipErrorMessage_Description" xml:space="preserve">
     <value />
@@ -571,7 +571,7 @@
     <value>Validation</value>
   </data>
   <data name="HipLengthErrorMessage_DefaultValue" xml:space="preserve">
-    <value>Picture characters may not be more than 20 characters.</value>
+    <value>Số ký tự không vượt quá 20 ký tự.</value>
   </data>
   <data name="HipLengthErrorMessage_Description" xml:space="preserve">
     <value />
@@ -778,7 +778,7 @@
     <value>Validation</value>
   </data>
   <data name="UnknownErrorMessage_DefaultValue" xml:space="preserve">
-    <value>An unexpected error has occurred. Please contact your administrator if this problem persists, or check the SharePoint log file for more details.</value>
+    <value>Có lỗi xảy ra trong quá trình đăng ký. Vui lòng thử lại sau.</value>
   </data>
   <data name="UnknownErrorMessage_Description" xml:space="preserve">
     <value />

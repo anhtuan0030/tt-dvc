@@ -39,8 +39,7 @@ namespace LongAn.DVC.FormsBasedAuthentication.Resources {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("LongAn.DVC.FormsBasedAuthentication.Resources.FBAPackChangePasswordWebPart" +
-                            "", typeof(FBAPackChangePasswordWebPart).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("LongAn.DVC.FormsBasedAuthentication.Resources.FBAPackChangePasswordWebPart", typeof(FBAPackChangePasswordWebPart).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -107,7 +106,7 @@ namespace LongAn.DVC.FormsBasedAuthentication.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Cancel.
+        ///   Looks up a localized string similar to Hủy.
         /// </summary>
         internal static string CancelButtonText_DefaultValue {
             get {
@@ -251,7 +250,7 @@ namespace LongAn.DVC.FormsBasedAuthentication.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Change Password.
+        ///   Looks up a localized string similar to Đổi mật khẩu.
         /// </summary>
         internal static string ChangePasswordButtonText_DefaultValue {
             get {
@@ -323,7 +322,7 @@ namespace LongAn.DVC.FormsBasedAuthentication.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Password incorrect or New Password invalid. New Password length minimum: {0}. Non-alphanumeric characters required: {1}..
+        ///   Looks up a localized string similar to Mật khẩu không đúng hoặc Mật khẩu mới không hợp lệ. Mật khẩu mới phải có ít nhất {0} ký tự và yêu cầu có {1} ký tự đặc biệt..
         /// </summary>
         internal static string ChangePasswordFailureText_DefaultValue {
             get {
@@ -395,7 +394,7 @@ namespace LongAn.DVC.FormsBasedAuthentication.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Change Your Password.
+        ///   Looks up a localized string similar to Đổi mật khẩu.
         /// </summary>
         internal static string ChangePasswordTitleText_DefaultValue {
             get {
@@ -431,7 +430,7 @@ namespace LongAn.DVC.FormsBasedAuthentication.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Confirm New Password:.
+        ///   Looks up a localized string similar to Xác nhận Mật khẩu mới:.
         /// </summary>
         internal static string ConfirmNewPasswordLabelText_DefaultValue {
             get {
@@ -467,7 +466,7 @@ namespace LongAn.DVC.FormsBasedAuthentication.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The Confirm New Password must match the New Password entry..
+        ///   Looks up a localized string similar to Xác nhận Mật khẩu mới và Mật khẩu mới không giống nhau..
         /// </summary>
         internal static string ConfirmPasswordCompareErrorMessage_DefaultValue {
             get {
@@ -503,7 +502,7 @@ namespace LongAn.DVC.FormsBasedAuthentication.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Confirm New Password is required..
+        ///   Looks up a localized string similar to Xác nhận Mật khẩu mới bắt buộc nhập..
         /// </summary>
         internal static string ConfirmPasswordRequiredErrorMessage_DefaultValue {
             get {
@@ -575,7 +574,7 @@ namespace LongAn.DVC.FormsBasedAuthentication.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Continue.
+        ///   Looks up a localized string similar to Tiếp tục.
         /// </summary>
         internal static string ContinueButtonText_DefaultValue {
             get {
@@ -926,7 +925,7 @@ namespace LongAn.DVC.FormsBasedAuthentication.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to There was an error in Change Password web part..
+        ///   Looks up a localized string similar to Có lỗi xảy ra với chức năng Đổi mật khẩu..
         /// </summary>
         internal static string Error_Message {
             get {
@@ -1088,7 +1087,7 @@ namespace LongAn.DVC.FormsBasedAuthentication.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to New Password:.
+        ///   Looks up a localized string similar to Mật khẩu mới:.
         /// </summary>
         internal static string NewPasswordLabelText_DefaultValue {
             get {
@@ -1124,7 +1123,7 @@ namespace LongAn.DVC.FormsBasedAuthentication.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please enter a different password..
+        ///   Looks up a localized string similar to Vui lòng nhập mật khẩu khác..
         /// </summary>
         internal static string NewPasswordRegularExpressionErrorMessage_DefaultValue {
             get {
@@ -1160,7 +1159,7 @@ namespace LongAn.DVC.FormsBasedAuthentication.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to New Password is required..
+        ///   Looks up a localized string similar to Mật khẩu mới bắt buộc nhập..
         /// </summary>
         internal static string NewPasswordRequiredErrorMessage_DefaultValue {
             get {
@@ -1232,7 +1231,7 @@ namespace LongAn.DVC.FormsBasedAuthentication.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Password:.
+        ///   Looks up a localized string similar to Mật khẩu:.
         /// </summary>
         internal static string PasswordLabelText_DefaultValue {
             get {
@@ -1376,7 +1375,7 @@ namespace LongAn.DVC.FormsBasedAuthentication.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Password is required..
+        ///   Looks up a localized string similar to Mật khẩu bắt buộc nhập..
         /// </summary>
         internal static string PasswordRequiredErrorMessage_DefaultValue {
             get {
@@ -1484,7 +1483,7 @@ namespace LongAn.DVC.FormsBasedAuthentication.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Your password has been changed!.
+        ///   Looks up a localized string similar to Mật khẩu đã được đổi thành công!.
         /// </summary>
         internal static string SuccessText_DefaultValue {
             get {
@@ -1556,7 +1555,7 @@ namespace LongAn.DVC.FormsBasedAuthentication.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to User Name:.
+        ///   Looks up a localized string similar to Tên đăng nhập:.
         /// </summary>
         internal static string UserNameLabelText_DefaultValue {
             get {
@@ -1592,7 +1591,7 @@ namespace LongAn.DVC.FormsBasedAuthentication.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to User Name is required..
+        ///   Looks up a localized string similar to Tên đăng nhập bắt buộc nhập..
         /// </summary>
         internal static string UserNameRequiredErrorMessage_DefaultValue {
             get {

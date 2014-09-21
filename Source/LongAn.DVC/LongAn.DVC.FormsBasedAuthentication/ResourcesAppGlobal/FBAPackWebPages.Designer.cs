@@ -798,14 +798,14 @@ namespace LongAn.DVC.FormsBasedAuthentication.ResourcesAppGlobal {
         ///  &lt;xsl:template match=&quot;/&quot;&gt;
         ///    &lt;html&gt;
         ///      &lt;head&gt;
-        ///        &lt;title&gt;Membership Password Recovery&lt;/title&gt;
+        ///        &lt;title&gt;Khôi phục mật khẩu&lt;/title&gt;
         ///      &lt;/head&gt;
         ///      &lt;body&gt;
         ///        &lt;div&gt;
-        ///            &lt;p&gt;You have requested this mail because you have forgotten your password to &lt;xsl:value-of select=&quot;MembershipRequest:get_SiteName()&quot; /&gt;.&lt;/p&gt;
+        ///            &lt;p&gt;Bạn nhận được email này vì đã sử dụng chức năng khôi phục mật khẩu trên website &lt;xsl:value-of select=&quot;MembershipRequest:get_SiteName()&quot; /&gt;.&lt;/p&gt;
         ///
         ///          &lt;p&gt;
-        ///            Your user [rest of string was truncated]&quot;;.
+        ///            Tên đăng nhậ [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string PasswordRecoveryXSLT {
             get {
@@ -1008,15 +1008,14 @@ namespace LongAn.DVC.FormsBasedAuthentication.ResourcesAppGlobal {
         ///  &lt;xsl:template match=&quot;/&quot;&gt;
         ///    &lt;html&gt;
         ///      &lt;head&gt;
-        ///        &lt;title&gt;Password Reset for &lt;xsl:value-of select=&quot;MembershipRequest:get_UserName()&quot; /&gt;&lt;/title&gt;
+        ///        &lt;title&gt;Mật khẩu đã được thay đổi cho tài khoản &lt;xsl:value-of select=&quot;MembershipRequest:get_UserName()&quot; /&gt;&lt;/title&gt;
         ///      &lt;/head&gt;
         ///      &lt;body&gt;
         ///        &lt;div&gt;
-        ///			&lt;p&gt;Your new password is: &lt;xsl:value-of select=&quot;MembershipRequest:get_Password()&quot; /&gt;&lt;/p&gt;
+        ///			&lt;p&gt;Mật khẩu mới là: &lt;xsl:value-of select=&quot;MembershipRequest:get_Password()&quot; /&gt;&lt;/p&gt;
         ///        &lt;/div&gt;
         ///      &lt;/body&gt;
-        ///    &lt;/html&gt;
-        ///  &lt;/xs [rest of string was truncated]&quot;;.
+        ///    [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string ResetPasswordXSLT {
             get {

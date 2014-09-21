@@ -82,13 +82,16 @@
     </Reference>
     <Reference Include="Microsoft.SharePoint.WorkflowActions, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL" />
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.IdentityModel" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
@@ -335,6 +338,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>FBAPackPasswordRecoveryWebPart.zh-HK.resx</DependentUpon>
     </Compile>
+    <Compile Include="Webparts\FBALoginWebPart\FBALoginWebPart.ascx.cs">
+      <DependentUpon>FBALoginWebPart.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Webparts\FBALoginWebPart\FBALoginWebPart.ascx.g.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FBALoginWebPart.ascx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Activate.ps1">
@@ -392,6 +403,10 @@
     </None>
     <None Include="UnDeploy.ps1">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Webparts\FBALoginWebPart\FBALoginWebPart.webpart" />
+    <None Include="Webparts\FBALoginWebPart\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{40247f39-6a4f-4da5-9254-3bc92fc6b575}</SharePointProjectItemId>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -461,6 +476,11 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>FBAPackWebPages.zh-HK.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Webparts\FBALoginWebPart\Elements.xml" />
+    <Content Include="Webparts\FBALoginWebPart\FBALoginWebPart.ascx">
+      <Generator>SharePointWebPartCodeGenerator</Generator>
+      <LastGenOutput>FBALoginWebPart.ascx.g.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>

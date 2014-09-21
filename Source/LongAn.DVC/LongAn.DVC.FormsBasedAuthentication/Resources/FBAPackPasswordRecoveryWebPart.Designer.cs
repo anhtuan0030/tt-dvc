@@ -39,8 +39,7 @@ namespace LongAn.DVC.FormsBasedAuthentication.Resources {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("LongAn.DVC.FormsBasedAuthentication.Resources.FBAPackPasswordRecoveryWebPa" +
-                            "rt", typeof(FBAPackPasswordRecoveryWebPart).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("LongAn.DVC.FormsBasedAuthentication.Resources.FBAPackPasswordRecoveryWebPart", typeof(FBAPackPasswordRecoveryWebPart).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -71,7 +70,7 @@ namespace LongAn.DVC.FormsBasedAuthentication.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Answer is required..
+        ///   Looks up a localized string similar to Vui lòng nhập câu trả lời..
         /// </summary>
         internal static string AnswerRequiredErrorMessage_DefaultValue {
             get {
@@ -98,7 +97,7 @@ namespace LongAn.DVC.FormsBasedAuthentication.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to There was an error sending the email, please check with your administrator.
+        ///   Looks up a localized string similar to Có lỗi xảy ra với hệ thống email. Vui lòng thử lại sau..
         /// </summary>
         internal static string ErrorSendingEmail {
             get {
@@ -116,7 +115,7 @@ namespace LongAn.DVC.FormsBasedAuthentication.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Your attempt to retrieve your password was not successful. Please try again..
+        ///   Looks up a localized string similar to Đăng ký lấy lại mật khẩu không thành công. Vui lòng thử lại..
         /// </summary>
         internal static string GeneralFailureText_DefaultValue {
             get {
@@ -188,7 +187,7 @@ namespace LongAn.DVC.FormsBasedAuthentication.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Answer the following question to receive your password..
+        ///   Looks up a localized string similar to Trả lời câu hỏi bên dưới để khôi phục lại mật khẩu..
         /// </summary>
         internal static string QuestionInstructionText_DefaultValue {
             get {
@@ -224,7 +223,7 @@ namespace LongAn.DVC.FormsBasedAuthentication.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Question:.
+        ///   Looks up a localized string similar to Câu hỏi:.
         /// </summary>
         internal static string QuestionLabelText_DefaultValue {
             get {
@@ -368,7 +367,7 @@ namespace LongAn.DVC.FormsBasedAuthentication.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Submit.
+        ///   Looks up a localized string similar to Gửi.
         /// </summary>
         internal static string SubmitButtonText_DefaultValue {
             get {
@@ -476,7 +475,7 @@ namespace LongAn.DVC.FormsBasedAuthentication.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Your password has been sent to you..
+        ///   Looks up a localized string similar to Mật khẩu đã được gửi đến bạn..
         /// </summary>
         internal static string SuccessText_DefaultValue {
             get {
@@ -512,7 +511,7 @@ namespace LongAn.DVC.FormsBasedAuthentication.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to We were unable to access your information. Please try again..
+        ///   Looks up a localized string similar to Không tìm thấy thông tin. Vui lòng thử lại..
         /// </summary>
         internal static string UserNameFailureText_DefaultValue {
             get {
@@ -548,7 +547,7 @@ namespace LongAn.DVC.FormsBasedAuthentication.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Enter your User Name or Email Address to receive your password..
+        ///   Looks up a localized string similar to Vui lòng nhập Tên đăng nhập hoặc Email để khôi phục mật khẩu..
         /// </summary>
         internal static string UserNameInstructionText_DefaultValue {
             get {
@@ -584,7 +583,7 @@ namespace LongAn.DVC.FormsBasedAuthentication.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to User Name or Email Address:.
+        ///   Looks up a localized string similar to Tên đăng nhập hoặc Email:.
         /// </summary>
         internal static string UserNameLabelText_DefaultValue {
             get {
@@ -620,7 +619,7 @@ namespace LongAn.DVC.FormsBasedAuthentication.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to User Name is required..
+        ///   Looks up a localized string similar to Vui lòng nhập thông tin..
         /// </summary>
         internal static string UserNameRequiredErrorMessage_DefaultValue {
             get {
@@ -692,7 +691,7 @@ namespace LongAn.DVC.FormsBasedAuthentication.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Forgot Your Password?.
+        ///   Looks up a localized string similar to Quên mật khẩu?.
         /// </summary>
         internal static string UserNameTitleText_DefaultValue {
             get {

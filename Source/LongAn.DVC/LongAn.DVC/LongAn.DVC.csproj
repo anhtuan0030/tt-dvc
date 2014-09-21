@@ -14,7 +14,7 @@
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{C1CDDADD-2546-481F-9697-4EA41081F2FC};{14822709-B5A1-4724-98CA-57A101D1B079};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <SandboxedSolution>False</SandboxedSolution>
-    <ActiveDeploymentConfiguration>Upgrade Solution %28CKSDev%29</ActiveDeploymentConfiguration>
+    <ActiveDeploymentConfiguration>Default</ActiveDeploymentConfiguration>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -57,6 +57,7 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
@@ -155,7 +156,6 @@
     <None Include="Layouts\LongAn.DVC\fonts\glyphicons-halflings-regular.eot" />
     <None Include="Layouts\LongAn.DVC\fonts\glyphicons-halflings-regular.ttf" />
     <None Include="Layouts\LongAn.DVC\fonts\glyphicons-halflings-regular.woff" />
-    <None Include="Layouts\LongAn.DVC\images\FlaticonDownload.zip" />
     <None Include="Layouts\LongAn.DVC\js\detectizr.min.map" />
     <None Include="Layouts\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{63f3bd6e-81ab-4ca6-9ff1-2a04a2c99eb3}</SharePointProjectItemId>
@@ -181,6 +181,9 @@
     <None Include="Modules\DVCMasterPage\DVC.master" />
     <None Include="Modules\DVCMasterPage\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{de056ed3-43f9-4dfe-8c29-0ea15883980a}</SharePointProjectItemId>
+    </None>
+    <None Include="Modules\DVCPages\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{d3264ac3-0da2-4070-9cbe-243692e672b1}</SharePointProjectItemId>
     </None>
     <None Include="Package\Package.package">
       <PackageId>{71ce27ed-13c8-4fc9-8c1a-78057fc92639}</PackageId>
@@ -297,6 +300,7 @@
     <Content Include="Layouts\LongAn.DVC\css\bootstrap-theme.min.css" />
     <Content Include="Layouts\LongAn.DVC\css\bootstrap.css" />
     <Content Include="Layouts\LongAn.DVC\css\bootstrap.min.css" />
+    <Content Include="Layouts\LongAn.DVC\css\fluid_grid.css" />
     <Content Include="Layouts\LongAn.DVC\css\form.main.css" />
     <Content Include="Layouts\LongAn.DVC\css\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Layouts\LongAn.DVC\css\images\ui-bg_flat_0_eeeeee_40x100.png" />
@@ -316,13 +320,16 @@
     <Content Include="Layouts\LongAn.DVC\css\jquery-ui.theme.min.css" />
     <Content Include="Layouts\LongAn.DVC\css\main.css" />
     <Content Include="Layouts\LongAn.DVC\DeNghiEditForm.aspx" />
+    <Content Include="Layouts\LongAn.DVC\css\superfish.css" />
     <Content Include="Layouts\LongAn.DVC\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Modules\DVCPages\Homepage.aspx" />
     <Content Include="Layouts\LongAn.DVC\images\add-file.png" />
     <Content Include="Layouts\LongAn.DVC\images\add.png" />
     <Content Include="Layouts\LongAn.DVC\images\added.png" />
     <Content Include="Layouts\LongAn.DVC\images\advantage.png" />
     <Content Include="Layouts\LongAn.DVC\images\attachment.png" />
     <Content Include="Layouts\LongAn.DVC\images\backup.png" />
+    <Content Include="Layouts\LongAn.DVC\images\banner.png" />
     <Content Include="Layouts\LongAn.DVC\images\calculator.png" />
     <Content Include="Layouts\LongAn.DVC\images\calendar.png" />
     <Content Include="Layouts\LongAn.DVC\images\calendar2.png" />
@@ -330,11 +337,22 @@
     <Content Include="Layouts\LongAn.DVC\images\edit4.png" />
     <Content Include="Layouts\LongAn.DVC\images\end.png" />
     <Content Include="Layouts\LongAn.DVC\images\excel.png" />
+    <Content Include="Layouts\LongAn.DVC\images\exit.png" />
     <Content Include="Layouts\LongAn.DVC\images\home.png" />
+    <Content Include="Layouts\LongAn.DVC\images\icon-04.png" />
+    <Content Include="Layouts\LongAn.DVC\images\index-02.png" />
+    <Content Include="Layouts\LongAn.DVC\images\index-03.png" />
+    <Content Include="Layouts\LongAn.DVC\images\index_banner-07.png" />
+    <Content Include="Layouts\LongAn.DVC\images\index_banner-08.png" />
+    <Content Include="Layouts\LongAn.DVC\images\index_banner-09.png" />
+    <Content Include="Layouts\LongAn.DVC\images\index_bullet.png" />
+    <Content Include="Layouts\LongAn.DVC\images\index_button.png" />
+    <Content Include="Layouts\LongAn.DVC\images\index_icon.png" />
     <Content Include="Layouts\LongAn.DVC\images\index_logo.png" />
     <Content Include="Layouts\LongAn.DVC\images\item.png" />
     <Content Include="Layouts\LongAn.DVC\images\more7.png" />
     <Content Include="Layouts\LongAn.DVC\images\next.png" />
+    <Content Include="Layouts\LongAn.DVC\images\overlay-05.png" />
     <Content Include="Layouts\LongAn.DVC\images\prev.png" />
     <Content Include="Layouts\LongAn.DVC\images\printer.png" />
     <Content Include="Layouts\LongAn.DVC\images\process.png" />
@@ -351,12 +369,16 @@
     <Content Include="Layouts\LongAn.DVC\js\bootstrap.min.js" />
     <Content Include="Layouts\LongAn.DVC\js\datepicker-vi.js" />
     <Content Include="Layouts\LongAn.DVC\js\detectizr.min.js" />
+    <Content Include="Layouts\LongAn.DVC\js\hoverIntent.js" />
+    <Content Include="Layouts\LongAn.DVC\js\jquery-1.8.3.min.js" />
     <Content Include="Layouts\LongAn.DVC\js\jquery-ui.min.js" />
     <Content Include="Layouts\LongAn.DVC\js\jquery.js" />
     <Content Include="Layouts\LongAn.DVC\js\laform.js" />
     <Content Include="Layouts\LongAn.DVC\js\modernizr.js" />
+    <Content Include="Layouts\LongAn.DVC\js\script.js" />
     <Content Include="Layouts\LongAn.DVC\js\scripts.js" />
     <Content Include="Layouts\LongAn.DVC\PhanCongHoSo.aspx" />
+    <Content Include="Layouts\LongAn.DVC\js\superfish.js" />
     <Content Include="Libs\Camlex.NET.dll" />
     <Content Include="ListDefinitions\DeNghiAttachment\DeNghiAttachmentInstance\Elements.xml" />
     <Content Include="ListDefinitions\DeNghiAttachment\EditDlg.htm" />
@@ -371,7 +393,13 @@
     <Content Include="ListDefinitions\LoaiDeNghi\Elements.xml" />
     <Content Include="ListDefinitions\LoaiDeNghi\LoaiDeNghiInstance\Elements.xml" />
     <Content Include="ListDefinitions\LoaiDeNghi\Schema.xml" />
-    <Content Include="Modules\DVCMasterPage\Elements.xml" />
+    <Content Include="Modules\DVCMasterPage\DVCWebPartPage_Manage.aspx" />
+    <Content Include="Modules\DVCMasterPage\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Modules\DVCMasterPage\DVCWebPartPage_Home.aspx" />
+    <Content Include="Modules\DVCPages\Elements.xml" />
+    <Content Include="Modules\DVCPages\BlankPage.aspx" />
     <Content Include="WebParts\DeNghiListViewUsers\DeNghiListViewUsers.ascx">
       <Generator>SharePointWebPartCodeGenerator</Generator>
       <LastGenOutput>DeNghiListViewUsers.ascx.g.cs</LastGenOutput>

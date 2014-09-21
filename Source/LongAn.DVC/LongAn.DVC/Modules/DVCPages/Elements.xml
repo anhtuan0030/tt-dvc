@@ -1,0 +1,380 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <Module Name="DVCPages" Url="Pages">
+    <File Path="DVCPages\BlankPage.aspx" Url="Homepage.aspx" Type="GhostableInLibrary" IgnoreIfAlreadyExists="FALSE" >
+      <Property Name="Title" Value="Trang chủ"/>
+      <Property Name="PublishingPageLayout" Value="~SiteCollection/_catalogs/masterpage/DVCWebPartPage_Home.aspx, DVC WebPart page - Home"/>
+
+      <AllUsersWebPart WebPartZoneID="Header" WebPartOrder="1">
+        <![CDATA[
+<?xml version="1.0" encoding="utf-8"?>
+<WebPart xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/WebPart/v2">
+  <Title>Content Editor</Title>
+  <FrameType>None</FrameType>
+  <Description>Allows authors to enter rich text content.</Description>
+  <IsIncluded>true</IsIncluded>
+  <PartOrder>2</PartOrder>
+  <FrameState>Normal</FrameState>
+  <Height />
+  <Width />
+  <AllowRemove>true</AllowRemove>
+  <AllowZoneChange>true</AllowZoneChange>
+  <AllowMinimize>true</AllowMinimize>
+  <AllowConnect>true</AllowConnect>
+  <AllowEdit>true</AllowEdit>
+  <AllowHide>true</AllowHide>
+  <IsVisible>true</IsVisible>
+  <DetailLink />
+  <HelpLink />
+  <HelpMode>Modeless</HelpMode>
+  <Dir>Default</Dir>
+  <PartImageSmall />
+  <MissingAssembly>Cannot import this Web Part.</MissingAssembly>
+  <PartImageLarge>/_layouts/15/images/mscontl.gif</PartImageLarge>
+  <IsIncludedFilter />
+  <ExportControlledProperties>true</ExportControlledProperties>
+  <ConnectionID>00000000-0000-0000-0000-000000000000</ConnectionID>
+  <ID>g_55d4daf2_8fa7_4856_a603_6e0ac7d4b490</ID>
+  <Assembly>Microsoft.SharePoint, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c</Assembly>
+  <TypeName>Microsoft.SharePoint.WebPartPages.ContentEditorWebPart</TypeName>
+  <ContentLink xmlns="http://schemas.microsoft.com/WebPart/v2/ContentEditor" />
+  <Content xmlns="http://schemas.microsoft.com/WebPart/v2/ContentEditor">&lt;div class=&quot;tabs&quot; id=&quot;main-tab&quot;&gt; &lt;ul class=&quot;tab-titles&quot;&gt; &lt;li&gt; &lt;a class=&quot;tab-title active&quot; href=&quot;#main-tab-tab-1&quot; data-parent=&quot;main-tab&quot;&gt;Dịch vụ công&lt;/a&gt;&lt;/li&gt; &lt;li&gt; &lt;a class=&quot;tab-title&quot; href=&quot;#main-tab-tab-2&quot; data-parent=&quot;main-tab&quot;&gt;Hướng dẫn sử dụng&lt;/a&gt;&lt;/li&gt; &lt;/ul&gt; &lt;div class=&quot;tab-contents&quot;&gt; &lt;div id=&quot;main-tab-tab-1&quot; class=&quot;active tab-content&quot;&gt; &lt;h2 class=&quot;text-center text-uppercase&quot;&gt;Dịch vụ công trực tuyến&lt;/h2&gt; &lt;p&gt;Thực hiện Quyết định số 48/2009/QĐ-TTg ngày 31/3/2009 của Thủ tướng Chính phủ về việc phê duyệt kế hoạch ứng dụng công nghệ thông tin trong cơ quan nhà nước, theo đó định hướng đến năm 2015:&lt;/p&gt; &lt;p&gt;“Ứng dụng công nghệ thông tin để đổi mới phương thức cung cấp thông tin và dịch vụ công cho người dân và doanh nghiệp. Phấn đấu đến năm 2015 cung cấp hầu hết các dịch vụ công cơ bản trực tuyến mức độ 3 hoặc 4, người dân và doanh nghiệp có thể trao đổi thông tin, gửi, nhận hồ sơ, thanh toán phí dịch vụ, nhận kết quả dịch vụ qua mạng”.&lt;/p&gt; &lt;p&gt;Dịch vụ công trực tuyến mức độ 3 cho phép công dân, tổ chức điền và gửi trực tuyến các mẫu văn bản đến cơ quan, tổ chức cung cấp dịch vụ. Các giao dịch trong quá trình xử lý hồ sơ và cung cấp dịch vụ được thực hiện trên môi trường mạng. Việc thanh toán lệ phí (nếu có) và nhận kết quả được thực hiện trực tiếp tại cơ quan, tổ chức cung cấp dịch vụ (Bộ phận Tiếp nhận và Trả kết quả).&lt;/p&gt; &lt;p&gt;Với dịch vụ công trực tuyến, công dân, tổ chức có thể thực hiện giao nộp các Hồ sơ hành chính cho cơ quan chính quyền, sau đó có thể theo dõi tiến độ xử lý và nhận thông báo trả kết quả xử lý thông qua Cổng thông tin điện tử của chính quyền. Như vậy công dân, tổ chức chỉ phải đến duy nhất một lần hành chính một cửa của chính quyền để nộp các giấy tờ chứng thực, còn lại mọi quá trình khác đều được giao tiếp qua Cổng thông tin điện tử.&lt;/p&gt; &lt;p&gt;Triển khai các dịch vụ công trực tuyến có nghĩa là công dân, doanh nghiệp có thể giao tiếp với chính quyền 24 giờ trong ngày, 7 ngày trong tuần, tại bất cứ đâu có kết nối internet, đây là bước nhảy vọt về cải cách hành chính, giảm thiểu tối đa công sức của người dân và chính quyền trong việc giải quyết các thủ tục hành chính.&lt;/p&gt; &lt;/div&gt; &lt;div id=&quot;main-tab-tab-2&quot; class=&quot;tab-content&quot;&gt; &lt;h2 class=&quot;text-center text-uppercase&quot;&gt;Hướng dẫn sử dụng&lt;/h2&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; </Content>
+        <PartStorage xmlns="http://schemas.microsoft.com/WebPart/v2/ContentEditor" />
+        </WebPart>
+]]>
+      </AllUsersWebPart>
+    </File>
+    <File Path="DVCPages\BlankPage.aspx" Url="RegisterAccount1.aspx" Type="GhostableInLibrary" IgnoreIfAlreadyExists="FALSE" >
+      <Property Name="Title" Value="Đăng ký tài khoản"/>
+      <Property Name="PublishingPageLayout" Value="~SiteCollection/_catalogs/masterpage/DVCWebPartPage_Home.aspx, DVC WebPart page - Home"/>
+
+      <AllUsersWebPart WebPartOrder ="0" WebPartZoneID ="Header">
+        <![CDATA[ 
+<webParts>
+  <webPart xmlns="http://schemas.microsoft.com/WebPart/v3">
+    <metaData>
+      <type name="LongAn.DVC.FormsBasedAuthentication.MembershipRequestWebPart, LongAn.DVC.FormsBasedAuthentication, Version=1.0.0.0, Culture=neutral, PublicKeyToken=9dba9f460226d31d" />
+      <importErrorMessage>Cannot import this Web Part.</importErrorMessage>
+    </metaData>
+    <data>
+      <properties>
+        <property name="GroupName" type="string">DVC Người dùng</property>
+        <property name="AutoGeneratePassword" type="string">FALSE</property>
+        <property name="CaptchaValidation" type="string">TRUE</property>
+        <property name="DisplayCancelButton" type="string">FALSE</property>
+        <property name="LoginCreatedUser" type="string">TRUE</property>
+        <property name="ChromeType" type="string">None</property>
+        <property name="Title" type="string">Đăng ký tài khoản</property>
+      </properties>
+    </data>
+  </webPart>
+</webParts>
+]]>
+      </AllUsersWebPart>
+    </File>
+
+
+
+
+
+    <File Path="DVCPages\BlankPage.aspx" Url="DeNghiCapPhep.aspx" Type="GhostableInLibrary" IgnoreIfAlreadyExists="FALSE" >
+      <Property Name="Title" Value="Đề nghị cấp phép"/>
+      <Property Name="PublishingPageLayout" Value="~SiteCollection/_catalogs/masterpage/DVCWebPartPage_Home.aspx, DVC WebPart page - Home"/>
+
+      <AllUsersWebPart WebPartOrder ="0" WebPartZoneID ="Header">
+        <![CDATA[ 
+      <webParts>
+        <webPart xmlns="http://schemas.microsoft.com/WebPart/v3">
+          <metaData>
+            <type name="LongAn.DVC.WebParts.DeNghiListViewUsers.DeNghiListViewUsers, LongAn.DVC, Version=1.0.0.0, Culture=neutral, PublicKeyToken=53c9d9f0542abb89" />
+            <importErrorMessage>$Resources:core,ImportErrorMessage;</importErrorMessage>
+          </metaData>
+          <data>
+            <properties>
+              <property name="Title" type="string">Đề nghị list view users</property>
+              <property name="Description" type="string">Đề nghị list view users</property>
+              <property name="DeNghiTitle" type="string">Danh sách đề nghị của tôi</property>
+              <property name="LinkTrangChu" type="string">/</property>
+              <property name="LinkDanhSachHoSo" type="string">/Pages/DeNghiCapPhep.aspx</property>
+              <property name="LinkThongTinHuongDan" type="string">/</property>
+              <property name="PageSize" type="int">10</property>
+            </properties>
+          </data>
+        </webPart>
+      </webParts>
+]]>
+      </AllUsersWebPart>
+
+    </File>
+
+    <File Path="DVCPages\BlankPage.aspx" Url="HoSoDaTiepNhan.aspx" Type="GhostableInLibrary" IgnoreIfAlreadyExists="FALSE" >
+      <Property Name="Title" Value="Hồ sơ đã tiếp nhận"/>
+      <Property Name="PublishingPageLayout" Value="~SiteCollection/_catalogs/masterpage/DVCWebPartPage_Home.aspx, DVC WebPart page - Home"/>
+
+      <AllUsersWebPart WebPartOrder ="0" WebPartZoneID ="Header">
+        <![CDATA[ 
+<webParts>
+  <webPart xmlns="http://schemas.microsoft.com/WebPart/v3">
+    <metaData>
+      <type name="LongAn.DVC.WebParts.DeNghiListView.DeNghiListView, LongAn.DVC, Version=1.0.0.0, Culture=neutral, PublicKeyToken=53c9d9f0542abb89" />
+      <importErrorMessage>$Resources:core,ImportErrorMessage;</importErrorMessage>
+    </metaData>
+    <data>
+      <properties>
+        <property name="Title" type="string">Đề nghị list view</property>
+        <property name="Description" type="string">Đề nghị list view Visual Web Part</property>
+        <property name="DeNghiTitle" type="string">Danh sách đề nghị đã tiếp nhận</property>
+        <property name="TrangThai" type="int">1</property>
+        <property name="PageSize" type="int">10</property>
+        <property name="ChromeType" type="string">None</property>
+        <property name="LinkTrangChu" type="string">/</property>
+        <property name="LinkHoSoDaTiepNhan" type="string">/Pages/HoSoDaTiepNhan.aspx</property>
+        <property name="LinkHoSoChoPhanCong" type="string">/Pages/HoSoChoXuLy.aspx</property>
+        <property name="LinkHoSoDaPhanCong" type="string">/Pages/HoSoDangXuLy.aspx</property>
+        <property name="LinkHoSoChoDuyet" type="string">/Pages/HoSoChoDuyet.aspx</property>
+        <property name="LinkHoSoChoCapPhep" type="string">/Pages/HoSoChoCapPhep.aspx</property>
+        <property name="LinkHoSoDaCapPhep" type="string">/Pages/HoSoDaCapPhep.aspx</property>
+        <property name="LinkHoSoBiTuChoi" type="string">/Pages/HoSoBiTuChoi.aspx</property>
+        <property name="LinkThongKeBaoCao" type="string">/Pages/BaoCaoThongKe.aspx</property>
+      </properties>
+    </data>
+  </webPart>
+</webParts>
+]]>
+      </AllUsersWebPart>
+      
+    </File>
+
+    <File Path="DVCPages\BlankPage.aspx" Url="HoSoChoXuLy.aspx" Type="GhostableInLibrary" IgnoreIfAlreadyExists="FALSE" >
+      <Property Name="Title" Value="Hồ sơ chờ xử lý"/>
+      <Property Name="PublishingPageLayout" Value="~SiteCollection/_catalogs/masterpage/DVCWebPartPage_Home.aspx, DVC WebPart page - Home"/>
+      <AllUsersWebPart WebPartOrder ="0" WebPartZoneID ="Header">
+        <![CDATA[ 
+<webParts>
+  <webPart xmlns="http://schemas.microsoft.com/WebPart/v3">
+    <metaData>
+      <type name="LongAn.DVC.WebParts.DeNghiListView.DeNghiListView, LongAn.DVC, Version=1.0.0.0, Culture=neutral, PublicKeyToken=53c9d9f0542abb89" />
+      <importErrorMessage>$Resources:core,ImportErrorMessage;</importErrorMessage>
+    </metaData>
+    <data>
+      <properties>
+        <property name="Title" type="string">Đề nghị list view</property>
+        <property name="Description" type="string">Đề nghị list view Visual Web Part</property>
+        <property name="DeNghiTitle" type="string">Danh sách đề nghị đã tiếp nhận</property>
+        <property name="TrangThai" type="int">2</property>
+        <property name="PageSize" type="int">10</property>
+        <property name="ChromeType" type="string">None</property>
+        <property name="LinkTrangChu" type="string">/</property>
+        <property name="LinkHoSoDaTiepNhan" type="string">/Pages/HoSoDaTiepNhan.aspx</property>
+        <property name="LinkHoSoChoPhanCong" type="string">/Pages/HoSoChoXuLy.aspx</property>
+        <property name="LinkHoSoDaPhanCong" type="string">/Pages/HoSoDangXuLy.aspx</property>
+        <property name="LinkHoSoChoDuyet" type="string">/Pages/HoSoChoDuyet.aspx</property>
+        <property name="LinkHoSoChoCapPhep" type="string">/Pages/HoSoChoCapPhep.aspx</property>
+        <property name="LinkHoSoDaCapPhep" type="string">/Pages/HoSoDaCapPhep.aspx</property>
+        <property name="LinkHoSoBiTuChoi" type="string">/Pages/HoSoBiTuChoi.aspx</property>
+        <property name="LinkThongKeBaoCao" type="string">/Pages/BaoCaoThongKe.aspx</property>
+      </properties>
+    </data>
+  </webPart>
+</webParts>
+]]>
+      </AllUsersWebPart>
+      
+    </File>
+
+    <File Path="DVCPages\BlankPage.aspx" Url="HoSoDangXuLy.aspx" Type="GhostableInLibrary" IgnoreIfAlreadyExists="FALSE" >
+      <Property Name="Title" Value="Hồ sơ đang xử lý"/>
+      <Property Name="PublishingPageLayout" Value="~SiteCollection/_catalogs/masterpage/DVCWebPartPage_Home.aspx, DVC WebPart page - Home"/>
+      <AllUsersWebPart WebPartOrder ="0" WebPartZoneID ="Header">
+        <![CDATA[ 
+<webParts>
+  <webPart xmlns="http://schemas.microsoft.com/WebPart/v3">
+    <metaData>
+      <type name="LongAn.DVC.WebParts.DeNghiListView.DeNghiListView, LongAn.DVC, Version=1.0.0.0, Culture=neutral, PublicKeyToken=53c9d9f0542abb89" />
+      <importErrorMessage>$Resources:core,ImportErrorMessage;</importErrorMessage>
+    </metaData>
+    <data>
+      <properties>
+        <property name="Title" type="string">Đề nghị list view</property>
+        <property name="Description" type="string">Đề nghị list view Visual Web Part</property>
+        <property name="DeNghiTitle" type="string">Danh sách đề nghị đã tiếp nhận</property>
+        <property name="TrangThai" type="int">3</property>
+        <property name="PageSize" type="int">10</property>
+        <property name="ChromeType" type="string">None</property>
+        <property name="LinkTrangChu" type="string">/</property>
+        <property name="LinkHoSoDaTiepNhan" type="string">/Pages/HoSoDaTiepNhan.aspx</property>
+        <property name="LinkHoSoChoPhanCong" type="string">/Pages/HoSoChoXuLy.aspx</property>
+        <property name="LinkHoSoDaPhanCong" type="string">/Pages/HoSoDangXuLy.aspx</property>
+        <property name="LinkHoSoChoDuyet" type="string">/Pages/HoSoChoDuyet.aspx</property>
+        <property name="LinkHoSoChoCapPhep" type="string">/Pages/HoSoChoCapPhep.aspx</property>
+        <property name="LinkHoSoDaCapPhep" type="string">/Pages/HoSoDaCapPhep.aspx</property>
+        <property name="LinkHoSoBiTuChoi" type="string">/Pages/HoSoBiTuChoi.aspx</property>
+        <property name="LinkThongKeBaoCao" type="string">/Pages/BaoCaoThongKe.aspx</property>
+      </properties>
+    </data>
+  </webPart>
+</webParts>
+]]>
+      </AllUsersWebPart>
+    </File>
+
+    <File Path="DVCPages\BlankPage.aspx" Url="HoSoChoDuyet.aspx" Type="GhostableInLibrary" IgnoreIfAlreadyExists="FALSE" >
+      <Property Name="Title" Value="Hồ sơ chờ duyệt"/>
+      <Property Name="PublishingPageLayout" Value="~SiteCollection/_catalogs/masterpage/DVCWebPartPage_Home.aspx, DVC WebPart page - Home"/>
+      <AllUsersWebPart WebPartOrder ="0" WebPartZoneID ="Header">
+        <![CDATA[ 
+<webParts>
+  <webPart xmlns="http://schemas.microsoft.com/WebPart/v3">
+    <metaData>
+      <type name="LongAn.DVC.WebParts.DeNghiListView.DeNghiListView, LongAn.DVC, Version=1.0.0.0, Culture=neutral, PublicKeyToken=53c9d9f0542abb89" />
+      <importErrorMessage>$Resources:core,ImportErrorMessage;</importErrorMessage>
+    </metaData>
+    <data>
+      <properties>
+        <property name="Title" type="string">Đề nghị list view</property>
+        <property name="Description" type="string">Đề nghị list view Visual Web Part</property>
+        <property name="DeNghiTitle" type="string">Danh sách đề nghị đã tiếp nhận</property>
+        <property name="TrangThai" type="int">4</property>
+        <property name="PageSize" type="int">10</property>
+        <property name="ChromeType" type="string">None</property>
+        <property name="LinkTrangChu" type="string">/</property>
+        <property name="LinkHoSoDaTiepNhan" type="string">/Pages/HoSoDaTiepNhan.aspx</property>
+        <property name="LinkHoSoChoPhanCong" type="string">/Pages/HoSoChoXuLy.aspx</property>
+        <property name="LinkHoSoDaPhanCong" type="string">/Pages/HoSoDangXuLy.aspx</property>
+        <property name="LinkHoSoChoDuyet" type="string">/Pages/HoSoChoDuyet.aspx</property>
+        <property name="LinkHoSoChoCapPhep" type="string">/Pages/HoSoChoCapPhep.aspx</property>
+        <property name="LinkHoSoDaCapPhep" type="string">/Pages/HoSoDaCapPhep.aspx</property>
+        <property name="LinkHoSoBiTuChoi" type="string">/Pages/HoSoBiTuChoi.aspx</property>
+        <property name="LinkThongKeBaoCao" type="string">/Pages/BaoCaoThongKe.aspx</property>
+      </properties>
+    </data>
+  </webPart>
+</webParts>
+]]>
+      </AllUsersWebPart>
+    </File>
+
+    <File Path="DVCPages\BlankPage.aspx" Url="HoSoChoCapPhep.aspx" Type="GhostableInLibrary" IgnoreIfAlreadyExists="FALSE" >
+      <Property Name="Title" Value="Hồ sơ chờ cấp phép"/>
+      <Property Name="PublishingPageLayout" Value="~SiteCollection/_catalogs/masterpage/DVCWebPartPage_Home.aspx, DVC WebPart page - Home"/>
+      <AllUsersWebPart WebPartOrder ="0" WebPartZoneID ="Header">
+        <![CDATA[ 
+<webParts>
+  <webPart xmlns="http://schemas.microsoft.com/WebPart/v3">
+    <metaData>
+      <type name="LongAn.DVC.WebParts.DeNghiListView.DeNghiListView, LongAn.DVC, Version=1.0.0.0, Culture=neutral, PublicKeyToken=53c9d9f0542abb89" />
+      <importErrorMessage>$Resources:core,ImportErrorMessage;</importErrorMessage>
+    </metaData>
+    <data>
+      <properties>
+        <property name="Title" type="string">Đề nghị list view</property>
+        <property name="Description" type="string">Đề nghị list view Visual Web Part</property>
+        <property name="DeNghiTitle" type="string">Danh sách đề nghị đã tiếp nhận</property>
+        <property name="TrangThai" type="int">5</property>
+        <property name="PageSize" type="int">10</property>
+        <property name="ChromeType" type="string">None</property>
+        <property name="LinkTrangChu" type="string">/</property>
+        <property name="LinkHoSoDaTiepNhan" type="string">/Pages/HoSoDaTiepNhan.aspx</property>
+        <property name="LinkHoSoChoPhanCong" type="string">/Pages/HoSoChoXuLy.aspx</property>
+        <property name="LinkHoSoDaPhanCong" type="string">/Pages/HoSoDangXuLy.aspx</property>
+        <property name="LinkHoSoChoDuyet" type="string">/Pages/HoSoChoDuyet.aspx</property>
+        <property name="LinkHoSoChoCapPhep" type="string">/Pages/HoSoChoCapPhep.aspx</property>
+        <property name="LinkHoSoDaCapPhep" type="string">/Pages/HoSoDaCapPhep.aspx</property>
+        <property name="LinkHoSoBiTuChoi" type="string">/Pages/HoSoBiTuChoi.aspx</property>
+        <property name="LinkThongKeBaoCao" type="string">/Pages/BaoCaoThongKe.aspx</property>
+      </properties>
+    </data>
+  </webPart>
+</webParts>
+]]>
+      </AllUsersWebPart>
+    </File>
+
+    <File Path="DVCPages\BlankPage.aspx" Url="HoSoDaCapPhep.aspx" Type="GhostableInLibrary" IgnoreIfAlreadyExists="FALSE" >
+      <Property Name="Title" Value="Hồ sơ đã cấp phép"/>
+      <Property Name="PublishingPageLayout" Value="~SiteCollection/_catalogs/masterpage/DVCWebPartPage_Home.aspx, DVC WebPart page - Home"/>
+      <AllUsersWebPart WebPartOrder ="0" WebPartZoneID ="Header">
+        <![CDATA[ 
+<webParts>
+  <webPart xmlns="http://schemas.microsoft.com/WebPart/v3">
+    <metaData>
+      <type name="LongAn.DVC.WebParts.DeNghiListView.DeNghiListView, LongAn.DVC, Version=1.0.0.0, Culture=neutral, PublicKeyToken=53c9d9f0542abb89" />
+      <importErrorMessage>$Resources:core,ImportErrorMessage;</importErrorMessage>
+    </metaData>
+    <data>
+      <properties>
+        <property name="Title" type="string">Đề nghị list view</property>
+        <property name="Description" type="string">Đề nghị list view Visual Web Part</property>
+        <property name="DeNghiTitle" type="string">Danh sách đề nghị đã tiếp nhận</property>
+        <property name="TrangThai" type="int">6</property>
+        <property name="PageSize" type="int">10</property>
+        <property name="ChromeType" type="string">None</property>
+        <property name="LinkTrangChu" type="string">/</property>
+        <property name="LinkHoSoDaTiepNhan" type="string">/Pages/HoSoDaTiepNhan.aspx</property>
+        <property name="LinkHoSoChoPhanCong" type="string">/Pages/HoSoChoXuLy.aspx</property>
+        <property name="LinkHoSoDaPhanCong" type="string">/Pages/HoSoDangXuLy.aspx</property>
+        <property name="LinkHoSoChoDuyet" type="string">/Pages/HoSoChoDuyet.aspx</property>
+        <property name="LinkHoSoChoCapPhep" type="string">/Pages/HoSoChoCapPhep.aspx</property>
+        <property name="LinkHoSoDaCapPhep" type="string">/Pages/HoSoDaCapPhep.aspx</property>
+        <property name="LinkHoSoBiTuChoi" type="string">/Pages/HoSoBiTuChoi.aspx</property>
+        <property name="LinkThongKeBaoCao" type="string">/Pages/BaoCaoThongKe.aspx</property>
+      </properties>
+    </data>
+  </webPart>
+</webParts>
+]]>
+      </AllUsersWebPart>
+    </File>
+
+    <File Path="DVCPages\BlankPage.aspx" Url="HoSoBiTuChoi.aspx" Type="GhostableInLibrary" IgnoreIfAlreadyExists="FALSE" >
+      <Property Name="Title" Value="Hồ sơ bị từ chối"/>
+      <Property Name="PublishingPageLayout" Value="~SiteCollection/_catalogs/masterpage/DVCWebPartPage_Home.aspx, DVC WebPart page - Home"/>
+      <AllUsersWebPart WebPartOrder ="0" WebPartZoneID ="Header">
+        <![CDATA[ 
+<webParts>
+  <webPart xmlns="http://schemas.microsoft.com/WebPart/v3">
+    <metaData>
+      <type name="LongAn.DVC.WebParts.DeNghiListView.DeNghiListView, LongAn.DVC, Version=1.0.0.0, Culture=neutral, PublicKeyToken=53c9d9f0542abb89" />
+      <importErrorMessage>$Resources:core,ImportErrorMessage;</importErrorMessage>
+    </metaData>
+    <data>
+      <properties>
+        <property name="Title" type="string">Đề nghị list view</property>
+        <property name="Description" type="string">Đề nghị list view Visual Web Part</property>
+        <property name="DeNghiTitle" type="string">Danh sách đề nghị đã tiếp nhận</property>
+        <property name="TrangThai" type="int">7</property>
+        <property name="PageSize" type="int">10</property>
+        <property name="ChromeType" type="string">None</property>
+        <property name="LinkTrangChu" type="string">/</property>
+        <property name="LinkHoSoDaTiepNhan" type="string">/Pages/HoSoDaTiepNhan.aspx</property>
+        <property name="LinkHoSoChoPhanCong" type="string">/Pages/HoSoChoXuLy.aspx</property>
+        <property name="LinkHoSoDaPhanCong" type="string">/Pages/HoSoDangXuLy.aspx</property>
+        <property name="LinkHoSoChoDuyet" type="string">/Pages/HoSoChoDuyet.aspx</property>
+        <property name="LinkHoSoChoCapPhep" type="string">/Pages/HoSoChoCapPhep.aspx</property>
+        <property name="LinkHoSoDaCapPhep" type="string">/Pages/HoSoDaCapPhep.aspx</property>
+        <property name="LinkHoSoBiTuChoi" type="string">/Pages/HoSoBiTuChoi.aspx</property>
+        <property name="LinkThongKeBaoCao" type="string">/Pages/BaoCaoThongKe.aspx</property>
+      </properties>
+    </data>
+  </webPart>
+</webParts>
+]]>
+      </AllUsersWebPart>
+    </File>
+
+    <File Path="DVCPages\BlankPage.aspx" Url="BaoCaoThongKe.aspx" Type="GhostableInLibrary" IgnoreIfAlreadyExists="FALSE" >
+      <Property Name="Title" Value="Báo cáo thống kê"/>
+      <Property Name="PublishingPageLayout" Value="~SiteCollection/_catalogs/masterpage/DVCWebPartPage_Home.aspx, DVC WebPart page - Home"/>
+    </File>
+
+    <File Path="DVCPages\BlankPage.aspx" Url="TraCuuHoSo.aspx" Type="GhostableInLibrary" IgnoreIfAlreadyExists="FALSE" >
+      <Property Name="Title" Value="Tra cứu hồ sơ"/>
+      <Property Name="PublishingPageLayout" Value="~SiteCollection/_catalogs/masterpage/DVCWebPartPage_Home.aspx, DVC WebPart page - Home"/>
+    </File>
+
+    <File Path="DVCPages\BlankPage.aspx" Url="DVCRedirect.aspx" Type="GhostableInLibrary" IgnoreIfAlreadyExists="FALSE" >
+      <Property Name="Title" Value="DVCRedirect"/>
+      <Property Name="PublishingPageLayout" Value="~SiteCollection/_catalogs/masterpage/DVCWebPartPage_Home.aspx, DVC WebPart page - Home"/>
+    </File>
+  </Module>
+</Elements>
