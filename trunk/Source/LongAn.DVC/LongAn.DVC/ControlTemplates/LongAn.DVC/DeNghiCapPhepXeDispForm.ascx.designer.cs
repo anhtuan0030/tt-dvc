@@ -382,6 +382,24 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC {
         protected global::Microsoft.SharePoint.WebControls.FormField FormField20;
         
         /// <summary>
+        /// flbLoaiCapPhep control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Microsoft.SharePoint.WebControls.FieldLabel flbLoaiCapPhep;
+        
+        /// <summary>
+        /// fldLoaiCapPhep control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Microsoft.SharePoint.WebControls.FormField fldLoaiCapPhep;
+        
+        /// <summary>
         /// FieldLabel21 control.
         /// </summary>
         /// <remarks>
@@ -760,6 +778,42 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC {
         protected global::System.Web.UI.WebControls.FileUpload fileUpload4;
         
         /// <summary>
+        /// divLoaiDuong control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divLoaiDuong;
+        
+        /// <summary>
+        /// flbLoaiDuong control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Microsoft.SharePoint.WebControls.FieldLabel flbLoaiDuong;
+        
+        /// <summary>
+        /// fldLoaiDuong control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Microsoft.SharePoint.WebControls.FormField fldLoaiDuong;
+        
+        /// <summary>
+        /// divPhanCongHoSo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divPhanCongHoSo;
+        
+        /// <summary>
         /// ddlUsers control.
         /// </summary>
         /// <remarks>
@@ -767,6 +821,15 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlUsers;
+        
+        /// <summary>
+        /// divYeuCauBoSung control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divYeuCauBoSung;
         
         /// <summary>
         /// txtTieuDe control.

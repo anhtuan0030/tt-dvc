@@ -370,11 +370,58 @@
     <File Path="DVCPages\BlankPage.aspx" Url="TraCuuHoSo.aspx" Type="GhostableInLibrary" IgnoreIfAlreadyExists="FALSE" >
       <Property Name="Title" Value="Tra cứu hồ sơ"/>
       <Property Name="PublishingPageLayout" Value="~SiteCollection/_catalogs/masterpage/DVCWebPartPage_Home.aspx, DVC WebPart page - Home"/>
+
+      <AllUsersWebPart WebPartOrder ="0" WebPartZoneID ="Header">
+        <![CDATA[ 
+          <webParts>
+            <webPart xmlns="http://schemas.microsoft.com/WebPart/v3">
+              <metaData>
+                <type name="LongAn.DVC.WebParts.DeNghiSearch.DeNghiSearch, $SharePoint.Project.AssemblyFullName$" />
+                <importErrorMessage>$Resources:core,ImportErrorMessage;</importErrorMessage>
+              </metaData>
+              <data>
+                <properties>
+                  <property name="Title" type="string">Tra cứu hồ sơ</property>
+                  <property name="Description" type="string">Tra cứu hồ sơ Visual Web Part</property>
+                  <property name="ChromeType" type="chrometype">None</property>
+                </properties>
+              </data>
+            </webPart>
+          </webParts>
+          ]]>
+      </AllUsersWebPart>
+      
     </File>
 
-    <File Path="DVCPages\BlankPage.aspx" Url="DVC.aspx" Type="GhostableInLibrary" IgnoreIfAlreadyExists="FALSE" >
+    <File Path="DVCPages\BlankPage.aspx" Url="DVCRedirect.aspx" Type="GhostableInLibrary" IgnoreIfAlreadyExists="true" >
       <Property Name="Title" Value="DVCRedirect"/>
       <Property Name="PublishingPageLayout" Value="~SiteCollection/_catalogs/masterpage/DVCWebPartPage_Manage.aspx, DVC WebPart page - Manage"/>
+
+      <AllUsersWebPart WebPartOrder ="0" WebPartZoneID ="Header">
+        <![CDATA[ 
+        <webParts>
+          <webPart xmlns="http://schemas.microsoft.com/WebPart/v3">
+            <metaData>
+              <type name="LongAn.DVC.WebParts.DeNghiRedirect.DeNghiRedirect, LongAn.DVC, Version=1.0.0.0, Culture=neutral, PublicKeyToken=53c9d9f0542abb89" />
+              <importErrorMessage>$Resources:core,ImportErrorMessage;</importErrorMessage>
+            </metaData>
+            <data>
+              <properties>
+                <property name="Title" type="string">Đề nghị redirect</property>
+                <property name="Description" type="string">Đề nghị redirect Visual Web Part</property>
+                <property name="LinkHoSoDeNghi" type="string">/Pages/HoSoDaTiepNhan.aspx</property>
+                <property name="LinkHoSoDaTiepNhan" type="string">/Pages/HoSoDaTiepNhan.aspx</property>
+                <property name="LinkHoSoChoDuyet" type="string">/Pages/HoSoChoXuLy.aspx</property>
+                <property name="LinkHoSoChoPhanCong" type="string">/Pages/HoSoChoDuyet.aspx</property>
+                <property name="LinkHoSoChoCapPhep" type="string">/Pages/HoSoChoCapPhep.aspx</property>
+                <property name="LinkHoSoDaCapPhep" type="string">/Pages/HoSoDaCapPhep.aspx</property>
+              </properties>
+            </data>
+          </webPart>
+        </webParts>
+        ]]>
+      </AllUsersWebPart>
+      
     </File>
   </Module>
 </Elements>

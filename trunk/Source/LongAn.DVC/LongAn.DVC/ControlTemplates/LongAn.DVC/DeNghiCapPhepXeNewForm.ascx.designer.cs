@@ -382,6 +382,24 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC {
         protected global::Microsoft.SharePoint.WebControls.FormField FormField20;
         
         /// <summary>
+        /// flbLoaiCapPhep control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Microsoft.SharePoint.WebControls.FieldLabel flbLoaiCapPhep;
+        
+        /// <summary>
+        /// fldLoaiCapPhep control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Microsoft.SharePoint.WebControls.FormField fldLoaiCapPhep;
+        
+        /// <summary>
         /// FieldLabel21 control.
         /// </summary>
         /// <remarks>

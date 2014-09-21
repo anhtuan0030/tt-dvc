@@ -249,6 +249,15 @@
                                         </div>
                                         <div class="row">
                                             <div class="grid_3">
+                                                <SharePoint:FieldLabel ID="flbLoaiCapPhep"  FieldName="LoaiCapPhep"  runat="server"  />
+                                            </div>
+                                            <div class="grid_8">
+                                                <SharePoint:FormField  runat="server" ID="fldLoaiCapPhep" FieldName="LoaiCapPhep" />
+                                            </div>
+                                            <div class="clear"></div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="grid_3">
                                                 <SharePoint:FieldLabel ID="FieldLabel21"  FieldName="TrongLuongHangXinCho"  runat="server"  />
                                             </div>
                                             <div class="grid_8">

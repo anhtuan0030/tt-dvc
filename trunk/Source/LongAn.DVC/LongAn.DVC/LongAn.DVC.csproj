@@ -125,6 +125,22 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DeNghiListView.ascx</DependentUpon>
     </Compile>
+    <Compile Include="WebParts\DeNghiRedirect\DeNghiRedirect.ascx.cs">
+      <DependentUpon>DeNghiRedirect.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebParts\DeNghiRedirect\DeNghiRedirect.ascx.g.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DeNghiRedirect.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebParts\DeNghiSearch\DeNghiSearch.ascx.cs">
+      <DependentUpon>DeNghiSearch.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebParts\DeNghiSearch\DeNghiSearch.ascx.g.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DeNghiSearch.ascx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="ContentTypes\DeNghiCapPhepXeContentType\SharePointProjectItem.spdata">
@@ -178,6 +194,12 @@
     <None Include="ListDefinitions\LoaiDeNghi\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{9ce200e1-fba0-4b3c-87e2-817e8bb86ab2}</SharePointProjectItemId>
     </None>
+    <None Include="ListDefinitions\YeuCauBoSung\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{acc44392-b23d-411d-a80a-da2051184a42}</SharePointProjectItemId>
+    </None>
+    <None Include="ListDefinitions\YeuCauBoSung\YeuCauBoSungInstance\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{5228ca2a-7bf2-4b98-9516-32bf1fbb443d}</SharePointProjectItemId>
+    </None>
     <None Include="Modules\DVCMasterPage\DVC.master" />
     <None Include="Modules\DVCMasterPage\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{de056ed3-43f9-4dfe-8c29-0ea15883980a}</SharePointProjectItemId>
@@ -198,6 +220,14 @@
     <None Include="WebParts\DeNghiListView\DeNghiListView.webpart" />
     <None Include="WebParts\DeNghiListView\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{2c72d282-872c-4668-b93d-ada89634b206}</SharePointProjectItemId>
+    </None>
+    <None Include="WebParts\DeNghiRedirect\DeNghiRedirect.webpart" />
+    <None Include="WebParts\DeNghiRedirect\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{87d63147-3234-49c3-8c84-b42fce449e78}</SharePointProjectItemId>
+    </None>
+    <None Include="WebParts\DeNghiSearch\DeNghiSearch.webpart" />
+    <None Include="WebParts\DeNghiSearch\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{59b1fafa-abee-4313-b46d-4bbf85d86457}</SharePointProjectItemId>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -393,6 +423,10 @@
     <Content Include="ListDefinitions\LoaiDeNghi\Elements.xml" />
     <Content Include="ListDefinitions\LoaiDeNghi\LoaiDeNghiInstance\Elements.xml" />
     <Content Include="ListDefinitions\LoaiDeNghi\Schema.xml" />
+    <Content Include="ListDefinitions\YeuCauBoSung\Elements.xml" />
+    <Content Include="ListDefinitions\YeuCauBoSung\Schema.xml" />
+    <Content Include="ListDefinitions\YeuCauBoSung\YeuCauBoSungInstance\Elements.xml" />
+    <Content Include="Modules\DVCMasterPage\Elements.xml" />
     <Content Include="Modules\DVCMasterPage\DVCWebPartPage_Manage.aspx" />
     <Content Include="Modules\DVCMasterPage\Elements.xml">
       <SubType>Designer</SubType>
@@ -410,6 +444,16 @@
       <LastGenOutput>DeNghiListView.ascx.g.cs</LastGenOutput>
     </Content>
     <Content Include="WebParts\DeNghiListView\Elements.xml" />
+    <Content Include="WebParts\DeNghiRedirect\DeNghiRedirect.ascx">
+      <Generator>SharePointWebPartCodeGenerator</Generator>
+      <LastGenOutput>DeNghiRedirect.ascx.g.cs</LastGenOutput>
+    </Content>
+    <Content Include="WebParts\DeNghiRedirect\Elements.xml" />
+    <Content Include="WebParts\DeNghiSearch\DeNghiSearch.ascx">
+      <Generator>SharePointWebPartCodeGenerator</Generator>
+      <LastGenOutput>DeNghiSearch.ascx.g.cs</LastGenOutput>
+    </Content>
+    <Content Include="WebParts\DeNghiSearch\Elements.xml" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Elements xmlns="http://schemas.microsoft.com/sharepoint/">
   <Module Name="DVCMasterPage" Url="_catalogs/masterpage" RootWebOnly="TRUE">
-    <File Path="DVCMasterPage\DVC.master" Url="DVC.master" Type="GhostableInLibrary">
+    <File Path="DVCMasterPage\DVC.master" Url="DVC.master" Type="GhostableInLibrary" IgnoreIfAlreadyExists="true">
       <Property Name="Title" Value="DVC Master Page" />
       <Property Name="ContentType" Value="Master Page" />
     </File>
-    <File Path="DVCMasterPage\DVCWebPartPage_Home.aspx" Url="DVCWebPartPage_Home.aspx" Type="GhostableInLibrary" >
+    <File Path="DVCMasterPage\DVCWebPartPage_Home.aspx" Url="DVCWebPartPage_Home.aspx" Type="GhostableInLibrary" IgnoreIfAlreadyExists="true" >
       <Property Name="Title" Value="DVC WebPart page - Home" />
       <Property Name="ContentType" Value="Page Layout" />
     </File>
-    <File Path="DVCMasterPage\DVCWebPartPage_Manage.aspx" Url="DVCWebPartPage_Manage.aspx" Type="GhostableInLibrary" >
+    <File Path="DVCMasterPage\DVCWebPartPage_Manage.aspx" Url="DVCWebPartPage_Manage.aspx" Type="GhostableInLibrary" IgnoreIfAlreadyExists="true" >
       <Property Name="Title" Value="DVC WebPart page - Manage" />
       <Property Name="ContentType" Value="Page Layout" />
     </File>

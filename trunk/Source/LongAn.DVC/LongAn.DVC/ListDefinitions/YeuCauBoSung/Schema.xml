@@ -1,26 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<List xmlns:ows="Microsoft SharePoint" Title="LoaiDeNghi" FolderCreation="FALSE" Direction="$Resources:Direction;" Url="Lists/LoaiDeNghi" BaseType="0" xmlns="http://schemas.microsoft.com/sharepoint/">
+<List xmlns:ows="Microsoft SharePoint" Title="YeuCauBoSung" FolderCreation="FALSE" Direction="$Resources:Direction;" Url="Lists/YeuCauBoSung" BaseType="0" xmlns="http://schemas.microsoft.com/sharepoint/">
   <MetaData>
-    <ContentTypes>
-      
-      
-    <ContentType ID="0x0100e837e3301e45456c83edc0778258271a" Name="ListFieldsContentType">
-      <FieldRefs>
-        
-        
-      <FieldRef ID="{fa564e0f-0c70-4ab9-b863-0177e6ddd247}" Name="Title" />
-        <FieldRef ID="{b842c40f-47b4-40de-8686-74fdac050dd3}" Name="MoTa" />
-      </FieldRefs>
-    </ContentType>
+    <ContentTypes>      
+    
       <!--<ContentTypeRef ID="0x01">
         <Folder TargetName="Item" />
-      </ContentTypeRef><ContentTypeRef ID="0x0120" />-->
-    </ContentTypes>
+      </ContentTypeRef>
+      <ContentTypeRef ID="0x0120" />-->
+    <ContentType ID="0x01008346cb860bdb4031a09b008dae23225e" Name="ListFieldsContentType">
+      <FieldRefs>
+
+      <FieldRef ID="{fa564e0f-0c70-4ab9-b863-0177e6ddd247}" Name="Title" /><FieldRef ID="{b842c40f-47b4-40de-8686-74fdac050dd3}" Name="MoTa" /><FieldRef ID="{74443E7F-018E-4051-A6D4-D6918A68E990}" Name="DaBoSung" /><FieldRef ID="{EA5E04FA-DA63-447F-9B1B-537AF968332D}" Name="NgayBoSung" /><FieldRef ID="{713CEB2E-2D14-4FDF-BA98-DAABFA61C504}" Name="DeNghi" /></FieldRefs>
+    </ContentType></ContentTypes>
     <Fields>
       
-    
-      <Field ID="{fa564e0f-0c70-4ab9-b863-0177e6ddd247}" Type="Text" Name="Title" DisplayName="Đề nghị" Required="TRUE" SourceID="http://schemas.microsoft.com/sharepoint/v3" StaticName="Title" MaxLength="255" />
-      <Field Name="MoTa" StaticName="MoTa" ID="{b842c40f-47b4-40de-8686-74fdac050dd3}" DisplayName="Mô tả" Type="Note" /></Fields>
+    <Field ID="{fa564e0f-0c70-4ab9-b863-0177e6ddd247}" Type="Text" Name="Title" DisplayName="$Resources:core,Title;" Required="TRUE" SourceID="http://schemas.microsoft.com/sharepoint/v3" StaticName="Title" MaxLength="255" /><Field Type="Note" ID="{b842c40f-47b4-40de-8686-74fdac050dd3}" Name="MoTa" StaticName="MoTa" DisplayName="Mô tả" /><Field Type="Boolean" ID="{74443E7F-018E-4051-A6D4-D6918A68E990}" Name="DaBoSung" StaticName="DaBoSung" DisplayName="Đã bổ sung" EnforceUniqueValues="FALSE" Indexed="FALSE" Group="[LA-DVC]"><Default>0</Default></Field><Field Type="DateTime" ID="{EA5E04FA-DA63-447F-9B1B-537AF968332D}" Name="NgayBoSung" StaticName="NgayBoSung" DisplayName="Ngày bổ sung" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" Format="DateOnly" FriendlyDisplayFormat="Disabled" Group="[LA-DVC]"></Field><Field Type="Lookup" ID="{713CEB2E-2D14-4FDF-BA98-DAABFA61C504}" Name="DeNghi" StaticName="DeNghi" DisplayName="Đề nghị" Required="FALSE" EnforceUniqueValues="FALSE" List="Lists/DeNghiCapPhepXe" ShowField="Title" UnlimitedLengthInDocumentLibrary="FALSE" RelationshipDeleteBehavior="None" Group="[LA-DVC]" /></Fields>
     <Views>
       
       
@@ -48,7 +42,7 @@
         <RowLimit Paged="TRUE">30</RowLimit>
         <ViewFields>
           
-        <FieldRef Name="LinkTitle"></FieldRef><FieldRef Name="MoTa" /></ViewFields>
+        <FieldRef Name="LinkTitle"></FieldRef><FieldRef Name="MoTa" /><FieldRef Name="DaBoSung" /><FieldRef Name="NgayBoSung" /><FieldRef Name="DeNghi" /></ViewFields>
         <Query>
           <OrderBy>
             
