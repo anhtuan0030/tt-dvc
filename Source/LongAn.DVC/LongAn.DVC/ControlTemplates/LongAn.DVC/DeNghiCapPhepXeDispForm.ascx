@@ -499,7 +499,7 @@
                                 <div class="pull-right">
                                     <asp:Button ID="btnTrinhXuLy" runat="server" Text="Trình xử lý" CssClass="button" Visible="false"/>
                                     <asp:Button ID="btnYeuCauBoSung" runat="server" Text="Yêu cầu bổ sung" CssClass="button" 
-                                        Visible="false" OnClick="if (!PreSaveYeuCauBoSung(0)) return false;"/>
+                                        Visible="false" OnClientClick="if (!PreSaveYeuCauBoSung(0)) return false;"/>
                                     <asp:Button ID="btnPhanCongHoSo" runat="server" Text="Phân công hồ sơ" CssClass="button" Visible="false"/>
                                     <asp:Button ID="btnTrinhTruongPhong" runat="server" Text="Trình trưởng/phó P.QLHT" CssClass="button" Visible="false"/>
                                     <asp:Button ID="btnTrinhLanhDao" runat="server" Text="Trình lãnh đạo" CssClass="button" Visible="false"/>
