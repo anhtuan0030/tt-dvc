@@ -10,53 +10,33 @@
 
 <asp:Login ID="Login1" runat="server" 
     FailureText="Đăng nhập không thành công!" 
-    onauthenticate="Login1_Authenticate" CreateUserText="Đăng ký" CreateUserUrl="/registeraccount" DisplayRememberMe="False" LoginButtonText="Đăng nhập" PasswordLabelText="Mật khẩu:" RememberMeText="Nhớ mặt khẩu" TitleText="Đăng nhập" UserNameLabelText="Tên đăng nhập:" UserNameRequiredErrorMessage="Vui lòng nhập Tên đăng nhập." PasswordRequiredErrorMessage="Vui lòng nhập Mật khẩu." PasswordRecoveryText="Quên mật khẩu ?" PasswordRecoveryUrl="/">
+    onauthenticate="Login1_Authenticate" CreateUserText="Đăng ký" CreateUserUrl="/Pages/DangKyTaiKhoan.aspx" DisplayRememberMe="False" LoginButtonText="Đăng nhập" PasswordLabelText="Mật khẩu:" RememberMeText="Nhớ mặt khẩu" TitleText="Đăng nhập" UserNameLabelText="Tên đăng nhập:" UserNameRequiredErrorMessage="Vui lòng nhập Tên đăng nhập." PasswordRequiredErrorMessage="Vui lòng nhập Mật khẩu." PasswordRecoveryText="Quên mật khẩu ?" PasswordRecoveryUrl="/">
     <LayoutTemplate>
-        <table cellpadding="1" cellspacing="0" style="border-collapse:collapse;">
-            <tr>
-                <td>
-                    <table cellpadding="0">
-                        <tr>
-                            <td align="center" colspan="2">Đăng nhập</td>
-                        </tr>
-                        <tr>
-                            <td align="right">
-                                <asp:Label ID="UserNameLabel" runat="server" AssociatedControlID="UserName">Tên đăng nhập:</asp:Label>
-                            </td>
-                            <td>
-                                <asp:TextBox ID="UserName" runat="server"></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="UserNameRequired" runat="server" ControlToValidate="UserName" ErrorMessage="Vui lòng nhập Tên đăng nhập." ToolTip="Vui lòng nhập Tên đăng nhập." ValidationGroup="ctl00$Login1">*</asp:RequiredFieldValidator>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td align="right">
-                                <asp:Label ID="PasswordLabel" runat="server" AssociatedControlID="Password">Mật khẩu:</asp:Label>
-                            </td>
-                            <td>
-                                <asp:TextBox ID="Password" runat="server" TextMode="Password"></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="PasswordRequired" runat="server" ControlToValidate="Password" ErrorMessage="Vui lòng nhập Mật khẩu." ToolTip="Vui lòng nhập Mật khẩu." ValidationGroup="ctl00$Login1">*</asp:RequiredFieldValidator>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td align="center" colspan="2" style="color:Red;">
-                                <asp:Literal ID="FailureText" runat="server" EnableViewState="False"></asp:Literal>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td align="right" colspan="2">
-                                <asp:Button ID="LoginButton" runat="server" CommandName="Login" Text="Đăng nhập" ValidationGroup="ctl00$Login1" />
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="2">
-                                <asp:HyperLink ID="CreateUserLink" runat="server" NavigateUrl="/registeraccount">Đăng ký</asp:HyperLink>
-<br />
-                                <asp:HyperLink ID="PasswordRecoveryLink" runat="server" NavigateUrl="/">Quên mật khẩu ?</asp:HyperLink>
-                            </td>
-                        </tr>
-                    </table>
-                </td>
-            </tr>
-        </table>
+        <div class="box icon-1">
+            <div class="box-title">
+                Đăng nhập
+            </div>
+            <div class="box-content form">
+                <asp:Label ID="UserNameLabel" runat="server" AssociatedControlID="UserName">Tên đăng nhập:</asp:Label>
+                <asp:TextBox ID="UserName" runat="server"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="UserNameRequired" runat="server" ControlToValidate="UserName" ErrorMessage="Vui lòng nhập Tên đăng nhập." ToolTip="Vui lòng nhập Tên đăng nhập." ValidationGroup="ctl00$Login1">*</asp:RequiredFieldValidator>
+                <asp:Label ID="PasswordLabel" runat="server" AssociatedControlID="Password">Mật khẩu:</asp:Label>
+                <asp:TextBox ID="Password" runat="server" TextMode="Password"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="PasswordRequired" runat="server" ControlToValidate="Password" ErrorMessage="Vui lòng nhập Mật khẩu." ToolTip="Vui lòng nhập Mật khẩu." ValidationGroup="ctl00$Login1">*</asp:RequiredFieldValidator>
+                <asp:Literal ID="FailureText" runat="server" EnableViewState="False"></asp:Literal>
+                <div class="row">
+                    <div class="grid_6">
+                        <asp:Button ID="LoginButton" runat="server" CommandName="Login" Text="Đăng nhập" CssClass="btn btn-default" ValidationGroup="ctl00$Login1" />
+                    </div>
+                    <div class="grid_6">
+                        <asp:HyperLink ID="CreateUserLink" runat="server" NavigateUrl="/Pages/DangKyTaiKhoan.aspx" CssClass="btn btn-default">Đăng ký</asp:HyperLink>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <ul class="bullet-1">
+                    <li><asp:HyperLink ID="PasswordRecoveryLink" runat="server" NavigateUrl="/Pages/KhoiPhucMatKhau.aspx">Quên mật khẩu ?</asp:HyperLink></li>
+                </ul>
+            </div>
+        </div>
     </LayoutTemplate>
 </asp:Login>

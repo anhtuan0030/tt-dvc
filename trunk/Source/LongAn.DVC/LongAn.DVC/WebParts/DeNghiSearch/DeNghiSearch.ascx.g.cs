@@ -116,12 +116,8 @@ namespace LongAn.DVC.WebParts.DeNghiSearch {
         private void @__BuildControlTree(global::LongAn.DVC.WebParts.DeNghiSearch.DeNghiSearch @__ctrl) {
             System.Web.UI.IParserAccessor @__parser = ((System.Web.UI.IParserAccessor)(@__ctrl));
             @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl(@"
-<link rel=""stylesheet"" href=""/_layouts/15/LongAn.DVC.Form/css/normalize.css""/>
-<link rel=""stylesheet"" href=""/_layouts/15/LongAn.DVC.Form/css/fluid_grid.css""/>
-<link rel=""stylesheet"" href=""/_layouts/15/LongAn.DVC.Form/css/jquery-ui.min.css""/>
-<link rel=""stylesheet"" href=""/_layouts/15/LongAn.DVC.Form/css/superfish.css""/>
-<link rel=""stylesheet"" href=""/_layouts/15/LongAn.DVC.Form/css/main.css""/>
-<div class=""container_12"">
+
+<div>
 	<div class=""row"">
 		<div class=""grid_12"" id=""main-frame"">
 			<h2 class=""page-header"">

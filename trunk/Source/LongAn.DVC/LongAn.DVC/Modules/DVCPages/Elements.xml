@@ -44,6 +44,9 @@
 ]]>
       </AllUsersWebPart>
     </File>
+    
+    
+    
     <File Path="DVCPages\BlankPage.aspx" Url="DangKyTaiKhoan.aspx" Type="GhostableInLibrary" IgnoreIfAlreadyExists="FALSE" >
       <Property Name="Title" Value="Đăng ký tài khoản"/>
       <Property Name="PublishingPageLayout" Value="~SiteCollection/_catalogs/masterpage/DVCWebPartPage_Home.aspx, DVC WebPart page - Home"/>
@@ -59,11 +62,6 @@
     <data>
       <properties>
         <property name="GroupName" type="string">DVC Người dùng</property>
-        <property name="AutoGeneratePassword" type="string">FALSE</property>
-        <property name="CaptchaValidation" type="string">TRUE</property>
-        <property name="DisplayCancelButton" type="string">FALSE</property>
-        <property name="LoginCreatedUser" type="string">TRUE</property>
-        <property name="ChromeType" type="chrometype">None</property>
         <property name="Title" type="string">Đăng ký tài khoản</property>
       </properties>
     </data>
@@ -74,6 +72,28 @@
     </File>
 
 
+    <File Path="DVCPages\BlankPage.aspx" Url="KhoiPhucMatKhau.aspx" Type="GhostableInLibrary" IgnoreIfAlreadyExists="FALSE" >
+      <Property Name="Title" Value="Khôi phục mật khẩu"/>
+      <Property Name="PublishingPageLayout" Value="~SiteCollection/_catalogs/masterpage/DVCWebPartPage_Home.aspx, DVC WebPart page - Home"/>
+
+      <AllUsersWebPart WebPartOrder ="0" WebPartZoneID ="Header">
+        <![CDATA[ 
+<webParts>
+  <webPart xmlns="http://schemas.microsoft.com/WebPart/v3">
+    <metaData>
+      <type name="LongAn.DVC.FormsBasedAuthentication.PasswordRecoveryWebPart, LongAn.DVC.FormsBasedAuthentication, Version=1.0.0.0, Culture=neutral, PublicKeyToken=9dba9f460226d31d" />
+      <importErrorMessage>Cannot import this Web Part.</importErrorMessage>
+    </metaData>
+    <data>
+      <properties>
+        <property name="Title" type="string">Khôi phục mật khẩu</property>
+      </properties>
+    </data>
+  </webPart>
+</webParts>
+]]>
+      </AllUsersWebPart>
+    </File>
 
 
 
@@ -98,6 +118,7 @@
               <property name="LinkDanhSachHoSo" type="string">/Pages/DeNghiCapPhep.aspx</property>
               <property name="LinkThongTinHuongDan" type="string">/</property>
               <property name="PageSize" type="int">10</property>
+              <property name="ChromeType" type="chrometype">None</property>
             </properties>
           </data>
         </webPart>
@@ -393,7 +414,7 @@
       
     </File>
 
-    <File Path="DVCPages\BlankPage.aspx" Url="DVCRedirect.aspx" Type="GhostableInLibrary" IgnoreIfAlreadyExists="true" >
+    <File Path="DVCPages\BlankPage.aspx" Url="DVC.aspx" Type="GhostableInLibrary" IgnoreIfAlreadyExists="true" >
       <Property Name="Title" Value="DVCRedirect"/>
       <Property Name="PublishingPageLayout" Value="~SiteCollection/_catalogs/masterpage/DVCWebPartPage_Manage.aspx, DVC WebPart page - Manage"/>
 
@@ -409,7 +430,7 @@
               <properties>
                 <property name="Title" type="string">Đề nghị redirect</property>
                 <property name="Description" type="string">Đề nghị redirect Visual Web Part</property>
-                <property name="LinkHoSoDeNghi" type="string">/Pages/HoSoDaTiepNhan.aspx</property>
+                <property name="LinkHoSoDeNghi" type="string">/Pages/DeNghiCapPhep.aspx</property>
                 <property name="LinkHoSoDaTiepNhan" type="string">/Pages/HoSoDaTiepNhan.aspx</property>
                 <property name="LinkHoSoChoDuyet" type="string">/Pages/HoSoChoXuLy.aspx</property>
                 <property name="LinkHoSoChoPhanCong" type="string">/Pages/HoSoChoDuyet.aspx</property>

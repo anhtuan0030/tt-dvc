@@ -142,7 +142,7 @@ namespace LongAn.DVC.FormsBasedAuthentication.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to true.
+        ///   Looks up a localized string similar to false.
         /// </summary>
         internal static string AutoGeneratePassword_DefaultValue {
             get {
@@ -1816,7 +1816,7 @@ namespace LongAn.DVC.FormsBasedAuthentication.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to false.
+        ///   Looks up a localized string similar to true.
         /// </summary>
         internal static string LoginCreatedUser_DefaultValue {
             get {

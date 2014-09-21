@@ -426,13 +426,14 @@
     <Content Include="ListDefinitions\YeuCauBoSung\Elements.xml" />
     <Content Include="ListDefinitions\YeuCauBoSung\Schema.xml" />
     <Content Include="ListDefinitions\YeuCauBoSung\YeuCauBoSungInstance\Elements.xml" />
-    <Content Include="Modules\DVCMasterPage\Elements.xml" />
-    <Content Include="Modules\DVCMasterPage\DVCWebPartPage_Manage.aspx" />
     <Content Include="Modules\DVCMasterPage\Elements.xml">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Modules\DVCMasterPage\DVCWebPartPage_Manage.aspx" />
     <Content Include="Modules\DVCMasterPage\DVCWebPartPage_Home.aspx" />
-    <Content Include="Modules\DVCPages\Elements.xml" />
+    <Content Include="Modules\DVCPages\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Modules\DVCPages\BlankPage.aspx" />
     <Content Include="WebParts\DeNghiListViewUsers\DeNghiListViewUsers.ascx">
       <Generator>SharePointWebPartCodeGenerator</Generator>

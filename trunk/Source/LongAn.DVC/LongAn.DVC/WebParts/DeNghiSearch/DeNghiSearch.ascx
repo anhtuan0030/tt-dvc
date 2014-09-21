@@ -6,12 +6,8 @@
 <%@ Import Namespace="Microsoft.SharePoint" %> 
 <%@ Register Tagprefix="WebPartPages" Namespace="Microsoft.SharePoint.WebPartPages" Assembly="Microsoft.SharePoint, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %>
 <%@ Control Language="C#" AutoEventWireup="true" CodeBehind="DeNghiSearch.ascx.cs" Inherits="LongAn.DVC.WebParts.DeNghiSearch.DeNghiSearch" %>
-<link rel="stylesheet" href="/_layouts/15/LongAn.DVC.Form/css/normalize.css"/>
-<link rel="stylesheet" href="/_layouts/15/LongAn.DVC.Form/css/fluid_grid.css"/>
-<link rel="stylesheet" href="/_layouts/15/LongAn.DVC.Form/css/jquery-ui.min.css"/>
-<link rel="stylesheet" href="/_layouts/15/LongAn.DVC.Form/css/superfish.css"/>
-<link rel="stylesheet" href="/_layouts/15/LongAn.DVC.Form/css/main.css"/>
-<div class="container_12">
+
+<div>
 	<div class="row">
 		<div class="grid_12" id="main-frame">
 			<h2 class="page-header">
