@@ -30,6 +30,13 @@ function PreSaveAction(formType)
     return result;
 }
 
+function PreSaveYeuCauBoSung()
+{
+    if($.trim($("[id$='_txtTieuDe']").val()) != "" || $.trim($("[id$='_txtTieuDe']").val()) != "")
+        return true;
+    return false;
+}
+
 function PreSaveItem(formType) {
     if ("function" == typeof (PreSaveAction)) {
         return PreSaveAction(formType);

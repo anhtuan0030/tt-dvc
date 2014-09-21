@@ -440,13 +440,17 @@
                                 <div class="panel-2" id="divLoaiDuong" runat="server" visible="false">
                                     <h2>Loại đường xin cấp phép</h2>
 
-                                    <div class="grid_2">
-                                        <SharePoint:FieldLabel ID="flbLoaiDuong"  FieldName="LoaiDuong"  runat="server"  />
+                                    <div class="row">
+                                        <div class="grid_2">
+                                            <SharePoint:FieldLabel ID="flbLoaiDuong"  FieldName="LoaiDuong"  runat="server"  />
+                                        </div>
+                                        <div class="grid_9 col-xs-2">
+                                            <%--<SharePoint:FormField  runat="server" ID="fldLoaiDuong" FieldName="LoaiDuong" ControlMode="Edit" Visible="false"/>--%>
+                                            <asp:CheckBoxList ID="chkListLoaiDuong" runat="server">
+                                            </asp:CheckBoxList>
+                                        </div>
+                                        <div class="clear"></div>
                                     </div>
-                                    <div class="grid_9 col-xs-2">
-                                        <SharePoint:FormField  runat="server" ID="fldLoaiDuong" FieldName="LoaiDuong" Visible="false"/>
-                                    </div>
-                                    <div class="clear"></div>
                                 </div>
 
                                 <div class="panel-2" id="divPhanCongHoSo" runat="server" visible="false">
@@ -494,7 +498,8 @@
 
                                 <div class="pull-right">
                                     <asp:Button ID="btnTrinhXuLy" runat="server" Text="Trình xử lý" CssClass="button" Visible="false"/>
-                                    <asp:Button ID="btnYeuCauBoSung" runat="server" Text="Yêu cầu bổ sung" CssClass="button" Visible="false"/>
+                                    <asp:Button ID="btnYeuCauBoSung" runat="server" Text="Yêu cầu bổ sung" CssClass="button" 
+                                        Visible="false" OnClick="if (!PreSaveYeuCauBoSung(0)) return false;"/>
                                     <asp:Button ID="btnPhanCongHoSo" runat="server" Text="Phân công hồ sơ" CssClass="button" Visible="false"/>
                                     <asp:Button ID="btnTrinhTruongPhong" runat="server" Text="Trình trưởng/phó P.QLHT" CssClass="button" Visible="false"/>
                                     <asp:Button ID="btnTrinhLanhDao" runat="server" Text="Trình lãnh đạo" CssClass="button" Visible="false"/>
