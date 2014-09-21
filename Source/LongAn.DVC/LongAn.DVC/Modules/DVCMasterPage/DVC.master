@@ -46,6 +46,14 @@
 <SharePoint:CssRegistration Name="/_layouts/15/LongAn.DVC/css/superfish.css" runat="server" />
 <SharePoint:CssRegistration Name="/_layouts/15/LongAn.DVC/css/main.css" runat="server" />
 
+<script language="javascript">
+_spBodyOnLoadFunctionNames.push("Hidesuite");
+function Hidesuite()
+{
+    document.getElementById('ctl00_fullscreenmodeBtn').style.visibility = 'hidden';
+}
+</script> 
+
 </head>
 
 <body>
@@ -88,16 +96,18 @@
 	<SharePoint:EncodedLiteral runat="server" text="<%$Resources:wss,master_enableanimation%>" EncodeMethod="HtmlEncode"/></a>
 </div>
 <a id="HiddenAnchor" href="javascript:;" style="display:none;"></a>
+
+
 <div id="suiteBar" class="ms-dialogHidden noindex">
 	<div id="suiteBarLeft">
 		<div class="ms-table ms-fullWidth">
 			<div class="ms-tableRow">
 				<div class="ms-tableCell ms-verticalAlignMiddle">
-					<SharePoint:DelegateControl id="ID_SuiteBarBrandingDelegate" ControlId="SuiteBarBrandingDelegate" runat="server"/>
+					<SharePoint:DelegateControl id="ID_SuiteBarBrandingDelegate" ControlId="SuiteBarBrandingDelegate" runat="server" Visible="false"/>
 				</div>
 				<SharePoint:AjaxDelta runat="server" id="DeltaSuiteLinks" BlockElement="true" CssClass="ms-core-deltaSuiteLinks">
 						<div id="suiteLinksBox">
-							<SharePoint:DelegateControl id="ID_SuiteLinksDelegate" ControlId="SuiteLinksDelegate" runat="server" />
+							<SharePoint:DelegateControl id="ID_SuiteLinksDelegate" ControlId="SuiteLinksDelegate" runat="server" Visible="false"/>
 						</div>
 				</SharePoint:AjaxDelta>
 			</div>
@@ -170,7 +180,7 @@
 							  Sequence="240"
 							  UseShortId="true"
 							  ClientOnClickNavigateUrl="~siteLayouts/viewlsts.aspx"
-							  PermissionsString="ViewFormPages"
+							  PermissionsString="ManageLists"
 							  PermissionMode="Any" />
 						  <SharePoint:MenuItemTemplate runat="server" id="MenuItem_ChangeTheLook"
 							  Text="<%$Resources:wss,siteactions_changethelook15%>"
@@ -232,6 +242,7 @@
 	</div>
 </div>
 		<div id="ms-hcTest"></div>
+<SharePoint:SPSecurityTrimmedControl ID="SPRibbon" runat="server" PermissionsString="AddAndCustomizePages">
 		<div id="s4-ribbonrow">
 		<div id="globalNavBox" class="noindex">
 <div id="ribbonBox">
@@ -360,8 +371,10 @@
 </SharePoint:AjaxDelta>
 		</div>
 		</div>
+</SharePoint:SPSecurityTrimmedControl>
+
 		<div id="s4-workspace" class="ms-core-overlay s4-nosetwidth">
-		<div class="container">
+		<div class="container_12">
         
 		<div id="s4-bodyContainer">
 		
@@ -382,10 +395,8 @@
                 <div id="top-menu">
                     <ul class="sf-menu menu">
                         <li class="home"><a href="/">Trang chủ</a></li>
-                        <li><a href="/Pages/DeNghiCapPhep.aspx">Đề nghị cấp phép</a></li>
-                        <li><a href="#">Đăng ký đăng kiểm</a></li>
-                        <li><a href="#">Tiếp nhận và trả kết quả giải quyết khiếu nại</a></li>
-                        <li><a href="#">Thông tin huy hoạch</a></li>
+                        <li><a href="/Pages/DVC.aspx">Dịch vụ công</a></li>
+                        <li><a href="/Pages/TraCuuHoSo.aspx">Tra cứu hồ sơ</a></li>
                     </ul>
                 </div>
             </div>
@@ -600,7 +611,7 @@
 						<SharePoint:ClusteredSPLinkButton
 							runat="server"
 							id="idNavLinkViewAll"
-							PermissionsString="ViewFormPages"
+							PermissionsString="ManageLists"
 							NavigateUrl="~site/_layouts/15/viewlsts.aspx"
 							Text="<%$Resources:wss,AllSiteContentMore%>"
 							accesskey="<%$Resources:wss,quiklnch_allcontent_AK%>"
