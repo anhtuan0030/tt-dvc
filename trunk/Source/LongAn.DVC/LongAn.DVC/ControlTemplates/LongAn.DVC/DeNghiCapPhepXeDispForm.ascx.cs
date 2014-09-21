@@ -5,6 +5,7 @@ using Microsoft.SharePoint;
 using Microsoft.SharePoint.WebControls;
 using System;
 using System.Data;
+using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
@@ -43,6 +44,9 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
                     {
                         btnTrinhXuLy.Visible = true;
                         btnTrinhXuLy.Click += btnTrinhXuLy_Click;
+
+                        btnTraHoSo.Visible = true;
+                        btnTraHoSo.Click +=btnTraHoSo_Click;
                     }
                     break;
                 case CapXuLy.CanBoXuLy:
@@ -151,6 +155,24 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
                 DeNghiHelper.LoadAttachments(SPContext.Current.ItemId, Constants.AttachmentGiayChungNhanKiemDinh, divFileUpload2);
                 DeNghiHelper.LoadAttachments(SPContext.Current.ItemId, Constants.AttachmentGiayCamKet, divFileUpload3);
                 DeNghiHelper.LoadAttachments(SPContext.Current.ItemId, Constants.AttachmentCMND, divFileUpload4);
+
+                var yeuCauBoSungUrl = (SPContext.Current.Web.ServerRelativeUrl + Constants.ListUrlYeuCauBoSung).Replace("//", "/");
+                var yeuCauBoSungList = SPContext.Current.Web.GetList(yeuCauBoSungUrl);
+                SPFieldMultiChoice causeOfCustomer = (SPFieldMultiChoice)yeuCauBoSungList.Fields[new Guid(Constants.FieldIdLoaiDuong)];
+                chkListLoaiDuong.DataSource = causeOfCustomer.Choices;
+                chkListLoaiDuong.DataBind();
+
+                var currentItem = SPContext.Current.ListItem;
+                var loaiDuongString = currentItem[Constants.FieldIdLoaiDuong] != null ? currentItem[Constants.FieldIdLoaiDuong].ToString() : string.Empty;
+                for (int i = 0; i < chkListLoaiDuong.Items.Count; i++)
+                {
+                    if (string.IsNullOrEmpty(loaiDuongString))
+                        break;
+                    if (loaiDuongString.Contains(chkListLoaiDuong.Items[i].Text))
+                    {
+                        chkListLoaiDuong.Items[i].Selected = true;
+                    }
+                }
             }
         }
 
@@ -180,7 +202,7 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
             var redirectUrl = Request.QueryString["Source"];
             if (redirectUrl == null || string.IsNullOrEmpty(redirectUrl.ToString()))
                 redirectUrl = "/";
-            longOperation.End(redirectUrl);
+            longOperation.End(redirectUrl, Microsoft.SharePoint.Utilities.SPRedirectFlags.DoNotEndResponse, HttpContext.Current, "");
         }
 
         DataTable GetCanBoXuLy()
@@ -228,6 +250,7 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
                 var yeuCauBoSungUrl = (web.ServerRelativeUrl + Constants.ListUrlYeuCauBoSung).Replace("//", "/");
                 var yeuCauBoSungList = web.GetList(yeuCauBoSungUrl);
                 var yeuCauBoSungItem = yeuCauBoSungList.Items.Add();
+                yeuCauBoSungItem[Constants.FieldDeNghi] = SPContext.Current.ItemId;
                 yeuCauBoSungItem[Constants.FieldTitle] = txtTieuDe.Text.Trim();
                 yeuCauBoSungItem[Constants.FieldMoTa] = txtDienGiaiChiTiet.Text.Trim();
                 yeuCauBoSungItem.Update();

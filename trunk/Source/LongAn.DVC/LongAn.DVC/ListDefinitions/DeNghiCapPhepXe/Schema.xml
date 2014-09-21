@@ -286,7 +286,7 @@
       <Field Type="Calculated" ID="{C2F882CA-8CC4-404B-A78F-16BE30FDA4AB}" Name="TrangThaiText" StaticName="TrangThaiText"
          DisplayName="Trạng thái" EnforceUniqueValues="FALSE" Indexed="FALSE" Format="DateOnly" LCID="1033" ResultType="Text"
          ReadOnly="TRUE" Group="[LA-DVC]">
-        <Formula>=IF(TrangThai="0","Khởi tạo",IF(TrangThai="1","Đã tiếp nhận",IF(TrangThai="6","Đã duyệt",IF(TrangThai="7","Từ chối","Đang xử lý"))))</Formula>
+        <Formula>=IF(TrangThai="0","Khởi tạo",IF(TrangThai="1","Đã tiếp nhận",IF(TrangThai="6","Đã duyệt",IF(TrangThai="7","Từ chối",IF(TrangThai="8","Chờ bổ sung", "Đang xử lý"))))</Formula>
         <FieldRefs>
           <FieldRef Name="TrangThai" />
         </FieldRefs>

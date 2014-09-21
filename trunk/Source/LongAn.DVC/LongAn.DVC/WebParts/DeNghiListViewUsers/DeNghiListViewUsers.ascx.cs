@@ -306,7 +306,9 @@ namespace LongAn.DVC.WebParts.DeNghiListViewUsers
                     LinkButton lbtDeleteItem = (LinkButton)e.Item.FindControl("lbtDeleteItem");
                     LinkButton lbtNopHoSo = (LinkButton)e.Item.FindControl("lbtNopHoSo");
                     var trangThai = int.Parse(rowView[Constants.FieldTrangThai].ToString());
-                    if (trangThai == (int)TrangThaiXuLy.KhoiTao || trangThai == (int)TrangThaiXuLy.HoSoBiTuChoi)
+                    if (trangThai == (int)TrangThaiXuLy.KhoiTao 
+                        || trangThai == (int)TrangThaiXuLy.HoSoBiTuChoi
+                        || trangThai == (int)TrangThaiXuLy.HoSoChoBoSung)
                     {
                         
                         var editUrl = string.Format(Constants.ConfLinkEditForm, deNghiUrl, commandAgrument, currentPage);

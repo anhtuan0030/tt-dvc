@@ -482,6 +482,15 @@ namespace LongAn.DVC.WebParts.DeNghiListView
                                 lbtChuyenTruongPhong.OnClientClick = "if (!confirm('Bạn có chắc chắn muốn chuyển hồ sơ này không?')) return false;";
                                 LinkButton lblDisable1 = (LinkButton)e.Item.FindControl("lblDisable1");
                                 lblDisable1.Style.Add("display", "none");
+
+                                LinkButton lbtTuChoiHoSo = (LinkButton)e.Item.FindControl("lbtTuChoiHoSo");
+                                lbtTuChoiHoSo.CommandName = "ClickTuChoiHoSo";
+                                lbtTuChoiHoSo.Style.Add("display", "block");
+                                lbtTuChoiHoSo.CommandArgument = commandAgrument;
+                                lbtTuChoiHoSo.OnClientClick = "if (!confirm('Bạn có chắc chắn muốn từ chối hồ sơ này không?')) return false;";
+
+                                LinkButton lblDisable2 = (LinkButton)e.Item.FindControl("lblDisable2");
+                                lblDisable2.Style.Add("display", "none");
                             }
                             break;
                         case (int)CapXuLy.TruongPhoPhong:
@@ -521,7 +530,7 @@ namespace LongAn.DVC.WebParts.DeNghiListView
                                 lbtYeuCauBoSung.Style.Add("display", "block");
                                 //lbtYeuCauBoSung.CommandArgument = commandAgrument;
                                 //lbtYeuCauBoSung.OnClientClick = "if (!confirm('Bạn có chắc chắn muốn yêu cầu hồ sơ này gửi bổ sung không?')) return false;";
-                                lbtYeuCauBoSung.NavigateUrl = viewUrl + "&BS=" + Constants.ConfQueryStringPC;
+                                lbtYeuCauBoSung.NavigateUrl = viewUrl + "&BS=" + Constants.ConfQueryStringBS;
 
                                 LinkButton lblDisable2 = (LinkButton)e.Item.FindControl("lblDisable2");
                                 lblDisable2.Style.Add("display", "none");

@@ -5,6 +5,7 @@ using Microsoft.SharePoint;
 using Microsoft.SharePoint.WebControls;
 using System;
 using System.IO;
+using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
@@ -103,7 +104,7 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
                 var redirectUrl = Request.QueryString["Source"];
                 if (redirectUrl == null || string.IsNullOrEmpty(redirectUrl.ToString()))
                     redirectUrl = "/";
-                longOperation.End(redirectUrl);
+                longOperation.End(redirectUrl, Microsoft.SharePoint.Utilities.SPRedirectFlags.DoNotEndResponse, HttpContext.Current, "");
                 //Close popup
                 //DeNghiHelper.ClosePopup(this.Page);
             }
