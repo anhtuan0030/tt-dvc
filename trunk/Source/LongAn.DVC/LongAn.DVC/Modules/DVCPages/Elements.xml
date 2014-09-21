@@ -61,7 +61,6 @@
     </metaData>
     <data>
       <properties>
-        <property name="GroupName" type="string">DVC Người dùng</property>
         <property name="Title" type="string">Đăng ký tài khoản</property>
       </properties>
     </data>

@@ -8,7 +8,7 @@
 <%@ Register Tagprefix="WebPartPages" Namespace="Microsoft.SharePoint.WebPartPages" Assembly="Microsoft.SharePoint, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %>
 <%@ Control Language="C#" AutoEventWireup="true" CodeBehind="FBALoginWebPart.ascx.cs" Inherits="LongAn.DVC.FormsBasedAuthentication.Webparts.FBALoginWebPart.FBALoginWebPart" %>
 
-<asp:Login ID="Login1" runat="server" 
+<asp:Login ID="Login1" runat="server" Width="100%"
     FailureText="Đăng nhập không thành công!" 
     onauthenticate="Login1_Authenticate" CreateUserText="Đăng ký" CreateUserUrl="/Pages/DangKyTaiKhoan.aspx" DisplayRememberMe="False" LoginButtonText="Đăng nhập" PasswordLabelText="Mật khẩu:" RememberMeText="Nhớ mặt khẩu" TitleText="Đăng nhập" UserNameLabelText="Tên đăng nhập:" UserNameRequiredErrorMessage="Vui lòng nhập Tên đăng nhập." PasswordRequiredErrorMessage="Vui lòng nhập Mật khẩu." PasswordRecoveryText="Quên mật khẩu ?" PasswordRecoveryUrl="/">
     <LayoutTemplate>
@@ -28,12 +28,10 @@
                     <div class="grid_6">
                         <asp:Button ID="LoginButton" runat="server" CommandName="Login" Text="Đăng nhập" CssClass="btn btn-default" ValidationGroup="ctl00$Login1" />
                     </div>
-                    <div class="grid_6">
-                        <asp:HyperLink ID="CreateUserLink" runat="server" NavigateUrl="/Pages/DangKyTaiKhoan.aspx" CssClass="btn btn-default">Đăng ký</asp:HyperLink>
-                    </div>
                     <div class="clear"></div>
                 </div>
                 <ul class="bullet-1">
+                    <li><asp:HyperLink ID="CreateUserLink" runat="server" NavigateUrl="/Pages/DangKyTaiKhoan.aspx">Đăng ký tài khoản</asp:HyperLink></li>
                     <li><asp:HyperLink ID="PasswordRecoveryLink" runat="server" NavigateUrl="/Pages/KhoiPhucMatKhau.aspx">Quên mật khẩu ?</asp:HyperLink></li>
                 </ul>
             </div>

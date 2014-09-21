@@ -30,36 +30,43 @@ namespace LongAn.DVC.WebParts.DeNghiRedirect
         {
             if (HttpContext.Current.Request.QueryString["ControlMode"] == null)
             {
-                var currentUserRole = DeNghiHelper.CurrentUserRole(SPContext.Current.Web, SPContext.Current.Web.CurrentUser);
-                switch (currentUserRole)
+                if (SPContext.Current.Web.CurrentUser == null)
+                { 
+                    HttpContext.Current.Response.Redirect("/"); 
+                }
+                else
                 {
-                    case LongAn.DVC.Common.CapXuLy.CaNhanToChuc:
-                        //SPUtility.Redirect(LinkHoSoDeNghi, SPRedirectFlags.Default, HttpContext.Current);
-                        HttpContext.Current.Response.Redirect(LinkHoSoDeNghi);
-                        break;
-                    case LongAn.DVC.Common.CapXuLy.NhanVienTiepNhan:
-                        //SPUtility.Redirect(LinkHoSoDaTiepNhan, SPRedirectFlags.Default, HttpContext.Current);
-                        HttpContext.Current.Response.Redirect(LinkHoSoDaTiepNhan);
-                        break;
-                    case LongAn.DVC.Common.CapXuLy.TruongPhoPhong:
-                        //SPUtility.Redirect(LinkHoSoChoDuyet, SPRedirectFlags.Default, HttpContext.Current);
-                        HttpContext.Current.Response.Redirect(LinkHoSoChoDuyet);
-                        break;
-                    case LongAn.DVC.Common.CapXuLy.CanBoXuLy:
-                        //SPUtility.Redirect(LinkHoSoChoPhanCong, SPRedirectFlags.Default, HttpContext.Current);
-                        HttpContext.Current.Response.Redirect(LinkHoSoChoPhanCong);
-                        break;
-                    case LongAn.DVC.Common.CapXuLy.LanhDaoSo:
-                        //SPUtility.Redirect(LinkHoSoChoCapPhep, SPRedirectFlags.Default, HttpContext.Current);
-                        HttpContext.Current.Response.Redirect(LinkHoSoChoCapPhep);
-                        break;
-                    case LongAn.DVC.Common.CapXuLy.VanPhongSo:
-                        //SPUtility.Redirect(LinkHoSoDaCapPhep, SPRedirectFlags.Default, HttpContext.Current);
-                        HttpContext.Current.Response.Redirect(LinkHoSoDaCapPhep);
-                        break;
-                    default:
-                        HttpContext.Current.Response.Redirect("/");
-                        break;
+                    var currentUserRole = DeNghiHelper.CurrentUserRole(SPContext.Current.Web, SPContext.Current.Web.CurrentUser);
+                    switch (currentUserRole)
+                    {
+                        case LongAn.DVC.Common.CapXuLy.CaNhanToChuc:
+                            //SPUtility.Redirect(LinkHoSoDeNghi, SPRedirectFlags.Default, HttpContext.Current);
+                            HttpContext.Current.Response.Redirect(LinkHoSoDeNghi);
+                            break;
+                        case LongAn.DVC.Common.CapXuLy.NhanVienTiepNhan:
+                            //SPUtility.Redirect(LinkHoSoDaTiepNhan, SPRedirectFlags.Default, HttpContext.Current);
+                            HttpContext.Current.Response.Redirect(LinkHoSoDaTiepNhan);
+                            break;
+                        case LongAn.DVC.Common.CapXuLy.TruongPhoPhong:
+                            //SPUtility.Redirect(LinkHoSoChoDuyet, SPRedirectFlags.Default, HttpContext.Current);
+                            HttpContext.Current.Response.Redirect(LinkHoSoChoDuyet);
+                            break;
+                        case LongAn.DVC.Common.CapXuLy.CanBoXuLy:
+                            //SPUtility.Redirect(LinkHoSoChoPhanCong, SPRedirectFlags.Default, HttpContext.Current);
+                            HttpContext.Current.Response.Redirect(LinkHoSoChoPhanCong);
+                            break;
+                        case LongAn.DVC.Common.CapXuLy.LanhDaoSo:
+                            //SPUtility.Redirect(LinkHoSoChoCapPhep, SPRedirectFlags.Default, HttpContext.Current);
+                            HttpContext.Current.Response.Redirect(LinkHoSoChoCapPhep);
+                            break;
+                        case LongAn.DVC.Common.CapXuLy.VanPhongSo:
+                            //SPUtility.Redirect(LinkHoSoDaCapPhep, SPRedirectFlags.Default, HttpContext.Current);
+                            HttpContext.Current.Response.Redirect(LinkHoSoDaCapPhep);
+                            break;
+                        default:
+                            HttpContext.Current.Response.Redirect("/");
+                            break;
+                    }
                 }
             }
         }
