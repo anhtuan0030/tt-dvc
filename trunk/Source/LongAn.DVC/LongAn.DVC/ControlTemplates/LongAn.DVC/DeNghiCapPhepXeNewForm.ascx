@@ -218,21 +218,29 @@
                                             <div class="grid_1">
                                                 <SharePoint:FormField  runat="server" ID="FormField17" FieldName="SoTrucSauCuaXe" />
                                             </div>
-                                            Thiếu 1 field Số trục của sơ mi rơ mooc (18)
                                             <div class="clear"></div>
                                         </div>
                                         <div class="row">
                                             <div class="grid_3">
-                                                <SharePoint:FieldLabel ID="FieldLabel18"  FieldName="SoTrucCuaRoMooc"  runat="server"  />
+                                                <SharePoint:FieldLabel ID="FieldLabel18"  FieldName="SoTrucCuaSoMiRoMooc"  runat="server"  />
                                             </div>
                                             <div class="grid_1">
-                                                <SharePoint:FormField  runat="server" ID="FormField18" FieldName="SoTrucCuaRoMooc" />
+                                                <SharePoint:FormField  runat="server" ID="FormField18" FieldName="SoTrucCuaSoMiRoMooc" />
                                             </div>
                                             <div class="grid_4">
-                                                <SharePoint:FieldLabel ID="FieldLabel19"  FieldName="SoTrucSauCuaRoMooc"  runat="server"  />
+                                                <SharePoint:FieldLabel ID="FieldLabel19"  FieldName="SoTrucCuaRoMooc"  runat="server"  />
                                             </div>
                                             <div class="grid_1">
-                                                <SharePoint:FormField  runat="server" ID="FormField19" FieldName="SoTrucSauCuaRoMooc" />
+                                                <SharePoint:FormField  runat="server" ID="FormField19" FieldName="SoTrucCuaRoMooc" />
+                                            </div>
+                                            <div class="clear"></div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="grid_4">
+                                                <SharePoint:FieldLabel ID="FieldLabel39"  FieldName="SoTrucSauCuaRoMooc"  runat="server"  />
+                                            </div>
+                                            <div class="grid_1">
+                                                <SharePoint:FormField  runat="server" ID="FormField39" FieldName="SoTrucSauCuaRoMooc" />
                                             </div>
                                             <div class="clear"></div>
                                         </div>

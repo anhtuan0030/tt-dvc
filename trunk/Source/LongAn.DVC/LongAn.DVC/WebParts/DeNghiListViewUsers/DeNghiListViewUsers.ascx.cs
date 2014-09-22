@@ -311,7 +311,7 @@ namespace LongAn.DVC.WebParts.DeNghiListViewUsers
                         || trangThai == (int)TrangThaiXuLy.HoSoChoBoSung)
                     {
                         
-                        var editUrl = string.Format(Constants.ConfLinkEditForm, deNghiUrl, commandAgrument, currentPage);
+                        var editUrl = string.Format(Constants.ConfLinkPageEditForm, deNghiUrl, commandAgrument, currentPage);
                         lbtEditItem.NavigateUrl = editUrl;
                         lbtDeleteItem.CommandName = "OnDeleteItemClick";
                         lbtDeleteItem.CommandArgument = commandAgrument;

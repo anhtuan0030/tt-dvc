@@ -69,7 +69,7 @@
                             </td>
                             <td>
                                 <%--<asp:LinkButton ID="lbtEditItem" CssClass="button edit just-icon" runat="server"></asp:LinkButton>--%>
-                                <asp:HyperLink ID="lbtEditItem" ToolTip="Chỉnh sửa đề nghị" CssClass="button view just-icon" runat="server"></asp:HyperLink>
+                                <asp:HyperLink ID="lbtEditItem" ToolTip="Chỉnh sửa đề nghị" CssClass="button edit just-icon" runat="server"></asp:HyperLink>
                                 <asp:LinkButton ID="lbtDisable1" ToolTip="Disabled" Enabled="false" CssClass="button just-icon" style="display:none;" runat="server"></asp:LinkButton>
                             </td>
                             <td>

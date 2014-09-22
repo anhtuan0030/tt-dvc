@@ -364,6 +364,24 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC {
         protected global::Microsoft.SharePoint.WebControls.FormField FormField19;
         
         /// <summary>
+        /// FieldLabel39 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Microsoft.SharePoint.WebControls.FieldLabel FieldLabel39;
+        
+        /// <summary>
+        /// FormField39 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Microsoft.SharePoint.WebControls.FormField FormField39;
+        
+        /// <summary>
         /// FieldLabel20 control.
         /// </summary>
         /// <remarks>

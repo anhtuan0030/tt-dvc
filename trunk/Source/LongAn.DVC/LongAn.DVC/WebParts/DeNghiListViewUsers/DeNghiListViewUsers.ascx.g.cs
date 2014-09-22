@@ -279,7 +279,7 @@ namespace LongAn.DVC.WebParts.DeNghiListViewUsers {
             @__ctrl.ApplyStyleSheetSkin(this.Page);
             @__ctrl.ID = "lbtEditItem";
             @__ctrl.ToolTip = "Chỉnh sửa đề nghị";
-            @__ctrl.CssClass = "button view just-icon";
+            @__ctrl.CssClass = "button edit just-icon";
             return @__ctrl;
         }
         

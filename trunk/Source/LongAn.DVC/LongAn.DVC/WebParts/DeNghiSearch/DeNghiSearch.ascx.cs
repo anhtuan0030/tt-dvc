@@ -33,11 +33,13 @@ namespace LongAn.DVC.WebParts.DeNghiSearch
             if (dataTable != null && dataTable.Rows.Count > 0)
             {
                 literalMaBienNhan.Text = dataTable.Rows[0][Constants.FieldTitle].ToString();
+                literalDonVi.Text = dataTable.Rows[0][Constants.FieldCaNhanToChuc].ToString();
                 literalTrangThai.Text = dataTable.Rows[0][Constants.FieldTrangThaiText].ToString();
             }
             else
             {
                 literalMaBienNhan.Text = "Không tồn tại";
+                literalDonVi.Text = string.Empty;
                 literalTrangThai.Text = string.Empty;
             }
         }

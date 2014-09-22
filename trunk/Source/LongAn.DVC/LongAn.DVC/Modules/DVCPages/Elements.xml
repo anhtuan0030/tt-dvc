@@ -180,7 +180,7 @@
       <properties>
         <property name="Title" type="string">Đề nghị list view</property>
         <property name="Description" type="string">Đề nghị list view Visual Web Part</property>
-        <property name="DeNghiTitle" type="string">Danh sách đề nghị đã tiếp nhận</property>
+        <property name="DeNghiTitle" type="string">Danh sách đề nghị chờ xử lý</property>
         <property name="TrangThai" type="int">2</property>
         <property name="PageSize" type="int">10</property>
         <property name="ChromeType" type="chrometype">None</property>
@@ -217,7 +217,7 @@
       <properties>
         <property name="Title" type="string">Đề nghị list view</property>
         <property name="Description" type="string">Đề nghị list view Visual Web Part</property>
-        <property name="DeNghiTitle" type="string">Danh sách đề nghị đã tiếp nhận</property>
+        <property name="DeNghiTitle" type="string">Danh sách đề nghị đang xử lý</property>
         <property name="TrangThai" type="int">3</property>
         <property name="PageSize" type="int">10</property>
         <property name="ChromeType" type="chrometype">None</property>
@@ -253,7 +253,7 @@
       <properties>
         <property name="Title" type="string">Đề nghị list view</property>
         <property name="Description" type="string">Đề nghị list view Visual Web Part</property>
-        <property name="DeNghiTitle" type="string">Danh sách đề nghị đã tiếp nhận</property>
+        <property name="DeNghiTitle" type="string">Danh sách đề nghị chờ duyệt</property>
         <property name="TrangThai" type="int">4</property>
         <property name="PageSize" type="int">10</property>
         <property name="ChromeType" type="chrometype">None</property>
@@ -289,7 +289,7 @@
       <properties>
         <property name="Title" type="string">Đề nghị list view</property>
         <property name="Description" type="string">Đề nghị list view Visual Web Part</property>
-        <property name="DeNghiTitle" type="string">Danh sách đề nghị đã tiếp nhận</property>
+        <property name="DeNghiTitle" type="string">Danh sách đề nghị chờ cấp phép</property>
         <property name="TrangThai" type="int">5</property>
         <property name="PageSize" type="int">10</property>
         <property name="ChromeType" type="chrometype">None</property>
@@ -325,7 +325,7 @@
       <properties>
         <property name="Title" type="string">Đề nghị list view</property>
         <property name="Description" type="string">Đề nghị list view Visual Web Part</property>
-        <property name="DeNghiTitle" type="string">Danh sách đề nghị đã tiếp nhận</property>
+        <property name="DeNghiTitle" type="string">Danh sách đề nghị đã cấp phép</property>
         <property name="TrangThai" type="int">6</property>
         <property name="PageSize" type="int">10</property>
         <property name="ChromeType" type="chrometype">None</property>
@@ -361,7 +361,7 @@
       <properties>
         <property name="Title" type="string">Đề nghị list view</property>
         <property name="Description" type="string">Đề nghị list view Visual Web Part</property>
-        <property name="DeNghiTitle" type="string">Danh sách đề nghị đã tiếp nhận</property>
+        <property name="DeNghiTitle" type="string">Danh sách đề nghị bị từ chối</property>
         <property name="TrangThai" type="int">7</property>
         <property name="PageSize" type="int">10</property>
         <property name="ChromeType" type="chrometype">None</property>

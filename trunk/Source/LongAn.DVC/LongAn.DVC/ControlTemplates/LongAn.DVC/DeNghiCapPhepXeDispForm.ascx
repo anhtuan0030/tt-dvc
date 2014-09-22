@@ -59,7 +59,7 @@
                                         <SharePoint:FormField  runat="server" ID="FormField1"  FieldName="KinhGui"  /> 
                                     </div>
                                     <div class="grid_1">
-                                        <span class="star">(*)</span>
+                                        &nbsp;
                                     </div>
                                     <div class="clear"></div>
                                 </div>
@@ -71,7 +71,7 @@
                                             <SharePoint:FormField  runat="server" ID="FormField2" FieldName="CaNhanToChuc" /> 
                                         </div>
                                         <div class="grid_1">
-                                            <span class="star">(*)</span>
+                                            &nbsp;
                                         </div>
                                         <div class="clear"></div>
                                     </div>
@@ -83,7 +83,7 @@
                                             <SharePoint:FormField  runat="server" ID="FormField3" FieldName="DiaChi" />
                                         </div>
                                         <div class="grid_1">
-                                            <span class="star">(*)</span>
+                                            &nbsp;
                                         </div>
                                         <div class="field-required-data grid_2">
                                             <SharePoint:FieldLabel ID="FieldLabel4"  FieldName="DienThoai"  runat="server"  />
@@ -92,7 +92,7 @@
                                             <SharePoint:FormField  runat="server" ID="FormField4" FieldName="DienThoai" />
                                         </div>
                                         <div class="grid_1">
-                                            <span class="star">(*)</span>
+                                            &nbsp;
                                         </div>
                                         <div class="clear"></div>
                                     </div>
@@ -107,7 +107,7 @@
                                             <SharePoint:FormField  runat="server" ID="FormField5" FieldName="LoaiXe" />
                                         </div>
                                         <div class="grid_1">
-                                            <span class="star">(*)</span>
+                                            &nbsp;
                                         </div>
                                         <div class="clear"></div>
                                     </div>
@@ -119,7 +119,7 @@
                                             <SharePoint:FormField  runat="server" ID="FormField6" FieldName="NhanHieuXe" />
                                         </div>
                                         <div class="grid_1">
-                                            <span class="star">(*)</span>
+                                            &nbsp;
                                         </div>
                                         <div class="grid_2">
                                             <SharePoint:FieldLabel ID="FieldLabel7"  FieldName="BienSoDangKy" runat="server"  />
@@ -128,7 +128,7 @@
                                             <SharePoint:FormField  runat="server" ID="FormField7" FieldName="BienSoDangKy" />
                                         </div>
                                         <div class="grid_1">
-                                            <span class="star">(*)</span>
+                                            &nbsp;
                                         </div>
                                         <div class="clear"></div>
                                     </div>
@@ -215,21 +215,29 @@
                                         <div class="grid_1">
                                             <SharePoint:FormField  runat="server" ID="FormField17" FieldName="SoTrucSauCuaXe" />
                                         </div>
-                                        Thiếu 1 field Số trục của sơ mi rơ mooc (18)
                                         <div class="clear"></div>
                                     </div>
                                     <div class="row">
                                         <div class="grid_3">
-                                            <SharePoint:FieldLabel ID="FieldLabel18"  FieldName="SoTrucCuaRoMooc"  runat="server"  />
+                                            <SharePoint:FieldLabel ID="FieldLabel18"  FieldName="SoTrucCuaSoMiRoMooc"  runat="server"  />
                                         </div>
                                         <div class="grid_1">
-                                            <SharePoint:FormField  runat="server" ID="FormField18" FieldName="SoTrucCuaRoMooc" />
+                                            <SharePoint:FormField  runat="server" ID="FormField18" FieldName="SoTrucCuaSoMiRoMooc" />
                                         </div>
                                         <div class="grid_4">
-                                            <SharePoint:FieldLabel ID="FieldLabel19"  FieldName="SoTrucSauCuaRoMooc"  runat="server"  />
+                                            <SharePoint:FieldLabel ID="FieldLabel19"  FieldName="SoTrucCuaRoMooc"  runat="server"  />
                                         </div>
                                         <div class="grid_1">
-                                            <SharePoint:FormField  runat="server" ID="FormField19" FieldName="SoTrucSauCuaRoMooc" />
+                                            <SharePoint:FormField  runat="server" ID="FormField19" FieldName="SoTrucCuaRoMooc" />
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="grid_4">
+                                            <SharePoint:FieldLabel ID="FieldLabel39"  FieldName="SoTrucSauCuaRoMooc"  runat="server"  />
+                                        </div>
+                                        <div class="grid_1">
+                                            <SharePoint:FormField  runat="server" ID="FormField39" FieldName="SoTrucSauCuaRoMooc" />
                                         </div>
                                         <div class="clear"></div>
                                     </div>
@@ -379,7 +387,6 @@
                                         </div>
                                         <div class="grid_3 date-picker">
                                             <SharePoint:FormField  runat="server" ID="FormField36" CssClass="field-required" FieldName="ThoiGiaDeNghiLuuHanhTu"/>
-                                            <%--<span class="star">(*)</span>--%>
                                         </div>
                                         <div class="grid_3">
                                             <SharePoint:FieldLabel ID="FieldLabel37"  FieldName="ThoiGiaDeNghiLuuHanhDen"  runat="server"  />
@@ -397,10 +404,8 @@
                                     <div class="row">
                                         <div class="grid_8">
                                             Bản sao giấy đăng ký hoặc giấy đăng ký tạm thời xe, xe đầu kéo, rơ moóc..
-                                            <span title="This is a required field." class="ms-accentText"> *</span>
                                         </div>
                                         <div class="grid_3" id="divFileUpload1" runat="server">
-                                            <asp:FileUpload ID="fileUpload1" runat="server" Visible="false"/>
                                         </div>
                                         <div class="clear"></div>
                                     </div>
@@ -408,30 +413,24 @@
                                         <div class="grid_8">
                                             Giấy chứng nhận kiểm định an toàn kỹ thuật và bảo vệ môi trường phương tiện giao
                                                                                 thông cơ giới đường bộ
-                                                                            <span title="This is a required field." class="ms-accentText"> *</span>
                                         </div>
                                         <div class="grid_3" id="divFileUpload2" runat="server">
-                                            <asp:FileUpload ID="fileUpload2" runat="server" Visible="false"/>
                                         </div>
                                         <div class="clear"></div>
                                     </div>
                                     <div class="row">
                                         <div class="grid_8">
                                             Giấy cam kết của chủ phương tiện về quyền sở hữu phương tiện
-                                                                            <span title="This is a required field." class="ms-accentText"> *</span>
                                         </div>
                                         <div class="grid_3"  id="divFileUpload3" runat="server">
-                                            <asp:FileUpload ID="fileUpload3" runat="server" Visible="false"/>
                                         </div>
                                         <div class="clear"></div>
                                     </div>
                                     <div class="row">
                                         <div class="grid_8">
                                             Chứng minh nhân dân của người nộp
-                                            <span title="This is a required field." class="ms-accentText"> *</span>
                                         </div>
                                         <div class="grid_3" id="divFileUpload4" runat="server">
-                                            <asp:FileUpload ID="fileUpload4" runat="server" Visible="false"/>
                                         </div>
                                         <div class="clear"></div>
                                     </div>

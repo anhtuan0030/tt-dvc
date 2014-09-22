@@ -53,6 +53,10 @@ namespace LongAn.DVC.WebParts.DeNghiSearch {
         
         [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
             "artCodeGenerator", "12.0.0.0")]
+        protected global::System.Web.UI.WebControls.Literal literalDonVi;
+        
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
         protected global::System.Web.UI.WebControls.Literal literalTrangThai;
         
         [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebPartCodeGenerator", "12.0.0.0")]
@@ -102,6 +106,17 @@ namespace LongAn.DVC.WebParts.DeNghiSearch {
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
         [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
             "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.Literal @__BuildControlliteralDonVi() {
+            global::System.Web.UI.WebControls.Literal @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.Literal();
+            this.literalDonVi = @__ctrl;
+            @__ctrl.ID = "literalDonVi";
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
         private global::System.Web.UI.WebControls.Literal @__BuildControlliteralTrangThai() {
             global::System.Web.UI.WebControls.Literal @__ctrl;
             @__ctrl = new global::System.Web.UI.WebControls.Literal();
@@ -116,7 +131,11 @@ namespace LongAn.DVC.WebParts.DeNghiSearch {
         private void @__BuildControlTree(global::LongAn.DVC.WebParts.DeNghiSearch.DeNghiSearch @__ctrl) {
             System.Web.UI.IParserAccessor @__parser = ((System.Web.UI.IParserAccessor)(@__ctrl));
             @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl(@"
-
+<link rel=""stylesheet"" href=""/_layouts/15/LongAn.DVC.Form/css/normalize.css""/>
+<link rel=""stylesheet"" href=""/_layouts/15/LongAn.DVC.Form/css/fluid_grid.css""/>
+<link rel=""stylesheet"" href=""/_layouts/15/LongAn.DVC.Form/css/jquery-ui.min.css""/>
+<link rel=""stylesheet"" href=""/_layouts/15/LongAn.DVC.Form/css/superfish.css""/>
+<link rel=""stylesheet"" href=""/_layouts/15/LongAn.DVC.Form/css/main.css""/>
 <div>
 	<div class=""row"">
 		<div class=""grid_12"" id=""main-frame"">
@@ -145,7 +164,7 @@ namespace LongAn.DVC.WebParts.DeNghiSearch {
 				</div>
 			</div>
             <div>
-                <h3>Kết quả tra cứu</h3>
+                <h3><u>Kết quả tra cứu</u></h3>
                 <div class=""row"">
                     <div class=""grid_1"">&nbsp;</div>
                     <div class=""grid_2"">
@@ -163,13 +182,27 @@ namespace LongAn.DVC.WebParts.DeNghiSearch {
                 <div class=""row"">
                     <div class=""grid_1"">&nbsp;</div>
                     <div class=""grid_2"">
-                       Trạng thái xử lý:                        
+                       Cá nhân / Tổ chức:                        
                     </div>
                     <div class=""grid_4"">
                         "));
             global::System.Web.UI.WebControls.Literal @__ctrl4;
-            @__ctrl4 = this.@__BuildControlliteralTrangThai();
+            @__ctrl4 = this.@__BuildControlliteralDonVi();
             @__parser.AddParsedSubObject(@__ctrl4);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl(@"
+                    </div>
+                    <div class=""clear""></div>
+				</div>
+                <div class=""row"">
+                    <div class=""grid_1"">&nbsp;</div>
+                    <div class=""grid_2"">
+                       Trạng thái xử lý:                        
+                    </div>
+                    <div class=""grid_4"">
+                        "));
+            global::System.Web.UI.WebControls.Literal @__ctrl5;
+            @__ctrl5 = this.@__BuildControlliteralTrangThai();
+            @__parser.AddParsedSubObject(@__ctrl5);
             @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                    </div>\r\n                    <div class=\"clear\"></div>\r\n\t\t\t\t" +
                         "</div>\r\n            </div>\r\n\t\t</div>\r\n\t</div>\r\n\t<div class=\"clear\"></div>\r\n</div" +
                         ">"));
