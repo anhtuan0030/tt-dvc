@@ -89,6 +89,7 @@ namespace LongAn.DVC.Common
         public const string FieldSoThuTuBienNhan = "SoThuTuBienNhan";
         public const string FieldMoTa = "MoTa";
 
+        public const string FieldLoaiDuong = "LoaiDuong";
         public const string FieldIdLoaiDuong = "{0C841B02-EC0F-45BA-8E39-F27A6B70AF02}";
     }
 }
