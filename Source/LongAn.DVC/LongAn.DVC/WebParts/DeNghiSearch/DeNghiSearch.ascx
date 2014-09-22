@@ -6,7 +6,11 @@
 <%@ Import Namespace="Microsoft.SharePoint" %> 
 <%@ Register Tagprefix="WebPartPages" Namespace="Microsoft.SharePoint.WebPartPages" Assembly="Microsoft.SharePoint, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %>
 <%@ Control Language="C#" AutoEventWireup="true" CodeBehind="DeNghiSearch.ascx.cs" Inherits="LongAn.DVC.WebParts.DeNghiSearch.DeNghiSearch" %>
-
+<link rel="stylesheet" href="/_layouts/15/LongAn.DVC.Form/css/normalize.css"/>
+<link rel="stylesheet" href="/_layouts/15/LongAn.DVC.Form/css/fluid_grid.css"/>
+<link rel="stylesheet" href="/_layouts/15/LongAn.DVC.Form/css/jquery-ui.min.css"/>
+<link rel="stylesheet" href="/_layouts/15/LongAn.DVC.Form/css/superfish.css"/>
+<link rel="stylesheet" href="/_layouts/15/LongAn.DVC.Form/css/main.css"/>
 <div>
 	<div class="row">
 		<div class="grid_12" id="main-frame">
@@ -29,7 +33,7 @@
 				</div>
 			</div>
             <div>
-                <h3>Kết quả tra cứu</h3>
+                <h3><u>Kết quả tra cứu</u></h3>
                 <div class="row">
                     <div class="grid_1">&nbsp;</div>
                     <div class="grid_2">
@@ -37,6 +41,16 @@
                     </div>
                     <div class="grid_4">
                         <asp:Literal ID="literalMaBienNhan" runat="server"></asp:Literal>
+                    </div>
+                    <div class="clear"></div>
+				</div>
+                <div class="row">
+                    <div class="grid_1">&nbsp;</div>
+                    <div class="grid_2">
+                       Cá nhân / Tổ chức:                        
+                    </div>
+                    <div class="grid_4">
+                        <asp:Literal ID="literalDonVi" runat="server"></asp:Literal>
                     </div>
                     <div class="clear"></div>
 				</div>

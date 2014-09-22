@@ -46,14 +46,15 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
                         btnTrinhXuLy.Click += btnTrinhXuLy_Click;
 
                         btnTraHoSo.Visible = true;
-                        btnTraHoSo.Click +=btnTraHoSo_Click;
+                        btnTraHoSo.Click += btnTraHoSo_Click;
                     }
                     break;
                 case CapXuLy.CanBoXuLy:
                     if (currentStatus == (int)TrangThaiXuLy.ChoXuLy || 
                         currentStatus == (int)TrangThaiXuLy.DaPhanCong)
                     {
-                        if (Request.QueryString["BS"] != null && Request.QueryString["BS"].ToString() == Constants.ConfQueryStringBS)
+                        if (Request.QueryString["BS"] != null 
+                            && Request.QueryString["BS"].ToString() == Constants.ConfQueryStringBS)
                         {
                             divYeuCauBoSung.Visible = true;
                             btnYeuCauBoSung.Visible = true;
@@ -76,7 +77,8 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
                     else if (currentStatus == (int)TrangThaiXuLy.ChoXuLy)
                     {
                         divPhanCongHoSo.Visible = true;
-                        if (Request.QueryString["PC"] != null && Request.QueryString["PC"].ToString() == Constants.ConfQueryStringPC)
+                        if (Request.QueryString["PC"] != null 
+                            && Request.QueryString["PC"].ToString() == Constants.ConfQueryStringPC)
                         {
                             if (!IsPostBack)
                             {
@@ -156,14 +158,14 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
                 DeNghiHelper.LoadAttachments(SPContext.Current.ItemId, Constants.AttachmentGiayCamKet, divFileUpload3);
                 DeNghiHelper.LoadAttachments(SPContext.Current.ItemId, Constants.AttachmentCMND, divFileUpload4);
 
-                var yeuCauBoSungUrl = (SPContext.Current.Web.ServerRelativeUrl + Constants.ListUrlYeuCauBoSung).Replace("//", "/");
-                var yeuCauBoSungList = SPContext.Current.Web.GetList(yeuCauBoSungUrl);
-                SPFieldMultiChoice causeOfCustomer = (SPFieldMultiChoice)yeuCauBoSungList.Fields[new Guid(Constants.FieldIdLoaiDuong)];
+                //var yeuCauBoSungUrl = (SPContext.Current.Web.ServerRelativeUrl + Constants.ListUrlYeuCauBoSung).Replace("//", "/");
+                //var yeuCauBoSungList = SPContext.Current.Web.GetList(yeuCauBoSungUrl);
+                SPFieldMultiChoice causeOfCustomer = (SPFieldMultiChoice)SPContext.Current.List.Fields[new Guid(Constants.FieldIdLoaiDuong)];
                 chkListLoaiDuong.DataSource = causeOfCustomer.Choices;
                 chkListLoaiDuong.DataBind();
 
                 var currentItem = SPContext.Current.ListItem;
-                var loaiDuongString = currentItem[Constants.FieldIdLoaiDuong] != null ? currentItem[Constants.FieldIdLoaiDuong].ToString() : string.Empty;
+                var loaiDuongString = currentItem[Constants.FieldLoaiDuong] != null ? currentItem[Constants.FieldLoaiDuong].ToString() : string.Empty;
                 for (int i = 0; i < chkListLoaiDuong.Items.Count; i++)
                 {
                     if (string.IsNullOrEmpty(loaiDuongString))

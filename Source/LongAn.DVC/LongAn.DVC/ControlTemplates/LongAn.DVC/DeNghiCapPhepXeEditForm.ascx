@@ -215,21 +215,29 @@
                             <div class="grid_1">
                                 <SharePoint:FormField  runat="server" ID="FormField17" FieldName="SoTrucSauCuaXe" />
                             </div>
-                            Thiếu 1 field Số trục của sơ mi rơ mooc (18)
                             <div class="clear"></div>
                         </div>
                         <div class="row">
                             <div class="grid_3">
-                                <SharePoint:FieldLabel ID="FieldLabel18"  FieldName="SoTrucCuaRoMooc"  runat="server"  />
+                                <SharePoint:FieldLabel ID="FieldLabel18"  FieldName="SoTrucCuaSoMiRoMooc"  runat="server"  />
                             </div>
                             <div class="grid_1">
-                                <SharePoint:FormField  runat="server" ID="FormField18" FieldName="SoTrucCuaRoMooc" />
+                                <SharePoint:FormField  runat="server" ID="FormField18" FieldName="SoTrucCuaSoMiRoMooc" />
                             </div>
                             <div class="grid_4">
-                                <SharePoint:FieldLabel ID="FieldLabel19"  FieldName="SoTrucSauCuaRoMooc"  runat="server"  />
+                                <SharePoint:FieldLabel ID="FieldLabel19"  FieldName="SoTrucCuaRoMooc"  runat="server"  />
                             </div>
                             <div class="grid_1">
-                                <SharePoint:FormField  runat="server" ID="FormField19" FieldName="SoTrucSauCuaRoMooc" />
+                                <SharePoint:FormField  runat="server" ID="FormField19" FieldName="SoTrucCuaRoMooc" />
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="row">
+                            <div class="grid_4">
+                                <SharePoint:FieldLabel ID="FieldLabel39"  FieldName="SoTrucSauCuaRoMooc"  runat="server"  />
+                            </div>
+                            <div class="grid_1">
+                                <SharePoint:FormField  runat="server" ID="FormField39" FieldName="SoTrucSauCuaRoMooc" />
                             </div>
                             <div class="clear"></div>
                         </div>
@@ -400,38 +408,38 @@
                                 <span title="This is a required field." class="ms-accentText"> *</span>
                             </div>
                             <div class="grid_3" id="divFileUpload1" runat="server">
-                                <asp:FileUpload ID="fileUpload1" runat="server" Visible="false"/>
+                                <asp:FileUpload ID="fileUpload1" runat="server" />
                             </div>
                             <div class="clear"></div>
                         </div>
                         <div class="row">
                             <div class="grid_8">
                                 Giấy chứng nhận kiểm định an toàn kỹ thuật và bảo vệ môi trường phương tiện giao
-                                                                    thông cơ giới đường bộ
-                                                                <span title="This is a required field." class="ms-accentText"> *</span>
+                                    thông cơ giới đường bộ
+                                <span title="This is a required field." class="ms-accentText"> *</span>
                             </div>
                             <div class="grid_3" id="divFileUpload2" runat="server">
-                                <asp:FileUpload ID="fileUpload2" runat="server" Visible="false"/>
+                                <asp:FileUpload ID="fileUpload2" runat="server" />
                             </div>
                             <div class="clear"></div>
                         </div>
                         <div class="row">
                             <div class="grid_8">
                                 Giấy cam kết của chủ phương tiện về quyền sở hữu phương tiện
-                                                                <span title="This is a required field." class="ms-accentText"> *</span>
+                                <span title="This is a required field." class="ms-accentText"> *</span>
                             </div>
                             <div class="grid_3"  id="divFileUpload3" runat="server">
-                                <asp:FileUpload ID="fileUpload3" runat="server" Visible="false"/>
+                                <asp:FileUpload ID="fileUpload3" runat="server" />
                             </div>
                             <div class="clear"></div>
                         </div>
                         <div class="row">
                             <div class="grid_8">
                                 Chứng minh nhân dân của người nộp
-                                                                <span title="This is a required field." class="ms-accentText"> *</span>
+                                <span title="This is a required field." class="ms-accentText"> *</span>
                             </div>
                             <div class="grid_3" id="divFileUpload4" runat="server">
-                                <asp:FileUpload ID="fileUpload4" runat="server" Visible="false"/>
+                                <asp:FileUpload ID="fileUpload4" runat="server" />
                             </div>
                             <div class="clear"></div>
                         </div>
@@ -447,7 +455,7 @@
             </div>
         </div>
     </div>     
-    <table cellpadding="0" cellspacing="0" width="100%" style="padding-top: 7px;">
+    <table cellpadding="0" cellspacing="0" width="100%" style="padding-top: 7px; display:none;">
         <tr>
             <td width="100%">
 			    <SharePoint:ItemHiddenVersion runat="server"/>
@@ -465,4 +473,4 @@
 		    </td>
         </tr>
     </table>
-    </span>
+</span>

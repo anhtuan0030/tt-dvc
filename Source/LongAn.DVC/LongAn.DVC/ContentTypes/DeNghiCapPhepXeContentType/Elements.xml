@@ -25,6 +25,7 @@
       <FieldRef ID="{2C06D195-481D-4CC6-ADE9-3BFB65F0684E}" Name="TrongLuongBanThanRoMooc" />
       <FieldRef ID="{856E40B0-CB6B-4FEC-8CFA-756F37AB30E0}" Name="SoTrucCuaXe" />
       <FieldRef ID="{49DFEA85-E271-473F-841B-FBA52EA74BCD}" Name="SoTrucSauCuaXe" />
+      <FieldRef ID="{DE0DDCAB-0620-40AE-AAF3-03B6734409E6}" Name="SoTrucCuaSoMiRoMooc"/>
       <FieldRef ID="{75033C20-90AF-4AB9-BDDB-FC6A246C2900}" Name="SoTrucCuaRoMooc" />
       <FieldRef ID="{0EED505B-343E-4E62-9A20-860EED7D10E2}" Name="SoTrucSauCuaRoMooc" />
       <FieldRef ID="{30097175-0A1A-428F-8B7D-EED2AE7F647D}" Name="LoaiHang" />

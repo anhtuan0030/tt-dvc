@@ -14,7 +14,7 @@
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{C1CDDADD-2546-481F-9697-4EA41081F2FC};{14822709-B5A1-4724-98CA-57A101D1B079};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <SandboxedSolution>False</SandboxedSolution>
-    <ActiveDeploymentConfiguration>Default</ActiveDeploymentConfiguration>
+    <ActiveDeploymentConfiguration>Upgrade Solution %28CKSDev%29</ActiveDeploymentConfiguration>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -212,6 +212,9 @@
     </None>
     <None Include="Package\Package.Template.xml">
       <DependentUpon>Package.package</DependentUpon>
+    </None>
+    <None Include="Pages\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{d48bef74-2fb9-433e-95e0-e06afec4c097}</SharePointProjectItemId>
     </None>
     <None Include="WebParts\DeNghiListViewUsers\DeNghiListViewUsers.webpart" />
     <None Include="WebParts\DeNghiListViewUsers\SharePointProjectItem.spdata">
@@ -435,6 +438,7 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Modules\DVCPages\BlankPage.aspx" />
+    <Content Include="Pages\dvcform.aspx" />
     <Content Include="WebParts\DeNghiListViewUsers\DeNghiListViewUsers.ascx">
       <Generator>SharePointWebPartCodeGenerator</Generator>
       <LastGenOutput>DeNghiListViewUsers.ascx.g.cs</LastGenOutput>
