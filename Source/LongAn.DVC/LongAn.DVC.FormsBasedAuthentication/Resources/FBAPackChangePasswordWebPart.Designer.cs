@@ -1231,7 +1231,7 @@ namespace LongAn.DVC.FormsBasedAuthentication.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Mật khẩu:.
+        ///   Looks up a localized string similar to Mật khẩu hiện tại:.
         /// </summary>
         internal static string PasswordLabelText_DefaultValue {
             get {

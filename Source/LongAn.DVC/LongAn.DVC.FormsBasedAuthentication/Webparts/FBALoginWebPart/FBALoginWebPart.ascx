@@ -38,3 +38,21 @@
         </div>
     </LayoutTemplate>
 </asp:Login>
+<asp:Panel ID="pnlAuthorize" CssClass="box icon-1" runat="server">
+    <div class="box-title">
+        Thông tin
+    </div>
+    <div class="box-content form">
+        Xin chào: <asp:Label ID="lblUserName" runat="server" Font-Bold="True"></asp:Label>
+        
+        <div class="row">
+            <div class="grid_6">
+                <asp:HyperLink ID="lnkLogOff" runat="server" NavigateUrl="/_layouts/signout.aspx"  CssClass="btn btn-default">Đăng xuất</asp:HyperLink>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <ul class="bullet-1">
+            <li><asp:HyperLink ID="lnkChangePassword" runat="server" NavigateUrl="/_Layouts/15/FBA/ChangePassword.aspx?Source=%2FPages%2FHomepage%2Easpx">Đổi mật khẩu</asp:HyperLink></li>
+        </ul>
+    </div>
+</asp:Panel>

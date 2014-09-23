@@ -430,6 +430,7 @@ a:hover {
 .button.search {
   background-image: url(../images/search.png);
   background-position: 5px center;
+  background-repeat: no-repeat;
   padding-left: 25px;
 }
 .button.excel {

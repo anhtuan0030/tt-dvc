@@ -20,6 +20,9 @@
     #s4-ribbonrow{
         display:none;
     }
+    #sideNavBox {
+        display:none;
+    }
 </style>
 
 <table>

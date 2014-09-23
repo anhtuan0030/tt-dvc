@@ -23,6 +23,10 @@
     #s4-ribbonrow{
         display:none;
     }
+    #sideNavBox {
+        display:none;
+    }
+
 </style>
 
 <span id='part1'>

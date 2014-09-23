@@ -90,7 +90,7 @@
 <a id="HiddenAnchor" href="javascript:;" style="display:none;"></a>
 
 
-<div id="suiteBar" class="ms-dialogHidden noindex">
+<div id="suiteBar" class="ms-dialogHidden noindex" style="display:none">
 	<div id="suiteBarLeft">
 		<div class="ms-table ms-fullWidth">
 			<div class="ms-tableRow">
@@ -234,7 +234,7 @@
 	</div>
 </div>
 		<div id="ms-hcTest"></div>
-		<div id="s4-ribbonrow">
+		<div id="s4-ribbonrow" style="display:none">
 		<div id="globalNavBox" class="noindex">
 <div id="ribbonBox">
 	<div id="s4-ribboncont">
@@ -362,6 +362,14 @@
 </SharePoint:AjaxDelta>
 		</div>
 		</div>
+
+
+<Sharepoint:SPSecurityTrimmedControl ID="SPSecurityTrimmedControl2" runat="server" PermissionsString="AddAndCustomizePages">
+    <script type="text/javascript">
+        document.getElementById("suiteBar").style.display = "block";
+        document.getElementById("s4-ribbonrow").style.display = "block";
+    </script>
+</Sharepoint:SPSecurityTrimmedControl>
 
 		<div id="s4-workspace" class="ms-core-overlay s4-nosetwidth">
 		<div class="container_12">
