@@ -1104,6 +1104,11 @@ namespace LongAn.DVC.FormsBasedAuthentication
         #region Methods
         private void AddCreateUserControl()
         {
+            if (SPContext.Current.Web.CurrentUser != null && !SPContext.Current.Web.CurrentUser.IsSiteAdmin)
+            {
+                SPUtility.Redirect(SPContext.Current.Web.Url, SPRedirectFlags.UseSource, this.Context, null);
+            }
+
             TemplateHelper helper;
             string provider = Utils.GetMembershipProvider(Context);
             //Exit if membership provider not defined

@@ -33,6 +33,14 @@ namespace LongAn.DVC.FormsBasedAuthentication.Webparts.FBALoginWebPart
             if (SPContext.Current.Web.CurrentUser != null)
             {
                 Login1.Visible = false;
+                pnlAuthorize.Visible = true;
+
+                lblUserName.Text = SPContext.Current.Web.CurrentUser.Name;
+            }
+            else
+            {
+                Login1.Visible = true;
+                pnlAuthorize.Visible = false;
             }
         }
 

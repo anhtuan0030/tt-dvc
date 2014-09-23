@@ -43,6 +43,22 @@ namespace LongAn.DVC.FormsBasedAuthentication.Webparts.FBALoginWebPart {
             "artCodeGenerator", "12.0.0.0")]
         protected global::System.Web.UI.WebControls.Login Login1;
         
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        protected global::System.Web.UI.WebControls.Label lblUserName;
+        
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        protected global::System.Web.UI.WebControls.HyperLink lnkLogOff;
+        
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        protected global::System.Web.UI.WebControls.HyperLink lnkChangePassword;
+        
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        protected global::System.Web.UI.WebControls.Panel pnlAuthorize;
+        
         [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebPartCodeGenerator", "12.0.0.0")]
         public static implicit operator global::System.Web.UI.TemplateControl(FBALoginWebPart target) 
         {
@@ -283,11 +299,89 @@ namespace LongAn.DVC.FormsBasedAuthentication.Webparts.FBALoginWebPart {
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
         [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
             "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.Label @__BuildControllblUserName() {
+            global::System.Web.UI.WebControls.Label @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.Label();
+            this.lblUserName = @__ctrl;
+            @__ctrl.ApplyStyleSheetSkin(this.Page);
+            @__ctrl.ID = "lblUserName";
+            @__ctrl.Font.Bold = true;
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.HyperLink @__BuildControllnkLogOff() {
+            global::System.Web.UI.WebControls.HyperLink @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.HyperLink();
+            this.lnkLogOff = @__ctrl;
+            @__ctrl.ApplyStyleSheetSkin(this.Page);
+            @__ctrl.ID = "lnkLogOff";
+            @__ctrl.NavigateUrl = "/_layouts/signout.aspx";
+            @__ctrl.CssClass = "btn btn-default";
+            System.Web.UI.IParserAccessor @__parser = ((System.Web.UI.IParserAccessor)(@__ctrl));
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("Đăng xuất"));
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.HyperLink @__BuildControllnkChangePassword() {
+            global::System.Web.UI.WebControls.HyperLink @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.HyperLink();
+            this.lnkChangePassword = @__ctrl;
+            @__ctrl.ApplyStyleSheetSkin(this.Page);
+            @__ctrl.ID = "lnkChangePassword";
+            @__ctrl.NavigateUrl = "/_Layouts/15/FBA/ChangePassword.aspx?Source=%2FPages%2FHomepage%2Easpx";
+            System.Web.UI.IParserAccessor @__parser = ((System.Web.UI.IParserAccessor)(@__ctrl));
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("Đổi mật khẩu"));
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.Panel @__BuildControlpnlAuthorize() {
+            global::System.Web.UI.WebControls.Panel @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.Panel();
+            this.pnlAuthorize = @__ctrl;
+            @__ctrl.ApplyStyleSheetSkin(this.Page);
+            @__ctrl.ID = "pnlAuthorize";
+            @__ctrl.CssClass = "box icon-1";
+            System.Web.UI.IParserAccessor @__parser = ((System.Web.UI.IParserAccessor)(@__ctrl));
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n    <div class=\"box-title\">\r\n        Thông tin\r\n    </div>\r\n    <div class=\"box" +
+                        "-content form\">\r\n        Xin chào: "));
+            global::System.Web.UI.WebControls.Label @__ctrl1;
+            @__ctrl1 = this.@__BuildControllblUserName();
+            @__parser.AddParsedSubObject(@__ctrl1);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n        \r\n        <div class=\"row\">\r\n            <div class=\"grid_6\">\r\n        " +
+                        "        "));
+            global::System.Web.UI.WebControls.HyperLink @__ctrl2;
+            @__ctrl2 = this.@__BuildControllnkLogOff();
+            @__parser.AddParsedSubObject(@__ctrl2);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n            </div>\r\n            <div class=\"clear\"></div>\r\n        </div>\r\n    " +
+                        "    <ul class=\"bullet-1\">\r\n            <li>"));
+            global::System.Web.UI.WebControls.HyperLink @__ctrl3;
+            @__ctrl3 = this.@__BuildControllnkChangePassword();
+            @__parser.AddParsedSubObject(@__ctrl3);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("</li>\r\n        </ul>\r\n    </div>\r\n"));
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
         private void @__BuildControlTree(global::LongAn.DVC.FormsBasedAuthentication.Webparts.FBALoginWebPart.FBALoginWebPart @__ctrl) {
             global::System.Web.UI.WebControls.Login @__ctrl1;
             @__ctrl1 = this.@__BuildControlLogin1();
             System.Web.UI.IParserAccessor @__parser = ((System.Web.UI.IParserAccessor)(@__ctrl));
             @__parser.AddParsedSubObject(@__ctrl1);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n"));
+            global::System.Web.UI.WebControls.Panel @__ctrl2;
+            @__ctrl2 = this.@__BuildControlpnlAuthorize();
+            @__parser.AddParsedSubObject(@__ctrl2);
         }
         
         [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +

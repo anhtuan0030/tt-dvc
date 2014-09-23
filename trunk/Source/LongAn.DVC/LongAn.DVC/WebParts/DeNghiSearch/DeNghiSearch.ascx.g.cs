@@ -87,7 +87,7 @@ namespace LongAn.DVC.WebParts.DeNghiSearch {
             @__ctrl.ApplyStyleSheetSkin(this.Page);
             @__ctrl.ID = "btnTimKiem";
             @__ctrl.Text = "Tìm kiếm";
-            @__ctrl.CssClass = "button search";
+            @__ctrl.CssClass = "button search btn btn-default";
             ((System.Web.UI.IAttributeAccessor)(@__ctrl)).SetAttribute("align", "middle");
             return @__ctrl;
         }
@@ -131,21 +131,17 @@ namespace LongAn.DVC.WebParts.DeNghiSearch {
         private void @__BuildControlTree(global::LongAn.DVC.WebParts.DeNghiSearch.DeNghiSearch @__ctrl) {
             System.Web.UI.IParserAccessor @__parser = ((System.Web.UI.IParserAccessor)(@__ctrl));
             @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl(@"
-<link rel=""stylesheet"" href=""/_layouts/15/LongAn.DVC.Form/css/normalize.css""/>
-<link rel=""stylesheet"" href=""/_layouts/15/LongAn.DVC.Form/css/fluid_grid.css""/>
-<link rel=""stylesheet"" href=""/_layouts/15/LongAn.DVC.Form/css/jquery-ui.min.css""/>
-<link rel=""stylesheet"" href=""/_layouts/15/LongAn.DVC.Form/css/superfish.css""/>
-<link rel=""stylesheet"" href=""/_layouts/15/LongAn.DVC.Form/css/main.css""/>
+
 <div>
 	<div class=""row"">
 		<div class=""grid_12"" id=""main-frame"">
-			<h2 class=""page-header"">
+			<h2 class="""">
 				TRA CỨU HỒ SƠ
 			</h2>
-			<div class=""the-form"" id=""searchform"">
+			<div class=""form"" id=""searchform"">
 				<div class=""row line"">
                     <div class=""grid_"">&nbsp;</div>
-                    <div class=""grid_2"">
+                    <div class=""grid_2"" style=""margin-top:10px"">
                        Mã biên nhận:                        
                     </div>
                     <div class=""grid_4"">
@@ -165,9 +161,9 @@ namespace LongAn.DVC.WebParts.DeNghiSearch {
 			</div>
             <div>
                 <h3><u>Kết quả tra cứu</u></h3>
-                <div class=""row"">
+                <div class=""row"" style=""padding: 5px 0"">
                     <div class=""grid_1"">&nbsp;</div>
-                    <div class=""grid_2"">
+                    <div class=""grid_3"">
                        Mã biên nhận:                        
                     </div>
                     <div class=""grid_4"">
@@ -179,9 +175,9 @@ namespace LongAn.DVC.WebParts.DeNghiSearch {
                     </div>
                     <div class=""clear""></div>
 				</div>
-                <div class=""row"">
+                <div class=""row"" style=""padding: 5px 0"">
                     <div class=""grid_1"">&nbsp;</div>
-                    <div class=""grid_2"">
+                    <div class=""grid_3"">
                        Cá nhân / Tổ chức:                        
                     </div>
                     <div class=""grid_4"">
@@ -193,9 +189,9 @@ namespace LongAn.DVC.WebParts.DeNghiSearch {
                     </div>
                     <div class=""clear""></div>
 				</div>
-                <div class=""row"">
+                <div class=""row"" style=""padding: 5px 0"">
                     <div class=""grid_1"">&nbsp;</div>
-                    <div class=""grid_2"">
+                    <div class=""grid_3"">
                        Trạng thái xử lý:                        
                     </div>
                     <div class=""grid_4"">
