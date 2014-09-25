@@ -103,6 +103,7 @@ namespace LongAn.DVC.WebParts.DeNghiListViewUsers {
             @__ctrl.ApplyStyleSheetSkin(this.Page);
             @__ctrl.ID = "hplTrangChu";
             @__ctrl.CssClass = "button large-button home";
+            @__ctrl.Visible = false;
             System.Web.UI.IParserAccessor @__parser = ((System.Web.UI.IParserAccessor)(@__ctrl));
             @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("Trang chủ"));
             return @__ctrl;
@@ -264,7 +265,7 @@ namespace LongAn.DVC.WebParts.DeNghiListViewUsers {
             @__ctrl.TemplateControl = this;
             @__ctrl.ApplyStyleSheetSkin(this.Page);
             @__ctrl.ID = "lbtViewItem";
-            @__ctrl.ToolTip = "Xem chi tiết đề nghị";
+            @__ctrl.ToolTip = "Xem thông tin hồ sơ";
             @__ctrl.CssClass = "button view just-icon";
             return @__ctrl;
         }
@@ -634,12 +635,12 @@ namespace LongAn.DVC.WebParts.DeNghiListViewUsers {
 			<div class=""clearfix""></div>
 			
             <table class=""the-table"">
-                <tr>
+                <tr style=""height: 50px;"">
                     <th>STT</th>
                     <th>Mã biên nhận</th>
                     <th>Loại đề nghị</th>
-                    <th>Ngày đề nghị</th>
-                    <th>Tình trạng</th>
+                    <th>Ngày nộp hồ sơ</th>
+                    <th>Trạng thái</th>
                     <th>Xem</th>
                     <th>Sửa</th>
                     <th>Xóa</th>

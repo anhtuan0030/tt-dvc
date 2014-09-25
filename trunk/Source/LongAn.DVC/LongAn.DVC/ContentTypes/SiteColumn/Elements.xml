@@ -118,13 +118,29 @@
     <Default>[today]</Default>
   </Field>
 
-  <Field Type="User" ID="{06EF1F2D-AADC-478A-9FB4-31C672AD0F7A}" Name="DeNghiOwner" StaticName="DeNghiOwner" 
-         DisplayName="Người đề nghị" List="UserInfo" Required="FALSE" EnforceUniqueValues="FALSE" ShowField="ImnName" 
+  <Field Type="User" ID="{06EF1F2D-AADC-478A-9FB4-31C672AD0F7A}" Name="NguoiDeNghi" StaticName="NguoiDeNghi"
+         DisplayName="Người đề nghị" List="UserInfo" Required="FALSE" EnforceUniqueValues="FALSE" ShowField="ImnName"
+         UserSelectionMode="PeopleOnly" UserSelectionScope="0"  Group="[LA-DVC]" />
+  
+  <Field Type="DateTime" ID="{49EDE72C-22F1-490F-B46F-13A22165345A}" Name="NgayNopHoSo" StaticName="NgayNopHoSo"
+         DisplayName="Ngày nộp hồ sơ" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" Format="DateTime" FriendlyDisplayFormat="Disabled" Group="[LA-DVC]" >
+  </Field>
+
+  <Field Type="User" ID="{B63633C2-7799-4F02-8DB3-A53DA8C08EAF}" Name="MotCuaUser" StaticName="MotCuaUser"
+         DisplayName="Một cửa" List="UserInfo" Required="FALSE" EnforceUniqueValues="FALSE" ShowField="ImnName"
+         UserSelectionMode="PeopleOnly" UserSelectionScope="0"  Group="[LA-DVC]" />
+  
+  <Field Type="User" ID="{5A39C6D8-B781-44DA-A54D-6059E4BFB936}" Name="TruongPhongUser" StaticName="TruongPhongUser"
+         DisplayName="Trưởng phòng" List="UserInfo" Required="FALSE" EnforceUniqueValues="FALSE" ShowField="ImnName"
+         UserSelectionMode="PeopleOnly" UserSelectionScope="0"  Group="[LA-DVC]" />
+  
+  <Field Type="User" ID="{2BA25CC5-CF29-4622-B5A7-AB7C21D7B406}" Name="CanBoUser" StaticName="CanBoUser"
+         DisplayName="Cán bộ" List="UserInfo" Required="FALSE" EnforceUniqueValues="FALSE" ShowField="ImnName"
          UserSelectionMode="PeopleOnly" UserSelectionScope="0"  Group="[LA-DVC]" />
 
-  <Field Type="User" ID="{5BCC1064-FF52-409F-AB44-8A6273DF8655}" Name="DeNghiAdmin" StaticName="DeNghiAdmin"
-         DisplayName="Cán bộ xử lý" List="UserInfo" Required="FALSE" EnforceUniqueValues="FALSE" ShowField="ImnName"
-         UserSelectionMode="PeopleOnly" UserSelectionScope="0"  Group="[LA-DVC]" />  
+  <Field Type="User" ID="{7DF0CE1C-7E59-45AC-9E45-D3B79D36BA1F}" Name="LanhDaoUser" StaticName="LanhDaoUser"
+         DisplayName="Lãnh đạo" List="UserInfo" Required="FALSE" EnforceUniqueValues="FALSE" ShowField="ImnName"
+         UserSelectionMode="PeopleOnly" UserSelectionScope="0"  Group="[LA-DVC]" /> 
   
   <Field Type="Lookup" ID="{F1A09FF4-C3CE-486B-BA16-DF114E6325FD}" Name="LoaiDeNghi" StaticName="LoaiDeNghi"
          DisplayName="Loại đề nghị" Required="FALSE" EnforceUniqueValues="FALSE" List="Lists/LoaiDeNghi"
@@ -206,5 +222,19 @@
   <Field Type="DateTime" ID="{A14D830C-DF89-4135-ADDA-C578F940876E}" Name="NgayBoSung" StaticName="NgayBoSung"
          DisplayName="Ngày bổ sung" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" Format="DateOnly" FriendlyDisplayFormat="Disabled" Group="[LA-DVC]" >
   </Field>
+  
+  <!--Lịch sử cấp phép-->
+  
+  <Field Type="User" ID="{DCE52DE5-3D14-4D27-81DE-B558D0385836}" Name="NguoiXuLy" StaticName="NguoiXuLy"
+           DisplayName="Người xử lý" List="UserInfo" Required="FALSE" EnforceUniqueValues="FALSE" ShowField="ImnName"
+           UserSelectionMode="PeopleOnly" UserSelectionScope="0"  Group="[LA-DVC]" />
+
+  <Field Type="DateTime" ID="{F4C8152D-658E-4D29-BD77-C763F8666769}" Name="NgayXuLy" StaticName="NgayXuLy"
+         DisplayName="Ngày xử lý" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" Format="DateTime" FriendlyDisplayFormat="Disabled" Group="[LA-DVC]" >
+  </Field>
+
+  <Field Type="Text" ID="{6BC1489F-48F8-4F61-B098-17D41AD0E1B7}" Name="HanhDong" StaticName="HanhDong"
+         DisplayName="Hành động" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255"
+         Group="[LA-DVC]" />
   
 </Elements>

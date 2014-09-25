@@ -142,7 +142,7 @@ namespace LongAn.DVC.WebParts.DeNghiSearch {
 				<div class=""row line"">
                     <div class=""grid_"">&nbsp;</div>
                     <div class=""grid_2"" style=""margin-top:10px"">
-                       Mã biên nhận:                        
+                       Nhập mã biên nhận:                        
                     </div>
                     <div class=""grid_4"">
                         "));

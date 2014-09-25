@@ -31,8 +31,8 @@ namespace LongAn.DVC.WebParts.DeNghiRedirect
             if (HttpContext.Current.Request.QueryString["ControlMode"] == null)
             {
                 if (SPContext.Current.Web.CurrentUser == null)
-                { 
-                    HttpContext.Current.Response.Redirect("/"); 
+                {
+                    HttpContext.Current.Response.Redirect(string.IsNullOrEmpty(LinkTrangChu) ? "/" : LinkTrangChu); 
                 }
                 else
                 {
@@ -43,17 +43,17 @@ namespace LongAn.DVC.WebParts.DeNghiRedirect
                             //SPUtility.Redirect(LinkHoSoDeNghi, SPRedirectFlags.Default, HttpContext.Current);
                             HttpContext.Current.Response.Redirect(LinkHoSoDeNghi);
                             break;
-                        case LongAn.DVC.Common.CapXuLy.NhanVienTiepNhan:
+                        case LongAn.DVC.Common.CapXuLy.MotCua:
                             //SPUtility.Redirect(LinkHoSoDaTiepNhan, SPRedirectFlags.Default, HttpContext.Current);
-                            HttpContext.Current.Response.Redirect(LinkHoSoDaTiepNhan);
+                            HttpContext.Current.Response.Redirect(LinkHoSoChoTiepNhan);
                             break;
                         case LongAn.DVC.Common.CapXuLy.TruongPhoPhong:
                             //SPUtility.Redirect(LinkHoSoChoDuyet, SPRedirectFlags.Default, HttpContext.Current);
                             HttpContext.Current.Response.Redirect(LinkHoSoChoDuyet);
                             break;
-                        case LongAn.DVC.Common.CapXuLy.CanBoXuLy:
+                        case LongAn.DVC.Common.CapXuLy.CanBo:
                             //SPUtility.Redirect(LinkHoSoChoPhanCong, SPRedirectFlags.Default, HttpContext.Current);
-                            HttpContext.Current.Response.Redirect(LinkHoSoChoPhanCong);
+                            HttpContext.Current.Response.Redirect(LinkHoSoChoXuLy);
                             break;
                         case LongAn.DVC.Common.CapXuLy.LanhDaoSo:
                             //SPUtility.Redirect(LinkHoSoChoCapPhep, SPRedirectFlags.Default, HttpContext.Current);
@@ -61,7 +61,7 @@ namespace LongAn.DVC.WebParts.DeNghiRedirect
                             break;
                         case LongAn.DVC.Common.CapXuLy.VanPhongSo:
                             //SPUtility.Redirect(LinkHoSoDaCapPhep, SPRedirectFlags.Default, HttpContext.Current);
-                            HttpContext.Current.Response.Redirect(LinkHoSoDaCapPhep);
+                            HttpContext.Current.Response.Redirect(LinkHoSoDuocCapPhep);
                             break;
                         default:
                             HttpContext.Current.Response.Redirect("/");
@@ -73,46 +73,53 @@ namespace LongAn.DVC.WebParts.DeNghiRedirect
 
         #region WebPart Properties
         [WebBrowsable(true),
+         WebDisplayName("Link Trang chủ"),
+         WebDescription("Trang chủ"),
+         Personalizable(PersonalizationScope.Shared),
+         Category("LongAn.DVC")]
+        public string LinkTrangChu { get; set; }
+
+        [WebBrowsable(true),
          WebDisplayName("Link Danh sách đề nghị"),
-         WebDescription("This Accepts text Input"),
+         WebDescription("Danh sách đề nghị của Người dùng"),
          Personalizable(PersonalizationScope.Shared),
          Category("LongAn.DVC")]
         public string LinkHoSoDeNghi { get; set; }
 
         [WebBrowsable(true),
-         WebDisplayName("Link Hồ sơ đã tiếp nhận"),
-         WebDescription("Một cửa đang tiếp nhận"),
+         WebDisplayName("Link Hồ sơ chờ tiếp nhận"),
+         WebDescription("Một cửa tiếp nhận"),
          Personalizable(PersonalizationScope.Shared),
          Category("LongAn.DVC")]
-        public string LinkHoSoDaTiepNhan { get; set; }
+        public string LinkHoSoChoTiepNhan { get; set; }
 
         [WebBrowsable(true),
          WebDisplayName("Link Hồ sơ chờ xử lý"),
-         WebDescription("Chờ Trưởng phó phòng phân công / Cán bộ xử lý"),
+         WebDescription("Chờ Trưởng phó phòng phân công / Cán bộ xử lý tiếp nhận"),
          Personalizable(PersonalizationScope.Shared),
          Category("LongAn.DVC")]
-        public string LinkHoSoChoPhanCong { get; set; }
+        public string LinkHoSoChoXuLy { get; set; }
 
         [WebBrowsable(true),
          WebDisplayName("Link Hồ sơ chờ duyệt"),
-         WebDescription("Trình trưởng phó phòng QLHT"),
+         WebDescription("Chờ trưởng phó phòng QLHT xét duyệt"),
          Personalizable(PersonalizationScope.Shared),
          Category("LongAn.DVC")]
         public string LinkHoSoChoDuyet { get; set; }
 
         [WebBrowsable(true),
          WebDisplayName("Link Hồ sơ chờ cấp phép"),
-         WebDescription("Trình lãnh đạo sở"),
+         WebDescription("Trình lãnh đạo sở cấp phép"),
          Personalizable(PersonalizationScope.Shared),
          Category("LongAn.DVC")]
         public string LinkHoSoChoCapPhep { get; set; }
 
         [WebBrowsable(true),
-         WebDisplayName("Link Hồ sơ đã cấp phép"),
-         WebDescription("Hồ sơ đã duyệt"),
+         WebDisplayName("Link Hồ sơ được cấp phép"),
+         WebDescription("Một cửa xác nhận hoàn thành / chưa hoàn thành"),
          Personalizable(PersonalizationScope.Shared),
          Category("LongAn.DVC")]
-        public string LinkHoSoDaCapPhep { get; set; }
+        public string LinkHoSoDuocCapPhep { get; set; }
 
         #endregion WebPart Properties
     }

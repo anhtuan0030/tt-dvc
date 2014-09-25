@@ -188,6 +188,12 @@
     <None Include="ListDefinitions\DeNghiCapPhepXe\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{f03876fc-47a0-4348-8677-e3e4e6d63cc3}</SharePointProjectItemId>
     </None>
+    <None Include="ListDefinitions\LichSuCapPhep\LichSuCapPhepInstance\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{60edbddb-e71e-4ecd-ac86-a1f8d619c891}</SharePointProjectItemId>
+    </None>
+    <None Include="ListDefinitions\LichSuCapPhep\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{51c8c980-d9d0-4a5b-b023-ed046f577d19}</SharePointProjectItemId>
+    </None>
     <None Include="ListDefinitions\LoaiDeNghi\LoaiDeNghiInstance\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{b48085af-82ce-471d-8708-d16737acfcac}</SharePointProjectItemId>
     </None>
@@ -355,6 +361,9 @@
     <Content Include="Layouts\LongAn.DVC\DeNghiEditForm.aspx" />
     <Content Include="Layouts\LongAn.DVC\css\superfish.css" />
     <Content Include="Layouts\LongAn.DVC\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="ListDefinitions\LichSuCapPhep\Elements.xml" />
+    <Content Include="ListDefinitions\LichSuCapPhep\LichSuCapPhepInstance\Elements.xml" />
+    <Content Include="ListDefinitions\LichSuCapPhep\Schema.xml" />
     <Content Include="Modules\DVCPages\Homepage.aspx" />
     <Content Include="Layouts\LongAn.DVC\images\add-file.png" />
     <Content Include="Layouts\LongAn.DVC\images\add.png" />

@@ -39,7 +39,7 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
 
         void btnGuiHoSo_Click(object sender, EventArgs e)
         {
-            SaveItem(TrangThaiXuLy.DaTiepNhan, CapXuLy.NhanVienTiepNhan);
+            SaveItem(TrangThaiHoSo.ChoTiepNhan, CapXuLy.MotCua);
         }
 
         protected void DeNghiSaveHandler(object sender, EventArgs e)
@@ -54,64 +54,62 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
 
         void btnSave_Click(object sender, EventArgs e)
         {
-            SaveItem(TrangThaiXuLy.KhoiTao, CapXuLy.CaNhanToChuc);
+            SaveItem(TrangThaiHoSo.KhoiTao, CapXuLy.CaNhanToChuc);
         }
         protected void Page_Load(object sender, EventArgs e)
         {
             
         }
 
-        void SaveItem(TrangThaiXuLy trangThai, CapXuLy capXuLy)
+        void SaveItem(TrangThaiHoSo trangThai, CapXuLy capXuLy)
         {
-            try
+            if (!this.Page.IsValid)
+                return;
+
+            var longOperation = new SPLongOperation(this.Page);
+            longOperation.LeadingHTML = "Please wait while the operation is running";
+            longOperation.TrailingHTML = "Once the operation is finished you will be redirected to result page";
+            longOperation.Begin();
+
+            //Set default value
+            string deNghiGuid = Guid.NewGuid().ToString();
+            SPContext.Current.ListItem[Constants.FieldDeNghiGUID] = deNghiGuid;
+            SPContext.Current.ListItem[Constants.FieldTrangThai] = (int)trangThai;
+            SPContext.Current.ListItem[Constants.FieldCapDuyet] = (int)capXuLy;
+            if (capXuLy == CapXuLy.MotCua)
             {
-                if (!this.Page.IsValid)
-                    return;
-
-                var longOperation = new SPLongOperation(this.Page);
-                longOperation.LeadingHTML = "Please wait while the operation is running";
-                longOperation.TrailingHTML = "Once the operation is finished you will be redirected to result page";
-                longOperation.Begin();
-
-                //Set default value
-                string deNghiGuid = Guid.NewGuid().ToString();
-                SPContext.Current.ListItem[Constants.FieldDeNghiGUID] = deNghiGuid;
-                SPContext.Current.ListItem[Constants.FieldTrangThai] = (int)trangThai;
-                SPContext.Current.ListItem[Constants.FieldTrangThai] = (int)capXuLy;
-                SaveButton.SaveItem(SPContext.Current, false, "Thêm mới / gửi đề nghị");
-                var deNghiList = SPContext.Current.List;
-                int itemId = 0;
-                SPQuery caml = Camlex.Query().Where(x => (string)x[Constants.FieldDeNghiGUID] == deNghiGuid)
-                                     .OrderBy(x => new[] { x[Constants.FieldTitle] as Camlex.Asc })
-                                     .ToSPQuery();
-                caml.RowLimit = 1;
-                do
+                SPContext.Current.ListItem[Constants.FieldTrangThai] = (int)TrangThaiHoSo.ChoTiepNhan;
+            }
+            SPContext.Current.ListItem[Constants.FieldNguoiDeNghi] = SPContext.Current.Web.CurrentUser;
+            SaveButton.SaveItem(SPContext.Current, false, "Thêm mới / gửi đề nghị");
+            var deNghiList = SPContext.Current.List;
+            int itemId = 0;
+            SPQuery caml = Camlex.Query().Where(x => (string)x[Constants.FieldDeNghiGUID] == deNghiGuid)
+                                    .OrderBy(x => new[] { x[Constants.FieldTitle] as Camlex.Asc })
+                                    .ToSPQuery();
+            caml.RowLimit = 1;
+            do
+            {
+                var deNghiListItems = deNghiList.GetItems(caml);
+                if (deNghiListItems != null && deNghiListItems.Count > 0)
                 {
-                    var deNghiListItems = deNghiList.GetItems(caml);
-                    if (deNghiListItems != null && deNghiListItems.Count > 0)
-                    {
-                        itemId = deNghiListItems[0].ID;
-                        break;
-                    }
-                } while (true);
+                    itemId = deNghiListItems[0].ID;
+                    break;
+                }
+            } while (true);
 
-                //Save file upload
-                DeNghiHelper.SaveFileAttachment(fileUpload1, itemId, Constants.AttachmentGiayDangKy);
-                DeNghiHelper.SaveFileAttachment(fileUpload2, itemId, Constants.AttachmentGiayChungNhanKiemDinh);
-                DeNghiHelper.SaveFileAttachment(fileUpload3, itemId, Constants.AttachmentGiayCamKet);
-                DeNghiHelper.SaveFileAttachment(fileUpload4, itemId, Constants.AttachmentCMND);
-                //Redirect to page
-                var redirectUrl = Request.QueryString["Source"];
-                if (redirectUrl == null || string.IsNullOrEmpty(redirectUrl.ToString()))
-                    redirectUrl = "/";
-                longOperation.End(redirectUrl, Microsoft.SharePoint.Utilities.SPRedirectFlags.DoNotEndResponse, HttpContext.Current, "");
-                //Close popup
-                //DeNghiHelper.ClosePopup(this.Page);
-            }
-            catch (Exception ex)
-            {
-                LoggingServices.LogException(ex);
-            }
+            //Save file upload
+            DeNghiHelper.SaveFileAttachment(fileUpload1, itemId, Constants.AttachmentGiayDangKy);
+            DeNghiHelper.SaveFileAttachment(fileUpload2, itemId, Constants.AttachmentGiayChungNhanKiemDinh);
+            DeNghiHelper.SaveFileAttachment(fileUpload3, itemId, Constants.AttachmentGiayCamKet);
+            DeNghiHelper.SaveFileAttachment(fileUpload4, itemId, Constants.AttachmentCMND);
+            //Redirect to page
+            var redirectUrl = Request.QueryString["Source"];
+            if (redirectUrl == null || string.IsNullOrEmpty(redirectUrl.ToString()))
+                redirectUrl = "/";
+            longOperation.End(redirectUrl, Microsoft.SharePoint.Utilities.SPRedirectFlags.DoNotEndResponse, HttpContext.Current, "");
+            //Close popup
+            //DeNghiHelper.ClosePopup(this.Page);
         }
 
         

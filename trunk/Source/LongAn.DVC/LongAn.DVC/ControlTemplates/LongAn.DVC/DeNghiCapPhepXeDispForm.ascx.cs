@@ -37,21 +37,32 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
             //
             var currentStatus = int.Parse(SPContext.Current.ListItem[Constants.FieldTrangThai].ToString());
             var currentUserRole = CurrentUserRole;
+            var action = Request.QueryString.Get("Action");
+            var actionTocken = Request.QueryString.Get("Atocken");
+
+            ShowActions(currentUserRole, action, actionTocken);
+
+            #region Backup
+            /*
             switch (currentUserRole)
             {
-                case CapXuLy.NhanVienTiepNhan:
-                    if (currentStatus == (int)TrangThaiXuLy.DaTiepNhan)
+                case CapXuLy.MotCua:
+                    if (currentStatus == (int)TrangThaiHoSo.DaTiepNhan)
                     {
                         btnTrinhXuLy.Visible = true;
                         btnTrinhXuLy.Click += btnTrinhXuLy_Click;
 
-                        btnTraHoSo.Visible = true;
-                        btnTraHoSo.Click += btnTraHoSo_Click;
+                        ShowActions(CapXuLy.MotCua, action, actionTocken);
                     }
                     break;
-                case CapXuLy.CanBoXuLy:
-                    if (currentStatus == (int)TrangThaiXuLy.ChoXuLy || 
-                        currentStatus == (int)TrangThaiXuLy.DaPhanCong)
+                case CapXuLy.CanBo:
+                    if (currentStatus == (int)TrangThaiHoSo.KhoiTao)
+                    {
+                        btnTiepNhan.Visible = true;
+                        btnTiepNhan.Click += btnTiepNhan_Click;
+                    }
+                    else if (currentStatus == (int)TrangThaiHoSo.ChoXuLy ||
+                        currentStatus == (int)TrangThaiHoSo.DangXuLy)
                     {
                         if (Request.QueryString["BS"] != null 
                             && Request.QueryString["BS"].ToString() == Constants.ConfQueryStringBS)
@@ -67,33 +78,21 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
                     }
                     break;
                 case CapXuLy.TruongPhoPhong:
-                    if (currentStatus == (int)TrangThaiXuLy.ChoTruongPhongDuyet)
+                    if (currentStatus == (int)TrangThaiHoSo.ChoDuyet)
                     {
                         btnTrinhLanhDao.Visible = true;
                         btnTraHoSo.Visible = true;
                         btnTrinhLanhDao.Click += btnTrinhLanhDao_Click;
                         btnTraHoSo.Click += btnTraHoSo_Click;
                     }
-                    else if (currentStatus == (int)TrangThaiXuLy.ChoXuLy)
+                    else if (currentStatus == (int)TrangThaiHoSo.ChoXuLy)
                     {
                         divPhanCongHoSo.Visible = true;
-                        if (Request.QueryString["PC"] != null 
-                            && Request.QueryString["PC"].ToString() == Constants.ConfQueryStringPC)
-                        {
-                            if (!IsPostBack)
-                            {
-                                ddlUsers.DataSource = GetCanBoXuLy();
-                                ddlUsers.DataValueField = "ID";
-                                ddlUsers.DataTextField = "Name";
-                                ddlUsers.DataBind();
-                            }
-                            btnPhanCongHoSo.Visible = true;
-                            btnPhanCongHoSo.Click += btnPhanCongHoSo_Click;
-                        }
+                        ShowActions(CapXuLy.TruongPhoPhong, action, actionTocken);
                     }
                     break;
                 case CapXuLy.LanhDaoSo:
-                    if (currentStatus == (int)TrangThaiXuLy.ChoLanhDaoDuyet)
+                    if (currentStatus == (int)TrangThaiHoSo.ChoCapPhep)
                     {
                         btnDuyetHoSo.Visible = true;
                         btnTraHoSo.Visible = true;
@@ -104,12 +103,91 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
                 default:
                     break;
             }
+            */
+            #endregion Backup
+
             base.OnInit(e);
         }
 
+        void ShowActions(CapXuLy capXuLy, string action, string tocken)
+        {
+            if (action == null || tocken == null)
+                return;
+            switch (action)
+            {
+                case Constants.ConfActionPC:
+                    if (tocken == Constants.ConfQueryStringPC)
+                    {
+                        divPhanCongHoSo.Visible = true;
+                        btnPhanCongHoSo.Visible = true;
+                        if (!IsPostBack)
+                        {
+                            ddlUsers.DataSource = GetCanBoXuLy();
+                            ddlUsers.DataValueField = "ID";
+                            ddlUsers.DataTextField = "Name";
+                            ddlUsers.DataBind();
+                        }
+                        btnPhanCongHoSo.Click +=btnPhanCongHoSo_Click;
+                    }
+                    break;
+                case Constants.ConfActionBS:
+                    if (tocken == Constants.ConfQueryStringBS)
+                    {
+                        divYeuCauBoSung.Visible = true;
+                        btnYeuCauBoSung.Visible = true;
+                        btnYeuCauBoSung.Click+=btnYeuCauBoSung_Click;
+                    }
+                    break;
+                case Constants.ConfActionTC:
+                    if (tocken == Constants.ConfQueryStringTC)
+                    {
+                        btnTraHoSo.Visible = true;
+                        divThongTinTuChoi.Visible = true;
+                        if (capXuLy == CapXuLy.MotCua)
+                            btnTraHoSo.Click += btnTraHoSo_Click;
+                        else if(capXuLy == CapXuLy.CanBo)
+                            btnTraHoSo.Click+= btnCanBoTraHoSo_Click;
+                        else if (capXuLy == CapXuLy.TruongPhoPhong)
+                            btnTraHoSo.Click += btnTruongPhongTraHoSo_Click;
+                        else if (capXuLy == CapXuLy.LanhDaoSo)
+                            btnTraHoSo.Click += btnLanhDaoTraHoSo_Click;
+                    }
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        #region Tra Ho So
+        void btnTraHoSo_Click(object sender, EventArgs e)
+        {
+            DeNghiHelper.AddDeNghiHistory(SPContext.Current.Web, CapXuLy.MotCua, SPContext.Current.ItemId, HanhDong.TuChoiHoSo.ToString(), txtLyDo.Text);
+            UpdateItem(TrangThaiHoSo.BiTuChoi, CapXuLy.CaNhanToChuc, false);
+        }
+
+        void btnCanBoTraHoSo_Click(object sender, EventArgs e)
+        {
+            DeNghiHelper.AddDeNghiHistory(SPContext.Current.Web, CapXuLy.CanBo, SPContext.Current.ItemId, HanhDong.TuChoiHoSo.ToString(), txtLyDo.Text);
+            UpdateItem(TrangThaiHoSo.BiTuChoi, CapXuLy.CaNhanToChuc, false);
+        }
+
+        void btnTruongPhongTraHoSo_Click(object sender, EventArgs e)
+        {
+            DeNghiHelper.AddDeNghiHistory(SPContext.Current.Web, CapXuLy.TruongPhoPhong, SPContext.Current.ItemId, HanhDong.TuChoiHoSo.ToString(), txtLyDo.Text);
+            UpdateItem(TrangThaiHoSo.BiTuChoi, CapXuLy.CaNhanToChuc, false);
+        }
+
+        void btnLanhDaoTraHoSo_Click(object sender, EventArgs e)
+        {
+            DeNghiHelper.AddDeNghiHistory(SPContext.Current.Web, CapXuLy.LanhDaoSo, SPContext.Current.ItemId, HanhDong.TuChoiHoSo.ToString(), txtLyDo.Text);
+            UpdateItem(TrangThaiHoSo.BiTuChoi, CapXuLy.CaNhanToChuc, false);
+        }
+        #endregion Tra Ho So
+        
         void btnPhanCongHoSo_Click(object sender, EventArgs e)
         {
-            UpdateItem(TrangThaiXuLy.DaPhanCong, CapXuLy.CanBoXuLy, false);
+            DeNghiHelper.AddDeNghiHistory(SPContext.Current.Web, CapXuLy.TruongPhoPhong, SPContext.Current.ItemId, HanhDong.PhanCongHoSo.ToString(), txtGhiChu.Text);
+            UpdateItem(TrangThaiHoSo.DangXuLy, CapXuLy.CanBo, false);
         }
 
         void btnCancel_Click(object sender, EventArgs e)
@@ -120,35 +198,12 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
             Response.Redirect(redirectUrl);
         }
 
-        void btnDuyetHoSo_Click(object sender, EventArgs e)
-        {
-            UpdateItem(TrangThaiXuLy.HoSoDuocDuyet, CapXuLy.NhanVienTiepNhan, false);
-        }
-
-        void btnTrinhLanhDao_Click(object sender, EventArgs e)
-        {
-            UpdateItem(TrangThaiXuLy.ChoLanhDaoDuyet, CapXuLy.LanhDaoSo, false);
-        }
-
-        void btnTraHoSo_Click(object sender, EventArgs e)
-        {
-            UpdateItem(TrangThaiXuLy.HoSoBiTuChoi, CapXuLy.CaNhanToChuc, false);
-        }
-
-        void btnTrinhTruongPhong_Click(object sender, EventArgs e)
-        {
-            UpdateItem(TrangThaiXuLy.ChoTruongPhongDuyet, CapXuLy.TruongPhoPhong, false);
-        }
-
         void btnYeuCauBoSung_Click(object sender, EventArgs e)
         {
-            UpdateItem(TrangThaiXuLy.HoSoChoBoSung, CapXuLy.CaNhanToChuc, true);
+            DeNghiHelper.AddDeNghiHistory(SPContext.Current.Web, CapXuLy.CanBo, SPContext.Current.ItemId, HanhDong.YeuCauBoSung.ToString(), txtTieuDe.Text);
+            UpdateItem(TrangThaiHoSo.ChoBoSung, CapXuLy.CaNhanToChuc, true);
         }
 
-        void btnTrinhXuLy_Click(object sender, EventArgs e)
-        {
-            UpdateItem(TrangThaiXuLy.ChoXuLy, CapXuLy.TruongPhoPhong, false);
-        }
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -178,7 +233,7 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
             }
         }
 
-        void UpdateItem(TrangThaiXuLy trangThai, CapXuLy capXuLy, bool isBoSung)
+        void UpdateItem(TrangThaiHoSo trangThai, CapXuLy capXuLy, bool isBoSung)
         {
             if (!this.Page.IsValid)
                 return;
@@ -192,8 +247,8 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
             var spListItem = deNghiList.GetItemById(SPContext.Current.ItemId);
             spListItem[Constants.FieldCapDuyet] = (int)capXuLy;
             spListItem[Constants.FieldTrangThai] = (int)trangThai;
-            if (trangThai == TrangThaiXuLy.DaPhanCong)
-                spListItem[Constants.FieldDeNghiAdmin] = ddlUsers.SelectedValue;
+            if (trangThai == TrangThaiHoSo.ChoXuLy)
+                spListItem[Constants.FieldCaNhanToChuc] = ddlUsers.SelectedValue;
             
             spListItem.Update();
             if (isBoSung)

@@ -46,14 +46,24 @@
       <FieldRef ID="{707F5F74-7CD7-4D42-847B-2680868977A4}" Name="TuyenDuongVanChuyen" />
       <FieldRef ID="{826D5EF2-7F88-4320-94AF-4DF360D6B7B2}" Name="ThoiGiaDeNghiLuuHanhTu" />
       <FieldRef ID="{D6AA5635-D989-4ECD-84C4-DF45778F2B24}" Name="ThoiGiaDeNghiLuuHanhDen" />
-      <FieldRef ID="{06EF1F2D-AADC-478A-9FB4-31C672AD0F7A}" Name="DeNghiOwner" />
-      <FieldRef ID="{5BCC1064-FF52-409F-AB44-8A6273DF8655}" Name="DeNghiAdmin"/>
+
+      <FieldRef ID="{06EF1F2D-AADC-478A-9FB4-31C672AD0F7A}" Name="NguoiDeNghi" />
+      <FieldRef ID="{49EDE72C-22F1-490F-B46F-13A22165345A}" Name="NgayNopHoSo" />
+
+      <FieldRef ID="{B63633C2-7799-4F02-8DB3-A53DA8C08EAF}" Name="MotCuaUser"/>
+      <FieldRef ID="{5A39C6D8-B781-44DA-A54D-6059E4BFB936}" Name="TruongPhongUser" />
+      <FieldRef ID="{2BA25CC5-CF29-4622-B5A7-AB7C21D7B406}" Name="CanBoUser"/>
+      <FieldRef ID="{7DF0CE1C-7E59-45AC-9E45-D3B79D36BA1F}" Name="LanhDaoUser"/>
+
       <FieldRef ID="{F1A09FF4-C3CE-486B-BA16-DF114E6325FD}" Name="LoaiDeNghi" />
+
       <FieldRef ID="{23148AE2-19CC-4F9C-BCC9-211AABA5DC27}" Name="LoaiCapPhep" />
       <FieldRef ID="{0C841B02-EC0F-45BA-8E39-F27A6B70AF02}" Name="LoaiDuong" />
+
       <FieldRef ID="{30CCB8BF-723D-46A0-B44F-CACBD3A6082D}" Name="TrangThai" />
       <FieldRef ID="{C2F882CA-8CC4-404B-A78F-16BE30FDA4AB}" Name="TrangThaiText" />
       <FieldRef ID="{9CBE3507-6F79-4E21-80D6-72EB534E7C5F}" Name="CapDuyet" />
+
       <FieldRef ID="{DCDF7E67-C385-4840-BCE5-E82BFF1FBC0C}" Name="DeNghiGUID" />
       <FieldRef ID="{B26051F8-701F-41BD-86BA-C39B972FC114}" Name="NamDeNghi" />
       <FieldRef ID="{C685DDD9-57D5-4B59-9F00-80DEBB73586F}" Name="SoThuTuBienNhan" />
