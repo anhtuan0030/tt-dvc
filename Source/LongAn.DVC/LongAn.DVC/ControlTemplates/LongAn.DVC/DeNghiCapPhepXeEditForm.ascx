@@ -237,7 +237,7 @@
                             <div class="clear"></div>
                         </div>
                         <div class="row">
-                            <div class="grid_4">
+                            <div class="grid_3">
                                 <SharePoint:FieldLabel ID="FieldLabel39"  FieldName="SoTrucSauCuaRoMooc"  runat="server"  />
                             </div>
                             <div class="grid_1">
@@ -451,7 +451,7 @@
 
                     <div class="pull-right">
                         <asp:Button ID="btnSave" OnClientClick="if (!PreSaveItem(1)) return false;" CssClass="button" runat="server" Text="Lưu" Visible="false" />
-                        <asp:Button ID="btnGuiHoSo" OnClientClick="if (!PreSaveItem(1)) return false;" runat="server" Text="Gửi hồ sơ" CssClass="button" Visible="false"/>
+                        <asp:Button ID="btnGuiHoSo" OnClientClick="if (!PreSaveItem(1)) return false;" runat="server" Text="Nộp hồ sơ" CssClass="button" Visible="false"/>
                         <asp:Button ID="btnCancel" runat="server" Text="Đóng" CssClass="button" />
                     </div>
                 </div>

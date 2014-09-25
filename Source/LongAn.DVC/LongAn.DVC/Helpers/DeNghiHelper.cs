@@ -29,7 +29,7 @@ namespace LongAn.DVC.Helpers
                         {
                             web.AllowUnsafeUpdates = true;
                             //Stream stream = fileUpload.PostedFile.InputStream;
-                            var deNghiAttachmentUrl = (SPContext.Current.Web.ServerRelativeUrl + Constants.ListUrlDeNghiAttachment).Replace("//", "/");
+                            var deNghiAttachmentUrl = (web.ServerRelativeUrl + Constants.ListUrlDeNghiAttachment).Replace("//", "/");
                             var attachmentFile = web.GetFolder(deNghiAttachmentUrl);
                             var files = attachmentFile.Files;
                             var documentMetadata = new System.Collections.Hashtable {
@@ -91,7 +91,6 @@ namespace LongAn.DVC.Helpers
             }
             LoggingServices.LogMessage("End LoadAttachments: ItemId: " + itemId + ", type: " + type);
         }
-
         public static CapXuLy CurrentUserRole(SPWeb spWeb, SPUser user)
         {
             CapXuLy result = CapXuLy.CaNhanToChuc;
@@ -106,11 +105,11 @@ namespace LongAn.DVC.Helpers
                             var groupNhanVienTiepNhan = web.SiteGroups[Constants.ConfGroupNhanVienTiepNhan];
                             var groupCanBoXuLy = web.SiteGroups[Constants.ConfGroupCanBoXuLy];
                             var groupTruongPhoPhong = web.SiteGroups[Constants.ConfGroupTruongPhoPhong];
-                            var groupLanhDaoSo = web.SiteGroups[Constants.ConfGroupTruongPhoPhong];
+                            var groupLanhDaoSo = web.SiteGroups[Constants.ConfGroupLanhDaoSo];
                             if (user.InGroup(groupNhanVienTiepNhan))
-                                result = CapXuLy.NhanVienTiepNhan;
+                                result = CapXuLy.MotCua;
                             else if (user.InGroup(groupCanBoXuLy))
-                                result = CapXuLy.CanBoXuLy;
+                                result = CapXuLy.CanBo;
                             else if (user.InGroup(groupTruongPhoPhong))
                                 result = CapXuLy.TruongPhoPhong;
                             else if (user.InGroup(groupLanhDaoSo))
@@ -124,6 +123,39 @@ namespace LongAn.DVC.Helpers
                 LoggingServices.LogException(ex);
             }
             return result;
+        }
+        public static void AddDeNghiHistory(SPWeb spWeb, CapXuLy capXuLy, int deNghiId, string hanhDong, string note)
+        {
+            try
+            {
+                LoggingServices.LogMessage("Begin AddDeNghiHistory");
+                SPSecurity.RunWithElevatedPrivileges(delegate()
+                {
+                    using (SPSite site = new SPSite(spWeb.Site.ID))
+                    {
+                        using (SPWeb web = site.OpenWeb(spWeb.ID))
+                        {
+                            web.AllowUnsafeUpdates = true;
+                            var deNghiHistoryUrl = (web.ServerRelativeUrl + Constants.ListUrlLichSuCapPhep).Replace("//", "/");
+                            var deNghiHistoryList = web.GetList(deNghiHistoryUrl);
+                            var deNghiHistoryItem = deNghiHistoryList.Items.Add();
+                            deNghiHistoryItem[Constants.FieldTitle] = capXuLy;
+                            deNghiHistoryItem[Constants.FieldDeNghi] = deNghiId;
+                            deNghiHistoryItem[Constants.FieldNguoiXuLy] = spWeb.CurrentUser.ID;
+                            deNghiHistoryItem[Constants.FieldNgayXuLy] = DateTime.Now;
+                            deNghiHistoryItem[Constants.FieldHanhDong] = hanhDong;
+                            deNghiHistoryItem[Constants.FieldMoTa] = note;
+                            deNghiHistoryItem.Update();
+                            web.AllowUnsafeUpdates = false;
+                        }
+                    }
+                });
+            }
+            catch (Exception ex)
+            {
+                LoggingServices.LogException(ex);
+            }
+            LoggingServices.LogMessage("End AddDeNghiHistory");
         }
     }
 }

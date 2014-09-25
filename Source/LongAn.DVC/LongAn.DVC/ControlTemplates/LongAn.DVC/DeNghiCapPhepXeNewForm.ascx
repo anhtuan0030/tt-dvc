@@ -239,7 +239,7 @@
                                             <div class="clear"></div>
                                         </div>
                                         <div class="row">
-                                            <div class="grid_4">
+                                            <div class="grid_3">
                                                 <SharePoint:FieldLabel ID="FieldLabel39"  FieldName="SoTrucSauCuaRoMooc"  runat="server"  />
                                             </div>
                                             <div class="grid_1">

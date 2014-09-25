@@ -1,4 +1,5 @@
 ﻿using CamlexNET;
+using CamlexNET.Impl.Helpers;
 using LongAn.DVC.Common;
 using LongAn.DVC.Helpers;
 using Microsoft.SharePoint;
@@ -52,7 +53,7 @@ namespace LongAn.DVC.WebParts.DeNghiListView
                 this.BindItemsList();
                 //Link & Title
                 literalDeNghiTitle.Text = DeNghiTitle;
-                if (CurrentUserRole == (int)CapXuLy.NhanVienTiepNhan)
+                if (CurrentUserRole == CapXuLy.MotCua)
                 {
                     divAddNew.Visible = true;
                     var deNghiUrl = (SPContext.Current.Web.ServerRelativeUrl + Constants.ListUrlDeNghiCapPhep).Replace("//", "/");
@@ -63,19 +64,23 @@ namespace LongAn.DVC.WebParts.DeNghiListView
                     hplAddNew.NavigateUrl = viewUrl;
                 }
                 hplTrangChu.NavigateUrl = LinkTrangChu;
+                hplHoSoChoTiepNhan.NavigateUrl = LinkHoSoChoTiepNhan;
                 hplHoSoDaTiepNhan.NavigateUrl = LinkHoSoDaTiepNhan;
-                hplHoSoChuaPhanCong.NavigateUrl = LinkHoSoChoPhanCong;
-                hplHoSoDaPhanCong.NavigateUrl = LinkHoSoDaPhanCong;
+                hplHoSoChoXuLy.NavigateUrl = LinkHoSoChoXuLy;
+                hplHoSoDangXuLy.NavigateUrl = LinkHoSoDangXuLy;
+                hplHoSoChoBoSung.NavigateUrl = LinkHoSoChoBoSung;
                 hplHoSoChoDuyet.NavigateUrl = LinkHoSoChoDuyet;
                 hplHoSoChoCapPhep.NavigateUrl = LinkHoSoChoCapPhep;
-                hplHoSoDaCapPhep.NavigateUrl = LinkHoSoDaCapPhep;
+                hplHoSoDuocCapPhep.NavigateUrl = LinkHoSoDuocCapPhep;
                 hplHoSoBiTuChoi.NavigateUrl = LinkHoSoBiTuChoi;
+                hplHoSoDaHoanThanh.NavigateUrl = LinkHoSoDaHoanThanh;
+                hplHoSoChuaHoanThanh.NavigateUrl = LinkHoSoChuaHoanThanh;
                 hplThongKeBaoCao.NavigateUrl = LinkThongKeBaoCao;
             }
         }
 
         #region Private Properties
-        private int CurrentUserRole
+        private CapXuLy CurrentUserRole
         {
             get
             {
@@ -87,7 +92,7 @@ namespace LongAn.DVC.WebParts.DeNghiListView
                 }
                 else
                     currentUserRole = (CapXuLy)ViewState[Constants.ConfViewStateCapXuLy];
-                return (int)currentUserRole;
+                return currentUserRole;
             }
         }
         #endregion Private Properties
@@ -157,31 +162,38 @@ namespace LongAn.DVC.WebParts.DeNghiListView
 
         [WebBrowsable(true),
          WebDisplayName("Tiêu đề"),
-         WebDescription("This Accepts text Input"),
+         WebDescription("Nhập tiêu đề"),
          Personalizable(PersonalizationScope.Shared),
          Category("LongAn.DVC")]
         public string DeNghiTitle { get; set; }
 
         [WebBrowsable(true),
          WebDisplayName("Trạng thái xử lý"),
-         WebDescription("This Accepts number Input"),
+         WebDescription("Nhập trạng thái xử lý"),
          Personalizable(PersonalizationScope.Shared),
          Category("LongAn.DVC")]
         public int TrangThai { get; set; }
 
         [WebBrowsable(true),
          WebDisplayName("Phân trang"),
-         WebDescription("This Accepts number Input"),
+         WebDescription("Cấu hình phân trang"),
          Personalizable(PersonalizationScope.Shared),
          Category("LongAn.DVC")]
         public int PageSize { get; set; }
 
         [WebBrowsable(true),
          WebDisplayName("Link Trang chủ"),
-         WebDescription("This Accepts text Input"),
+         WebDescription("Linh trang chủ"),
          Personalizable(PersonalizationScope.Shared),
          Category("LongAn.DVC")]
         public string LinkTrangChu { get; set; }
+
+        [WebBrowsable(true),
+         WebDisplayName("Link Hồ sơ chờ tiếp nhận"),
+         WebDescription("Một cửa chờ tiếp nhận"),
+         Personalizable(PersonalizationScope.Shared),
+         Category("LongAn.DVC")]
+        public string LinkHoSoChoTiepNhan { get; set; }
 
         [WebBrowsable(true),
          WebDisplayName("Link Hồ sơ đã tiếp nhận"),
@@ -195,14 +207,21 @@ namespace LongAn.DVC.WebParts.DeNghiListView
          WebDescription("Chờ Trưởng phó phòng phân công / Cán bộ xử lý"),
          Personalizable(PersonalizationScope.Shared),
          Category("LongAn.DVC")]
-        public string LinkHoSoChoPhanCong { get; set; }
+        public string LinkHoSoChoXuLy { get; set; }
 
         [WebBrowsable(true),
          WebDisplayName("Link Hồ sơ đang xử lý"),
-         WebDescription("Trưởng phó phòng đã phân công"),
+         WebDescription("Trưởng phó phòng đã phân công / Cán bộ tiếp nhận xử lý"),
          Personalizable(PersonalizationScope.Shared),
          Category("LongAn.DVC")]
-        public string LinkHoSoDaPhanCong { get; set; }
+        public string LinkHoSoDangXuLy { get; set; }
+
+        [WebBrowsable(true),
+         WebDisplayName("Link Hồ sơ chờ bổ sung"),
+         WebDescription("Hồ sơ chờ bổ sung"),
+         Personalizable(PersonalizationScope.Shared),
+         Category("LongAn.DVC")]
+        public string LinkHoSoChoBoSung { get; set; }
 
         [WebBrowsable(true),
          WebDisplayName("Link Hồ sơ chờ duyệt"),
@@ -219,11 +238,11 @@ namespace LongAn.DVC.WebParts.DeNghiListView
         public string LinkHoSoChoCapPhep { get; set; }
 
         [WebBrowsable(true),
-         WebDisplayName("Link Hồ sơ đã cấp phép"),
+         WebDisplayName("Link Hồ sơ được cấp phép"),
          WebDescription("Hồ sơ đã duyệt"),
          Personalizable(PersonalizationScope.Shared),
          Category("LongAn.DVC")]
-        public string LinkHoSoDaCapPhep { get; set; }
+        public string LinkHoSoDuocCapPhep { get; set; }
 
         [WebBrowsable(true),
          WebDisplayName("Link Hồ sơ bị từ chối"),
@@ -231,6 +250,20 @@ namespace LongAn.DVC.WebParts.DeNghiListView
          Personalizable(PersonalizationScope.Shared),
          Category("LongAn.DVC")]
         public string LinkHoSoBiTuChoi { get; set; }
+
+        [WebBrowsable(true),
+         WebDisplayName("Link Hồ sơ đã hoàn thành"),
+         WebDescription("Hồ sơ đã xác nhận hoàn thành"),
+         Personalizable(PersonalizationScope.Shared),
+         Category("LongAn.DVC")]
+        public string LinkHoSoDaHoanThanh { get; set; }
+
+        [WebBrowsable(true),
+         WebDisplayName("Link Hồ sơ chưa hoàn thành"),
+         WebDescription("Hồ sơ đã xác nhận chưa hoàn thành"),
+         Personalizable(PersonalizationScope.Shared),
+         Category("LongAn.DVC")]
+        public string LinkHoSoChuaHoanThanh { get; set; }
 
         [WebBrowsable(true),
          WebDisplayName("Link Thống kê báo cáo"),
@@ -300,7 +333,21 @@ namespace LongAn.DVC.WebParts.DeNghiListView
                     if (dataTable != null && dataTable.Rows.Count > PageSize)
                         divPagging.Visible = true;
                 }
+                else
+                {
+                    _PageDataSource = null;
+                    ViewState["TotalPages"] = 0;
 
+                    //this.lblPageInfo.Text = "Page " + (CurrentPage + 1) + " of " + _PageDataSource.PageCount;
+                    this.lbtnPrevious.Enabled = false;
+                    this.lbtnNext.Enabled = false;
+                    this.lbtnFirst.Enabled = false;
+                    this.lbtnLast.Enabled = false;
+
+                    this.repeaterLists.DataSource = _PageDataSource;
+                    this.repeaterLists.DataBind();
+                    this.DoPaging();
+                }
             }
             catch (Exception ex)
             {
@@ -378,25 +425,77 @@ namespace LongAn.DVC.WebParts.DeNghiListView
             try
             {
                 LoggingServices.LogMessage("Begin GetDeNghi, Trang Thai Xu Ly: " + trangThaiXuLy);
-                //SPQuery caml = Camlex.Query().Where(x => (string)x[Constants.FieldTrangThai] == trangThaiXuLy.ToString())
-                //                                    .OrderBy(x => new[] { x["ID"] as Camlex.Desc })
-                //                                    .ToSPQuery();
+
+                var searchConditions = new List<Expression<Func<SPListItem, bool>>>();
+                searchConditions.Add(x => ((string)x[Constants.FieldTrangThai]) == trangThaiXuLy.ToString());
+                if (!string.IsNullOrEmpty(txtTuKhoa.Text.Trim()))
+                    searchConditions.Add(x => ((string)x[Constants.FieldTitle]).Contains(txtTuKhoa.Text.Trim()));
+                if (!string.IsNullOrEmpty(txtCaNhanToChuc.Text.Trim()))
+                    searchConditions.Add(x => ((string)x[Constants.FieldCaNhanToChuc]).Contains(txtCaNhanToChuc.Text.Trim()));
+                if (!string.IsNullOrEmpty(txtSoDienThoai.Text.Trim()))
+                    searchConditions.Add(x => ((string)x[Constants.FieldSoDienThoai]).Contains(txtSoDienThoai.Text.Trim()));
+                if (!dtcNgayDeNghiDen.IsDateEmpty && !dtcNgayDeNghiTu.IsDateEmpty)
+                {
+                    searchConditions.Add(x => (x[Constants.FieldNgayNopHoSo]) >= (DataTypes.DateTime)dtcNgayDeNghiTu.SelectedDate.ToString("yyyy-MM-dd"));
+                    searchConditions.Add(x => (x[Constants.FieldNgayNopHoSo]) <= (DataTypes.DateTime)dtcNgayDeNghiDen.SelectedDate.ToString("yyyy-MM-dd"));
+                }
+
+                var searchExpr = ExpressionsHelper.CombineAnd(searchConditions);
+
+                var userConditions = new List<Expression<Func<SPListItem, bool>>>();
+                switch (CurrentUserRole)
+                {
+                    case CapXuLy.CaNhanToChuc:
+                        break;
+                    case CapXuLy.MotCua:
+                        userConditions.Add(x => x["MotCuaUser"] == (DataTypes.UserId)SPContext.Current.Web.CurrentUser.ID.ToString());
+                        userConditions.Add(x => (DataTypes.User)x["MotCuaUser"] == null);
+                        break;
+                    case CapXuLy.TruongPhoPhong:
+                        userConditions.Add(x => x["TruongPhongUser"] == (DataTypes.UserId)SPContext.Current.Web.CurrentUser.ID.ToString());
+                        userConditions.Add(x => (DataTypes.User)x["TruongPhongUser"] == null);
+                        break;
+                    case CapXuLy.CanBo:
+                        userConditions.Add(x => x["CanBoUser"] == (DataTypes.UserId)SPContext.Current.Web.CurrentUser.ID.ToString());
+                        userConditions.Add(x => (DataTypes.User)x["CanBoUser"] == null);
+                        break;
+                    case CapXuLy.LanhDaoSo:
+                        userConditions.Add(x => x["LanhDaoUser"] == (DataTypes.UserId)SPContext.Current.Web.CurrentUser.ID.ToString());
+                        userConditions.Add(x => (DataTypes.User)x["LanhDaoUser"] == null);
+                        break;
+                    case CapXuLy.VanPhongSo:
+                        break;
+                    default:
+                        break;
+                }
+
+                Expression<Func<Microsoft.SharePoint.SPListItem, bool>> userExpr = null;
+                if (userConditions != null)
+                    userExpr = ExpressionsHelper.CombineOr(userConditions);
+
                 var expressions = new List<Expression<Func<SPListItem, bool>>>();
+                expressions.Add(searchExpr);
+                if (userExpr != null)
+                    expressions.Add(userExpr);
+
+                #region Backup
+                /*
                 expressions.Add(x => ((string)x[Constants.FieldTrangThai]) == trangThaiXuLy.ToString());
                 if (!string.IsNullOrEmpty(txtTuKhoa.Text.Trim()))
                     expressions.Add(x => ((string)x[Constants.FieldTitle]).Contains(txtTuKhoa.Text.Trim()));
                 if (!string.IsNullOrEmpty(txtCaNhanToChuc.Text.Trim()))
-                    expressions.Add(x => ((string)x["Title"]).Contains(txtCaNhanToChuc.Text.Trim()));
+                    expressions.Add(x => ((string)x[Constants.FieldCaNhanToChuc]).Contains(txtCaNhanToChuc.Text.Trim()));
                 if (!string.IsNullOrEmpty(txtSoDienThoai.Text.Trim()))
-                    expressions.Add(x => ((string)x["Title"]).Contains(txtSoDienThoai.Text.Trim()));
+                    expressions.Add(x => ((string)x[Constants.FieldSoDienThoai]).Contains(txtSoDienThoai.Text.Trim()));
                 if (!dtcNgayDeNghiDen.IsDateEmpty && !dtcNgayDeNghiTu.IsDateEmpty)
                 {
-                    expressions.Add(x => (x["Title"]) >= (DataTypes.DateTime)dtcNgayDeNghiTu.SelectedDate.ToString("yyyy-MM-dd"));
-                    expressions.Add(x => (x["Title"]) <= (DataTypes.DateTime)dtcNgayDeNghiDen.SelectedDate.ToString("yyyy-MM-dd"));
+                    expressions.Add(x => (x[Constants.FieldNgayNopHoSo]) >= (DataTypes.DateTime)dtcNgayDeNghiTu.SelectedDate.ToString("yyyy-MM-dd"));
+                    expressions.Add(x => (x[Constants.FieldNgayNopHoSo]) <= (DataTypes.DateTime)dtcNgayDeNghiDen.SelectedDate.ToString("yyyy-MM-dd"));
                 }
                 //caml.ViewFields = string.Concat("<FieldRef Name='ID' />",                                    
                 //                                "<FieldRef Name='Supervisor' />");
-
+                */
+                #endregion Backup
 
                 var camlQuery = Camlex.Query().WhereAll(expressions).ToString();
                 SPQuery spQuery = new SPQuery();
@@ -419,7 +518,7 @@ namespace LongAn.DVC.WebParts.DeNghiListView
             return dataTable;
         }
 
-        private void UpdateItem(int itemId, TrangThaiXuLy trangThaiXuLy, CapXuLy capXuLy)
+        private void UpdateItem(int itemId, TrangThaiHoSo trangThaiXuLy, CapXuLy capXuLy)
         {
             try
             {
@@ -428,7 +527,12 @@ namespace LongAn.DVC.WebParts.DeNghiListView
                 var deNghiList = web.GetList((web.ServerRelativeUrl + Constants.ListUrlDeNghiCapPhep).Replace("//", "/"));
                 var deNghiItem = deNghiList.GetItemById(itemId);
                 deNghiItem[Constants.FieldTrangThai] = (int)trangThaiXuLy;
-                deNghiItem[Constants.FieldCapDuyet] = (int)capXuLy;
+                deNghiItem[Constants.FieldCapDuyet] = capXuLy;
+                var currentUserId = SPContext.Current.Web.CurrentUser.ID;
+                if (trangThaiXuLy == TrangThaiHoSo.DaTiepNhan)
+                    deNghiItem[Constants.FieldMotCuaUser] = currentUserId;
+                if (trangThaiXuLy == TrangThaiHoSo.DangXuLy)
+                    deNghiItem[Constants.FieldCanBoUser] = currentUserId;
                 deNghiItem.Update();
             }
             catch (Exception ex)
@@ -460,110 +564,142 @@ namespace LongAn.DVC.WebParts.DeNghiListView
                     literalLoaiCapPhep.Text = rowView[Constants.FieldLoaiDeNghi].ToString();
 
                     Literal literalNgayDeNghi = (Literal)e.Item.FindControl("literalNgayDeNghi");
-                    literalNgayDeNghi.Text = rowView[Constants.FieldCreated].ToString();
+                    literalNgayDeNghi.Text = rowView[Constants.FieldNgayNopHoSo].ToString();
 
-                    HyperLink lbtViewItem = (HyperLink)e.Item.FindControl("lbtViewItem");
-                    //lbtViewItem.CommandName = "ClickLinkButton";
-                    //lbtViewItem.CommandArgument = commandAgrument;
+                    Literal literalTrangThai = (Literal)e.Item.FindControl("literalTrangThai");
+                    literalTrangThai.Text = rowView[Constants.FieldTrangThaiText].ToString();
+
+                    HyperLink hplViewItem = (HyperLink)e.Item.FindControl("hplViewItem");
                     var deNghiUrl = (SPContext.Current.Web.ServerRelativeUrl + Constants.ListUrlDeNghiCapPhep).Replace("//", "/");
                     var currentPage = SPUtility.GetPageUrlPath(HttpContext.Current);
                     var viewUrl = string.Format(Constants.ConfLinkPageDispForm, deNghiUrl, commandAgrument, currentPage);
-                    lbtViewItem.NavigateUrl = viewUrl;
+                    hplViewItem.NavigateUrl = viewUrl;
+
+                    LinkButton lbtDisable1 = (LinkButton)e.Item.FindControl("lbtDisable1");
+                    LinkButton lbtDisable2 = (LinkButton)e.Item.FindControl("lbtDisable2");
+                    LinkButton lbtDisable3 = (LinkButton)e.Item.FindControl("lbtDisable3");
+                    LinkButton lbtDisable4 = (LinkButton)e.Item.FindControl("lbtDisable4");
 
                     switch (CurrentUserRole)
                     {
-                        case (int)CapXuLy.NhanVienTiepNhan:
-                            if (TrangThai == (int)TrangThaiXuLy.DaTiepNhan)
+                        case CapXuLy.MotCua:
+                            if (TrangThai == (int)TrangThaiHoSo.ChoTiepNhan)
+                            {
+                                LinkButton lbtTiepNhan = (LinkButton)e.Item.FindControl("lbtTiepNhan");
+                                lbtTiepNhan.CommandName = "TiepNhanHoSo";
+                                lbtTiepNhan.Style.Add("display", "block");
+                                lbtTiepNhan.CommandArgument = commandAgrument;
+                                lbtTiepNhan.OnClientClick = "if (!confirm('Bạn có chắc chắn muốn tiếp nhận hồ sơ này không?')) return false;";
+                                lbtDisable1.Style.Add("display", "none");
+
+                                HyperLink hplTuChoiHoSo = (HyperLink)e.Item.FindControl("hplTuChoiHoSo");
+                                hplTuChoiHoSo.Style.Add("display", "block");
+                                hplTuChoiHoSo.NavigateUrl = string.Format("{0}&Action={1}&Atocken={2}", viewUrl, Constants.ConfActionTC, Constants.ConfQueryStringTC);
+                                lbtDisable4.Style.Add("display", "none");
+                            }
+                            else if (TrangThai == (int)TrangThaiHoSo.DaTiepNhan)
                             {
                                 LinkButton lbtChuyenTruongPhong = (LinkButton)e.Item.FindControl("lbtChuyenTruongPhong");
-                                lbtChuyenTruongPhong.CommandName = "ClickChuyenTruongPhong";
+                                lbtChuyenTruongPhong.CommandName = "ChuyenTruongPhoPhong";
                                 lbtChuyenTruongPhong.Style.Add("display", "block");
                                 lbtChuyenTruongPhong.CommandArgument = commandAgrument;
                                 lbtChuyenTruongPhong.OnClientClick = "if (!confirm('Bạn có chắc chắn muốn chuyển hồ sơ này không?')) return false;";
-                                LinkButton lblDisable1 = (LinkButton)e.Item.FindControl("lblDisable1");
-                                lblDisable1.Style.Add("display", "none");
+                                lbtDisable2.Style.Add("display", "none");
 
-                                LinkButton lbtTuChoiHoSo = (LinkButton)e.Item.FindControl("lbtTuChoiHoSo");
-                                lbtTuChoiHoSo.CommandName = "ClickTuChoiHoSo";
-                                lbtTuChoiHoSo.Style.Add("display", "block");
-                                lbtTuChoiHoSo.CommandArgument = commandAgrument;
-                                lbtTuChoiHoSo.OnClientClick = "if (!confirm('Bạn có chắc chắn muốn từ chối hồ sơ này không?')) return false;";
+                                HyperLink hplTuChoiHoSo = (HyperLink)e.Item.FindControl("hplTuChoiHoSo");
+                                hplTuChoiHoSo.Style.Add("display", "block");
+                                hplTuChoiHoSo.NavigateUrl = string.Format("{0}&Action={1}&Atocken={2}", viewUrl, Constants.ConfActionTC, Constants.ConfQueryStringTC);
+                                lbtDisable4.Style.Add("display", "none");
+                            }
+                            else if (TrangThai == (int)TrangThaiHoSo.DuocCapPhep)
+                            {
+                                LinkButton lbtHoanThanh = (LinkButton)e.Item.FindControl("lbtHoanThanh");
+                                lbtHoanThanh.CommandName = "XacNhanHoanThanh";
+                                lbtHoanThanh.Style.Add("display", "block");
+                                lbtHoanThanh.CommandArgument = commandAgrument;
+                                lbtHoanThanh.OnClientClick = "if (!confirm('Bạn có chắc chắn muốn xác nhận hồ sơ này đã hoàn thành không?')) return false;";
+                                lbtDisable1.Style.Add("display", "none");
 
-                                LinkButton lblDisable2 = (LinkButton)e.Item.FindControl("lblDisable2");
-                                lblDisable2.Style.Add("display", "none");
+                                LinkButton lbtChuaHoanThanh = (LinkButton)e.Item.FindControl("lbtChuaHoanThanh");
+                                lbtChuaHoanThanh.CommandName = "XacNhanChuaHoanThanh";
+                                lbtChuaHoanThanh.Style.Add("display", "block");
+                                lbtChuaHoanThanh.CommandArgument = commandAgrument;
+                                lbtChuaHoanThanh.OnClientClick = "if (!confirm('Bạn có chắc chắn muốn xác nhận hồ sơ này chưa hoàn thành không?')) return false;";
+                                lbtDisable2.Style.Add("display", "none");
                             }
                             break;
-                        case (int)CapXuLy.TruongPhoPhong:
-                            if (TrangThai == (int)TrangThaiXuLy.ChoXuLy)
+                        case CapXuLy.TruongPhoPhong:
+                            if (TrangThai == (int)TrangThaiHoSo.ChoXuLy)
                             {
-                                HyperLink lbtPhanCongHoSo = (HyperLink)e.Item.FindControl("lbtPhanCongHoSo");
-                                //lbtPhanCongHoSo.CommandName = "ClickPhanCongHoSo";
-                                lbtPhanCongHoSo.Style.Add("display", "block");
-                                //lbtPhanCongHoSo.CommandArgument = commandAgrument;
-                                //lbtPhanCongHoSo.OnClientClick = "if (!confirm('Bạn có chắc chắn muốn chuyển hồ sơ này không?')) return false;";
-                                lbtPhanCongHoSo.NavigateUrl = viewUrl + "&PC=" + Constants.ConfQueryStringPC;
-                                LinkButton lblDisable2 = (LinkButton)e.Item.FindControl("lblDisable2");
-                                lblDisable2.Style.Add("display", "none");
+                                HyperLink hplPhanCongHoSo = (HyperLink)e.Item.FindControl("hplPhanCongHoSo");
+                                hplPhanCongHoSo.Style.Add("display", "block");
+                                hplPhanCongHoSo.NavigateUrl = string.Format("{0}&Action={1}&Atocken={2}", viewUrl, Constants.ConfActionPC, Constants.ConfQueryStringPC);
+                                lbtDisable3.Style.Add("display", "none");
+
+                                HyperLink hplTuChoiHoSo = (HyperLink)e.Item.FindControl("hplTuChoiHoSo");
+                                hplTuChoiHoSo.Style.Add("display", "block");
+                                hplTuChoiHoSo.NavigateUrl = string.Format("{0}&Action={1}&Atocken={2}", viewUrl, Constants.ConfActionTC, Constants.ConfQueryStringTC);
+                                lbtDisable4.Style.Add("display", "none");
                             }
-                            else if (TrangThai == (int)TrangThaiXuLy.ChoTruongPhongDuyet)
+                            else if (TrangThai == (int)TrangThaiHoSo.ChoDuyet)
                             {
                                 LinkButton lbtTrinhLanhDaoSo = (LinkButton)e.Item.FindControl("lbtTrinhLanhDaoSo");
-                                lbtTrinhLanhDaoSo.CommandName = "ClickTrinhLanhDaoSo";
+                                lbtTrinhLanhDaoSo.CommandName = "TrinhLanhDaoSo";
                                 lbtTrinhLanhDaoSo.Style.Add("display", "block");
                                 lbtTrinhLanhDaoSo.CommandArgument = commandAgrument;
                                 lbtTrinhLanhDaoSo.OnClientClick = "if (!confirm('Bạn có chắc chắn muốn trình lãnh đạo hồ sơ này không?')) return false;";
-                                LinkButton lblDisable1 = (LinkButton)e.Item.FindControl("lblDisable1");
-                                lblDisable1.Style.Add("display", "none");
+                                lbtDisable2.Style.Add("display", "none");
 
-                                LinkButton lbtTuChoiHoSo = (LinkButton)e.Item.FindControl("lbtTuChoiHoSo");
-                                lbtTuChoiHoSo.CommandName = "ClickTuChoiHoSo";
-                                lbtTuChoiHoSo.Style.Add("display", "block");
-                                lbtTuChoiHoSo.CommandArgument = commandAgrument;
-                                lbtTuChoiHoSo.OnClientClick = "if (!confirm('Bạn có chắc chắn muốn từ chối hồ sơ này không?')) return false;";
-                                LinkButton lblDisable2 = (LinkButton)e.Item.FindControl("lblDisable2");
-                                lblDisable2.Style.Add("display", "none");
+                                HyperLink hplTuChoiHoSo = (HyperLink)e.Item.FindControl("hplTuChoiHoSo");
+                                hplTuChoiHoSo.Style.Add("display", "block");
+                                hplTuChoiHoSo.NavigateUrl = string.Format("{0}&Action={1}&Atocken={2}", viewUrl, Constants.ConfActionTC, Constants.ConfQueryStringTC);
+                                lbtDisable4.Style.Add("display", "none");
                             }
                             break;
-                        case (int)CapXuLy.CanBoXuLy:
-                            if (TrangThai == (int)TrangThaiXuLy.ChoXuLy || TrangThai == (int)TrangThaiXuLy.DaPhanCong)
+                        case CapXuLy.CanBo:
+                            if (TrangThai == (int)TrangThaiHoSo.ChoXuLy)
                             {
-                                HyperLink lbtYeuCauBoSung = (HyperLink)e.Item.FindControl("lbtYeuCauBoSung");
-                                //lbtYeuCauBoSung.CommandName = "ClickYeuCauBoSung";
-                                lbtYeuCauBoSung.Style.Add("display", "block");
-                                //lbtYeuCauBoSung.CommandArgument = commandAgrument;
-                                //lbtYeuCauBoSung.OnClientClick = "if (!confirm('Bạn có chắc chắn muốn yêu cầu hồ sơ này gửi bổ sung không?')) return false;";
-                                lbtYeuCauBoSung.NavigateUrl = viewUrl + "&BS=" + Constants.ConfQueryStringBS;
-                                LinkButton lblDisable2 = (LinkButton)e.Item.FindControl("lblDisable2");
-                                lblDisable2.Style.Add("display", "none");
+                                LinkButton lbtTiepNhan = (LinkButton)e.Item.FindControl("lbtTiepNhan");
+                                lbtTiepNhan.CommandName = "TiepNhanXuLy";
+                                lbtTiepNhan.Style.Add("display", "block");
+                                lbtTiepNhan.CommandArgument = commandAgrument;
+                                lbtTiepNhan.OnClientClick = "if (!confirm('Bạn có chắc chắn muốn tiếp nhận hồ sơ này không?')) return false;";
+                                lbtDisable1.Style.Add("display", "none");
+                            }
+                            else if (TrangThai == (int)TrangThaiHoSo.DangXuLy)
+                            {
+                                HyperLink hplYeuCauBoSung = (HyperLink)e.Item.FindControl("hplYeuCauBoSung");
+                                hplYeuCauBoSung.Style.Add("display", "block");
+                                hplYeuCauBoSung.NavigateUrl = string.Format("{0}&Action={1}&Atocken={2}", viewUrl, Constants.ConfActionBS, Constants.ConfQueryStringBS);
+                                lbtDisable3.Style.Add("display", "none");
 
                                 LinkButton lbtTrinhTruongPhoPQLHT = (LinkButton)e.Item.FindControl("lbtTrinhTruongPhoPQLHT");
-                                lbtTrinhTruongPhoPQLHT.CommandName = "ClickTrinhTruongPhoPQLHT";
+                                lbtTrinhTruongPhoPQLHT.CommandName = "TrinhTruongPhoPhong";
                                 lbtTrinhTruongPhoPQLHT.Style.Add("display", "block");
                                 lbtTrinhTruongPhoPQLHT.CommandArgument = commandAgrument;
                                 lbtTrinhTruongPhoPQLHT.OnClientClick = "if (!confirm('Bạn có chắc chắn muốn trình hồ sơ này không?')) return false;";
-                                LinkButton lblDisable1 = (LinkButton)e.Item.FindControl("lblDisable1");
-                                lblDisable1.Style.Add("display", "none");
+                                lbtDisable2.Style.Add("display", "none");
+
+                                HyperLink hplTuChoiHoSo = (HyperLink)e.Item.FindControl("hplTuChoiHoSo");
+                                hplTuChoiHoSo.Style.Add("display", "block");
+                                hplTuChoiHoSo.NavigateUrl = string.Format("{0}&Action={1}&Atocken={2}", viewUrl, Constants.ConfActionTC, Constants.ConfQueryStringTC);
+                                lbtDisable4.Style.Add("display", "none");
                             }
                             break;
-                        case (int)CapXuLy.LanhDaoSo:
-                            if (TrangThai == (int)TrangThaiXuLy.ChoLanhDaoDuyet)
+                        case CapXuLy.LanhDaoSo:
+                            if (TrangThai == (int)TrangThaiHoSo.ChoCapPhep)
                             {
                                 LinkButton lbtDuyetHoSo = (LinkButton)e.Item.FindControl("lbtDuyetHoSo");
-                                lbtDuyetHoSo.CommandName = "ClickDuyetHoSo";
+                                lbtDuyetHoSo.CommandName = "DuyetCapPhepHoSo";
                                 lbtDuyetHoSo.Style.Add("display", "block");
                                 lbtDuyetHoSo.CommandArgument = commandAgrument;
                                 lbtDuyetHoSo.OnClientClick = "if (!confirm('Bạn có chắc chắn muốn duyệt thuận hồ sơ này không?')) return false;";
+                                lbtDisable2.Style.Add("display", "none");
 
-                                LinkButton lbtTuChoiHoSo = (LinkButton)e.Item.FindControl("lbtTuChoiHoSo");
-                                lbtTuChoiHoSo.CommandName = "ClickTuChoiHoSo";
-                                lbtTuChoiHoSo.Style.Add("display", "block");
-                                lbtTuChoiHoSo.CommandArgument = commandAgrument;
-                                lbtTuChoiHoSo.OnClientClick = "if (!confirm('Bạn có chắc chắn muốn từ chối hồ sơ này không?')) return false;";
-
-                                LinkButton lblDisable1 = (LinkButton)e.Item.FindControl("lblDisable1");
-                                lblDisable1.Style.Add("display", "none");
-                                LinkButton lblDisable2 = (LinkButton)e.Item.FindControl("lblDisable2");
-                                lblDisable2.Style.Add("display", "none");
+                                HyperLink hplTuChoiHoSo = (HyperLink)e.Item.FindControl("hplTuChoiHoSo");
+                                hplTuChoiHoSo.Style.Add("display", "block");
+                                hplTuChoiHoSo.NavigateUrl = string.Format("{0}&Action={1}&Atocken={2}", viewUrl, Constants.ConfActionTC, Constants.ConfQueryStringTC);
+                                lbtDisable4.Style.Add("display", "none");
                             }
                                 break;
                         default:
@@ -580,23 +716,45 @@ namespace LongAn.DVC.WebParts.DeNghiListView
         protected void repeaterLists_ItemCommand(object source, RepeaterCommandEventArgs e)
         {
             int commandText = int.Parse(e.CommandArgument.ToString());
+            var web = SPContext.Current.Web;
             try
             {
                 LoggingServices.LogMessage("Begin link button click, command: " + e.CommandName + ", item id: " + commandText);
-                if (e.CommandName == "ClickChuyenTruongPhong")
-                    UpdateItem(commandText, TrangThaiXuLy.ChoXuLy, CapXuLy.TruongPhoPhong);
-                else if (e.CommandName == "ClickPhanCongHoSo")// xử lý trên form phân công xử lý hồ sơ
-                    UpdateItem(commandText, TrangThaiXuLy.DaPhanCong, CapXuLy.CanBoXuLy);
-                else if (e.CommandName == "ClickTrinhLanhDaoSo")
-                    UpdateItem(commandText, TrangThaiXuLy.ChoLanhDaoDuyet, CapXuLy.LanhDaoSo);
-                else if (e.CommandName == "ClickTuChoiHoSo")
-                    UpdateItem(commandText, TrangThaiXuLy.HoSoBiTuChoi, CapXuLy.CaNhanToChuc);
-                else if (e.CommandName == "ClickYeuCauBoSung")// xử lý trên form yêu cầu bổ sung hồ sơ
-                    UpdateItem(commandText, TrangThaiXuLy.HoSoBiTuChoi, CapXuLy.CaNhanToChuc);
-                else if (e.CommandName == "ClickTrinhTruongPhoPQLHT")
-                    UpdateItem(commandText, TrangThaiXuLy.ChoTruongPhongDuyet, CapXuLy.TruongPhoPhong);
-                else if (e.CommandName == "ClickDuyetHoSo")
-                    UpdateItem(commandText, TrangThaiXuLy.HoSoDuocDuyet, CapXuLy.NhanVienTiepNhan);
+                var trangThaiHoSo = TrangThaiHoSo.ChoTiepNhan;
+                var capXuLy = CapXuLy.MotCua;
+                switch (e.CommandName)
+                {
+                    case "TiepNhanHoSo":
+                        trangThaiHoSo = TrangThaiHoSo.DaTiepNhan;
+                        break;
+                    case "ChuyenTruongPhoPhong":
+                        trangThaiHoSo = TrangThaiHoSo.ChoXuLy;
+                        break;
+                    case "XacNhanHoanThanh":
+                        trangThaiHoSo = TrangThaiHoSo.HoanThanh;
+                        break;
+                    case "XacNhanChuaHoanThanh":
+                        trangThaiHoSo = TrangThaiHoSo.ChuaHoanThanh;
+                        break;
+                    case "TrinhLanhDaoSo":
+                        trangThaiHoSo = TrangThaiHoSo.ChoCapPhep;
+                        capXuLy = CapXuLy.LanhDaoSo;
+                        break;
+                    case "TiepNhanXuLy":
+                        trangThaiHoSo = TrangThaiHoSo.DangXuLy;
+                        capXuLy = CapXuLy.CanBo;
+                        break;
+                    case "TrinhTruongPhoPhong":
+                        trangThaiHoSo = TrangThaiHoSo.ChoDuyet;
+                        capXuLy = CapXuLy.TruongPhoPhong;
+                        break;
+                    case "DuyetCapPhepHoSo":
+                        trangThaiHoSo = TrangThaiHoSo.DuocCapPhep;
+                        capXuLy = CapXuLy.MotCua;
+                        break;
+                }
+                UpdateItem(commandText, trangThaiHoSo, capXuLy);
+                DeNghiHelper.AddDeNghiHistory(web, capXuLy, commandText, e.CommandName, string.Empty);
                 this.BindItemsList();
             }
             catch (Exception ex)

@@ -27,9 +27,8 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
                 currentUserRole = (CapXuLy)ViewState[Constants.ConfViewStateCapXuLy];
 
             if (currentUserRole == CapXuLy.CaNhanToChuc && 
-                (currentStatus == (int)TrangThaiXuLy.KhoiTao || 
-                currentStatus == (int)TrangThaiXuLy.HoSoChoBoSung ||
-                currentStatus == (int)TrangThaiXuLy.HoSoBiTuChoi))
+                (currentStatus == (int)TrangThaiHoSo.KhoiTao ||
+                currentStatus == (int)TrangThaiHoSo.ChoBoSung))
             {
                 btnSave.Visible = true;
                 btnGuiHoSo.Visible = true;
@@ -41,7 +40,7 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
 
         void btnGuiHoSo_Click(object sender, EventArgs e)
         {
-            UpdateItem(TrangThaiXuLy.DaTiepNhan);
+            UpdateItem(TrangThaiHoSo.ChoTiepNhan);
         }
 
         void btnSave_Click(object sender, EventArgs e)
@@ -85,7 +84,7 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
             }
         }
 
-        void UpdateItem(TrangThaiXuLy trangThai)
+        void UpdateItem(TrangThaiHoSo trangThai)
         {
             if (!this.Page.IsValid)
                 return;
@@ -95,7 +94,7 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
             longOperation.TrailingHTML = "Once the operation is finished you will be redirected to result page";
             longOperation.Begin();
             SPContext.Current.ListItem[Constants.FieldTrangThai] = (int)trangThai;
-            SPContext.Current.ListItem[Constants.FieldCapDuyet] = (int)CapXuLy.NhanVienTiepNhan;
+            SPContext.Current.ListItem[Constants.FieldCapDuyet] = (int)CapXuLy.MotCua;
             SaveButton.SaveItem(SPContext.Current, false, "Updated by " + SPContext.Current.Web.CurrentUser.LoginName);
             //Save file upload
             var itemId = SPContext.Current.ItemId;
@@ -103,6 +102,7 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
             DeNghiHelper.SaveFileAttachment(fileUpload2, itemId, Constants.AttachmentGiayChungNhanKiemDinh);
             DeNghiHelper.SaveFileAttachment(fileUpload3, itemId, Constants.AttachmentGiayCamKet);
             DeNghiHelper.SaveFileAttachment(fileUpload4, itemId, Constants.AttachmentCMND);
+            DeNghiHelper.AddDeNghiHistory(SPContext.Current.Web, CapXuLy.MotCua, itemId, HanhDong.NopHoSo.ToString(), string.Empty);
             //Redirect to page
             var redirectUrl = Request.QueryString["Source"];
             if (redirectUrl == null || string.IsNullOrEmpty(redirectUrl.ToString()))

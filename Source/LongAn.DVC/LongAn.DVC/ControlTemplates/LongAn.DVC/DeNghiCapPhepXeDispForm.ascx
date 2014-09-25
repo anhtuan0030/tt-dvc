@@ -236,7 +236,7 @@
                                         <div class="clear"></div>
                                     </div>
                                     <div class="row">
-                                        <div class="grid_4">
+                                        <div class="grid_3">
                                             <SharePoint:FieldLabel ID="FieldLabel39"  FieldName="SoTrucSauCuaRoMooc"  runat="server"  />
                                         </div>
                                         <div class="grid_1">
@@ -455,6 +455,21 @@
                                     </div>
                                 </div>
 
+                                <div class="panel-2" id="divThongTinTuChoi" runat="server" visible="false">
+                                    <h2>Lý do Trả / Từ chối</h2>
+
+                                    <div class="row">
+                                        <div class="grid_2">
+                                            Diễn giải chi tiết
+                                            <span title="This is a required field." class="ms-accentText"> *</span>
+                                        </div>
+                                        <div class="grid_9">
+                                            <asp:TextBox ID="txtLyDo" TextMode="MultiLine" runat="server"></asp:TextBox>
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </div>
+
                                 <div class="panel-2" id="divPhanCongHoSo" runat="server" visible="false">
                                     <h2>Phân công hồ sơ</h2>
 
@@ -465,6 +480,16 @@
                                         </div>
                                         <div class="grid_3">
                                             <asp:DropDownList ID="ddlUsers" runat="server"></asp:DropDownList>
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="grid_2">
+                                            Ghi chú
+                                        </div>
+                                        <div class="grid_9">
+                                            <asp:TextBox ID="txtGhiChu" TextMode="MultiLine" runat="server"></asp:TextBox>
                                         </div>
                                         <div class="clear"></div>
                                     </div>
@@ -499,13 +524,14 @@
                                 </div>
 
                                 <div class="pull-right">
-                                    <asp:Button ID="btnTrinhXuLy" runat="server" Text="Trình xử lý" CssClass="button" Visible="false"/>
+                                    <asp:Button ID="btnTrinhXuLy" runat="server" Text="Chuyển Trưởng/Phó P.QLHT" CssClass="button" Visible="false"/>
                                     <asp:Button ID="btnYeuCauBoSung" runat="server" Text="Yêu cầu bổ sung" CssClass="button" 
                                         Visible="false" OnClientClick="if (!PreSaveYeuCauBoSung(0)) return false;"/>
                                     <asp:Button ID="btnPhanCongHoSo" runat="server" Text="Phân công hồ sơ" CssClass="button" Visible="false"/>
                                     <asp:Button ID="btnTrinhTruongPhong" runat="server" Text="Trình trưởng/phó P.QLHT" CssClass="button" Visible="false"/>
                                     <asp:Button ID="btnTrinhLanhDao" runat="server" Text="Trình lãnh đạo" CssClass="button" Visible="false"/>
                                     <asp:Button ID="btnDuyetHoSo" runat="server" Text="Duyệt hồ sơ" CssClass="button" Visible="false"/>
+                                    <asp:Button ID="btnTiepNhan" runat="server" Text="Tiếp nhận" CssClass="button" Visible="false"/>
                                     <asp:Button ID="btnTraHoSo" runat="server" Text="Trả về" CssClass="button" Visible="false"/>
                                     <asp:Button ID="btnCancel" runat="server" Text="Hủy" CssClass="button" />
                                 </div>

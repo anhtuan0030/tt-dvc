@@ -18,7 +18,7 @@
 	<div class="row">
 		<div class="grid_12" id="main-frame">
 			<div id="top-control">
-				<asp:HyperLink ID="hplTrangChu" CssClass="button large-button home" runat="server">Trang chủ</asp:HyperLink>
+				<asp:HyperLink ID="hplTrangChu" CssClass="button large-button home" Visible="false" runat="server">Trang chủ</asp:HyperLink>
                 <asp:HyperLink ID="hplDanhSachDeNghi" CssClass="button large-button done" runat="server">Danh sách đề nghị</asp:HyperLink>
                 <asp:HyperLink ID="hplThongTinHuongDan" CssClass="button large-button stat" runat="server">Thông tin hướng dẫn</asp:HyperLink>
 				<div class="clear"></div>
@@ -34,12 +34,12 @@
 			<div class="clearfix"></div>
 			
             <table class="the-table">
-                <tr>
+                <tr style="height: 50px;">
                     <th>STT</th>
                     <th>Mã biên nhận</th>
                     <th>Loại đề nghị</th>
-                    <th>Ngày đề nghị</th>
-                    <th>Tình trạng</th>
+                    <th>Ngày nộp hồ sơ</th>
+                    <th>Trạng thái</th>
                     <th>Xem</th>
                     <th>Sửa</th>
                     <th>Xóa</th>
@@ -65,7 +65,7 @@
                             </td>
                             <td>
                                 <%--<asp:LinkButton ID="lbtViewItem" CssClass="button view just-icon" runat="server"></asp:LinkButton>--%>
-                                <asp:HyperLink ID="lbtViewItem" ToolTip="Xem chi tiết đề nghị" CssClass="button view just-icon" runat="server"></asp:HyperLink>
+                                <asp:HyperLink ID="lbtViewItem" ToolTip="Xem thông tin hồ sơ" CssClass="button view just-icon" runat="server"></asp:HyperLink>
                             </td>
                             <td>
                                 <%--<asp:LinkButton ID="lbtEditItem" CssClass="button edit just-icon" runat="server"></asp:LinkButton>--%>
