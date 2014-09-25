@@ -9,11 +9,44 @@ namespace LongAn.DVC.Common
     public enum CapXuLy
     {
         CaNhanToChuc = 0,
-        NhanVienTiepNhan = 1,
+        MotCua = 1,
         TruongPhoPhong = 2,
-        CanBoXuLy = 3,
+        CanBo = 3,
         LanhDaoSo = 4,
         VanPhongSo = 5
+    }
+
+    public enum HanhDong
+    {
+        NopHoSo,
+        TiepNhanHoSo,
+        ChuyenTruongPhoPhong,
+        TiepNhanXuLy,
+        TrinhTruongPhoPhong,
+        PhanCongHoSo,
+        YeuCauBoSung,
+        TrinhLanhDaoSo,
+        DuyetCapPhep,
+        XacNhanHoanThanh,
+        XacNhanChuaHoanThanh,
+        TuChoiHoSo
+
+    }
+
+    public enum TrangThaiHoSo
+    {
+        KhoiTao,
+        ChoTiepNhan,
+        DaTiepNhan,
+        ChoXuLy,
+        DangXuLy,
+        ChoBoSung,
+        ChoDuyet,
+        ChoCapPhep,
+        DuocCapPhep,
+        BiTuChoi,
+        HoanThanh,
+        ChuaHoanThanh
     }
 
     public enum TrangThaiXuLy
@@ -40,7 +73,11 @@ namespace LongAn.DVC.Common
         public const string ConfSoThuTuBienNhan = "0000000";
 
         public const string ConfQueryStringBS = "4709-95d5-994c89d0c201";
-        public const string ConfQueryStringPC = "4807-9ad4-764cded0c311";
+        public const string ConfQueryStringPC = "58c7-da84-764cded0c311";
+        public const string ConfQueryStringTC = "7e98-9a4f-7c4d3dh5c3g1";
+        public const string ConfActionBS = "Abshs";
+        public const string ConfActionPC = "Apchs";
+        public const string ConfActionTC = "Atchs";
 
         public const string ConfViewStateCapXuLy = "CapXuLy";
 
@@ -65,6 +102,7 @@ namespace LongAn.DVC.Common
         public const string ListUrlDeNghiCapPhep = "/Lists/DeNghiCapPhepXe";
         public const string ListUrlDeNghiAttachment = "/Lists/DeNghiAttachment";
         public const string ListUrlYeuCauBoSung = "/Lists/YeuCauBoSung";
+        public const string ListUrlLichSuCapPhep = "/Lists/LichSuCapPhep";
         //Loại attachments
         public const string AttachmentGiayDangKy = "GiayDangKy";
         public const string AttachmentGiayChungNhanKiemDinh = "GiayChungNhanKiemDinh";
@@ -75,7 +113,7 @@ namespace LongAn.DVC.Common
         public const string FieldCreated = "Created";
 
         //DeNghi attachments
-        public const string FieldDeNghiAdmin = "DeNghiAdmin";
+        public const string FieldNguoiDeNghi = "NguoiDeNghi";
         public const string FieldLoaiDeNghi = "LoaiDeNghi";
         public const string FieldTrangThai = "TrangThai";
         public const string FieldTrangThaiText = "TrangThaiText";
@@ -84,6 +122,18 @@ namespace LongAn.DVC.Common
         public const string FieldLoaiAttachment = "LoaiAttachment";
         //De nghi
         public const string FieldCaNhanToChuc = "CaNhanToChuc";
+        public const string FieldSoDienThoai = "SoDienThoai";
+        public const string FieldMotCuaUser = "MotCuaUser";
+        public const string FieldTruongPhongUser = "TruongPhongUser";
+        public const string FieldCanBoUser = "CanBoUser";
+        public const string FieldLanhDaoUser = "LanhDaoUser";
+
+        public const string FieldNgayNopHoSo = "NgayNopHoSo";
+        public const string FieldNgayXuLy = "NgayXuLy";
+        public const string FieldNguoiXuLy = "NguoiXuLy";
+        public const string FieldHanhDong = "HanhDong";
+        
+
         public const string FieldDeNghiGUID = "DeNghiGUID";
         public const string FieldNamDeNghi = "NamDeNghi";
         public const string FieldSoThuTuBienNhan = "SoThuTuBienNhan";
