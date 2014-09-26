@@ -37,14 +37,14 @@
 			</h2>
 			<div class="the-form" id="searchform">
 				<div class="row line">
-					<div class="grid_2">
+					<div class="grid_2" style="text-align:right;">
 						&nbsp;&nbsp;&nbsp;&nbsp;Mã biên nhận:
 					</div>
 					<div class="grid_3">
 						<asp:TextBox ID="txtTuKhoa" runat="server"></asp:TextBox>
 					</div>
 
-					<div class="grid_2">
+					<div class="grid_2" style="text-align:right;">
 						&nbsp;&nbsp;&nbsp;&nbsp;Đơn vị:
 					</div>
 					<div class="grid_4">
@@ -53,15 +53,15 @@
 					<div class="clear"></div>
 				</div>
                 <div class="row line">
-					<div class="grid_2">
-						;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Số điện thoại:
+					<div class="grid_2" style="text-align:right;">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Số điện thoại:
 					</div>
 					<div class="grid_3">
 						<asp:TextBox ID="txtSoDienThoai" runat="server"></asp:TextBox>
 					</div>
                     
-					<div class="grid_2">
-						;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ngày đề nghị:
+					<div class="grid_2" style="text-align:right;">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ngày đề nghị:
 					</div>
 					<div class="grid_2">
 						<SharePoint:DateTimeControl ID="dtcNgayDeNghiTu" DateOnly="true" LocaleId="1066" runat="server" />

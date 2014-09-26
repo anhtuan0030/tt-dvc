@@ -526,6 +526,7 @@ namespace LongAn.DVC.WebParts.DeNghiListView
                 var web = SPContext.Current.Web;
                 var deNghiList = web.GetList((web.ServerRelativeUrl + Constants.ListUrlDeNghiCapPhep).Replace("//", "/"));
                 var deNghiItem = deNghiList.GetItemById(itemId);
+                //InPhieuBienNhan(new DataTable(), this.Parent.Page);
                 deNghiItem[Constants.FieldTrangThai] = (int)trangThaiXuLy;
                 deNghiItem[Constants.FieldCapDuyet] = capXuLy;
                 var currentUserId = SPContext.Current.Web.CurrentUser.ID;
@@ -540,6 +541,39 @@ namespace LongAn.DVC.WebParts.DeNghiListView
                 LoggingServices.LogException(ex);
             }
             LoggingServices.LogMessage("End UpdateItem, item id:" + itemId);
+        }
+
+        void InPhieuBienNhan(DataTable dataTable, System.Web.UI.Page page)
+        {
+            try
+            {
+                string wordLicFile = Microsoft.SharePoint.Utilities.SPUtility.GetVersionedGenericSetupPath(Constants.ConfWordLicFile, 15);
+                Aspose.Words.License wordLic = new Aspose.Words.License();
+                wordLic.SetLicense(wordLicFile);
+
+                string templateFile = Microsoft.SharePoint.Utilities.SPUtility.GetVersionedGenericSetupPath(Constants.ConfWordBienNhanTemplate, 15);
+                Aspose.Words.Document doc = new Aspose.Words.Document(templateFile);
+
+                doc.MailMerge.Execute(dataTable);
+
+                string fileName = string.Format("BienNhan{0}.docx", DateTime.Now.ToString("_yyyyMMdd_hhmmss"));
+
+                System.IO.MemoryStream ms = new System.IO.MemoryStream();
+                doc.Save(ms, Aspose.Words.SaveFormat.Docx);
+                //doc.Save(fileName, Aspose.Words.SaveFormat.Docx, Aspose.Words.SaveType.OpenInBrowser, this.Response);
+                page.Response.Clear();
+                page.Response.ContentType = "application/vnd.openxmlformats-officedocument.wordprocessingml.document";
+                page.Response.AddHeader("Content-Disposition", string.Format("attachment; filename={0}.docx", fileName));
+                page.Response.Flush();
+                page.Response.BinaryWrite(ms.ToArray());
+                //ms.WriteTo(Response.OutputStream); //works too
+                //Response.Close();
+                page.Response.End();
+            }
+            catch (Exception ex)
+            {
+                LoggingServices.LogException(ex);
+            }
         }
 
         #endregion Private Function
