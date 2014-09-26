@@ -3,6 +3,8 @@
   <assemblies>
     <projectOutputAssembly location="LongAn.DVC.Common.dll" deploymentTarget="GlobalAssemblyCache" projectPath="..\LongAn.DVC.Common\LongAn.DVC.Common.csproj" />
     <customAssembly location="Camlex.NET.dll" deploymentTarget="GlobalAssemblyCache" sourcePath="Libs\Camlex.NET.dll" />
+    <customAssembly location="Aspose.Cells.dll" deploymentTarget="GlobalAssemblyCache" sourcePath="Libs\Aspose.Cells.dll" />
+    <customAssembly location="Aspose.Words.dll" deploymentTarget="GlobalAssemblyCache" sourcePath="Libs\Aspose.Words.dll" />
   </assemblies>
   <features>
     <featureReference itemId="d4d9a687-e054-4bf6-8aa3-9e5bf52fec28" />
