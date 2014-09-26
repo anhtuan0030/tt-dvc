@@ -73,7 +73,7 @@ namespace LongAn.DVC.Helpers
                 var deNghiUrl = (SPContext.Current.Web.ServerRelativeUrl + Constants.ListUrlDeNghiAttachment).Replace("//", "/");
                 var deNghiAttachmentList = SPContext.Current.Web.GetList(deNghiUrl);
                 var deNghiAttachmentItems = deNghiAttachmentList.GetItems(caml).GetDataTable();
-                var rowCount = deNghiAttachmentItems.Rows.Count;
+                var rowCount = deNghiAttachmentItems != null ? deNghiAttachmentItems.Rows.Count : 0;
                 for (int i = 0; i < rowCount; i++)
                 {
                     HyperLink link = new HyperLink();

@@ -1159,25 +1159,26 @@ namespace LongAn.DVC.WebParts.DeNghiListView {
             @__ctrl14 = this.@__BuildControlliteralDeNghiTitle();
             @__parser.AddParsedSubObject(@__ctrl14);
             @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n\t\t\t</h2>\r\n\t\t\t<div class=\"the-form\" id=\"searchform\">\r\n\t\t\t\t<div class=\"row line\">" +
-                        "\r\n\t\t\t\t\t<div class=\"grid_2\">\r\n\t\t\t\t\t\t&nbsp;&nbsp;&nbsp;&nbsp;Mã biên nhận:\r\n\t\t\t\t\t<" +
-                        "/div>\r\n\t\t\t\t\t<div class=\"grid_3\">\r\n\t\t\t\t\t\t"));
+                        "\r\n\t\t\t\t\t<div class=\"grid_2\" style=\"text-align:right;\">\r\n\t\t\t\t\t\t&nbsp;&nbsp;&nbsp;&" +
+                        "nbsp;Mã biên nhận:\r\n\t\t\t\t\t</div>\r\n\t\t\t\t\t<div class=\"grid_3\">\r\n\t\t\t\t\t\t"));
             global::System.Web.UI.WebControls.TextBox @__ctrl15;
             @__ctrl15 = this.@__BuildControltxtTuKhoa();
             @__parser.AddParsedSubObject(@__ctrl15);
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t<div class=\"grid_2\">\r\n\t\t\t\t\t\t&nbsp;&nbsp;&nbsp;&nbsp;Đơn vị:" +
-                        "\r\n\t\t\t\t\t</div>\r\n\t\t\t\t\t<div class=\"grid_4\">\r\n\t\t\t\t\t\t"));
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t<div class=\"grid_2\" style=\"text-align:right;\">\r\n\t\t\t\t\t\t&nbsp" +
+                        ";&nbsp;&nbsp;&nbsp;Đơn vị:\r\n\t\t\t\t\t</div>\r\n\t\t\t\t\t<div class=\"grid_4\">\r\n\t\t\t\t\t\t"));
             global::System.Web.UI.WebControls.TextBox @__ctrl16;
             @__ctrl16 = this.@__BuildControltxtCaNhanToChuc();
             @__parser.AddParsedSubObject(@__ctrl16);
             @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n\t\t\t\t\t</div>\r\n\t\t\t\t\t<div class=\"clear\"></div>\r\n\t\t\t\t</div>\r\n                <div c" +
-                        "lass=\"row line\">\r\n\t\t\t\t\t<div class=\"grid_2\">\r\n\t\t\t\t\t\t;&nbsp;&nbsp;&nbsp;&nbsp;&nbs" +
-                        "p;Số điện thoại:\r\n\t\t\t\t\t</div>\r\n\t\t\t\t\t<div class=\"grid_3\">\r\n\t\t\t\t\t\t"));
+                        "lass=\"row line\">\r\n\t\t\t\t\t<div class=\"grid_2\" style=\"text-align:right;\">\r\n\t\t\t\t\t\t&nb" +
+                        "sp;&nbsp;&nbsp;&nbsp;&nbsp;Số điện thoại:\r\n\t\t\t\t\t</div>\r\n\t\t\t\t\t<div class=\"grid_3\"" +
+                        ">\r\n\t\t\t\t\t\t"));
             global::System.Web.UI.WebControls.TextBox @__ctrl17;
             @__ctrl17 = this.@__BuildControltxtSoDienThoai();
             @__parser.AddParsedSubObject(@__ctrl17);
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n\t\t\t\t\t</div>\r\n                    \r\n\t\t\t\t\t<div class=\"grid_2\">\r\n\t\t\t\t\t\t;&nbsp;&nbs" +
-                        "p;&nbsp;&nbsp;&nbsp;Ngày đề nghị:\r\n\t\t\t\t\t</div>\r\n\t\t\t\t\t<div class=\"grid_2\">\r\n\t\t\t\t\t" +
-                        "\t"));
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n\t\t\t\t\t</div>\r\n                    \r\n\t\t\t\t\t<div class=\"grid_2\" style=\"text-align:r" +
+                        "ight;\">\r\n\t\t\t\t\t\t&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ngày đề nghị:\r\n\t\t\t\t\t</div>\r\n\t\t\t\t\t<d" +
+                        "iv class=\"grid_2\">\r\n\t\t\t\t\t\t"));
             global::Microsoft.SharePoint.WebControls.DateTimeControl @__ctrl18;
             @__ctrl18 = this.@__BuildControldtcNgayDeNghiTu();
             @__parser.AddParsedSubObject(@__ctrl18);

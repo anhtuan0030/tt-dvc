@@ -193,6 +193,8 @@
     <None Include="Layouts\LongAn.DVC\js\detectizr.min.map" />
     <Content Include="Layouts\LongAn.DVC\lic\Aspose.Cells.lic" />
     <Content Include="Layouts\LongAn.DVC\lic\Aspose.Words.lic" />
+    <None Include="Layouts\LongAn.DVC\templates\BienNhanTemplate.docx" />
+    <None Include="Layouts\LongAn.DVC\templates\GiayPhepTemplate.docx" />
     <None Include="Layouts\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{63f3bd6e-81ab-4ca6-9ff1-2a04a2c99eb3}</SharePointProjectItemId>
     </None>
