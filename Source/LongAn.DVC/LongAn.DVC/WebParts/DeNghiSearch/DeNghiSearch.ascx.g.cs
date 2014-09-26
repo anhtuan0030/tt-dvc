@@ -87,7 +87,7 @@ namespace LongAn.DVC.WebParts.DeNghiSearch {
             @__ctrl.ApplyStyleSheetSkin(this.Page);
             @__ctrl.ID = "btnTimKiem";
             @__ctrl.Text = "Tìm kiếm";
-            @__ctrl.CssClass = "button search btn btn-default";
+            @__ctrl.CssClass = "button search button-custom";
             ((System.Web.UI.IAttributeAccessor)(@__ctrl)).SetAttribute("align", "middle");
             return @__ctrl;
         }
@@ -131,7 +131,11 @@ namespace LongAn.DVC.WebParts.DeNghiSearch {
         private void @__BuildControlTree(global::LongAn.DVC.WebParts.DeNghiSearch.DeNghiSearch @__ctrl) {
             System.Web.UI.IParserAccessor @__parser = ((System.Web.UI.IParserAccessor)(@__ctrl));
             @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl(@"
-
+<style type=""text/css"">
+    .button-custom {
+        width: 120px !important;
+    }
+</style>
 <div>
 	<div class=""row"">
 		<div class=""grid_12"" id=""main-frame"">

@@ -628,8 +628,8 @@ input[type="text"].small {
   border: 1px solid #01648d;
   padding-top: 5px;
   padding-bottom: 3px;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 0;
+  padding-right: 0;
 }
 .the-table {
   margin-top: 15px;

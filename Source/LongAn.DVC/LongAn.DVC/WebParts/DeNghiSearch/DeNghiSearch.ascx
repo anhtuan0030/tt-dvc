@@ -6,7 +6,11 @@
 <%@ Import Namespace="Microsoft.SharePoint" %> 
 <%@ Register Tagprefix="WebPartPages" Namespace="Microsoft.SharePoint.WebPartPages" Assembly="Microsoft.SharePoint, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %>
 <%@ Control Language="C#" AutoEventWireup="true" CodeBehind="DeNghiSearch.ascx.cs" Inherits="LongAn.DVC.WebParts.DeNghiSearch.DeNghiSearch" %>
-
+<style type="text/css">
+    .button-custom {
+        width: 120px !important;
+    }
+</style>
 <div>
 	<div class="row">
 		<div class="grid_12" id="main-frame">
@@ -23,7 +27,7 @@
                         <asp:TextBox ID="txtMaBienNhan" runat="server"></asp:TextBox>
                     </div>
                     <div class="grid_2">
-                        <asp:Button ID="btnTimKiem" runat="server" Text="Tìm kiếm" CssClass="button search btn btn-default" align="middle" />
+                        <asp:Button ID="btnTimKiem" runat="server" Text="Tìm kiếm" CssClass="button search button-custom" align="middle" />
                     </div>
                     <div class="clear"></div>
 				</div>

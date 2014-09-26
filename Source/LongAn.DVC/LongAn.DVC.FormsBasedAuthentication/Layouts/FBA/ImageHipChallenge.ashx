@@ -137,8 +137,8 @@ namespace LongAn.DVC.FormsBasedAuthentication.HIP
 				// Draw the background as a random linear gradient
 				using(Brush b = new LinearGradientBrush(
 						  new Rectangle(0,0,size.Width,size.Height),
-						  Color.FromArgb(NextRandom(256),NextRandom(256),NextRandom(256)),
-						  Color.FromArgb(NextRandom(256),NextRandom(256),NextRandom(256)),
+						  Color.FromArgb(181,225,252),
+						  Color.FromArgb(225,252,181),
 						  (float)(NextRandomDouble()*360),false))
 				{
 					g.FillRectangle(b, 0, 0, bmp.Width, bmp.Height);
@@ -168,9 +168,12 @@ namespace LongAn.DVC.FormsBasedAuthentication.HIP
 						fmt.Alignment = fmt.LineAlignment = StringAlignment.Center;
 						using(Brush b = new LinearGradientBrush(
 								  new Rectangle(0,0,size.Width/2,size.Height/2),
-								  Color.FromArgb(NextRandom(256),NextRandom(256),NextRandom(256)),
-								  Color.FromArgb(NextRandom(256),NextRandom(256),NextRandom(256)),
+                                  Color.FromArgb(127,127,127),
+								  Color.FromArgb(127,127,127),
 								  (float)(NextRandomDouble()*360),false))
+                                  //Color.FromArgb(NextRandom(256),NextRandom(256),NextRandom(256)),
+                                  //Color.FromArgb(NextRandom(256),NextRandom(256),NextRandom(256)),
+                                  //(float)(NextRandomDouble()*360),false))
 						{
 							g.DrawString(text, f, b, new Rectangle(0,0,bmp.Width,bmp.Height), fmt);
 						}

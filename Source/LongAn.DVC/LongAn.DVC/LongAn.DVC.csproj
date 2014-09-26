@@ -42,6 +42,16 @@
     <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Aspose.Cells, Version=7.3.0.0, Culture=neutral, PublicKeyToken=6df9b8117ff94198, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libs\Aspose.Cells.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Aspose.Words, Version=7.0.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libs\Aspose.Words.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Camlex.NET, Version=3.6.0.0, Culture=neutral, PublicKeyToken=831792d54d5285b7, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Libs\Camlex.NET.dll</HintPath>
@@ -133,6 +143,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DeNghiRedirect.ascx</DependentUpon>
     </Compile>
+    <Compile Include="WebParts\DeNghiReport\DeNghiReport.ascx.cs">
+      <DependentUpon>DeNghiReport.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebParts\DeNghiReport\DeNghiReport.ascx.g.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DeNghiReport.ascx</DependentUpon>
+    </Compile>
     <Compile Include="WebParts\DeNghiSearch\DeNghiSearch.ascx.cs">
       <DependentUpon>DeNghiSearch.ascx</DependentUpon>
     </Compile>
@@ -173,6 +191,8 @@
     <None Include="Layouts\LongAn.DVC\fonts\glyphicons-halflings-regular.ttf" />
     <None Include="Layouts\LongAn.DVC\fonts\glyphicons-halflings-regular.woff" />
     <None Include="Layouts\LongAn.DVC\js\detectizr.min.map" />
+    <Content Include="Layouts\LongAn.DVC\lic\Aspose.Cells.lic" />
+    <Content Include="Layouts\LongAn.DVC\lic\Aspose.Words.lic" />
     <None Include="Layouts\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{63f3bd6e-81ab-4ca6-9ff1-2a04a2c99eb3}</SharePointProjectItemId>
     </None>
@@ -233,6 +253,10 @@
     <None Include="WebParts\DeNghiRedirect\DeNghiRedirect.webpart" />
     <None Include="WebParts\DeNghiRedirect\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{87d63147-3234-49c3-8c84-b42fce449e78}</SharePointProjectItemId>
+    </None>
+    <None Include="WebParts\DeNghiReport\DeNghiReport.webpart" />
+    <None Include="WebParts\DeNghiReport\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{d61fb545-c2e2-4b81-b8e3-2daa0a7f2a36}</SharePointProjectItemId>
     </None>
     <None Include="WebParts\DeNghiSearch\DeNghiSearch.webpart" />
     <None Include="WebParts\DeNghiSearch\SharePointProjectItem.spdata">
@@ -361,6 +385,9 @@
     <Content Include="Layouts\LongAn.DVC\DeNghiEditForm.aspx" />
     <Content Include="Layouts\LongAn.DVC\css\superfish.css" />
     <Content Include="Layouts\LongAn.DVC\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Libs\Aspose.Cells.dll" />
+    <Content Include="Libs\Aspose.Cells.GridDesktop.dll" />
+    <Content Include="Libs\Aspose.Words.dll" />
     <Content Include="ListDefinitions\LichSuCapPhep\Elements.xml" />
     <Content Include="ListDefinitions\LichSuCapPhep\LichSuCapPhepInstance\Elements.xml" />
     <Content Include="ListDefinitions\LichSuCapPhep\Schema.xml" />
@@ -463,6 +490,11 @@
       <LastGenOutput>DeNghiRedirect.ascx.g.cs</LastGenOutput>
     </Content>
     <Content Include="WebParts\DeNghiRedirect\Elements.xml" />
+    <Content Include="WebParts\DeNghiReport\DeNghiReport.ascx">
+      <Generator>SharePointWebPartCodeGenerator</Generator>
+      <LastGenOutput>DeNghiReport.ascx.g.cs</LastGenOutput>
+    </Content>
+    <Content Include="WebParts\DeNghiReport\Elements.xml" />
     <Content Include="WebParts\DeNghiSearch\DeNghiSearch.ascx">
       <Generator>SharePointWebPartCodeGenerator</Generator>
       <LastGenOutput>DeNghiSearch.ascx.g.cs</LastGenOutput>

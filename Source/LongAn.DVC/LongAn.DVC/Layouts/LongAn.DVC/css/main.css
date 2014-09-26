@@ -176,6 +176,7 @@ body {
   display: block;
   padding: 5px 10px;
   text-align: center;
+  font-size: 12px;
 }
 .btn.btn-default:hover {
   background: #0293bf;
@@ -399,13 +400,14 @@ a:hover {
   padding-right: 15px;
 }
 .button {
-  background-color: #01648d;
+  background-color: #01648d !important;
   border: none;
   display: block;
   padding: 5px;
-  color: #fff;
+  color: #fff !important;
   text-align: center;
   background-repeat: no-repeat;
+  font-size: 12px !important;
 }
 .button:hover {
   background-color: #0293bf;
@@ -429,7 +431,7 @@ a:hover {
 }
 .button.search {
   background-image: url(../images/search.png);
-  background-position: 5px center;
+  background-position: 15px center !important;
   background-repeat: no-repeat;
   padding-left: 25px;
 }

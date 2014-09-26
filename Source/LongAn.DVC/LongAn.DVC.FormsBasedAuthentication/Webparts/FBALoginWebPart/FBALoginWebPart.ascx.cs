@@ -67,7 +67,7 @@ namespace LongAn.DVC.FormsBasedAuthentication.Webparts.FBALoginWebPart
                 module.SetPrincipalAndWriteSessionToken(token);
                 e.Authenticated = true;
 
-                SPUtility.Redirect(SPContext.Current.Web.Url, SPRedirectFlags.Trusted, this.Context);
+                SPUtility.Redirect(SPContext.Current.Site.RootWeb.Url.TrimEnd('/') + "/Pages/DVC.aspx", SPRedirectFlags.Trusted, this.Context);
 
             }
         }

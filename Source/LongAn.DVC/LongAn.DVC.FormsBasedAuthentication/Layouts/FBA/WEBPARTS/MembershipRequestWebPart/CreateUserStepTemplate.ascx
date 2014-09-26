@@ -3,20 +3,23 @@
 <table width="100%" border="0" cellpadding="0"  id="MembershipRequestTable" class="MembershipRequestTable" runat="server" >
 	<tbody>
         <tr>
+			<td align="left" colspan="2"><span class="field-required">(*)</span>: Trường bắt buộc nhập dữ liệu</td>
+		</tr>
+        <tr>
 			<td align="center" colspan="2"><asp:Label ID="Header" runat="server" /></td>
 		</tr>
         <tr>
 			<td align="center" colspan="2"><asp:Label ID="Instruction" runat="server" /></td>
 		</tr>
         <tr>
-			<td align="right" valign="top" width="200px"><asp:Label ID="UserNameLabel" AssociatedControlID="UserName" runat="server" /></td>
+			<td align="right" valign="top" width="200px"><asp:Label ID="UserNameLabel" AssociatedControlID="UserName" CssClass="field" runat="server" /><span class="field-required">(*)</span></td>
             <td>
                 <asp:TextBox ID="UserName" runat="server" CssClass="input_width"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="UserNameRequired" runat="server" ControlToValidate="UserName" Display="Dynamic" CssClass="fba_error"></asp:RequiredFieldValidator></td>
 		</tr>
         <tr id="PasswordRow" runat="server" visible="false">
             <td align="right" valign="top">
-                <asp:Label ID="PasswordLabel" runat="server" AssociatedControlID="Password" /></td>
+                <asp:Label ID="PasswordLabel" runat="server" AssociatedControlID="Password" CssClass="field" /> <span class="field-required">(*)</span></td>
             <td>
                 <asp:TextBox ID="Password" runat="server" TextMode="Password" CssClass="input_width"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="PasswordRequired" runat="server" ControlToValidate="Password"  Display="Dynamic" CssClass="fba_error" />
@@ -24,26 +27,26 @@
         </tr>
         <tr id="ConfirmPasswordRow" runat="server" visible="false">
             <td align="right" valign="top">
-                <asp:Label ID="ConfirmPasswordLabel" runat="server" AssociatedControlID="ConfirmPassword"/></td>
+                <asp:Label ID="ConfirmPasswordLabel" runat="server" AssociatedControlID="ConfirmPassword" CssClass="field"/> <span class="field-required">(*)</span></td>
             <td>
                 <asp:TextBox ID="ConfirmPassword" runat="server" TextMode="Password" CssClass="input_width"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="ConfirmPasswordRequired" runat="server" ControlToValidate="ConfirmPassword" Display="Dynamic" CssClass="fba_error" />
             </td>
         </tr>
         <tr>
-			<td align="right" valign="top"><asp:Label ID="FirstNameLabel" AssociatedControlID="FirstName" runat="server" /></td>
+			<td align="right" valign="top"><asp:Label ID="FirstNameLabel" AssociatedControlID="FirstName" CssClass="field" runat="server" /><span class="field-required">(*)</span></td>
             <td>
                 <asp:TextBox ID="FirstName" runat="server" CssClass="input_width"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="FirstNameRequired" runat="server" ControlToValidate="FirstName" Display="Dynamic" CssClass="fba_error"></asp:RequiredFieldValidator></td>
 		</tr>
         <tr>
-			<td align="right" valign="top"><asp:Label ID="LastNameLabel" AssociatedControlID="LastName" runat="server" /></td>
+			<td align="right" valign="top"><asp:Label ID="LastNameLabel" AssociatedControlID="LastName" CssClass="field" runat="server" /><span class="field-required">(*)</span></td>
             <td>
                 <asp:TextBox ID="LastName" runat="server" CssClass="input_width"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="LastNameRequired" runat="server" ControlToValidate="LastName" Display="Dynamic" CssClass="fba_error"></asp:RequiredFieldValidator></td>
 		</tr>
         <tr>
-			<td align="right" valign="top"><asp:Label ID="EmailLabel" AssociatedControlID="Email" runat="server" /></td>
+			<td align="right" valign="top"><asp:Label ID="EmailLabel" AssociatedControlID="Email" CssClass="field" runat="server" /><span class="field-required">(*)</span></td>
             <td>
                 <asp:TextBox ID="Email" runat="server" CssClass="FBAEmail input_width"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="EmailRequired" runat="server" ControlToValidate="Email" Display="Dynamic" CssClass="fba_error"></asp:RequiredFieldValidator>
@@ -63,7 +66,7 @@
                 <asp:RequiredFieldValidator ID="AnswerRequired" runat="server" ControlToValidate="Answer" Display="Dynamic" CssClass="fba_error"></asp:RequiredFieldValidator></td>
 		</tr>
         <tr id="HipPictureRow" runat="server" visible="false">
-			<td align="right" valign="top"><asp:Label ID="HipPictureLabel" AssociatedControlID="HipPicture" runat="server" /></td>
+			<td align="right" valign="top"><asp:Label ID="HipPictureLabel" AssociatedControlID="HipPicture" CssClass="field" runat="server" /></td>
             <td align="left">
                 <asp:Label ID="HipInstructionsLabel" runat="server" /><br />
                 <FBA:ImageHipChallenge ID="HipPicture" Width="210" Height="70" runat="server" /><br />
@@ -71,7 +74,7 @@
             </td>
 		</tr>
         <tr id="HipAnswerRow" runat="server" visible="false">
-			<td align="right" valign="top"><asp:Label ID="HipAnswerLabel" AssociatedControlID="HipAnswer" runat="server" /></td>
+			<td align="right" valign="top"><asp:Label ID="HipAnswerLabel" AssociatedControlID="HipAnswer" CssClass="field" runat="server" /><span class="field-required">(*)</span></td>
             <td>
                 <asp:TextBox ID="HipAnswer" runat="server" CssClass="input_width"></asp:TextBox>
                 <FBA:HipValidator ID="HipAnswerValidator" runat="server" ControlToValidate="HipAnswer" HipChallenge="HipPicture"  Display="Dynamic" CssClass="fba_error" /><br />
@@ -92,7 +95,7 @@
         <tr>
             <td></td>
 			<td align="left">
-                <asp:Button ID="CreateUserButton" Visible="false" runat="server" CommandName="MoveNext" CssClass="CreateUserButton"/>
+                <asp:Button ID="CreateUserButton" Visible="false" runat="server" CommandName="MoveNext" CssClass="CreateUserButton btn btn-default"/>
                 <asp:LinkButton ID="CreateUserLinkButton" Visible="false" runat="server" CommandName="MoveNext" />
                 <asp:ImageButton ID="CreateUserImageButton" Visible="false" runat="server" CommandName="MoveNext" />&nbsp;
                 <asp:Button ID="CancelButton" Visible="false" runat="server" CommandName="Cancel" CausesValidation="false" />
@@ -106,7 +109,12 @@
     .fba_error {
         color:red;
     }
-
+    .field-required {
+        color:red;
+    }
+    .field{
+        font-weight:bold;
+    }
     .MembershipRequestTable td {
         padding: 4px;
     }
