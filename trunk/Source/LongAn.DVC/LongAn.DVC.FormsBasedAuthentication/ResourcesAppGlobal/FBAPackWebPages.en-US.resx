@@ -419,7 +419,8 @@
       &lt;/head&gt;
       &lt;body&gt;
         &lt;div&gt;
-            &lt;p&gt;Bạn nhận được email này vì đã sử dụng chức năng khôi phục mật khẩu trên website &lt;xsl:value-of select="MembershipRequest:get_SiteName()" /&gt;.&lt;/p&gt;
+            &lt;br/&gt;
+            &lt;p&gt;Bạn nhận được email này vì đã sử dụng chức năng khôi phục mật khẩu trên website Cổng thông tin dịch vụ công trực tuyến Sở Giao Thông Vận Tải Tỉnh Long An.&lt;/p&gt;
 
           &lt;p&gt;
             Tên đăng nhập của bạn là: &lt;xsl:value-of select="MembershipRequest:get_UserName()" /&gt;
