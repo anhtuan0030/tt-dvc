@@ -449,6 +449,46 @@
                         </div>
                     </div>
 
+                    <div class="panel-2" id="divDanhSachYeuCauBoSung" runat="server" visible="false">
+                        <h2>Danh sách cầu bổ sung</h2>
+                        <div class="row">
+                            <div class="grid_11">
+                                <table class="the-table">
+                                    <tr style="height: 50px;">
+                                        <th>STT</th>
+                                        <th>Tiêu đề</th>
+                                        <th>Mô tả</th>
+                                        <th>Ngày yêu cầu</th>
+                                        <th>Xác nhận</th>
+                                    </tr>
+                                    <asp:Repeater ID="repeaterLists" runat="server" OnItemCommand="repeaterLists_ItemCommand" OnItemDataBound="repeaterLists_ItemDataBound">
+                                        <ItemTemplate>
+                                            <tr class="<%#(((RepeaterItem)Container).ItemIndex+1) % 2 == 0 ? "even" : "odd" %>">
+                                                <td>
+                                                    <asp:Literal ID="literalSTT" runat="server" Text="<%#(((RepeaterItem)Container).ItemIndex+1) %>"></asp:Literal>
+                                                </td>
+                                                <td>
+                                                    <asp:Literal ID="literalTitle" runat="server"></asp:Literal>
+                                                </td>
+                                                <td>
+                                                    <asp:Literal ID="literalMoTa" runat="server"></asp:Literal>
+                                                </td>
+                                                <td>
+                                                    <asp:Literal ID="literalNgayYeuCau" runat="server"></asp:Literal>
+                                                </td>
+                                                <td>
+                                                    <asp:LinkButton ID="lbtXacNhan" ToolTip="Xác nhận đã cập nhật" CssClass="button waiting just-icon" runat="server"></asp:LinkButton>
+                                                    <asp:LinkButton ID="lbtDisable" ToolTip="Đã cập nhật" Enabled="false" CssClass="button done just-icon" style="display:none;" runat="server"></asp:LinkButton>
+                                                </td>
+                                            </tr>
+                                        </ItemTemplate>
+                                    </asp:Repeater>
+                                </table>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+
                     <div class="pull-right">
                         <asp:Button ID="btnSave" OnClientClick="if (!PreSaveItem(1)) return false;" CssClass="button" runat="server" Text="Lưu" Visible="false" />
                         <asp:Button ID="btnGuiHoSo" OnClientClick="if (!PreSaveItem(1)) return false;" runat="server" Text="Nộp hồ sơ" CssClass="button" Visible="false"/>

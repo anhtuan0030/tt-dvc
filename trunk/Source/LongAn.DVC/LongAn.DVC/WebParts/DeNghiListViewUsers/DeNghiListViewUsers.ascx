@@ -11,6 +11,7 @@
 <link rel="stylesheet" href="/_layouts/15/LongAn.DVC.Form/css/jquery-ui.min.css"/>
 <link rel="stylesheet" href="/_layouts/15/LongAn.DVC.Form/css/superfish.css"/>
 <link rel="stylesheet" href="/_layouts/15/LongAn.DVC.Form/css/main.css"/>
+<link href="/_layouts/15/LongAn.DVC.Form/css/form.main.custom.css" rel="stylesheet" />
 <script src="/_layouts/15/LongAn.DVC/js/jquery.js"></script>
 
 
@@ -23,14 +24,20 @@
                 <asp:HyperLink ID="hplThongTinHuongDan" CssClass="button large-button stat" runat="server">Thông tin hướng dẫn</asp:HyperLink>
 				<div class="clear"></div>
 			</div>
-			<h2 class="page-header">
-				<asp:Literal ID="literalDeNghiTitle" runat="server"></asp:Literal>
-			</h2>
-		
-			<div class="pull-right">
-				<%--<asp:LinkButton ID="lbtAddNew" CssClass="button add-new" runat="server">Thêm mới</asp:LinkButton>--%>
-                <asp:HyperLink ID="hplAddNew" CssClass="button add-new" runat="server">Thêm mới</asp:HyperLink>
-			</div>
+            <div class="row">
+                <div class="pull-left">
+                    <h2 class="page-header">
+				        <asp:Literal ID="literalDeNghiTitle" runat="server"></asp:Literal>
+			        </h2>
+                </div>
+
+                <div class="pull-right">
+                    <asp:HyperLink ID="hplAddNew" CssClass="button add-new" style="margin-top: 30px"  runat="server">Thêm mới</asp:HyperLink>
+			    </div>
+
+                <div class="clear"></div>
+            </div>
+
 			<div class="clearfix"></div>
 			
             <table class="the-table">

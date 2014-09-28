@@ -49,22 +49,10 @@ namespace LongAn.DVC.Common
         ChuaHoanThanh
     }
 
-    public enum TrangThaiXuLy
+    public enum PrintType
     {
-        KhoiTao,
-        DaTiepNhan,
-        ChoXuLy, //chưa phân công
-        DaPhanCong,
-        ChoTruongPhongDuyet,
-        ChoLanhDaoDuyet,
-        HoSoDuocDuyet,
-        HoSoBiTuChoi,
-        HoSoChoBoSung
-        //TaoMoi,
-        //ChoBoSung,
-        //ChoDuyet,
-        //DaDuyet,
-        //TuChoi
+        PhieuBienNhan,
+        GiayCapPhep
     }
 
     public enum LoaiDuong
@@ -105,9 +93,9 @@ namespace LongAn.DVC.Common
         public const string ConfGroupCanBoXuLy = "DVC Cán bộ xử lý";
         public const string ConfGroupLanhDaoSo = "DVC Lãnh đạo sở";
 
-        public const string ConfWordLicFile = "/LongAn.DVC/lic/Aspose.Words.lic";
-        public const string ConfWordBienNhanTemplate = "/LongAn.DVC/templates/BienNhanTemplate.docx";
-        public const string ConfWordGiayPhepTemplate = "/LongAn.DVC/templates/GiayPhepTemplate.docx";
+        public const string ConfWordLicFile = "TEMPLATE\\LAYOUTS\\LongAn.DVC\\lic\\Aspose.Words.lic";
+        public const string ConfWordBienNhanTemplate = "TEMPLATE\\LAYOUTS\\LongAn.DVC\\templates\\BienNhanTemplate.docx";
+        public const string ConfWordGiayPhepTemplate = "TEMPLATE\\LAYOUTS\\LongAn.DVC\\templates\\GiayPhepTemplate.docx";
 
         public const string ConfLinkDispForm = "javascript:OpenPopUpPage('{0}/DispForm.aspx?ID={1}&Source={2}');return false;";
         public const string ConfLinkEditForm = "javascript:OpenPopUpPage('{0}/EditForm.aspx?ID={1}&Source={2}');return false;";

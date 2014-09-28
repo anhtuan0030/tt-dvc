@@ -220,10 +220,7 @@ ul.bullet-1 li a {
 }
 #footer .row {
   padding-top: 15px;
-  padding-bottom: 5px;
-}
-#footer .container_12 {
-  background: url(../images/shadow.png) no-repeat left bottom;
+  padding-bottom: 15px;
 }
 .page-header {
   margin-bottom: 30px;
@@ -231,9 +228,8 @@ ul.bullet-1 li a {
 }
 #main-frame {
   margin-bottom: 30px;
-}
-.less-able {
-  display: none;
+    top: 0px;
+    left: 0px;
 }
 .container {
   max-width: 1024px;
@@ -259,16 +255,16 @@ a {
   margin-top: 15px;
   margin-bottom: 15px;
 }
-body.default .mr-form .panel-1,
-body.default .mr-form .panel-2 {
+.mr-form .panel-1,
+.mr-form .panel-2 {
   padding: 20px 10px;
   margin-top: 15px;
   margin-bottom: 15px;
 }
-body.default .mr-form .panel-1 {
+.mr-form .panel-1 {
   background: #ebe9d8;
 }
-body.default .mr-form .panel-2 {
+.mr-form .panel-2 {
   border-radius: 3px;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
@@ -276,12 +272,12 @@ body.default .mr-form .panel-2 {
   -o-border-radius: 3px;
   border: 1px solid #858a70;
 }
-body.default .mr-form label {
+.mr-form label {
   font-size: 12px;
   font-weight: normal;
 }
-body.default .mr-form input[type="text"],
-body.default .mr-form input[type="password"] {
+.mr-form input[type="text"],
+.mr-form input[type="password"] {
   border: 1px solid #858a70;
   padding-left: 5px;
   padding-right: 5px;
@@ -291,38 +287,23 @@ body.default .mr-form input[type="password"] {
   -ms-border-radius: 3px;
   -o-border-radius: 3px;
 }
-body.default h1 {
+h1 {
   background: #dde6ed;
   color: #303257;
   text-transform: uppercase;
   padding: 10px;
   font-size: 13px;
 }
-body.default h2 {
+h2 {
   font-size: 14px;
   text-transform: uppercase;
   font-weight: bold;
 }
-body.default h3 {
+h3 {
   font-size: 12px;
   font-weight: bold;
 }
-.mr-form .panel-1,
-.mr-form .panel-2 {
-  padding: 20px 10px;
-  margin-top: 15px;
-  margin-bottom: 15px;
-}
-.mr-form .panel-1 {
-  background: #fafafa;
-}
-.mr-form .panel-2 {
-  border-radius: 3px;
-  -moz-border-radius: 3px;
-  -webkit-border-radius: 3px;
-  -ms-border-radius: 3px;
-  -o-border-radius: 3px;
-  border: 1px solid #858a70;
+border: 1px solid #858a70;
 }
 .mr-form label {
   color: #01648d;
@@ -338,7 +319,7 @@ body.default h3 {
   padding-top: 5px;
   padding-bottom: 5px;
 }
-.mr-form button {
+.mr-form .button {
   border: none;
   background: #0293bf;
   color: #fff;
@@ -346,7 +327,7 @@ body.default h3 {
   padding: 5px 10px;
   text-align: center;
 }
-.mr-form button:hover {
+.mr-form .button:hover {
   background: #01648d;
 }
 h1 {
@@ -365,20 +346,42 @@ h3 {
   font-size: 12px;
   font-weight: bold;
 }
-body.default .date-picker input[type="text"],
+.date-picker input[type="text"],
 .date-picker input[type="text"] {
   width: 80px;
   float: left;
   margin-right: 8px;
 }
-body.default .date-picker img,
+.date-picker img,
 .date-picker img {
   float: left;
   margin-right: 5px;
   margin-top: 4px;
 }
-body.default .date-picker:after,
+.date-picker:after,
 .date-picker:after {
+  clear: both;
+  content: ' ';
+  display: block;
+}
+body {
+  min-width: 980px;
+}
+.inline-block {
+  display: inline-block;
+}
+#logo {
+  color: #fff;
+  border-bottom: 1px solid #fff;
+  margin-bottom: 20px;
+}
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+.container.date-picker:after {
   clear: both;
   content: ' ';
   display: block;
@@ -405,7 +408,7 @@ a:hover {
   padding-right: 15px;
 }
 .button {
-  background-color: #01648d;
+  background-color: #01648d !important;
   border: none;
   display: block;
   padding: 5px;
@@ -416,15 +419,6 @@ a:hover {
 .button:hover {
   background-color: #0293bf;
   color: #fff;
-}
-.button.button-expand {
-  margin-bottom: 10px;
-  background-image: url(../images/expand-down.png);
-  background-position: 5px center;
-  padding-left: 25px;
-}
-.button.button-expand.expanded {
-  background-image: url(../images/expand-up.png);
 }
 .button.danger {
   background-color: #b32200;
@@ -519,7 +513,6 @@ a:hover {
   padding-top: 45px;
   text-align: center;
   font-size: 12px;
-  height: 35px;
 }
 .button.large-button.home {
   background-image: url(../images/home.png);
@@ -545,9 +538,6 @@ a:hover {
 .button.large-button.done {
   background-image: url(../images/done.png);
 }
-.button.large-button.rejected {
-  background-image: url(../images/rejected.png);
-}
 .button.large-button.stat {
   background-image: url(../images/stat.png);
 }
@@ -555,8 +545,8 @@ a:hover {
   padding-left: 5px;
 }
 .button.small {
-  width: 32px;
-  height: 32px;
+  width: 16px;
+  height: 16px;
   padding: 5px 10px;
   background-position: center center;
 }
@@ -595,8 +585,8 @@ input[type="text"].small {
 .pag label {
   float: left;
   margin-right: 3px;
-  height: 26px;
-  line-height: 26px;
+  height: 32px;
+  line-height: 32px;
 }
 .pag label {
   margin-right: 15px;
@@ -607,28 +597,22 @@ input[type="text"].small {
   content: ' ';
 }
 #top-control {
-  margin-top: 2px;
+  margin-top: 15px;
 }
 #top-control .button {
   float: left;
-  margin-right: 7px;
+  margin-right: 15px;
 }
 #searchform {
   border: 1px solid #dedede;
   padding: 15px;
-  padding-top: 25px;
-  padding-bottom: 0px;
   margin-top: 15px;
   margin-bottom: 15px;
 }
-#searchform input[type="text"] {
-  padding-top: 3px;
-  padding-bottom: 3px;
-}
 #searchform .button {
-  width: 80%;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  width: 90%;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 #searchform .row.line {
   margin-bottom: 15px;
@@ -640,12 +624,12 @@ input[type="text"].small {
   margin-bottom: 15px;
 }
 .the-form input[type="text"] {
-  width: 99%;
+  width: 100%;
   border: 1px solid #01648d;
-  padding-top: 9px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
+  padding-top: 5px;
+  padding-bottom: 3px;
+  padding-left: 0;
+  padding-right: 0;
 }
 .the-table {
   margin-top: 15px;

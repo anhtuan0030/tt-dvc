@@ -1,8 +1,10 @@
-﻿using LongAn.DVC.Common;
+﻿using CamlexNET;
+using LongAn.DVC.Common;
 using LongAn.DVC.Helpers;
 using Microsoft.SharePoint;
 using Microsoft.SharePoint.WebControls;
 using System;
+using System.Data;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -30,11 +32,16 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
                 (currentStatus == (int)TrangThaiHoSo.KhoiTao ||
                 currentStatus == (int)TrangThaiHoSo.ChoBoSung))
             {
+                divDanhSachYeuCauBoSung.Visible = true;
+                if (!IsPostBack)
+                    LoadYeuCauBoSung();
+
                 btnSave.Visible = true;
                 btnGuiHoSo.Visible = true;
                 btnSave.Click += btnSave_Click;
                 btnGuiHoSo.Click += btnGuiHoSo_Click;
             }
+
             base.OnInit(e);
         }
 
@@ -109,5 +116,103 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
                 redirectUrl = "/";
             longOperation.End(redirectUrl, Microsoft.SharePoint.Utilities.SPRedirectFlags.DoNotEndResponse, HttpContext.Current, "");
         }
+
+        #region YeuCauBoSung
+
+        public void LoadYeuCauBoSung()
+        {
+            try
+            {
+                LoggingServices.LogMessage("Begin YeuCauBoSung");
+                SPQuery caml = Camlex.Query().Where(x => x[Constants.FieldDeNghi] == (DataTypes.LookupId)SPContext.Current.ItemId.ToString())
+                                    .OrderBy(x => new[] { x["ID"] as Camlex.Asc })
+                                    .ToSPQuery();
+                var yeuCauBoSungUrl = (SPContext.Current.Web.ServerRelativeUrl + Constants.ListUrlYeuCauBoSung).Replace("//", "/");
+                var yeuCauBoSungList = SPContext.Current.Web.GetList(yeuCauBoSungUrl);
+                var yeuCauBoSungItems = yeuCauBoSungList.GetItems(caml).GetDataTable();
+                repeaterLists.DataSource = yeuCauBoSungItems;
+                repeaterLists.DataBind();
+            }
+            catch (Exception ex)
+            {
+                LoggingServices.LogException(ex);
+            }
+            LoggingServices.LogMessage("Begin YeuCauBoSung");
+        }
+
+        void UpdateYeuCauBoSung(int itemId)
+        {
+            try
+            {
+                LoggingServices.LogMessage("Begin UpdateYeuCauBoSung");
+                var yeuCauBoSungUrl = (SPContext.Current.Web.ServerRelativeUrl + Constants.ListUrlYeuCauBoSung).Replace("//", "/");
+                var yeuCauBoSungList = SPContext.Current.Web.GetList(yeuCauBoSungUrl);
+                var yeuCauBoSungItem = yeuCauBoSungList.GetItemById(itemId);
+                yeuCauBoSungItem["DaBoSung"] = true;
+                yeuCauBoSungItem["NgayBoSung"] = DateTime.Now;
+            }
+            catch (Exception ex)
+            {
+                LoggingServices.LogException(ex);
+            }
+            LoggingServices.LogMessage("End UpdateYeuCauBoSung");
+        }
+
+        protected void repeaterLists_ItemDataBound(object sender, RepeaterItemEventArgs e)
+        {
+            try
+            {
+                DataRowView rowView = (DataRowView)e.Item.DataItem;
+                if (rowView != null)
+                {
+                    string commandAgrument = rowView["ID"].ToString();
+
+                    Literal literalTitle = (Literal)e.Item.FindControl("literalTitle");
+                    literalTitle.Text = rowView[Constants.FieldTitle].ToString();
+
+                    Literal literalMoTa = (Literal)e.Item.FindControl("literalMoTa");
+                    literalMoTa.Text = rowView[Constants.FieldMoTa].ToString();
+
+                    Literal literalNgayYeuCau = (Literal)e.Item.FindControl("literalNgayYeuCau");
+                    literalNgayYeuCau.Text = rowView[Constants.FieldCreated].ToString();
+
+                    LinkButton lbtXacNhan = (LinkButton)e.Item.FindControl("lbtXacNhan");
+                    LinkButton lbtDisable = (LinkButton)e.Item.FindControl("lbtDisable");
+                    var trangThai = int.Parse(rowView[Constants.FieldTrangThai].ToString());
+                    if (trangThai == (int)TrangThaiHoSo.ChoBoSung)
+                    {
+                        lbtDisable.Style.Add("display", "none");
+                        lbtXacNhan.CommandName = "XacNhanBoSungHoSo";
+                        lbtXacNhan.Style.Add("display", "block");
+                        lbtXacNhan.CommandArgument = commandAgrument;
+                        lbtXacNhan.OnClientClick = "if (!confirm('Bạn có chắc chắn muốn xóa hồ sơ này không?')) return false;";
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                LoggingServices.LogException(ex);
+            }
+        }
+
+        protected void repeaterLists_ItemCommand(object source, RepeaterCommandEventArgs e)
+        {
+            string commandText = e.CommandArgument.ToString();
+            if (e.CommandName == "XacNhanBoSungHoSo")
+            {
+                try
+                {
+                    LoggingServices.LogMessage("Begin XacNhanBoSungHoSo, item id:" + commandText);
+                    UpdateYeuCauBoSung(int.Parse(commandText));
+                    LoadYeuCauBoSung();
+                }
+                catch (Exception ex)
+                {
+                    LoggingServices.LogException(ex);
+                }
+                LoggingServices.LogMessage("End XacNhanBoSungHoSo, item id:" + commandText);
+            }
+        }
+        #endregion YeuCauBoSung
     }
 }

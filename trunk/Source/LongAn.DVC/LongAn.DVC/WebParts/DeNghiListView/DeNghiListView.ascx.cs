@@ -526,7 +526,6 @@ namespace LongAn.DVC.WebParts.DeNghiListView
                 var web = SPContext.Current.Web;
                 var deNghiList = web.GetList((web.ServerRelativeUrl + Constants.ListUrlDeNghiCapPhep).Replace("//", "/"));
                 var deNghiItem = deNghiList.GetItemById(itemId);
-                //InPhieuBienNhan(new DataTable(), this.Parent.Page);
                 deNghiItem[Constants.FieldTrangThai] = (int)trangThaiXuLy;
                 deNghiItem[Constants.FieldCapDuyet] = capXuLy;
                 var currentUserId = SPContext.Current.Web.CurrentUser.ID;
@@ -543,32 +542,40 @@ namespace LongAn.DVC.WebParts.DeNghiListView
             LoggingServices.LogMessage("End UpdateItem, item id:" + itemId);
         }
 
-        void InPhieuBienNhan(DataTable dataTable, System.Web.UI.Page page)
+        void InPhieuBienNhan(PrintType type, string itemId)
         {
             try
             {
+                var web = SPContext.Current.Web;
+                var deNghiList = web.GetList((web.ServerRelativeUrl + Constants.ListUrlDeNghiCapPhep).Replace("//", "/"));
                 string wordLicFile = Microsoft.SharePoint.Utilities.SPUtility.GetVersionedGenericSetupPath(Constants.ConfWordLicFile, 15);
                 Aspose.Words.License wordLic = new Aspose.Words.License();
                 wordLic.SetLicense(wordLicFile);
 
-                string templateFile = Microsoft.SharePoint.Utilities.SPUtility.GetVersionedGenericSetupPath(Constants.ConfWordBienNhanTemplate, 15);
+                string templateFile = string.Empty;
+                SPQuery caml = Camlex.Query().Where(x => x["ID"] == (DataTypes.Counter)itemId)
+                                                    .ToSPQuery();
+                if (type == PrintType.PhieuBienNhan)
+                    templateFile = Microsoft.SharePoint.Utilities.SPUtility.GetVersionedGenericSetupPath(Constants.ConfWordBienNhanTemplate, 15);
+                else if (type == PrintType.GiayCapPhep)
+                    templateFile = Microsoft.SharePoint.Utilities.SPUtility.GetVersionedGenericSetupPath(Constants.ConfWordGiayPhepTemplate, 15);
+
                 Aspose.Words.Document doc = new Aspose.Words.Document(templateFile);
+                var deNghiItem = deNghiList.GetItems(caml).GetDataTable();
 
-                doc.MailMerge.Execute(dataTable);
+                doc.MailMerge.Execute(deNghiItem);
 
-                string fileName = string.Format("BienNhan{0}.docx", DateTime.Now.ToString("_yyyyMMdd_hhmmss"));
+                string fileName = string.Format(DateTime.Now.ToString("yyyyMMdd_hhmmss"));
 
                 System.IO.MemoryStream ms = new System.IO.MemoryStream();
                 doc.Save(ms, Aspose.Words.SaveFormat.Docx);
-                //doc.Save(fileName, Aspose.Words.SaveFormat.Docx, Aspose.Words.SaveType.OpenInBrowser, this.Response);
-                page.Response.Clear();
-                page.Response.ContentType = "application/vnd.openxmlformats-officedocument.wordprocessingml.document";
-                page.Response.AddHeader("Content-Disposition", string.Format("attachment; filename={0}.docx", fileName));
-                page.Response.Flush();
-                page.Response.BinaryWrite(ms.ToArray());
-                //ms.WriteTo(Response.OutputStream); //works too
-                //Response.Close();
-                page.Response.End();
+                this.Parent.Page.Response.Clear();
+                this.Parent.Page.Response.ContentType = "application/vnd.openxmlformats-officedocument.wordprocessingml.document";
+                this.Parent.Page.Response.AddHeader("Content-Disposition", string.Format("attachment; filename={0}.docx", fileName));
+                this.Parent.Page.Response.BinaryWrite(ms.ToArray());
+                this.Parent.Page.Response.Flush();
+                this.Parent.Page.Response.Close();
+                this.Parent.Page.Response.End();
             }
             catch (Exception ex)
             {
@@ -609,6 +616,9 @@ namespace LongAn.DVC.WebParts.DeNghiListView
                     var viewUrl = string.Format(Constants.ConfLinkPageDispForm, deNghiUrl, commandAgrument, currentPage);
                     hplViewItem.NavigateUrl = viewUrl;
 
+                    LinkButton lbtPrint = (LinkButton)e.Item.FindControl("lbtPrint");
+                    lbtPrint.CommandArgument = commandAgrument;
+
                     LinkButton lbtDisable1 = (LinkButton)e.Item.FindControl("lbtDisable1");
                     LinkButton lbtDisable2 = (LinkButton)e.Item.FindControl("lbtDisable2");
                     LinkButton lbtDisable3 = (LinkButton)e.Item.FindControl("lbtDisable3");
@@ -633,6 +643,10 @@ namespace LongAn.DVC.WebParts.DeNghiListView
                             }
                             else if (TrangThai == (int)TrangThaiHoSo.DaTiepNhan)
                             {
+                                lbtPrint.Style.Add("display", "block");
+                                lbtDisable1.Style.Add("display", "none");
+                                lbtPrint.CommandName = "InBienNhan";
+
                                 LinkButton lbtChuyenTruongPhong = (LinkButton)e.Item.FindControl("lbtChuyenTruongPhong");
                                 lbtChuyenTruongPhong.CommandName = "ChuyenTruongPhoPhong";
                                 lbtChuyenTruongPhong.Style.Add("display", "block");
@@ -660,6 +674,12 @@ namespace LongAn.DVC.WebParts.DeNghiListView
                                 lbtChuaHoanThanh.CommandArgument = commandAgrument;
                                 lbtChuaHoanThanh.OnClientClick = "if (!confirm('Bạn có chắc chắn muốn xác nhận hồ sơ này chưa hoàn thành không?')) return false;";
                                 lbtDisable2.Style.Add("display", "none");
+                            }
+                            else if (TrangThai == (int)TrangThaiHoSo.HoanThanh || TrangThai == (int)TrangThaiHoSo.ChuaHoanThanh)
+                            {
+                                lbtPrint.Style.Add("display", "block");
+                                lbtDisable1.Style.Add("display", "none");
+                                lbtPrint.CommandName = "InGiayPhep";
                             }
                             break;
                         case CapXuLy.TruongPhoPhong:
@@ -750,44 +770,61 @@ namespace LongAn.DVC.WebParts.DeNghiListView
         protected void repeaterLists_ItemCommand(object source, RepeaterCommandEventArgs e)
         {
             int commandText = int.Parse(e.CommandArgument.ToString());
+            var commadName = e.CommandName;
             var web = SPContext.Current.Web;
+            var printType = PrintType.PhieuBienNhan;
             try
             {
-                LoggingServices.LogMessage("Begin link button click, command: " + e.CommandName + ", item id: " + commandText);
+                LoggingServices.LogMessage("Begin link button click, command: " + commadName + ", item id: " + commandText);
                 var trangThaiHoSo = TrangThaiHoSo.ChoTiepNhan;
                 var capXuLy = CapXuLy.MotCua;
-                switch (e.CommandName)
+                switch (commadName)
                 {
+                    case "InBienNhan":
+                        printType = PrintType.PhieuBienNhan;
+                        break;
+                    case "InGiayPhep":
+                        printType = PrintType.GiayCapPhep;
+                        break;
                     case "TiepNhanHoSo":
                         trangThaiHoSo = TrangThaiHoSo.DaTiepNhan;
+                        printType = PrintType.PhieuBienNhan;
+                        UpdateItem(commandText, trangThaiHoSo, capXuLy);
                         break;
                     case "ChuyenTruongPhoPhong":
                         trangThaiHoSo = TrangThaiHoSo.ChoXuLy;
+                        UpdateItem(commandText, trangThaiHoSo, capXuLy);
                         break;
                     case "XacNhanHoanThanh":
                         trangThaiHoSo = TrangThaiHoSo.HoanThanh;
+                        printType = PrintType.GiayCapPhep;
+                        UpdateItem(commandText, trangThaiHoSo, capXuLy);
                         break;
                     case "XacNhanChuaHoanThanh":
                         trangThaiHoSo = TrangThaiHoSo.ChuaHoanThanh;
+                        UpdateItem(commandText, trangThaiHoSo, capXuLy);
                         break;
                     case "TrinhLanhDaoSo":
                         trangThaiHoSo = TrangThaiHoSo.ChoCapPhep;
+                        UpdateItem(commandText, trangThaiHoSo, capXuLy);
                         capXuLy = CapXuLy.LanhDaoSo;
                         break;
                     case "TiepNhanXuLy":
                         trangThaiHoSo = TrangThaiHoSo.DangXuLy;
                         capXuLy = CapXuLy.CanBo;
+                        UpdateItem(commandText, trangThaiHoSo, capXuLy);
                         break;
                     case "TrinhTruongPhoPhong":
                         trangThaiHoSo = TrangThaiHoSo.ChoDuyet;
                         capXuLy = CapXuLy.TruongPhoPhong;
+                        UpdateItem(commandText, trangThaiHoSo, capXuLy);
                         break;
                     case "DuyetCapPhepHoSo":
                         trangThaiHoSo = TrangThaiHoSo.DuocCapPhep;
                         capXuLy = CapXuLy.MotCua;
+                        UpdateItem(commandText, trangThaiHoSo, capXuLy);
                         break;
                 }
-                UpdateItem(commandText, trangThaiHoSo, capXuLy);
                 DeNghiHelper.AddDeNghiHistory(web, capXuLy, commandText, e.CommandName, string.Empty);
                 this.BindItemsList();
             }
@@ -796,6 +833,9 @@ namespace LongAn.DVC.WebParts.DeNghiListView
                 LoggingServices.LogException(ex);
             }
             LoggingServices.LogMessage("End link button click, command: " + e.CommandName + ", item id: " + commandText);
+            //Print
+            if (commadName == "InBienNhan" || commadName == "InGiayPhep")
+                InPhieuBienNhan(printType, commandText.ToString());
         }
         #endregion Repeater List
     }

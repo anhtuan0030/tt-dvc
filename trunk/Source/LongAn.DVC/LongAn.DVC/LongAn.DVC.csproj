@@ -14,7 +14,7 @@
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{C1CDDADD-2546-481F-9697-4EA41081F2FC};{14822709-B5A1-4724-98CA-57A101D1B079};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <SandboxedSolution>False</SandboxedSolution>
-    <ActiveDeploymentConfiguration>Default</ActiveDeploymentConfiguration>
+    <ActiveDeploymentConfiguration>Upgrade Solution %28CKSDev%29</ActiveDeploymentConfiguration>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -200,6 +200,62 @@
     <Content Include="Features\LongAn.DVC.Site.Pages\LongAn.DVC.Site.Pages.Template.xml">
       <DependentUpon>LongAn.DVC.Site.Pages.feature</DependentUpon>
     </Content>
+    <Content Include="Layouts\LongAn.DVC.Form\css\form.main.custom.css" />
+    <Content Include="Layouts\LongAn.DVC.Form\css\main.css" />
+    <Content Include="Layouts\LongAn.DVC.Form\images\add-file.png" />
+    <Content Include="Layouts\LongAn.DVC.Form\images\add.png" />
+    <Content Include="Layouts\LongAn.DVC.Form\images\added.png" />
+    <Content Include="Layouts\LongAn.DVC.Form\images\advantage.png" />
+    <Content Include="Layouts\LongAn.DVC.Form\images\attachment.png" />
+    <Content Include="Layouts\LongAn.DVC.Form\images\backup.png" />
+    <Content Include="Layouts\LongAn.DVC.Form\images\banner-1.png" />
+    <Content Include="Layouts\LongAn.DVC.Form\images\banner.png" />
+    <Content Include="Layouts\LongAn.DVC.Form\images\calculator.png" />
+    <Content Include="Layouts\LongAn.DVC.Form\images\calendar.png" />
+    <Content Include="Layouts\LongAn.DVC.Form\images\calendar2.png" />
+    <Content Include="Layouts\LongAn.DVC.Form\images\done.png" />
+    <Content Include="Layouts\LongAn.DVC.Form\images\down53.png" />
+    <Content Include="Layouts\LongAn.DVC.Form\images\edit4.png" />
+    <Content Include="Layouts\LongAn.DVC.Form\images\end.png" />
+    <Content Include="Layouts\LongAn.DVC.Form\images\excel.png" />
+    <Content Include="Layouts\LongAn.DVC.Form\images\exit.png" />
+    <Content Include="Layouts\LongAn.DVC.Form\images\expand-down.png" />
+    <Content Include="Layouts\LongAn.DVC.Form\images\expand-up.png" />
+    <Content Include="Layouts\LongAn.DVC.Form\images\home.png" />
+    <Content Include="Layouts\LongAn.DVC.Form\images\icon-04.png" />
+    <Content Include="Layouts\LongAn.DVC.Form\images\index-02.png" />
+    <Content Include="Layouts\LongAn.DVC.Form\images\index-03.png" />
+    <Content Include="Layouts\LongAn.DVC.Form\images\index_banner-07.png" />
+    <Content Include="Layouts\LongAn.DVC.Form\images\index_banner-08.png" />
+    <Content Include="Layouts\LongAn.DVC.Form\images\index_banner-09.png" />
+    <Content Include="Layouts\LongAn.DVC.Form\images\index_bullet.png" />
+    <Content Include="Layouts\LongAn.DVC.Form\images\index_button.png" />
+    <Content Include="Layouts\LongAn.DVC.Form\images\index_icon.png" />
+    <Content Include="Layouts\LongAn.DVC.Form\images\index_logo.png" />
+    <Content Include="Layouts\LongAn.DVC.Form\images\item.png" />
+    <Content Include="Layouts\LongAn.DVC.Form\images\more7.png" />
+    <Content Include="Layouts\LongAn.DVC.Form\images\next.png" />
+    <Content Include="Layouts\LongAn.DVC.Form\images\overlay-05.png" />
+    <Content Include="Layouts\LongAn.DVC.Form\images\prev.png" />
+    <Content Include="Layouts\LongAn.DVC.Form\images\printer.png" />
+    <Content Include="Layouts\LongAn.DVC.Form\images\process.png" />
+    <Content Include="Layouts\LongAn.DVC.Form\images\rejected.png" />
+    <Content Include="Layouts\LongAn.DVC.Form\images\remove.png" />
+    <Content Include="Layouts\LongAn.DVC.Form\images\restore.png" />
+    <Content Include="Layouts\LongAn.DVC.Form\images\search.png" />
+    <Content Include="Layouts\LongAn.DVC.Form\images\shadow.png" />
+    <Content Include="Layouts\LongAn.DVC.Form\images\shadow_01.png" />
+    <Content Include="Layouts\LongAn.DVC.Form\images\start.png" />
+    <Content Include="Layouts\LongAn.DVC.Form\images\stat.png" />
+    <Content Include="Layouts\LongAn.DVC.Form\images\task.png" />
+    <Content Include="Layouts\LongAn.DVC.Form\images\top-banner-2-lines.png" />
+    <Content Include="Layouts\LongAn.DVC.Form\images\top-banner.jpg" />
+    <Content Include="Layouts\LongAn.DVC.Form\images\top-banner.png" />
+    <Content Include="Layouts\LongAn.DVC.Form\images\up.png" />
+    <Content Include="Layouts\LongAn.DVC.Form\images\waiting.png" />
+    <Content Include="Layouts\LongAn.DVC.Form\images\word.png" />
+    <Content Include="Layouts\LongAn.DVC.Form\images\_banner.png" />
+    <Content Include="Layouts\LongAn.DVC.Form\images\_index_logo.png" />
     <Content Include="Layouts\LongAn.DVC\lic\Aspose.Cells.lic" />
     <Content Include="Layouts\LongAn.DVC\lic\Aspose.Words.lic" />
     <None Include="Layouts\LongAn.DVC\templates\BienNhanTemplate.docx" />
@@ -314,53 +370,9 @@
     <Content Include="Layouts\LongAn.DVC.Form\css\images\ui-icons_ff0084_256x240.png" />
     <Content Include="Layouts\LongAn.DVC.Form\css\images\ui-icons_ffffff_256x240.png" />
     <Content Include="Layouts\LongAn.DVC.Form\css\jquery-ui.min.css" />
-    <Content Include="Layouts\LongAn.DVC.Form\css\main.css" />
+    <Content Include="Layouts\LongAn.DVC.Form\css\main_20140925.css" />
     <Content Include="Layouts\LongAn.DVC.Form\css\normalize.css" />
     <Content Include="Layouts\LongAn.DVC.Form\css\superfish.css" />
-    <Content Include="Layouts\LongAn.DVC.Form\images\add-file.png" />
-    <Content Include="Layouts\LongAn.DVC.Form\images\add.png" />
-    <Content Include="Layouts\LongAn.DVC.Form\images\added.png" />
-    <Content Include="Layouts\LongAn.DVC.Form\images\advantage.png" />
-    <Content Include="Layouts\LongAn.DVC.Form\images\attachment.png" />
-    <Content Include="Layouts\LongAn.DVC.Form\images\backup.png" />
-    <Content Include="Layouts\LongAn.DVC.Form\images\banner.png" />
-    <Content Include="Layouts\LongAn.DVC.Form\images\calculator.png" />
-    <Content Include="Layouts\LongAn.DVC.Form\images\calendar.png" />
-    <Content Include="Layouts\LongAn.DVC.Form\images\calendar2.png" />
-    <Content Include="Layouts\LongAn.DVC.Form\images\done.png" />
-    <Content Include="Layouts\LongAn.DVC.Form\images\edit4.png" />
-    <Content Include="Layouts\LongAn.DVC.Form\images\end.png" />
-    <Content Include="Layouts\LongAn.DVC.Form\images\excel.png" />
-    <Content Include="Layouts\LongAn.DVC.Form\images\exit.png" />
-    <Content Include="Layouts\LongAn.DVC.Form\images\home.png" />
-    <Content Include="Layouts\LongAn.DVC.Form\images\icon-04.png" />
-    <Content Include="Layouts\LongAn.DVC.Form\images\index-02.png" />
-    <Content Include="Layouts\LongAn.DVC.Form\images\index-03.png" />
-    <Content Include="Layouts\LongAn.DVC.Form\images\index_banner-07.png" />
-    <Content Include="Layouts\LongAn.DVC.Form\images\index_banner-08.png" />
-    <Content Include="Layouts\LongAn.DVC.Form\images\index_banner-09.png" />
-    <Content Include="Layouts\LongAn.DVC.Form\images\index_bullet.png" />
-    <Content Include="Layouts\LongAn.DVC.Form\images\index_button.png" />
-    <Content Include="Layouts\LongAn.DVC.Form\images\index_icon.png" />
-    <Content Include="Layouts\LongAn.DVC.Form\images\index_logo.png" />
-    <Content Include="Layouts\LongAn.DVC.Form\images\item.png" />
-    <Content Include="Layouts\LongAn.DVC.Form\images\more7.png" />
-    <Content Include="Layouts\LongAn.DVC.Form\images\next.png" />
-    <Content Include="Layouts\LongAn.DVC.Form\images\overlay-05.png" />
-    <Content Include="Layouts\LongAn.DVC.Form\images\prev.png" />
-    <Content Include="Layouts\LongAn.DVC.Form\images\printer.png" />
-    <Content Include="Layouts\LongAn.DVC.Form\images\process.png" />
-    <Content Include="Layouts\LongAn.DVC.Form\images\remove.png" />
-    <Content Include="Layouts\LongAn.DVC.Form\images\restore.png" />
-    <Content Include="Layouts\LongAn.DVC.Form\images\search.png" />
-    <Content Include="Layouts\LongAn.DVC.Form\images\start.png" />
-    <Content Include="Layouts\LongAn.DVC.Form\images\stat.png" />
-    <Content Include="Layouts\LongAn.DVC.Form\images\task.png" />
-    <Content Include="Layouts\LongAn.DVC.Form\images\up.png" />
-    <Content Include="Layouts\LongAn.DVC.Form\images\waiting.png" />
-    <Content Include="Layouts\LongAn.DVC.Form\images\word.png" />
-    <Content Include="Layouts\LongAn.DVC.Form\images\_banner.png" />
-    <Content Include="Layouts\LongAn.DVC.Form\images\_index_logo.png" />
     <Content Include="Layouts\LongAn.DVC.Form\js\datepicker-vi.js" />
     <Content Include="Layouts\LongAn.DVC.Form\js\detectizr.min.js" />
     <Content Include="Layouts\LongAn.DVC.Form\js\hoverIntent.js" />

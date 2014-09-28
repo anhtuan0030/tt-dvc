@@ -106,13 +106,6 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
             */
             #endregion Backup
 
-            if (currentStatus == (int)TrangThaiHoSo.ChoBoSung)
-            {
-                divDanhSachYeuCauBoSung.Visible = true;
-                if (!IsPostBack)
-                    LoadYeuCauBoSung();
-            }
-
             base.OnInit(e);
         }
 
@@ -161,6 +154,8 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
                     }
                     break;
                 default:
+                    if (capXuLy == CapXuLy.CanBo)
+                        divLoaiDuong.Visible = true;
                     break;
             }
         }
@@ -326,92 +321,6 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
             LoggingServices.LogMessage("End AddBoSungYeuCau");
         }
 
-        #region YeuCauBoSung
-
-        public void LoadYeuCauBoSung()
-        {
-            try
-            {
-                LoggingServices.LogMessage("Begin YeuCauBoSung");
-                SPQuery caml = Camlex.Query().Where(x => x[Constants.FieldDeNghi] == (DataTypes.LookupId)SPContext.Current.ItemId.ToString())
-                                    .OrderBy(x => new[] { x["ID"] as Camlex.Asc })
-                                    .ToSPQuery();
-                var yeuCauBoSungUrl = (SPContext.Current.Web.ServerRelativeUrl + Constants.ListUrlYeuCauBoSung).Replace("//", "/");
-                var yeuCauBoSungList = SPContext.Current.Web.GetList(yeuCauBoSungUrl);
-                var yeuCauBoSungItems = yeuCauBoSungList.GetItems(caml).GetDataTable();
-                repeaterLists.DataSource = yeuCauBoSungItems;
-                repeaterLists.DataBind();
-            }
-            catch (Exception ex)
-            {
-                LoggingServices.LogException(ex);
-            }
-            LoggingServices.LogMessage("Begin YeuCauBoSung");
-        }
-
-        protected void repeaterLists_ItemDataBound(object sender, RepeaterItemEventArgs e)
-        {
-            try
-            {
-                DataRowView rowView = (DataRowView)e.Item.DataItem;
-                if (rowView != null)
-                {
-                    string commandAgrument = rowView["ID"].ToString();
-
-                    Literal literalTitle = (Literal)e.Item.FindControl("literalTitle");
-                    literalTitle.Text = rowView[Constants.FieldTitle].ToString();
-
-                    Literal literalMoTa = (Literal)e.Item.FindControl("literalMoTa");
-                    literalMoTa.Text = rowView[Constants.FieldMoTa].ToString();
-
-                    Literal literalNgayYeuCau = (Literal)e.Item.FindControl("literalNgayYeuCau");
-                    literalNgayYeuCau.Text = rowView[Constants.FieldCreated].ToString();
-
-                    //LinkButton lbtXacNhan = (LinkButton)e.Item.FindControl("lbtXacNhan");
-                    //var trangThai = int.Parse(rowView[Constants.FieldTrangThai].ToString());
-                    //if (trangThai == (int)TrangThaiHoSo.ChoBoSung)
-                    //{
-                    //    lbtXacNhan.CommandName = "OnDeleteItemClick";
-                    //    lbtXacNhan.CommandArgument = commandAgrument;
-                    //    lbtXacNhan.OnClientClick = "if (!confirm('Bạn có chắc chắn muốn xóa hồ sơ này không?')) return false;";
-                    //}
-                }
-            }
-            catch (Exception ex)
-            {
-                LoggingServices.LogException(ex);
-            }
-        }
-
-        protected void repeaterLists_ItemCommand(object source, RepeaterCommandEventArgs e)
-        {
-            string commandText = e.CommandArgument.ToString();
-            if (e.CommandName == "OnDeleteItemClick")
-            {
-                try
-                {
-                    LoggingServices.LogMessage("Begin OnDeleteItemClick, item id:" + commandText);
-                    
-                }
-                catch (Exception ex)
-                {
-                    LoggingServices.LogException(ex);
-                }
-                LoggingServices.LogMessage("End OnDeleteItemClick, item id:" + commandText);
-            }
-            else if (e.CommandName == "OnNopHoSoClick")
-            {
-                try
-                {
-                    LoggingServices.LogMessage("Begin OnNopHoSoClick, item id:" + commandText);
-                }
-                catch (Exception ex)
-                {
-                    LoggingServices.LogException(ex);
-                }
-                LoggingServices.LogMessage("End OnNopHoSoClick, item id:" + commandText);
-            }
-        }
-        #endregion YeuCauBoSung
+        
     }
 }

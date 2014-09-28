@@ -97,6 +97,18 @@ namespace LongAn.DVC.WebParts.DeNghiListView {
         
         [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
             "artCodeGenerator", "12.0.0.0")]
+        protected global::System.Web.UI.WebControls.HiddenField hdfSearchExpand;
+        
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        protected global::System.Web.UI.WebControls.HyperLink hplAddNew;
+        
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divAddNew;
+        
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
         protected global::System.Web.UI.WebControls.TextBox txtTuKhoa;
         
         [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
@@ -118,14 +130,6 @@ namespace LongAn.DVC.WebParts.DeNghiListView {
         [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
             "artCodeGenerator", "12.0.0.0")]
         protected global::System.Web.UI.WebControls.Button btnTimKiem;
-        
-        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
-            "artCodeGenerator", "12.0.0.0")]
-        protected global::System.Web.UI.WebControls.HyperLink hplAddNew;
-        
-        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
-            "artCodeGenerator", "12.0.0.0")]
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divAddNew;
         
         [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
             "artCodeGenerator", "12.0.0.0")]
@@ -373,6 +377,51 @@ namespace LongAn.DVC.WebParts.DeNghiListView {
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
         [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
             "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.HiddenField @__BuildControlhdfSearchExpand() {
+            global::System.Web.UI.WebControls.HiddenField @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.HiddenField();
+            this.hdfSearchExpand = @__ctrl;
+            @__ctrl.ID = "hdfSearchExpand";
+            @__ctrl.Value = "0";
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.HyperLink @__BuildControlhplAddNew() {
+            global::System.Web.UI.WebControls.HyperLink @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.HyperLink();
+            this.hplAddNew = @__ctrl;
+            @__ctrl.ApplyStyleSheetSkin(this.Page);
+            @__ctrl.ID = "hplAddNew";
+            @__ctrl.CssClass = "button add-new inline-block";
+            System.Web.UI.IParserAccessor @__parser = ((System.Web.UI.IParserAccessor)(@__ctrl));
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("Thêm mới"));
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.HtmlControls.HtmlGenericControl @__BuildControldivAddNew() {
+            global::System.Web.UI.HtmlControls.HtmlGenericControl @__ctrl;
+            @__ctrl = new global::System.Web.UI.HtmlControls.HtmlGenericControl("div");
+            this.divAddNew = @__ctrl;
+            ((System.Web.UI.IAttributeAccessor)(@__ctrl)).SetAttribute("class", "pull-left-add");
+            @__ctrl.ID = "divAddNew";
+            System.Web.UI.IParserAccessor @__parser = ((System.Web.UI.IParserAccessor)(@__ctrl));
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                        "));
+            global::System.Web.UI.WebControls.HyperLink @__ctrl1;
+            @__ctrl1 = this.@__BuildControlhplAddNew();
+            @__parser.AddParsedSubObject(@__ctrl1);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n\t\t\t        "));
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
         private global::System.Web.UI.WebControls.TextBox @__BuildControltxtTuKhoa() {
             global::System.Web.UI.WebControls.TextBox @__ctrl;
             @__ctrl = new global::System.Web.UI.WebControls.TextBox();
@@ -444,40 +493,6 @@ namespace LongAn.DVC.WebParts.DeNghiListView {
             @__ctrl.Text = "Tìm kiếm";
             @__ctrl.CssClass = "button search";
             ((System.Web.UI.IAttributeAccessor)(@__ctrl)).SetAttribute("align", "middle");
-            return @__ctrl;
-        }
-        
-        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
-        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
-            "artCodeGenerator", "12.0.0.0")]
-        private global::System.Web.UI.WebControls.HyperLink @__BuildControlhplAddNew() {
-            global::System.Web.UI.WebControls.HyperLink @__ctrl;
-            @__ctrl = new global::System.Web.UI.WebControls.HyperLink();
-            this.hplAddNew = @__ctrl;
-            @__ctrl.ApplyStyleSheetSkin(this.Page);
-            @__ctrl.ID = "hplAddNew";
-            @__ctrl.CssClass = "button add-new";
-            System.Web.UI.IParserAccessor @__parser = ((System.Web.UI.IParserAccessor)(@__ctrl));
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("Thêm mới"));
-            return @__ctrl;
-        }
-        
-        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
-        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
-            "artCodeGenerator", "12.0.0.0")]
-        private global::System.Web.UI.HtmlControls.HtmlGenericControl @__BuildControldivAddNew() {
-            global::System.Web.UI.HtmlControls.HtmlGenericControl @__ctrl;
-            @__ctrl = new global::System.Web.UI.HtmlControls.HtmlGenericControl("div");
-            this.divAddNew = @__ctrl;
-            ((System.Web.UI.IAttributeAccessor)(@__ctrl)).SetAttribute("class", "pull-right");
-            @__ctrl.ID = "divAddNew";
-            @__ctrl.Visible = false;
-            System.Web.UI.IParserAccessor @__parser = ((System.Web.UI.IParserAccessor)(@__ctrl));
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n\t\t\t\t\r\n                "));
-            global::System.Web.UI.WebControls.HyperLink @__ctrl1;
-            @__ctrl1 = this.@__BuildControlhplAddNew();
-            @__parser.AddParsedSubObject(@__ctrl1);
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n\t\t\t"));
             return @__ctrl;
         }
         
@@ -651,6 +666,21 @@ namespace LongAn.DVC.WebParts.DeNghiListView {
             @__ctrl = new global::System.Web.UI.WebControls.LinkButton();
             @__ctrl.TemplateControl = this;
             @__ctrl.ApplyStyleSheetSkin(this.Page);
+            @__ctrl.ID = "lbtPrint";
+            @__ctrl.ToolTip = "In Biên nhận / Giấy cấp phép";
+            @__ctrl.CssClass = "button printer just-icon";
+            ((System.Web.UI.IAttributeAccessor)(@__ctrl)).SetAttribute("style", "display:none;");
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.LinkButton @__BuildControl__control15() {
+            global::System.Web.UI.WebControls.LinkButton @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.LinkButton();
+            @__ctrl.TemplateControl = this;
+            @__ctrl.ApplyStyleSheetSkin(this.Page);
             @__ctrl.ID = "lbtDisable2";
             @__ctrl.Enabled = false;
             @__ctrl.ToolTip = "Disable";
@@ -662,7 +692,7 @@ namespace LongAn.DVC.WebParts.DeNghiListView {
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
         [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
             "artCodeGenerator", "12.0.0.0")]
-        private global::System.Web.UI.WebControls.LinkButton @__BuildControl__control15() {
+        private global::System.Web.UI.WebControls.LinkButton @__BuildControl__control16() {
             global::System.Web.UI.WebControls.LinkButton @__ctrl;
             @__ctrl = new global::System.Web.UI.WebControls.LinkButton();
             @__ctrl.TemplateControl = this;
@@ -677,7 +707,7 @@ namespace LongAn.DVC.WebParts.DeNghiListView {
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
         [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
             "artCodeGenerator", "12.0.0.0")]
-        private global::System.Web.UI.WebControls.LinkButton @__BuildControl__control16() {
+        private global::System.Web.UI.WebControls.LinkButton @__BuildControl__control17() {
             global::System.Web.UI.WebControls.LinkButton @__ctrl;
             @__ctrl = new global::System.Web.UI.WebControls.LinkButton();
             @__ctrl.TemplateControl = this;
@@ -692,7 +722,7 @@ namespace LongAn.DVC.WebParts.DeNghiListView {
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
         [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
             "artCodeGenerator", "12.0.0.0")]
-        private global::System.Web.UI.WebControls.LinkButton @__BuildControl__control17() {
+        private global::System.Web.UI.WebControls.LinkButton @__BuildControl__control18() {
             global::System.Web.UI.WebControls.LinkButton @__ctrl;
             @__ctrl = new global::System.Web.UI.WebControls.LinkButton();
             @__ctrl.TemplateControl = this;
@@ -707,7 +737,7 @@ namespace LongAn.DVC.WebParts.DeNghiListView {
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
         [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
             "artCodeGenerator", "12.0.0.0")]
-        private global::System.Web.UI.WebControls.LinkButton @__BuildControl__control18() {
+        private global::System.Web.UI.WebControls.LinkButton @__BuildControl__control19() {
             global::System.Web.UI.WebControls.LinkButton @__ctrl;
             @__ctrl = new global::System.Web.UI.WebControls.LinkButton();
             @__ctrl.TemplateControl = this;
@@ -722,7 +752,7 @@ namespace LongAn.DVC.WebParts.DeNghiListView {
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
         [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
             "artCodeGenerator", "12.0.0.0")]
-        private global::System.Web.UI.WebControls.LinkButton @__BuildControl__control19() {
+        private global::System.Web.UI.WebControls.LinkButton @__BuildControl__control20() {
             global::System.Web.UI.WebControls.LinkButton @__ctrl;
             @__ctrl = new global::System.Web.UI.WebControls.LinkButton();
             @__ctrl.TemplateControl = this;
@@ -737,7 +767,7 @@ namespace LongAn.DVC.WebParts.DeNghiListView {
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
         [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
             "artCodeGenerator", "12.0.0.0")]
-        private global::System.Web.UI.WebControls.LinkButton @__BuildControl__control20() {
+        private global::System.Web.UI.WebControls.LinkButton @__BuildControl__control21() {
             global::System.Web.UI.WebControls.LinkButton @__ctrl;
             @__ctrl = new global::System.Web.UI.WebControls.LinkButton();
             @__ctrl.TemplateControl = this;
@@ -753,7 +783,7 @@ namespace LongAn.DVC.WebParts.DeNghiListView {
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
         [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
             "artCodeGenerator", "12.0.0.0")]
-        private global::System.Web.UI.WebControls.HyperLink @__BuildControl__control21() {
+        private global::System.Web.UI.WebControls.HyperLink @__BuildControl__control22() {
             global::System.Web.UI.WebControls.HyperLink @__ctrl;
             @__ctrl = new global::System.Web.UI.WebControls.HyperLink();
             @__ctrl.TemplateControl = this;
@@ -768,7 +798,7 @@ namespace LongAn.DVC.WebParts.DeNghiListView {
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
         [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
             "artCodeGenerator", "12.0.0.0")]
-        private global::System.Web.UI.WebControls.HyperLink @__BuildControl__control22() {
+        private global::System.Web.UI.WebControls.HyperLink @__BuildControl__control23() {
             global::System.Web.UI.WebControls.HyperLink @__ctrl;
             @__ctrl = new global::System.Web.UI.WebControls.HyperLink();
             @__ctrl.TemplateControl = this;
@@ -783,7 +813,7 @@ namespace LongAn.DVC.WebParts.DeNghiListView {
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
         [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
             "artCodeGenerator", "12.0.0.0")]
-        private global::System.Web.UI.WebControls.LinkButton @__BuildControl__control23() {
+        private global::System.Web.UI.WebControls.LinkButton @__BuildControl__control24() {
             global::System.Web.UI.WebControls.LinkButton @__ctrl;
             @__ctrl = new global::System.Web.UI.WebControls.LinkButton();
             @__ctrl.TemplateControl = this;
@@ -799,7 +829,7 @@ namespace LongAn.DVC.WebParts.DeNghiListView {
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
         [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
             "artCodeGenerator", "12.0.0.0")]
-        private global::System.Web.UI.WebControls.HyperLink @__BuildControl__control24() {
+        private global::System.Web.UI.WebControls.HyperLink @__BuildControl__control25() {
             global::System.Web.UI.WebControls.HyperLink @__ctrl;
             @__ctrl = new global::System.Web.UI.WebControls.HyperLink();
             @__ctrl.TemplateControl = this;
@@ -865,12 +895,12 @@ namespace LongAn.DVC.WebParts.DeNghiListView {
             global::System.Web.UI.WebControls.LinkButton @__ctrl11;
             @__ctrl11 = this.@__BuildControl__control13();
             @__parser.AddParsedSubObject(@__ctrl11);
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                            </td>\r\n                            <td>\r\n          " +
-                        "                      "));
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                                "));
             global::System.Web.UI.WebControls.LinkButton @__ctrl12;
             @__ctrl12 = this.@__BuildControl__control14();
             @__parser.AddParsedSubObject(@__ctrl12);
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                                "));
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                            </td>\r\n                            <td>\r\n          " +
+                        "                      "));
             global::System.Web.UI.WebControls.LinkButton @__ctrl13;
             @__ctrl13 = this.@__BuildControl__control15();
             @__parser.AddParsedSubObject(@__ctrl13);
@@ -890,28 +920,32 @@ namespace LongAn.DVC.WebParts.DeNghiListView {
             global::System.Web.UI.WebControls.LinkButton @__ctrl17;
             @__ctrl17 = this.@__BuildControl__control19();
             @__parser.AddParsedSubObject(@__ctrl17);
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                            </td>\r\n                            <td>\r\n          " +
-                        "                      "));
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                                "));
             global::System.Web.UI.WebControls.LinkButton @__ctrl18;
             @__ctrl18 = this.@__BuildControl__control20();
             @__parser.AddParsedSubObject(@__ctrl18);
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                                "));
-            global::System.Web.UI.WebControls.HyperLink @__ctrl19;
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                            </td>\r\n                            <td>\r\n          " +
+                        "                      "));
+            global::System.Web.UI.WebControls.LinkButton @__ctrl19;
             @__ctrl19 = this.@__BuildControl__control21();
             @__parser.AddParsedSubObject(@__ctrl19);
             @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                                "));
             global::System.Web.UI.WebControls.HyperLink @__ctrl20;
             @__ctrl20 = this.@__BuildControl__control22();
             @__parser.AddParsedSubObject(@__ctrl20);
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                            </td>\n                            <td>\r\n           " +
-                        "                     "));
-            global::System.Web.UI.WebControls.LinkButton @__ctrl21;
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                                "));
+            global::System.Web.UI.WebControls.HyperLink @__ctrl21;
             @__ctrl21 = this.@__BuildControl__control23();
             @__parser.AddParsedSubObject(@__ctrl21);
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                                "));
-            global::System.Web.UI.WebControls.HyperLink @__ctrl22;
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                            </td>\n                            <td>\r\n           " +
+                        "                     "));
+            global::System.Web.UI.WebControls.LinkButton @__ctrl22;
             @__ctrl22 = this.@__BuildControl__control24();
             @__parser.AddParsedSubObject(@__ctrl22);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                                "));
+            global::System.Web.UI.WebControls.HyperLink @__ctrl23;
+            @__ctrl23 = this.@__BuildControl__control25();
+            @__parser.AddParsedSubObject(@__ctrl23);
             @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                            </td>\n                        </tr>\r\n              " +
                         "      "));
         }
@@ -967,21 +1001,21 @@ namespace LongAn.DVC.WebParts.DeNghiListView {
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
         [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
             "artCodeGenerator", "12.0.0.0")]
-        private global::System.Web.UI.WebControls.LinkButton @__BuildControl__control26() {
+        private global::System.Web.UI.WebControls.LinkButton @__BuildControl__control27() {
             global::System.Web.UI.WebControls.LinkButton @__ctrl;
             @__ctrl = new global::System.Web.UI.WebControls.LinkButton();
             @__ctrl.TemplateControl = this;
             @__ctrl.ApplyStyleSheetSkin(this.Page);
             @__ctrl.ID = "lnkbtnPaging";
             @__ctrl.CommandName = "Paging";
-            @__ctrl.DataBinding += new System.EventHandler(this.@__DataBinding__control26);
+            @__ctrl.DataBinding += new System.EventHandler(this.@__DataBinding__control27);
             return @__ctrl;
         }
         
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
         [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
             "artCodeGenerator", "12.0.0.0")]
-        public void @__DataBinding__control26(object sender, System.EventArgs e) {
+        public void @__DataBinding__control27(object sender, System.EventArgs e) {
             System.Web.UI.WebControls.LinkButton dataBindingExpressionBuilderTarget;
             System.Web.UI.WebControls.RepeaterItem Container;
             dataBindingExpressionBuilderTarget = ((System.Web.UI.WebControls.LinkButton)(sender));
@@ -993,11 +1027,11 @@ namespace LongAn.DVC.WebParts.DeNghiListView {
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
         [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
             "artCodeGenerator", "12.0.0.0")]
-        private void @__BuildControl__control25(System.Web.UI.Control @__ctrl) {
+        private void @__BuildControl__control26(System.Web.UI.Control @__ctrl) {
             System.Web.UI.IParserAccessor @__parser = ((System.Web.UI.IParserAccessor)(@__ctrl));
             @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                        "));
             global::System.Web.UI.WebControls.LinkButton @__ctrl1;
-            @__ctrl1 = this.@__BuildControl__control26();
+            @__ctrl1 = this.@__BuildControl__control27();
             @__parser.AddParsedSubObject(@__ctrl1);
             @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                    "));
         }
@@ -1009,7 +1043,7 @@ namespace LongAn.DVC.WebParts.DeNghiListView {
             global::System.Web.UI.WebControls.Repeater @__ctrl;
             @__ctrl = new global::System.Web.UI.WebControls.Repeater();
             this.repeaterPage = @__ctrl;
-            @__ctrl.ItemTemplate = new System.Web.UI.CompiledTemplateBuilder(new System.Web.UI.BuildTemplateMethod(this.@__BuildControl__control25));
+            @__ctrl.ItemTemplate = new System.Web.UI.CompiledTemplateBuilder(new System.Web.UI.BuildTemplateMethod(this.@__BuildControl__control26));
             @__ctrl.ID = "repeaterPage";
             @__ctrl.ItemCommand -= new System.Web.UI.WebControls.RepeaterCommandEventHandler(this.repeaterPage_ItemCommand);
             @__ctrl.ItemCommand += new System.Web.UI.WebControls.RepeaterCommandEventHandler(this.repeaterPage_ItemCommand);
@@ -1090,19 +1124,27 @@ namespace LongAn.DVC.WebParts.DeNghiListView {
             "artCodeGenerator", "12.0.0.0")]
         private void @__BuildControlTree(global::LongAn.DVC.WebParts.DeNghiListView.DeNghiListView @__ctrl) {
             System.Web.UI.IParserAccessor @__parser = ((System.Web.UI.IParserAccessor)(@__ctrl));
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl(@"
-<link rel=""stylesheet"" href=""/_layouts/15/LongAn.DVC.Form/css/normalize.css""/>
-<link rel=""stylesheet"" href=""/_layouts/15/LongAn.DVC.Form/css/fluid_grid.css""/>
-<link rel=""stylesheet"" href=""/_layouts/15/LongAn.DVC.Form/css/jquery-ui.min.css""/>
-<link rel=""stylesheet"" href=""/_layouts/15/LongAn.DVC.Form/css/superfish.css""/>
-<link rel=""stylesheet"" href=""/_layouts/15/LongAn.DVC.Form/css/main.css""/>
-<script src=""/_layouts/15/LongAn.DVC/js/jquery.js""></script>
-
-<div class=""container_12"">
-	<div class=""row"">
-		<div class=""grid_12"" id=""main-frame"">
-			<div id=""top-control"">
-				"));
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n<link rel=\"stylesheet\" href=\"/_layouts/15/LongAn.DVC.Form/css/normalize.css\"/>\r" +
+                        "\n<link rel=\"stylesheet\" href=\"/_layouts/15/LongAn.DVC.Form/css/fluid_grid.css\"/>" +
+                        "\r\n<link rel=\"stylesheet\" href=\"/_layouts/15/LongAn.DVC.Form/css/jquery-ui.min.cs" +
+                        "s\"/>\r\n<link rel=\"stylesheet\" href=\"/_layouts/15/LongAn.DVC.Form/css/superfish.cs" +
+                        "s\"/>\r\n<link rel=\"stylesheet\" href=\"/_layouts/15/LongAn.DVC.Form/css/main.css\"/>\n" +
+                        "<link href=\"/_layouts/15/LongAn.DVC.Form/css/form.main.custom.css\" rel=\"styleshe" +
+                        "et\" />\n<script src=\"/_layouts/15/LongAn.DVC/js/jquery.js\"></script>\r\n\r\n<script>\r" +
+                        "\n    $(document).ready(function () {\r\n        var searchExpandValue = $(\"[id$=\'_" +
+                        "hdfSearchExpand\']\").val();\r\n        if (searchExpandValue == \"1\")\r\n        {\r\n  " +
+                        "          $(\"#linkSearchExpand\").addClass(\"expanded\");\r\n            $(\"#searchfo" +
+                        "rm\").show();\r\n        }\r\n        $(\"#linkSearchExpand\").click(function () {\r\n   " +
+                        "         $(\"#searchform\").toggle(\"slow\");\r\n            if (searchExpandValue == " +
+                        "\"1\") {\r\n                $(\"[id$=\'_hdfSearchExpand\']\").val(\"0\");\r\n               " +
+                        " $(\"#linkSearchExpand\").removeClass(\"expanded\");\r\n            }\r\n            els" +
+                        "e {\r\n                $(\"[id$=\'_hdfSearchExpand\']\").val(\"1\");\r\n                $(" +
+                        "\"#linkSearchExpand\").addClass(\"expanded\");\r\n            }\r\n        });\r\n    });\r" +
+                        "\n</script>\r\n\r\n<script type=\"text/javascript\">\r\n    //fix: Ajax second postback n" +
+                        "ot working in Sharepoint\r\n    _spOriginalFormAction = document.forms[0].action;\r" +
+                        "\n    _spSuppressFormOnSubmitWrapper = true;\n</script>\n<div class=\"container_12\">" +
+                        "\r\n\t<div class=\"row\">\r\n\t\t<div class=\"grid_12\" id=\"main-frame\">\r\n\t\t\t<div id=\"top-c" +
+                        "ontrol\">\r\n\t\t\t\t"));
             global::System.Web.UI.WebControls.HyperLink @__ctrl1;
             @__ctrl1 = this.@__BuildControlhplTrangChu();
             @__parser.AddParsedSubObject(@__ctrl1);
@@ -1154,50 +1196,75 @@ namespace LongAn.DVC.WebParts.DeNghiListView {
             global::System.Web.UI.WebControls.HyperLink @__ctrl13;
             @__ctrl13 = this.@__BuildControlhplThongKeBaoCao();
             @__parser.AddParsedSubObject(@__ctrl13);
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n\t\t\t\t<div class=\"clear\"></div>\r\n\t\t\t</div>\r\n\t\t\t<h2 class=\"page-header\">\r\n\t\t\t\t"));
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n\t\t\t\t<div class=\"clear\"></div>\r\n\t\t\t</div>\r\n            <div class=\"row\">\r\n      " +
+                        "          <div class=\"pull-left\">\r\n                    <h2 class=\"page-header\">\r" +
+                        "\n\t\t\t\t        "));
             global::System.Web.UI.WebControls.Literal @__ctrl14;
             @__ctrl14 = this.@__BuildControlliteralDeNghiTitle();
             @__parser.AddParsedSubObject(@__ctrl14);
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n\t\t\t</h2>\r\n\t\t\t<div class=\"the-form\" id=\"searchform\">\r\n\t\t\t\t<div class=\"row line\">" +
-                        "\r\n\t\t\t\t\t<div class=\"grid_2\" style=\"text-align:right;\">\r\n\t\t\t\t\t\t&nbsp;&nbsp;&nbsp;&" +
-                        "nbsp;Mã biên nhận:\r\n\t\t\t\t\t</div>\r\n\t\t\t\t\t<div class=\"grid_3\">\r\n\t\t\t\t\t\t"));
-            global::System.Web.UI.WebControls.TextBox @__ctrl15;
-            @__ctrl15 = this.@__BuildControltxtTuKhoa();
-            @__parser.AddParsedSubObject(@__ctrl15);
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t<div class=\"grid_2\" style=\"text-align:right;\">\r\n\t\t\t\t\t\t&nbsp" +
-                        ";&nbsp;&nbsp;&nbsp;Đơn vị:\r\n\t\t\t\t\t</div>\r\n\t\t\t\t\t<div class=\"grid_4\">\r\n\t\t\t\t\t\t"));
-            global::System.Web.UI.WebControls.TextBox @__ctrl16;
-            @__ctrl16 = this.@__BuildControltxtCaNhanToChuc();
-            @__parser.AddParsedSubObject(@__ctrl16);
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n\t\t\t\t\t</div>\r\n\t\t\t\t\t<div class=\"clear\"></div>\r\n\t\t\t\t</div>\r\n                <div c" +
-                        "lass=\"row line\">\r\n\t\t\t\t\t<div class=\"grid_2\" style=\"text-align:right;\">\r\n\t\t\t\t\t\t&nb" +
-                        "sp;&nbsp;&nbsp;&nbsp;&nbsp;Số điện thoại:\r\n\t\t\t\t\t</div>\r\n\t\t\t\t\t<div class=\"grid_3\"" +
-                        ">\r\n\t\t\t\t\t\t"));
-            global::System.Web.UI.WebControls.TextBox @__ctrl17;
-            @__ctrl17 = this.@__BuildControltxtSoDienThoai();
-            @__parser.AddParsedSubObject(@__ctrl17);
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n\t\t\t\t\t</div>\r\n                    \r\n\t\t\t\t\t<div class=\"grid_2\" style=\"text-align:r" +
-                        "ight;\">\r\n\t\t\t\t\t\t&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ngày đề nghị:\r\n\t\t\t\t\t</div>\r\n\t\t\t\t\t<d" +
-                        "iv class=\"grid_2\">\r\n\t\t\t\t\t\t"));
-            global::Microsoft.SharePoint.WebControls.DateTimeControl @__ctrl18;
-            @__ctrl18 = this.@__BuildControldtcNgayDeNghiTu();
-            @__parser.AddParsedSubObject(@__ctrl18);
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n\t\t\t\t\t</div>\r\n                    <div class=\"grid_2\">\n                        "));
-            global::Microsoft.SharePoint.WebControls.DateTimeControl @__ctrl19;
-            @__ctrl19 = this.@__BuildControldtcNgayDeNghiDen();
-            @__parser.AddParsedSubObject(@__ctrl19);
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                    </div>\r\n\t\t\t\t\t<div class=\"clear\"></div>\r\n\t\t\t\t</div>\r\n\t\t\t\t<di" +
-                        "v class=\"row\">\r\n                    <div class=\"grid_5\">&nbsp;</div>\r\n\t\t\t\t\t<div " +
-                        "class=\"grid_2\">\r\n\t\t\t\t\t\t    "));
-            global::System.Web.UI.WebControls.Button @__ctrl20;
-            @__ctrl20 = this.@__BuildControlbtnTimKiem();
-            @__parser.AddParsedSubObject(@__ctrl20);
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n\t\t\t\t\t</div>\r\n                    <div class=\"grid_5\">&nbsp;</div>\r\n\t\t\t\t\t<div cl" +
-                        "ass=\"clear\"></div>\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t\t"));
-            global::System.Web.UI.HtmlControls.HtmlGenericControl @__ctrl21;
-            @__ctrl21 = this.@__BuildControldivAddNew();
-            @__parser.AddParsedSubObject(@__ctrl21);
             @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl(@"
+			        </h2>
+                </div>
+                <div class=""pull-right"">
+                    <div class=""pull-left-search"">
+                        <a id=""linkSearchExpand"" href=""#"" class=""button button-expand inline-block"">Tìm kiếm</a>
+                        "));
+            global::System.Web.UI.WebControls.HiddenField @__ctrl15;
+            @__ctrl15 = this.@__BuildControlhdfSearchExpand();
+            @__parser.AddParsedSubObject(@__ctrl15);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                    </div>\r\n                    "));
+            global::System.Web.UI.HtmlControls.HtmlGenericControl @__ctrl16;
+            @__ctrl16 = this.@__BuildControldivAddNew();
+            @__parser.AddParsedSubObject(@__ctrl16);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl(@"
+                </div>
+                
+                <div class=""clear""></div>
+            </div>
+			
+			<div class=""the-form"" id=""searchform"" style=""display:none;"">
+				<div class=""row line"">
+					<div class=""grid_2"" style=""text-align:right;"">
+						Mã biên nhận:
+					</div>
+					<div class=""grid_3"">
+						"));
+            global::System.Web.UI.WebControls.TextBox @__ctrl17;
+            @__ctrl17 = this.@__BuildControltxtTuKhoa();
+            @__parser.AddParsedSubObject(@__ctrl17);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t<div class=\"grid_2\" style=\"text-align:right;\">\r\n\t\t\t\t\t\tĐơn v" +
+                        "ị:\r\n\t\t\t\t\t</div>\r\n\t\t\t\t\t<div class=\"grid_4\">\r\n\t\t\t\t\t\t"));
+            global::System.Web.UI.WebControls.TextBox @__ctrl18;
+            @__ctrl18 = this.@__BuildControltxtCaNhanToChuc();
+            @__parser.AddParsedSubObject(@__ctrl18);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n\t\t\t\t\t</div>\r\n\t\t\t\t\t<div class=\"clear\"></div>\r\n\t\t\t\t</div>\r\n                <div c" +
+                        "lass=\"row line\">\r\n\t\t\t\t\t<div class=\"grid_2\" style=\"text-align:right;\">\r\n\t\t\t\t\t\tSố " +
+                        "điện thoại:\r\n\t\t\t\t\t</div>\r\n\t\t\t\t\t<div class=\"grid_3\">\r\n\t\t\t\t\t\t"));
+            global::System.Web.UI.WebControls.TextBox @__ctrl19;
+            @__ctrl19 = this.@__BuildControltxtSoDienThoai();
+            @__parser.AddParsedSubObject(@__ctrl19);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n\t\t\t\t\t</div>\r\n                    \r\n\t\t\t\t\t<div class=\"grid_2\" style=\"text-align:r" +
+                        "ight;\">\r\n\t\t\t\t\t\tNgày đề nghị:\r\n\t\t\t\t\t</div>\r\n\t\t\t\t\t<div class=\"grid_2\">\r\n\t\t\t\t\t\t"));
+            global::Microsoft.SharePoint.WebControls.DateTimeControl @__ctrl20;
+            @__ctrl20 = this.@__BuildControldtcNgayDeNghiTu();
+            @__parser.AddParsedSubObject(@__ctrl20);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n\t\t\t\t\t</div>\r\n                    <div class=\"grid_2\">\n                        "));
+            global::Microsoft.SharePoint.WebControls.DateTimeControl @__ctrl21;
+            @__ctrl21 = this.@__BuildControldtcNgayDeNghiDen();
+            @__parser.AddParsedSubObject(@__ctrl21);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                    </div>\r\n\t\t\t\t\t<div class=\"clear\"></div>\r\n\t\t\t\t</div>\r\n\t\t\t\t<di" +
+                        "v class=\"row line\">\r\n                    <div class=\"grid_5\">&nbsp;</div>\r\n\t\t\t\t\t" +
+                        "<div class=\"grid_2\">\r\n\t\t\t\t\t\t"));
+            global::System.Web.UI.WebControls.Button @__ctrl22;
+            @__ctrl22 = this.@__BuildControlbtnTimKiem();
+            @__parser.AddParsedSubObject(@__ctrl22);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl(@"
+					</div>
+                    <div class=""grid_5"">&nbsp;</div>
+					<div class=""clear""></div>
+				</div>
+			</div>
+			
 			<div class=""clearfix""></div>
 			<table class=""the-table"">
 				<tr style=""height: 50px;"">
@@ -1210,13 +1277,13 @@ namespace LongAn.DVC.WebParts.DeNghiListView {
                     <th colspan=""5"">Thao tác</th>
                 </tr>
                 "));
-            global::System.Web.UI.WebControls.Repeater @__ctrl22;
-            @__ctrl22 = this.@__BuildControlrepeaterLists();
-            @__parser.AddParsedSubObject(@__ctrl22);
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n\t\t\t</table>\r\n\t\t\t\r\n\t\t\t"));
-            global::System.Web.UI.HtmlControls.HtmlGenericControl @__ctrl23;
-            @__ctrl23 = this.@__BuildControldivPagging();
+            global::System.Web.UI.WebControls.Repeater @__ctrl23;
+            @__ctrl23 = this.@__BuildControlrepeaterLists();
             @__parser.AddParsedSubObject(@__ctrl23);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n\t\t\t</table>\r\n\t\t\t\r\n\t\t\t"));
+            global::System.Web.UI.HtmlControls.HtmlGenericControl @__ctrl24;
+            @__ctrl24 = this.@__BuildControldivPagging();
+            @__parser.AddParsedSubObject(@__ctrl24);
             @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n\t\t\t<div class=\"clear\"></div>\r\n\t\t</div>\r\n\t</div>\r\n\t<div class=\"clear\"></div>\r\n</" +
                         "div>"));
         }
