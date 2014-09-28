@@ -539,16 +539,16 @@
                                 </div>
 
                                 <div class="pull-right">
-                                    <asp:Button ID="btnTrinhXuLy" runat="server" Text="Chuyển Trưởng/Phó P.QLHT" CssClass="button" Visible="false"/>
-                                    <asp:Button ID="btnYeuCauBoSung" runat="server" Text="Yêu cầu bổ sung" CssClass="button" 
+                                    <asp:Button ID="btnTrinhXuLy" runat="server" Text="Chuyển Trưởng/Phó P.QLHT" CssClass="button" Visible="false" style="float:left;"/>
+                                    <asp:Button ID="btnYeuCauBoSung" runat="server" Text="Yêu cầu bổ sung" CssClass="button" style="float:left;"
                                         Visible="false" OnClientClick="if (!PreSaveYeuCauBoSung(0)) return false;"/>
-                                    <asp:Button ID="btnPhanCongHoSo" runat="server" Text="Phân công hồ sơ" CssClass="button" Visible="false"/>
-                                    <asp:Button ID="btnTrinhTruongPhong" runat="server" Text="Trình trưởng/phó P.QLHT" CssClass="button" Visible="false"/>
-                                    <asp:Button ID="btnTrinhLanhDao" runat="server" Text="Trình lãnh đạo" CssClass="button" Visible="false"/>
-                                    <asp:Button ID="btnDuyetHoSo" runat="server" Text="Duyệt hồ sơ" CssClass="button" Visible="false"/>
-                                    <asp:Button ID="btnTiepNhan" runat="server" Text="Tiếp nhận" CssClass="button" Visible="false"/>
-                                    <asp:Button ID="btnTraHoSo" runat="server" Text="Trả về" CssClass="button" Visible="false"/>
-                                    <asp:Button ID="btnCancel" runat="server" Text="Hủy" CssClass="button" />
+                                    <asp:Button ID="btnPhanCongHoSo" runat="server" Text="Phân công hồ sơ" CssClass="button" Visible="false" style="float:left;"/>
+                                    <asp:Button ID="btnTrinhTruongPhong" runat="server" Text="Trình trưởng/phó P.QLHT" CssClass="button" Visible="false" style="float:left;"/>
+                                    <asp:Button ID="btnTrinhLanhDao" runat="server" Text="Trình lãnh đạo" CssClass="button" Visible="false" style="float:left;"/>
+                                    <asp:Button ID="btnDuyetHoSo" runat="server" Text="Duyệt hồ sơ" CssClass="button" Visible="false" style="float:left;"/>
+                                    <asp:Button ID="btnTiepNhan" runat="server" Text="Tiếp nhận" CssClass="button" Visible="false" style="float:left;"/>
+                                    <asp:Button ID="btnTraHoSo" runat="server" Text="Trả về" CssClass="button" Visible="false" style="float:left;"/>
+                                    <asp:Button ID="btnCancel" runat="server" Text="Hủy" CssClass="button" style="float:left;"/>
                                 </div>
                                 <div class="clearfix"></div>
                             </div>

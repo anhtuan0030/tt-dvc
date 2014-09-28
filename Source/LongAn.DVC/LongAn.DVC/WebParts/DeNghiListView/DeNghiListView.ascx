@@ -71,7 +71,7 @@
                         <a id="linkSearchExpand" href="#" class="button button-expand inline-block">Tìm kiếm</a>
                         <asp:HiddenField ID="hdfSearchExpand" Value="0" runat="server" />
                     </div>
-                    <div class="pull-left-add" id="divAddNew" runat="server">
+                    <div class="pull-left-add" id="divAddNew" runat="server" visible="false">
                         <asp:HyperLink ID="hplAddNew" CssClass="button add-new inline-block" runat="server">Thêm mới</asp:HyperLink>
 			        </div>
                 </div>
