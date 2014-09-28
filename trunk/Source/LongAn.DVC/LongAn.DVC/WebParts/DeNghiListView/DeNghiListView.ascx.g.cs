@@ -410,6 +410,7 @@ namespace LongAn.DVC.WebParts.DeNghiListView {
             this.divAddNew = @__ctrl;
             ((System.Web.UI.IAttributeAccessor)(@__ctrl)).SetAttribute("class", "pull-left-add");
             @__ctrl.ID = "divAddNew";
+            @__ctrl.Visible = false;
             System.Web.UI.IParserAccessor @__parser = ((System.Web.UI.IParserAccessor)(@__ctrl));
             @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                        "));
             global::System.Web.UI.WebControls.HyperLink @__ctrl1;

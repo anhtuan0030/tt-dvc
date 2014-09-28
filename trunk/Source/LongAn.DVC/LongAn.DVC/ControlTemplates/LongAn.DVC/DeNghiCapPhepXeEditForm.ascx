@@ -490,9 +490,9 @@
                     </div>
 
                     <div class="pull-right">
-                        <asp:Button ID="btnSave" OnClientClick="if (!PreSaveItem(1)) return false;" CssClass="button" runat="server" Text="Lưu" Visible="false" />
-                        <asp:Button ID="btnGuiHoSo" OnClientClick="if (!PreSaveItem(1)) return false;" runat="server" Text="Nộp hồ sơ" CssClass="button" Visible="false"/>
-                        <asp:Button ID="btnCancel" runat="server" Text="Đóng" CssClass="button" />
+                        <asp:Button ID="btnSave" OnClientClick="if (!PreSaveItem(1)) return false;" CssClass="button" runat="server" Text="Lưu" Visible="false" style="float:left;"/>
+                        <asp:Button ID="btnGuiHoSo" OnClientClick="if (!PreSaveItem(1)) return false;" runat="server" Text="Nộp hồ sơ" CssClass="button" Visible="false" style="float:left;"/>
+                        <asp:Button ID="btnCancel" runat="server" Text="Đóng" CssClass="button" style="float:left;"/>
                     </div>
                 </div>
                 <div class="clearfix"></div>

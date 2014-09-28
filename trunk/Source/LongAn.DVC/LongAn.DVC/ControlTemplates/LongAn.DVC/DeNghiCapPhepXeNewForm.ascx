@@ -451,9 +451,9 @@
                                     </div>
 
                                     <div class="pull-right">
-                                        <asp:Button ID="btnSave" OnClientClick="if (!PreSaveItem(0)) return false;" CssClass="button" runat="server" Text="Thêm mới" />
-                                        <asp:Button ID="btnGuiHoSo" OnClientClick="if (!PreSaveItem(0)) return false;" CssClass="button" runat="server" Text="Gửi hồ sơ" />
-                                        <asp:Button ID="btnCancel" runat="server" Text="Hủy" CssClass="button" />
+                                        <asp:Button ID="btnSave" OnClientClick="if (!PreSaveItem(0)) return false;" CssClass="button" runat="server" Text="Thêm mới" style="float:left;"/>
+                                        <asp:Button ID="btnGuiHoSo" OnClientClick="if (!PreSaveItem(0)) return false;" CssClass="button" runat="server" Text="Gửi hồ sơ" style="float:left;"/>
+                                        <asp:Button ID="btnCancel" runat="server" Text="Hủy" CssClass="button" style="float:left;"/>
                                     </div>
                                 </div>
                                 <div class="clearfix"></div>
