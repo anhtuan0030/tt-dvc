@@ -67,6 +67,22 @@ namespace LongAn.DVC.Common
         //TuChoi
     }
 
+    public enum LoaiDuong
+    {
+        Empty,
+        QuocLo,
+        DuongTinh,
+        QuocLoVaDuongTinh
+    }
+
+    public enum LoaiCapPhep
+    {   
+        Empty,
+        QuaTai,
+        QuaKho,
+        QuaTaiVaQuaKho
+    }
+
     public class Constants
     {
         //Configurations
@@ -143,7 +159,11 @@ namespace LongAn.DVC.Common
         public const string FieldSoThuTuBienNhan = "SoThuTuBienNhan";
         public const string FieldMoTa = "MoTa";
 
-        public const string FieldLoaiDuong = "LoaiDuong";
+        public const string FieldLoaiDuong = "LoaiDuong"; //Quốc lộ, Đường tỉnh
         public const string FieldIdLoaiDuong = "{0C841B02-EC0F-45BA-8E39-F27A6B70AF02}";
+
+        public const string FieldLoaiCapPhep = "LoaiCapPhep"; //Quá tải, Quá khổ
+        public const string FieldSoTrucCuaXe = "SoTrucCuaXe";
+        public const string FieldSoTrucCuaRoMooc = "SoTrucCuaRoMooc";
     }
 }

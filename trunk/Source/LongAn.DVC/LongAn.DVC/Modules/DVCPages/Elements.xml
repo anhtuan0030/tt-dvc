@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Elements xmlns="http://schemas.microsoft.com/sharepoint/">
   <Module Name="DVCPages" Url="Pages">
-    <File Path="DVCPages\BlankPage.aspx" Url="Homepage.aspx" Type="GhostableInLibrary" IgnoreIfAlreadyExists="FALSE" >
+    <File Path="DVCPages\BlankPage.aspx" Url="Homepage.aspx" Type="GhostableInLibrary" ReplaceContent="TRUE" >
       <Property Name="Title" Value="Trang chủ"/>
       <Property Name="PublishingPageLayout" Value="~SiteCollection/_catalogs/masterpage/DVCWebPartPage_Home.aspx, DVC WebPart page - Home"/>
 
@@ -45,7 +45,7 @@
       </AllUsersWebPart>
     </File>
            
-    <File Path="DVCPages\BlankPage.aspx" Url="DangKyTaiKhoan.aspx" Type="GhostableInLibrary" IgnoreIfAlreadyExists="FALSE" >
+    <File Path="DVCPages\BlankPage.aspx" Url="DangKyTaiKhoan.aspx" Type="GhostableInLibrary" ReplaceContent="TRUE" >
       <Property Name="Title" Value="Đăng ký tài khoản"/>
       <Property Name="PublishingPageLayout" Value="~SiteCollection/_catalogs/masterpage/DVCWebPartPage_Home.aspx, DVC WebPart page - Home"/>
 
@@ -59,7 +59,80 @@
     </metaData>
     <data>
       <properties>
+        <property name="Hidden" type="bool">False</property>
+        <property name="InvalidQuestionErrorMessage" type="string">Please enter a different security question.</property>
+        <property name="EditProfileIconUrl" type="string" />
+        <property name="CompleteStepTemplate" type="string">/_layouts/15/FBA/WEBPARTS/MembershipRequestWebPart/CompleteStepTemplate.ascx</property>
+        <property name="ConfirmPasswordCompareErrorMessage" type="string">Xác nhận mật khẩu không trùng Mật khẩu.</property>
+        <property name="FinishDestinationPageUrl" type="string" />
+        <property name="CancelDestinationPageUrl" type="string" />
+        <property name="CancelButtonImageUrl" type="string" />
+        <property name="AutoGeneratePassword" type="bool">False</property>
+        <property name="ConfirmPasswordRequiredErrorMessage" type="string">Xác nhận mật khẩu không được để trống.</property>
+        <property name="QuestionRequiredErrorMessage" type="string">Security question is required.</property>
+        <property name="ContinueButtonType" type="System.Web.UI.WebControls.ButtonType, System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">Button</property>
+        <property name="AllowZoneChange" type="bool">True</property>
+        <property name="Height" type="unit" />
+        <property name="TitleUrl" type="string" />
+        <property name="Width" type="unit" />
+        <property name="AnswerRequiredErrorMessage" type="string">Security answer is required.</property>
+        <property name="ChromeState" type="chromestate">Normal</property>
+        <property name="DuplicateEmailErrorMessage" type="string">Email này đã được sử dụng. Vui lòng chọn email khác.</property>
+        <property name="InvalidAnswerErrorMessage" type="string">Please enter a different security answer.</property>
+        <property name="ConfirmPasswordLabelText" type="string">Xác nhận mật khẩu:</property>
+        <property name="CancelButtonText" type="string">Cancel</property>
+        <property name="UserNameLabelText" type="string">Tên đăng nhập: </property>
+        <property name="AllowConnect" type="bool">True</property>
+        <property name="HelpUrl" type="string" />
+        <property name="HipInstructionsLabelText" type="string">Nhập mã xác nhận như trong hình bên dưới.</property>
+        <property name="CaptchaValidation" type="bool">True</property>
+        <property name="HipResetLabelText" type="string">Đổi mã xác nhận</property>
+        <property name="InvalidPasswordErrorMessage" type="string">Please enter a valid password.</property>
+        <property name="CreateUserButtonType" type="System.Web.UI.WebControls.ButtonType, System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">Button</property>
+        <property name="LastNameRequiredErrorMessage" type="string">Trường yêu cầu nhập dữ liệu.</property>
+        <property name="ChromeType" type="chrometype">Default</property>
+        <property name="ContinueButtonImageUrl" type="string" />
+        <property name="InvalidEmailErrorMessage" type="string">Vui lòng nhập email hợp lệ.</property>
+        <property name="HipPictureLabelText" type="string">Mã xác nhận: </property>
+        <property name="CssClass" type="string" />
+        <property name="AllowHide" type="bool">True</property>
+        <property name="AllowEdit" type="bool">True</property>
+        <property name="Description" type="string" />
+        <property name="CancelButtonType" type="System.Web.UI.WebControls.ButtonType, System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">Button</property>
+        <property name="AllowMinimize" type="bool">True</property>
+        <property name="UnknownErrorMessage" type="string">Có lỗi xảy ra trong quá trình đăng ký. Vui lòng thử lại sau.</property>
+        <property name="UserNameRequiredErrorMessage" type="string">Tên đăng nhập không được bỏ trống.</property>
+        <property name="CreateUserButtonImageUrl" type="string" />
+        <property name="LastNameLabelText" type="string">Tên: </property>
+        <property name="CatalogIconImageUrl" type="string" />
+        <property name="HipPictureDescription" type="string">Mã xác nhận gồm 6 ký tự.</property>
+        <property name="HelpMode" type="helpmode">Navigate</property>
+        <property name="TitleIconImageUrl" type="string" />
+        <property name="CompleteSuccessText" type="string">Tài khoản của bạn đã được đăng ký thành công.</property>
+        <property name="ContinueButtonText" type="string">Tiếp tục</property>
+        <property name="HipCharactersLabelText" type="string">Nhập mã xác nhận: </property>
+        <property name="AnswerLabelText" type="string">Security Answer: </property>
+        <property name="CreateUserStepTemplate" type="string">/_layouts/15/FBA/WEBPARTS/MembershipRequestWebPart/CreateUserStepTemplate.ascx</property>
+        <property name="EmailLabelText" type="string">Email: </property>
+        <property name="AllowClose" type="bool">True</property>
+        <property name="CreateUserButtonText" type="string">Tạo tài khoản</property>
+        <property name="DisplayCancelButton" type="bool">False</property>
         <property name="Title" type="string">Đăng ký tài khoản</property>
+        <property name="FirstNameRequiredErrorMessage" type="string">Trường yêu cầu nhập dữ liệu.</property>
+        <property name="EmailRequiredErrorMessage" type="string">Trường yêu cầu nhập dữ liệu.</property>
+        <property name="EditProfileUrl" type="string" />
+        <property name="PasswordRequiredErrorMessage" type="string">Mật khẩu không được để trống.</property>
+        <property name="PasswordLabelText" type="string">Mật khẩu:</property>
+        <property name="LoginCreatedUser" type="bool">True</property>
+        <property name="EmailRegularExpressionErrorMessage" type="string">Vui lòng kiểm tra và nhập lại email.</property>
+        <property name="DuplicateUserNameErrorMessage" type="string">Tên đăng nhập đã được sử dụng. Vui lòng chọn tên khác.</property>
+        <property name="EditProfileText" type="string" />
+        <property name="HeaderText" type="string" />
+        <property name="HipErrorMessage" type="string">Vui lòng nhập Mã xác nhận</property>
+        <property name="QuestionLabelText" type="string">Security Question: </property>
+        <property name="FirstNameLabelText" type="string">Họ: </property>
+        <property name="Direction" type="direction">NotSet</property>
+        <property name="InstructionText" type="string" />
       </properties>
     </data>
   </webPart>
@@ -68,7 +141,7 @@
       </AllUsersWebPart>
     </File>
 
-    <File Path="DVCPages\BlankPage.aspx" Url="KhoiPhucMatKhau.aspx" Type="GhostableInLibrary" IgnoreIfAlreadyExists="FALSE" >
+    <File Path="DVCPages\BlankPage.aspx" Url="KhoiPhucMatKhau.aspx" Type="GhostableInLibrary" ReplaceContent="TRUE" >
       <Property Name="Title" Value="Khôi phục mật khẩu"/>
       <Property Name="PublishingPageLayout" Value="~SiteCollection/_catalogs/masterpage/DVCWebPartPage_Home.aspx, DVC WebPart page - Home"/>
 
@@ -91,7 +164,7 @@
       </AllUsersWebPart>
     </File>
 
-    <File Path="DVCPages\BlankPage.aspx" Url="DeNghiCapPhep.aspx" Type="GhostableInLibrary" IgnoreIfAlreadyExists="FALSE" >
+    <File Path="DVCPages\BlankPage.aspx" Url="DeNghiCapPhep.aspx" Type="GhostableInLibrary" ReplaceContent="TRUE" >
       <Property Name="Title" Value="Đề nghị cấp phép"/>
       <Property Name="PublishingPageLayout" Value="~SiteCollection/_catalogs/masterpage/DVCWebPartPage_Manage.aspx, DVC WebPart page - Manage"/>
 
@@ -122,7 +195,7 @@
 
     </File>
 
-    <File Path="DVCPages\BlankPage.aspx" Url="HoSoChoTiepNhan.aspx" Type="GhostableInLibrary" IgnoreIfAlreadyExists="FALSE" >
+    <File Path="DVCPages\BlankPage.aspx" Url="HoSoChoTiepNhan.aspx" Type="GhostableInLibrary" ReplaceContent="TRUE" >
       <Property Name="Title" Value="Hồ sơ chờ tiếp nhận"/>
       <Property Name="PublishingPageLayout" Value="~SiteCollection/_catalogs/masterpage/DVCWebPartPage_Manage.aspx, DVC WebPart page - Manage"/>
 
@@ -164,7 +237,7 @@
 
     </File>
 
-    <File Path="DVCPages\BlankPage.aspx" Url="HoSoDaTiepNhan.aspx" Type="GhostableInLibrary" IgnoreIfAlreadyExists="FALSE" >
+    <File Path="DVCPages\BlankPage.aspx" Url="HoSoDaTiepNhan.aspx" Type="GhostableInLibrary" ReplaceContent="TRUE" >
       <Property Name="Title" Value="Hồ sơ đã tiếp nhận"/>
       <Property Name="PublishingPageLayout" Value="~SiteCollection/_catalogs/masterpage/DVCWebPartPage_Manage.aspx, DVC WebPart page - Manage"/>
 
@@ -206,7 +279,7 @@
       
     </File>
 
-    <File Path="DVCPages\BlankPage.aspx" Url="HoSoChoXuLy.aspx" Type="GhostableInLibrary" IgnoreIfAlreadyExists="FALSE" >
+    <File Path="DVCPages\BlankPage.aspx" Url="HoSoChoXuLy.aspx" Type="GhostableInLibrary" ReplaceContent="TRUE" >
       <Property Name="Title" Value="Hồ sơ chờ xử lý"/>
       <Property Name="PublishingPageLayout" Value="~SiteCollection/_catalogs/masterpage/DVCWebPartPage_Manage.aspx, DVC WebPart page - Manage"/>
       <AllUsersWebPart WebPartOrder ="0" WebPartZoneID ="Header">
@@ -247,7 +320,7 @@
       
     </File>
 
-    <File Path="DVCPages\BlankPage.aspx" Url="HoSoDangXuLy.aspx" Type="GhostableInLibrary" IgnoreIfAlreadyExists="FALSE" >
+    <File Path="DVCPages\BlankPage.aspx" Url="HoSoDangXuLy.aspx" Type="GhostableInLibrary" ReplaceContent="TRUE" >
       <Property Name="Title" Value="Hồ sơ đang xử lý"/>
       <Property Name="PublishingPageLayout" Value="~SiteCollection/_catalogs/masterpage/DVCWebPartPage_Manage.aspx, DVC WebPart page - Manage"/>
       <AllUsersWebPart WebPartOrder ="0" WebPartZoneID ="Header">
@@ -288,7 +361,7 @@
 
     </File>
 
-    <File Path="DVCPages\BlankPage.aspx" Url="HoSoChoBoSung.aspx" Type="GhostableInLibrary" IgnoreIfAlreadyExists="FALSE" >
+    <File Path="DVCPages\BlankPage.aspx" Url="HoSoChoBoSung.aspx" Type="GhostableInLibrary" ReplaceContent="TRUE" >
       <Property Name="Title" Value="Hồ sơ chờ bổ sung"/>
       <Property Name="PublishingPageLayout" Value="~SiteCollection/_catalogs/masterpage/DVCWebPartPage_Manage.aspx, DVC WebPart page - Manage"/>
       <AllUsersWebPart WebPartOrder ="0" WebPartZoneID ="Header">
@@ -329,7 +402,7 @@
 
     </File>
     
-    <File Path="DVCPages\BlankPage.aspx" Url="HoSoChoDuyet.aspx" Type="GhostableInLibrary" IgnoreIfAlreadyExists="FALSE" >
+    <File Path="DVCPages\BlankPage.aspx" Url="HoSoChoDuyet.aspx" Type="GhostableInLibrary" ReplaceContent="TRUE" >
       <Property Name="Title" Value="Hồ sơ chờ duyệt"/>
       <Property Name="PublishingPageLayout" Value="~SiteCollection/_catalogs/masterpage/DVCWebPartPage_Manage.aspx, DVC WebPart page - Manage"/>
       <AllUsersWebPart WebPartOrder ="0" WebPartZoneID ="Header">
@@ -369,7 +442,7 @@
       </AllUsersWebPart>
     </File>
 
-    <File Path="DVCPages\BlankPage.aspx" Url="HoSoChoCapPhep.aspx" Type="GhostableInLibrary" IgnoreIfAlreadyExists="FALSE" >
+    <File Path="DVCPages\BlankPage.aspx" Url="HoSoChoCapPhep.aspx" Type="GhostableInLibrary" ReplaceContent="TRUE" >
       <Property Name="Title" Value="Hồ sơ chờ cấp phép"/>
       <Property Name="PublishingPageLayout" Value="~SiteCollection/_catalogs/masterpage/DVCWebPartPage_Manage.aspx, DVC WebPart page - Manage"/>
       <AllUsersWebPart WebPartOrder ="0" WebPartZoneID ="Header">
@@ -409,7 +482,7 @@
       </AllUsersWebPart>
     </File>
 
-    <File Path="DVCPages\BlankPage.aspx" Url="HoSoDuocCapPhep.aspx" Type="GhostableInLibrary" IgnoreIfAlreadyExists="FALSE" >
+    <File Path="DVCPages\BlankPage.aspx" Url="HoSoDuocCapPhep.aspx" Type="GhostableInLibrary" ReplaceContent="TRUE" >
       <Property Name="Title" Value="Hồ sơ được cấp phép"/>
       <Property Name="PublishingPageLayout" Value="~SiteCollection/_catalogs/masterpage/DVCWebPartPage_Manage.aspx, DVC WebPart page - Manage"/>
       <AllUsersWebPart WebPartOrder ="0" WebPartZoneID ="Header">
@@ -449,7 +522,7 @@
       </AllUsersWebPart>
     </File>
     
-    <File Path="DVCPages\BlankPage.aspx" Url="HoSoBiTuChoi.aspx" Type="GhostableInLibrary" IgnoreIfAlreadyExists="FALSE" >
+    <File Path="DVCPages\BlankPage.aspx" Url="HoSoBiTuChoi.aspx" Type="GhostableInLibrary" ReplaceContent="TRUE" >
       <Property Name="Title" Value="Hồ sơ bị từ chối"/>
       <Property Name="PublishingPageLayout" Value="~SiteCollection/_catalogs/masterpage/DVCWebPartPage_Manage.aspx, DVC WebPart page - Manage"/>
       <AllUsersWebPart WebPartOrder ="0" WebPartZoneID ="Header">
@@ -489,7 +562,7 @@
       </AllUsersWebPart>
     </File>
 
-    <File Path="DVCPages\BlankPage.aspx" Url="HoSoDaHoanThanh.aspx" Type="GhostableInLibrary" IgnoreIfAlreadyExists="FALSE" >
+    <File Path="DVCPages\BlankPage.aspx" Url="HoSoDaHoanThanh.aspx" Type="GhostableInLibrary" ReplaceContent="TRUE" >
       <Property Name="Title" Value="Hồ sơ đã hoàn thành"/>
       <Property Name="PublishingPageLayout" Value="~SiteCollection/_catalogs/masterpage/DVCWebPartPage_Manage.aspx, DVC WebPart page - Manage"/>
       <AllUsersWebPart WebPartOrder ="0" WebPartZoneID ="Header">
@@ -529,7 +602,7 @@
       </AllUsersWebPart>
     </File>
 
-    <File Path="DVCPages\BlankPage.aspx" Url="HoSoChuaHoanThanh.aspx" Type="GhostableInLibrary" IgnoreIfAlreadyExists="FALSE" >
+    <File Path="DVCPages\BlankPage.aspx" Url="HoSoChuaHoanThanh.aspx" Type="GhostableInLibrary" ReplaceContent="TRUE" >
       <Property Name="Title" Value="Hồ sơ chưa hoàn thành"/>
       <Property Name="PublishingPageLayout" Value="~SiteCollection/_catalogs/masterpage/DVCWebPartPage_Manage.aspx, DVC WebPart page - Manage"/>
       <AllUsersWebPart WebPartOrder ="0" WebPartZoneID ="Header">
@@ -569,12 +642,12 @@
       </AllUsersWebPart>
     </File>
     
-    <File Path="DVCPages\BlankPage.aspx" Url="BaoCaoThongKe.aspx" Type="GhostableInLibrary" IgnoreIfAlreadyExists="FALSE" >
+    <File Path="DVCPages\BlankPage.aspx" Url="BaoCaoThongKe.aspx" Type="GhostableInLibrary" ReplaceContent="TRUE" >
       <Property Name="Title" Value="Báo cáo thống kê"/>
       <Property Name="PublishingPageLayout" Value="~SiteCollection/_catalogs/masterpage/DVCWebPartPage_Manage.aspx, DVC WebPart page - Manage"/>
     </File>
 
-    <File Path="DVCPages\BlankPage.aspx" Url="TraCuuHoSo.aspx" Type="GhostableInLibrary" IgnoreIfAlreadyExists="FALSE" >
+    <File Path="DVCPages\BlankPage.aspx" Url="TraCuuHoSo.aspx" Type="GhostableInLibrary" ReplaceContent="TRUE" >
       <Property Name="Title" Value="Tra cứu hồ sơ"/>
       <Property Name="PublishingPageLayout" Value="~SiteCollection/_catalogs/masterpage/DVCWebPartPage_Home.aspx, DVC WebPart page - Home"/>
 
@@ -600,7 +673,7 @@
       
     </File>
 
-    <File Path="DVCPages\BlankPage.aspx" Url="DVC.aspx" Type="GhostableInLibrary" IgnoreIfAlreadyExists="true" >
+    <File Path="DVCPages\BlankPage.aspx" Url="DVC.aspx" Type="GhostableInLibrary" ReplaceContent="TRUE" >
       <Property Name="Title" Value="DVCRedirect"/>
       <Property Name="PublishingPageLayout" Value="~SiteCollection/_catalogs/masterpage/DVCWebPartPage_Manage.aspx, DVC WebPart page - Manage"/>
 

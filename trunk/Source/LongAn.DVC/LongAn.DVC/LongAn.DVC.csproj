@@ -14,7 +14,7 @@
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{C1CDDADD-2546-481F-9697-4EA41081F2FC};{14822709-B5A1-4724-98CA-57A101D1B079};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <SandboxedSolution>False</SandboxedSolution>
-    <ActiveDeploymentConfiguration>Upgrade Solution %28CKSDev%29</ActiveDeploymentConfiguration>
+    <ActiveDeploymentConfiguration>Default</ActiveDeploymentConfiguration>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -97,6 +97,9 @@
       <DependentUpon>DeNghiCapPhepXeNewForm.ascx.cs</DependentUpon>
     </Compile>
     <Compile Include="EventReceivers\DeNghiCapPhepXeEvent.cs" />
+    <Compile Include="Features\LongAn.DVC.Site.Pages\LongAn.DVC.Site.Pages.EventReceiver.cs">
+      <DependentUpon>LongAn.DVC.Site.Pages.feature</DependentUpon>
+    </Compile>
     <Compile Include="Features\LongAn.DVC.Site\LongAn.DVC.Site.EventReceiver.cs">
       <DependentUpon>LongAn.DVC.Site.feature</DependentUpon>
     </Compile>
@@ -173,6 +176,9 @@
     <None Include="ControlTemplates\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{f8fd9a64-c763-4233-8b90-24407d721b2c}</SharePointProjectItemId>
     </None>
+    <None Include="Features\LongAn.DVC.Site.Pages\LongAn.DVC.Site.Pages.feature">
+      <FeatureId>{7bb080d6-3961-4ed5-841d-e8fa870861a0}</FeatureId>
+    </None>
     <None Include="Features\LongAn.DVC.Web\LongAn.DVC.Web.feature">
       <FeatureId>{581ea75c-979a-44bb-96a6-78deb4fa1b0f}</FeatureId>
     </None>
@@ -191,6 +197,9 @@
     <None Include="Layouts\LongAn.DVC\fonts\glyphicons-halflings-regular.ttf" />
     <None Include="Layouts\LongAn.DVC\fonts\glyphicons-halflings-regular.woff" />
     <None Include="Layouts\LongAn.DVC\js\detectizr.min.map" />
+    <Content Include="Features\LongAn.DVC.Site.Pages\LongAn.DVC.Site.Pages.Template.xml">
+      <DependentUpon>LongAn.DVC.Site.Pages.feature</DependentUpon>
+    </Content>
     <Content Include="Layouts\LongAn.DVC\lic\Aspose.Cells.lic" />
     <Content Include="Layouts\LongAn.DVC\lic\Aspose.Words.lic" />
     <None Include="Layouts\LongAn.DVC\templates\BienNhanTemplate.docx" />
@@ -496,7 +505,9 @@
       <Generator>SharePointWebPartCodeGenerator</Generator>
       <LastGenOutput>DeNghiReport.ascx.g.cs</LastGenOutput>
     </Content>
-    <Content Include="WebParts\DeNghiReport\Elements.xml" />
+    <Content Include="WebParts\DeNghiReport\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="WebParts\DeNghiSearch\DeNghiSearch.ascx">
       <Generator>SharePointWebPartCodeGenerator</Generator>
       <LastGenOutput>DeNghiSearch.ascx.g.cs</LastGenOutput>
