@@ -167,16 +167,16 @@ namespace LongAn.DVC.WebParts.DeNghiReport
 
                             var expressions = new List<Expression<Func<SPListItem, bool>>>();
 
-                            //var expressionsOr = new List<Expression<Func<SPListItem, bool>>>();
-                            //expressionsOr.Add(x => (int)x[Constants.FieldTrangThai] == (int)TrangThaiHoSo.DuocCapPhep);
-                            //expressionsOr.Add(x => (int)x[Constants.FieldTrangThai] == (int)TrangThaiHoSo.HoanThanh);
-                            //expressionsOr.Add(x => (int)x[Constants.FieldTrangThai] == (int)TrangThaiHoSo.ChuaHoanThanh);
+                            var expressionsOr = new List<Expression<Func<SPListItem, bool>>>();
+                            expressionsOr.Add(x => (int)x[Constants.FieldTrangThai] == (int)TrangThaiHoSo.DuocCapPhep);
+                            expressionsOr.Add(x => (int)x[Constants.FieldTrangThai] == (int)TrangThaiHoSo.HoanThanh);
+                            expressionsOr.Add(x => (int)x[Constants.FieldTrangThai] == (int)TrangThaiHoSo.ChuaHoanThanh);
 
-                            ////if (expressionsOr.Count > 0)
-                            ////{
-                            //    var orExpr = ExpressionsHelper.CombineOr(expressionsOr);
-                            //    expressions.Add(orExpr);
-                            ////}
+                            //if (expressionsOr.Count > 0)
+                            //{
+                            var orExpr = ExpressionsHelper.CombineOr(expressionsOr);
+                            expressions.Add(orExpr);
+                            //}
 
                             var expressionsAnd = new List<Expression<Func<SPListItem, bool>>>();
                             expressionsAnd.Add(x => (DateTime)x[Constants.FieldNgayNopHoSo] >= fromDate);
