@@ -6,12 +6,19 @@
 <%@ Import Namespace="Microsoft.SharePoint" %> 
 <%@ Register Tagprefix="WebPartPages" Namespace="Microsoft.SharePoint.WebPartPages" Assembly="Microsoft.SharePoint, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %>
 <%@ Control Language="C#" AutoEventWireup="true" CodeBehind="DeNghiSearch.ascx.cs" Inherits="LongAn.DVC.WebParts.DeNghiSearch.DeNghiSearch" %>
+
+<link rel="stylesheet" href="/_layouts/15/LongAn.DVC.Form/css/normalize.css"/>
+<link rel="stylesheet" href="/_layouts/15/LongAn.DVC.Form/css/fluid_grid.css"/>
+<link rel="stylesheet" href="/_layouts/15/LongAn.DVC.Form/css/jquery-ui.min.css"/>
+<link rel="stylesheet" href="/_layouts/15/LongAn.DVC.Form/css/superfish.css"/>
+<link rel="stylesheet" href="/_layouts/15/LongAn.DVC.Form/css/main.css"/>
+
 <style type="text/css">
     .button-custom {
         width: 120px !important;
     }
 </style>
-<div>
+<div class="container_12">
 	<div class="row">
 		<div class="grid_12" id="main-frame">
 			<h2 class="">
@@ -19,7 +26,7 @@
 			</h2>
 			<div class="form" id="searchform">
 				<div class="row line">
-                    <div class="grid_">&nbsp;</div>
+                    <div class="grid_1">&nbsp;</div>
                     <div class="grid_2" style="margin-top:10px">
                        Nhập mã biên nhận:                        
                     </div>
@@ -36,31 +43,31 @@
                 <h3><u>Kết quả tra cứu</u></h3>
                 <div class="row" style="padding: 5px 0">
                     <div class="grid_1">&nbsp;</div>
-                    <div class="grid_3">
+                    <div class="grid_3" style="text-align:right">
                        Mã biên nhận:                        
                     </div>
                     <div class="grid_4">
-                        <asp:Literal ID="literalMaBienNhan" runat="server"></asp:Literal>
+                        <b><asp:Literal ID="literalMaBienNhan" runat="server"></asp:Literal></b>
                     </div>
                     <div class="clear"></div>
 				</div>
                 <div class="row" style="padding: 5px 0">
                     <div class="grid_1">&nbsp;</div>
-                    <div class="grid_3">
+                    <div class="grid_3" style="text-align:right">
                        Cá nhân / Tổ chức:                        
                     </div>
                     <div class="grid_4">
-                        <asp:Literal ID="literalDonVi" runat="server"></asp:Literal>
+                        <b><asp:Literal ID="literalDonVi" runat="server"></asp:Literal></b>
                     </div>
                     <div class="clear"></div>
 				</div>
                 <div class="row" style="padding: 5px 0">
                     <div class="grid_1">&nbsp;</div>
-                    <div class="grid_3">
+                    <div class="grid_3" style="text-align:right">
                        Trạng thái xử lý:                        
                     </div>
                     <div class="grid_4">
-                        <asp:Literal ID="literalTrangThai" runat="server"></asp:Literal>
+                        <b><asp:Literal ID="literalTrangThai" runat="server"></asp:Literal></b>
                     </div>
                     <div class="clear"></div>
 				</div>

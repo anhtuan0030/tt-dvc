@@ -11,8 +11,36 @@
 <link rel="stylesheet" href="/_layouts/15/LongAn.DVC.Form/css/jquery-ui.min.css"/>
 <link rel="stylesheet" href="/_layouts/15/LongAn.DVC.Form/css/superfish.css"/>
 <link rel="stylesheet" href="/_layouts/15/LongAn.DVC.Form/css/main.css"/>
+<link href="/_layouts/15/LongAn.DVC.Form/css/form.main.custom.css" rel="stylesheet" />
 <script src="/_layouts/15/LongAn.DVC/js/jquery.js"></script>
 
+<script>
+    $(document).ready(function () {
+        var searchExpandValue = $("[id$='_hdfSearchExpand']").val();
+        if (searchExpandValue == "1")
+        {
+            $("#linkSearchExpand").addClass("expanded");
+            $("#searchform").show();
+        }
+        $("#linkSearchExpand").click(function () {
+            $("#searchform").toggle("slow");
+            if (searchExpandValue == "1") {
+                $("[id$='_hdfSearchExpand']").val("0");
+                $("#linkSearchExpand").removeClass("expanded");
+            }
+            else {
+                $("[id$='_hdfSearchExpand']").val("1");
+                $("#linkSearchExpand").addClass("expanded");
+            }
+        });
+    });
+</script>
+
+<script type="text/javascript">
+    //fix: Ajax second postback not working in Sharepoint
+    _spOriginalFormAction = document.forms[0].action;
+    _spSuppressFormOnSubmitWrapper = true;
+</script>
 <div class="container_12">
 	<div class="row">
 		<div class="grid_12" id="main-frame">
@@ -32,20 +60,36 @@
                 <asp:HyperLink ID="hplThongKeBaoCao" CssClass="button large-button stat"  Visible="false" runat="server">Báo cáo, thống kê</asp:HyperLink>
 				<div class="clear"></div>
 			</div>
-			<h2 class="page-header">
-				<asp:Literal ID="literalDeNghiTitle" runat="server"></asp:Literal>
-			</h2>
-			<div class="the-form" id="searchform">
+            <div class="row">
+                <div class="pull-left">
+                    <h2 class="page-header">
+				        <asp:Literal ID="literalDeNghiTitle" runat="server"></asp:Literal>
+			        </h2>
+                </div>
+                <div class="pull-right">
+                    <div class="pull-left-search">
+                        <a id="linkSearchExpand" href="#" class="button button-expand inline-block">Tìm kiếm</a>
+                        <asp:HiddenField ID="hdfSearchExpand" Value="0" runat="server" />
+                    </div>
+                    <div class="pull-left-add" id="divAddNew" runat="server">
+                        <asp:HyperLink ID="hplAddNew" CssClass="button add-new inline-block" runat="server">Thêm mới</asp:HyperLink>
+			        </div>
+                </div>
+                
+                <div class="clear"></div>
+            </div>
+			
+			<div class="the-form" id="searchform" style="display:none;">
 				<div class="row line">
 					<div class="grid_2" style="text-align:right;">
-						&nbsp;&nbsp;&nbsp;&nbsp;Mã biên nhận:
+						Mã biên nhận:
 					</div>
 					<div class="grid_3">
 						<asp:TextBox ID="txtTuKhoa" runat="server"></asp:TextBox>
 					</div>
 
 					<div class="grid_2" style="text-align:right;">
-						&nbsp;&nbsp;&nbsp;&nbsp;Đơn vị:
+						Đơn vị:
 					</div>
 					<div class="grid_4">
 						<asp:TextBox ID="txtCaNhanToChuc" runat="server"></asp:TextBox>
@@ -54,14 +98,14 @@
 				</div>
                 <div class="row line">
 					<div class="grid_2" style="text-align:right;">
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Số điện thoại:
+						Số điện thoại:
 					</div>
 					<div class="grid_3">
 						<asp:TextBox ID="txtSoDienThoai" runat="server"></asp:TextBox>
 					</div>
                     
 					<div class="grid_2" style="text-align:right;">
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ngày đề nghị:
+						Ngày đề nghị:
 					</div>
 					<div class="grid_2">
 						<SharePoint:DateTimeControl ID="dtcNgayDeNghiTu" DateOnly="true" LocaleId="1066" runat="server" />
@@ -71,19 +115,16 @@
                     </div>
 					<div class="clear"></div>
 				</div>
-				<div class="row">
+				<div class="row line">
                     <div class="grid_5">&nbsp;</div>
 					<div class="grid_2">
-						    <asp:Button ID="btnTimKiem" runat="server" Text="Tìm kiếm" CssClass="button search" align="middle" />
+						<asp:Button ID="btnTimKiem" runat="server" Text="Tìm kiếm" CssClass="button search" align="middle" />
 					</div>
                     <div class="grid_5">&nbsp;</div>
 					<div class="clear"></div>
 				</div>
 			</div>
-			<div class="pull-right" id="divAddNew" visible="false" runat="server">
-				<%--<asp:LinkButton ID="lbtAddNew" CssClass="button add-new" runat="server">Thêm mới</asp:LinkButton>--%>
-                <asp:HyperLink ID="hplAddNew" CssClass="button add-new" runat="server">Thêm mới</asp:HyperLink>
-			</div>
+			
 			<div class="clearfix"></div>
 			<table class="the-table">
 				<tr style="height: 50px;">
@@ -123,6 +164,7 @@
                                 <asp:LinkButton ID="lbtDisable1" Enabled="false" ToolTip="Disable" CssClass="button just-icon" style="display:block;" runat="server"></asp:LinkButton>
                                 <asp:LinkButton ID="lbtTiepNhan" ToolTip="Tiếp nhận hồ sơ" CssClass="button edit just-icon" style="display:none;" runat="server"></asp:LinkButton>
                                 <asp:LinkButton ID="lbtHoanThanh" ToolTip="Xác nhận hồ sơ đã được cấp phép" CssClass="button edit just-icon" style="display:none;" runat="server"></asp:LinkButton>
+                                <asp:LinkButton ID="lbtPrint" ToolTip="In Biên nhận / Giấy cấp phép" CssClass="button printer just-icon" style="display:none;" runat="server"></asp:LinkButton>
                             </td>
                             <td>
                                 <asp:LinkButton ID="lbtDisable2" Enabled="false" ToolTip="Disable" CssClass="button just-icon" style="display:block;" runat="server"></asp:LinkButton>

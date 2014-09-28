@@ -15,6 +15,7 @@
 <link rel="stylesheet" href="/_layouts/15/LongAn.DVC.Form/css/superfish.css"/>
 <link rel="stylesheet" href="/_layouts/15/LongAn.DVC.Form/css/main.css"/>
 <script type="text/javascript" src="/_layouts/15/LongAn.DVC/js/jquery.js"></script>
+<script type="text/javascript" src="/_layouts/15/LongAn.DVC/js/laform.js"></script>
 
 <style type="text/css">
     #s4-ribbonrow{
@@ -453,6 +454,21 @@
                                         </div>
                                         <div class="clear"></div>
                                     </div>
+                                    <div class="row">
+                                        <div class="grid_3">
+                                            <SharePoint:FieldLabel ID="FieldLabel38"  FieldName="LanXeDuocChay"  runat="server"/>
+                                        </div>
+                                        <div class="grid_1">
+                                            <asp:TextBox ID="txtLanXeDuocChay" runat="server"></asp:TextBox>
+                                        </div>
+                                        <div class="grid_4">
+                                            <SharePoint:FieldLabel ID="FieldLabel40"  FieldName="TocDoDuocChay"  runat="server"/>
+                                        </div>
+                                        <div class="grid_1">
+                                            <asp:TextBox ID="txtTocDoDuocChay" runat="server"></asp:TextBox>
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
                                 </div>
 
                                 <div class="panel-2" id="divThongTinTuChoi" runat="server" visible="false">
@@ -517,46 +533,6 @@
                                         </div>
                                         <div class="grid_9">
                                             <asp:TextBox ID="txtDienGiaiChiTiet" TextMode="MultiLine" runat="server"></asp:TextBox>
-                                        </div>
-                                        <div class="clear"></div>
-                                    </div>
-                                </div>
-
-                                <div class="panel-2" id="divDanhSachYeuCauBoSung" runat="server" visible="false">
-                                    <h2>Danh sách cầu bổ sung</h2>
-                                    <div class="row">
-                                        <div class="grid_11">
-                                            <table class="the-table">
-                                                <tr style="height: 50px;">
-                                                    <th>STT</th>
-                                                    <th>Tiêu đề</th>
-                                                    <th>Mô tả</th>
-                                                    <th>Ngày yêu cầu</th>
-                                                    <%--<th>Xác nhận</th>--%>
-                                                </tr>
-                                                <asp:Repeater ID="repeaterLists" runat="server" OnItemCommand="repeaterLists_ItemCommand" OnItemDataBound="repeaterLists_ItemDataBound">
-                                                    <ItemTemplate>
-                                                        <tr class="<%#(((RepeaterItem)Container).ItemIndex+1) % 2 == 0 ? "even" : "odd" %>">
-                                                            <td>
-                                                                <asp:Literal ID="literalSTT" runat="server" Text="<%#(((RepeaterItem)Container).ItemIndex+1) %>"></asp:Literal>
-                                                            </td>
-                                                            <td>
-                                                                <asp:Literal ID="literalTitle" runat="server"></asp:Literal>
-                                                            </td>
-                                                            <td>
-                                                                <asp:Literal ID="literalMoTa" runat="server"></asp:Literal>
-                                                            </td>
-                                                            <td>
-                                                                <asp:Literal ID="literalNgayYeuCau" runat="server"></asp:Literal>
-                                                            </td>
-                                                            <%--<td>
-                                                                <asp:LinkButton ID="lbtXacNhan" ToolTip="Xác nhận đã cập nhật" CssClass="button waiting just-icon" runat="server"></asp:LinkButton>
-                                                                <asp:LinkButton ID="lbtDisable" ToolTip="Đã cập nhật" Enabled="false" CssClass="button done just-icon" style="display:none;" runat="server"></asp:LinkButton>
-                                                            </td>--%>
-                                                        </tr>
-                                                    </ItemTemplate>
-                                                </asp:Repeater>
-                                            </table>
                                         </div>
                                         <div class="clear"></div>
                                     </div>

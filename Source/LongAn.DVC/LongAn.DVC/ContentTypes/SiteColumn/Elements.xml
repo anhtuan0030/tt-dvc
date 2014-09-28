@@ -167,6 +167,14 @@
     </CHOICES>
   </Field>
 
+  <Field Type="Text" ID="{3CFE7E44-9F6E-43CD-9FA8-227F77EBA1E0}" Name="LanXeDuocChay" StaticName="LanXeDuocChay"
+         DisplayName="Làn xe" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255"
+         Group="[LA-DVC]" />
+
+  <Field Type="Text" ID="{E6A6450F-C66A-42D4-9EB9-64BC1A14B56B}" Name="TocDoDuocChay" StaticName="TocDoDuocChay"
+         DisplayName="Tốc độ" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255"
+         Group="[LA-DVC]" />
+
   <Field Type="Text" ID="{30CCB8BF-723D-46A0-B44F-CACBD3A6082D}" Name="TrangThai" StaticName="TrangThai"
          DisplayName="Trạng thái" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" 
          Group="[LA-DVC]" />

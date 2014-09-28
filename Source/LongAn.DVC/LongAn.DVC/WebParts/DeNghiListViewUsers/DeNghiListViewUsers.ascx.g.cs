@@ -160,6 +160,7 @@ namespace LongAn.DVC.WebParts.DeNghiListViewUsers {
             @__ctrl.ApplyStyleSheetSkin(this.Page);
             @__ctrl.ID = "hplAddNew";
             @__ctrl.CssClass = "button add-new";
+            ((System.Web.UI.IAttributeAccessor)(@__ctrl)).SetAttribute("style", "margin-top: 30px");
             System.Web.UI.IParserAccessor @__parser = ((System.Web.UI.IParserAccessor)(@__ctrl));
             @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("Thêm mới"));
             return @__ctrl;
@@ -603,6 +604,7 @@ namespace LongAn.DVC.WebParts.DeNghiListViewUsers {
 <link rel=""stylesheet"" href=""/_layouts/15/LongAn.DVC.Form/css/jquery-ui.min.css""/>
 <link rel=""stylesheet"" href=""/_layouts/15/LongAn.DVC.Form/css/superfish.css""/>
 <link rel=""stylesheet"" href=""/_layouts/15/LongAn.DVC.Form/css/main.css""/>
+<link href=""/_layouts/15/LongAn.DVC.Form/css/form.main.custom.css"" rel=""stylesheet"" />
 <script src=""/_layouts/15/LongAn.DVC/js/jquery.js""></script>
 
 
@@ -622,16 +624,23 @@ namespace LongAn.DVC.WebParts.DeNghiListViewUsers {
             global::System.Web.UI.WebControls.HyperLink @__ctrl3;
             @__ctrl3 = this.@__BuildControlhplThongTinHuongDan();
             @__parser.AddParsedSubObject(@__ctrl3);
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n\t\t\t\t<div class=\"clear\"></div>\r\n\t\t\t</div>\r\n\t\t\t<h2 class=\"page-header\">\r\n\t\t\t\t"));
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n\t\t\t\t<div class=\"clear\"></div>\r\n\t\t\t</div>\r\n            <div class=\"row\">\r\n      " +
+                        "          <div class=\"pull-left\">\r\n                    <h2 class=\"page-header\">\r" +
+                        "\n\t\t\t\t        "));
             global::System.Web.UI.WebControls.Literal @__ctrl4;
             @__ctrl4 = this.@__BuildControlliteralDeNghiTitle();
             @__parser.AddParsedSubObject(@__ctrl4);
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n\t\t\t</h2>\r\n\t\t\r\n\t\t\t<div class=\"pull-right\">\r\n\t\t\t\t\r\n                "));
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n\t\t\t        </h2>\r\n                </div>\r\n\r\n                <div class=\"pull-ri" +
+                        "ght\">\r\n                    "));
             global::System.Web.UI.WebControls.HyperLink @__ctrl5;
             @__ctrl5 = this.@__BuildControlhplAddNew();
             @__parser.AddParsedSubObject(@__ctrl5);
             @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl(@"
-			</div>
+			    </div>
+
+                <div class=""clear""></div>
+            </div>
+
 			<div class=""clearfix""></div>
 			
             <table class=""the-table"">

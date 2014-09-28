@@ -131,12 +131,19 @@ namespace LongAn.DVC.WebParts.DeNghiSearch {
         private void @__BuildControlTree(global::LongAn.DVC.WebParts.DeNghiSearch.DeNghiSearch @__ctrl) {
             System.Web.UI.IParserAccessor @__parser = ((System.Web.UI.IParserAccessor)(@__ctrl));
             @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl(@"
+
+<link rel=""stylesheet"" href=""/_layouts/15/LongAn.DVC.Form/css/normalize.css""/>
+<link rel=""stylesheet"" href=""/_layouts/15/LongAn.DVC.Form/css/fluid_grid.css""/>
+<link rel=""stylesheet"" href=""/_layouts/15/LongAn.DVC.Form/css/jquery-ui.min.css""/>
+<link rel=""stylesheet"" href=""/_layouts/15/LongAn.DVC.Form/css/superfish.css""/>
+<link rel=""stylesheet"" href=""/_layouts/15/LongAn.DVC.Form/css/main.css""/>
+
 <style type=""text/css"">
     .button-custom {
         width: 120px !important;
     }
 </style>
-<div>
+<div class=""container_12"">
 	<div class=""row"">
 		<div class=""grid_12"" id=""main-frame"">
 			<h2 class="""">
@@ -144,7 +151,7 @@ namespace LongAn.DVC.WebParts.DeNghiSearch {
 			</h2>
 			<div class=""form"" id=""searchform"">
 				<div class=""row line"">
-                    <div class=""grid_"">&nbsp;</div>
+                    <div class=""grid_1"">&nbsp;</div>
                     <div class=""grid_2"" style=""margin-top:10px"">
                        Nhập mã biên nhận:                        
                     </div>
@@ -167,45 +174,45 @@ namespace LongAn.DVC.WebParts.DeNghiSearch {
                 <h3><u>Kết quả tra cứu</u></h3>
                 <div class=""row"" style=""padding: 5px 0"">
                     <div class=""grid_1"">&nbsp;</div>
-                    <div class=""grid_3"">
+                    <div class=""grid_3"" style=""text-align:right"">
                        Mã biên nhận:                        
                     </div>
                     <div class=""grid_4"">
-                        "));
+                        <b>"));
             global::System.Web.UI.WebControls.Literal @__ctrl3;
             @__ctrl3 = this.@__BuildControlliteralMaBienNhan();
             @__parser.AddParsedSubObject(@__ctrl3);
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl(@"
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl(@"</b>
                     </div>
                     <div class=""clear""></div>
 				</div>
                 <div class=""row"" style=""padding: 5px 0"">
                     <div class=""grid_1"">&nbsp;</div>
-                    <div class=""grid_3"">
+                    <div class=""grid_3"" style=""text-align:right"">
                        Cá nhân / Tổ chức:                        
                     </div>
                     <div class=""grid_4"">
-                        "));
+                        <b>"));
             global::System.Web.UI.WebControls.Literal @__ctrl4;
             @__ctrl4 = this.@__BuildControlliteralDonVi();
             @__parser.AddParsedSubObject(@__ctrl4);
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl(@"
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl(@"</b>
                     </div>
                     <div class=""clear""></div>
 				</div>
                 <div class=""row"" style=""padding: 5px 0"">
                     <div class=""grid_1"">&nbsp;</div>
-                    <div class=""grid_3"">
+                    <div class=""grid_3"" style=""text-align:right"">
                        Trạng thái xử lý:                        
                     </div>
                     <div class=""grid_4"">
-                        "));
+                        <b>"));
             global::System.Web.UI.WebControls.Literal @__ctrl5;
             @__ctrl5 = this.@__BuildControlliteralTrangThai();
             @__parser.AddParsedSubObject(@__ctrl5);
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                    </div>\r\n                    <div class=\"clear\"></div>\r\n\t\t\t\t" +
-                        "</div>\r\n            </div>\r\n\t\t</div>\r\n\t</div>\r\n\t<div class=\"clear\"></div>\r\n</div" +
-                        ">"));
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("</b>\r\n                    </div>\r\n                    <div class=\"clear\"></div>\r\n" +
+                        "\t\t\t\t</div>\r\n            </div>\r\n\t\t</div>\r\n\t</div>\r\n\t<div class=\"clear\"></div>\r\n<" +
+                        "/div>"));
         }
         
         [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +

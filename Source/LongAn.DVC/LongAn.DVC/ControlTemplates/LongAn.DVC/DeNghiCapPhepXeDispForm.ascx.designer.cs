@@ -787,6 +787,42 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC {
         protected global::System.Web.UI.WebControls.CheckBoxList chkListLoaiDuong;
         
         /// <summary>
+        /// FieldLabel38 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Microsoft.SharePoint.WebControls.FieldLabel FieldLabel38;
+        
+        /// <summary>
+        /// txtLanXeDuocChay control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtLanXeDuocChay;
+        
+        /// <summary>
+        /// FieldLabel40 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Microsoft.SharePoint.WebControls.FieldLabel FieldLabel40;
+        
+        /// <summary>
+        /// txtTocDoDuocChay control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtTocDoDuocChay;
+        
+        /// <summary>
         /// divThongTinTuChoi control.
         /// </summary>
         /// <remarks>
@@ -857,24 +893,6 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtDienGiaiChiTiet;
-        
-        /// <summary>
-        /// divDanhSachYeuCauBoSung control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divDanhSachYeuCauBoSung;
-        
-        /// <summary>
-        /// repeaterLists control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater repeaterLists;
         
         /// <summary>
         /// btnTrinhXuLy control.
