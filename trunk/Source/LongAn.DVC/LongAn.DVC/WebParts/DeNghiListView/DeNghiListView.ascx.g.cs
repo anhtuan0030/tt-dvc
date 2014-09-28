@@ -192,7 +192,7 @@ namespace LongAn.DVC.WebParts.DeNghiListView {
             @__ctrl.ID = "hplHoSoChoTiepNhan";
             @__ctrl.CssClass = "button large-button added";
             System.Web.UI.IParserAccessor @__parser = ((System.Web.UI.IParserAccessor)(@__ctrl));
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("Chờ tiếp nhận"));
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("Hồ sơ<br/>chờ tiếp nhận"));
             return @__ctrl;
         }
         
@@ -207,7 +207,7 @@ namespace LongAn.DVC.WebParts.DeNghiListView {
             @__ctrl.ID = "hplHoSoDaTiepNhan";
             @__ctrl.CssClass = "button large-button added";
             System.Web.UI.IParserAccessor @__parser = ((System.Web.UI.IParserAccessor)(@__ctrl));
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("Đã tiếp nhận"));
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("Hồ sơ<br/>đã tiếp nhận"));
             return @__ctrl;
         }
         
@@ -222,7 +222,7 @@ namespace LongAn.DVC.WebParts.DeNghiListView {
             @__ctrl.ID = "hplHoSoChoXuLy";
             @__ctrl.CssClass = "button large-button process";
             System.Web.UI.IParserAccessor @__parser = ((System.Web.UI.IParserAccessor)(@__ctrl));
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("Chờ xử lý"));
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("Hồ sơ<br/>chờ xử lý"));
             return @__ctrl;
         }
         
@@ -237,7 +237,7 @@ namespace LongAn.DVC.WebParts.DeNghiListView {
             @__ctrl.ID = "hplHoSoDangXuLy";
             @__ctrl.CssClass = "button large-button waiting";
             System.Web.UI.IParserAccessor @__parser = ((System.Web.UI.IParserAccessor)(@__ctrl));
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("Đang xử lý"));
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("Hồ sơ<br/>đang xử lý"));
             return @__ctrl;
         }
         
@@ -252,7 +252,7 @@ namespace LongAn.DVC.WebParts.DeNghiListView {
             @__ctrl.ID = "hplHoSoChoBoSung";
             @__ctrl.CssClass = "button large-button done";
             System.Web.UI.IParserAccessor @__parser = ((System.Web.UI.IParserAccessor)(@__ctrl));
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("Chờ bổ sung"));
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("Hồ sơ<br/>chờ bổ sung"));
             return @__ctrl;
         }
         
@@ -267,7 +267,7 @@ namespace LongAn.DVC.WebParts.DeNghiListView {
             @__ctrl.ID = "hplHoSoChoDuyet";
             @__ctrl.CssClass = "button large-button stat";
             System.Web.UI.IParserAccessor @__parser = ((System.Web.UI.IParserAccessor)(@__ctrl));
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("Chờ duyệt"));
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("Hồ sơ<br/>chờ duyệt"));
             return @__ctrl;
         }
         
@@ -282,7 +282,7 @@ namespace LongAn.DVC.WebParts.DeNghiListView {
             @__ctrl.ID = "hplHoSoChoCapPhep";
             @__ctrl.CssClass = "button large-button stat";
             System.Web.UI.IParserAccessor @__parser = ((System.Web.UI.IParserAccessor)(@__ctrl));
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("Chờ cấp phép"));
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("Hồ sơ<br/>chờ cấp phép"));
             return @__ctrl;
         }
         
@@ -297,7 +297,7 @@ namespace LongAn.DVC.WebParts.DeNghiListView {
             @__ctrl.ID = "hplHoSoDuocCapPhep";
             @__ctrl.CssClass = "button large-button stat";
             System.Web.UI.IParserAccessor @__parser = ((System.Web.UI.IParserAccessor)(@__ctrl));
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("Được cấp phép"));
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("Hồ sơ<br/>được cấp phép"));
             return @__ctrl;
         }
         
@@ -311,9 +311,8 @@ namespace LongAn.DVC.WebParts.DeNghiListView {
             @__ctrl.ApplyStyleSheetSkin(this.Page);
             @__ctrl.ID = "hplHoSoBiTuChoi";
             @__ctrl.CssClass = "button large-button stat";
-            @__ctrl.Visible = false;
             System.Web.UI.IParserAccessor @__parser = ((System.Web.UI.IParserAccessor)(@__ctrl));
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("Bị từ chối"));
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("Hồ sơ<br/>bị từ chối"));
             return @__ctrl;
         }
         
@@ -328,7 +327,7 @@ namespace LongAn.DVC.WebParts.DeNghiListView {
             @__ctrl.ID = "hplHoSoDaHoanThanh";
             @__ctrl.CssClass = "button large-button stat";
             System.Web.UI.IParserAccessor @__parser = ((System.Web.UI.IParserAccessor)(@__ctrl));
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("Đã hoàn thành"));
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("Hồ sơ đã<br/>hoàn thành"));
             return @__ctrl;
         }
         
@@ -343,7 +342,7 @@ namespace LongAn.DVC.WebParts.DeNghiListView {
             @__ctrl.ID = "hplHoSoChuaHoanThanh";
             @__ctrl.CssClass = "button large-button stat";
             System.Web.UI.IParserAccessor @__parser = ((System.Web.UI.IParserAccessor)(@__ctrl));
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("Chưa hoàn thành"));
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("Hồ sơ chưa<br/>hoàn thành"));
             return @__ctrl;
         }
         
@@ -356,10 +355,9 @@ namespace LongAn.DVC.WebParts.DeNghiListView {
             this.hplThongKeBaoCao = @__ctrl;
             @__ctrl.ApplyStyleSheetSkin(this.Page);
             @__ctrl.ID = "hplThongKeBaoCao";
-            @__ctrl.CssClass = "button large-button stat";
-            @__ctrl.Visible = false;
+            @__ctrl.CssClass = "button large-button stat custom-last";
             System.Web.UI.IParserAccessor @__parser = ((System.Web.UI.IParserAccessor)(@__ctrl));
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("Báo cáo, thống kê"));
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("Báo cáo<br/>thống kê"));
             return @__ctrl;
         }
         
@@ -505,7 +503,7 @@ namespace LongAn.DVC.WebParts.DeNghiListView {
             @__ctrl = new global::System.Web.UI.DataBoundLiteralControl(2, 1);
             @__ctrl.TemplateControl = this;
             @__ctrl.SetStaticString(0, "\r\n                        <tr class=\"");
-            @__ctrl.SetStaticString(1, "\">\n                            <td>\r\n                                ");
+            @__ctrl.SetStaticString(1, "\">\r\n                            <td>\r\n                                ");
             @__ctrl.DataBinding += new System.EventHandler(this.@__DataBind__control3);
             return @__ctrl;
         }
@@ -853,33 +851,33 @@ namespace LongAn.DVC.WebParts.DeNghiListView {
             global::System.Web.UI.WebControls.Literal @__ctrl2;
             @__ctrl2 = this.@__BuildControl__control4();
             @__parser.AddParsedSubObject(@__ctrl2);
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                            </td>\n                            <td>\r\n           " +
-                        "                     "));
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                            </td>\r\n                            <td>\r\n          " +
+                        "                      "));
             global::System.Web.UI.WebControls.Literal @__ctrl3;
             @__ctrl3 = this.@__BuildControl__control5();
             @__parser.AddParsedSubObject(@__ctrl3);
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                            </td>\n                            <td>\r\n           " +
-                        "                     "));
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                            </td>\r\n                            <td>\r\n          " +
+                        "                      "));
             global::System.Web.UI.WebControls.Literal @__ctrl4;
             @__ctrl4 = this.@__BuildControl__control6();
             @__parser.AddParsedSubObject(@__ctrl4);
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                            </td>\n                            <td>\r\n           " +
-                        "                     "));
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                            </td>\r\n                            <td>\r\n          " +
+                        "                      "));
             global::System.Web.UI.WebControls.Literal @__ctrl5;
             @__ctrl5 = this.@__BuildControl__control7();
             @__parser.AddParsedSubObject(@__ctrl5);
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                            </td>\n                            <td>\r\n           " +
-                        "                     "));
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                            </td>\r\n                            <td>\r\n          " +
+                        "                      "));
             global::System.Web.UI.WebControls.Literal @__ctrl6;
             @__ctrl6 = this.@__BuildControl__control8();
             @__parser.AddParsedSubObject(@__ctrl6);
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\n                            </td>\n                            <td>\r\n            " +
-                        "                    "));
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                            </td>\r\n                            <td>\r\n          " +
+                        "                      "));
             global::System.Web.UI.WebControls.Literal @__ctrl7;
             @__ctrl7 = this.@__BuildControl__control9();
             @__parser.AddParsedSubObject(@__ctrl7);
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                            </td>\n                            <td>\r\n           " +
-                        "                     "));
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                            </td>\r\n                            <td>\r\n          " +
+                        "                      "));
             global::System.Web.UI.WebControls.HyperLink @__ctrl8;
             @__ctrl8 = this.@__BuildControl__control10();
             @__parser.AddParsedSubObject(@__ctrl8);
@@ -938,8 +936,8 @@ namespace LongAn.DVC.WebParts.DeNghiListView {
             global::System.Web.UI.WebControls.HyperLink @__ctrl21;
             @__ctrl21 = this.@__BuildControl__control23();
             @__parser.AddParsedSubObject(@__ctrl21);
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                            </td>\n                            <td>\r\n           " +
-                        "                     "));
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                            </td>\r\n                            <td>\r\n          " +
+                        "                      "));
             global::System.Web.UI.WebControls.LinkButton @__ctrl22;
             @__ctrl22 = this.@__BuildControl__control24();
             @__parser.AddParsedSubObject(@__ctrl22);
@@ -947,8 +945,8 @@ namespace LongAn.DVC.WebParts.DeNghiListView {
             global::System.Web.UI.WebControls.HyperLink @__ctrl23;
             @__ctrl23 = this.@__BuildControl__control25();
             @__parser.AddParsedSubObject(@__ctrl23);
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                            </td>\n                        </tr>\r\n              " +
-                        "      "));
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                            </td>\r\n                        </tr>\r\n             " +
+                        "       "));
         }
         
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
@@ -1096,27 +1094,27 @@ namespace LongAn.DVC.WebParts.DeNghiListView {
             @__ctrl.Visible = false;
             ((System.Web.UI.IAttributeAccessor)(@__ctrl)).SetAttribute("class", "pag pull-right");
             System.Web.UI.IParserAccessor @__parser = ((System.Web.UI.IParserAccessor)(@__ctrl));
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\n                \n                "));
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                \r\n                "));
             global::System.Web.UI.WebControls.LinkButton @__ctrl1;
             @__ctrl1 = this.@__BuildControllbtnFirst();
             @__parser.AddParsedSubObject(@__ctrl1);
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\n                \n                "));
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                \r\n                "));
             global::System.Web.UI.WebControls.LinkButton @__ctrl2;
             @__ctrl2 = this.@__BuildControllbtnPrevious();
             @__parser.AddParsedSubObject(@__ctrl2);
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\n                "));
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                "));
             global::System.Web.UI.WebControls.Repeater @__ctrl3;
             @__ctrl3 = this.@__BuildControlrepeaterPage();
             @__parser.AddParsedSubObject(@__ctrl3);
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\n                "));
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                "));
             global::System.Web.UI.WebControls.LinkButton @__ctrl4;
             @__ctrl4 = this.@__BuildControllbtnNext();
             @__parser.AddParsedSubObject(@__ctrl4);
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\n                \n                "));
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                \r\n                "));
             global::System.Web.UI.WebControls.LinkButton @__ctrl5;
             @__ctrl5 = this.@__BuildControllbtnLast();
             @__parser.AddParsedSubObject(@__ctrl5);
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\n                \n                <div class=\"clearfix\"></div>\n            "));
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                \r\n                <div class=\"clearfix\"></div>\r\n            "));
             return @__ctrl;
         }
         
@@ -1129,55 +1127,55 @@ namespace LongAn.DVC.WebParts.DeNghiListView {
                         "\n<link rel=\"stylesheet\" href=\"/_layouts/15/LongAn.DVC.Form/css/fluid_grid.css\"/>" +
                         "\r\n<link rel=\"stylesheet\" href=\"/_layouts/15/LongAn.DVC.Form/css/jquery-ui.min.cs" +
                         "s\"/>\r\n<link rel=\"stylesheet\" href=\"/_layouts/15/LongAn.DVC.Form/css/superfish.cs" +
-                        "s\"/>\r\n<link rel=\"stylesheet\" href=\"/_layouts/15/LongAn.DVC.Form/css/main.css\"/>\n" +
-                        "<link href=\"/_layouts/15/LongAn.DVC.Form/css/form.main.custom.css\" rel=\"styleshe" +
-                        "et\" />\n<script src=\"/_layouts/15/LongAn.DVC/js/jquery.js\"></script>\r\n\r\n<script>\r" +
-                        "\n    $(document).ready(function () {\r\n        var searchExpandValue = $(\"[id$=\'_" +
-                        "hdfSearchExpand\']\").val();\r\n        if (searchExpandValue == \"1\")\r\n        {\r\n  " +
-                        "          $(\"#linkSearchExpand\").addClass(\"expanded\");\r\n            $(\"#searchfo" +
-                        "rm\").show();\r\n        }\r\n        $(\"#linkSearchExpand\").click(function () {\r\n   " +
-                        "         $(\"#searchform\").toggle(\"slow\");\r\n            if (searchExpandValue == " +
-                        "\"1\") {\r\n                $(\"[id$=\'_hdfSearchExpand\']\").val(\"0\");\r\n               " +
-                        " $(\"#linkSearchExpand\").removeClass(\"expanded\");\r\n            }\r\n            els" +
-                        "e {\r\n                $(\"[id$=\'_hdfSearchExpand\']\").val(\"1\");\r\n                $(" +
-                        "\"#linkSearchExpand\").addClass(\"expanded\");\r\n            }\r\n        });\r\n    });\r" +
-                        "\n</script>\r\n\r\n<script type=\"text/javascript\">\r\n    //fix: Ajax second postback n" +
-                        "ot working in Sharepoint\r\n    _spOriginalFormAction = document.forms[0].action;\r" +
-                        "\n    _spSuppressFormOnSubmitWrapper = true;\n</script>\n<div class=\"container_12\">" +
-                        "\r\n\t<div class=\"row\">\r\n\t\t<div class=\"grid_12\" id=\"main-frame\">\r\n\t\t\t<div id=\"top-c" +
-                        "ontrol\">\r\n\t\t\t\t"));
+                        "s\"/>\r\n<link rel=\"stylesheet\" href=\"/_layouts/15/LongAn.DVC.Form/css/main.css\"/>\r" +
+                        "\n<link href=\"/_layouts/15/LongAn.DVC.Form/css/form.main.custom.css\" rel=\"stylesh" +
+                        "eet\" />\r\n<script src=\"/_layouts/15/LongAn.DVC/js/jquery.js\"></script>\r\n\r\n<script" +
+                        ">\r\n    $(document).ready(function () {\r\n        var searchExpandValue = $(\"[id$=" +
+                        "\'_hdfSearchExpand\']\").val();\r\n        if (searchExpandValue == \"1\")\r\n        {\r\n" +
+                        "            $(\"#linkSearchExpand\").addClass(\"expanded\");\r\n            $(\"#search" +
+                        "form\").show();\r\n        }\r\n        $(\"#linkSearchExpand\").click(function () {\r\n " +
+                        "           $(\"#searchform\").toggle(\"slow\");\r\n            if (searchExpandValue =" +
+                        "= \"1\") {\r\n                $(\"[id$=\'_hdfSearchExpand\']\").val(\"0\");\r\n             " +
+                        "   $(\"#linkSearchExpand\").removeClass(\"expanded\");\r\n            }\r\n            e" +
+                        "lse {\r\n                $(\"[id$=\'_hdfSearchExpand\']\").val(\"1\");\r\n                " +
+                        "$(\"#linkSearchExpand\").addClass(\"expanded\");\r\n            }\r\n        });\r\n    })" +
+                        ";\r\n</script>\r\n\r\n<script type=\"text/javascript\">\r\n    //fix: Ajax second postback" +
+                        " not working in Sharepoint\r\n    _spOriginalFormAction = document.forms[0].action" +
+                        ";\r\n    _spSuppressFormOnSubmitWrapper = true;\r\n</script>\r\n<div class=\"\">\r\n\t<div " +
+                        "class=\"row\">\r\n\t\t<div class=\"grid_12\" id=\"main-frame\">\r\n\t\t\t<div id=\"top-control\">" +
+                        "\r\n\t\t\t\t"));
             global::System.Web.UI.WebControls.HyperLink @__ctrl1;
             @__ctrl1 = this.@__BuildControlhplTrangChu();
             @__parser.AddParsedSubObject(@__ctrl1);
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\n                "));
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                "));
             global::System.Web.UI.WebControls.HyperLink @__ctrl2;
             @__ctrl2 = this.@__BuildControlhplHoSoChoTiepNhan();
             @__parser.AddParsedSubObject(@__ctrl2);
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\n                "));
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                "));
             global::System.Web.UI.WebControls.HyperLink @__ctrl3;
             @__ctrl3 = this.@__BuildControlhplHoSoDaTiepNhan();
             @__parser.AddParsedSubObject(@__ctrl3);
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\n                "));
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                "));
             global::System.Web.UI.WebControls.HyperLink @__ctrl4;
             @__ctrl4 = this.@__BuildControlhplHoSoChoXuLy();
             @__parser.AddParsedSubObject(@__ctrl4);
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\n                "));
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                "));
             global::System.Web.UI.WebControls.HyperLink @__ctrl5;
             @__ctrl5 = this.@__BuildControlhplHoSoDangXuLy();
             @__parser.AddParsedSubObject(@__ctrl5);
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\n                "));
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                "));
             global::System.Web.UI.WebControls.HyperLink @__ctrl6;
             @__ctrl6 = this.@__BuildControlhplHoSoChoBoSung();
             @__parser.AddParsedSubObject(@__ctrl6);
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\n                "));
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                "));
             global::System.Web.UI.WebControls.HyperLink @__ctrl7;
             @__ctrl7 = this.@__BuildControlhplHoSoChoDuyet();
             @__parser.AddParsedSubObject(@__ctrl7);
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\n                "));
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                "));
             global::System.Web.UI.WebControls.HyperLink @__ctrl8;
             @__ctrl8 = this.@__BuildControlhplHoSoChoCapPhep();
             @__parser.AddParsedSubObject(@__ctrl8);
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\n                "));
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                "));
             global::System.Web.UI.WebControls.HyperLink @__ctrl9;
             @__ctrl9 = this.@__BuildControlhplHoSoDuocCapPhep();
             @__parser.AddParsedSubObject(@__ctrl9);
@@ -1249,7 +1247,8 @@ namespace LongAn.DVC.WebParts.DeNghiListView {
             global::Microsoft.SharePoint.WebControls.DateTimeControl @__ctrl20;
             @__ctrl20 = this.@__BuildControldtcNgayDeNghiTu();
             @__parser.AddParsedSubObject(@__ctrl20);
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n\t\t\t\t\t</div>\r\n                    <div class=\"grid_2\">\n                        "));
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n\t\t\t\t\t</div>\r\n                    <div class=\"grid_2\">\r\n                        " +
+                        ""));
             global::Microsoft.SharePoint.WebControls.DateTimeControl @__ctrl21;
             @__ctrl21 = this.@__BuildControldtcNgayDeNghiDen();
             @__parser.AddParsedSubObject(@__ctrl21);

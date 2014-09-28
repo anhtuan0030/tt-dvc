@@ -448,7 +448,7 @@ namespace LongAn.DVC.FormsBasedAuthentication.ResourcesAppGlobal {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Membership Approved.
+        ///   Looks up a localized string similar to Đăng ký tài khoản thành công.
         /// </summary>
         internal static string MembershipApprovedToolTipText {
             get {
@@ -462,13 +462,12 @@ namespace LongAn.DVC.FormsBasedAuthentication.ResourcesAppGlobal {
         ///  &lt;xsl:template match=&quot;/&quot;&gt;
         ///    &lt;html&gt;
         ///      &lt;head&gt;
-        ///        &lt;title&gt;Membership Approved&lt;/title&gt;
+        ///        &lt;title&gt;Đăng ký tài khoản thành công&lt;/title&gt;
         ///      &lt;/head&gt;
         ///      &lt;body&gt;
         ///        &lt;div&gt;
         ///            &lt;br /&gt;
-        ///            &lt;p&gt;Your request for an account on &lt;xsl:value-of select=&quot;MembershipRequest:get_SiteName()&quot; /&gt; has been approved and you have been granted access.&lt;/p&gt;
-        ///            &lt;p&gt;You [rest of string was truncated]&quot;;.
+        ///            &lt;p&gt;Bạn đã đăng ký tài khoản thành công trên website Cổng thông tin dịch vụ công trực tuyến Sở Giao Thông Vận Tải Tỉnh Long An tại &lt;xsl:value-of select=&quot;Members [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string MembershipApprovedXSLT {
             get {
@@ -802,10 +801,10 @@ namespace LongAn.DVC.FormsBasedAuthentication.ResourcesAppGlobal {
         ///      &lt;/head&gt;
         ///      &lt;body&gt;
         ///        &lt;div&gt;
-        ///            &lt;p&gt;Bạn nhận được email này vì đã sử dụng chức năng khôi phục mật khẩu trên website &lt;xsl:value-of select=&quot;MembershipRequest:get_SiteName()&quot; /&gt;.&lt;/p&gt;
+        ///            &lt;br/&gt;
+        ///            &lt;p&gt;Bạn nhận được email này vì đã sử dụng chức năng khôi phục mật khẩu trên website Cổng thông tin dịch vụ công trực tuyến Sở Giao Thông Vận Tải Tỉnh Long An.&lt;/p&gt;
         ///
-        ///          &lt;p&gt;
-        ///            Tên đăng nhậ [rest of string was truncated]&quot;;.
+        ///      [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string PasswordRecoveryXSLT {
             get {

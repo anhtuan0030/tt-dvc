@@ -15,7 +15,7 @@
 <script src="/_layouts/15/LongAn.DVC/js/jquery.js"></script>
 
 
-<div class="container_12">
+<div class="">
 	<div class="row">
 		<div class="grid_12" id="main-frame">
 			<div id="top-control">

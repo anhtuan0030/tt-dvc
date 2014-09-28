@@ -50,6 +50,21 @@ namespace LongAn.DVC.WebParts.DeNghiListView
         {
             if (!this.Page.IsPostBack)
             {
+                //Check permission
+                if (SPContext.Current.Web.CurrentUser == null)
+                {
+                    HttpContext.Current.Response.Redirect(SPContext.Current.Web.ServerRelativeUrl);
+                }
+                else
+                {
+                    var currentUserRole = DeNghiHelper.CurrentUserRole(SPContext.Current.Web, SPContext.Current.Web.CurrentUser);
+
+                    if (currentUserRole == CapXuLy.CaNhanToChuc)
+                    {
+                        HttpContext.Current.Response.Redirect(SPContext.Current.Web.ServerRelativeUrl);
+                    }
+                }
+
                 this.BindItemsList();
                 //Link & Title
                 literalDeNghiTitle.Text = DeNghiTitle;

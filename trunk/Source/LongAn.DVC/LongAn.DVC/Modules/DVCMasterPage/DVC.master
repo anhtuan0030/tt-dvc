@@ -31,6 +31,7 @@
 <SharePoint:ScriptLink language="javascript" name="sharing.js" OnDemand="true" runat="server" Localizable="false" />
 <SharePoint:ScriptLink language="javascript" name="suitelinks.js" OnDemand="true" runat="server" Localizable="false" />
 <script type="text/javascript" src="/_layouts/15/LongAn.DVC/js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="/_layouts/15/LongAn.DVC/js/jquery.scrollTo.min.js"></script>
 <script type="text/javascript" src="/_layouts/15/LongAn.DVC/js/hoverIntent.js"></script>
 <script type="text/javascript" src="/_layouts/15/LongAn.DVC/js/superfish.js"></script>
 <script type="text/javascript" src="/_layouts/15/LongAn.DVC/js/script.js"></script>
@@ -380,7 +381,7 @@
         <div class="row">
             <div class="grid_12">
                 <a href="/">
-                    <img class="img-responsive" src="/_layouts/15/LongAn.DVC/images/banner.png" alt="banner"/>
+                    <img class="img-responsive" src="/_layouts/15/LongAn.DVC/images/banner-1.png" alt="banner"/>
                 </a>
             </div>
             <div class="clear"></div>
@@ -393,7 +394,8 @@
                 <div id="top-menu">
                     <ul class="sf-menu menu">
                         <li class="home"><a href="/">Trang chủ</a></li>
-                        <li><a href="/Pages/DVC.aspx">Dịch vụ công</a></li>
+                        <li><a href="/">Giới thiệu Dịch vụ công</a></li>
+                        <li><a href="/Pages/DVC.aspx">Đăng ký Dịch vụ công</a></li>
                         <li><a href="/Pages/TraCuuHoSo.aspx">Tra cứu hồ sơ</a></li>
                     </ul>
                 </div>
@@ -665,7 +667,7 @@
                 <div class="row">
                     <div class="grid_6">
                         <a class="pull-left" href="#"><img src="/_layouts/15/LongAn.DVC/images/index_logo.png" alt="logo so gtvt long an"/></a>
-                        <h4>SỞ GIAO THÔNG VẬN TẢI TỈNH LONG AN</h4>
+                        <h4 style="color:white !important">SỞ GIAO THÔNG VẬN TẢI TỈNH LONG AN</h4>
                         <p>Địa chỉ: 66 Hùng Vương, Phường 2, Thành phố Tân An, Long An. <br/>Điện thoại: (072) 3831741 - Fax: (072) 3824725.</p>
                         <div class="clearfix"></div>
                     </div>

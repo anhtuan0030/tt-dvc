@@ -20,4 +20,10 @@ jQuery(document).ready(function($){
             regional: 'vi'
         });
     }
+
+    $(".btn-up").click(function () {
+        $("#s4-workspace").scrollTo(".container_12", 500);
+        return false;
+    });
+
 });

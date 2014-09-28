@@ -39,6 +39,18 @@ namespace LongAn.DVC.WebParts.DeNghiReport {
     
     public partial class DeNghiReport {
         
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        protected global::Microsoft.SharePoint.WebControls.DateTimeControl dtcFromDate;
+        
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        protected global::Microsoft.SharePoint.WebControls.DateTimeControl dtcToDate;
+        
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        protected global::System.Web.UI.WebControls.Button btnExportExcel;
+        
         [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebPartCodeGenerator", "12.0.0.0")]
         public static implicit operator global::System.Web.UI.TemplateControl(DeNghiReport target) 
         {
@@ -48,7 +60,89 @@ namespace LongAn.DVC.WebParts.DeNghiReport {
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
         [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
             "artCodeGenerator", "12.0.0.0")]
+        private global::Microsoft.SharePoint.WebControls.DateTimeControl @__BuildControldtcFromDate() {
+            global::Microsoft.SharePoint.WebControls.DateTimeControl @__ctrl;
+            @__ctrl = new global::Microsoft.SharePoint.WebControls.DateTimeControl();
+            this.dtcFromDate = @__ctrl;
+            @__ctrl.ID = "dtcFromDate";
+            @__ctrl.DateOnly = true;
+            @__ctrl.LocaleId = 1066;
+            @__ctrl.IsRequiredField = true;
+            @__ctrl.ErrorMessage = "Vui lòng chọn ngày hợp lệ";
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::Microsoft.SharePoint.WebControls.DateTimeControl @__BuildControldtcToDate() {
+            global::Microsoft.SharePoint.WebControls.DateTimeControl @__ctrl;
+            @__ctrl = new global::Microsoft.SharePoint.WebControls.DateTimeControl();
+            this.dtcToDate = @__ctrl;
+            @__ctrl.ID = "dtcToDate";
+            @__ctrl.DateOnly = true;
+            @__ctrl.LocaleId = 1066;
+            @__ctrl.IsRequiredField = true;
+            @__ctrl.ErrorMessage = "Vui lòng chọn ngày hợp lệ";
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.Button @__BuildControlbtnExportExcel() {
+            global::System.Web.UI.WebControls.Button @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.Button();
+            this.btnExportExcel = @__ctrl;
+            @__ctrl.ApplyStyleSheetSkin(this.Page);
+            @__ctrl.ID = "btnExportExcel";
+            @__ctrl.Text = "Xuất báo cáo";
+            @__ctrl.CssClass = "button";
+            ((System.Web.UI.IAttributeAccessor)(@__ctrl)).SetAttribute("align", "middle");
+            @__ctrl.Click -= new System.EventHandler(this.btnExportExcel_Click);
+            @__ctrl.Click += new System.EventHandler(this.btnExportExcel_Click);
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
         private void @__BuildControlTree(global::LongAn.DVC.WebParts.DeNghiReport.DeNghiReport @__ctrl) {
+            System.Web.UI.IParserAccessor @__parser = ((System.Web.UI.IParserAccessor)(@__ctrl));
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl(@"
+
+<div>
+	<div class=""row"">
+		<div class=""grid_12"">
+			<h2>
+				BÁO CÁO CẤP PHÉP LƯU HÀNH
+			</h2>
+            <div class=""form"" id=""searchform"">
+				<div class=""row line"">
+                    <div class=""grid_2"" style=""margin-top:10px"">
+                       Từ ngày:                        
+                    </div>
+                    <div class=""grid_4"">
+                        "));
+            global::Microsoft.SharePoint.WebControls.DateTimeControl @__ctrl1;
+            @__ctrl1 = this.@__BuildControldtcFromDate();
+            @__parser.AddParsedSubObject(@__ctrl1);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                    </div>\r\n                    <div class=\"grid_2\" style=\"marg" +
+                        "in-top:10px\">\r\n                       Đến ngày:                        \r\n       " +
+                        "             </div>\r\n                    <div class=\"grid_4\">\r\n                 " +
+                        "       "));
+            global::Microsoft.SharePoint.WebControls.DateTimeControl @__ctrl2;
+            @__ctrl2 = this.@__BuildControldtcToDate();
+            @__parser.AddParsedSubObject(@__ctrl2);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                    </div>\r\n                    <div class=\"clear\"></div>\r\n\t\t\t\t" +
+                        "</div>\r\n                <div>\r\n                    <div class=\"grid_2\">\r\n       " +
+                        "                 "));
+            global::System.Web.UI.WebControls.Button @__ctrl3;
+            @__ctrl3 = this.@__BuildControlbtnExportExcel();
+            @__parser.AddParsedSubObject(@__ctrl3);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                    </div>\r\n                    <div class=\"clear\"></div>\r\n    " +
+                        "            </div>\r\n            </div>\r\n\t\t</div>\r\n\t</div>\r\n\t<div class=\"clear\"><" +
+                        "/div>\r\n</div>"));
         }
         
         [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
