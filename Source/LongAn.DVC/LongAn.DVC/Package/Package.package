@@ -9,6 +9,7 @@
   <features>
     <featureReference itemId="d4d9a687-e054-4bf6-8aa3-9e5bf52fec28" />
     <featureReference itemId="581ea75c-979a-44bb-96a6-78deb4fa1b0f" />
+    <featureReference itemId="7bb080d6-3961-4ed5-841d-e8fa870861a0" />
   </features>
   <projectItems>
     <projectItemReference itemId="f8fd9a64-c763-4233-8b90-24407d721b2c" />
