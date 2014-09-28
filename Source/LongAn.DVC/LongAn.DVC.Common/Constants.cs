@@ -120,6 +120,13 @@ namespace LongAn.DVC.Common
         public const string FieldTitle = "Title";
         public const string FieldCreated = "Created";
 
+        //Aspose lic path
+        public const string AsposeCellLicPath = "TEMPLATE\\LAYOUTS\\LongAn.DVC\\lic\\Aspose.Cells.lic";
+        public const string AsposeWordLicPath = "TEMPLATE\\LAYOUTS\\LongAn.DVC\\lic\\Aspose.Words.lic";
+
+        //Excel Template Path
+        public const string DeNghiReportPath = "TEMPLATE\\LAYOUTS\\LongAn.DVC\\ExcelTemplates\\BaoCaoCapPhepLuuHanhXe.xls";
+
         //DeNghi attachments
         public const string FieldNguoiDeNghi = "NguoiDeNghi";
         public const string FieldLoaiDeNghi = "LoaiDeNghi";

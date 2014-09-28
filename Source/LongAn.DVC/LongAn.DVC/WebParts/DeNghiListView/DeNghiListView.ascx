@@ -41,23 +41,23 @@
     _spOriginalFormAction = document.forms[0].action;
     _spSuppressFormOnSubmitWrapper = true;
 </script>
-<div class="container_12">
+<div class="">
 	<div class="row">
 		<div class="grid_12" id="main-frame">
 			<div id="top-control">
 				<asp:HyperLink ID="hplTrangChu" CssClass="button large-button home" Visible="false" runat="server">Trang chủ</asp:HyperLink>
-                <asp:HyperLink ID="hplHoSoChoTiepNhan" CssClass="button large-button added" runat="server">Chờ tiếp nhận</asp:HyperLink>
-                <asp:HyperLink ID="hplHoSoDaTiepNhan" CssClass="button large-button added" runat="server">Đã tiếp nhận</asp:HyperLink>
-                <asp:HyperLink ID="hplHoSoChoXuLy" CssClass="button large-button process" runat="server">Chờ xử lý</asp:HyperLink>
-                <asp:HyperLink ID="hplHoSoDangXuLy" CssClass="button large-button waiting" runat="server">Đang xử lý</asp:HyperLink>
-                <asp:HyperLink ID="hplHoSoChoBoSung" CssClass="button large-button done" runat="server">Chờ bổ sung</asp:HyperLink>
-                <asp:HyperLink ID="hplHoSoChoDuyet" CssClass="button large-button stat" runat="server">Chờ duyệt</asp:HyperLink>
-                <asp:HyperLink ID="hplHoSoChoCapPhep" CssClass="button large-button stat" runat="server">Chờ cấp phép</asp:HyperLink>
-                <asp:HyperLink ID="hplHoSoDuocCapPhep" CssClass="button large-button stat" runat="server">Được cấp phép</asp:HyperLink>
-                <asp:HyperLink ID="hplHoSoBiTuChoi" CssClass="button large-button stat" Visible="false" runat="server">Bị từ chối</asp:HyperLink>
-                <asp:HyperLink ID="hplHoSoDaHoanThanh" CssClass="button large-button stat" runat="server">Đã hoàn thành</asp:HyperLink>
-                <asp:HyperLink ID="hplHoSoChuaHoanThanh" CssClass="button large-button stat" runat="server">Chưa hoàn thành</asp:HyperLink>
-                <asp:HyperLink ID="hplThongKeBaoCao" CssClass="button large-button stat"  Visible="false" runat="server">Báo cáo, thống kê</asp:HyperLink>
+                <asp:HyperLink ID="hplHoSoChoTiepNhan" CssClass="button large-button added" runat="server">Hồ sơ<br/>chờ tiếp nhận</asp:HyperLink>
+                <asp:HyperLink ID="hplHoSoDaTiepNhan" CssClass="button large-button added" runat="server">Hồ sơ<br/>đã tiếp nhận</asp:HyperLink>
+                <asp:HyperLink ID="hplHoSoChoXuLy" CssClass="button large-button process" runat="server">Hồ sơ<br/>chờ xử lý</asp:HyperLink>
+                <asp:HyperLink ID="hplHoSoDangXuLy" CssClass="button large-button waiting" runat="server">Hồ sơ<br/>đang xử lý</asp:HyperLink>
+                <asp:HyperLink ID="hplHoSoChoBoSung" CssClass="button large-button done" runat="server">Hồ sơ<br/>chờ bổ sung</asp:HyperLink>
+                <asp:HyperLink ID="hplHoSoChoDuyet" CssClass="button large-button stat" runat="server">Hồ sơ<br/>chờ duyệt</asp:HyperLink>
+                <asp:HyperLink ID="hplHoSoChoCapPhep" CssClass="button large-button stat" runat="server">Hồ sơ<br/>chờ cấp phép</asp:HyperLink>
+                <asp:HyperLink ID="hplHoSoDuocCapPhep" CssClass="button large-button stat" runat="server">Hồ sơ<br/>được cấp phép</asp:HyperLink>
+                <asp:HyperLink ID="hplHoSoBiTuChoi" CssClass="button large-button stat" runat="server">Hồ sơ<br/>bị từ chối</asp:HyperLink>
+                <asp:HyperLink ID="hplHoSoDaHoanThanh" CssClass="button large-button stat" runat="server">Hồ sơ đã<br/>hoàn thành</asp:HyperLink>
+                <asp:HyperLink ID="hplHoSoChuaHoanThanh" CssClass="button large-button stat" runat="server">Hồ sơ chưa<br/>hoàn thành</asp:HyperLink>
+                <asp:HyperLink ID="hplThongKeBaoCao" CssClass="button large-button stat custom-last" runat="server">Báo cáo<br/>thống kê</asp:HyperLink>
 				<div class="clear"></div>
 			</div>
             <div class="row">

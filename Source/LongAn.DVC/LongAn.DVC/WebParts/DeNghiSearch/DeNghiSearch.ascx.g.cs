@@ -143,7 +143,7 @@ namespace LongAn.DVC.WebParts.DeNghiSearch {
         width: 120px !important;
     }
 </style>
-<div class=""container_12"">
+<div class="""">
 	<div class=""row"">
 		<div class=""grid_12"" id=""main-frame"">
 			<h2 class="""">
@@ -151,8 +151,7 @@ namespace LongAn.DVC.WebParts.DeNghiSearch {
 			</h2>
 			<div class=""form"" id=""searchform"">
 				<div class=""row line"">
-                    <div class=""grid_1"">&nbsp;</div>
-                    <div class=""grid_2"" style=""margin-top:10px"">
+                    <div class=""grid_3"" style=""margin-top:10px"">
                        Nhập mã biên nhận:                        
                     </div>
                     <div class=""grid_4"">

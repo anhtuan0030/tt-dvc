@@ -260,8 +260,14 @@
                             <div class="grid_3">
                                 <SharePoint:FieldLabel ID="flbLoaiCapPhep"  FieldName="LoaiCapPhep"  runat="server"  />
                             </div>
-                            <div class="grid_8">
+                            <div class="grid_8 custom-label">
                                 <SharePoint:FormField  runat="server" ID="fldLoaiCapPhep" FieldName="LoaiCapPhep" />
+
+                                <style type="text/css">
+                                    .custom-label label {
+                                        display: inline !important;
+                                    }
+                                </style>
                             </div>
                             <div class="clear"></div>
                         </div>

@@ -14,7 +14,7 @@
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{C1CDDADD-2546-481F-9697-4EA41081F2FC};{14822709-B5A1-4724-98CA-57A101D1B079};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <SandboxedSolution>False</SandboxedSolution>
-    <ActiveDeploymentConfiguration>Upgrade Solution %28CKSDev%29</ActiveDeploymentConfiguration>
+    <ActiveDeploymentConfiguration>Default</ActiveDeploymentConfiguration>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -186,6 +186,7 @@
       <FeatureId>{d4d9a687-e054-4bf6-8aa3-9e5bf52fec28}</FeatureId>
     </None>
     <None Include="key.snk" />
+    <Content Include="Layouts\LongAn.DVC\ExcelTemplates\BaoCaoCapPhepLuuHanhXe.xls" />
     <None Include="Layouts\LongAn.DVC.Form\css\form.main.less" />
     <None Include="Layouts\LongAn.DVC.Form\css\forms.less" />
     <None Include="Layouts\LongAn.DVC.Form\css\main.less" />
@@ -256,6 +257,8 @@
     <Content Include="Layouts\LongAn.DVC.Form\images\word.png" />
     <Content Include="Layouts\LongAn.DVC.Form\images\_banner.png" />
     <Content Include="Layouts\LongAn.DVC.Form\images\_index_logo.png" />
+    <Content Include="Layouts\LongAn.DVC\images\banner-1.png" />
+    <Content Include="Layouts\LongAn.DVC\js\jquery.scrollTo.min.js" />
     <Content Include="Layouts\LongAn.DVC\lic\Aspose.Cells.lic" />
     <Content Include="Layouts\LongAn.DVC\lic\Aspose.Words.lic" />
     <None Include="Layouts\LongAn.DVC\templates\BienNhanTemplate.docx" />
@@ -321,7 +324,9 @@
     <None Include="WebParts\DeNghiRedirect\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{87d63147-3234-49c3-8c84-b42fce449e78}</SharePointProjectItemId>
     </None>
-    <None Include="WebParts\DeNghiReport\DeNghiReport.webpart" />
+    <None Include="WebParts\DeNghiReport\DeNghiReport.webpart">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="WebParts\DeNghiReport\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{d61fb545-c2e2-4b81-b8e3-2daa0a7f2a36}</SharePointProjectItemId>
     </None>

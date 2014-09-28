@@ -608,7 +608,7 @@ namespace LongAn.DVC.WebParts.DeNghiListViewUsers {
 <script src=""/_layouts/15/LongAn.DVC/js/jquery.js""></script>
 
 
-<div class=""container_12"">
+<div class="""">
 	<div class=""row"">
 		<div class=""grid_12"" id=""main-frame"">
 			<div id=""top-control"">
@@ -616,7 +616,7 @@ namespace LongAn.DVC.WebParts.DeNghiListViewUsers {
             global::System.Web.UI.WebControls.HyperLink @__ctrl1;
             @__ctrl1 = this.@__BuildControlhplTrangChu();
             @__parser.AddParsedSubObject(@__ctrl1);
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\n                "));
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                "));
             global::System.Web.UI.WebControls.HyperLink @__ctrl2;
             @__ctrl2 = this.@__BuildControlhplDanhSachDeNghi();
             @__parser.AddParsedSubObject(@__ctrl2);

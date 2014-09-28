@@ -92,7 +92,7 @@ body {
   width: 50px;
   height: 20px;
   border-right: none;
-  padding-top: 0px;
+  padding-top: 10px;
   padding-bottom: 0px;
 }
 .menu li .sub-menu {
@@ -595,7 +595,7 @@ input[type="text"].small {
 }
 #top-control .button {
   float: left;
-  margin-right: 15px;
+  margin-right: 10px;
 }
 #searchform {
   border: 1px solid #dedede;
@@ -756,4 +756,10 @@ display:none;
 
 a.button:visited {
   color: #fff ;
+}
+
+.button.custom-last {
+  margin-right: 0 !important;
+  padding-left: 5px;
+  padding-right: 5px;
 }

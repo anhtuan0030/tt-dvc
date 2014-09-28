@@ -38,7 +38,64 @@
   <Assembly>Microsoft.SharePoint, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c</Assembly>
   <TypeName>Microsoft.SharePoint.WebPartPages.ContentEditorWebPart</TypeName>
   <ContentLink xmlns="http://schemas.microsoft.com/WebPart/v2/ContentEditor" />
-  <Content xmlns="http://schemas.microsoft.com/WebPart/v2/ContentEditor">&lt;div class=&quot;tabs&quot; id=&quot;main-tab&quot;&gt; &lt;ul class=&quot;tab-titles&quot;&gt; &lt;li&gt; &lt;a class=&quot;tab-title active&quot; href=&quot;#main-tab-tab-1&quot; data-parent=&quot;main-tab&quot;&gt;Dịch vụ công&lt;/a&gt;&lt;/li&gt; &lt;li&gt; &lt;a class=&quot;tab-title&quot; href=&quot;#main-tab-tab-2&quot; data-parent=&quot;main-tab&quot;&gt;Hướng dẫn sử dụng&lt;/a&gt;&lt;/li&gt; &lt;/ul&gt; &lt;div class=&quot;tab-contents&quot;&gt; &lt;div id=&quot;main-tab-tab-1&quot; class=&quot;active tab-content&quot;&gt; &lt;h2 class=&quot;text-center text-uppercase&quot;&gt;Dịch vụ công trực tuyến&lt;/h2&gt; &lt;p&gt;Thực hiện Quyết định số 48/2009/QĐ-TTg ngày 31/3/2009 của Thủ tướng Chính phủ về việc phê duyệt kế hoạch ứng dụng công nghệ thông tin trong cơ quan nhà nước, theo đó định hướng đến năm 2015:&lt;/p&gt; &lt;p&gt;“Ứng dụng công nghệ thông tin để đổi mới phương thức cung cấp thông tin và dịch vụ công cho người dân và doanh nghiệp. Phấn đấu đến năm 2015 cung cấp hầu hết các dịch vụ công cơ bản trực tuyến mức độ 3 hoặc 4, người dân và doanh nghiệp có thể trao đổi thông tin, gửi, nhận hồ sơ, thanh toán phí dịch vụ, nhận kết quả dịch vụ qua mạng”.&lt;/p&gt; &lt;p&gt;Dịch vụ công trực tuyến mức độ 3 cho phép công dân, tổ chức điền và gửi trực tuyến các mẫu văn bản đến cơ quan, tổ chức cung cấp dịch vụ. Các giao dịch trong quá trình xử lý hồ sơ và cung cấp dịch vụ được thực hiện trên môi trường mạng. Việc thanh toán lệ phí (nếu có) và nhận kết quả được thực hiện trực tiếp tại cơ quan, tổ chức cung cấp dịch vụ (Bộ phận Tiếp nhận và Trả kết quả).&lt;/p&gt; &lt;p&gt;Với dịch vụ công trực tuyến, công dân, tổ chức có thể thực hiện giao nộp các Hồ sơ hành chính cho cơ quan chính quyền, sau đó có thể theo dõi tiến độ xử lý và nhận thông báo trả kết quả xử lý thông qua Cổng thông tin điện tử của chính quyền. Như vậy công dân, tổ chức chỉ phải đến duy nhất một lần hành chính một cửa của chính quyền để nộp các giấy tờ chứng thực, còn lại mọi quá trình khác đều được giao tiếp qua Cổng thông tin điện tử.&lt;/p&gt; &lt;p&gt;Triển khai các dịch vụ công trực tuyến có nghĩa là công dân, doanh nghiệp có thể giao tiếp với chính quyền 24 giờ trong ngày, 7 ngày trong tuần, tại bất cứ đâu có kết nối internet, đây là bước nhảy vọt về cải cách hành chính, giảm thiểu tối đa công sức của người dân và chính quyền trong việc giải quyết các thủ tục hành chính.&lt;/p&gt; &lt;/div&gt; &lt;div id=&quot;main-tab-tab-2&quot; class=&quot;tab-content&quot;&gt; &lt;h2 class=&quot;text-center text-uppercase&quot;&gt;Hướng dẫn sử dụng&lt;/h2&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; </Content>
+  <Content xmlns="http://schemas.microsoft.com/WebPart/v2/ContentEditor">&lt;div class=&quot;tabs&quot; id=&quot;main-tab&quot;&gt;
+	&lt;ul class=&quot;tab-titles&quot;&gt;
+		&lt;li&gt;&lt;a class=&quot;tab-title active&quot; href=&quot;#main-tab-tab-1&quot; data-parent=&quot;main-tab&quot;&gt;Giới thiệu Dịch vụ c&#244;ng&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a class=&quot;tab-title&quot; href=&quot;#main-tab-tab-2&quot; data-parent=&quot;main-tab&quot;&gt;Qui tr&#236;nh cấp ph&#233;p&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a class=&quot;tab-title&quot; href=&quot;#main-tab-tab-3&quot; data-parent=&quot;main-tab&quot;&gt;Hướng dẫn sử dụng&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+	&lt;div class=&quot;tab-contents&quot;&gt;
+			&lt;div id=&quot;main-tab-tab-1&quot; class=&quot;active tab-content&quot;&gt;
+				&lt;h2 class=&quot;text-center text-uppercase&quot;&gt;Dịch vụ c&#244;ng trực tuyến&lt;/h2&gt;
+				&lt;p&gt;Thực hiện Quyết định số 48/2009/QĐ-TTg ng&#224;y 31/3/2009 của Thủ tướng Ch&#237;nh phủ về việc
+					ph&#234; duyệt kế hoạch ứng dụng c&#244;ng nghệ th&#244;ng tin trong cơ quan nh&#224; nước, theo đ&#243; định
+					hướng đến năm 2015:&lt;/p&gt;
+				&lt;p&gt;“Ứng dụng c&#244;ng nghệ th&#244;ng tin để đổi mới phương thức cung cấp th&#244;ng tin v&#224; dịch vụ
+					c&#244;ng cho người d&#226;n v&#224; doanh nghiệp. Phấn đấu đến năm 2015 cung cấp hầu hết c&#225;c dịch
+					vụ c&#244;ng cơ bản trực tuyến mức độ 3 hoặc 4, người d&#226;n v&#224; doanh nghiệp c&#243; thể trao đổi
+					th&#244;ng tin, gửi, nhận hồ sơ, thanh to&#225;n ph&#237; dịch vụ, nhận kết quả dịch vụ qua
+					mạng”.&lt;/p&gt;
+				&lt;p&gt;Dịch vụ c&#244;ng trực tuyến mức độ 3 cho ph&#233;p c&#244;ng d&#226;n, tổ chức điền v&#224; gửi trực tuyến
+					c&#225;c mẫu văn bản đến cơ quan, tổ chức cung cấp dịch vụ. C&#225;c giao dịch trong qu&#225; tr&#236;nh
+					xử l&#253; hồ sơ v&#224; cung cấp dịch vụ được thực hiện tr&#234;n m&#244;i trường mạng. Việc thanh to&#225;n
+					lệ ph&#237; (nếu c&#243;) v&#224; nhận kết quả được thực hiện trực tiếp tại cơ quan, tổ chức cung
+					cấp dịch vụ (Bộ phận Tiếp nhận v&#224; Trả kết quả).&lt;/p&gt;
+				&lt;p&gt;Với dịch vụ c&#244;ng trực tuyến, c&#244;ng d&#226;n, tổ chức c&#243; thể thực hiện giao nộp c&#225;c Hồ sơ
+					h&#224;nh ch&#237;nh cho cơ quan ch&#237;nh quyền, sau đ&#243; c&#243; thể theo d&#245;i tiến độ xử l&#253; v&#224; nhận
+					th&#244;ng b&#225;o trả kết quả xử l&#253; th&#244;ng qua Cổng th&#244;ng tin điện tử của ch&#237;nh quyền. Như
+					vậy c&#244;ng d&#226;n, tổ chức chỉ phải đến duy nhất một lần h&#224;nh ch&#237;nh một cửa của ch&#237;nh
+					quyền để nộp c&#225;c giấy tờ chứng thực, c&#242;n lại mọi qu&#225; tr&#236;nh kh&#225;c đều được giao tiếp
+					qua Cổng th&#244;ng tin điện tử.&lt;/p&gt;
+				&lt;p&gt;Triển khai c&#225;c dịch vụ c&#244;ng trực tuyến c&#243; nghĩa l&#224; c&#244;ng d&#226;n, doanh nghiệp c&#243; thể giao tiếp với ch&#237;nh quyền 24 giờ trong ng&#224;y, 7 ng&#224;y trong tuần, tại bất cứ đ&#226;u c&#243; kết nối internet, đ&#226;y l&#224; bước nhảy vọt về cải c&#225;ch h&#224;nh ch&#237;nh, giảm thiểu tối đa c&#244;ng sức của người d&#226;n v&#224; ch&#237;nh quyền trong việc giải quyết c&#225;c thủ tục h&#224;nh ch&#237;nh.&lt;/p&gt;
+			&lt;/div&gt;
+			&lt;div id=&quot;main-tab-tab-2&quot; class=&quot;tab-content&quot;&gt;
+				&lt;h2 class=&quot;text-center text-uppercase&quot;&gt;Qui tr&#236;nh thực tế tại Sở GTVT Long An.&lt;/h2&gt;
+				- Tr&#236;nh tự thực hiện:
+					&lt;p&gt;Bước 1. Chuẩn bị đầy đủ hồ sơ theo quy định của ph&#225;p luật.&lt;/p&gt;
+					&lt;p&gt;Bước 2. Nộp hồ sơ tại nơi tiếp nhận hồ sơ (bộ phận một cửa) Sở Giao th&#244;ng Vận tải Long An (số 66, đường H&#249;ng Vương, phường 2, th&#224;nh phố T&#226;n An, tỉnh Long An).&lt;/p&gt;
+					&lt;p&gt;- C&#244;ng chức tiếp nhận kiểm tra t&#237;nh ph&#225;p l&#253; của hồ sơ:&lt;/p&gt;
+					&lt;p&gt;+ Trường hợp hồ sơ đầy đủ, hợp lệ th&#236; ghi bi&#234;n nhận cho người nộp. &lt;/p&gt;
+				   &lt;p&gt; + Trường hợp hồ sơ c&#242;n thiếu thủ tục hoặc kh&#244;ng hợp lệ th&#236; c&#244;ng chức tiếp nhận hồ sơ hướng dẫn để người đến nộp hồ sơ l&#224;m lại theo đ&#250;ng quy định.&lt;/p&gt;
+				   &lt;p&gt; * Khi hồ sơ đầy đủ, hợp lệ ph&#242;ng nghiệp vụ xử l&#253;, tr&#236;nh L&#227;nh đạo Sở cấp giấy ph&#233;p.&lt;/p&gt;
+					&lt;p&gt;Bước 3. Nhận kết quả tại bộ phận một cửa Sở Giao th&#244;ng Vận tải.&lt;/p&gt;
+					&lt;p&gt;* Thời gian tiếp nhận v&#224; trả kết quả hồ sơ: Từ ng&#224;y thứ Hai đến ng&#224;y thứ S&#225;u hằng tuần (trừ c&#225;c ng&#224;y lễ, ng&#224;y nghỉ):&lt;/p&gt;
+					&lt;p&gt;+ S&#225;ng: Từ 7 giờ đến 11 giờ 30 ph&#250;t.&lt;/p&gt;
+					&lt;p&gt;+ Chiều: Từ 13 giờ 30 ph&#250;t đến 17 giờ. &lt;/p&gt;
+					&lt;p&gt;- C&#225;ch thức thực hiện: Trực tiếp tại cơ quan h&#224;nh ch&#237;nh nh&#224; nước. &lt;/p&gt;
+				   &lt;p&gt; - Th&#224;nh phần, số lượng hồ sơ: 01 bộ. &lt;/p&gt;
+				   &lt;p&gt; + Giấy đề nghị cấp giấy ph&#233;p lưu h&#224;nh xe qu&#225; tải trọng, xe qu&#225; khổ giới hạn, xe vận chuyển h&#224;ng si&#234;u trường, si&#234;u trọng tr&#234;n đường bộ theo mẫu phụ lục 04 (được sửa đổi tại Th&#244;ng tư số 65/2013/TT-BGTVT ng&#224;y 31/12/2013 của Bộ trưởng Bộ Giao th&#244;ng vận tải sửa đổi, bổ sung một số điều của Th&#244;ng tư số 07/2010/TT-BGTVT ng&#224;y 11/02/2010 của Bộ trưởng Bộ Giao th&#244;ng vận tải quy định về tải trọng, khổ giới hạn của đường bộ; lưu h&#224;nh xe qu&#225; tải trọng, xe qu&#225; khổ giới hạn, xe b&#225;nh x&#237;ch tr&#234;n đường bộ; vận chuyển h&#224;ng si&#234;u trường, si&#234;u trọng; giới hạn xếp h&#224;ng h&#243;a tr&#234;n phương tiện giao th&#244;ng đường bộ khi tham gia giao th&#244;ng tr&#234;n đường bộ). K&#232;m theo giấy đề nghị giấy ph&#233;p lưu h&#224;nh xe c&#243; vẽ sơ đồ xe ghi đầy đủ, ch&#237;nh x&#225;c c&#225;c k&#237;ch thước bao ngo&#224;i (nếu xe chở h&#224;ng h&#243;a phải ghi đầy đủ, ch&#237;nh x&#225;c c&#225;c k&#237;ch thước bao ngo&#224;i khi đ&#227; xếp h&#224;ng h&#243;a l&#234;n xe hoặc l&#234;n rơ mo&#243;c, sơ mi rơ mo&#243;c: chiều cao, chiều rộng, chiều d&#224;i), khoảng c&#225;ch c&#225;c trục xe, chiều d&#224;i đu&#244;i xe;&lt;/p&gt;
+				   &lt;p&gt; + Bản sao giấy đăng k&#253; hoặc giấy đăng k&#253; tạm thời xe, xe đầu k&#233;o, rơ mo&#243;c, sơ mi rơ mo&#243;c (đối với phương tiện mới nhận);&lt;/p&gt;
+					&lt;p&gt;+ Bảo sao c&#225;c trang ghi về đặc điểm phương tiện v&#224; kết quả kiểm định gần nhất của giấy chứng nhận kiểm định an to&#224;n kỹ thuật v&#224; bảo vệ m&#244;i trường phương tiện giao th&#244;ng cơ giới đường bộ c&#242;n hiệu lực. Trường hợp phương tiện mới nhận chỉ cần bản sao t&#237;nh năng kỹ thuật của xe (do nh&#224; sản xuất gửi k&#232;m theo xe);&lt;/p&gt;
+					&lt;p&gt;+ Giấy cam kết của chủ phương tiện về quyền sở hữu phương tiện tại thời điểm đề nghị cấp giấy lưu h&#224;nh xe.&lt;/p&gt;
+					&lt;p&gt;- Thời hạn giải quyết: kh&#244;ng qu&#225; 02 ng&#224;y l&#224;m việc kể từ khi nhận đủ hồ sơ hợp lệ.&lt;/p&gt;
+
+			&lt;/div&gt;
+			&lt;div id=&quot;main-tab-tab-3&quot; class=&quot;tab-content&quot;&gt;
+				&lt;h2 class=&quot;text-center text-uppercase&quot;&gt;Hướng dẫn sử dụng dịch vụ&lt;/h2&gt;
+				&lt;p&gt;Hướng dẫn sử dụng thao t&#225;c online tại đ&#226;y...&lt;/p&gt;
+			&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;</Content>
         <PartStorage xmlns="http://schemas.microsoft.com/WebPart/v2/ContentEditor" />
         </WebPart>
 ]]>
@@ -645,6 +702,26 @@
     <File Path="DVCPages\BlankPage.aspx" Url="BaoCaoThongKe.aspx" Type="GhostableInLibrary" ReplaceContent="TRUE" >
       <Property Name="Title" Value="Báo cáo thống kê"/>
       <Property Name="PublishingPageLayout" Value="~SiteCollection/_catalogs/masterpage/DVCWebPartPage_Manage.aspx, DVC WebPart page - Manage"/>
+
+      <AllUsersWebPart WebPartOrder ="0" WebPartZoneID ="Header">
+        <![CDATA[ 
+        <webParts>
+          <webPart xmlns="http://schemas.microsoft.com/WebPart/v3">
+            <metaData>
+              <type name="LongAn.DVC.WebParts.DeNghiReport.DeNghiReport, $SharePoint.Project.AssemblyFullName$" />
+              <importErrorMessage>$Resources:core,ImportErrorMessage;</importErrorMessage>
+            </metaData>
+            <data>
+              <properties>
+                <property name="Title" type="string">Báo cáo cấp phép lưu hành xe</property>
+                <property name="Description" type="string">Báo cáo cấp phép lưu hành xe Visual Web Part</property>
+                <property name="ChromeType" type="chrometype">None</property>
+              </properties>
+            </data>
+          </webPart>
+        </webParts>
+          ]]>
+      </AllUsersWebPart>
     </File>
 
     <File Path="DVCPages\BlankPage.aspx" Url="TraCuuHoSo.aspx" Type="GhostableInLibrary" ReplaceContent="TRUE" >

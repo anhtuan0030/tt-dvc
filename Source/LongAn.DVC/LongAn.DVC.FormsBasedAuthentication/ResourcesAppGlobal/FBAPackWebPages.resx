@@ -247,7 +247,7 @@
     <value>Membership Approved:</value>
   </data>
   <data name="MembershipApprovedToolTipText" xml:space="preserve">
-    <value>Membership Approved</value>
+    <value>Đăng ký tài khoản thành công</value>
   </data>
   <data name="MembershipApprovedXSLT" xml:space="preserve">
     <value>&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
@@ -255,47 +255,15 @@
   &lt;xsl:template match="/"&gt;
     &lt;html&gt;
       &lt;head&gt;
-        &lt;title&gt;Membership Approved&lt;/title&gt;
+        &lt;title&gt;Đăng ký tài khoản thành công&lt;/title&gt;
       &lt;/head&gt;
       &lt;body&gt;
         &lt;div&gt;
             &lt;br /&gt;
-            &lt;p&gt;Your request for an account on &lt;xsl:value-of select="MembershipRequest:get_SiteName()" /&gt; has been approved and you have been granted access.&lt;/p&gt;
-            &lt;p&gt;Your user name is: &lt;xsl:value-of select="MembershipRequest:get_UserName()" /&gt;&lt;/p&gt;
-            &lt;p&gt;Your temporary password is: &lt;xsl:value-of select="MembershipRequest:get_Password()" /&gt;&lt;/p&gt;
-            &lt;p&gt;&lt;/p&gt;
-
-            &lt;p&gt;
-                &lt;xsl:text&gt;Your temporary password can be changed immediately by logging onto the &lt;/xsl:text&gt;
-                &lt;a&gt;
-                    &lt;xsl:attribute name="href"&gt;
-                        &lt;xsl:value-of select="MembershipRequest:get_ChangePasswordURL()" /&gt;
-                    &lt;/xsl:attribute&gt;
-                    &lt;xsl:text&gt;Change Password Page&lt;/xsl:text&gt;
-                &lt;/a&gt;
-                &lt;xsl:text&gt; using your user name and temporary password.&lt;/xsl:text&gt;
-            &lt;/p&gt;
-            &lt;p&gt;
-                &lt;xsl:text&gt;The ChangePassword page is located at &lt;/xsl:text&gt;
-                &lt;a&gt;
-                    &lt;xsl:attribute name="href"&gt;
-                        &lt;xsl:value-of select="MembershipRequest:get_ChangePasswordURL()" /&gt;
-                    &lt;/xsl:attribute&gt;
-                    &lt;xsl:value-of select="MembershipRequest:get_ChangePasswordURL()" /&gt;
-                &lt;/a&gt;
-                &lt;xsl:text&gt;.&lt;/xsl:text&gt;
-
-            &lt;/p&gt;
-            &lt;p&gt;
-                &lt;xsl:text&gt;Once you have changed your password, you can browse the &lt;/xsl:text&gt;
-                &lt;xsl:value-of select="MembershipRequest:get_SiteName()" /&gt;
-                &lt;xsl:text&gt; site at &lt;/xsl:text&gt;
-                &lt;xsl:value-of select="MembershipRequest:get_SiteURL()" /&gt;
-            &lt;/p&gt;
-
-            &lt;p&gt;If you need additional access please contact the site administrator.&lt;/p&gt;
-
-            &lt;p&gt;Thank you.&lt;/p&gt;
+            &lt;p&gt;Bạn đã đăng ký tài khoản thành công trên website Cổng thông tin dịch vụ công trực tuyến Sở Giao Thông Vận Tải Tỉnh Long An tại &lt;xsl:value-of select="MembershipRequest:get_SiteURL()" /&gt;.&lt;/p&gt;
+			&lt;p&gt;Thông tin đăng nhập của bạn như sau:&lt;/p&gt;
+            &lt;p&gt;Tên đăng nhập: &lt;xsl:value-of select="MembershipRequest:get_UserName()" /&gt;&lt;/p&gt;
+            &lt;p&gt;Mật khẩu: &lt;xsl:value-of select="MembershipRequest:get_Password()" /&gt;&lt;/p&gt;
         &lt;/div&gt;
       &lt;/body&gt;
     &lt;/html&gt;
@@ -451,7 +419,8 @@
       &lt;/head&gt;
       &lt;body&gt;
         &lt;div&gt;
-            &lt;p&gt;Bạn nhận được email này vì đã sử dụng chức năng khôi phục mật khẩu trên website &lt;xsl:value-of select="MembershipRequest:get_SiteName()" /&gt;.&lt;/p&gt;
+            &lt;br/&gt;
+            &lt;p&gt;Bạn nhận được email này vì đã sử dụng chức năng khôi phục mật khẩu trên website Cổng thông tin dịch vụ công trực tuyến Sở Giao Thông Vận Tải Tỉnh Long An.&lt;/p&gt;
 
           &lt;p&gt;
             Tên đăng nhập của bạn là: &lt;xsl:value-of select="MembershipRequest:get_UserName()" /&gt;
