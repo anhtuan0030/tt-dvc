@@ -33,7 +33,7 @@
                 <WebPartPages:WebPartZone runat="server" Title="<%$Resources:cms,WebPartZoneTitle_Header%>" ID="Header"><ZoneTemplate></ZoneTemplate></WebPartPages:WebPartZone>
             </div>
             <div class="clear"></div>
-			<div class="grid_9">
+			<div class="grid_12">
 				<div class="ms-table ms-fullWidth">
 					<div class="cell-margin tableCol-50">
 						<WebPartPages:WebPartZone runat="server" Title="<%$Resources:cms,WebPartZoneTitle_TopLeft%>" ID="TopLeftRow"><ZoneTemplate></ZoneTemplate></WebPartPages:WebPartZone>

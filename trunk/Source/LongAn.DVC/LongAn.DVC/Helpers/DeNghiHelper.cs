@@ -4,6 +4,7 @@ using LongAn.DVC.Common.Extensions;
 using Microsoft.SharePoint;
 using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +15,33 @@ namespace LongAn.DVC.Helpers
 {
     public class DeNghiHelper
     {
+        public static void SendEmailToHR(string emailTo, string itemId, string caNhanToChuc, string maBienNhan, string hanhDong)
+        {
+            try
+            {
+                LoggingServices.LogMessage("Begin Send Email To HR");
+                StringDictionary headers = new StringDictionary();
+                headers.Add("to", emailTo);
+                //headers.Add("cc",strCC);
+                //headers.Add("bcc",strbcc);
+                //headers.Add("from",strFrom);
+                headers.Add("subject", "[Sở GTVT Long An] - Thông báo");
+                headers.Add("content-type","text/html");
+                var linkItemUrl = SPContext.Current.Site.MakeFullUrl((SPContext.Current.Web.ServerRelativeUrl +  Constants.ConfLinkPageDispForm).Replace("//","/");
+                var emailBody = string.Format(Constants.EmailBody, caNhanToChuc, maBienNhan, hanhDong);
+
+                //emailBody += string.Format(Constants.TimesheetLink, 
+                //    SPContext.Current.Site.MakeFullUrl((SPContext.Current.Web.ServerRelativeUrl +  Constants.ConfLinkDispForm).Replace("//","/")), 
+                //    "Review and Approve timesheet");
+                LoggingServices.LogMessage("Send Email To: " + emailTo + ", Content: " + emailBody);
+                Microsoft.SharePoint.Utilities.SPUtility.SendEmail(SPContext.Current.Web, headers, emailBody);
+            }
+            catch (Exception ex)
+            {
+                LoggingServices.LogException(ex);
+            }
+            LoggingServices.LogMessage("End Send Email To HR");
+        }
         public static void SaveFileAttachment(FileUpload fileUpload, int deNghiId, string loaiAttachment)
         {
             if (!fileUpload.HasFile)

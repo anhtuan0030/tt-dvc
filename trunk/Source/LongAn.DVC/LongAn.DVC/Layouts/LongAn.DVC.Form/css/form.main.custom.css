@@ -27,3 +27,16 @@ div.article, div.welcome {
     margin-top: 30px;
 
 }
+
+.link-button {
+    float: left;
+    margin-right: 5px;
+}
+
+.button.just-icon{
+    /*padding: 0px 0px 0px 0px !important;*/
+}
+
+.link-button-td{
+    text-align:center;
+}
