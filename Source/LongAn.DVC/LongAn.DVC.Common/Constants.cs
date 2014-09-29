@@ -160,5 +160,8 @@ namespace LongAn.DVC.Common
         public const string FieldLoaiCapPhep = "LoaiCapPhep"; //Quá tải, Quá khổ
         public const string FieldSoTrucCuaXe = "SoTrucCuaXe";
         public const string FieldSoTrucCuaRoMooc = "SoTrucCuaRoMooc";
+
+        public const string EmailBody = @"Dear {0}, <br>Hồ sơ có mã biên nhận: {1} đã/phải {2}.<br>Link: {3}";
+        public const string EmailBodyLink = @"";
     }
 }
