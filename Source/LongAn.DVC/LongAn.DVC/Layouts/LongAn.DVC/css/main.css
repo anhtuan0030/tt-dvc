@@ -763,3 +763,10 @@ a.button:visited {
   padding-left: 5px;
   padding-right: 5px;
 }
+
+.menu li a.menuUserInfo {
+  color: yellow;
+  text-transform: none;
+}
+
+.hidden-box{display:none}

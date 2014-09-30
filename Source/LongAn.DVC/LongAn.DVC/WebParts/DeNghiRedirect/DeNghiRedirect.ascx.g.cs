@@ -49,6 +49,27 @@ namespace LongAn.DVC.WebParts.DeNghiRedirect {
         [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
             "artCodeGenerator", "12.0.0.0")]
         private void @__BuildControlTree(global::LongAn.DVC.WebParts.DeNghiRedirect.DeNghiRedirect @__ctrl) {
+            System.Web.UI.IParserAccessor @__parser = ((System.Web.UI.IParserAccessor)(@__ctrl));
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl(@"
+
+<div>
+	<div class=""row"">
+		<div class=""grid_12"">
+			<h2>
+				THÔNG BÁO
+			</h2>
+            <div class=""form"" id=""searchform"">
+				<div class=""row line"">
+                    Vui lòng đăng nhập để sử dụng chức năng đăng ký Dịch vụ công.
+                </div>   
+				<div class=""row line"">
+                    Nếu chưa có tài khoản, bạn có thể đăng ký tại <a href=""/Pages/DangKyTaiKhoan.aspx"">đây</a>.
+                </div>                       
+            </div>
+		</div>
+	</div>
+	<div class=""clear""></div>
+</div>"));
         }
         
         [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +

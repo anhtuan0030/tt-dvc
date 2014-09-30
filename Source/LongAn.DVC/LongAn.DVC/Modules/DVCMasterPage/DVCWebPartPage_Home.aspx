@@ -31,7 +31,7 @@
 			<SharePointWebControls:TextField runat="server" FieldName="Title"/>
 		</PublishingWebControls:EditModePanel>
 		<div class="ms-table ms-fullWidth">
-			<div class="grid_9"> <%--tableCol-75--%>
+			<div class="grid_9">
 				<div class="cell-margin">
 					<WebPartPages:WebPartZone runat="server" Title="<%$Resources:cms,WebPartZoneTitle_Header%>" ID="Header"><ZoneTemplate></ZoneTemplate></WebPartPages:WebPartZone>
 				</div>
@@ -58,9 +58,10 @@
 					<WebPartPages:WebPartZone runat="server" Title="<%$Resources:cms,WebPartZoneTitle_Footer%>" ID="Footer"><ZoneTemplate></ZoneTemplate></WebPartPages:WebPartZone>
 				</div>
 			</div>
-			<div class="cell-margin grid_3"> <%--tableCol-25--%>
+			<div class="cell-margin grid_3">
                 <FBALoginWebPart:FBALoginWebPart runat="server" ImportErrorMessage="$Resources:core,ImportErrorMessage;" Title="FBA Login Web Part" __MarkupType="vsattributemarkup" __WebPartId="{f6b518ad-0f88-4e23-ac81-2a3d45cd507d}" WebPart="true" __designer:IsClosed="false" id="g_f6b518ad_0f88_4e23_ac81_2a3d45cd507d"></FBALoginWebPart:FBALoginWebPart>
 
+                <%-- CUSTOM BANNER ZONE --%>
                 <a class="banner" href="#">
                     <img class="img-responsive" src="/_layouts/15/LongAn.DVC/images/index_banner-07.png" alt="logo"/>
                 </a>
@@ -70,6 +71,7 @@
                 <a class="banner" href="#">
                     <img class="img-responsive" src="/_layouts/15/LongAn.DVC/images/index_banner-09.png" alt="logo"/>
                 </a>
+                <%-- END CUSTOM BANNER ZONE --%>
 			</div>
             <div class="clear"></div>
 			<SharePointWebControls:ScriptBlock runat="server">

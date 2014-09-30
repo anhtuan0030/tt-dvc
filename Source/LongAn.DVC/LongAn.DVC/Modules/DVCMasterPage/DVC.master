@@ -395,7 +395,7 @@
                     <ul class="sf-menu menu">
                         <li class="home"><a href="/">Trang chủ</a></li>
                         <li><a href="/">Giới thiệu Dịch vụ công</a></li>
-                        <li><a href="/Pages/DVC.aspx">Đăng ký Dịch vụ công</a></li>
+                        <li><a href="/Pages/DVC.aspx" class="manage-dvc">Đăng ký Dịch vụ công</a></li>
                         <li><a href="/Pages/TraCuuHoSo.aspx">Tra cứu hồ sơ</a></li>
                     </ul>
                 </div>
@@ -663,11 +663,10 @@
                 <div class="pull-right">
                     <a class="btn btn-up" href="#">Lên đầu trang</a>
                 </div>
-                <div class="clearfix"></div>
                 <div class="row">
                     <div class="grid_6">
-                        <a class="pull-left" href="#"><img src="/_layouts/15/LongAn.DVC/images/index_logo.png" alt="logo so gtvt long an"/></a>
-                        <h4 style="color:white !important">SỞ GIAO THÔNG VẬN TẢI TỈNH LONG AN</h4>
+                        <a class="pull-left" href="#"><img height="100" src="/_layouts/15/LongAn.DVC/images/index_logo.png" alt="logo so gtvt long an"/></a>
+                        <h4 style="color:white !important; font-weight:bold !important">SỞ GIAO THÔNG VẬN TẢI TỈNH LONG AN</h4>
                         <p>Địa chỉ: 66 Hùng Vương, Phường 2, Thành phố Tân An, Long An. <br/>Điện thoại: (072) 3831741 - Fax: (072) 3824725.</p>
                         <div class="clearfix"></div>
                     </div>

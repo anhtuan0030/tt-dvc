@@ -30,11 +30,7 @@ namespace LongAn.DVC.WebParts.DeNghiRedirect
         {
             if (HttpContext.Current.Request.QueryString["ControlMode"] == null)
             {
-                if (SPContext.Current.Web.CurrentUser == null)
-                {
-                    HttpContext.Current.Response.Redirect(string.IsNullOrEmpty(LinkTrangChu) ? "/" : LinkTrangChu); 
-                }
-                else
+                if (SPContext.Current.Web.CurrentUser != null)
                 {
                     var currentUserRole = DeNghiHelper.CurrentUserRole(SPContext.Current.Web, SPContext.Current.Web.CurrentUser);
                     switch (currentUserRole)
