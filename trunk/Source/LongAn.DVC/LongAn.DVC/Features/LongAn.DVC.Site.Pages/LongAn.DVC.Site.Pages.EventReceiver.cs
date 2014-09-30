@@ -2,6 +2,7 @@ using System;
 using System.Runtime.InteropServices;
 using System.Security.Permissions;
 using Microsoft.SharePoint;
+using Microsoft.SharePoint.Publishing;
 
 namespace LongAn.DVC.Features.Feature1
 {
@@ -20,12 +21,24 @@ namespace LongAn.DVC.Features.Feature1
         public override void FeatureActivated(SPFeatureReceiverProperties properties)
         {
             var site = (SPSite)properties.Feature.Parent;
+            var web = site.RootWeb;
 
+            if (PublishingWeb.IsPublishingWeb(web))
+            {
+                PublishingWeb pubWeb = PublishingWeb.GetPublishingWeb(web);
+                //Get the file name
+                SPFile welcomeFile = web.GetFile("Pages/Homepage.aspx");
+                //Assign the new filename to the DefaultPage property
+                pubWeb.DefaultPage = welcomeFile;
+                //Update the Publishing Web.
+                pubWeb.Update();
+            }
+            
 
             //provision DVC Master page
-            //site.RootWeb.MasterUrl = site.RootWeb.ServerRelativeUrl + "_catalogs/masterpage/DVC.master";
-            site.RootWeb.CustomMasterUrl = site.RootWeb.ServerRelativeUrl + "_catalogs/masterpage/DVC.master";
-            site.RootWeb.Update();
+            //web.MasterUrl = site.RootWeb.ServerRelativeUrl + "_catalogs/masterpage/DVC.master";
+            web.CustomMasterUrl = site.RootWeb.ServerRelativeUrl + "_catalogs/masterpage/DVC.master";
+            web.Update();
         }
 
 
