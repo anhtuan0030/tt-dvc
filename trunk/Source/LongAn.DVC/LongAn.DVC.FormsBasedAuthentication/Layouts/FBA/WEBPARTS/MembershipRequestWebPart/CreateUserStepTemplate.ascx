@@ -1,5 +1,8 @@
 ﻿<%@ Register TagPrefix="FBA" Namespace="LongAn.DVC.FormsBasedAuthentication.HIP" Assembly="LongAn.DVC.FormsBasedAuthentication, Version=1.0.0.0, Culture=neutral, PublicKeyToken=9dba9f460226d31d" %>
 
+<link rel="stylesheet" type="text/css" href="/_layouts/15/LongAn.DVC/css/jquery.qtip.min.css"/>
+<script type="text/javascript" src="/_layouts/15/LongAn.DVC/js/jquery.qtip.min.js"></script>
+
 <table width="100%" border="0" cellpadding="0"  id="MembershipRequestTable" class="MembershipRequestTable" runat="server" >
 	<tbody>
         <tr>
@@ -21,7 +24,7 @@
             <td align="right" valign="top">
                 <asp:Label ID="PasswordLabel" runat="server" AssociatedControlID="Password" CssClass="field" /> <span class="field-required">(*)</span></td>
             <td>
-                <asp:TextBox ID="Password" runat="server" TextMode="Password" CssClass="input_width"></asp:TextBox>
+                <asp:TextBox ID="Password" runat="server" TextMode="Password" CssClass="input_width input_password"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="PasswordRequired" runat="server" ControlToValidate="Password"  Display="Dynamic" CssClass="fba_error" />
             </td>
         </tr>
@@ -29,7 +32,7 @@
             <td align="right" valign="top">
                 <asp:Label ID="ConfirmPasswordLabel" runat="server" AssociatedControlID="ConfirmPassword" CssClass="field"/> <span class="field-required">(*)</span></td>
             <td>
-                <asp:TextBox ID="ConfirmPassword" runat="server" TextMode="Password" CssClass="input_width"></asp:TextBox>
+                <asp:TextBox ID="ConfirmPassword" runat="server" TextMode="Password" CssClass="input_width input_password"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="ConfirmPasswordRequired" runat="server" ControlToValidate="ConfirmPassword" Display="Dynamic" CssClass="fba_error" />
             </td>
         </tr>
@@ -138,6 +141,16 @@
                 else {
                     $("span[id$=EmailRegexValidator]").hide();
                 }
+            }
+        });
+
+        $(".input_password").qtip({
+            show: 'focus',
+            hide: 'blur',
+            content: 'Mật khẩu yêu cầu tối thiểu 7 ký tự, trong đó phải có ít nhất 1 ký tự đặc biệt',
+            position: {
+                my: 'left center',  // Position my top left...
+                at: 'right center' // at the bottom right of...
             }
         });
     });

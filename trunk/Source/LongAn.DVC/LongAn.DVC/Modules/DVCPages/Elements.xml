@@ -752,7 +752,7 @@
 
     <File Path="DVCPages\BlankPage.aspx" Url="DVC.aspx" Type="GhostableInLibrary" ReplaceContent="TRUE" >
       <Property Name="Title" Value="DVCRedirect"/>
-      <Property Name="PublishingPageLayout" Value="~SiteCollection/_catalogs/masterpage/DVCWebPartPage_Manage.aspx, DVC WebPart page - Manage"/>
+      <Property Name="PublishingPageLayout" Value="~SiteCollection/_catalogs/masterpage/DVCWebPartPage_Home.aspx, DVC WebPart page - Home"/>
 
       <AllUsersWebPart WebPartOrder ="0" WebPartZoneID ="Header">
         <![CDATA[ 

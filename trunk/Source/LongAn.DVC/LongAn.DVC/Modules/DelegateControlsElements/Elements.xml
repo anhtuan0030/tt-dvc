@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <Control Id="UserAuthenticationBox"
+         Sequence="10"
+         ControlSrc="~/_CONTROLTEMPLATES/15/LongAn.DVC/ucUserAuthenticationBox.ascx"/>
+
+  <Control Id="AdditionalPageHead"
+         Sequence="10"
+         ControlSrc="~/_CONTROLTEMPLATES/15/LongAn.DVC/ucCustomTopMenuDVCByUserPermission.ascx"/>
+</Elements>

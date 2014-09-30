@@ -96,6 +96,20 @@
     <Compile Include="ControlTemplates\LongAn.DVC\DeNghiCapPhepXeNewForm.ascx.designer.cs">
       <DependentUpon>DeNghiCapPhepXeNewForm.ascx.cs</DependentUpon>
     </Compile>
+    <Compile Include="ControlTemplates\LongAn.DVC\ucCustomTopMenuDVCByUserPermission.ascx.cs">
+      <DependentUpon>ucCustomTopMenuDVCByUserPermission.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ControlTemplates\LongAn.DVC\ucCustomTopMenuDVCByUserPermission.ascx.designer.cs">
+      <DependentUpon>ucCustomTopMenuDVCByUserPermission.ascx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlTemplates\LongAn.DVC\ucUserAuthenticationBox.ascx.cs">
+      <DependentUpon>ucUserAuthenticationBox.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ControlTemplates\LongAn.DVC\ucUserAuthenticationBox.ascx.designer.cs">
+      <DependentUpon>ucUserAuthenticationBox.ascx.cs</DependentUpon>
+    </Compile>
     <Compile Include="EventReceivers\DeNghiCapPhepXeEvent.cs" />
     <Compile Include="Features\LongAn.DVC.Site.Pages\LongAn.DVC.Site.Pages.EventReceiver.cs">
       <DependentUpon>LongAn.DVC.Site.Pages.feature</DependentUpon>
@@ -186,6 +200,9 @@
       <FeatureId>{d4d9a687-e054-4bf6-8aa3-9e5bf52fec28}</FeatureId>
     </None>
     <None Include="key.snk" />
+    <Content Include="ControlTemplates\LongAn.DVC\ucCustomTopMenuDVCByUserPermission.ascx" />
+    <Content Include="ControlTemplates\LongAn.DVC\ucUserAuthenticationBox.ascx" />
+    <Content Include="Layouts\LongAn.DVC\css\jquery.qtip.min.css" />
     <Content Include="Layouts\LongAn.DVC\ExcelTemplates\BaoCaoCapPhepLuuHanhXe.xls" />
     <None Include="Layouts\LongAn.DVC.Form\css\form.main.less" />
     <None Include="Layouts\LongAn.DVC.Form\css\forms.less" />
@@ -258,6 +275,7 @@
     <Content Include="Layouts\LongAn.DVC.Form\images\_banner.png" />
     <Content Include="Layouts\LongAn.DVC.Form\images\_index_logo.png" />
     <Content Include="Layouts\LongAn.DVC\images\banner-1.png" />
+    <Content Include="Layouts\LongAn.DVC\js\jquery.qtip.min.js" />
     <Content Include="Layouts\LongAn.DVC\js\jquery.scrollTo.min.js" />
     <Content Include="Layouts\LongAn.DVC\lic\Aspose.Cells.lic" />
     <Content Include="Layouts\LongAn.DVC\lic\Aspose.Words.lic" />
@@ -295,6 +313,9 @@
     </None>
     <None Include="ListDefinitions\YeuCauBoSung\YeuCauBoSungInstance\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{5228ca2a-7bf2-4b98-9516-32bf1fbb443d}</SharePointProjectItemId>
+    </None>
+    <None Include="Modules\DelegateControlsElements\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{2e453db1-500c-4568-b73d-9de530082008}</SharePointProjectItemId>
     </None>
     <None Include="Modules\DVCMasterPage\DVC.master" />
     <None Include="Modules\DVCMasterPage\SharePointProjectItem.spdata">
@@ -419,6 +440,7 @@
     <Content Include="ListDefinitions\LichSuCapPhep\Elements.xml" />
     <Content Include="ListDefinitions\LichSuCapPhep\LichSuCapPhepInstance\Elements.xml" />
     <Content Include="ListDefinitions\LichSuCapPhep\Schema.xml" />
+    <Content Include="Modules\DelegateControlsElements\Elements.xml" />
     <Content Include="Modules\DVCPages\Homepage.aspx" />
     <Content Include="Layouts\LongAn.DVC\images\add-file.png" />
     <Content Include="Layouts\LongAn.DVC\images\add.png" />

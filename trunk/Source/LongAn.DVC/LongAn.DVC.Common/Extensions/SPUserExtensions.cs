@@ -13,5 +13,9 @@ namespace LongAn.DVC.Common.Extensions
             return spUser.Groups.Cast<SPGroup>()
               .Any(g => g.ID == spGroup.ID);
         }
+        public static bool InGroup(this SPUser spUser, string GroupName)
+        {
+            return spUser.Groups.Cast<SPGroup>().Any(g => g.Name.ToLower() == GroupName.ToLower());
+        }
     }
 }
