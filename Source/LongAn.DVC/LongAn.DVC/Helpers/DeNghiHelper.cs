@@ -27,7 +27,7 @@ namespace LongAn.DVC.Helpers
                 //headers.Add("from",strFrom);
                 headers.Add("subject", "[Sở GTVT Long An] - Thông báo");
                 headers.Add("content-type","text/html");
-                var linkItemUrl = SPContext.Current.Site.MakeFullUrl((SPContext.Current.Web.ServerRelativeUrl +  Constants.ConfLinkPageDispForm).Replace("//","/");
+                var linkItemUrl = SPContext.Current.Site.MakeFullUrl((SPContext.Current.Web.ServerRelativeUrl +  Constants.ConfLinkPageDispForm).Replace("//","/"));
                 var emailBody = string.Format(Constants.EmailBody, caNhanToChuc, maBienNhan, hanhDong);
 
                 //emailBody += string.Format(Constants.TimesheetLink, 
