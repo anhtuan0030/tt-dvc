@@ -381,6 +381,7 @@
     <None Include="MembershipRequestWebPart\MembershipRequestWebPart.webpart" />
     <None Include="MembershipRequestWebPart\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{4409a86e-3b2b-40c1-ac7b-f55cf44be023}</SharePointProjectItemId>
+      <SubType>Designer</SubType>
     </None>
     <None Include="MembershipReviewList\MembershipReviewHandler\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{1cbf756a-10af-411a-8cfe-96a9bfb807f0}</SharePointProjectItemId>

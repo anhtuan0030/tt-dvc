@@ -13,11 +13,13 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
         public bool IsDVCQuanTri = false;
         protected void Page_Load(object sender, EventArgs e)
         {
-            //if (SPContext.Current.Web.CurrentUser != null && 
-            //    !SPContext.Current.Web.CurrentUser.InGroup(Constants.ConfGroupNguoiDung) == true)
-            //{
-            //    IsDVCQuanTri = true;
-            //}
+            SPWeb spWeb = SPContext.Current.Web;
+            SPUser curUser = spWeb.CurrentUser;
+
+            if (curUser != null && !curUser.InGroup(Constants.ConfGroupNguoiDung) == true && curUser.ID != spWeb.Site.SystemAccount.ID)
+            {
+                IsDVCQuanTri = true;
+            }
         }
     }
 }

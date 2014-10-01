@@ -10,7 +10,7 @@
 <script type="text/javascript">
     $(function () {
         var newLI = "<li style='float:right'><a class='menuUserInfo' href='/_layouts/signout.aspx'>Thoát</a></li>";
-        newLI += "<li style='float:right'><a class='menuUserInfo'>Xin chào, <%: currentUsername %></a></li>";
+        newLI += "<li style='float:right'><a class='menuUserInfo'>Xin chào, <b><%: currentUsername %></b></a></li>";
 
         $(".sf-menu").append(newLI);
     });

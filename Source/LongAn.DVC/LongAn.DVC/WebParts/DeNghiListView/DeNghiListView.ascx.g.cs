@@ -1046,20 +1046,20 @@ namespace LongAn.DVC.WebParts.DeNghiListView {
                         "s\"/>\r\n<link rel=\"stylesheet\" href=\"/_layouts/15/LongAn.DVC.Form/css/superfish.cs" +
                         "s\"/>\r\n<link rel=\"stylesheet\" href=\"/_layouts/15/LongAn.DVC.Form/css/main.css\"/>\r" +
                         "\n<link href=\"/_layouts/15/LongAn.DVC.Form/css/form.main.custom.css\" rel=\"stylesh" +
-                        "eet\" />\r\n<script src=\"/_layouts/15/LongAn.DVC/js/jquery.js\"></script>\r\n\r\n<script" +
-                        ">\r\n    $(document).ready(function () {\r\n        var searchExpandValue = $(\"[id$=" +
-                        "\'_hdfSearchExpand\']\").val();\r\n        if (searchExpandValue == \"1\")\r\n        {\r\n" +
-                        "            $(\"#linkSearchExpand\").addClass(\"expanded\");\r\n            $(\"#search" +
-                        "form\").show();\r\n        }\r\n        $(\"#linkSearchExpand\").click(function () {\r\n " +
-                        "           $(\"#searchform\").toggle(\"slow\");\r\n            if (searchExpandValue =" +
-                        "= \"1\") {\r\n                $(\"[id$=\'_hdfSearchExpand\']\").val(\"0\");\r\n             " +
-                        "   $(\"#linkSearchExpand\").removeClass(\"expanded\");\r\n            }\r\n            e" +
-                        "lse {\r\n                $(\"[id$=\'_hdfSearchExpand\']\").val(\"1\");\r\n                " +
-                        "$(\"#linkSearchExpand\").addClass(\"expanded\");\r\n            }\r\n        });\r\n    })" +
-                        ";\r\n</script>\r\n\r\n<script type=\"text/javascript\">\r\n    //fix: Ajax second postback" +
-                        " not working in Sharepoint\r\n    _spOriginalFormAction = document.forms[0].action" +
-                        ";\r\n    _spSuppressFormOnSubmitWrapper = true;\r\n</script>\r\n\r\n    <div class=\"row\"" +
-                        ">\r\n\t\t<div class=\"grid_12\" id=\"main-frame\">\r\n\t\t\t<div id=\"top-control\">\r\n\t\t\t\t"));
+                        "eet\" />\r\n\r\n<script>\r\n    $(document).ready(function () {\r\n        var searchExpa" +
+                        "ndValue = $(\"[id$=\'_hdfSearchExpand\']\").val();\r\n        if (searchExpandValue ==" +
+                        " \"1\")\r\n        {\r\n            $(\"#linkSearchExpand\").addClass(\"expanded\");\r\n    " +
+                        "        $(\"#searchform\").show();\r\n        }\r\n        $(\"#linkSearchExpand\").clic" +
+                        "k(function () {\r\n            $(\"#searchform\").toggle(\"slow\");\r\n            if (s" +
+                        "earchExpandValue == \"1\") {\r\n                $(\"[id$=\'_hdfSearchExpand\']\").val(\"0" +
+                        "\");\r\n                $(\"#linkSearchExpand\").removeClass(\"expanded\");\r\n          " +
+                        "  }\r\n            else {\r\n                $(\"[id$=\'_hdfSearchExpand\']\").val(\"1\");" +
+                        "\r\n                $(\"#linkSearchExpand\").addClass(\"expanded\");\r\n            }\r\n " +
+                        "       });\r\n    });\r\n</script>\r\n\r\n<script type=\"text/javascript\">\r\n    //fix: Aj" +
+                        "ax second postback not working in Sharepoint\r\n    _spOriginalFormAction = docume" +
+                        "nt.forms[0].action;\r\n    _spSuppressFormOnSubmitWrapper = true;\r\n</script>\r\n\r\n  " +
+                        "  <div class=\"row\">\r\n\t\t<div class=\"grid_12\" id=\"main-frame\">\r\n\t\t\t<div id=\"top-co" +
+                        "ntrol\">\r\n\t\t\t\t"));
             global::System.Web.UI.WebControls.HyperLink @__ctrl1;
             @__ctrl1 = this.@__BuildControlhplTrangChu();
             @__parser.AddParsedSubObject(@__ctrl1);
@@ -1122,6 +1122,7 @@ namespace LongAn.DVC.WebParts.DeNghiListView {
                 </div>
                 <div class=""pull-right"">
                     <div class=""pull-left-search"">
+                        <a href=""/Pages/LichSuLuanChuyenHoSo.aspx"" class=""button task inline-block"" style=""padding-left:30px; margin-right:10px;"">Lịch sử luân chuyển hồ sơ</a>
                         <a id=""linkSearchExpand"" href=""#"" class=""button button-expand inline-block"">Tìm kiếm</a>
                         "));
             global::System.Web.UI.WebControls.HiddenField @__ctrl15;

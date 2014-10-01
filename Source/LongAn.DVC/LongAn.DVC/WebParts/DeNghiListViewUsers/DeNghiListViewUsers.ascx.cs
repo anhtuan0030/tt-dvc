@@ -36,6 +36,12 @@ namespace LongAn.DVC.WebParts.DeNghiListViewUsers
         {
             if (!this.Page.IsPostBack)
             {
+                //Check permission
+                if (SPContext.Current.Web.CurrentUser == null)
+                {
+                    HttpContext.Current.Response.Redirect(SPContext.Current.Web.ServerRelativeUrl);
+                }
+
                 var currentUserRole = DeNghiHelper.CurrentUserRole(SPContext.Current.Web, SPContext.Current.Web.CurrentUser);
                 if (currentUserRole != CapXuLy.CaNhanToChuc)
                     HttpContext.Current.Response.Redirect(LinkTrangChu);

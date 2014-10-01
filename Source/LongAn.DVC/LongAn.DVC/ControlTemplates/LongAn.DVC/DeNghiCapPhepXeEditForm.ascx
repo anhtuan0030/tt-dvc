@@ -15,7 +15,7 @@
 <link rel="stylesheet" href="/_layouts/15/LongAn.DVC.Form/css/superfish.css"/>
 <link rel="stylesheet" href="/_layouts/15/LongAn.DVC.Form/css/main.css"/>
 <link href="/_layouts/15/LongAn.DVC.Form/css/form.main.custom.css" rel="stylesheet" />
-<script type="text/javascript" src="/_layouts/15/LongAn.DVC/js/jquery.js"></script>
+
 <%--<script type="text/javascript" src="/_layouts/15/LongAn.DVC/js/jquery-ui.min.js"></script>--%>
 <script type="text/javascript" src="/_layouts/15/datepicker.js"></script>
 <script type="text/javascript" src="/_layouts/15/LongAn.DVC/js/laform.js"></script>
