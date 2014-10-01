@@ -5,7 +5,7 @@
 <%@ Register Tagprefix="asp" Namespace="System.Web.UI" Assembly="System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" %>
 <%@ Import Namespace="Microsoft.SharePoint" %>
 <%@ Assembly Name="Microsoft.Web.CommandUI, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %>
-<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="PhanCongHoSo.aspx.cs" Inherits="LongAn.DVC.Layouts.LongAn.DVC.PhanCongHoSo" DynamicMasterPageFile="~masterurl/custom.master" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="TuChoiHoSo.aspx.cs" Inherits="LongAn.DVC.Layouts.LongAn.DVC.TuChoiHoSo" DynamicMasterPageFile="~masterurl/custom.master" %>
 
 <asp:Content ID="PageHead" ContentPlaceHolderID="PlaceHolderAdditionalPageHead" runat="server">
     <link rel="stylesheet" href="/_layouts/15/LongAn.DVC.Form/css/normalize.css"/>
@@ -18,35 +18,23 @@
 </asp:Content>
 
 <asp:Content ID="Main" ContentPlaceHolderID="PlaceHolderMain" runat="server">
-    <div class="container_12">
+    <%--<div class="container_12">--%>
         <div class="row">
             <div class="grid_12" id="main-frame">
                 <h1>Đề nghị cấp phép lưu hành xe quá tải trọng, xe quá khổ</h1>
                 <div class="mr-form">
-                    <div class="panel-2" id="divPhanCongHoSo" runat="server">
-                        <h2>Phân công hồ sơ</h2>
-
+                    <div class="panel-2" id="divThongTinTuChoi" runat="server">
+                        <h2>Lý do Trả / Từ chối</h2>
                         <div class="row">
                             <div class="grid_2">
-                                Cán bộ xử lý
+                                Diễn giải chi tiết
                                 <span title="This is a required field." class="ms-accentText"> *</span>
                             </div>
-                            <div class="grid_3">
-                                <asp:DropDownList ID="ddlUsers" runat="server"></asp:DropDownList>
-                            </div>
-                            <div class="clear"></div>
-                        </div>
-
-                        <div class="row">
-                            <div class="grid_2">
-                                Ghi chú
-                            </div>
                             <div class="grid_9">
-                                <asp:TextBox ID="txtGhiChu" TextMode="MultiLine" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtLyDo" TextMode="MultiLine" runat="server"></asp:TextBox>
                             </div>
                             <div class="clear"></div>
                         </div>
-                                    
                     </div>
                     <div class="pull-right">
                         <asp:Button ID="btnSave" runat="server" Text="Đồng ý" CssClass="button" Visible="false" style="float:left;"/>
@@ -58,13 +46,13 @@
             </div>
             <div class="clearfix"></div>
         </div>
-    </div>
+    <%--</div>--%>
 </asp:Content>
 
 <asp:Content ID="PageTitle" ContentPlaceHolderID="PlaceHolderPageTitle" runat="server">
-Phân công xử lý hồ sơ
+Đề nghị cấp phép xe
 </asp:Content>
 
 <asp:Content ID="PageTitleInTitleArea" ContentPlaceHolderID="PlaceHolderPageTitleInTitleArea" runat="server" >
-Phân công xử lý hồ sơ
+Từ chối hồ sơ
 </asp:Content>

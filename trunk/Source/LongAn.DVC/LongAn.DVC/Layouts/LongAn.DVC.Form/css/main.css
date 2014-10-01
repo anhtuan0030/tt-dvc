@@ -503,7 +503,7 @@ a:hover {
   padding-left: 25px;
 }
 .button.just-icon {
-  padding: 20px 10px;
+  /*padding: 20px 10px;*/
   background-position: center center;
   display: block;
 }

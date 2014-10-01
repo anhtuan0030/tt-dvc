@@ -95,6 +95,19 @@ namespace LongAn.DVC.WebParts.DeNghiListView
         }
 
         #region Private Properties
+        private string DeNghiListID
+        {
+            get
+            {
+                if (ViewState[Constants.ConfViewStateDeNghiListId] == null)
+                {
+                    var deNghiUrl = (SPContext.Current.Web.ServerRelativeUrl + Constants.ListUrlDeNghiCapPhep).Replace("//", "/");
+                    var deNghiList = SPContext.Current.Web.GetList(deNghiUrl);
+                    ViewState[Constants.ConfViewStateDeNghiListId] = deNghiList.ID.ToString();
+                }
+                return ViewState[Constants.ConfViewStateDeNghiListId].ToString();
+            }
+        }
         private CapXuLy CurrentUserRole
         {
             get
@@ -323,7 +336,8 @@ namespace LongAn.DVC.WebParts.DeNghiListView
         private void BindItemsList()
         {
             LoggingServices.LogMessage("Begin BindItemsList");
-            DataTable dataTable = this.GetDeNghi(TrangThai);
+            var listItems = this.GetDeNghi(TrangThai);
+            DataTable dataTable = listItems.GetDataTable();
             try
             {
                 divPagging.Visible = false;
@@ -434,9 +448,9 @@ namespace LongAn.DVC.WebParts.DeNghiListView
             this.BindItemsList();
         }
 
-        private DataTable GetDeNghi(int trangThaiXuLy)
+        private SPListItemCollection GetDeNghi(int trangThaiXuLy)
         {
-            DataTable dataTable = null;
+            SPListItemCollection dataTable = null;
             try
             {
                 LoggingServices.LogMessage("Begin GetDeNghi, Trang Thai Xu Ly: " + trangThaiXuLy);
@@ -518,11 +532,11 @@ namespace LongAn.DVC.WebParts.DeNghiListView
 
                 var deNghiUrl = (SPContext.Current.Web.ServerRelativeUrl + Constants.ListUrlDeNghiCapPhep).Replace("//", "/");
                 var deNghiList = SPContext.Current.Web.GetList(deNghiUrl);
-                dataTable = deNghiList.GetItems(spQuery).GetDataTable();
+                dataTable = deNghiList.GetItems(spQuery);
 
 #if DEBUG
                 LoggingServices.LogMessage("Caml query: " + camlQuery);
-                LoggingServices.LogMessage("Data count: " + (dataTable != null ? dataTable.Rows.Count : 0));
+                LoggingServices.LogMessage("Data count: " + (dataTable != null ? dataTable.Count : 0));
 #endif
             }
             catch (Exception ex)
@@ -608,6 +622,12 @@ namespace LongAn.DVC.WebParts.DeNghiListView
                 DataRowView rowView = (DataRowView)e.Item.DataItem;
                 if (rowView != null)
                 {
+                    DeNghiArgument argument = new DeNghiArgument();
+                    argument.DeNghiID = rowView["ID"].ToString();
+                    argument.CaNhanToChuc = rowView[Constants.FieldCaNhanToChuc].ToString();
+                    argument.MaSoBienNhan = rowView[Constants.FieldTitle].ToString();
+                    
+                    argument.EmailCaNhanToChuc = rowView["ID"].ToString();
                     string commandAgrument = rowView["ID"].ToString();
                     //int trangThai = int.Parse(rowView[Constants.FieldTrangThai].ToString());
                     Literal literalTitle = (Literal)e.Item.FindControl("literalTitle");
@@ -630,6 +650,22 @@ namespace LongAn.DVC.WebParts.DeNghiListView
                     var currentPage = SPUtility.GetPageUrlPath(HttpContext.Current);
                     var viewUrl = string.Format(Constants.ConfLinkPageDispForm, deNghiUrl, commandAgrument, currentPage);
                     hplViewItem.NavigateUrl = viewUrl;
+
+                    var rejectLink = string.Format(Constants.ConfLinkTuChoiPage,
+                                                    SPContext.Current.Web.ServerRelativeUrl.TrimEnd('/'),
+                                                    DeNghiListID,
+                                                    commandAgrument,
+                                                    currentPage);
+                    var additionalLink = string.Format(Constants.ConfLinkBoSungPage,
+                                                    SPContext.Current.Web.ServerRelativeUrl.TrimEnd('/'),
+                                                    DeNghiListID,
+                                                    commandAgrument,
+                                                    currentPage);
+                    var assignLink = string.Format(Constants.ConfLinkPhanCongPage,
+                                                    SPContext.Current.Web.ServerRelativeUrl.TrimEnd('/'),
+                                                    DeNghiListID,
+                                                    commandAgrument,
+                                                    currentPage);
 
                     LinkButton lbtPrint = (LinkButton)e.Item.FindControl("lbtPrint");
                     lbtPrint.CommandArgument = commandAgrument;
@@ -671,7 +707,7 @@ namespace LongAn.DVC.WebParts.DeNghiListView
 
                                 HyperLink hplTuChoiHoSo = (HyperLink)e.Item.FindControl("hplTuChoiHoSo");
                                 hplTuChoiHoSo.Style.Add("display", "block");
-                                hplTuChoiHoSo.NavigateUrl = string.Format("{0}&Action={1}&Atocken={2}", viewUrl, Constants.ConfActionTC, Constants.ConfQueryStringTC);
+                                hplTuChoiHoSo.NavigateUrl = rejectLink;
                                 //lbtDisable4.Style.Add("display", "none");
                             }
                             else if (TrangThai == (int)TrangThaiHoSo.DuocCapPhep)
@@ -689,12 +725,15 @@ namespace LongAn.DVC.WebParts.DeNghiListView
                                 lbtChuaHoanThanh.CommandArgument = commandAgrument;
                                 lbtChuaHoanThanh.OnClientClick = "if (!confirm('Bạn có chắc chắn muốn xác nhận hồ sơ này chưa hoàn thành không?')) return false;";
                                 //lbtDisable2.Style.Add("display", "none");
+                                lbtPrint.Style.Add("display", "block");
+                                lbtPrint.CommandName = "InGiayPhep";
+                                //lbtDisable1.Style.Add("display", "none");
                             }
                             else if (TrangThai == (int)TrangThaiHoSo.HoanThanh || TrangThai == (int)TrangThaiHoSo.ChuaHoanThanh)
                             {
                                 lbtPrint.Style.Add("display", "block");
-                                //lbtDisable1.Style.Add("display", "none");
                                 lbtPrint.CommandName = "InGiayPhep";
+                                //lbtDisable1.Style.Add("display", "none");
                             }
                             break;
                         case CapXuLy.TruongPhoPhong:
@@ -702,12 +741,12 @@ namespace LongAn.DVC.WebParts.DeNghiListView
                             {
                                 HyperLink hplPhanCongHoSo = (HyperLink)e.Item.FindControl("hplPhanCongHoSo");
                                 hplPhanCongHoSo.Style.Add("display", "block");
-                                hplPhanCongHoSo.NavigateUrl = string.Format("{0}&Action={1}&Atocken={2}", viewUrl, Constants.ConfActionPC, Constants.ConfQueryStringPC);
+                                hplPhanCongHoSo.NavigateUrl = assignLink;
                                 //lbtDisable3.Style.Add("display", "none");
 
                                 HyperLink hplTuChoiHoSo = (HyperLink)e.Item.FindControl("hplTuChoiHoSo");
                                 hplTuChoiHoSo.Style.Add("display", "block");
-                                hplTuChoiHoSo.NavigateUrl = string.Format("{0}&Action={1}&Atocken={2}", viewUrl, Constants.ConfActionTC, Constants.ConfQueryStringTC);
+                                hplTuChoiHoSo.NavigateUrl = rejectLink;
                                 //lbtDisable4.Style.Add("display", "none");
                             }
                             else if (TrangThai == (int)TrangThaiHoSo.ChoDuyet)
@@ -721,7 +760,7 @@ namespace LongAn.DVC.WebParts.DeNghiListView
 
                                 HyperLink hplTuChoiHoSo = (HyperLink)e.Item.FindControl("hplTuChoiHoSo");
                                 hplTuChoiHoSo.Style.Add("display", "block");
-                                hplTuChoiHoSo.NavigateUrl = string.Format("{0}&Action={1}&Atocken={2}", viewUrl, Constants.ConfActionTC, Constants.ConfQueryStringTC);
+                                hplTuChoiHoSo.NavigateUrl = rejectLink;
                                 //lbtDisable4.Style.Add("display", "none");
                             }
                             break;
@@ -739,7 +778,7 @@ namespace LongAn.DVC.WebParts.DeNghiListView
                             {
                                 HyperLink hplYeuCauBoSung = (HyperLink)e.Item.FindControl("hplYeuCauBoSung");
                                 hplYeuCauBoSung.Style.Add("display", "block");
-                                hplYeuCauBoSung.NavigateUrl = string.Format("{0}&Action={1}&Atocken={2}", viewUrl, Constants.ConfActionBS, Constants.ConfQueryStringBS);
+                                hplYeuCauBoSung.NavigateUrl = additionalLink;
                                 //lbtDisable3.Style.Add("display", "none");
 
                                 LinkButton lbtTrinhTruongPhoPQLHT = (LinkButton)e.Item.FindControl("lbtTrinhTruongPhoPQLHT");
@@ -751,7 +790,7 @@ namespace LongAn.DVC.WebParts.DeNghiListView
 
                                 HyperLink hplTuChoiHoSo = (HyperLink)e.Item.FindControl("hplTuChoiHoSo");
                                 hplTuChoiHoSo.Style.Add("display", "block");
-                                hplTuChoiHoSo.NavigateUrl = string.Format("{0}&Action={1}&Atocken={2}", viewUrl, Constants.ConfActionTC, Constants.ConfQueryStringTC);
+                                hplTuChoiHoSo.NavigateUrl = rejectLink;
                                 //lbtDisable4.Style.Add("display", "none");
                             }
                             break;
@@ -767,7 +806,7 @@ namespace LongAn.DVC.WebParts.DeNghiListView
 
                                 HyperLink hplTuChoiHoSo = (HyperLink)e.Item.FindControl("hplTuChoiHoSo");
                                 hplTuChoiHoSo.Style.Add("display", "block");
-                                hplTuChoiHoSo.NavigateUrl = string.Format("{0}&Action={1}&Atocken={2}", viewUrl, Constants.ConfActionTC, Constants.ConfQueryStringTC);
+                                hplTuChoiHoSo.NavigateUrl = rejectLink;
                                 //lbtDisable4.Style.Add("display", "none");
                             }
                                 break;
@@ -805,6 +844,7 @@ namespace LongAn.DVC.WebParts.DeNghiListView
                         trangThaiHoSo = TrangThaiHoSo.DaTiepNhan;
                         printType = PrintType.PhieuBienNhan;
                         UpdateItem(commandText, trangThaiHoSo, capXuLy);
+                        DeNghiHelper.SendEmail(SPContext.Current.Web, commandText, "được tiếp nhận");
                         break;
                     case "ChuyenTruongPhoPhong":
                         trangThaiHoSo = TrangThaiHoSo.ChoXuLy;
@@ -838,6 +878,7 @@ namespace LongAn.DVC.WebParts.DeNghiListView
                         trangThaiHoSo = TrangThaiHoSo.DuocCapPhep;
                         capXuLy = CapXuLy.MotCua;
                         UpdateItem(commandText, trangThaiHoSo, capXuLy);
+                        DeNghiHelper.SendEmail(SPContext.Current.Web, commandText, "được cấp phép");
                         break;
                 }
                 DeNghiHelper.AddDeNghiHistory(web, capXuLy, commandText, e.CommandName, string.Empty);
