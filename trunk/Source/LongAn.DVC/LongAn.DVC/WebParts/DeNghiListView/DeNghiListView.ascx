@@ -12,7 +12,6 @@
 <link rel="stylesheet" href="/_layouts/15/LongAn.DVC.Form/css/superfish.css"/>
 <link rel="stylesheet" href="/_layouts/15/LongAn.DVC.Form/css/main.css"/>
 <link href="/_layouts/15/LongAn.DVC.Form/css/form.main.custom.css" rel="stylesheet" />
-<script src="/_layouts/15/LongAn.DVC/js/jquery.js"></script>
 
 <script>
     $(document).ready(function () {
@@ -68,6 +67,7 @@
                 </div>
                 <div class="pull-right">
                     <div class="pull-left-search">
+                        <a href="/Pages/LichSuLuanChuyenHoSo.aspx" class="button task inline-block" style="padding-left:30px; margin-right:10px;">Lịch sử luân chuyển hồ sơ</a>
                         <a id="linkSearchExpand" href="#" class="button button-expand inline-block">Tìm kiếm</a>
                         <asp:HiddenField ID="hdfSearchExpand" Value="0" runat="server" />
                     </div>

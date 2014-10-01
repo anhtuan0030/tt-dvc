@@ -3,6 +3,8 @@ using System.Runtime.InteropServices;
 using System.Security.Permissions;
 using Microsoft.SharePoint;
 using Microsoft.SharePoint.Publishing;
+using LongAn.DVC.Common;
+using LongAn.DVC.Common.Extensions;
 
 namespace LongAn.DVC.Features.Feature1
 {
@@ -22,6 +24,9 @@ namespace LongAn.DVC.Features.Feature1
         {
             var site = (SPSite)properties.Feature.Parent;
             var web = site.RootWeb;
+
+            //Ensure "DVC Nguoi dung" group for MembershipRegister webpart
+            CreateGroup(web);
 
             if (PublishingWeb.IsPublishingWeb(web))
             {
@@ -71,5 +76,10 @@ namespace LongAn.DVC.Features.Feature1
         //public override void FeatureUpgrading(SPFeatureReceiverProperties properties, string upgradeActionName, System.Collections.Generic.IDictionary<string, string> parameters)
         //{
         //}
+
+        private void CreateGroup(SPWeb web)
+        {
+            web.CreateNewGroup(Constants.ConfGroupNguoiDung, Constants.ConfGroupNguoiDung, SPRoleType.Reader);
+        }
     }
 }

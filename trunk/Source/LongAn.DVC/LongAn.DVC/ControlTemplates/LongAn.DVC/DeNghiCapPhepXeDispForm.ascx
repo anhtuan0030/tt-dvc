@@ -14,7 +14,6 @@
 <link rel="stylesheet" href="/_layouts/15/LongAn.DVC.Form/css/jquery-ui.min.css"/>
 <link rel="stylesheet" href="/_layouts/15/LongAn.DVC.Form/css/superfish.css"/>
 <link rel="stylesheet" href="/_layouts/15/LongAn.DVC.Form/css/main.css"/>
-<script type="text/javascript" src="/_layouts/15/LongAn.DVC/js/jquery.js"></script>
 <script type="text/javascript" src="/_layouts/15/LongAn.DVC/js/laform.js"></script>
 <script type="text/javascript">
     //fix: Ajax second postback not working in Sharepoint

@@ -20,6 +20,7 @@ using Microsoft.SharePoint.WebControls;
 using LongAn.DVC.FormsBasedAuthentication.HIP;
 using Microsoft.SharePoint.Administration;
 using Microsoft.SharePoint.Utilities;
+using System.Linq;
 
 namespace LongAn.DVC.FormsBasedAuthentication
 {
@@ -118,7 +119,14 @@ namespace LongAn.DVC.FormsBasedAuthentication
                             SPGroupCollection groups = web.SiteGroups;
                             if (groups.Count > 0)
                             {
-                                _GroupName = groups[0].Name;
+                                if (groups.OfType<SPGroup>().Count(g => g.Name.Equals("DVC Người dùng", StringComparison.InvariantCultureIgnoreCase)) > 0)
+                                {
+                                    _GroupName = "DVC Người dùng";
+                                }
+                                else
+                                {
+                                    _GroupName = groups[0].Name;
+                                }
                             }
                         }
                     }

@@ -605,7 +605,6 @@ namespace LongAn.DVC.WebParts.DeNghiListViewUsers {
 <link rel=""stylesheet"" href=""/_layouts/15/LongAn.DVC.Form/css/superfish.css""/>
 <link rel=""stylesheet"" href=""/_layouts/15/LongAn.DVC.Form/css/main.css""/>
 <link href=""/_layouts/15/LongAn.DVC.Form/css/form.main.custom.css"" rel=""stylesheet"" />
-<script src=""/_layouts/15/LongAn.DVC/js/jquery.js""></script>
 
 
 <div class="""">

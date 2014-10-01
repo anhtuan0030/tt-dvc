@@ -344,7 +344,9 @@ namespace LongAn.DVC.FormsBasedAuthentication
                         if (!bSentMail)
                         {
                             Utils.LogError("SendEmail failed");
-                            throw new Exception("Error sending mail notification");
+                            
+                            //20141002 - VuCA: dont care about SendEmail
+                            //throw new Exception("Error sending mail notification");
                         }
                         if (debuggingInfoItem != null)
                         {
