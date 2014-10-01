@@ -76,10 +76,6 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
             SPContext.Current.ListItem[Constants.FieldDeNghiGUID] = deNghiGuid;
             SPContext.Current.ListItem[Constants.FieldTrangThai] = (int)trangThai;
             SPContext.Current.ListItem[Constants.FieldCapDuyet] = (int)capXuLy;
-            if (capXuLy == CapXuLy.MotCua)
-            {
-                SPContext.Current.ListItem[Constants.FieldTrangThai] = (int)TrangThaiHoSo.ChoTiepNhan;
-            }
             SPContext.Current.ListItem[Constants.FieldNguoiDeNghi] = SPContext.Current.Web.CurrentUser;
             SaveButton.SaveItem(SPContext.Current, false, "Thêm mới / gửi đề nghị");
             var deNghiList = SPContext.Current.List;
@@ -103,6 +99,11 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
             DeNghiHelper.SaveFileAttachment(fileUpload2, itemId, Constants.AttachmentGiayChungNhanKiemDinh);
             DeNghiHelper.SaveFileAttachment(fileUpload3, itemId, Constants.AttachmentGiayCamKet);
             DeNghiHelper.SaveFileAttachment(fileUpload4, itemId, Constants.AttachmentCMND);
+            //Log to history
+            if (trangThai == TrangThaiHoSo.ChoTiepNhan)
+            {
+                DeNghiHelper.AddDeNghiHistory(SPContext.Current.Web, capXuLy, itemId, HanhDong.NopHoSo.ToString(), string.Empty);
+            }
             //Redirect to page
             var redirectUrl = Request.QueryString["Source"];
             if (redirectUrl == null || string.IsNullOrEmpty(redirectUrl.ToString()))

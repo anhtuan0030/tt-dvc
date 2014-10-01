@@ -2,12 +2,11 @@
 using Microsoft.SharePoint;
 using Microsoft.SharePoint.WebControls;
 using LongAn.DVC.Common;
-using System.Data;
 using LongAn.DVC.Helpers;
 
 namespace LongAn.DVC.Layouts.LongAn.DVC
 {
-    public partial class PhanCongHoSo : LayoutsPageBase
+    public partial class YeuCauBoSung : LayoutsPageBase
     {
         #region Properties
         private CapXuLy CurrentUserRole
@@ -35,11 +34,11 @@ namespace LongAn.DVC.Layouts.LongAn.DVC
             var action = Request.QueryString.Get("Action");
             var actionTocken = Request.QueryString.Get("Atocken");
             var sourcePage = Request.QueryString.Get("Source");
-            if (currentUserRole == CapXuLy.TruongPhoPhong)
+            if (currentUserRole == CapXuLy.CanBo)
             {
-                if (action == Constants.ConfActionPC)
+                if (action == Constants.ConfActionBS)
                 {
-                    if (actionTocken == Constants.ConfQueryStringPC)
+                    if (actionTocken == Constants.ConfQueryStringBS)
                     {
                         btnSave.Visible = true;
                         btnSave.Click += btnSave_Click;
@@ -58,18 +57,9 @@ namespace LongAn.DVC.Layouts.LongAn.DVC
 
         void btnSave_Click(object sender, EventArgs e)
         {
-            DeNghiHelper.AddDeNghiHistory(SPContext.Current.Web, CapXuLy.TruongPhoPhong, SPContext.Current.ItemId, HanhDong.PhanCongHoSo.ToString(), txtGhiChu.Text.Trim());
-            UpdateItem(TrangThaiHoSo.DangXuLy, CapXuLy.CanBo);
-        }
-        protected void Page_Load(object sender, EventArgs e)
-        {
-            if (!IsPostBack)
-            {
-                ddlUsers.DataSource = GetCanBoXuLy();
-                ddlUsers.DataValueField = "ID";
-                ddlUsers.DataTextField = "Name";
-                ddlUsers.DataBind();
-            }
+            DeNghiHelper.AddDeNghiHistory(SPContext.Current.Web, CapXuLy.CanBo, SPContext.Current.ItemId, HanhDong.PhanCongHoSo.ToString());
+            UpdateItem(TrangThaiHoSo.ChoBoSung, CapXuLy.CaNhanToChuc);
+            AddBoSungYeuCau(SPContext.Current.Web);
         }
 
         void UpdateItem(TrangThaiHoSo trangThai, CapXuLy capXuLy)
@@ -86,8 +76,6 @@ namespace LongAn.DVC.Layouts.LongAn.DVC
             var spListItem = deNghiList.GetItemById(SPContext.Current.ItemId);
             spListItem[Constants.FieldCapDuyet] = (int)capXuLy;
             spListItem[Constants.FieldTrangThai] = (int)trangThai;
-            spListItem[Constants.FieldCanBoUser] = ddlUsers.SelectedValue;
-            spListItem[Constants.FieldTruongPhongUser] = SPContext.Current.Web.CurrentUser;
             spListItem.Update();
             //Redirect to page
             var redirectUrl = Request.QueryString["Source"];
@@ -96,41 +84,27 @@ namespace LongAn.DVC.Layouts.LongAn.DVC
             longOperation.End(redirectUrl, Microsoft.SharePoint.Utilities.SPRedirectFlags.DoNotEndResponse, System.Web.HttpContext.Current, "");
         }
 
-        DataTable GetCanBoXuLy()
+        void AddBoSungYeuCau(SPWeb web)
         {
-            DataTable result = new DataTable();
-            DataColumn[] columns = new DataColumn[] { 
-                new DataColumn("ID"),
-                new DataColumn("Name")
-            };
-            result.Columns.AddRange(columns);
             try
             {
-                LoggingServices.LogMessage("Begin GetCanBoXuLy");
-                SPSecurity.RunWithElevatedPrivileges(delegate()
-                {
-                    using (SPSite site = new SPSite(SPContext.Current.Site.ID))
-                    {
-                        using (SPWeb web = site.OpenWeb(SPContext.Current.Web.ID))
-                        {
-                            var canBoGroup = web.SiteGroups[Constants.ConfGroupCanBoXuLy];
-                            foreach (SPUser user in canBoGroup.Users)
-                            {
-                                DataRow row = result.NewRow();
-                                row["ID"] = user.ID;
-                                row["Name"] = user.Name;
-                                result.Rows.Add(row);
-                            }
-                        }
-                    }
-                });
+                LoggingServices.LogMessage("Begin AddBoSungYeuCau");
+                var yeuCauBoSungUrl = (web.ServerRelativeUrl + Constants.ListUrlYeuCauBoSung).Replace("//", "/");
+                var yeuCauBoSungList = web.GetList(yeuCauBoSungUrl);
+                var yeuCauBoSungItem = yeuCauBoSungList.Items.Add();
+                yeuCauBoSungItem[Constants.FieldDeNghi] = SPContext.Current.ItemId;
+                yeuCauBoSungItem[Constants.FieldTitle] = txtTieuDe.Text.Trim();
+                yeuCauBoSungItem[Constants.FieldMoTa] = txtDienGiaiChiTiet.Text.Trim();
+                yeuCauBoSungItem.Update();
             }
             catch (Exception ex)
             {
                 LoggingServices.LogException(ex);
             }
-            LoggingServices.LogMessage("End GetCanBoXuLy");
-            return result;
+            LoggingServices.LogMessage("End AddBoSungYeuCau");
+        }
+        protected void Page_Load(object sender, EventArgs e)
+        {
         }
     }
 }

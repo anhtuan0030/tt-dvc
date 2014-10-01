@@ -16,7 +16,11 @@
 <link rel="stylesheet" href="/_layouts/15/LongAn.DVC.Form/css/main.css"/>
 <script type="text/javascript" src="/_layouts/15/LongAn.DVC/js/jquery.js"></script>
 <script type="text/javascript" src="/_layouts/15/LongAn.DVC/js/laform.js"></script>
-
+<script type="text/javascript">
+    //fix: Ajax second postback not working in Sharepoint
+    _spOriginalFormAction = document.forms[0].action;
+    _spSuppressFormOnSubmitWrapper = true;
+</script>
 <style type="text/css">
     #s4-ribbonrow{
         display:none;
@@ -455,99 +459,49 @@
                                         <div class="clear"></div>
                                     </div>
                                     <div class="row">
-                                        <div class="grid_3">
+                                        <div class="grid_1">
                                             <SharePoint:FieldLabel ID="FieldLabel38"  FieldName="LanXeDuocChay"  runat="server"/>
                                         </div>
-                                        <div class="grid_1">
+                                        <div class="grid_4">
                                             <asp:TextBox ID="txtLanXeDuocChay" runat="server"></asp:TextBox>
                                         </div>
-                                        <div class="grid_4">
-                                            <SharePoint:FieldLabel ID="FieldLabel40"  FieldName="TocDoDuocChay"  runat="server"/>
+                                        <div class="grid_1">
+                                            &nbsp;
                                         </div>
                                         <div class="grid_1">
+                                            <SharePoint:FieldLabel ID="FieldLabel40"  FieldName="TocDoDuocChay"  runat="server"/>
+                                        </div>
+                                        <div class="grid_4">
                                             <asp:TextBox ID="txtTocDoDuocChay" runat="server"></asp:TextBox>
                                         </div>
                                         <div class="clear"></div>
                                     </div>
                                 </div>
 
-                                <div class="panel-2" id="divThongTinTuChoi" runat="server" visible="false">
-                                    <h2>Lý do Trả / Từ chối</h2>
-
-                                    <div class="row">
-                                        <div class="grid_2">
-                                            Diễn giải chi tiết
-                                            <span title="This is a required field." class="ms-accentText"> *</span>
-                                        </div>
-                                        <div class="grid_9">
-                                            <asp:TextBox ID="txtLyDo" TextMode="MultiLine" runat="server"></asp:TextBox>
-                                        </div>
-                                        <div class="clear"></div>
-                                    </div>
-                                </div>
-
-                                <div class="panel-2" id="divPhanCongHoSo" runat="server" visible="false">
-                                    <h2>Phân công hồ sơ</h2>
-
-                                    <div class="row">
-                                        <div class="grid_2">
-                                            Cán bộ xử lý
-                                            <span title="This is a required field." class="ms-accentText"> *</span>
-                                        </div>
-                                        <div class="grid_3">
-                                            <asp:DropDownList ID="ddlUsers" runat="server"></asp:DropDownList>
-                                        </div>
-                                        <div class="clear"></div>
-                                    </div>
-
-                                    <div class="row">
-                                        <div class="grid_2">
-                                            Ghi chú
-                                        </div>
-                                        <div class="grid_9">
-                                            <asp:TextBox ID="txtGhiChu" TextMode="MultiLine" runat="server"></asp:TextBox>
-                                        </div>
-                                        <div class="clear"></div>
-                                    </div>
-                                    
-                                </div>
-
-                                <div class="panel-2" id="divYeuCauBoSung" runat="server" visible="false">
-                                    <h2>Yêu cầu bổ sung</h2>
-
-                                    <div class="row">
-                                        <div class="grid_2">
-                                            Tiêu đề
-                                            <span title="This is a required field." class="ms-accentText"> *</span>
-                                        </div>
-                                        <div class="grid_9">
-                                            <asp:TextBox ID="txtTieuDe" runat="server"></asp:TextBox>
-                                        </div>
-                                        <div class="clear"></div>
-                                    </div>
-
-                                    <div class="row">
-                                        <div class="grid_2">
-                                            Diễn giải chi tiết
-                                            <span title="This is a required field." class="ms-accentText"> *</span>
-                                        </div>
-                                        <div class="grid_9">
-                                            <asp:TextBox ID="txtDienGiaiChiTiet" TextMode="MultiLine" runat="server"></asp:TextBox>
-                                        </div>
-                                        <div class="clear"></div>
-                                    </div>
-                                </div>
-
                                 <div class="pull-right">
+
+                                    <asp:Button ID="btnTiepNhan" runat="server" Text="Tiếp nhận hồ sơ" CssClass="button" Visible="false" style="float:left;"/>
+                                    <asp:HyperLink ID="hplTiepNhan" runat="server" CssClass="button" Visible="false" style="float:left;">Tiếp nhận hồ sơ</asp:HyperLink>
+
                                     <asp:Button ID="btnTrinhXuLy" runat="server" Text="Chuyển Trưởng/Phó P.QLHT" CssClass="button" Visible="false" style="float:left;"/>
+
                                     <asp:Button ID="btnYeuCauBoSung" runat="server" Text="Yêu cầu bổ sung" CssClass="button" style="float:left;"
                                         Visible="false" OnClientClick="if (!PreSaveYeuCauBoSung(0)) return false;"/>
+                                    <asp:HyperLink ID="hplYeuCauBoSung" runat="server" CssClass="button" Visible="false" style="float:left;">Yêu cầu bổ sung</asp:HyperLink>
+
                                     <asp:Button ID="btnPhanCongHoSo" runat="server" Text="Phân công hồ sơ" CssClass="button" Visible="false" style="float:left;"/>
+
                                     <asp:Button ID="btnTrinhTruongPhong" runat="server" Text="Trình trưởng/phó P.QLHT" CssClass="button" Visible="false" style="float:left;"/>
                                     <asp:Button ID="btnTrinhLanhDao" runat="server" Text="Trình lãnh đạo" CssClass="button" Visible="false" style="float:left;"/>
                                     <asp:Button ID="btnDuyetHoSo" runat="server" Text="Duyệt hồ sơ" CssClass="button" Visible="false" style="float:left;"/>
-                                    <asp:Button ID="btnTiepNhan" runat="server" Text="Tiếp nhận" CssClass="button" Visible="false" style="float:left;"/>
-                                    <asp:Button ID="btnTraHoSo" runat="server" Text="Trả về" CssClass="button" Visible="false" style="float:left;"/>
+
+                                    <asp:Button ID="btnChuaHoanThanh" runat="server" Text="Chưa hoàn thành" CssClass="button" Visible="false" style="float:left;"/>
+                                    <asp:Button ID="btnHoanThanh" runat="server" Text="Đã hoàn thành" CssClass="button" Visible="false" style="float:left;"/>
+
+                                    <asp:Button ID="btnTraHoSo" runat="server" Text="Từ chối hồ sơ" CssClass="button" Visible="false" style="float:left;"/>
+
+                                    <asp:Button ID="btnPrint" runat="server" Text="In biên nhận" CssClass="button" Visible="false" style="float:left;"/>
+                                    <asp:Button ID="btnPrintGiayPhep" runat="server" Text="In giấy phép" CssClass="button" Visible="false" style="float:left;"/>
                                     <asp:Button ID="btnCancel" runat="server" Text="Hủy" CssClass="button" style="float:left;"/>
                                 </div>
                                 <div class="clearfix"></div>

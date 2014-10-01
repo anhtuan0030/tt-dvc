@@ -10,34 +10,34 @@
 namespace LongAn.DVC.Layouts.LongAn.DVC {
     
     
-    public partial class PhanCongHoSo {
+    public partial class YeuCauBoSung {
         
         /// <summary>
-        /// divPhanCongHoSo control.
+        /// divYeuCauBoSung control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divPhanCongHoSo;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divYeuCauBoSung;
         
         /// <summary>
-        /// ddlUsers control.
+        /// txtTieuDe control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlUsers;
+        protected global::System.Web.UI.WebControls.TextBox txtTieuDe;
         
         /// <summary>
-        /// txtGhiChu control.
+        /// txtDienGiaiChiTiet control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtGhiChu;
+        protected global::System.Web.UI.WebControls.TextBox txtDienGiaiChiTiet;
         
         /// <summary>
         /// btnSave control.

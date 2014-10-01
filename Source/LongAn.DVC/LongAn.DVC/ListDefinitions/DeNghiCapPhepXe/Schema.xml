@@ -76,6 +76,7 @@
           <FieldRef ID="{DCDF7E67-C385-4840-BCE5-E82BFF1FBC0C}" Name="DeNghiGUID" />
           <FieldRef ID="{B26051F8-701F-41BD-86BA-C39B972FC114}" Name="NamDeNghi" />
           <FieldRef ID="{C685DDD9-57D5-4B59-9F00-80DEBB73586F}" Name="SoThuTuBienNhan" />
+          <FieldRef  ID="{D8C9712B-E6D5-4465-8C7C-230968D70C1C}" Name="LyDoTuChoi"/>
         </FieldRefs>
         <XmlDocuments>
           <XmlDocument NamespaceURI="http://schemas.microsoft.com/sharepoint/events">
@@ -137,9 +138,11 @@
     <Fields>
       <Field ID="{fa564e0f-0c70-4ab9-b863-0177e6ddd247}" Type="Text" Name="Title" DisplayName="Biên nhận" 
            Required="TRUE" SourceID="http://schemas.microsoft.com/sharepoint/v3" StaticName="Title" MaxLength="255" />
-      
+
       <Field Type="Text" ID="{9513D269-2FC2-4AA2-9916-91BF6150AD7A}" Name="KinhGui" StaticName="KinhGui"
-         DisplayName="Kính gửi" Required="TRUE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" Group="[LA-DVC]" />
+         DisplayName="Kính gửi" Required="TRUE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" Group="[LA-DVC]">
+        <Default>SỞ GIAO THÔNG VẬN TẢI TỈNH LONG AN</Default>
+      </Field>
 
       <Field Type="Text" ID="{2294FC9A-F4B1-46DB-B29C-EC434401B9D3}" Name="CaNhanToChuc" StaticName="CaNhanToChuc"
              DisplayName="Cá nhân tổ chức" Required="TRUE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" Group="[LA-DVC]" />
@@ -343,6 +346,11 @@
       <Field Type="Text" ID="{C685DDD9-57D5-4B59-9F00-80DEBB73586F}" Name="SoThuTuBienNhan" StaticName="SoThuTuBienNhan"
              DisplayName="SoThuTuBienNhan" Required="FALSE" Hidden="TRUE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255"
              Group="[LA-DVC]" />
+
+      <Field Type="Note" ID="{D8C9712B-E6D5-4465-8C7C-230968D70C1C}" Name="LyDoTuChoi" StaticName="LyDoTuChoi"
+       DisplayName="Lý do từ chối" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" NumLines="6" RichText="FALSE" Sortable="FALSE" Group="[LA-DVC]"/>
+
+
     </Fields>
     <Views>
       

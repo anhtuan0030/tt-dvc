@@ -14,8 +14,9 @@
 <link rel="stylesheet" href="/_layouts/15/LongAn.DVC.Form/css/jquery-ui.min.css"/>
 <link rel="stylesheet" href="/_layouts/15/LongAn.DVC.Form/css/superfish.css"/>
 <link rel="stylesheet" href="/_layouts/15/LongAn.DVC.Form/css/main.css"/>
+<link href="/_layouts/15/LongAn.DVC.Form/css/form.main.custom.css" rel="stylesheet" />
 <script type="text/javascript" src="/_layouts/15/LongAn.DVC/js/jquery.js"></script>
-<script type="text/javascript" src="/_layouts/15/LongAn.DVC/js/jquery-ui.min.js"></script>
+<%--<script type="text/javascript" src="/_layouts/15/LongAn.DVC/js/jquery-ui.min.js"></script>--%>
 <script type="text/javascript" src="/_layouts/15/datepicker.js"></script>
 <script type="text/javascript" src="/_layouts/15/LongAn.DVC/js/laform.js"></script>
 
@@ -483,8 +484,8 @@
                                                     <asp:Literal ID="literalNgayYeuCau" runat="server"></asp:Literal>
                                                 </td>
                                                 <td>
-                                                    <asp:LinkButton ID="lbtXacNhan" ToolTip="Xác nhận đã cập nhật" CssClass="button waiting just-icon" runat="server"></asp:LinkButton>
-                                                    <asp:LinkButton ID="lbtDisable" ToolTip="Đã cập nhật" Enabled="false" CssClass="button done just-icon" style="display:none;" runat="server"></asp:LinkButton>
+                                                    <asp:LinkButton ID="lbtXacNhan" ToolTip="Xác nhận đã cập nhật" CssClass="button waiting just-icon link-button" style="display:none;" runat="server"></asp:LinkButton>
+                                                    <asp:LinkButton ID="lbtDisable" ToolTip="Đã cập nhật" Enabled="false" CssClass="button done just-icon link-button" style="display:block;" runat="server"></asp:LinkButton>
                                                 </td>
                                             </tr>
                                         </ItemTemplate>
@@ -496,7 +497,7 @@
                     </div>
 
                     <div class="pull-right">
-                        <asp:Button ID="btnSave" OnClientClick="if (!PreSaveItem(1)) return false;" CssClass="button" runat="server" Text="Lưu" Visible="false" style="float:left;"/>
+                        <asp:Button ID="btnSave" OnClientClick="if (!PreSaveItem(1)) return false;" CssClass="button" runat="server" Text="Lưu hồ sơ" Visible="false" style="float:left;"/>
                         <asp:Button ID="btnGuiHoSo" OnClientClick="if (!PreSaveItem(1)) return false;" runat="server" Text="Nộp hồ sơ" CssClass="button" Visible="false" style="float:left;"/>
                         <asp:Button ID="btnCancel" runat="server" Text="Đóng" CssClass="button" style="float:left;"/>
                     </div>

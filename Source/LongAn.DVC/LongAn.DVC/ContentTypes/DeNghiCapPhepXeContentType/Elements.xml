@@ -70,6 +70,7 @@
       <FieldRef ID="{DCDF7E67-C385-4840-BCE5-E82BFF1FBC0C}" Name="DeNghiGUID" />
       <FieldRef ID="{B26051F8-701F-41BD-86BA-C39B972FC114}" Name="NamDeNghi" />
       <FieldRef ID="{C685DDD9-57D5-4B59-9F00-80DEBB73586F}" Name="SoThuTuBienNhan" />
+      <FieldRef  ID="{D8C9712B-E6D5-4465-8C7C-230968D70C1C}" Name="LyDoTuChoi"/>
     </FieldRefs>
     <XmlDocuments>
       <XmlDocument NamespaceURI="http://schemas.microsoft.com/sharepoint/events">

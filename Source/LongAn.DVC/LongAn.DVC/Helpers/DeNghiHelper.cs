@@ -2,12 +2,14 @@
 using LongAn.DVC.Common;
 using LongAn.DVC.Common.Extensions;
 using Microsoft.SharePoint;
+using Microsoft.SharePoint.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -15,26 +17,93 @@ namespace LongAn.DVC.Helpers
 {
     public class DeNghiHelper
     {
-        public static void SendEmailToHR(string emailTo, string itemId, string caNhanToChuc, string maBienNhan, string hanhDong)
+        private static DeNghiArgument GetDeNghiArgument(SPWeb web, int itemId)
+        {
+            DeNghiArgument output = null;
+            try
+            {
+                var deNghiUrl = (web.ServerRelativeUrl + Constants.ListUrlDeNghiCapPhep).Replace("//", "/");
+                var deNghiList = web.GetList(deNghiUrl);
+                var deNghiItem = deNghiList.GetItemById(itemId);
+                output = new DeNghiArgument();
+                output.DeNghiID = itemId.ToString();
+                output.MaSoBienNhan = deNghiItem[Constants.FieldTitle].ToString();
+                output.CaNhanToChuc = deNghiItem[Constants.FieldCaNhanToChuc].ToString();
+                var spUserValue = new SPFieldUserValue(web, deNghiItem[Constants.FieldNguoiDeNghi].ToString());
+                output.EmailCaNhanToChuc = spUserValue.User.Email;
+            }
+            catch (Exception ex)
+            {
+                LoggingServices.LogException(ex);
+            }
+            return output;
+        }
+
+        public static void InPhieuBienNhan(PrintType type, string itemId, Page page)
+        {
+            try
+            {
+                var web = SPContext.Current.Web;
+                var deNghiList = web.GetList((web.ServerRelativeUrl + Constants.ListUrlDeNghiCapPhep).Replace("//", "/"));
+                string wordLicFile = Microsoft.SharePoint.Utilities.SPUtility.GetVersionedGenericSetupPath(Constants.ConfWordLicFile, 15);
+                Aspose.Words.License wordLic = new Aspose.Words.License();
+                wordLic.SetLicense(wordLicFile);
+
+                string templateFile = string.Empty;
+                SPQuery caml = Camlex.Query().Where(x => x["ID"] == (DataTypes.Counter)itemId)
+                                                    .ToSPQuery();
+                if (type == PrintType.PhieuBienNhan)
+                    templateFile = Microsoft.SharePoint.Utilities.SPUtility.GetVersionedGenericSetupPath(Constants.ConfWordBienNhanTemplate, 15);
+                else if (type == PrintType.GiayCapPhep)
+                    templateFile = Microsoft.SharePoint.Utilities.SPUtility.GetVersionedGenericSetupPath(Constants.ConfWordGiayPhepTemplate, 15);
+
+                Aspose.Words.Document doc = new Aspose.Words.Document(templateFile);
+                var deNghiItem = deNghiList.GetItems(caml).GetDataTable();
+
+                doc.MailMerge.Execute(deNghiItem);
+
+                string fileName = string.Format(DateTime.Now.ToString("yyyyMMdd_hhmmss"));
+
+                System.IO.MemoryStream ms = new System.IO.MemoryStream();
+                doc.Save(ms, Aspose.Words.SaveFormat.Docx);
+                page.Response.Clear();
+                page.Response.ContentType = "application/vnd.openxmlformats-officedocument.wordprocessingml.document";
+                page.Response.AddHeader("Content-Disposition", string.Format("attachment; filename={0}.docx", fileName));
+                page.Response.BinaryWrite(ms.ToArray());
+                page.Response.Flush();
+                page.Response.Close();
+                page.Response.End();
+            }
+            catch (Exception ex)
+            {
+                LoggingServices.LogException(ex);
+            }
+        }
+        public static void SendEmail(SPWeb web, int itemId, string hanhDong)
         {
             try
             {
                 LoggingServices.LogMessage("Begin Send Email To HR");
                 StringDictionary headers = new StringDictionary();
-                headers.Add("to", emailTo);
+                headers.Add("subject", "[Sở GTVT Long An] - Thông báo");
+                headers.Add("content-type","text/html");
+                var deNghiArgument = GetDeNghiArgument(web, itemId);
+                headers.Add("to", deNghiArgument.EmailCaNhanToChuc);
                 //headers.Add("cc",strCC);
                 //headers.Add("bcc",strbcc);
                 //headers.Add("from",strFrom);
+
+                var deNghiUrl = (SPContext.Current.Web.ServerRelativeUrl +  Constants.ListUrlDeNghiCapPhep).Replace("//","/");
+                var currentPage = SPUtility.GetPageUrlPath(HttpContext.Current);
+                var linkDisplayUrl = string.Format(Constants.ConfLinkPageDispForm, deNghiUrl, itemId, currentPage);
+                var fullDisplayUrl = SPContext.Current.Site.MakeFullUrl(linkDisplayUrl);
+                var emailBody = string.Format(Constants.EmailBody, deNghiArgument.CaNhanToChuc, deNghiArgument.MaSoBienNhan, hanhDong, fullDisplayUrl);
+
                 headers.Add("subject", "[Sở GTVT Long An] - Thông báo");
                 headers.Add("content-type","text/html");
-                var linkItemUrl = SPContext.Current.Site.MakeFullUrl((SPContext.Current.Web.ServerRelativeUrl +  Constants.ConfLinkPageDispForm).Replace("//","/"));
-                var emailBody = string.Format(Constants.EmailBody, caNhanToChuc, maBienNhan, hanhDong);
 
-                //emailBody += string.Format(Constants.TimesheetLink, 
-                //    SPContext.Current.Site.MakeFullUrl((SPContext.Current.Web.ServerRelativeUrl +  Constants.ConfLinkDispForm).Replace("//","/")), 
-                //    "Review and Approve timesheet");
-                LoggingServices.LogMessage("Send Email To: " + emailTo + ", Content: " + emailBody);
-                Microsoft.SharePoint.Utilities.SPUtility.SendEmail(SPContext.Current.Web, headers, emailBody);
+                LoggingServices.LogMessage("Send Email To: " + deNghiArgument.EmailCaNhanToChuc + ", Content: " + emailBody);
+                SPUtility.SendEmail(SPContext.Current.Web, headers, emailBody);
             }
             catch (Exception ex)
             {
@@ -63,7 +132,7 @@ namespace LongAn.DVC.Helpers
                             var documentMetadata = new System.Collections.Hashtable {
                                { Constants.FieldTitle, string.Format("{0}_{1}", deNghiId, loaiAttachment) },
                                { Constants.FieldDeNghi, deNghiId },
-                                { Constants.FieldLoaiAttachment, loaiAttachment }
+                               { Constants.FieldLoaiAttachment, loaiAttachment }
                            };
                             var currentFile = files.Add(string.Format("{0}/{1}_{2}", deNghiAttachmentUrl, DateTime.Now.ToString("yyyyMMddhhmmssfff"), fileUpload.FileName), 
                                 fileUpload.FileContent, 
@@ -152,7 +221,7 @@ namespace LongAn.DVC.Helpers
             }
             return result;
         }
-        public static void AddDeNghiHistory(SPWeb spWeb, CapXuLy capXuLy, int deNghiId, string hanhDong, string note)
+        public static void AddDeNghiHistory(SPWeb spWeb, CapXuLy capXuLy, int deNghiId, string hanhDong, string note = "")
         {
             try
             {

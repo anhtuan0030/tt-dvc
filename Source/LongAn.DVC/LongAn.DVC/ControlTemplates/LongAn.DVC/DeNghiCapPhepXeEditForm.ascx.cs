@@ -130,8 +130,15 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
                 var yeuCauBoSungUrl = (SPContext.Current.Web.ServerRelativeUrl + Constants.ListUrlYeuCauBoSung).Replace("//", "/");
                 var yeuCauBoSungList = SPContext.Current.Web.GetList(yeuCauBoSungUrl);
                 var yeuCauBoSungItems = yeuCauBoSungList.GetItems(caml).GetDataTable();
-                repeaterLists.DataSource = yeuCauBoSungItems;
-                repeaterLists.DataBind();
+                if (yeuCauBoSungItems != null && yeuCauBoSungItems.Rows.Count > 0)
+                {
+                    repeaterLists.DataSource = yeuCauBoSungItems;
+                    repeaterLists.DataBind();
+                }
+                else
+                {
+                    divDanhSachYeuCauBoSung.Visible = false;
+                }
             }
             catch (Exception ex)
             {
@@ -150,6 +157,7 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
                 var yeuCauBoSungItem = yeuCauBoSungList.GetItemById(itemId);
                 yeuCauBoSungItem["DaBoSung"] = true;
                 yeuCauBoSungItem["NgayBoSung"] = DateTime.Now;
+                yeuCauBoSungItem.Update();
             }
             catch (Exception ex)
             {
@@ -178,7 +186,7 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
 
                     LinkButton lbtXacNhan = (LinkButton)e.Item.FindControl("lbtXacNhan");
                     LinkButton lbtDisable = (LinkButton)e.Item.FindControl("lbtDisable");
-                    var trangThai = int.Parse(rowView[Constants.FieldTrangThai].ToString());
+                    var trangThai = int.Parse(SPContext.Current.ListItem[Constants.FieldTrangThai].ToString());
                     if (trangThai == (int)TrangThaiHoSo.ChoBoSung)
                     {
                         lbtDisable.Style.Add("display", "none");

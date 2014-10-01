@@ -209,6 +209,10 @@
          DisplayName="SoThuTuBienNhan" Required="FALSE" Hidden="TRUE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255"
          Group="[LA-DVC]" />
 
+  <Field Type="Note" ID="{D8C9712B-E6D5-4465-8C7C-230968D70C1C}" Name="LyDoTuChoi"  StaticName="LyDoTuChoi"
+       DisplayName="Lý do từ chối" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" NumLines="6" RichText="FALSE" Sortable="FALSE" Group="[LA-DVC]"/>
+
+
   <Field Type="Lookup" ID="{713CEB2E-2D14-4FDF-BA98-DAABFA61C504}" Name="DeNghi" StaticName="DeNghi"
          DisplayName="Đề nghị" Required="FALSE" EnforceUniqueValues="FALSE" List="Lists/DeNghiCapPhepXe"
          ShowField="Title" UnlimitedLengthInDocumentLibrary="FALSE" RelationshipDeleteBehavior="None"

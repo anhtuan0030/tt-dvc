@@ -782,5 +782,31 @@
       </AllUsersWebPart>
       
     </File>
+
+    <File Path="DVCPages\BlankPage.aspx" Url="LichSuLuanChuyenHoSo.aspx" Type="GhostableInLibrary" ReplaceContent="TRUE" >
+      <Property Name="Title" Value="Lịch sử luân chuyển hồ sơ"/>
+      <Property Name="PublishingPageLayout" Value="~SiteCollection/_catalogs/masterpage/DVCWebPartPage_Manage.aspx, DVC WebPart page - Manage"/>
+
+      <AllUsersWebPart WebPartOrder ="0" WebPartZoneID ="Header">
+        <![CDATA[ 
+        <webParts>
+          <webPart xmlns="http://schemas.microsoft.com/WebPart/v3">
+            <metaData>
+              <type name="LongAn.DVC.WebParts.DeNghiHistory.DeNghiHistory, $SharePoint.Project.AssemblyFullName$" />
+              <importErrorMessage>$Resources:core,ImportErrorMessage;</importErrorMessage>
+            </metaData>
+            <data>
+              <properties>
+                <property name="Title" type="string">Lịch sử duyệt đề nghị</property>
+                <property name="Description" type="string">Lịch sử duyệt đề nghị Visual Web Part</property>
+                <property name="ChromeType" type="chrometype">None</property>
+              </properties>
+            </data>
+          </webPart>
+        </webParts>
+        ]]>
+      </AllUsersWebPart>
+
+    </File>
   </Module>
 </Elements>

@@ -14,7 +14,7 @@
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{C1CDDADD-2546-481F-9697-4EA41081F2FC};{14822709-B5A1-4724-98CA-57A101D1B079};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <SandboxedSolution>False</SandboxedSolution>
-    <ActiveDeploymentConfiguration>Default</ActiveDeploymentConfiguration>
+    <ActiveDeploymentConfiguration>Upgrade Solution %28CKSDev%29</ActiveDeploymentConfiguration>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -121,6 +121,7 @@
     <Compile Include="Features\LongAn.DVC.Web\LongAn.DVC.Web.EventReceiver.cs">
       <DependentUpon>LongAn.DVC.Web.feature</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\DeNghiArgument.cs" />
     <Compile Include="Helpers\DeNghiHelper.cs" />
     <Compile Include="Layouts\LongAn.DVC\DeNghiEditForm.aspx.cs">
       <DependentUpon>DeNghiEditForm.aspx</DependentUpon>
@@ -136,7 +137,29 @@
     <Compile Include="Layouts\LongAn.DVC\PhanCongHoSo.aspx.designer.cs">
       <DependentUpon>PhanCongHoSo.aspx.cs</DependentUpon>
     </Compile>
+    <Compile Include="Layouts\LongAn.DVC\TuChoiHoSo.aspx.cs">
+      <DependentUpon>TuChoiHoSo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Layouts\LongAn.DVC\TuChoiHoSo.aspx.designer.cs">
+      <DependentUpon>TuChoiHoSo.aspx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layouts\LongAn.DVC\YeuCauBoSung.aspx.cs">
+      <DependentUpon>YeuCauBoSung.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Layouts\LongAn.DVC\YeuCauBoSung.aspx.designer.cs">
+      <DependentUpon>YeuCauBoSung.aspx.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WebParts\DeNghiHistory\DeNghiHistory.ascx.cs">
+      <DependentUpon>DeNghiHistory.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebParts\DeNghiHistory\DeNghiHistory.ascx.g.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DeNghiHistory.ascx</DependentUpon>
+    </Compile>
     <Compile Include="WebParts\DeNghiListViewUsers\DeNghiListViewUsers.ascx.cs">
       <DependentUpon>DeNghiListViewUsers.ascx</DependentUpon>
     </Compile>
@@ -334,6 +357,12 @@
     <None Include="Pages\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{d48bef74-2fb9-433e-95e0-e06afec4c097}</SharePointProjectItemId>
     </None>
+    <None Include="WebParts\DeNghiHistory\DeNghiHistory.webpart">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="WebParts\DeNghiHistory\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{79ec7411-b4f6-443f-9ac7-a66e2bd5e8f9}</SharePointProjectItemId>
+    </None>
     <None Include="WebParts\DeNghiListViewUsers\DeNghiListViewUsers.webpart" />
     <None Include="WebParts\DeNghiListViewUsers\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{4e3fcc52-b736-4147-b6ef-c1f6bc1ce63c}</SharePointProjectItemId>
@@ -435,6 +464,8 @@
     <Content Include="Layouts\LongAn.DVC\DeNghiEditForm.aspx" />
     <Content Include="Layouts\LongAn.DVC\css\superfish.css" />
     <Content Include="Layouts\LongAn.DVC\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Layouts\LongAn.DVC\TuChoiHoSo.aspx" />
+    <Content Include="Layouts\LongAn.DVC\YeuCauBoSung.aspx" />
     <Content Include="Libs\Aspose.Cells.dll" />
     <Content Include="Libs\Aspose.Cells.GridDesktop.dll" />
     <Content Include="Libs\Aspose.Words.dll" />
@@ -526,6 +557,11 @@
     </Content>
     <Content Include="Modules\DVCPages\BlankPage.aspx" />
     <Content Include="Pages\dvcform.aspx" />
+    <Content Include="WebParts\DeNghiHistory\DeNghiHistory.ascx">
+      <Generator>SharePointWebPartCodeGenerator</Generator>
+      <LastGenOutput>DeNghiHistory.ascx.g.cs</LastGenOutput>
+    </Content>
+    <Content Include="WebParts\DeNghiHistory\Elements.xml" />
     <Content Include="WebParts\DeNghiListViewUsers\DeNghiListViewUsers.ascx">
       <Generator>SharePointWebPartCodeGenerator</Generator>
       <LastGenOutput>DeNghiListViewUsers.ascx.g.cs</LastGenOutput>
