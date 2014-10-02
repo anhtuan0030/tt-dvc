@@ -67,24 +67,28 @@ namespace LongAn.DVC.Layouts.LongAn.DVC
         void btnTraHoSo_Click(object sender, EventArgs e)
         {
             DeNghiHelper.AddDeNghiHistory(SPContext.Current.Web, CapXuLy.MotCua, SPContext.Current.ItemId, HanhDong.TuChoiHoSo.ToString(), txtLyDo.Text);
+            DeNghiHelper.SendEmail(SPContext.Current.Web, SPContext.Current.ItemId, "được cấp phép");
             UpdateItem(TrangThaiHoSo.BiTuChoi, CapXuLy.CaNhanToChuc);
         }
 
         void btnCanBoTraHoSo_Click(object sender, EventArgs e)
         {
             DeNghiHelper.AddDeNghiHistory(SPContext.Current.Web, CapXuLy.CanBo, SPContext.Current.ItemId, HanhDong.TuChoiHoSo.ToString(), txtLyDo.Text);
+            DeNghiHelper.SendEmail(SPContext.Current.Web, SPContext.Current.ItemId, "được cấp phép");
             UpdateItem(TrangThaiHoSo.BiTuChoi, CapXuLy.CaNhanToChuc);
         }
 
         void btnTruongPhongTraHoSo_Click(object sender, EventArgs e)
         {
             DeNghiHelper.AddDeNghiHistory(SPContext.Current.Web, CapXuLy.TruongPhoPhong, SPContext.Current.ItemId, HanhDong.TuChoiHoSo.ToString(), txtLyDo.Text);
+            DeNghiHelper.SendEmail(SPContext.Current.Web, SPContext.Current.ItemId, "được cấp phép");
             UpdateItem(TrangThaiHoSo.BiTuChoi, CapXuLy.CaNhanToChuc);
         }
 
         void btnLanhDaoTraHoSo_Click(object sender, EventArgs e)
         {
             DeNghiHelper.AddDeNghiHistory(SPContext.Current.Web, CapXuLy.LanhDaoSo, SPContext.Current.ItemId, HanhDong.TuChoiHoSo.ToString(), txtLyDo.Text);
+            DeNghiHelper.SendEmail(SPContext.Current.Web, SPContext.Current.ItemId, "bị từ chối");
             UpdateItem(TrangThaiHoSo.BiTuChoi, CapXuLy.CaNhanToChuc);
         }
         #endregion Tra Ho So

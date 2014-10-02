@@ -443,6 +443,38 @@
                                     </div>
                                 </div>
 
+                                <div class="panel-2" id="divLoaiDuongDisp" runat="server" visible="false">
+                                    <h2>Loại đường xin cấp phép</h2>
+
+                                    <div class="row">
+                                        <div class="grid_2">
+                                            <SharePoint:FieldLabel ID="FieldLabel41"  FieldName="LoaiDuong"  runat="server"  />
+                                        </div>
+                                        <div class="grid_9 col-xs-2">
+                                            <SharePoint:FormField  runat="server" ID="fldLoaiDuong" FieldName="LoaiDuong" />
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="grid_1">
+                                            <SharePoint:FieldLabel ID="FieldLabel42"  FieldName="LanXeDuocChay"  runat="server"/>
+                                        </div>
+                                        <div class="grid_4">
+                                            <SharePoint:FormField  runat="server" ID="FormField38" FieldName="LanXeDuocChay" />
+                                        </div>
+                                        <div class="grid_1">
+                                            &nbsp;
+                                        </div>
+                                        <div class="grid_1">
+                                            <SharePoint:FieldLabel ID="FieldLabel43"  FieldName="TocDoDuocChay"  runat="server"/>
+                                        </div>
+                                        <div class="grid_4">
+                                            <SharePoint:FormField  runat="server" ID="FormField40" FieldName="TocDoDuocChay" />
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </div>
+
                                 <div class="panel-2" id="divLoaiDuong" runat="server" visible="false">
                                     <h2>Loại đường xin cấp phép</h2>
 
@@ -468,7 +500,7 @@
                                             &nbsp;
                                         </div>
                                         <div class="grid_1">
-                                            <SharePoint:FieldLabel ID="FieldLabel40"  FieldName="TocDoDuocChay"  runat="server"/>
+                                            <SharePoint:FieldLabel ID="FieldLabel40"  FieldName="TocDoDuocChay" runat="server"/>
                                         </div>
                                         <div class="grid_4">
                                             <asp:TextBox ID="txtTocDoDuocChay" runat="server"></asp:TextBox>
@@ -485,9 +517,8 @@
                                     <asp:Button ID="btnTrinhXuLy" runat="server" Text="Chuyển Trưởng/Phó P.QLHT" CssClass="button" Visible="false" style="float:left;"/>
 
                                     <asp:Button ID="btnYeuCauBoSung" runat="server" Text="Yêu cầu bổ sung" CssClass="button" style="float:left;"
-                                        Visible="false" OnClientClick="if (!PreSaveYeuCauBoSung(0)) return false;"/>
-                                    <asp:HyperLink ID="hplYeuCauBoSung" runat="server" CssClass="button" Visible="false" style="float:left;">Yêu cầu bổ sung</asp:HyperLink>
-
+                                        Visible="false" />
+                                    
                                     <asp:Button ID="btnPhanCongHoSo" runat="server" Text="Phân công hồ sơ" CssClass="button" Visible="false" style="float:left;"/>
 
                                     <asp:Button ID="btnTrinhTruongPhong" runat="server" Text="Trình trưởng/phó P.QLHT" CssClass="button" Visible="false" style="float:left;"/>

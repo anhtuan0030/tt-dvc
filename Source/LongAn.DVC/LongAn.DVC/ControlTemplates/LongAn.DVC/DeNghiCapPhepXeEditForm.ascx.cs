@@ -151,13 +151,25 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
         {
             try
             {
+                var spWeb = SPContext.Current.Web;
                 LoggingServices.LogMessage("Begin UpdateYeuCauBoSung");
-                var yeuCauBoSungUrl = (SPContext.Current.Web.ServerRelativeUrl + Constants.ListUrlYeuCauBoSung).Replace("//", "/");
-                var yeuCauBoSungList = SPContext.Current.Web.GetList(yeuCauBoSungUrl);
-                var yeuCauBoSungItem = yeuCauBoSungList.GetItemById(itemId);
-                yeuCauBoSungItem["DaBoSung"] = true;
-                yeuCauBoSungItem["NgayBoSung"] = DateTime.Now;
-                yeuCauBoSungItem.Update();
+                SPSecurity.RunWithElevatedPrivileges(delegate()
+                {
+                    using (SPSite site = new SPSite(spWeb.Site.ID))
+                    {
+                        using (SPWeb web = site.OpenWeb(spWeb.ID))
+                        {
+                            web.AllowUnsafeUpdates = true;
+                            var yeuCauBoSungUrl = (web.ServerRelativeUrl + Constants.ListUrlYeuCauBoSung).Replace("//", "/");
+                            var yeuCauBoSungList = web.GetList(yeuCauBoSungUrl);
+                            var yeuCauBoSungItem = yeuCauBoSungList.GetItemById(itemId);
+                            yeuCauBoSungItem["DaBoSung"] = true;
+                            yeuCauBoSungItem["NgayBoSung"] = DateTime.Now;
+                            yeuCauBoSungItem.Update();
+                            web.AllowUnsafeUpdates = false;
+                        }
+                    }
+                });
             }
             catch (Exception ex)
             {
@@ -186,8 +198,9 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
 
                     LinkButton lbtXacNhan = (LinkButton)e.Item.FindControl("lbtXacNhan");
                     LinkButton lbtDisable = (LinkButton)e.Item.FindControl("lbtDisable");
+                    var daBoSung = bool.Parse(rowView["DaBoSung"].ToString());
                     var trangThai = int.Parse(SPContext.Current.ListItem[Constants.FieldTrangThai].ToString());
-                    if (trangThai == (int)TrangThaiHoSo.ChoBoSung)
+                    if (trangThai == (int)TrangThaiHoSo.ChoBoSung && !daBoSung)
                     {
                         lbtDisable.Style.Add("display", "none");
                         lbtXacNhan.CommandName = "XacNhanBoSungHoSo";
