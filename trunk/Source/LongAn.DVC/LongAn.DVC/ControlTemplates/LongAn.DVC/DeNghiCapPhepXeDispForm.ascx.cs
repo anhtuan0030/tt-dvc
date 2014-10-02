@@ -147,7 +147,7 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
                         divLoaiDuong.Visible = true;
                         btnYeuCauBoSung.Visible = true;
                         btnYeuCauBoSung.CommandArgument = additionalLink;
-                        btnYeuCauBoSung.Command += btnRedirect_Command;
+                        btnYeuCauBoSung.Command += btnYeuCauBoSung_Command;
 
                         btnTrinhTruongPhong.Visible = true;
                         btnTrinhTruongPhong.OnClientClick = "if (!confirm('Bạn có chắc chắn muốn trình hồ sơ này không?')) return false;";
@@ -182,13 +182,24 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
             }
             #endregion View button
 
+            divLoaiDuongDisp.Visible = !divLoaiDuong.Visible;
+
             base.OnInit(e);
+        }
+
+        void btnYeuCauBoSung_Command(object sender, CommandEventArgs e)
+        {
+            string redirectUrl = e.CommandArgument.ToString();
+            if (redirectUrl == null || string.IsNullOrEmpty(redirectUrl))
+                redirectUrl = "/";
+            Response.Redirect(redirectUrl);
         }
 
         void btnDuyetHoSo_Click(object sender, EventArgs e)
         {
             DeNghiHelper.AddDeNghiHistory(SPContext.Current.Web, CapXuLy.LanhDaoSo, SPContext.Current.ItemId, HanhDong.DuyetCapPhep.ToString());
             UpdateItem(TrangThaiHoSo.DuocCapPhep, CapXuLy.MotCua);
+            DeNghiHelper.SendEmail(SPContext.Current.Web, SPContext.Current.ItemId, "được cấp phép");
         }
 
         void btnTrinhTruongPhong_Click(object sender, EventArgs e)
@@ -230,8 +241,8 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
 
         void btnTrinhXuLy_Click(object sender, EventArgs e)
         {
-            DeNghiHelper.AddDeNghiHistory(SPContext.Current.Web, CapXuLy.MotCua, SPContext.Current.ItemId, HanhDong.TrinhTruongPhoPhong.ToString());
-            UpdateItem(TrangThaiHoSo.ChoDuyet, CapXuLy.TruongPhoPhong);
+            DeNghiHelper.AddDeNghiHistory(SPContext.Current.Web, CapXuLy.MotCua, SPContext.Current.ItemId, HanhDong.ChuyenTruongPhoPhong.ToString());
+            UpdateItem(TrangThaiHoSo.ChoXuLy, CapXuLy.TruongPhoPhong);
         }
 
         void btnTiepNhan_Command(object sender, CommandEventArgs e)
@@ -239,6 +250,7 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
             if (e.CommandName == HanhDong.TiepNhanHoSo.ToString())
             {
                 DeNghiHelper.AddDeNghiHistory(SPContext.Current.Web, CapXuLy.MotCua, SPContext.Current.ItemId, HanhDong.TiepNhanHoSo.ToString());
+                DeNghiHelper.SendEmail(SPContext.Current.Web, SPContext.Current.ItemId, "được tiếp nhận");
                 UpdateItem(TrangThaiHoSo.DaTiepNhan, CapXuLy.MotCua);
             }
             else if (e.CommandName == HanhDong.TiepNhanXuLy.ToString())
@@ -287,6 +299,11 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
                         chkListLoaiDuong.Items[i].Selected = true;
                     }
                 }
+
+                var lanDuong = currentItem[Constants.FieldLanXeDuocChay] != null ? currentItem[Constants.FieldLanXeDuocChay].ToString() : string.Empty;
+                txtLanXeDuocChay.Text = lanDuong;
+                var tocDo = currentItem[Constants.FieldTocDoDuocChay] != null ? currentItem[Constants.FieldTocDoDuocChay].ToString() : string.Empty;
+                txtTocDoDuocChay.Text = tocDo;
             }
         }
 
@@ -305,7 +322,7 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
             spListItem[Constants.FieldCapDuyet] = (int)capXuLy;
             spListItem[Constants.FieldTrangThai] = (int)trangThai;
             var currentUser = SPContext.Current.Web.CurrentUser;
-            if (capXuLy == CapXuLy.MotCua)
+            if (capXuLy == CapXuLy.MotCua && trangThai == TrangThaiHoSo.DaTiepNhan)
                 spListItem[Constants.FieldMotCuaUser] = currentUser;
             else if(capXuLy == CapXuLy.CanBo)
                 spListItem[Constants.FieldCanBoUser] = currentUser;

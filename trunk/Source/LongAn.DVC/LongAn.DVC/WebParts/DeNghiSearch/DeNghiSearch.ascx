@@ -20,7 +20,7 @@
 			</h2>
 			<div class="form" id="searchform">
 				<div class="row line">
-                    <div class="grid_3" style="margin-top:10px">
+                    <div class="grid_3" style="margin-top:10px; text-align:right;">
                        Nhập mã biên nhận:                        
                     </div>
                     <div class="grid_4">

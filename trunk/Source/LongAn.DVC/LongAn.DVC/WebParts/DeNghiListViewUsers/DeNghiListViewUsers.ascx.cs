@@ -329,6 +329,7 @@ namespace LongAn.DVC.WebParts.DeNghiListViewUsers
                     HyperLink lbtEditItem = (HyperLink)e.Item.FindControl("lbtEditItem");
                     LinkButton lbtDeleteItem = (LinkButton)e.Item.FindControl("lbtDeleteItem");
                     LinkButton lbtNopHoSo = (LinkButton)e.Item.FindControl("lbtNopHoSo");
+                    LinkButton lbtDisable2 = (LinkButton)e.Item.FindControl("lbtDisable2");
                     var trangThai = int.Parse(rowView[Constants.FieldTrangThai].ToString());
                     if (trangThai == (int)TrangThaiHoSo.KhoiTao
                         || trangThai == (int)TrangThaiHoSo.ChoBoSung)
@@ -339,8 +340,12 @@ namespace LongAn.DVC.WebParts.DeNghiListViewUsers
                         lbtNopHoSo.CommandName = "OnNopHoSoClick";
                         lbtNopHoSo.CommandArgument = commandAgrument;
                         lbtNopHoSo.OnClientClick = "if (!confirm('Bạn có chắc chắn muốn nộp hồ sơ này không?')) return false;";
+                        lbtDeleteItem.Style.Add("display", "block");
+                        lbtDisable2.Style.Add("display", "none");
                         if(trangThai == (int)TrangThaiHoSo.KhoiTao)
                         {
+                            lbtDeleteItem.Style.Add("display", "none");
+                            lbtDisable2.Style.Add("display", "block");
                             lbtDeleteItem.CommandName = "OnDeleteItemClick";
                             lbtDeleteItem.CommandArgument = commandAgrument;
                             lbtDeleteItem.OnClientClick = "if (!confirm('Bạn có chắc chắn muốn xóa hồ sơ này không?')) return false;";
@@ -353,7 +358,7 @@ namespace LongAn.DVC.WebParts.DeNghiListViewUsers
                         lbtNopHoSo.Style.Add("display", "none");
                         LinkButton lbtDisable1 = (LinkButton)e.Item.FindControl("lbtDisable1");
                         lbtDisable1.Style.Add("display", "block");
-                        LinkButton lbtDisable2 = (LinkButton)e.Item.FindControl("lbtDisable2");
+                        
                         lbtDisable2.Style.Add("display", "block");
                         LinkButton lbtDisable3 = (LinkButton)e.Item.FindControl("lbtDisable3");
                         lbtDisable3.Style.Add("display", "block");

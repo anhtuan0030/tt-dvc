@@ -26,17 +26,19 @@ namespace LongAn.DVC.WebParts.DeNghiHistory
             base.OnInit(e);
             InitializeControl();
             repeaterLists.ItemDataBound += repeaterLists_ItemDataBound;
+            btnTimKiem.Click += btnTimKiem_Click;
+        }
+
+        void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtMaBienNhan.Text.Trim()))
+                return;
+            repeaterLists.DataSource = GetDeNghi(txtMaBienNhan.Text.Trim());
+            repeaterLists.DataBind();
         }
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!this.Page.IsPostBack)
-            {
-                //if (string.IsNullOrEmpty(txtMaBienNhan.Text.Trim()))
-                //    return;
-                repeaterLists.DataSource = GetDeNghi(txtMaBienNhan.Text.Trim());
-                repeaterLists.DataBind();
-            }
         }
 
         DataTable GetDeNghi(string maBienNhan)
@@ -45,7 +47,7 @@ namespace LongAn.DVC.WebParts.DeNghiHistory
             try
             {
                 LoggingServices.LogMessage("Begin GetDeNghiHistory - Mã biên nhận: " + maBienNhan);
-                SPQuery caml = Camlex.Query().Where(x => x[Constants.FieldSoThuTuBienNhan] == maBienNhan)
+                SPQuery caml = Camlex.Query().Where(x => (string)x[Constants.FieldDeNghi] == maBienNhan)
                                                     .OrderBy(x => new[] { x["ID"] as Camlex.Asc })
                                                     .ToSPQuery();
                 var deNghiUrl = (SPContext.Current.Web.ServerRelativeUrl + Constants.ListUrlLichSuCapPhep).Replace("//", "/");

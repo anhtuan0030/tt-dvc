@@ -226,6 +226,11 @@
   <Field Type="Note" ID="{b842c40f-47b4-40de-8686-74fdac050dd3}"  Name="MoTa" StaticName="MoTa"  DisplayName="Mô tả"  />
   
   <!--Yêu cầu bổ sung-->
+  <Field Type="User" ID="{0D670887-DEFA-4A3E-A968-819087C602B9}" Name="NguoiYeuCau" StaticName="NguoiYeuCau"
+           DisplayName="Người yêu cầu" List="UserInfo" Required="FALSE" EnforceUniqueValues="FALSE" ShowField="ImnName"
+           UserSelectionMode="PeopleOnly" UserSelectionScope="0"  Group="[LA-DVC]" />
+
+  
   <Field Type="Boolean" ID="{74443E7F-018E-4051-A6D4-D6918A68E990}" Name="DaBoSung" StaticName="DaBoSung"
          DisplayName="Đã bổ sung" EnforceUniqueValues="FALSE" Indexed="FALSE" Group="[LA-DVC]" >
     <Default>0</Default>
@@ -248,5 +253,7 @@
   <Field Type="Text" ID="{6BC1489F-48F8-4F61-B098-17D41AD0E1B7}" Name="HanhDong" StaticName="HanhDong"
          DisplayName="Hành động" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255"
          Group="[LA-DVC]" />
+  
+  
   
 </Elements>

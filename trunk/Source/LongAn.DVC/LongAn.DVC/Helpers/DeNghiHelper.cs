@@ -83,7 +83,7 @@ namespace LongAn.DVC.Helpers
         {
             try
             {
-                LoggingServices.LogMessage("Begin Send Email To HR");
+                LoggingServices.LogMessage("Begin Send Email To Nguoi dung");
                 StringDictionary headers = new StringDictionary();
                 headers.Add("subject", "[Sở GTVT Long An] - Thông báo");
                 headers.Add("content-type","text/html");
@@ -99,17 +99,14 @@ namespace LongAn.DVC.Helpers
                 var fullDisplayUrl = SPContext.Current.Site.MakeFullUrl(linkDisplayUrl);
                 var emailBody = string.Format(Constants.EmailBody, deNghiArgument.CaNhanToChuc, deNghiArgument.MaSoBienNhan, hanhDong, fullDisplayUrl);
 
-                headers.Add("subject", "[Sở GTVT Long An] - Thông báo");
-                headers.Add("content-type","text/html");
-
                 LoggingServices.LogMessage("Send Email To: " + deNghiArgument.EmailCaNhanToChuc + ", Content: " + emailBody);
-                SPUtility.SendEmail(SPContext.Current.Web, headers, emailBody);
+                SPUtility.SendEmail(web, headers, emailBody);
             }
             catch (Exception ex)
             {
                 LoggingServices.LogException(ex);
             }
-            LoggingServices.LogMessage("End Send Email To HR");
+            LoggingServices.LogMessage("End Send Email To Nguoi dung");
         }
         public static void SaveFileAttachment(FileUpload fileUpload, int deNghiId, string loaiAttachment)
         {

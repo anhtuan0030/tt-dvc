@@ -21,11 +21,11 @@
 	<div class="row">
 		<div class="grid_12" id="main-frame">
 			<h2 class="">
-				TRA CỨU HỒ SƠ
+				LỊCH SỬ LUÂN CHUYỂN HỒ SƠ
 			</h2>
 			<div class="form" id="searchform">
 				<div class="row line">
-                    <div class="grid_3" style="margin-top:10px">
+                    <div class="grid_3" style="margin-top:10px; text-align:right;">
                        Nhập mã biên nhận:                        
                     </div>
                     <div class="grid_4">

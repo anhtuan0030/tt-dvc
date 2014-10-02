@@ -484,8 +484,8 @@
                                                     <asp:Literal ID="literalNgayYeuCau" runat="server"></asp:Literal>
                                                 </td>
                                                 <td>
-                                                    <asp:LinkButton ID="lbtXacNhan" ToolTip="Xác nhận đã cập nhật" CssClass="button waiting just-icon link-button" style="display:none;" runat="server"></asp:LinkButton>
-                                                    <asp:LinkButton ID="lbtDisable" ToolTip="Đã cập nhật" Enabled="false" CssClass="button done just-icon link-button" style="display:block;" runat="server"></asp:LinkButton>
+                                                    <asp:LinkButton ID="lbtXacNhan" ToolTip="Xác nhận đã cập nhật" CssClass="button edit just-icon link-button" style="display:none;" runat="server"></asp:LinkButton>
+                                                    <asp:LinkButton ID="lbtDisable" ToolTip="Đã cập nhật" Enabled="false" CssClass="button view just-icon link-button" style="display:block;" runat="server"></asp:LinkButton>
                                                 </td>
                                             </tr>
                                         </ItemTemplate>

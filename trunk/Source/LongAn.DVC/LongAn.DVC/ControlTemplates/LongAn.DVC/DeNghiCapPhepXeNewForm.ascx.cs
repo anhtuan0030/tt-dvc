@@ -75,6 +75,8 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
             string deNghiGuid = Guid.NewGuid().ToString();
             SPContext.Current.ListItem[Constants.FieldDeNghiGUID] = deNghiGuid;
             SPContext.Current.ListItem[Constants.FieldTrangThai] = (int)trangThai;
+            if(trangThai == TrangThaiHoSo.ChoTiepNhan)
+                SPContext.Current.ListItem[Constants.FieldNgayNopHoSo] = DateTime.Now;
             SPContext.Current.ListItem[Constants.FieldCapDuyet] = (int)capXuLy;
             SPContext.Current.ListItem[Constants.FieldNguoiDeNghi] = SPContext.Current.Web.CurrentUser;
             SaveButton.SaveItem(SPContext.Current, false, "Thêm mới / gửi đề nghị");

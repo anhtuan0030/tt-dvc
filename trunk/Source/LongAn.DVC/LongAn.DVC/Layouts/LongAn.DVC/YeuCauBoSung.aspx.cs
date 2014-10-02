@@ -57,9 +57,10 @@ namespace LongAn.DVC.Layouts.LongAn.DVC
 
         void btnSave_Click(object sender, EventArgs e)
         {
-            DeNghiHelper.AddDeNghiHistory(SPContext.Current.Web, CapXuLy.CanBo, SPContext.Current.ItemId, HanhDong.PhanCongHoSo.ToString());
+            DeNghiHelper.AddDeNghiHistory(SPContext.Current.Web, CapXuLy.CanBo, SPContext.Current.ItemId, HanhDong.YeuCauBoSung.ToString());
+            AddBoSungYeuCau();
+            DeNghiHelper.SendEmail(SPContext.Current.Web, SPContext.Current.ItemId, "yêu cầu bổ sung hồ sơ");
             UpdateItem(TrangThaiHoSo.ChoBoSung, CapXuLy.CaNhanToChuc);
-            AddBoSungYeuCau(SPContext.Current.Web);
         }
 
         void UpdateItem(TrangThaiHoSo trangThai, CapXuLy capXuLy)
@@ -84,18 +85,31 @@ namespace LongAn.DVC.Layouts.LongAn.DVC
             longOperation.End(redirectUrl, Microsoft.SharePoint.Utilities.SPRedirectFlags.DoNotEndResponse, System.Web.HttpContext.Current, "");
         }
 
-        void AddBoSungYeuCau(SPWeb web)
+        void AddBoSungYeuCau()
         {
             try
             {
+                var spWeb = SPContext.Current.Web;
                 LoggingServices.LogMessage("Begin AddBoSungYeuCau");
-                var yeuCauBoSungUrl = (web.ServerRelativeUrl + Constants.ListUrlYeuCauBoSung).Replace("//", "/");
-                var yeuCauBoSungList = web.GetList(yeuCauBoSungUrl);
-                var yeuCauBoSungItem = yeuCauBoSungList.Items.Add();
-                yeuCauBoSungItem[Constants.FieldDeNghi] = SPContext.Current.ItemId;
-                yeuCauBoSungItem[Constants.FieldTitle] = txtTieuDe.Text.Trim();
-                yeuCauBoSungItem[Constants.FieldMoTa] = txtDienGiaiChiTiet.Text.Trim();
-                yeuCauBoSungItem.Update();
+                SPSecurity.RunWithElevatedPrivileges(delegate()
+                {
+                    using (SPSite site = new SPSite(spWeb.Site.ID))
+                    {
+                        using (SPWeb web = site.OpenWeb(spWeb.ID))
+                        {
+                            web.AllowUnsafeUpdates = true;
+                            var yeuCauBoSungUrl = (web.ServerRelativeUrl + Constants.ListUrlYeuCauBoSung).Replace("//", "/");
+                            var yeuCauBoSungList = web.GetList(yeuCauBoSungUrl);
+                            var yeuCauBoSungItem = yeuCauBoSungList.Items.Add();
+                            yeuCauBoSungItem[Constants.FieldNguoiYeuCau] = SPContext.Current.Web.CurrentUser;
+                            yeuCauBoSungItem[Constants.FieldDeNghi] = SPContext.Current.ItemId;
+                            yeuCauBoSungItem[Constants.FieldTitle] = txtTieuDe.Text.Trim();
+                            yeuCauBoSungItem[Constants.FieldMoTa] = txtDienGiaiChiTiet.Text.Trim();
+                            yeuCauBoSungItem.Update();
+                            web.AllowUnsafeUpdates = false;
+                        }
+                    }
+                });
             }
             catch (Exception ex)
             {
