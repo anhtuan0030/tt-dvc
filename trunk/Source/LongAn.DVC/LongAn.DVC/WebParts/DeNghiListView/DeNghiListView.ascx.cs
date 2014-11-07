@@ -666,14 +666,20 @@ namespace LongAn.DVC.WebParts.DeNghiListView
                                                     DeNghiListID,
                                                     commandAgrument,
                                                     currentPage);
+                    var redirectLink = string.Format(Constants.ConfLinkDeNghiAppPage,
+                                                    SPContext.Current.Web.ServerRelativeUrl.TrimEnd('/'),
+                                                    DeNghiListID,
+                                                    commandAgrument,
+                                                    currentPage,
+                                                    "{0}");
 
                     LinkButton lbtPrint = (LinkButton)e.Item.FindControl("lbtPrint");
                     lbtPrint.CommandArgument = commandAgrument;
 
-                    //LinkButton lbtDisable1 = (LinkButton)e.Item.FindControl("lbtDisable1");
-                    //LinkButton lbtDisable2 = (LinkButton)e.Item.FindControl("lbtDisable2");
-                    //LinkButton lbtDisable3 = (LinkButton)e.Item.FindControl("lbtDisable3");
-                    //LinkButton lbtDisable4 = (LinkButton)e.Item.FindControl("lbtDisable4");
+                    LinkButton lbtDisable1 = (LinkButton)e.Item.FindControl("lbtDisable1");
+                    LinkButton lbtDisable2 = (LinkButton)e.Item.FindControl("lbtDisable2");
+                    LinkButton lbtDisable3 = (LinkButton)e.Item.FindControl("lbtDisable3");
+                    LinkButton lbtDisable4 = (LinkButton)e.Item.FindControl("lbtDisable4");
 
                     switch (CurrentUserRole)
                     {
@@ -685,30 +691,33 @@ namespace LongAn.DVC.WebParts.DeNghiListView
                                 lbtTiepNhan.Style.Add("display", "block");
                                 lbtTiepNhan.CommandArgument = commandAgrument;
                                 lbtTiepNhan.OnClientClick = "if (!confirm('Bạn có chắc chắn muốn tiếp nhận hồ sơ này không?')) return false;";
-                                //lbtDisable1.Style.Add("display", "none");
+                                lbtDisable1.Style.Add("display", "none");
 
                                 HyperLink hplTuChoiHoSo = (HyperLink)e.Item.FindControl("hplTuChoiHoSo");
                                 hplTuChoiHoSo.Style.Add("display", "block");
                                 hplTuChoiHoSo.NavigateUrl = string.Format("{0}&Action={1}&Atocken={2}", viewUrl, Constants.ConfActionTC, Constants.ConfQueryStringTC);
-                                //lbtDisable4.Style.Add("display", "none");
+                                lbtDisable4.Style.Add("display", "none");
                             }
                             else if (TrangThai == (int)TrangThaiHoSo.DaTiepNhan)
                             {
                                 lbtPrint.Style.Add("display", "block");
-                                //lbtDisable1.Style.Add("display", "none");
+                                lbtDisable1.Style.Add("display", "none");
                                 lbtPrint.CommandName = "InBienNhan";
 
-                                LinkButton lbtChuyenTruongPhong = (LinkButton)e.Item.FindControl("lbtChuyenTruongPhong");
-                                lbtChuyenTruongPhong.CommandName = "ChuyenTruongPhoPhong";
-                                lbtChuyenTruongPhong.Style.Add("display", "block");
-                                lbtChuyenTruongPhong.CommandArgument = commandAgrument;
-                                lbtChuyenTruongPhong.OnClientClick = "if (!confirm('Bạn có chắc chắn muốn chuyển hồ sơ này không?')) return false;";
-                                //lbtDisable2.Style.Add("display", "none");
+                                //LinkButton lbtChuyenTruongPhong = (LinkButton)e.Item.FindControl("lbtChuyenTruongPhong");
+                                //lbtChuyenTruongPhong.CommandName = "ChuyenTruongPhoPhong";
+                                //lbtChuyenTruongPhong.Style.Add("display", "block");
+                                //lbtChuyenTruongPhong.CommandArgument = commandAgrument;
+                                //lbtChuyenTruongPhong.OnClientClick = "if (!confirm('Bạn có chắc chắn muốn chuyển hồ sơ này không?')) return false;";
+                                var hplChuyenTruongPhong = (HyperLink)e.Item.FindControl("hplChuyenTruongPhong");
+                                hplChuyenTruongPhong.Style.Add("display", "block");
+                                hplChuyenTruongPhong.NavigateUrl = string.Format(redirectLink, (int)RedirectType.ChuyenTruongPhoPhong);
+                                lbtDisable2.Style.Add("display", "none");
 
                                 HyperLink hplTuChoiHoSo = (HyperLink)e.Item.FindControl("hplTuChoiHoSo");
                                 hplTuChoiHoSo.Style.Add("display", "block");
                                 hplTuChoiHoSo.NavigateUrl = rejectLink;
-                                //lbtDisable4.Style.Add("display", "none");
+                                lbtDisable4.Style.Add("display", "none");
                             }
                             else if (TrangThai == (int)TrangThaiHoSo.DuocCapPhep)
                             {
@@ -717,23 +726,23 @@ namespace LongAn.DVC.WebParts.DeNghiListView
                                 lbtHoanThanh.Style.Add("display", "block");
                                 lbtHoanThanh.CommandArgument = commandAgrument;
                                 lbtHoanThanh.OnClientClick = "if (!confirm('Bạn có chắc chắn muốn xác nhận hồ sơ này đã hoàn thành không?')) return false;";
-                                //lbtDisable1.Style.Add("display", "none");
+                                lbtDisable1.Style.Add("display", "none");
 
                                 LinkButton lbtChuaHoanThanh = (LinkButton)e.Item.FindControl("lbtChuaHoanThanh");
                                 lbtChuaHoanThanh.CommandName = "XacNhanChuaHoanThanh";
                                 lbtChuaHoanThanh.Style.Add("display", "block");
                                 lbtChuaHoanThanh.CommandArgument = commandAgrument;
                                 lbtChuaHoanThanh.OnClientClick = "if (!confirm('Bạn có chắc chắn muốn xác nhận hồ sơ này chưa hoàn thành không?')) return false;";
-                                //lbtDisable2.Style.Add("display", "none");
+                                lbtDisable2.Style.Add("display", "none");
                                 lbtPrint.Style.Add("display", "block");
                                 lbtPrint.CommandName = "InGiayPhep";
-                                //lbtDisable1.Style.Add("display", "none");
+                                lbtDisable1.Style.Add("display", "none");
                             }
                             else if (TrangThai == (int)TrangThaiHoSo.HoanThanh || TrangThai == (int)TrangThaiHoSo.ChuaHoanThanh)
                             {
                                 lbtPrint.Style.Add("display", "block");
                                 lbtPrint.CommandName = "InGiayPhep";
-                                //lbtDisable1.Style.Add("display", "none");
+                                lbtDisable1.Style.Add("display", "none");
                             }
                             break;
                         case CapXuLy.TruongPhoPhong:
@@ -742,26 +751,29 @@ namespace LongAn.DVC.WebParts.DeNghiListView
                                 HyperLink hplPhanCongHoSo = (HyperLink)e.Item.FindControl("hplPhanCongHoSo");
                                 hplPhanCongHoSo.Style.Add("display", "block");
                                 hplPhanCongHoSo.NavigateUrl = assignLink;
-                                //lbtDisable3.Style.Add("display", "none");
+                                lbtDisable3.Style.Add("display", "none");
 
                                 HyperLink hplTuChoiHoSo = (HyperLink)e.Item.FindControl("hplTuChoiHoSo");
                                 hplTuChoiHoSo.Style.Add("display", "block");
                                 hplTuChoiHoSo.NavigateUrl = rejectLink;
-                                //lbtDisable4.Style.Add("display", "none");
+                                lbtDisable4.Style.Add("display", "none");
                             }
                             else if (TrangThai == (int)TrangThaiHoSo.ChoDuyet)
                             {
-                                LinkButton lbtTrinhLanhDaoSo = (LinkButton)e.Item.FindControl("lbtTrinhLanhDaoSo");
-                                lbtTrinhLanhDaoSo.CommandName = "TrinhLanhDaoSo";
-                                lbtTrinhLanhDaoSo.Style.Add("display", "block");
-                                lbtTrinhLanhDaoSo.CommandArgument = commandAgrument;
-                                lbtTrinhLanhDaoSo.OnClientClick = "if (!confirm('Bạn có chắc chắn muốn trình lãnh đạo hồ sơ này không?')) return false;";
-                                //lbtDisable2.Style.Add("display", "none");
+                                //LinkButton lbtTrinhLanhDaoSo = (LinkButton)e.Item.FindControl("lbtTrinhLanhDaoSo");
+                                //lbtTrinhLanhDaoSo.CommandName = "TrinhLanhDaoSo";
+                                //lbtTrinhLanhDaoSo.Style.Add("display", "block");
+                                //lbtTrinhLanhDaoSo.CommandArgument = commandAgrument;
+                                //lbtTrinhLanhDaoSo.OnClientClick = "if (!confirm('Bạn có chắc chắn muốn trình lãnh đạo hồ sơ này không?')) return false;";
+                                HyperLink hplTrinhLanhDaoSo = (HyperLink)e.Item.FindControl("hplTrinhLanhDaoSo");
+                                hplTrinhLanhDaoSo.Style.Add("display", "block");
+                                hplTrinhLanhDaoSo.NavigateUrl = string.Format(redirectLink, (int)RedirectType.TrinhLanhDaoSo);
+                                lbtDisable2.Style.Add("display", "none");
 
                                 HyperLink hplTuChoiHoSo = (HyperLink)e.Item.FindControl("hplTuChoiHoSo");
                                 hplTuChoiHoSo.Style.Add("display", "block");
                                 hplTuChoiHoSo.NavigateUrl = rejectLink;
-                                //lbtDisable4.Style.Add("display", "none");
+                                lbtDisable4.Style.Add("display", "none");
                             }
                             break;
                         case CapXuLy.CanBo:
@@ -772,42 +784,48 @@ namespace LongAn.DVC.WebParts.DeNghiListView
                                 lbtTiepNhan.Style.Add("display", "block");
                                 lbtTiepNhan.CommandArgument = commandAgrument;
                                 lbtTiepNhan.OnClientClick = "if (!confirm('Bạn có chắc chắn muốn tiếp nhận hồ sơ này không?')) return false;";
-                                //lbtDisable1.Style.Add("display", "none");
+                                lbtDisable1.Style.Add("display", "none");
                             }
                             else if (TrangThai == (int)TrangThaiHoSo.DangXuLy)
                             {
                                 HyperLink hplYeuCauBoSung = (HyperLink)e.Item.FindControl("hplYeuCauBoSung");
                                 hplYeuCauBoSung.Style.Add("display", "block");
                                 hplYeuCauBoSung.NavigateUrl = additionalLink;
-                                //lbtDisable3.Style.Add("display", "none");
+                                lbtDisable3.Style.Add("display", "none");
 
-                                LinkButton lbtTrinhTruongPhoPQLHT = (LinkButton)e.Item.FindControl("lbtTrinhTruongPhoPQLHT");
-                                lbtTrinhTruongPhoPQLHT.CommandName = "TrinhTruongPhoPhong";
-                                lbtTrinhTruongPhoPQLHT.Style.Add("display", "block");
-                                lbtTrinhTruongPhoPQLHT.CommandArgument = commandAgrument;
-                                lbtTrinhTruongPhoPQLHT.OnClientClick = "if (!confirm('Bạn có chắc chắn muốn trình hồ sơ này không?')) return false;";
-                                //lbtDisable2.Style.Add("display", "none");
+                                //LinkButton lbtTrinhTruongPhoPQLHT = (LinkButton)e.Item.FindControl("lbtTrinhTruongPhoPQLHT");
+                                //lbtTrinhTruongPhoPQLHT.CommandName = "TrinhTruongPhoPhong";
+                                //lbtTrinhTruongPhoPQLHT.Style.Add("display", "block");
+                                //lbtTrinhTruongPhoPQLHT.CommandArgument = commandAgrument;
+                                //lbtTrinhTruongPhoPQLHT.OnClientClick = "if (!confirm('Bạn có chắc chắn muốn trình hồ sơ này không?')) return false;";
+                                HyperLink hplTrinhTruongPhoPQLHT = (HyperLink)e.Item.FindControl("hplTrinhTruongPhoPQLHT");
+                                hplTrinhTruongPhoPQLHT.Style.Add("display", "block");
+                                hplTrinhTruongPhoPQLHT.NavigateUrl = string.Format(redirectLink, (int)RedirectType.TrinhTruongPhoPhong);
+                                lbtDisable2.Style.Add("display", "none");
 
                                 HyperLink hplTuChoiHoSo = (HyperLink)e.Item.FindControl("hplTuChoiHoSo");
                                 hplTuChoiHoSo.Style.Add("display", "block");
                                 hplTuChoiHoSo.NavigateUrl = rejectLink;
-                                //lbtDisable4.Style.Add("display", "none");
+                                lbtDisable4.Style.Add("display", "none");
                             }
                             break;
                         case CapXuLy.LanhDaoSo:
                             if (TrangThai == (int)TrangThaiHoSo.ChoCapPhep)
                             {
-                                LinkButton lbtDuyetHoSo = (LinkButton)e.Item.FindControl("lbtDuyetHoSo");
-                                lbtDuyetHoSo.CommandName = "DuyetCapPhepHoSo";
-                                lbtDuyetHoSo.Style.Add("display", "block");
-                                lbtDuyetHoSo.CommandArgument = commandAgrument;
-                                lbtDuyetHoSo.OnClientClick = "if (!confirm('Bạn có chắc chắn muốn duyệt thuận hồ sơ này không?')) return false;";
-                                //lbtDisable2.Style.Add("display", "none");
+                                //LinkButton lbtDuyetHoSo = (LinkButton)e.Item.FindControl("lbtDuyetHoSo");
+                                //lbtDuyetHoSo.CommandName = "DuyetCapPhepHoSo";
+                                //lbtDuyetHoSo.Style.Add("display", "block");
+                                //lbtDuyetHoSo.CommandArgument = commandAgrument;
+                                //lbtDuyetHoSo.OnClientClick = "if (!confirm('Bạn có chắc chắn muốn duyệt thuận hồ sơ này không?')) return false;";
+                                HyperLink hplDuyetHoSo = (HyperLink)e.Item.FindControl("hplDuyetHoSo");
+                                hplDuyetHoSo.Style.Add("display", "block");
+                                //
+                                lbtDisable2.Style.Add("display", "none");
 
                                 HyperLink hplTuChoiHoSo = (HyperLink)e.Item.FindControl("hplTuChoiHoSo");
                                 hplTuChoiHoSo.Style.Add("display", "block");
                                 hplTuChoiHoSo.NavigateUrl = rejectLink;
-                                //lbtDisable4.Style.Add("display", "none");
+                                lbtDisable4.Style.Add("display", "none");
                             }
                                 break;
                         default:

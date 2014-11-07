@@ -1,0 +1,237 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<List xmlns:ows="Microsoft SharePoint"
+      Title="DeNghiHis"
+      FolderCreation="FALSE"
+      Direction="$Resources:Direction;"
+      Url="Lists/DeNghiHis"
+      BaseType="0"
+      xmlns="http://schemas.microsoft.com/sharepoint/">
+  <MetaData>
+    <ContentTypes>
+
+
+
+
+
+      <ContentType ID="0x010037c2b07fec16482191bf9bba5658d525"
+                   Name="Lịch sử Đề nghị Content Type"
+                   Group="[LA-DVC]"
+                   Description=""
+                   Hidden="TRUE"
+                   Inherits="TRUE"
+                   Version="0">
+        <FieldRefs>
+
+
+
+
+
+
+
+          <FieldRef ID="{fa564e0f-0c70-4ab9-b863-0177e6ddd247}"
+                    Name="Title" />
+          <FieldRef ID="{713CEB2E-2D14-4FDF-BA98-DAABFA61C504}"
+                    Name="DeNghi" />
+          <FieldRef ID="{F4C8152D-658E-4D29-BD77-C763F8666769}"
+                    Name="NgayXuLy" />
+          <FieldRef ID="{DCE52DE5-3D14-4D27-81DE-B558D0385836}"
+                    Name="NguoiXuLy" />
+          <FieldRef ID="{b842c40f-47b4-40de-8686-74fdac050dd3}"
+                    Name="MoTa" />
+          <FieldRef ID="{476b93d1-3dc6-48ec-8706-bc7f826f5d40}"
+                    Name="BuocDuyet" />
+          <FieldRef ID="{a5ed0888-aabc-4481-8a19-42df290efd2e}"
+                    Name="TrangThai" />
+        </FieldRefs>
+      </ContentType>
+      
+    </ContentTypes>
+    <Fields>
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <Field ID="{fa564e0f-0c70-4ab9-b863-0177e6ddd247}"
+             Type="Text"
+             Name="Title"
+             DisplayName="Biên nhận"
+             Required="TRUE"
+             SourceID="http://schemas.microsoft.com/sharepoint/v3"
+             StaticName="Title"
+             MaxLength="255" />
+      <Field Type="Lookup"
+             ID="{713CEB2E-2D14-4FDF-BA98-DAABFA61C504}"
+             Name="DeNghi"
+             StaticName="DeNghi"
+             DisplayName="Đề nghị"
+             Required="FALSE"
+             EnforceUniqueValues="FALSE"
+             List="Lists/DeNghi"
+             ShowField="Title"
+             UnlimitedLengthInDocumentLibrary="FALSE"
+             RelationshipDeleteBehavior="None"
+             Group="[LA-DVC]" />
+      <Field Type="DateTime"
+             ID="{F4C8152D-658E-4D29-BD77-C763F8666769}"
+             Name="NgayXuLy"
+             StaticName="NgayXuLy"
+             DisplayName="Ngày xử lý"
+             Required="FALSE"
+             EnforceUniqueValues="FALSE"
+             Indexed="FALSE"
+             Format="DateTime"
+             FriendlyDisplayFormat="Disabled"
+             Group="[LA-DVC]">
+      </Field>
+      <Field Type="User"
+             ID="{DCE52DE5-3D14-4D27-81DE-B558D0385836}"
+             Name="NguoiXuLy"
+             StaticName="NguoiXuLy"
+             DisplayName="Người xử lý"
+             List="UserInfo"
+             Required="FALSE"
+             EnforceUniqueValues="FALSE"
+             ShowField="ImnName"
+             UserSelectionMode="PeopleOnly"
+             UserSelectionScope="0"
+             Group="[LA-DVC]" />
+      <Field Type="Note"
+             ID="{b842c40f-47b4-40de-8686-74fdac050dd3}"
+             Name="MoTa"
+             StaticName="MoTa"
+             DisplayName="Mô tả" />
+      <Field Type="Lookup"
+             ID="{476b93d1-3dc6-48ec-8706-bc7f826f5d40}"
+             StaticName="BuocDuyet"
+             Name="BuocDuyet"
+             DisplayName="Bước duyệt"
+             Required="FALSE"
+             EnforceUniqueValues="FALSE"
+             List="Lists/CauHinh"
+             ShowField="Title"
+             UnlimitedLengthInDocumentLibrary="FALSE"
+             RelationshipDeleteBehavior="None"
+             Group="[LA-DVC]" />
+      <Field Type="Lookup"
+             ID="{a5ed0888-aabc-4481-8a19-42df290efd2e}"
+             StaticName="TrangThai"
+             Name="TrangThai"
+             DisplayName="Trạng thái"
+             Required="TRUE"
+             EnforceUniqueValues="FALSE"
+             List="Lists/TrangThai"
+             ShowField="Title"
+             UnlimitedLengthInDocumentLibrary="FALSE"
+             RelationshipDeleteBehavior="None"
+             Group="[LA-DVC]" />
+    </Fields>
+    <Views>
+
+
+
+
+      <View BaseViewID="0"
+            Type="HTML"
+            MobileView="TRUE"
+            TabularView="FALSE">
+        <Toolbar Type="Standard" />
+        <XslLink Default="TRUE">main.xsl</XslLink>
+        <RowLimit Paged="TRUE">30</RowLimit>
+        <ViewFields>
+
+
+          <FieldRef Name="LinkTitleNoMenu"></FieldRef>
+        </ViewFields>
+        <Query>
+          <OrderBy>
+
+
+            <FieldRef Name="Modified"
+                      Ascending="FALSE"></FieldRef>
+          </OrderBy>
+        </Query>
+        <ParameterBindings>
+          <ParameterBinding Name="AddNewAnnouncement"
+                            Location="Resource(wss,addnewitem)" />
+          <ParameterBinding Name="NoAnnouncements"
+                            Location="Resource(wss,noXinviewofY_LIST)" />
+          <ParameterBinding Name="NoAnnouncementsHowTo"
+                            Location="Resource(wss,noXinviewofY_ONET_HOME)" />
+        </ParameterBindings>
+      </View>
+      <View BaseViewID="1"
+            Type="HTML"
+            WebPartZoneID="Main"
+            DisplayName="$Resources:core,objectiv_schema_mwsidcamlidC24;"
+            DefaultView="TRUE"
+            MobileView="TRUE"
+            MobileDefaultView="TRUE"
+            SetupPath="pages\viewpage.aspx"
+            ImageUrl="/_layouts/15/images/generic.png?rev=23"
+            Url="AllItems.aspx">
+        <Toolbar Type="Standard" />
+        <XslLink Default="TRUE">main.xsl</XslLink>
+        <JSLink>clienttemplates.js</JSLink>
+        <RowLimit Paged="TRUE">30</RowLimit>
+        <ViewFields>
+
+
+
+
+
+
+
+
+          <FieldRef Name="LinkTitle"></FieldRef>
+          <FieldRef Name="DeNghi" />
+          <FieldRef Name="NgayXuLy" />
+          <FieldRef Name="NguoiXuLy" />
+          <FieldRef Name="MoTa" />
+          <FieldRef Name="CapDuyet1" />
+          <FieldRef Name="TrangThai1" />
+        </ViewFields>
+        <Query>
+          <GroupBy>
+
+
+            <FieldRef Name="DeNghi"></FieldRef>
+          </GroupBy>
+          <OrderBy>
+
+
+            <FieldRef Name="ID"></FieldRef>
+          </OrderBy>
+        </Query>
+        <ParameterBindings>
+          <ParameterBinding Name="NoAnnouncements"
+                            Location="Resource(wss,noXinviewofY_LIST)" />
+          <ParameterBinding Name="NoAnnouncementsHowTo"
+                            Location="Resource(wss,noXinviewofY_DEFAULT)" />
+        </ParameterBindings>
+      </View>
+    </Views>
+    <Forms>
+      <Form Type="DisplayForm"
+            Url="DispForm.aspx"
+            SetupPath="pages\form.aspx"
+            WebPartZoneID="Main" />
+      <Form Type="EditForm"
+            Url="EditForm.aspx"
+            SetupPath="pages\form.aspx"
+            WebPartZoneID="Main" />
+      <Form Type="NewForm"
+            Url="NewForm.aspx"
+            SetupPath="pages\form.aspx"
+            WebPartZoneID="Main" />
+    </Forms>
+  </MetaData>
+</List>

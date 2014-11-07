@@ -1,0 +1,16 @@
+.button.large-button.waiting-approval {
+  background-image: url(../images/sign.png);
+}
+.button.large-button.approval {
+  background-image: url(../images/approval.png);
+}
+.button.large-button.waiting-edit {
+  background-image: url(../images/add118.png);
+}
+.button.large-button.add-finish {
+  background-image: url(../images/add100.png);
+}
+
+.button.large-button.none-finish {
+  background-image: url(../images/denied.png);
+}

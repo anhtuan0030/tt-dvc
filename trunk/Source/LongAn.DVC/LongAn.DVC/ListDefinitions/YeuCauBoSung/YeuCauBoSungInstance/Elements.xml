@@ -1,4 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Elements xmlns="http://schemas.microsoft.com/sharepoint/">
-  <ListInstance Title="Yêu cầu bổ sung" OnQuickLaunch="TRUE" TemplateType="10003" Url="Lists/YeuCauBoSung" Description="Yêu cầu bổ sung List Instance"></ListInstance>
+  <ListInstance Title="Yêu cầu bổ sung"
+                OnQuickLaunch="TRUE"
+                TemplateType="10003"
+                Url="Lists/YeuCauBoSung"
+                Description="Yêu cầu bổ sung"></ListInstance>
 </Elements>
