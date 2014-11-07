@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <ListInstance Title="Đề nghị cấp phép xe quá tải, quá khổ"
+                OnQuickLaunch="FALSE"
+                TemplateType="10001"
+                Url="Lists/DeNghi"
+                Description=""
+                Hidden="FALSE"></ListInstance>
+</Elements>

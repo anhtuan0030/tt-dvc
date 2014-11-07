@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <ListInstance Title="Trạng thái" 
+                OnQuickLaunch="TRUE" 
+                TemplateType="10006" 
+                Url="Lists/TrangThai" 
+                Description="Trạng thái">
+    
+  </ListInstance>
+</Elements>

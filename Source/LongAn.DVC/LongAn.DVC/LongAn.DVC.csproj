@@ -14,7 +14,7 @@
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{C1CDDADD-2546-481F-9697-4EA41081F2FC};{14822709-B5A1-4724-98CA-57A101D1B079};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <SandboxedSolution>False</SandboxedSolution>
-    <ActiveDeploymentConfiguration>Upgrade Solution %28CKSDev%29</ActiveDeploymentConfiguration>
+    <ActiveDeploymentConfiguration>Default</ActiveDeploymentConfiguration>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -123,12 +123,26 @@
     </Compile>
     <Compile Include="Helpers\DeNghiArgument.cs" />
     <Compile Include="Helpers\DeNghiHelper.cs" />
+    <Compile Include="Layouts\LongAn.DVC\DeNghiAppPage.aspx.cs">
+      <DependentUpon>DeNghiAppPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Layouts\LongAn.DVC\DeNghiAppPage.aspx.designer.cs">
+      <DependentUpon>DeNghiAppPage.aspx.cs</DependentUpon>
+    </Compile>
     <Compile Include="Layouts\LongAn.DVC\DeNghiEditForm.aspx.cs">
       <DependentUpon>DeNghiEditForm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Layouts\LongAn.DVC\DeNghiEditForm.aspx.designer.cs">
       <DependentUpon>DeNghiEditForm.aspx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layouts\LongAn.DVC\DuyetHoSo.aspx.cs">
+      <DependentUpon>DuyetHoSo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Layouts\LongAn.DVC\DuyetHoSo.aspx.designer.cs">
+      <DependentUpon>DuyetHoSo.aspx.cs</DependentUpon>
     </Compile>
     <Compile Include="Layouts\LongAn.DVC\PhanCongHoSo.aspx.cs">
       <DependentUpon>PhanCongHoSo.aspx</DependentUpon>
@@ -159,6 +173,14 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DeNghiHistory.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebParts\DeNghiListViewTotal\DeNghiListViewTotal.cs" />
+    <Compile Include="WebParts\DeNghiListViewTotal\DeNghiListViewTotalUserControl.ascx.cs">
+      <DependentUpon>DeNghiListViewTotalUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebParts\DeNghiListViewTotal\DeNghiListViewTotalUserControl.ascx.designer.cs">
+      <DependentUpon>DeNghiListViewTotalUserControl.ascx.cs</DependentUpon>
     </Compile>
     <Compile Include="WebParts\DeNghiListViewUsers\DeNghiListViewUsers.ascx.cs">
       <DependentUpon>DeNghiListViewUsers.ascx</DependentUpon>
@@ -202,14 +224,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="ContentTypes\DeNghiCapPhepXeContentType\SharePointProjectItem.spdata">
-      <SharePointProjectItemId>{c3b9f414-0818-40f5-85cd-04a0bc5cdaa4}</SharePointProjectItemId>
-    </None>
-    <None Include="ContentTypes\SiteColumn\SharePointProjectItem.spdata">
+    <None Include="Fields\SiteColumn\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{aa3ce8fd-b1c6-4cd8-8fce-eca431dba944}</SharePointProjectItemId>
-    </None>
-    <None Include="ContentTypes\YeuCauBoSungContentType\SharePointProjectItem.spdata">
-      <SharePointProjectItemId>{46abb5d8-ea14-4b1e-821c-492d10b59ba8}</SharePointProjectItemId>
     </None>
     <None Include="ControlTemplates\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{f8fd9a64-c763-4233-8b90-24407d721b2c}</SharePointProjectItemId>
@@ -226,11 +242,26 @@
     <None Include="key.snk" />
     <Content Include="ControlTemplates\LongAn.DVC\ucCustomTopMenuDVCByUserPermission.ascx" />
     <Content Include="ControlTemplates\LongAn.DVC\ucUserAuthenticationBox.ascx" />
+    <Content Include="Layouts\LongAn.DVC.Form\css\main1.css" />
+    <Content Include="Layouts\LongAn.DVC.Form\images\add100.png" />
+    <Content Include="Layouts\LongAn.DVC.Form\images\add118.png" />
+    <Content Include="Layouts\LongAn.DVC.Form\images\add180.png" />
+    <Content Include="Layouts\LongAn.DVC.Form\images\approval.png" />
+    <Content Include="Layouts\LongAn.DVC.Form\images\check.png" />
+    <Content Include="Layouts\LongAn.DVC.Form\images\denied.png" />
+    <Content Include="Layouts\LongAn.DVC.Form\images\rejected-2.png" />
+    <Content Include="Layouts\LongAn.DVC.Form\images\send-to-manager.png" />
+    <Content Include="Layouts\LongAn.DVC.Form\images\sent-to-manager.png" />
+    <Content Include="Layouts\LongAn.DVC.Form\images\sign.png" />
+    <Content Include="Layouts\LongAn.DVC.Form\images\wait-add.png" />
     <Content Include="Layouts\LongAn.DVC\css\jquery.qtip.min.css" />
+    <Content Include="Layouts\LongAn.DVC\DeNghiAppPage.aspx" />
+    <Content Include="Layouts\LongAn.DVC\DuyetHoSo.aspx" />
     <Content Include="Layouts\LongAn.DVC\ExcelTemplates\BaoCaoCapPhepLuuHanhXe.xls" />
     <None Include="Layouts\LongAn.DVC.Form\css\form.main.less" />
     <None Include="Layouts\LongAn.DVC.Form\css\forms.less" />
     <None Include="Layouts\LongAn.DVC.Form\css\main.less" />
+    <None Include="Layouts\LongAn.DVC.Form\images\banner-1" />
     <None Include="Layouts\LongAn.DVC.Form\js\.DS_Store" />
     <None Include="Layouts\LongAn.DVC.Form\js\detectizr.min.map" />
     <None Include="Layouts\LongAn.DVC\css\bootstrap-theme.css.map" />
@@ -238,6 +269,7 @@
     <None Include="Layouts\LongAn.DVC\fonts\glyphicons-halflings-regular.eot" />
     <None Include="Layouts\LongAn.DVC\fonts\glyphicons-halflings-regular.ttf" />
     <None Include="Layouts\LongAn.DVC\fonts\glyphicons-halflings-regular.woff" />
+    <None Include="Layouts\LongAn.DVC\images\.DS_Store" />
     <None Include="Layouts\LongAn.DVC\js\detectizr.min.map" />
     <Content Include="Features\LongAn.DVC.Site.Pages\LongAn.DVC.Site.Pages.Template.xml">
       <DependentUpon>LongAn.DVC.Site.Pages.feature</DependentUpon>
@@ -298,7 +330,29 @@
     <Content Include="Layouts\LongAn.DVC.Form\images\word.png" />
     <Content Include="Layouts\LongAn.DVC.Form\images\_banner.png" />
     <Content Include="Layouts\LongAn.DVC.Form\images\_index_logo.png" />
+    <Content Include="Layouts\LongAn.DVC\images\add100.png" />
+    <Content Include="Layouts\LongAn.DVC\images\add118.png" />
+    <Content Include="Layouts\LongAn.DVC\images\add180.png" />
+    <Content Include="Layouts\LongAn.DVC\images\approval.png" />
     <Content Include="Layouts\LongAn.DVC\images\banner-1.png" />
+    <Content Include="Layouts\LongAn.DVC\images\check.png" />
+    <Content Include="Layouts\LongAn.DVC\images\denied.png" />
+    <Content Include="Layouts\LongAn.DVC\images\down53.png" />
+    <Content Include="Layouts\LongAn.DVC\images\expand-down.png" />
+    <Content Include="Layouts\LongAn.DVC\images\expand-up.png" />
+    <Content Include="Layouts\LongAn.DVC\images\rejected-2.png" />
+    <Content Include="Layouts\LongAn.DVC\images\rejected.png" />
+    <Content Include="Layouts\LongAn.DVC\images\send-to-manager.png" />
+    <Content Include="Layouts\LongAn.DVC\images\sent-to-manager.png" />
+    <Content Include="Layouts\LongAn.DVC\images\shadow.png" />
+    <Content Include="Layouts\LongAn.DVC\images\shadow_01.png" />
+    <Content Include="Layouts\LongAn.DVC\images\sign.png" />
+    <Content Include="Layouts\LongAn.DVC\images\top-banner-2-lines.png" />
+    <Content Include="Layouts\LongAn.DVC\images\top-banner.jpg" />
+    <Content Include="Layouts\LongAn.DVC\images\top-banner.png" />
+    <Content Include="Layouts\LongAn.DVC\images\wait-add.png" />
+    <Content Include="Layouts\LongAn.DVC\images\_banner.png" />
+    <Content Include="Layouts\LongAn.DVC\images\_index_logo.png" />
     <Content Include="Layouts\LongAn.DVC\js\jquery.qtip.min.js" />
     <Content Include="Layouts\LongAn.DVC\js\jquery.scrollTo.min.js" />
     <Content Include="Layouts\LongAn.DVC\lic\Aspose.Cells.lic" />
@@ -308,35 +362,47 @@
     <None Include="Layouts\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{63f3bd6e-81ab-4ca6-9ff1-2a04a2c99eb3}</SharePointProjectItemId>
     </None>
-    <None Include="ListDefinitions\DeNghiAttachment\DeNghiAttachmentInstance\SharePointProjectItem.spdata">
-      <SharePointProjectItemId>{707aa773-7d0f-43e0-b8c4-0cfc5c7db66a}</SharePointProjectItemId>
+    <None Include="ListDefinitions\CauHinh\CauHinhInstance\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{4cb6494a-9be1-4311-b968-2c9023610db1}</SharePointProjectItemId>
     </None>
-    <None Include="ListDefinitions\DeNghiAttachment\SharePointProjectItem.spdata">
-      <SharePointProjectItemId>{503de2b7-c77a-4a73-b92c-d8be298f9fe1}</SharePointProjectItemId>
+    <None Include="ListDefinitions\CauHinh\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{de307513-03dd-4bc6-b9a4-a730fc066ca3}</SharePointProjectItemId>
     </None>
-    <None Include="ListDefinitions\DeNghiCapPhepXe\DeNghiCapPhepXeInstance\SharePointProjectItem.spdata">
-      <SharePointProjectItemId>{c369409a-1c8e-45e6-be4c-f240a3810690}</SharePointProjectItemId>
+    <None Include="ListDefinitions\Attachment\AttachmentInstance\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{6063c3fd-9a5d-488e-9da8-bb5f8b47f1d4}</SharePointProjectItemId>
     </None>
-    <None Include="ListDefinitions\DeNghiCapPhepXe\SharePointProjectItem.spdata">
-      <SharePointProjectItemId>{f03876fc-47a0-4348-8677-e3e4e6d63cc3}</SharePointProjectItemId>
+    <None Include="ListDefinitions\Attachment\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{100fa2a1-cba8-4777-9f34-2d9f419f4d3e}</SharePointProjectItemId>
     </None>
-    <None Include="ListDefinitions\LichSuCapPhep\LichSuCapPhepInstance\SharePointProjectItem.spdata">
-      <SharePointProjectItemId>{60edbddb-e71e-4ecd-ac86-a1f8d619c891}</SharePointProjectItemId>
+    <None Include="ListDefinitions\DeNghi\DeNghiInstance\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{398f7c44-9623-4bee-a61f-551505e5a768}</SharePointProjectItemId>
     </None>
-    <None Include="ListDefinitions\LichSuCapPhep\SharePointProjectItem.spdata">
-      <SharePointProjectItemId>{51c8c980-d9d0-4a5b-b023-ed046f577d19}</SharePointProjectItemId>
+    <None Include="ListDefinitions\DeNghi\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{5ed7182b-41a4-4526-8a5e-37640a318c8b}</SharePointProjectItemId>
+    </None>
+    <None Include="ListDefinitions\DeNghiHis\DeNghiHisInstance\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{87e1710c-a397-4a24-a855-6b50454c6ac8}</SharePointProjectItemId>
+    </None>
+    <None Include="ListDefinitions\DeNghiHis\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{7fe172e9-32bc-4097-a1c6-2c7498e8f0ca}</SharePointProjectItemId>
     </None>
     <None Include="ListDefinitions\LoaiDeNghi\LoaiDeNghiInstance\SharePointProjectItem.spdata">
-      <SharePointProjectItemId>{b48085af-82ce-471d-8708-d16737acfcac}</SharePointProjectItemId>
+      <SharePointProjectItemId>{6f72a85a-cad5-4d0a-8ed8-c2e09d47a3ef}</SharePointProjectItemId>
     </None>
     <None Include="ListDefinitions\LoaiDeNghi\SharePointProjectItem.spdata">
-      <SharePointProjectItemId>{9ce200e1-fba0-4b3c-87e2-817e8bb86ab2}</SharePointProjectItemId>
+      <SharePointProjectItemId>{f68eb442-0fa2-44ed-935e-732f1cf9b901}</SharePointProjectItemId>
+    </None>
+    <None Include="ListDefinitions\TrangThai\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{e1ac68d3-08a5-4d4f-8b5b-34c5b55cdfea}</SharePointProjectItemId>
+    </None>
+    <None Include="ListDefinitions\TrangThai\TrangThaiInstance\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{c45a0792-e4ee-49df-a73a-3c05a1182ed8}</SharePointProjectItemId>
     </None>
     <None Include="ListDefinitions\YeuCauBoSung\SharePointProjectItem.spdata">
-      <SharePointProjectItemId>{acc44392-b23d-411d-a80a-da2051184a42}</SharePointProjectItemId>
+      <SharePointProjectItemId>{125e0834-2654-4d01-850c-2e4cbffb211a}</SharePointProjectItemId>
     </None>
     <None Include="ListDefinitions\YeuCauBoSung\YeuCauBoSungInstance\SharePointProjectItem.spdata">
-      <SharePointProjectItemId>{5228ca2a-7bf2-4b98-9516-32bf1fbb443d}</SharePointProjectItemId>
+      <SharePointProjectItemId>{602eba2d-bdb8-45e0-b397-6833794d7f97}</SharePointProjectItemId>
     </None>
     <None Include="Modules\DelegateControlsElements\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{2e453db1-500c-4568-b73d-9de530082008}</SharePointProjectItemId>
@@ -362,6 +428,10 @@
     </None>
     <None Include="WebParts\DeNghiHistory\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{79ec7411-b4f6-443f-9ac7-a66e2bd5e8f9}</SharePointProjectItemId>
+    </None>
+    <None Include="WebParts\DeNghiListViewTotal\DeNghiListViewTotal.webpart" />
+    <None Include="WebParts\DeNghiListViewTotal\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{a1190ef5-4e1a-45b4-b3f0-da0188c7caed}</SharePointProjectItemId>
     </None>
     <None Include="WebParts\DeNghiListViewUsers\DeNghiListViewUsers.webpart" />
     <None Include="WebParts\DeNghiListViewUsers\SharePointProjectItem.spdata">
@@ -393,11 +463,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ContentTypes\DeNghiCapPhepXeContentType\Elements.xml">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="ContentTypes\SiteColumn\Elements.xml" />
-    <Content Include="ContentTypes\YeuCauBoSungContentType\Elements.xml" />
+    <Content Include="Fields\SiteColumn\Elements.xml" />
     <Content Include="ControlTemplates\LADVCTemplate.ascx" />
     <Content Include="ControlTemplates\LongAn.DVC\DeNghiCapPhepXeDispForm.ascx" />
     <Content Include="ControlTemplates\LongAn.DVC\DeNghiCapPhepXeEditForm.ascx" />
@@ -469,9 +535,31 @@
     <Content Include="Libs\Aspose.Cells.dll" />
     <Content Include="Libs\Aspose.Cells.GridDesktop.dll" />
     <Content Include="Libs\Aspose.Words.dll" />
-    <Content Include="ListDefinitions\LichSuCapPhep\Elements.xml" />
-    <Content Include="ListDefinitions\LichSuCapPhep\LichSuCapPhepInstance\Elements.xml" />
-    <Content Include="ListDefinitions\LichSuCapPhep\Schema.xml" />
+    <Content Include="ListDefinitions\CauHinh\CauHinhInstance\Elements.xml" />
+    <Content Include="ListDefinitions\CauHinh\Elements.xml" />
+    <Content Include="ListDefinitions\CauHinh\Schema.xml" />
+    <Content Include="ListDefinitions\Attachment\AttachmentInstance\Elements.xml" />
+    <Content Include="ListDefinitions\Attachment\EditDlg.htm" />
+    <Content Include="ListDefinitions\Attachment\Elements.xml" />
+    <Content Include="ListDefinitions\Attachment\FileDlg.htm" />
+    <Content Include="ListDefinitions\Attachment\Repair.aspx" />
+    <Content Include="ListDefinitions\Attachment\Schema.xml" />
+    <Content Include="ListDefinitions\Attachment\Upload.aspx" />
+    <Content Include="ListDefinitions\DeNghi\DeNghiInstance\Elements.xml" />
+    <Content Include="ListDefinitions\DeNghi\Elements.xml" />
+    <Content Include="ListDefinitions\DeNghi\Schema.xml" />
+    <Content Include="ListDefinitions\DeNghiHis\Elements.xml" />
+    <Content Include="ListDefinitions\DeNghiHis\DeNghiHisInstance\Elements.xml" />
+    <Content Include="ListDefinitions\DeNghiHis\Schema.xml" />
+    <Content Include="ListDefinitions\LoaiDeNghi\Elements.xml" />
+    <Content Include="ListDefinitions\LoaiDeNghi\LoaiDeNghiInstance\Elements.xml" />
+    <Content Include="ListDefinitions\LoaiDeNghi\Schema.xml" />
+    <Content Include="ListDefinitions\TrangThai\Elements.xml" />
+    <Content Include="ListDefinitions\TrangThai\Schema.xml" />
+    <Content Include="ListDefinitions\TrangThai\TrangThaiInstance\Elements.xml" />
+    <Content Include="ListDefinitions\YeuCauBoSung\Elements.xml" />
+    <Content Include="ListDefinitions\YeuCauBoSung\Schema.xml" />
+    <Content Include="ListDefinitions\YeuCauBoSung\YeuCauBoSungInstance\Elements.xml" />
     <Content Include="Modules\DelegateControlsElements\Elements.xml" />
     <Content Include="Modules\DVCPages\Homepage.aspx" />
     <Content Include="Layouts\LongAn.DVC\images\add-file.png" />
@@ -531,22 +619,6 @@
     <Content Include="Layouts\LongAn.DVC\PhanCongHoSo.aspx" />
     <Content Include="Layouts\LongAn.DVC\js\superfish.js" />
     <Content Include="Libs\Camlex.NET.dll" />
-    <Content Include="ListDefinitions\DeNghiAttachment\DeNghiAttachmentInstance\Elements.xml" />
-    <Content Include="ListDefinitions\DeNghiAttachment\EditDlg.htm" />
-    <Content Include="ListDefinitions\DeNghiAttachment\Elements.xml" />
-    <Content Include="ListDefinitions\DeNghiAttachment\FileDlg.htm" />
-    <Content Include="ListDefinitions\DeNghiAttachment\Repair.aspx" />
-    <Content Include="ListDefinitions\DeNghiAttachment\Schema.xml" />
-    <Content Include="ListDefinitions\DeNghiAttachment\Upload.aspx" />
-    <Content Include="ListDefinitions\DeNghiCapPhepXe\DeNghiCapPhepXeInstance\Elements.xml" />
-    <Content Include="ListDefinitions\DeNghiCapPhepXe\Elements.xml" />
-    <Content Include="ListDefinitions\DeNghiCapPhepXe\Schema.xml" />
-    <Content Include="ListDefinitions\LoaiDeNghi\Elements.xml" />
-    <Content Include="ListDefinitions\LoaiDeNghi\LoaiDeNghiInstance\Elements.xml" />
-    <Content Include="ListDefinitions\LoaiDeNghi\Schema.xml" />
-    <Content Include="ListDefinitions\YeuCauBoSung\Elements.xml" />
-    <Content Include="ListDefinitions\YeuCauBoSung\Schema.xml" />
-    <Content Include="ListDefinitions\YeuCauBoSung\YeuCauBoSungInstance\Elements.xml" />
     <Content Include="Modules\DVCMasterPage\Elements.xml">
       <SubType>Designer</SubType>
     </Content>
@@ -562,6 +634,8 @@
       <LastGenOutput>DeNghiHistory.ascx.g.cs</LastGenOutput>
     </Content>
     <Content Include="WebParts\DeNghiHistory\Elements.xml" />
+    <Content Include="WebParts\DeNghiListViewTotal\DeNghiListViewTotalUserControl.ascx" />
+    <Content Include="WebParts\DeNghiListViewTotal\Elements.xml" />
     <Content Include="WebParts\DeNghiListViewUsers\DeNghiListViewUsers.ascx">
       <Generator>SharePointWebPartCodeGenerator</Generator>
       <LastGenOutput>DeNghiListViewUsers.ascx.g.cs</LastGenOutput>

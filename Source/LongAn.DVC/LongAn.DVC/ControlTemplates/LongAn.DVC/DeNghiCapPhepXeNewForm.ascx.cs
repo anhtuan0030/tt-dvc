@@ -26,7 +26,7 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
             btnSave.Click += btnSave_Click;
             btnGuiHoSo.Click += btnGuiHoSo_Click;
             btnCancel.Click += btnCancel_Click;
-            SPContext.Current.FormContext.OnSaveHandler += new EventHandler(DeNghiSaveHandler);
+            //SPContext.Current.FormContext.OnSaveHandler += new EventHandler(DeNghiSaveHandler);
         }
 
         void btnCancel_Click(object sender, EventArgs e)
@@ -74,10 +74,9 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
             //Set default value
             string deNghiGuid = Guid.NewGuid().ToString();
             SPContext.Current.ListItem[Constants.FieldDeNghiGUID] = deNghiGuid;
-            SPContext.Current.ListItem[Constants.FieldTrangThai] = (int)trangThai;
-            if(trangThai == TrangThaiHoSo.ChoTiepNhan)
-                SPContext.Current.ListItem[Constants.FieldNgayNopHoSo] = DateTime.Now;
-            SPContext.Current.ListItem[Constants.FieldCapDuyet] = (int)capXuLy;
+            
+            SPContext.Current.ListItem[Constants.FieldNgayNopHoSo] = DateTime.Now;
+            
             SPContext.Current.ListItem[Constants.FieldNguoiDeNghi] = SPContext.Current.Web.CurrentUser;
             SaveButton.SaveItem(SPContext.Current, false, "Thêm mới / gửi đề nghị");
             var deNghiList = SPContext.Current.List;
@@ -111,10 +110,6 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
             if (redirectUrl == null || string.IsNullOrEmpty(redirectUrl.ToString()))
                 redirectUrl = "/";
             longOperation.End(redirectUrl, Microsoft.SharePoint.Utilities.SPRedirectFlags.DoNotEndResponse, HttpContext.Current, "");
-            //Close popup
-            //DeNghiHelper.ClosePopup(this.Page);
         }
-
-        
     }
 }

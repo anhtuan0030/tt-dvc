@@ -111,6 +111,7 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
                     }
                     break;
                 #endregion MotCua
+
                 #region TruongPhoPhong
                 case CapXuLy.TruongPhoPhong:
                     if (currentStatus == (int)TrangThaiHoSo.ChoDuyet)
@@ -132,6 +133,7 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
                     }
                     break;
                 #endregion TruongPhoPhong
+
                 #region CanBo
                 case CapXuLy.CanBo:
                     if (currentStatus == (int)TrangThaiHoSo.ChoXuLy)
@@ -160,6 +162,7 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
                     }
                     break;
                 #endregion CanBo
+
                 #region LanhDaoSo
                 case CapXuLy.LanhDaoSo:
                     if (currentStatus == (int)TrangThaiHoSo.ChoCapPhep)
@@ -175,6 +178,7 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
                     }
                     break;
                 #endregion LanhDaoSo
+
                 default:
                     btnPrint.Visible = true;
                     btnPrint.Click += btnPrint_Click;

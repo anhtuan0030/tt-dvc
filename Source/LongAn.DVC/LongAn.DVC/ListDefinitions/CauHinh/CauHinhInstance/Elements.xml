@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <ListInstance Title="Cấu hình duyệt đề nghị"
+                OnQuickLaunch="TRUE"
+                TemplateType="10005"
+                Url="Lists/CauHinh"
+                Description=""></ListInstance>
+</Elements>

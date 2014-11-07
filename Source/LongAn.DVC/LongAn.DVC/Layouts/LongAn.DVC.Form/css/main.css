@@ -542,6 +542,11 @@ a:hover {
 .button.large-button.waiting {
   background-image: url(../images/waiting.png);
 }
+
+.button.large-button.waiting-add {
+  background-image: url(../images/wait-add.png);
+}
+
 .button.large-button.done {
   background-image: url(../images/done.png);
 }
