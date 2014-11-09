@@ -21,7 +21,7 @@
           <FieldRef ID="{fa564e0f-0c70-4ab9-b863-0177e6ddd247}"
                     Name="Title" />
           <FieldRef ID="{51d94c36-72e9-4916-9b04-3275b317e8fb}"
-                    Name="TenTinhTrang" />
+                    Name="TenTrangThai" />
           <FieldRef ID="{b842c40f-47b4-40de-8686-74fdac050dd3}"
                     Name="MoTa" />
         </FieldRefs>
@@ -41,12 +41,12 @@
              SourceID="http://schemas.microsoft.com/sharepoint/v3"
              StaticName="Title"
              MaxLength="255" />
-      <Field Name="TenTinhTrang"
+      <Field Name="TenTrangThai"
              ID="{51d94c36-72e9-4916-9b04-3275b317e8fb}"
-             DisplayName="Tên tình trạng"
+             DisplayName="Tên trạng thái"
              Type="Text"
              Required="TRUE"
-             Group="DVC" />
+              Group="[LA-DVC]"  />
       <Field Name="MoTa"
              StaticName="MoTa"
              ID="{b842c40f-47b4-40de-8686-74fdac050dd3}"
@@ -100,7 +100,7 @@
         <ViewFields>
 
           <FieldRef Name="LinkTitle"></FieldRef>
-          <FieldRef Name="TenTinhTrang" />
+          <FieldRef Name="TenTrangThai" />
           <FieldRef Name="GhiChu" />
         </ViewFields>
         <Query>
