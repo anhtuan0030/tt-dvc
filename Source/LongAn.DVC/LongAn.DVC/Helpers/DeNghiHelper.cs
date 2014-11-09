@@ -185,29 +185,53 @@ namespace LongAn.DVC.Helpers
             }
             LoggingServices.LogMessage("End LoadAttachments: ItemId: " + itemId + ", type: " + type);
         }
-        public static CapXuLy CurrentUserRole(SPWeb spWeb, SPUser user)
+
+        public static CauHinh GetCauHinh(int buocDuyetID)
         {
-            CapXuLy result = CapXuLy.CaNhanToChuc;
+            CauHinh cauHinh = new CauHinh();
             try
             {
+                LoggingServices.LogMessage("Begin funtion GetCauHinh, BuocDuyet: " + buocDuyetID);
                 SPSecurity.RunWithElevatedPrivileges(delegate()
                 {
-                    using (SPSite site = new SPSite(spWeb.Site.ID))
+                    using (SPSite site = new SPSite(SPContext.Current.Site.ID))
                     {
-                        using (SPWeb web = site.OpenWeb(spWeb.ID))
+                        using (SPWeb web = site.OpenWeb(SPContext.Current.Web.ID))
                         {
-                            var groupNhanVienTiepNhan = web.SiteGroups[Constants.ConfGroupNhanVienTiepNhan];
-                            var groupCanBoXuLy = web.SiteGroups[Constants.ConfGroupCanBoXuLy];
-                            var groupTruongPhoPhong = web.SiteGroups[Constants.ConfGroupTruongPhoPhong];
-                            var groupLanhDaoSo = web.SiteGroups[Constants.ConfGroupLanhDaoSo];
-                            if (user.InGroup(groupNhanVienTiepNhan))
-                                result = CapXuLy.MotCua;
-                            else if (user.InGroup(groupCanBoXuLy))
-                                result = CapXuLy.CanBo;
-                            else if (user.InGroup(groupTruongPhoPhong))
-                                result = CapXuLy.TruongPhoPhong;
-                            else if (user.InGroup(groupLanhDaoSo))
-                                result = CapXuLy.LanhDaoSo;
+                            var cauHinhList = web.GetList((web.ServerRelativeUrl + Constants.ListUrlCauHinh).Replace("//", "/"));
+                            var cauHinhItem = cauHinhList.GetItemById(buocDuyetID);
+                            if (cauHinhItem != null)
+                            {
+                                cauHinh.BuocDuyet = cauHinhItem[Fields.Title].ToString();
+                                var spGroupLookup = new SPFieldLookupValue(cauHinhItem[Fields.SPGroup].ToString());
+                                cauHinh.SPGroup = web.SiteGroups.GetByID(spGroupLookup.LookupId);
+                                cauHinh.CapDuyetText = cauHinhItem[Fields.CapDuyetText].ToString();
+                                var trangThaiLookup = new SPFieldLookupValue(cauHinhItem[Fields.TrangThai].ToString());
+                                cauHinh.TrangThai = trangThaiLookup.LookupId;
+                                cauHinh.IsFix = bool.Parse(cauHinhItem[Fields.IsFix].ToString());
+
+                                cauHinh.ActionDuyet = bool.Parse(cauHinhItem[Fields.ActionDuyet].ToString());
+                                cauHinh.TieuDeActionDuyet = cauHinhItem[Fields.TieuDeActionDuyet].ToString();
+                                var nextStepLookup = new SPFieldLookupValue(cauHinhItem[Fields.NextStep].ToString());
+                                cauHinh.NextStep = nextStepLookup.LookupId;
+
+                                cauHinh.ActionTraHoSo = bool.Parse(cauHinhItem[Fields.ActionTraHoSo].ToString());
+                                cauHinh.TieuDeActionTraHoSo = cauHinhItem[Fields.TieuDeActionTraHoSo].ToString();
+                                var previousStepLookup = new SPFieldLookupValue(cauHinhItem[Fields.PreviousStep].ToString());
+                                cauHinh.PreviousStep = previousStepLookup.LookupId;
+
+                                cauHinh.ActionTuChoi = bool.Parse(cauHinhItem[Fields.ActionTuChoi].ToString());
+                                cauHinh.ActionYeuCauBoSung = bool.Parse(cauHinhItem[Fields.ActionYeuCauBoSung].ToString());
+                                cauHinh.ActionPhanCong = bool.Parse(cauHinhItem[Fields.ActionPhanCong].ToString());
+                                cauHinh.AllowCapNhatLoaiDuong = bool.Parse(cauHinhItem[Fields.AllowCapNhatLoaiDuong].ToString());
+                                cauHinh.AllowCapNhatNgayHen = bool.Parse(cauHinhItem[Fields.AllowCapNhatNgayHen].ToString());
+                                cauHinh.IsBoSungHoSo = bool.Parse(cauHinhItem[Fields.IsBoSungHoSo].ToString());
+                                cauHinh.IsPhanCong = bool.Parse(cauHinhItem[Fields.IsPhanCong].ToString());
+                                cauHinh.IsXuLyPhanCong = bool.Parse(cauHinhItem[Fields.IsXuLyPhanCong].ToString());
+                                cauHinh.StartEnd = cauHinhItem[Fields.StartEnd].ToString();
+                                cauHinh.IsEmail = bool.Parse(cauHinhItem[Fields.IsEmail].ToString());
+                                cauHinh.EmailTemplate = cauHinhItem[Fields.EmailTemplate].ToString();
+                            }
                         }
                     }
                 });
@@ -216,8 +240,121 @@ namespace LongAn.DVC.Helpers
             {
                 LoggingServices.LogException(ex);
             }
-            return result;
+            LoggingServices.LogMessage("End funtion GetCauHinh, Cấu hình Title: " + buocDuyetID);
+            return cauHinh;
         }
+
+        public static List<CauHinh> GetCauHinh(string startEnd)
+        {
+            List<CauHinh> cauHinhs = new List<CauHinh>();
+            try
+            {
+                LoggingServices.LogMessage("Begin funtion GetCauHinh, StartEnd: " + startEnd);
+                SPSecurity.RunWithElevatedPrivileges(delegate()
+                {
+                    using (SPSite site = new SPSite(SPContext.Current.Site.ID))
+                    {
+                        using (SPWeb web = site.OpenWeb(SPContext.Current.Web.ID))
+                        {
+                            var cauHinhList = web.GetList((web.ServerRelativeUrl + Constants.ListUrlCauHinh).Replace("//", "/"));
+                            SPQuery caml = Camlex.Query().Where(x => (string)x[Fields.StartEnd] == startEnd)
+                                    .OrderBy(x => new[] { x["ID"] as Camlex.Asc })
+                                    .ToSPQuery();
+                            var cauHinhItems = cauHinhList.GetItems(caml);
+                            if (cauHinhItems != null && cauHinhItems.Count > 0)
+                            {
+                                foreach (SPListItem cauHinhItem in cauHinhItems)
+                                {
+                                    CauHinh cauHinh = new CauHinh();
+                                    cauHinh.BuocDuyet = cauHinhItem[Fields.Title].ToString();
+                                    var spGroupText = cauHinhItem[Fields.SPGroup];
+                                    if (spGroupText != null && !string.IsNullOrEmpty(spGroupText.ToString()))
+                                    {
+                                        var spGroupLookup = new SPFieldLookupValue(spGroupText.ToString());
+                                        cauHinh.SPGroup = web.SiteGroups.GetByID(spGroupLookup.LookupId);
+                                    }
+
+                                    cauHinh.CapDuyetText = cauHinhItem[Fields.CapDuyetText].ToString();
+
+                                    var trangThaiText = cauHinhItem[Fields.TrangThai];
+                                    if (trangThaiText != null && !string.IsNullOrEmpty(trangThaiText.ToString()))
+                                    {
+                                        var trangThaiLookup = new SPFieldLookupValue(trangThaiText.ToString());
+                                        cauHinh.TrangThai = trangThaiLookup.LookupId;
+                                    }
+                                    cauHinh.IsFix = bool.Parse(cauHinhItem[Fields.IsFix].ToString());
+
+                                    cauHinh.ActionDuyet = bool.Parse(cauHinhItem[Fields.ActionDuyet].ToString());
+                                    cauHinh.TieuDeActionDuyet = cauHinhItem[Fields.TieuDeActionDuyet] != null ? cauHinhItem[Fields.TieuDeActionDuyet].ToString() : string.Empty;
+                                    var nextStepText = cauHinhItem[Fields.NextStep];
+                                    if (nextStepText != null && !string.IsNullOrEmpty(nextStepText.ToString()))
+                                    {
+                                        var nextStepLookup = new SPFieldLookupValue(nextStepText.ToString());
+                                        cauHinh.NextStep = nextStepLookup.LookupId;
+                                    }
+
+                                    cauHinh.ActionTraHoSo = bool.Parse(cauHinhItem[Fields.ActionTraHoSo].ToString());
+                                    cauHinh.TieuDeActionTraHoSo = cauHinhItem[Fields.TieuDeActionTraHoSo] != null ? cauHinhItem[Fields.TieuDeActionTraHoSo].ToString() : string.Empty;
+                                    var previousStepText = cauHinhItem[Fields.PreviousStep];
+                                    if (previousStepText != null && !string.IsNullOrEmpty(previousStepText.ToString()))
+                                    {
+                                        var previousStepLookup = new SPFieldLookupValue(previousStepText.ToString());
+                                        cauHinh.PreviousStep = previousStepLookup.LookupId;
+                                    }
+
+                                    cauHinh.ActionTuChoi = bool.Parse(cauHinhItem[Fields.ActionTuChoi].ToString());
+                                    cauHinh.ActionYeuCauBoSung = bool.Parse(cauHinhItem[Fields.ActionYeuCauBoSung].ToString());
+                                    cauHinh.ActionPhanCong = bool.Parse(cauHinhItem[Fields.ActionPhanCong].ToString());
+                                    cauHinh.AllowCapNhatLoaiDuong = bool.Parse(cauHinhItem[Fields.AllowCapNhatLoaiDuong].ToString());
+                                    cauHinh.AllowCapNhatNgayHen = bool.Parse(cauHinhItem[Fields.AllowCapNhatNgayHen].ToString());
+                                    cauHinh.IsBoSungHoSo = bool.Parse(cauHinhItem[Fields.IsBoSungHoSo].ToString());
+                                    cauHinh.IsPhanCong = bool.Parse(cauHinhItem[Fields.IsPhanCong].ToString());
+                                    cauHinh.IsXuLyPhanCong = bool.Parse(cauHinhItem[Fields.IsXuLyPhanCong].ToString());
+                                    cauHinh.StartEnd = cauHinhItem[Fields.StartEnd] != null ? cauHinhItem[Fields.StartEnd].ToString() : string.Empty;
+                                    cauHinh.IsEmail = bool.Parse(cauHinhItem[Fields.IsEmail].ToString());
+                                    cauHinh.EmailTemplate = cauHinhItem[Fields.EmailTemplate] != null ? cauHinhItem[Fields.EmailTemplate].ToString() : string.Empty;
+                                    cauHinhs.Add(cauHinh);
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+            catch (Exception ex)
+            {
+                LoggingServices.LogException(ex);
+            }
+            LoggingServices.LogMessage("End funtion GetCauHinh, Cấu hình Count: " + cauHinhs.Count);
+            return cauHinhs;
+        }
+
+        public static bool IsCurrentUserInGroup(SPWeb spWeb, SPGroup spGroup)
+        {
+            bool isMember = false;
+            var currentLogin = SPContext.Current.Web.CurrentUser.LoginName;
+            try
+            {
+                LoggingServices.LogMessage("Begin function IsCurrentUserInGroup, SPWeb " + spWeb.Title + ", SPGroup: " + spGroup.Name);
+                SPSecurity.RunWithElevatedPrivileges(delegate
+                {
+                    //using (SPSite site = new SPSite(spWeb.Site.ID))
+                    //{
+                    //    using (SPWeb web = site.OpenWeb(spWeb.ID))
+                    //    {
+                            //isMember = web.IsCurrentUserMemberOfGroup(spGroup.ID);
+                            isMember = spGroup.Users.GetCollection(new string[] { currentLogin }).Count > 0;
+                    //    }
+                    //}
+                });
+            }
+            catch (Exception ex)
+            {
+                LoggingServices.LogException(ex);
+            }
+            LoggingServices.LogMessage("End function IsCurrentUserInGroup, Result: " + isMember);
+            return isMember;
+        }
+
         public static void AddDeNghiHistory(SPWeb spWeb, CapXuLy capXuLy, int deNghiId, string hanhDong, string note = "")
         {
             try
@@ -251,5 +388,80 @@ namespace LongAn.DVC.Helpers
             }
             LoggingServices.LogMessage("End AddDeNghiHistory");
         }
+
+
+        
+
+        #region Removes
+        public static CapXuLy CurrentUserRole(SPWeb spWeb, SPUser user)
+        {
+            CapXuLy result = CapXuLy.CaNhanToChuc;
+            try
+            {
+                SPSecurity.RunWithElevatedPrivileges(delegate()
+                {
+                    using (SPSite site = new SPSite(spWeb.Site.ID))
+                    {
+                        using (SPWeb web = site.OpenWeb(spWeb.ID))
+                        {
+                            var groupNhanVienTiepNhan = web.SiteGroups[Constants.ConfGroupNhanVienTiepNhan];
+                            var groupCanBoXuLy = web.SiteGroups[Constants.ConfGroupCanBoXuLy];
+                            var groupTruongPhoPhong = web.SiteGroups[Constants.ConfGroupTruongPhoPhong];
+                            var groupLanhDaoSo = web.SiteGroups[Constants.ConfGroupLanhDaoSo];
+                            if (user.InGroup(groupNhanVienTiepNhan))
+                                result = CapXuLy.MotCua;
+                            else if (user.InGroup(groupCanBoXuLy))
+                                result = CapXuLy.CanBo;
+                            else if (user.InGroup(groupTruongPhoPhong))
+                                result = CapXuLy.TruongPhoPhong;
+                            else if (user.InGroup(groupLanhDaoSo))
+                                result = CapXuLy.LanhDaoSo;
+                        }
+                    }
+                });
+            }
+            catch (Exception ex)
+            {
+                LoggingServices.LogException(ex);
+            }
+            return result;
+        }
+        public static void AddDeNghiHistory(SPWeb spWeb, int deNghi, int buocDuyet, int trangThai, string note = "")
+        {
+            try
+            {
+                LoggingServices.LogMessage("Begin AddDeNghiHistory");
+                SPSecurity.RunWithElevatedPrivileges(delegate()
+                {
+                    using (SPSite site = new SPSite(spWeb.Site.ID))
+                    {
+                        using (SPWeb web = site.OpenWeb(spWeb.ID))
+                        {
+                            web.AllowUnsafeUpdates = true;
+                            var deNghiHistoryUrl = (web.ServerRelativeUrl + Constants.ListUrlLichSuCapPhep).Replace("//", "/");
+                            var deNghiHistoryList = web.GetList(deNghiHistoryUrl);
+                            var deNghiHistoryItem = deNghiHistoryList.Items.Add();
+                            deNghiHistoryItem[Fields.Title] = note;
+                            deNghiHistoryItem[Fields.DeNghi] = deNghi;
+                            deNghiHistoryItem[Fields.BuocDuyet] = buocDuyet;
+                            deNghiHistoryItem[Fields.NguoiXuLy] = spWeb.CurrentUser.ID;
+                            deNghiHistoryItem[Fields.TrangThai] = trangThai;
+                            deNghiHistoryItem[Fields.NgayXuLy] = DateTime.Now;
+                            deNghiHistoryItem[Fields.MoTa] = note;
+                            deNghiHistoryItem.Update();
+                            web.AllowUnsafeUpdates = false;
+                        }
+                    }
+                });
+            }
+            catch (Exception ex)
+            {
+                LoggingServices.LogException(ex);
+            }
+            LoggingServices.LogMessage("End AddDeNghiHistory");
+        }
+
+
+        #endregion Removes
     }
 }

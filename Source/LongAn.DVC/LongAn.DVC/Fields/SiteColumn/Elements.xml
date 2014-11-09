@@ -609,13 +609,27 @@
          DisplayName="SP Group"
          Type="User"
          Required="TRUE"
-         Group="DVC" />
+          Group="[LA-DVC]"  />
   <Field Name="CapDuyetText"
          ID="{a5494e0c-28d3-4e6d-ba22-be8b0f6a9d61}"
          DisplayName="Ghi chú"
          Type="Text"
-         Group="DVC" />
+          Group="[LA-DVC]"  />
   
+  
+  <Field Name="IsFix"
+         ID="{088664bb-cdc1-4e3e-97ed-b87474c1fe34}"
+         DisplayName="Không chỉnh sửa"
+         Type="Boolean" />
+  <Field Name="ActionDuyet"
+         ID="{3d14bf56-7422-4904-8206-a16c87125be4}"
+         DisplayName="Action duyệt"
+         Type="Boolean"
+          Group="[LA-DVC]"  />
+  <Field Name="TieuDeActionDuyet"
+         ID="{e078c916-b314-4a41-a1c1-b55bce67706a}"
+         DisplayName="Tiêu đề Action duyệt"
+         Type="Text" />
   <Field Type="Lookup"
          ID="{80be5b0c-a208-4924-8b96-0bb4948667cd}"
          StaticName="NextStep"
@@ -627,65 +641,80 @@
          ShowField="Title"
          UnlimitedLengthInDocumentLibrary="FALSE"
          RelationshipDeleteBehavior="None"
-         Group="DVC" />
-  <Field Name="IsFix"
-         ID="{088664bb-cdc1-4e3e-97ed-b87474c1fe34}"
-         DisplayName="Không chỉnh sửa"
+         Group="[LA-DVC]"  />
+  <Field Name="ActionTraHoSo"
+         ID="{beff17e3-4ece-4ae6-977a-0c41299a512b}"
+         DisplayName="Action trả hồ sơ"
          Type="Boolean" />
-  <Field Name="ActionDuyet"
-         ID="{3d14bf56-7422-4904-8206-a16c87125be4}"
-         DisplayName="Action duyệt"
-         Type="Boolean"
-         Group="DVC" />
-  <Field Name="TieuDeActionDuyet"
-         ID="{e078c916-b314-4a41-a1c1-b55bce67706a}"
-         DisplayName="Tiêu đề Action duyệt"
-         Type="Text" />
+  <Field Name="TieuDeActionTraHoSo"
+         ID="{9d53c636-5ce4-4e6d-a5fc-e903fb5c5cbe}"
+         DisplayName="Tiêu đề Action trả hồ sơ"
+         Type="Text"
+         Group="[LA-DVC]" />
+  <Field Type="Lookup"
+         Name="PreviousStep"
+         ID="{62a0ff90-0459-4496-98cf-f9ae88488f42}"
+         DisplayName="Bước từ chối"
+         Required="FALSE"
+         EnforceUniqueValues="FALSE"
+         List="Lists/CauHinh"
+         ShowField="Title"
+         UnlimitedLengthInDocumentLibrary="FALSE"
+         RelationshipDeleteBehavior="None"
+         Group="[LA-DVC]" />
   <Field Name="ActionTuChoi"
          ID="{340eb31e-4329-4579-9f99-65d514f5b487}"
          DisplayName="Action từ chối"
          Type="Boolean"
-         Group="DVC" />
+         Group="[LA-DVC]"  />
   <Field Name="ActionYeuCauBoSung"
          ID="{3872f348-1d55-4ce3-bd0a-0d0cd29ba090}"
          DisplayName="Action Yêu cầu bổ sung"
          Type="Boolean"
-         Group="DVC" />
+          Group="[LA-DVC]"  />
   <Field Name="ActionPhanCong"
          ID="{eb97fbd8-e796-4940-a54e-a12e4644ef9e}"
          DisplayName="Action Phân công"
          Type="Boolean"
-         Group="DVC" />
+          Group="[LA-DVC]"  />
   <Field Name="AllowCapNhatLoaiDuong"
          ID="{b36d0245-0dfa-4a24-9ae6-e3fc5e194052}"
          DisplayName="Allow Cập nhật loại đường"
          Type="Boolean"
-         Group="DVC" />
+          Group="[LA-DVC]"  />
   <Field Name="AllowCapNhatNgayHen"
          ID="{d0bc18be-83fe-423d-adea-2470c328adb7}"
          DisplayName="Allow Cập nhật ngày hẹn"
          Type="Boolean"
-         Group="DVC" />
+          Group="[LA-DVC]"  />
   <Field Name="IsBoSungHoSo"
          ID="{927b86cc-1f41-4889-8818-5dcc631bd660}"
          DisplayName="Bổ sung hồ sơ"
          Type="Boolean"
-         Group="DVC" />
+          Group="[LA-DVC]"  />
   <Field Name="IsPhanCong"
          ID="{f68d404e-3861-42b4-a754-371fb5384240}"
          DisplayName="Phân công"
          Type="Boolean"
-         Group="DVC" />
+          Group="[LA-DVC]"  />
   <Field Name="IsXuLyPhanCong"
          ID="{e8ed953d-c8e5-4665-8b23-e9592be1ce51}"
          DisplayName="Xử lý phân công"
          Type="Boolean"
-         Group="DVC" />
-  <Field Name="IsEnd"
+          Group="[LA-DVC]"  />
+  <Field Name="StartEnd"
          ID="{bf80c732-39e7-4747-b014-d1fb839a2b61}"
-         DisplayName="Kết thúc"
-         Type="Boolean"
-         Group="DVC" />
+         DisplayName="Bắt đầu / Kết thúc"
+         Type="Choice"
+         Required="TRUE"
+         Group="[LA-DVC]" >
+    <Default>Process</Default>
+    <CHOICES>
+      <CHOICE>Start</CHOICE>
+      <CHOICE>Process</CHOICE>
+      <CHOICE>End</CHOICE>
+    </CHOICES>
+  </Field>
   <Field Name="IsEmail"
          ID="{eefde6c8-47bb-403d-91c9-a0a0a2181f2c}"
          DisplayName="Gửi mail"
@@ -727,12 +756,12 @@
          DisplayName="Mô tả" />
   
   <!--Tình trạng (trạng thái)-->
-  <Field Name="TenTinhTrang"
+  <Field Name="TenTrangThai"
          ID="{51d94c36-72e9-4916-9b04-3275b317e8fb}"
-         DisplayName="Tên tình trạng"
+         DisplayName="Tên trạng thái"
          Type="Text"
          Required="TRUE"
-         Group="DVC" />
+          Group="[LA-DVC]"  />
   <!--Yêu cầu bổ sung-->
   <Field Type="Boolean"
          ID="{74443E7F-018E-4051-A6D4-D6918A68E990}"

@@ -4,5 +4,106 @@
                 OnQuickLaunch="TRUE"
                 TemplateType="10005"
                 Url="Lists/CauHinh"
-                Description=""></ListInstance>
+                Description="">
+    <Data>
+      <Rows>
+        <Row>
+          <Field Name="ID">1</Field>
+          <Field Name="Title">Người dùng</Field>
+          <Field Name="SPGroup">16</Field>
+          <!--<Field Name="CapDuyetText">Người dùng nộp hồ sơ</Field>
+          <Field Name="TrangThai">NHS</Field>
+          <Field Name="IsFix">1</Field>
+          <Field Name="ActionDuyet">1</Field>
+          <Field Name="TieuDeActionDuyet">Nộp hồ sơ</Field>
+          <Field Name="NextStep">3</Field>
+          <Field Name="ActionTuChoi">0</Field>
+          <Field Name="TieuDeActionTraHoSo">0</Field>
+          <Field Name="PreviousStep">0</Field>
+          <Field Name="ActionYeuCauBoSung">0</Field>
+          <Field Name="ActionPhanCong">0</Field>
+          <Field Name="AllowCapNhatLoaiDuong">0</Field>
+          <Field Name="AllowCapNhatNgayHen">0</Field>
+          <Field Name="IsBoSungHoSo">0</Field>
+          <Field Name="IsPhanCong">0</Field>
+          <Field Name="IsXuLyPhanCong">0</Field>
+          <Field Name="IsEnd">0</Field>
+          <Field Name="IsEmail">0</Field>
+          <Field Name="EmailTemplate">{0}{1}{2}{3}</Field>-->
+        </Row>
+        <Row>
+          <Field Name="ID">2</Field>
+          <Field Name="Title">Một cửa tạo hồ sơ</Field>
+          <Field Name="SPGroup">16</Field>
+          <!--<Field Name="CapDuyetText">Một cửa nộp hồ sơ</Field>
+          <Field Name="TrangThai">NHS</Field>
+          <Field Name="IsFix">1</Field>
+          <Field Name="ActionDuyet">1</Field>
+          <Field Name="TieuDeActionDuyet">Nộp hồ sơ</Field>
+          <Field Name="NextStep">3</Field>
+          <Field Name="ActionTuChoi">0</Field>
+          <Field Name="TieuDeActionTraHoSo">0</Field>
+          <Field Name="PreviousStep">0</Field>
+          <Field Name="ActionYeuCauBoSung">0</Field>
+          <Field Name="ActionPhanCong">0</Field>
+          <Field Name="AllowCapNhatLoaiDuong">0</Field>
+          <Field Name="AllowCapNhatNgayHen">0</Field>
+          <Field Name="IsBoSungHoSo">0</Field>
+          <Field Name="IsPhanCong">0</Field>
+          <Field Name="IsXuLyPhanCong">0</Field>
+          <Field Name="IsEnd">0</Field>
+          <Field Name="IsEmail">0</Field>
+          <Field Name="EmailTemplate">{0}{1}{2}{3}</Field>-->
+        </Row>
+        <Row>
+          <Field Name="ID">3</Field>
+          <Field Name="Title">Bổ sung hồ sơ</Field>
+          <!--<Field Name="SPGroup">16</Field>
+          <Field Name="CapDuyetText">Người dùng / Một cửa bổ sung hồ sơ</Field>
+          <Field Name="TrangThai">VTN</Field>
+          <Field Name="IsFix">1</Field>
+          <Field Name="ActionDuyet">1</Field>
+          <Field Name="TieuDeActionDuyet">Nộp hồ sơ</Field>
+          <Field Name="NextStep">3</Field>
+          <Field Name="ActionTuChoi">0</Field>
+          <Field Name="TieuDeActionTraHoSo">0</Field>
+          <Field Name="PreviousStep">0</Field>
+          <Field Name="ActionYeuCauBoSung">0</Field>
+          <Field Name="ActionPhanCong">0</Field>
+          <Field Name="AllowCapNhatLoaiDuong">0</Field>
+          <Field Name="AllowCapNhatNgayHen">0</Field>
+          <Field Name="IsBoSungHoSo">0</Field>
+          <Field Name="IsPhanCong">0</Field>
+          <Field Name="IsXuLyPhanCong">0</Field>
+          <Field Name="IsEnd">0</Field>
+          <Field Name="IsEmail">0</Field>
+          <Field Name="EmailTemplate">{0}{1}{2}{3}</Field>-->
+        </Row>
+        <Row>
+          <Field Name="ID">4</Field>
+          <Field Name="Title">Tiếp nhận hồ sơ</Field>
+          <Field Name="SPGroup">16</Field>
+          <!--<Field Name="CapDuyetText">Một cửa tiếp nhận hồ sơ</Field>
+          <Field Name="TrangThai">DTN</Field>
+          <Field Name="IsFix">0</Field>
+          <Field Name="ActionDuyet">1</Field>
+          <Field Name="TieuDeActionDuyet">Nộp hồ sơ</Field>
+          <Field Name="NextStep">3</Field>
+          <Field Name="ActionTuChoi">1</Field>
+          <Field Name="TieuDeActionTraHoSo">Trả hồ sơ</Field>
+          <Field Name="PreviousStep">0</Field>
+          <Field Name="ActionYeuCauBoSung">0</Field>
+          <Field Name="ActionPhanCong">0</Field>
+          <Field Name="AllowCapNhatLoaiDuong">0</Field>
+          <Field Name="AllowCapNhatNgayHen">0</Field>
+          <Field Name="IsBoSungHoSo">0</Field>
+          <Field Name="IsPhanCong">0</Field>
+          <Field Name="IsXuLyPhanCong">0</Field>
+          <Field Name="IsEnd">0</Field>
+          <Field Name="IsEmail">0</Field>
+          <Field Name="EmailTemplate">{0}{1}{2}{3}</Field>-->
+        </Row>
+      </Rows>
+    </Data>
+  </ListInstance>
 </Elements>

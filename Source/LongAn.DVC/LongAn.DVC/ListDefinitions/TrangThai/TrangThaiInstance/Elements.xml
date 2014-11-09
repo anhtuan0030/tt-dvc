@@ -5,6 +5,33 @@
                 TemplateType="10006" 
                 Url="Lists/TrangThai" 
                 Description="Trạng thái">
-    
+    <Data>
+      <Rows>
+        <Row>
+          <Field Name="ID">1</Field>
+          <Field Name="Title">NBS</Field>
+          <Field Name="TenTrangThai">Đã nộp hồ sơ</Field>
+          
+        </Row>
+        <Row>
+          <Field Name="ID">2</Field>
+          <Field Name="Title">VTN</Field>
+          <Field Name="TenTrangThai">Vừa tiếp nhận</Field>
+
+        </Row>
+        <Row>
+          <Field Name="ID">3</Field>
+          <Field Name="Title">CBS</Field>
+          <Field Name="TenTrangThai">Chờ bổ sung</Field>
+
+        </Row>
+        <Row>
+          <Field Name="ID">4</Field>
+          <Field Name="Title">DBS</Field>
+          <Field Name="TenTrangThai">Đã bổ sung</Field>
+
+        </Row>
+      </Rows>
+    </Data>
   </ListInstance>
 </Elements>
