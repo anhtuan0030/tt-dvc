@@ -15,260 +15,80 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
     public partial class DeNghiCapPhepXeDispForm : UserControl
     {
         #region Properties
-        private CapXuLy CurrentUserRole
-        {
-            get
-            {
-                var currentUserRole = CapXuLy.CaNhanToChuc;
-                if (ViewState[Constants.ConfViewStateCapXuLy] == null)
-                {
-                    currentUserRole = DeNghiHelper.CurrentUserRole(SPContext.Current.Web, SPContext.Current.Web.CurrentUser);
-                    ViewState[Constants.ConfViewStateCapXuLy] = currentUserRole;
-                }
-                else
-                    currentUserRole = (CapXuLy)ViewState[Constants.ConfViewStateCapXuLy];
-                return currentUserRole;
-            }
-        }
+        //public CauHinh CauHinh
+        //{
+        //    get
+        //    {
+        //        if (ViewState["CauHinh"] != null)
+        //        {
+        //            return (CauHinh)ViewState["CauHinh"];
+        //        }
+        //        else
+        //        {
+        //            var buocDuyet = SPContext.Current.ListItem[Fields.BuocDuyet];
+        //            var buocDuyetValue = new SPFieldLookupValue(buocDuyet.ToString()).LookupId;
+        //            if (buocDuyetValue != 0)
+        //            {
+        //                var deNghi = DeNghiHelper.GetCauHinh(buocDuyetValue);
+        //                ViewState["CauHinh"] = deNghi;
+        //                return deNghi;
+        //            }
+        //            return null;
+        //        }
+        //    }
+        //}
         #endregion Properties
         protected override void OnInit(EventArgs e)
         {
             btnCancel.Click += btnCancel_Click;
-            //
-            #region variables
-            var context = SPContext.Current;
-            var currentStatus = int.Parse(SPContext.Current.ListItem[Constants.FieldTrangThai].ToString());
-            var currentUserRole = CurrentUserRole;
-            var action = Request.QueryString.Get("Action");
-            var actionTocken = Request.QueryString.Get("Atocken");
-            var sourcePage = Request.QueryString.Get("Source");
-            var rejectLink = string.Format(Constants.ConfLinkTuChoiPage,
-                context.Web.ServerRelativeUrl.TrimEnd('/'),
-                context.ListId,
-                context.ItemId,
-                sourcePage);
-            var additionalLink = string.Format(Constants.ConfLinkBoSungPage,
-                context.Web.ServerRelativeUrl.TrimEnd('/'),
-                context.ListId,
-                context.ItemId,
-                sourcePage);
-            var assignLink = string.Format(Constants.ConfLinkPhanCongPage,
-                context.Web.ServerRelativeUrl.TrimEnd('/'),
-                context.ListId,
-                context.ItemId,
-                sourcePage);
-            #endregion variables
-
-            #region View button
-            switch (currentUserRole)
-            {
-                #region MotCua
-                case CapXuLy.MotCua:
-                    if (currentStatus == (int)TrangThaiHoSo.ChoTiepNhan)
-                    {
-                        btnTiepNhan.Visible = true;
-                        btnTiepNhan.CommandName = HanhDong.TiepNhanHoSo.ToString();
-                        btnTiepNhan.OnClientClick = "if (!confirm('Bạn có chắc chắn muốn tiếp nhận hồ sơ này không?')) return false;";
-                        btnTiepNhan.Command += btnTiepNhan_Command;
-
-                        btnTraHoSo.Visible = true;
-                        btnTraHoSo.OnClientClick = "if (!confirm('Bạn có chắc chắn muốn từ chối hồ sơ này không?')) return false;";
-                        btnTraHoSo.CommandArgument = rejectLink;
-                        btnTraHoSo.Command += btnRedirect_Command;
-                    }
-                    else if (currentStatus == (int)TrangThaiHoSo.DaTiepNhan)
-                    {
-                        btnPrint.Visible = true;
-                        btnPrint.Click += btnPrint_Click;
-
-                        btnTrinhXuLy.Visible = true;
-                        btnTrinhXuLy.OnClientClick = "if (!confirm('Bạn có chắc chắn muốn chuyển hồ sơ này không?')) return false;";
-                        btnTrinhXuLy.Click += btnTrinhXuLy_Click;
-
-                        btnTraHoSo.Visible = true;
-                        btnTraHoSo.OnClientClick = "if (!confirm('Bạn có chắc chắn muốn từ chối hồ sơ này không?')) return false;";
-                        btnTraHoSo.CommandArgument = rejectLink;
-                        btnTraHoSo.Command += btnRedirect_Command;
-                    }
-                    else if (currentStatus == (int)TrangThaiHoSo.DuocCapPhep)
-                    {
-                        btnHoanThanh.Visible = true;
-                        btnHoanThanh.OnClientClick = "if (!confirm('Bạn có chắc chắn muốn xác nhận hồ sơ này đã hoàn thành không?')) return false;";
-                        btnHoanThanh.Click += btnHoanThanh_Click;
-
-                        btnChuaHoanThanh.Visible = true;
-                        btnChuaHoanThanh.CommandName = "XacNhanChuaHoanThanh";
-                        btnChuaHoanThanh.OnClientClick = "if (!confirm('Bạn có chắc chắn muốn xác nhận hồ sơ này chưa hoàn thành không?')) return false;";
-                        btnChuaHoanThanh.Click += btnChuaHoanThanh_Click;
-
-                        btnPrintGiayPhep.Visible = true;
-                        btnPrintGiayPhep.Click += btnPrintGiayPhep_Click;
-                    }
-                    else if (currentStatus == (int)TrangThaiHoSo.HoanThanh || currentStatus == (int)TrangThaiHoSo.ChuaHoanThanh)
-                    {
-                        btnPrintGiayPhep.Visible = true;
-                        btnPrintGiayPhep.CommandName = "InGiayPhep";
-                    }
-                    break;
-                #endregion MotCua
-
-                #region TruongPhoPhong
-                case CapXuLy.TruongPhoPhong:
-                    if (currentStatus == (int)TrangThaiHoSo.ChoDuyet)
-                    {
-                        btnTrinhLanhDao.Visible = true;
-                        btnTrinhLanhDao.OnClientClick = "if (!confirm('Bạn có chắc chắn muốn trình lãnh đạo hồ sơ này không?')) return false;";
-                        btnTrinhLanhDao.Click += btnTrinhLanhDao_Click;
-
-                        btnTraHoSo.Visible = true;
-                        btnTraHoSo.OnClientClick = "if (!confirm('Bạn có chắc chắn muốn từ chối hồ sơ này không?')) return false;";
-                        btnTraHoSo.CommandArgument = rejectLink;
-                        btnTraHoSo.Command += btnRedirect_Command;
-                    }
-                    else if (currentStatus == (int)TrangThaiHoSo.ChoXuLy)
-                    {
-                        btnPhanCongHoSo.Visible = true;
-                        btnPhanCongHoSo.CommandArgument = assignLink;
-                        btnPhanCongHoSo.Command += btnRedirect_Command;
-                    }
-                    break;
-                #endregion TruongPhoPhong
-
-                #region CanBo
-                case CapXuLy.CanBo:
-                    if (currentStatus == (int)TrangThaiHoSo.ChoXuLy)
-                    {
-                        divLoaiDuong.Visible = true;
-                        btnTiepNhan.Visible = true;
-                        btnTiepNhan.OnClientClick = "if (!confirm('Bạn có chắc chắn muốn tiếp nhận hồ sơ này không?')) return false;";
-                        btnTiepNhan.CommandName = HanhDong.TiepNhanXuLy.ToString();
-                        btnTiepNhan.Command += btnTiepNhan_Command;
-                    }
-                    else if (currentStatus == (int)TrangThaiHoSo.DangXuLy)
-                    {
-                        divLoaiDuong.Visible = true;
-                        btnYeuCauBoSung.Visible = true;
-                        btnYeuCauBoSung.CommandArgument = additionalLink;
-                        btnYeuCauBoSung.Command += btnYeuCauBoSung_Command;
-
-                        btnTrinhTruongPhong.Visible = true;
-                        btnTrinhTruongPhong.OnClientClick = "if (!confirm('Bạn có chắc chắn muốn trình hồ sơ này không?')) return false;";
-                        btnTrinhTruongPhong.Click += btnTrinhTruongPhong_Click;
-
-                        btnTraHoSo.Visible = true;
-                        btnTraHoSo.OnClientClick = "if (!confirm('Bạn có chắc chắn muốn từ chối hồ sơ này không?')) return false;";
-                        btnTraHoSo.CommandArgument = rejectLink;
-                        btnTraHoSo.Command += btnRedirect_Command;
-                    }
-                    break;
-                #endregion CanBo
-
-                #region LanhDaoSo
-                case CapXuLy.LanhDaoSo:
-                    if (currentStatus == (int)TrangThaiHoSo.ChoCapPhep)
-                    {
-                        btnDuyetHoSo.Visible = true;
-                        btnDuyetHoSo.OnClientClick = "if (!confirm('Bạn có chắc chắn muốn duyệt thuận hồ sơ này không?')) return false;";
-                        btnDuyetHoSo.Click += btnDuyetHoSo_Click;
-
-                        btnTraHoSo.Visible = true;
-                        btnTraHoSo.OnClientClick = "if (!confirm('Bạn có chắc chắn muốn từ chối hồ sơ này không?')) return false;";
-                        btnTraHoSo.CommandArgument = rejectLink;
-                        btnTraHoSo.Command += btnRedirect_Command;
-                    }
-                    break;
-                #endregion LanhDaoSo
-
-                default:
-                    btnPrint.Visible = true;
-                    btnPrint.Click += btnPrint_Click;
-                    break;
-            }
-            #endregion View button
-
-            divLoaiDuongDisp.Visible = !divLoaiDuong.Visible;
+            btnDuyet.Click += btnDuyet_Click;
+            btnTraHoSo.Click += btnTraHoSo_Click;
+            btnTuChoi.Click += btnTuChoi_Click;
+            btnPhanCong.Click += btnPhanCong_Click;
+            btnYeuCauBoSung.Click += btnYeuCauBoSung_Click;
 
             base.OnInit(e);
         }
 
-        void btnYeuCauBoSung_Command(object sender, CommandEventArgs e)
+        void btnYeuCauBoSung_Click(object sender, EventArgs e)
         {
-            string redirectUrl = e.CommandArgument.ToString();
-            if (redirectUrl == null || string.IsNullOrEmpty(redirectUrl))
-                redirectUrl = "/";
-            Response.Redirect(redirectUrl);
-        }
-
-        void btnDuyetHoSo_Click(object sender, EventArgs e)
-        {
-            DeNghiHelper.AddDeNghiHistory(SPContext.Current.Web, CapXuLy.LanhDaoSo, SPContext.Current.ItemId, HanhDong.DuyetCapPhep.ToString());
-            UpdateItem(TrangThaiHoSo.DuocCapPhep, CapXuLy.MotCua);
-            DeNghiHelper.SendEmail(SPContext.Current.Web, SPContext.Current.ItemId, "được cấp phép");
-        }
-
-        void btnTrinhTruongPhong_Click(object sender, EventArgs e)
-        {
-            DeNghiHelper.AddDeNghiHistory(SPContext.Current.Web, CapXuLy.CanBo, SPContext.Current.ItemId, HanhDong.TrinhTruongPhoPhong.ToString());
-            UpdateItem(TrangThaiHoSo.ChoDuyet, CapXuLy.TruongPhoPhong);
-        }
-
-        void btnRedirect_Command(object sender, CommandEventArgs e)
-        {
-            string redirectUrl = e.CommandArgument.ToString();
-            if (redirectUrl == null || string.IsNullOrEmpty(redirectUrl))
-                redirectUrl = "/";
-            Response.Redirect(redirectUrl);
-        }
-
-        void btnTrinhLanhDao_Click(object sender, EventArgs e)
-        {
-            DeNghiHelper.AddDeNghiHistory(SPContext.Current.Web, CapXuLy.TruongPhoPhong, SPContext.Current.ItemId, HanhDong.TrinhLanhDaoSo.ToString());
-            UpdateItem(TrangThaiHoSo.ChoCapPhep, CapXuLy.LanhDaoSo);
-        }
-
-        void btnPrintGiayPhep_Click(object sender, EventArgs e)
-        {
-            DeNghiHelper.InPhieuBienNhan(PrintType.GiayCapPhep, SPContext.Current.ItemId.ToString(), this.Page);
-        }
-
-        void btnChuaHoanThanh_Click(object sender, EventArgs e)
-        {
-            DeNghiHelper.AddDeNghiHistory(SPContext.Current.Web, CapXuLy.MotCua, SPContext.Current.ItemId, HanhDong.XacNhanChuaHoanThanh.ToString());
-            UpdateItem(TrangThaiHoSo.ChuaHoanThanh, CapXuLy.MotCua);
-        }
-
-        void btnHoanThanh_Click(object sender, EventArgs e)
-        {
-            DeNghiHelper.AddDeNghiHistory(SPContext.Current.Web, CapXuLy.MotCua, SPContext.Current.ItemId, HanhDong.XacNhanHoanThanh.ToString());
-            UpdateItem(TrangThaiHoSo.HoanThanh, CapXuLy.MotCua);
-        }
-
-        void btnTrinhXuLy_Click(object sender, EventArgs e)
-        {
-            DeNghiHelper.AddDeNghiHistory(SPContext.Current.Web, CapXuLy.MotCua, SPContext.Current.ItemId, HanhDong.ChuyenTruongPhoPhong.ToString());
-            UpdateItem(TrangThaiHoSo.ChoXuLy, CapXuLy.TruongPhoPhong);
-        }
-
-        void btnTiepNhan_Command(object sender, CommandEventArgs e)
-        {
-            if (e.CommandName == HanhDong.TiepNhanHoSo.ToString())
+            var cauHinhs = DeNghiHelper.GetCauHinh(Constants.CauHinh_YCBS);
+            if (cauHinhs != null && cauHinhs.Count > 0)
             {
-                DeNghiHelper.AddDeNghiHistory(SPContext.Current.Web, CapXuLy.MotCua, SPContext.Current.ItemId, HanhDong.TiepNhanHoSo.ToString());
-                DeNghiHelper.SendEmail(SPContext.Current.Web, SPContext.Current.ItemId, "được tiếp nhận");
-                UpdateItem(TrangThaiHoSo.DaTiepNhan, CapXuLy.MotCua);
+                var cauHinh = cauHinhs[0];
+                UpdateItem(cauHinh.BuocDuyetID, cauHinh.TrangThai, cauHinh.CapDuyetText);
             }
-            else if (e.CommandName == HanhDong.TiepNhanXuLy.ToString())
+            else
             {
-                DeNghiHelper.AddDeNghiHistory(SPContext.Current.Web, CapXuLy.CanBo, SPContext.Current.ItemId, HanhDong.TiepNhanXuLy.ToString());
-                UpdateItem(TrangThaiHoSo.DangXuLy, CapXuLy.CanBo);
+                var redirectUrl = Request.QueryString["Source"];
+                if (redirectUrl == null || string.IsNullOrEmpty(redirectUrl.ToString()))
+                    redirectUrl = "/";
+                Response.Redirect(redirectUrl);
             }
         }
 
-        void btnPrint_Click(object sender, EventArgs e)
+        void btnPhanCong_Click(object sender, EventArgs e)
         {
-            DeNghiHelper.InPhieuBienNhan(PrintType.PhieuBienNhan, SPContext.Current.ItemId.ToString(), this.Page);
+
+        }      
+
+        void btnTuChoi_Click(object sender, EventArgs e)
+        {
+            
         }
-       
+
+        void btnTraHoSo_Click(object sender, EventArgs e)
+        {
+            var cauHinh = DeNghiHelper.GetCauHinh(int.Parse(hdfPreStep.Value));
+            UpdateItem(cauHinh.BuocDuyetID, cauHinh.TrangThai, cauHinh.CapDuyetText);
+        }
+
+        void btnDuyet_Click(object sender, EventArgs e)
+        {
+            var cauHinh = DeNghiHelper.GetCauHinh(int.Parse(hdfNextStep.Value));
+            UpdateItem(cauHinh.BuocDuyetID, cauHinh.TrangThai, cauHinh.CapDuyetText);
+        }
+
         void btnCancel_Click(object sender, EventArgs e)
         {
             var redirectUrl = Request.QueryString["Source"];
@@ -286,32 +106,109 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
                 DeNghiHelper.LoadAttachments(SPContext.Current.ItemId, Constants.AttachmentGiayCamKet, divFileUpload3);
                 DeNghiHelper.LoadAttachments(SPContext.Current.ItemId, Constants.AttachmentCMND, divFileUpload4);
 
-                //var yeuCauBoSungUrl = (SPContext.Current.Web.ServerRelativeUrl + Constants.ListUrlYeuCauBoSung).Replace("//", "/");
-                //var yeuCauBoSungList = SPContext.Current.Web.GetList(yeuCauBoSungUrl);
-                SPFieldMultiChoice causeOfCustomer = (SPFieldMultiChoice)SPContext.Current.List.Fields[new Guid(Constants.FieldIdLoaiDuong)];
-                chkListLoaiDuong.DataSource = causeOfCustomer.Choices;
-                chkListLoaiDuong.DataBind();
-
-                var currentItem = SPContext.Current.ListItem;
-                var loaiDuongString = currentItem[Constants.FieldLoaiDuong] != null ? currentItem[Constants.FieldLoaiDuong].ToString() : string.Empty;
-                for (int i = 0; i < chkListLoaiDuong.Items.Count; i++)
+                var buocDuyet = SPContext.Current.ListItem[Fields.BuocDuyet];
+                var buocDuyetValue = new SPFieldLookupValue(buocDuyet.ToString()).LookupId;
+                var cauHinh = DeNghiHelper.GetCauHinh(buocDuyetValue);
+                if (cauHinh != null)
                 {
-                    if (string.IsNullOrEmpty(loaiDuongString))
-                        break;
-                    if (loaiDuongString.Contains(chkListLoaiDuong.Items[i].Text))
+                    hdfNextStep.Value = cauHinh.NextStep.ToString();
+                    hdfPreStep.Value = cauHinh.PreviousStep.ToString();
+                    var currentMember = DeNghiHelper.IsCurrentUserInGroup(SPContext.Current.Web, cauHinh.SPGroup);
+                    if (currentMember)
                     {
-                        chkListLoaiDuong.Items[i].Selected = true;
+                        #region Action Duyet
+                        if (cauHinh.ActionDuyet)
+                        {
+                            btnDuyet.Visible = true;
+                            btnDuyet.Text = cauHinh.TieuDeActionDuyet != null ? cauHinh.TieuDeActionDuyet : "Duyệt hồ sơ";
+                        }
+                        #endregion Action Duyet
+
+                        #region Action Tra Ho So
+                        if (cauHinh.ActionTraHoSo)
+                        {
+                            btnTraHoSo.Visible = true;
+                            btnTraHoSo.Text = cauHinh.TieuDeActionTraHoSo != null ? cauHinh.TieuDeActionTraHoSo : "Trả hồ sơ";
+                        }
+                        #endregion Action Tra Ho So
+
+                        #region Action Phan Cong
+                        if (cauHinh.ActionPhanCong)
+                        {
+                            btnPhanCong.Visible = true;
+                            divPhanCongHoSo.Visible = true;
+                            var dataTable = GetCanBoXuLy(cauHinh.SPGroupCanBo);
+                            ddlUsers.DataSource = dataTable;
+                            ddlUsers.DataValueField = "ID";
+                            ddlUsers.DataTextField = "Name";
+                            ddlUsers.DataBind();
+                        }
+                        #endregion Action Phan Cong
+
+                        #region Action Tu Choi
+                        if (cauHinh.ActionTuChoi)
+                        {
+                            btnTuChoi.Visible = true;
+                        }
+                        #endregion Action Tu Choi
+
+                        #region Action Yeu Cau Bo Sung
+                        if (cauHinh.ActionYeuCauBoSung)
+                        {
+                            btnYeuCauBoSung.Visible = true;
+                            divYeuCauBoSung.Visible = true;
+                        }
+                        #endregion Action Yeu Cau Bo Sung
+
+                        #region Cap Nhat Loai Duong
+                        if (cauHinh.AllowCapNhatLoaiDuong)
+                        {
+                            divLoaiDuong.Visible = true;
+                            divLoaiDuongDisp.Visible = false;
+                            SPFieldMultiChoice loaiDuong = (SPFieldMultiChoice)SPContext.Current.List.Fields[new Guid(Constants.FieldIdLoaiDuong)];
+                            chkListLoaiDuong.DataSource = loaiDuong.Choices;
+                            chkListLoaiDuong.DataBind();
+
+                            var currentItem = SPContext.Current.ListItem;
+                            var loaiDuongString = currentItem[Constants.FieldLoaiDuong] != null ? currentItem[Constants.FieldLoaiDuong].ToString() : string.Empty;
+                            for (int i = 0; i < chkListLoaiDuong.Items.Count; i++)
+                            {
+                                if (string.IsNullOrEmpty(loaiDuongString))
+                                    break;
+                                if (loaiDuongString.Contains(chkListLoaiDuong.Items[i].Text))
+                                {
+                                    chkListLoaiDuong.Items[i].Selected = true;
+                                }
+                            }
+
+                            var lanDuong = currentItem[Constants.FieldLanXeDuocChay] != null ? currentItem[Constants.FieldLanXeDuocChay].ToString() : string.Empty;
+                            txtLanXeDuocChay.Text = lanDuong;
+                            var tocDo = currentItem[Constants.FieldTocDoDuocChay] != null ? currentItem[Constants.FieldTocDoDuocChay].ToString() : string.Empty;
+                            txtTocDoDuocChay.Text = tocDo;
+                        }
+                        #endregion Cap Nhat Loai Duong
+
+                        #region Cap Nhat Ngay Hen Tra
+                        if (cauHinh.AllowCapNhatNgayHen)
+                        {
+                            divNgayHen.Visible = true;
+                        }
+                        #endregion Cap Nhat Ngay Hen Tra
+                    }
+                    else
+                    {
+                        //Can bo xu ly tiep nhan ho so
+                        currentMember = DeNghiHelper.IsCurrentUserInGroup(SPContext.Current.Web, cauHinh.SPGroupCanBo);
+                        if (currentMember)
+                        {
+                            btnCanBoTiepNhan.Visible = true;
+                        }
                     }
                 }
-
-                var lanDuong = currentItem[Constants.FieldLanXeDuocChay] != null ? currentItem[Constants.FieldLanXeDuocChay].ToString() : string.Empty;
-                txtLanXeDuocChay.Text = lanDuong;
-                var tocDo = currentItem[Constants.FieldTocDoDuocChay] != null ? currentItem[Constants.FieldTocDoDuocChay].ToString() : string.Empty;
-                txtTocDoDuocChay.Text = tocDo;
             }
         }
 
-        void UpdateItem(TrangThaiHoSo trangThai, CapXuLy capXuLy)
+        void UpdateItem(int buocDuyet, int trangThai, string note)
         {
             if (!this.Page.IsValid)
                 return;
@@ -323,13 +220,25 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
             
             var deNghiList = SPContext.Current.List;
             var spListItem = deNghiList.GetItemById(SPContext.Current.ItemId);
-            spListItem[Constants.FieldCapDuyet] = (int)capXuLy;
-            spListItem[Constants.FieldTrangThai] = (int)trangThai;
+            spListItem[Fields.TrangThai] = trangThai;
+            spListItem[Fields.BuocDuyet] = buocDuyet;
             var currentUser = SPContext.Current.Web.CurrentUser;
-            if (capXuLy == CapXuLy.MotCua && trangThai == TrangThaiHoSo.DaTiepNhan)
-                spListItem[Constants.FieldMotCuaUser] = currentUser;
-            else if(capXuLy == CapXuLy.CanBo)
-                spListItem[Constants.FieldCanBoUser] = currentUser;
+            spListItem[Fields.NguoiXuLy] = currentUser.ID;
+
+            var nguoiThamGiaXuLy = spListItem[Fields.NguoiThamGiaXuLy];
+            if (nguoiThamGiaXuLy != null && !string.IsNullOrEmpty(nguoiThamGiaXuLy.ToString()))
+            {
+                var nguoiThamGiaXuLyLookup = new SPFieldLookupValueCollection(nguoiThamGiaXuLy.ToString());
+                nguoiThamGiaXuLyLookup.Add(new SPFieldLookupValue(currentUser.ID, currentUser.LoginName));
+                spListItem[Fields.NguoiThamGiaXuLy] = nguoiThamGiaXuLyLookup;
+            }
+            else
+            {
+                spListItem[Fields.NguoiThamGiaXuLy] = currentUser.ID;
+            }
+
+            spListItem[Fields.NoteAppend] = txtNhanXet.Text.Trim();
+            //Cap nhat loai duong
             if (divLoaiDuong.Visible)
             {
                 SPFieldMultiChoiceValue values = new SPFieldMultiChoiceValue();
@@ -340,11 +249,24 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
                         values.Add(chkListLoaiDuong.Items[i].Text);
                     }
                 }
-                spListItem[Constants.FieldLoaiDuong] = values;
-                spListItem[Constants.FieldLanXeDuocChay] = txtLanXeDuocChay.Text.Trim();
-                spListItem[Constants.FieldTocDoDuocChay] = txtTocDoDuocChay.Text.Trim();
+                spListItem[Fields.LoaiDuong] = values;
+                spListItem[Fields.LanXeDuocChay] = txtLanXeDuocChay.Text.Trim();
+                spListItem[Fields.TocDoDuocChay] = txtTocDoDuocChay.Text.Trim();
             }
+            //Cap nhat ngay hen tra
+            if (divNgayHen.Visible)
+            {
+                spListItem[Fields.NgayHenTra] = dtcNgayHenTra.SelectedDate;
+            }
+            //Cap nhat yeu cau bo sung
+            if (divYeuCauBoSung.Visible)
+            {
+                AddBoSungYeuCau(spListItem.Title, spListItem.ID, txtNhanXet.Text.Trim(), currentUser.ID);
+            }
+            //Cap nhat phan cong ho so
             spListItem.Update();
+            //Log to history
+            DeNghiHelper.AddDeNghiHistory(SPContext.Current.Web, SPContext.Current.ItemId, SPContext.Current.ListItem.Title, buocDuyet, trangThai, note);
             //Redirect to page
             var redirectUrl = Request.QueryString["Source"];
             if (redirectUrl == null || string.IsNullOrEmpty(redirectUrl.ToString()))
@@ -352,8 +274,43 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
             longOperation.End(redirectUrl, Microsoft.SharePoint.Utilities.SPRedirectFlags.DoNotEndResponse, HttpContext.Current, "");
         }
 
-        DataTable GetCanBoXuLy()
+        void AddBoSungYeuCau(string soBienNhan, int deNghiId, string noiDung, int nguoiYeuCau)
         {
+            try
+            {
+                var spWeb = SPContext.Current.Web;
+                LoggingServices.LogMessage("Begin AddBoSungYeuCau");
+                SPSecurity.RunWithElevatedPrivileges(delegate()
+                {
+                    using (SPSite site = new SPSite(spWeb.Site.ID))
+                    {
+                        using (SPWeb web = site.OpenWeb(spWeb.ID))
+                        {
+                            web.AllowUnsafeUpdates = true;
+                            var yeuCauBoSungUrl = (web.ServerRelativeUrl + Constants.ListUrlYeuCauBoSung).Replace("//", "/");
+                            var yeuCauBoSungList = web.GetList(yeuCauBoSungUrl);
+                            var yeuCauBoSungItem = yeuCauBoSungList.Items.Add();
+                            yeuCauBoSungItem[Fields.Title] = soBienNhan;
+                            yeuCauBoSungItem[Fields.MoTa] = noiDung;
+                            yeuCauBoSungItem[Fields.DeNghi] = deNghiId;
+                            yeuCauBoSungItem[Fields.NguoiYeuCau] = nguoiYeuCau;
+                            yeuCauBoSungItem.Update();
+                            web.AllowUnsafeUpdates = false;
+                        }
+                    }
+                });
+            }
+            catch (Exception ex)
+            {
+                LoggingServices.LogException(ex);
+            }
+            LoggingServices.LogMessage("End AddBoSungYeuCau");
+        }
+
+        DataTable GetCanBoXuLy(SPGroup group)
+        {
+            if (group == null)
+                return null;
             DataTable result = new DataTable();
             DataColumn[] columns = new DataColumn[] { 
                 new DataColumn("ID"),
@@ -369,7 +326,7 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
                     {
                         using (SPWeb web = site.OpenWeb(SPContext.Current.Web.ID))
                         {
-                            var canBoGroup = web.SiteGroups[Constants.ConfGroupCanBoXuLy];
+                            var canBoGroup = web.SiteGroups.GetByID(group.ID);
                             foreach (SPUser user in canBoGroup.Users)
                             {
                                 DataRow row = result.NewRow();

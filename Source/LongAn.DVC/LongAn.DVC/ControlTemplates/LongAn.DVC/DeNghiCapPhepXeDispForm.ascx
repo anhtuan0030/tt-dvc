@@ -19,13 +19,66 @@
     //fix: Ajax second postback not working in Sharepoint
     _spOriginalFormAction = document.forms[0].action;
     _spSuppressFormOnSubmitWrapper = true;
+
+    $(function () {
+        if ($("[id$='_hdfShowHideDetail']").val() == "1") {
+            $("#linkShowHideDetail").addClass("expanded");
+            $(".deNghiDetail").show();
+        }
+        $("#linkShowHideDetail").click(function () {
+            $(".deNghiDetail").toggle("slow");
+            if ($("[id$='_hdfShowHideDetail']").val() == "1") {
+                $("[id$='_hdfShowHideDetail']").val("0");
+                $("#linkShowHideDetail").removeClass("expanded");
+            }
+            else {
+                $("[id$='_hdfShowHideDetail']").val("1");
+                $("#linkShowHideDetail").addClass("expanded");
+            }
+            return false;
+        });
+
+    });
+
+    function validateInputs() {
+        //Validate phan cong ho so
+        if ($("[id$='divPhanCongHoSo']").length > 0) {
+            if ($("[id$='ddlUsers']").val() == null || $("[id$='ddlUsers']").val() == "")
+                return false;
+        }
+        //Validate nhan xet
+        if ($("[id$='divNhanXet']").length > 0) {
+            if ($("[id$='txtNhanXet']").val() == "")
+                return false;
+        }
+        //Validate ngay hen
+        if ($("[id$='divNgayHen']").length > 0) {
+            if ($("input[id$='NgayHenTraDate']").val() == "")
+                return false;
+        }
+        //Validate loai duong
+        if ($("[id$='divLoaiDuong']").length > 0) {
+            if (!$("input[id$='_chkListLoaiDuong_1']").prop("checked") && !$("input[id$='_chkListLoaiDuong_1']").prop("checked"))
+                return false;
+            if ($("input[id$='txtLanXeDuocChay']").val() == "" || $("input[id$='txtTocDoDuocChay']").val() == "")
+                return false;
+        }
+        //Validate yeu cau bo sung
+        if ($("[id$='divYeuCauBoSung']").length > 0) {
+            if ($("[id$='txtTieuDeYCBS']").text() == "")
+                return false;
+        }
+        return true;
+    }
+
 </script>
 <style type="text/css">
-    #s4-ribbonrow{
-        display:none;
+    #s4-ribbonrow {
+        display: none !important;
     }
+
     #sideNavBox {
-        display:none;
+        display: none !important;
     }
 </style>
 
@@ -57,7 +110,13 @@
                         <div class="grid_12" id="main-frame">
                             <h1>Đề nghị cấp phép lưu hành xe quá tải trọng, xe quá khổ</h1>
                             <div class="mr-form">
-                                <div class="panel-1">
+                                <br />
+                                <div class="pull-left-search">
+                                    <a id="linkShowHideDetail" href="#" class="button button-expand inline-block">Ẩn/Hiện chi tiết đề nghị</a>
+                                    <asp:HiddenField ID="hdfShowHideDetail" Value="0" runat="server" />
+                                </div>
+
+                                <div class="panel-1 deNghiDetail" style="display:none;">
                                     <div class="row">
                                     <div class="grid_2">
                                         <SharePoint:FieldLabel ID="FieldLabel1"  FieldName="KinhGui"  runat="server"  />
@@ -405,12 +464,12 @@
                                     </div>
                                 </div>
 
-                                <div class="panel-2">
+                                <div class="panel-2 deNghiDetail" style="display:none;">
                                     <h2>Danh sách tập tin đính kèm cho hồ sơ</h2>
 
                                     <div class="row">
                                         <div class="grid_8">
-                                            Bản sao giấy đăng ký hoặc giấy đăng ký tạm thời xe, xe đầu kéo, rơ moóc..
+                                            <SharePoint:FieldLabel ID="FieldLabel44" FieldName="UploadFileTitle1" runat="server" />
                                         </div>
                                         <div class="grid_3" id="divFileUpload1" runat="server">
                                         </div>
@@ -418,8 +477,8 @@
                                     </div>
                                     <div class="row">
                                         <div class="grid_8">
-                                            Giấy chứng nhận kiểm định an toàn kỹ thuật và bảo vệ môi trường phương tiện giao
-                                                                                thông cơ giới đường bộ
+                                            <SharePoint:FieldLabel ID="FieldLabel45" FieldName="UploadFileTitle2" runat="server" />
+                                            
                                         </div>
                                         <div class="grid_3" id="divFileUpload2" runat="server">
                                         </div>
@@ -427,7 +486,8 @@
                                     </div>
                                     <div class="row">
                                         <div class="grid_8">
-                                            Giấy cam kết của chủ phương tiện về quyền sở hữu phương tiện
+                                            <SharePoint:FieldLabel ID="FieldLabel46" FieldName="UploadFileTitle3" runat="server" />
+                                            
                                         </div>
                                         <div class="grid_3"  id="divFileUpload3" runat="server">
                                         </div>
@@ -435,7 +495,8 @@
                                     </div>
                                     <div class="row">
                                         <div class="grid_8">
-                                            Chứng minh nhân dân của người nộp
+                                            <SharePoint:FieldLabel ID="FieldLabel47" FieldName="UploadFileTitle4" runat="server" />
+                                            
                                         </div>
                                         <div class="grid_3" id="divFileUpload4" runat="server">
                                         </div>
@@ -443,7 +504,21 @@
                                     </div>
                                 </div>
 
-                                <div class="panel-2" id="divLoaiDuongDisp" runat="server" visible="false">
+                                <div class="panel-2" id="divNgayHen" visible="false" runat="server">
+                                    <h2>Ngày hẹn trả hồ sơ</h2>
+
+                                    <div class="row">
+                                        <div class="grid_2">
+                                            <SharePoint:FieldLabel ID="FieldLabel48"  FieldName="NgayHenTra"  runat="server"  />
+                                        </div>
+                                        <div class="grid_9 col-xs-2">
+                                            <sharepoint:datetimecontrol id="dtcNgayHenTra" DateOnly="true" runat="server"></sharepoint:datetimecontrol>
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </div>
+
+                                <div class="panel-2" id="divLoaiDuongDisp" visible="false" runat="server">
                                     <h2>Loại đường xin cấp phép</h2>
 
                                     <div class="row">
@@ -456,16 +531,14 @@
                                         <div class="clear"></div>
                                     </div>
                                     <div class="row">
-                                        <div class="grid_1">
+                                        <div class="grid_2">
                                             <SharePoint:FieldLabel ID="FieldLabel42"  FieldName="LanXeDuocChay"  runat="server"/>
                                         </div>
                                         <div class="grid_4">
                                             <SharePoint:FormField  runat="server" ID="FormField38" FieldName="LanXeDuocChay" />
                                         </div>
-                                        <div class="grid_1">
-                                            &nbsp;
-                                        </div>
-                                        <div class="grid_1">
+                                        
+                                        <div class="grid_2">
                                             <SharePoint:FieldLabel ID="FieldLabel43"  FieldName="TocDoDuocChay"  runat="server"/>
                                         </div>
                                         <div class="grid_4">
@@ -475,7 +548,7 @@
                                     </div>
                                 </div>
 
-                                <div class="panel-2" id="divLoaiDuong" runat="server" visible="false">
+                                <div class="panel-2" id="divLoaiDuong" visible="false" runat="server">
                                     <h2>Loại đường xin cấp phép</h2>
 
                                     <div class="row">
@@ -487,23 +560,93 @@
                                             <asp:CheckBoxList ID="chkListLoaiDuong" runat="server">
                                             </asp:CheckBoxList>
                                         </div>
+                                        <div class="grid_1">
+                                            <span class="star">(*)</span>
+                                        </div>
                                         <div class="clear"></div>
                                     </div>
                                     <div class="row">
-                                        <div class="grid_1">
+                                        <div class="grid_2">
                                             <SharePoint:FieldLabel ID="FieldLabel38"  FieldName="LanXeDuocChay"  runat="server"/>
                                         </div>
-                                        <div class="grid_4">
+                                        <div class="grid_3">
                                             <asp:TextBox ID="txtLanXeDuocChay" runat="server"></asp:TextBox>
                                         </div>
                                         <div class="grid_1">
-                                            &nbsp;
+                                            <span class="star">(*)</span>
                                         </div>
-                                        <div class="grid_1">
+                                        
+                                        <div class="grid_2">
                                             <SharePoint:FieldLabel ID="FieldLabel40"  FieldName="TocDoDuocChay" runat="server"/>
                                         </div>
-                                        <div class="grid_4">
+                                        <div class="grid_3">
                                             <asp:TextBox ID="txtTocDoDuocChay" runat="server"></asp:TextBox>
+                                        </div>
+                                        <div class="grid_1">
+                                            <span class="star">(*)</span>
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </div>
+
+                                <div class="panel-2" id="divYeuCauBoSung" visible="false" runat="server" >
+                                    <h2>Yêu cầu bổ sung</h2>
+
+                                    <div class="row">
+                                        <div class="grid_2">
+                                            Tiêu đề
+                                        </div>
+                                        <div class="grid_9">
+                                            <asp:TextBox ID="txtTieuDeYCBS" runat="server"></asp:TextBox>
+                                        </div>
+                                        <div class="grid_1">
+                                            <span class="star">(*)</span>
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </div>
+
+                                <div class="panel-2" id="divPhanCongHoSo" visible="false" runat="server">
+                                    <h2>Phân công hồ sơ</h2>
+
+                                    <div class="row">
+                                        <div class="grid_2">
+                                            Cán bộ xử lý
+                                        </div>
+                                        <div class="grid_3">
+                                            <asp:DropDownList ID="ddlUsers" runat="server"></asp:DropDownList>
+                                        </div>
+                                        <div class="grid_1">
+                                            <span class="star">(*)</span>
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                    
+                                </div>
+
+                                <div class="panel-2" id="divNhanXet" runat="server" >
+                                    <h2>Nhận xét / Ghi chú</h2>
+
+                                    <div class="row">
+                                        <div class="grid_2">
+                                            Nhận xét trước đó
+                                        </div>
+                                        <div class="grid_9">
+                                            <SharePoint:AppendOnlyHistory ID="fldAppendOnlyHistory" FieldName="NoteAppend" runat="server" ControlMode="Display" />
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="grid_2">
+                                            Nhập nhận xét
+                                            
+                                        </div>
+                                        <div class="grid_9">
+                                            <asp:TextBox ID="txtNhanXet" TextMode="MultiLine" runat="server"></asp:TextBox>
+                                        </div>
+                                        <div class="grid_1">
+                                            <span class="star">(*)</span>
                                         </div>
                                         <div class="clear"></div>
                                     </div>
@@ -511,29 +654,26 @@
 
                                 <div class="pull-right">
 
-                                    <asp:Button ID="btnTiepNhan" runat="server" Text="Tiếp nhận hồ sơ" CssClass="button" Visible="false" style="float:left;"/>
-                                    <asp:HyperLink ID="hplTiepNhan" runat="server" CssClass="button" Visible="false" style="float:left;">Tiếp nhận hồ sơ</asp:HyperLink>
-
-                                    <asp:Button ID="btnTrinhXuLy" runat="server" Text="Chuyển Trưởng/Phó P.QLHT" CssClass="button" Visible="false" style="float:left;"/>
-
-                                    <asp:Button ID="btnYeuCauBoSung" runat="server" Text="Yêu cầu bổ sung" CssClass="button" style="float:left;"
-                                        Visible="false" />
+                                    <asp:Button ID="btnDuyet" runat="server" OnClientClick="if(!validateInputs()) return false;" Text="" Visible="false" CssClass="button" style="float:left;"/>
                                     
-                                    <asp:Button ID="btnPhanCongHoSo" runat="server" Text="Phân công hồ sơ" CssClass="button" Visible="false" style="float:left;"/>
+                                    <asp:Button ID="btnTraHoSo" runat="server" OnClientClick="if(!validateInputs()) return false;" Text="" Visible="false" CssClass="button" style="float:left;"/>
+                                    
+                                    <asp:Button ID="btnTuChoi" runat="server" OnClientClick="if(!validateInputs()) return false;" Text="Từ chối" Visible="false" CssClass="button" style="float:left;"/>
+                                    
+                                    <asp:Button ID="btnPhanCong" runat="server" OnClientClick="if(!validateInputs()) return false;" Text="Phân công xử lý" Visible="false" CssClass="button" style="float:left;"/>
 
-                                    <asp:Button ID="btnTrinhTruongPhong" runat="server" Text="Trình trưởng/phó P.QLHT" CssClass="button" Visible="false" style="float:left;"/>
-                                    <asp:Button ID="btnTrinhLanhDao" runat="server" Text="Trình lãnh đạo" CssClass="button" Visible="false" style="float:left;"/>
-                                    <asp:Button ID="btnDuyetHoSo" runat="server" Text="Duyệt hồ sơ" CssClass="button" Visible="false" style="float:left;"/>
-
-                                    <asp:Button ID="btnChuaHoanThanh" runat="server" Text="Chưa hoàn thành" CssClass="button" Visible="false" style="float:left;"/>
-                                    <asp:Button ID="btnHoanThanh" runat="server" Text="Đã hoàn thành" CssClass="button" Visible="false" style="float:left;"/>
-
-                                    <asp:Button ID="btnTraHoSo" runat="server" Text="Từ chối hồ sơ" CssClass="button" Visible="false" style="float:left;"/>
-
-                                    <asp:Button ID="btnPrint" runat="server" Text="In biên nhận" CssClass="button" Visible="false" style="float:left;"/>
-                                    <asp:Button ID="btnPrintGiayPhep" runat="server" Text="In giấy phép" CssClass="button" Visible="false" style="float:left;"/>
-                                    <asp:Button ID="btnCancel" runat="server" Text="Hủy" CssClass="button" style="float:left;"/>
+                                    <asp:Button ID="btnCanBoTiepNhan" runat="server" OnClientClick="if(!validateInputs()) return false;" Text="Tiếp nhận xử lý" Visible="false" CssClass="button" style="float:left;"/>
+                                    
+                                    <asp:Button ID="btnYeuCauBoSung" runat="server" OnClientClick="if(!validateInputs()) return false;" Text="Yêu cầu bổ sung" Visible="false" CssClass="button" style="float:left;"/>
+                                    
+                                    <asp:Button ID="btnCancel" runat="server" Text="Đóng" CssClass="button" style="float:left;"/>
                                 </div>
+
+                                <div style="display:none;">
+                                    <asp:HiddenField ID="hdfNextStep" runat="server" />
+                                    <asp:HiddenField ID="hdfPreStep" runat="server" />
+                                </div>
+
                                 <div class="clearfix"></div>
                             </div>
                             <div class="clearfix"></div>
@@ -564,4 +704,4 @@
 		    <SharePoint:DelegateControl runat="server" ControlId="RelatedItemsPlaceHolder"/>
 	    </td>
     </tr>
-    </table>
+</table>

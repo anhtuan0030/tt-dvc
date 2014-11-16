@@ -202,35 +202,61 @@ namespace LongAn.DVC.Helpers
                             var cauHinhItem = cauHinhList.GetItemById(buocDuyetID);
                             if (cauHinhItem != null)
                             {
+                                cauHinh.BuocDuyetID = cauHinhItem.ID;
                                 cauHinh.BuocDuyet = cauHinhItem[Fields.Title].ToString();
-                                var spGroupLookup = new SPFieldLookupValue(cauHinhItem[Fields.SPGroup].ToString());
-                                cauHinh.SPGroup = web.SiteGroups.GetByID(spGroupLookup.LookupId);
+                                var spGroupText = cauHinhItem[Fields.SPGroup];
+                                if (spGroupText != null && !string.IsNullOrEmpty(spGroupText.ToString()))
+                                {
+                                    var spGroupLookup = new SPFieldLookupValue(spGroupText.ToString());
+                                    cauHinh.SPGroup = web.SiteGroups.GetByID(spGroupLookup.LookupId);
+                                }
+
                                 cauHinh.CapDuyetText = cauHinhItem[Fields.CapDuyetText].ToString();
-                                var trangThaiLookup = new SPFieldLookupValue(cauHinhItem[Fields.TrangThai].ToString());
-                                cauHinh.TrangThai = trangThaiLookup.LookupId;
+
+                                var trangThaiText = cauHinhItem[Fields.TrangThai];
+                                if (trangThaiText != null && !string.IsNullOrEmpty(trangThaiText.ToString()))
+                                {
+                                    var trangThaiLookup = new SPFieldLookupValue(trangThaiText.ToString());
+                                    cauHinh.TrangThai = trangThaiLookup.LookupId;
+                                }
                                 cauHinh.IsFix = bool.Parse(cauHinhItem[Fields.IsFix].ToString());
 
                                 cauHinh.ActionDuyet = bool.Parse(cauHinhItem[Fields.ActionDuyet].ToString());
-                                cauHinh.TieuDeActionDuyet = cauHinhItem[Fields.TieuDeActionDuyet].ToString();
-                                var nextStepLookup = new SPFieldLookupValue(cauHinhItem[Fields.NextStep].ToString());
-                                cauHinh.NextStep = nextStepLookup.LookupId;
+                                cauHinh.TieuDeActionDuyet = cauHinhItem[Fields.TieuDeActionDuyet] != null ? cauHinhItem[Fields.TieuDeActionDuyet].ToString() : string.Empty;
+                                var nextStepText = cauHinhItem[Fields.NextStep];
+                                if (nextStepText != null && !string.IsNullOrEmpty(nextStepText.ToString()))
+                                {
+                                    var nextStepLookup = new SPFieldLookupValue(nextStepText.ToString());
+                                    cauHinh.NextStep = nextStepLookup.LookupId;
+                                }
 
                                 cauHinh.ActionTraHoSo = bool.Parse(cauHinhItem[Fields.ActionTraHoSo].ToString());
-                                cauHinh.TieuDeActionTraHoSo = cauHinhItem[Fields.TieuDeActionTraHoSo].ToString();
-                                var previousStepLookup = new SPFieldLookupValue(cauHinhItem[Fields.PreviousStep].ToString());
-                                cauHinh.PreviousStep = previousStepLookup.LookupId;
+                                cauHinh.TieuDeActionTraHoSo = cauHinhItem[Fields.TieuDeActionTraHoSo] != null ? cauHinhItem[Fields.TieuDeActionTraHoSo].ToString() : string.Empty;
+                                var previousStepText = cauHinhItem[Fields.PreviousStep];
+                                if (previousStepText != null && !string.IsNullOrEmpty(previousStepText.ToString()))
+                                {
+                                    var previousStepLookup = new SPFieldLookupValue(previousStepText.ToString());
+                                    cauHinh.PreviousStep = previousStepLookup.LookupId;
+                                }
 
                                 cauHinh.ActionTuChoi = bool.Parse(cauHinhItem[Fields.ActionTuChoi].ToString());
                                 cauHinh.ActionYeuCauBoSung = bool.Parse(cauHinhItem[Fields.ActionYeuCauBoSung].ToString());
                                 cauHinh.ActionPhanCong = bool.Parse(cauHinhItem[Fields.ActionPhanCong].ToString());
+                                cauHinh.ActionCanBoTiepNhan = bool.Parse(cauHinhItem[Fields.ActionCanBoTiepNhan].ToString());
+                                var spGroupCanBoText = cauHinhItem[Fields.SPGroupCanBo];
+                                if (spGroupCanBoText != null && !string.IsNullOrEmpty(spGroupCanBoText.ToString()))
+                                {
+                                    var spGroupLookup = new SPFieldLookupValue(spGroupCanBoText.ToString());
+                                    cauHinh.SPGroupCanBo = web.SiteGroups.GetByID(spGroupLookup.LookupId);
+                                }
                                 cauHinh.AllowCapNhatLoaiDuong = bool.Parse(cauHinhItem[Fields.AllowCapNhatLoaiDuong].ToString());
                                 cauHinh.AllowCapNhatNgayHen = bool.Parse(cauHinhItem[Fields.AllowCapNhatNgayHen].ToString());
                                 cauHinh.IsBoSungHoSo = bool.Parse(cauHinhItem[Fields.IsBoSungHoSo].ToString());
                                 cauHinh.IsPhanCong = bool.Parse(cauHinhItem[Fields.IsPhanCong].ToString());
                                 cauHinh.IsXuLyPhanCong = bool.Parse(cauHinhItem[Fields.IsXuLyPhanCong].ToString());
-                                cauHinh.StartEnd = cauHinhItem[Fields.StartEnd].ToString();
+                                cauHinh.StartEnd = cauHinhItem[Fields.StartEnd] != null ? cauHinhItem[Fields.StartEnd].ToString() : string.Empty;
                                 cauHinh.IsEmail = bool.Parse(cauHinhItem[Fields.IsEmail].ToString());
-                                cauHinh.EmailTemplate = cauHinhItem[Fields.EmailTemplate].ToString();
+                                cauHinh.EmailTemplate = cauHinhItem[Fields.EmailTemplate] != null ? cauHinhItem[Fields.EmailTemplate].ToString() : string.Empty;
                             }
                         }
                     }
@@ -266,6 +292,7 @@ namespace LongAn.DVC.Helpers
                                 foreach (SPListItem cauHinhItem in cauHinhItems)
                                 {
                                     CauHinh cauHinh = new CauHinh();
+                                    cauHinh.BuocDuyetID = cauHinhItem.ID;
                                     cauHinh.BuocDuyet = cauHinhItem[Fields.Title].ToString();
                                     var spGroupText = cauHinhItem[Fields.SPGroup];
                                     if (spGroupText != null && !string.IsNullOrEmpty(spGroupText.ToString()))
@@ -426,7 +453,7 @@ namespace LongAn.DVC.Helpers
             }
             return result;
         }
-        public static void AddDeNghiHistory(SPWeb spWeb, int deNghi, int buocDuyet, int trangThai, string note = "")
+        public static void AddDeNghiHistory(SPWeb spWeb, int deNghi, string title, int buocDuyet, int trangThai, string note = "")
         {
             try
             {
@@ -441,7 +468,7 @@ namespace LongAn.DVC.Helpers
                             var deNghiHistoryUrl = (web.ServerRelativeUrl + Constants.ListUrlLichSuCapPhep).Replace("//", "/");
                             var deNghiHistoryList = web.GetList(deNghiHistoryUrl);
                             var deNghiHistoryItem = deNghiHistoryList.Items.Add();
-                            deNghiHistoryItem[Fields.Title] = note;
+                            deNghiHistoryItem[Fields.Title] = title;
                             deNghiHistoryItem[Fields.DeNghi] = deNghi;
                             deNghiHistoryItem[Fields.BuocDuyet] = buocDuyet;
                             deNghiHistoryItem[Fields.NguoiXuLy] = spWeb.CurrentUser.ID;

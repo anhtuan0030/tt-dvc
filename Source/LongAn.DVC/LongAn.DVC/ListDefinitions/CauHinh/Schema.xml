@@ -122,6 +122,10 @@
                     Name="ActionYeuCauBoSung" />
           <FieldRef ID="{eb97fbd8-e796-4940-a54e-a12e4644ef9e}"
                     Name="ActionPhanCong" />
+          <FieldRef Name="ActionCanBoTiepNhan"
+                    ID="{5A91D104-05AB-4ED8-BC85-207EA4A8113A}"/>
+          <FieldRef ID="{5E5DF29F-C1F4-4D40-A369-813DC24967E9}"
+                    Name="SPGroupCanBo" />
           <FieldRef ID="{b36d0245-0dfa-4a24-9ae6-e3fc5e194052}"
                     Name="AllowCapNhatLoaiDuong" />
           <FieldRef ID="{d0bc18be-83fe-423d-adea-2470c328adb7}"
@@ -299,7 +303,7 @@
       <Field Type="Lookup"
              Name="PreviousStep"
              ID="{62a0ff90-0459-4496-98cf-f9ae88488f42}"
-             DisplayName="Bước từ chối"
+             DisplayName="Bước trả hồ sơ"
              Required="FALSE"
              EnforceUniqueValues="FALSE"
              List="Lists/CauHinh"
@@ -321,6 +325,17 @@
              ID="{eb97fbd8-e796-4940-a54e-a12e4644ef9e}"
              DisplayName="Action Phân công"
              Type="Boolean"
+             Group="[LA-DVC]" />
+      <Field Name="ActionCanBoTiepNhan"
+             ID="{5A91D104-05AB-4ED8-BC85-207EA4A8113A}"
+             DisplayName="Action Cán bộ tiếp nhận"
+             Type="Boolean"
+             Group="[LA-DVC]" />
+      <Field Name="SPGroupCanBo"
+             ID="{5E5DF29F-C1F4-4D40-A369-813DC24967E9}"
+             DisplayName="SP Group cán bộ"
+             Type="User"
+             Required="FALSE"
              Group="[LA-DVC]" />
       <Field Name="AllowCapNhatLoaiDuong"
              ID="{b36d0245-0dfa-4a24-9ae6-e3fc5e194052}"

@@ -415,7 +415,7 @@
 
                         <div class="row">
                             <div class="grid_8">
-                                Bản sao giấy đăng ký hoặc giấy đăng ký tạm thời xe, xe đầu kéo, rơ moóc..
+                                <SharePoint:FieldLabel ID="FieldLabel38" FieldName="UploadFileTitle1" runat="server" />
                                 <span title="This is a required field." class="ms-accentText"> *</span>
                             </div>
                             <div class="grid_3" id="divFileUpload1" runat="server">
@@ -425,8 +425,7 @@
                         </div>
                         <div class="row">
                             <div class="grid_8">
-                                Giấy chứng nhận kiểm định an toàn kỹ thuật và bảo vệ môi trường phương tiện giao
-                                    thông cơ giới đường bộ
+                                <SharePoint:FieldLabel ID="FieldLabel40" FieldName="UploadFileTitle2" runat="server" />
                                 <span title="This is a required field." class="ms-accentText"> *</span>
                             </div>
                             <div class="grid_3" id="divFileUpload2" runat="server">
@@ -436,7 +435,7 @@
                         </div>
                         <div class="row">
                             <div class="grid_8">
-                                Giấy cam kết của chủ phương tiện về quyền sở hữu phương tiện
+                                <SharePoint:FieldLabel ID="FieldLabel41" FieldName="UploadFileTitle3" runat="server" />
                                 <span title="This is a required field." class="ms-accentText"> *</span>
                             </div>
                             <div class="grid_3"  id="divFileUpload3" runat="server">
@@ -446,7 +445,7 @@
                         </div>
                         <div class="row">
                             <div class="grid_8">
-                                Chứng minh nhân dân của người nộp
+                                <SharePoint:FieldLabel ID="FieldLabel42" FieldName="UploadFileTitle4" runat="server" />
                                 <span title="This is a required field." class="ms-accentText"> *</span>
                             </div>
                             <div class="grid_3" id="divFileUpload4" runat="server">
