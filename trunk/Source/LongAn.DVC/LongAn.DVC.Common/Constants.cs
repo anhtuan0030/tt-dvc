@@ -181,7 +181,7 @@ namespace LongAn.DVC.Common
         public const string ListUrlDeNghiCapPhep = "/Lists/DeNghi";
         public const string ListUrlDeNghiAttachment = "/Lists/Attachment";
         public const string ListUrlYeuCauBoSung = "/Lists/YeuCauBoSung";
-        public const string ListUrlLichSuCapPhep = "/Lists/LichSuCapPhep";
+        public const string ListUrlLichSuCapPhep = "/Lists/DeNghiHis";
 
         public const string ListUrlCauHinh = "/Lists/CauHinh";
         //Loại attachments
@@ -192,6 +192,11 @@ namespace LongAn.DVC.Common
 
         public const string FieldTitle = "Title";
         public const string FieldCreated = "Created";
+
+        public const string CauHinh_Start = "Bắt đầu";
+        public const string CauHinh_End = "Kết thúc";
+        public const string CauHinh_YCBS = "Yêu cầu bổ sung";
+        public const string CauHinh_PCHS = "Phân công hồ sơ";
     }
 
     public class Fields {
@@ -214,6 +219,8 @@ namespace LongAn.DVC.Common
         public const string ActionTuChoi = "ActionTuChoi";
         public const string ActionYeuCauBoSung = "ActionYeuCauBoSung";
         public const string ActionPhanCong = "ActionPhanCong";
+        public const string ActionCanBoTiepNhan = "ActionCanBoTiepNhan";
+        public const string SPGroupCanBo = "SPGroupCanBo";
         public const string AllowCapNhatLoaiDuong = "AllowCapNhatLoaiDuong";
         public const string AllowCapNhatNgayHen = "AllowCapNhatNgayHen";
         public const string IsBoSungHoSo = "IsBoSungHoSo";
@@ -279,6 +286,7 @@ namespace LongAn.DVC.Common
         //public const string DeNghi = "DeNghi";
         public const string NgayXuLy = "NgayXuLy";
         public const string NguoiXuLy = "NguoiXuLy";
+        public const string NguoiThamGiaXuLy = "NguoiThamGiaXuLy";
         public const string MoTa = "MoTa";
         //public const string BuocDuyet = "BuocDuyet";
 
