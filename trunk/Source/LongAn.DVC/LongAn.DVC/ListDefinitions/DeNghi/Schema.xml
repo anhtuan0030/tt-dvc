@@ -14,6 +14,7 @@
 
 
 
+
       <ContentType ID="0x0100145a0bf38a894d6fabe8baeb45741dc5"
                    Name="Đề nghị Content Type"
                    Group="[LA-DVC]"
@@ -22,6 +23,63 @@
                    Inherits="TRUE"
                    Version="0">
         <FieldRefs>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -244,6 +302,12 @@
                     Name="DeNghiGUID" />
           <FieldRef ID="{06EF1F2D-AADC-478A-9FB4-31C672AD0F7A}"
                     Name="NguoiDeNghi" />
+          <FieldRef ID="{DCE52DE5-3D14-4D27-81DE-B558D0385836}"
+                    Name="NguoiXuLy" />
+          <FieldRef ID="{645D6072-D283-4F2B-8672-6D019BDA9A8A}"
+                    Name="NguoiThamGiaXuLy" />
+          <FieldRef ID="{DCE52DE5-3D14-4D27-81DE-B558D0385836}"
+                    Name="NguoiXuLy"/>
           <FieldRef ID="{B26051F8-701F-41BD-86BA-C39B972FC114}"
                     Name="NamDeNghi" />
           <FieldRef ID="{49EDE72C-22F1-490F-B46F-13A22165345A}"
@@ -258,6 +322,10 @@
                     Name="BuocDuyet" />
           <FieldRef ID="{a5ed0888-aabc-4481-8a19-42df290efd2e}"
                     Name="TrangThai" />
+          <FieldRef ID="{14C5BB63-A409-4458-B702-03D5CFB3FD18}"
+                    Name="TenTrangThaiRef"/>
+          <FieldRef ID="{C685DDD9-57D5-4B59-9F00-80DEBB73586F}"
+                    Name="SoThuTuBienNhan" />
         </FieldRefs>
         <XmlDocuments>
           <XmlDocument NamespaceURI="http://schemas.microsoft.com/sharepoint/events">
@@ -317,6 +385,63 @@
       </ContentType>
     </ContentTypes>
     <Fields>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -870,6 +995,8 @@
 
 
 
+
+
           <CHOICE>Quá tải</CHOICE>
           <CHOICE>Quá khổ</CHOICE>
         </CHOICES>
@@ -885,6 +1012,8 @@
              FillInChoice="FALSE">
         <Default>Quốc lộ</Default>
         <CHOICES>
+
+
 
 
 
@@ -916,22 +1045,18 @@
       <Field Name="UploadFileTitle1"
              ID="{0cbcb15a-25ac-4eef-a973-1a1762745c95}"
              DisplayName="Bản sao giấy đăng ký hoặc giấy đăng ký tạm thời xe, xe đầu kéo, rơ moóc.."
-             Hidden="TRUE"
              Type="Text" />
       <Field Name="UploadFileTitle2"
              ID="{cf46d54e-bbee-4b03-a8d0-6d92b2655643}"
              DisplayName="Giấy chứng nhận kiểm định an toàn kỹ thuật và bảo vệ môi trường phương tiện giao thông cơ giới đường bộ"
-             Hidden="TRUE"
              Type="Text" />
       <Field Name="UploadFileTitle3"
              ID="{10b82de8-3e3f-4d2f-b366-252e3f225220}"
              DisplayName="Giấy cam kết của chủ phương tiện về quyền sở hữu phương tiện"
-             Hidden="TRUE"
              Type="Text" />
       <Field Name="UploadFileTitle4"
              ID="{b8ea5ae7-d049-4b96-a01d-9f202e5569cf}"
              DisplayName="Chứng minh nhân dân của người nộp"
-             Hidden="TRUE"
              Type="Text" />
       <Field Type="Text"
              ID="{DCDF7E67-C385-4840-BCE5-E82BFF1FBC0C}"
@@ -955,6 +1080,32 @@
              ShowField="ImnName"
              UserSelectionMode="PeopleOnly"
              UserSelectionScope="0"
+             Group="[LA-DVC]" />
+      <Field Type="User"
+             ID="{DCE52DE5-3D14-4D27-81DE-B558D0385836}"
+             Name="NguoiXuLy"
+             StaticName="NguoiXuLy"
+             DisplayName="Người xử lý"
+             List="UserInfo"
+             Required="FALSE"
+             EnforceUniqueValues="FALSE"
+             ShowField="ImnName"
+             UserSelectionMode="PeopleOnly"
+             UserSelectionScope="0"
+             Group="[LA-DVC]" />
+      <Field Type="UserMulti"
+             DisplayName="Người tham gia xử lý"
+             List="UserInfo"
+             Required="FALSE"
+             EnforceUniqueValues="FALSE"
+             ShowField="ImnName"
+             UserSelectionMode="PeopleOnly"
+             UserSelectionScope="0"
+             Mult="TRUE"
+             Sortable="FALSE"
+             ID="{645D6072-D283-4F2B-8672-6D019BDA9A8A}"
+             StaticName="NguoiThamGiaXuLy"
+             Name="NguoiThamGiaXuLy"
              Group="[LA-DVC]" />
       <Field Type="Text"
              ID="{B26051F8-701F-41BD-86BA-C39B972FC114}"
@@ -1026,8 +1177,36 @@
              UnlimitedLengthInDocumentLibrary="FALSE"
              RelationshipDeleteBehavior="None"
              Group="[LA-DVC]" />
+      <Field Type="Lookup"
+             ID="{14C5BB63-A409-4458-B702-03D5CFB3FD18}"
+             StaticName="TenTrangThaiRef"
+             Name="TenTrangThaiRef"
+             DisplayName="Tên trạng thái"
+             Required="TRUE"
+             EnforceUniqueValues="FALSE"
+             List="Lists/TrangThai"
+             FieldRef="{a5ed0888-aabc-4481-8a19-42df290efd2e}"
+             ShowField="TenTrangThai"
+             UnlimitedLengthInDocumentLibrary="FALSE"
+             RelationshipDeleteBehavior="None"
+             Group="[LA-DVC]" />
+      <Field Type="Text"
+             ID="{C685DDD9-57D5-4B59-9F00-80DEBB73586F}"
+             Name="SoThuTuBienNhan"
+             StaticName="SoThuTuBienNhan"
+             DisplayName="Số thứ tự biên nhận"
+             Required="FALSE"
+             Hidden="TRUE"
+             EnforceUniqueValues="FALSE"
+             Indexed="FALSE"
+             MaxLength="255"
+             Group="[LA-DVC]" />
+      
+      
     </Fields>
     <Views>
+
+
 
 
 
@@ -1043,10 +1222,12 @@
 
 
 
+
           <FieldRef Name="LinkTitleNoMenu"></FieldRef>
         </ViewFields>
         <Query>
           <OrderBy>
+
 
 
 
@@ -1108,6 +1289,21 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
           <FieldRef Name="LinkTitle"></FieldRef>
           <FieldRef Name="KinhGui" />
           <FieldRef Name="CaNhanToChuc" />
@@ -1126,6 +1322,7 @@
         </ViewFields>
         <Query>
           <OrderBy>
+
 
 
 

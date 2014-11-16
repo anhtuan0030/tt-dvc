@@ -7,12 +7,14 @@ using System.Threading.Tasks;
 
 namespace LongAn.DVC.Helpers
 {
+    [Serializable]
     public class CauHinh
     {
         public CauHinh()
         {
             BuocDuyet = "New Cấu hình - null";
         }
+        public int BuocDuyetID { get; set; }
         public string BuocDuyet { get; set; }//Title
         public SPGroup SPGroup { get; set; }
         public string CapDuyetText { get; set; }
@@ -27,15 +29,19 @@ namespace LongAn.DVC.Helpers
         public bool ActionTuChoi { get; set; }
         public bool ActionYeuCauBoSung { get; set; }
         public bool ActionPhanCong { get; set; }
+        public bool ActionCanBoTiepNhan { get; set; }
+        public SPGroup SPGroupCanBo { get; set; }
         public bool AllowCapNhatLoaiDuong { get; set; }
         public bool AllowCapNhatNgayHen { get; set; }
         public bool IsBoSungHoSo { get; set; }
         public bool IsPhanCong { get; set; }
+
         public bool IsXuLyPhanCong { get; set; }
         public string StartEnd { get; set; }
         public bool IsEmail { get; set; }
         public string EmailTemplate { get; set; }
 
+        
         public override string ToString()
         {
             return BuocDuyet;

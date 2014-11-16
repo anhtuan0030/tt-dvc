@@ -42,6 +42,8 @@
                     Name="BuocDuyet" />
           <FieldRef ID="{a5ed0888-aabc-4481-8a19-42df290efd2e}"
                     Name="TrangThai" />
+          <FieldRef ID="{14C5BB63-A409-4458-B702-03D5CFB3FD18}"
+                    Name="TenTrangThaiRef"/>
         </FieldRefs>
       </ContentType>
       
@@ -133,6 +135,20 @@
              UnlimitedLengthInDocumentLibrary="FALSE"
              RelationshipDeleteBehavior="None"
              Group="[LA-DVC]" />
+
+      <Field Type="Lookup"
+             ID="{14C5BB63-A409-4458-B702-03D5CFB3FD18}"
+             StaticName="TenTrangThaiRef"
+             Name="TenTrangThaiRef"
+             DisplayName="Tên trạng thái"
+             Required="TRUE"
+             EnforceUniqueValues="FALSE"
+             List="Lists/TrangThai"
+             FieldRef="{a5ed0888-aabc-4481-8a19-42df290efd2e}"
+             ShowField="TenTrangThai"
+             UnlimitedLengthInDocumentLibrary="FALSE"
+             RelationshipDeleteBehavior="None"
+             Group="[LA-DVC]" />
     </Fields>
     <Views>
 
@@ -196,8 +212,8 @@
           <FieldRef Name="NgayXuLy" />
           <FieldRef Name="NguoiXuLy" />
           <FieldRef Name="MoTa" />
-          <FieldRef Name="CapDuyet1" />
-          <FieldRef Name="TrangThai1" />
+          <FieldRef Name="BuocDuyet" />
+          <FieldRef Name="TrangThai" />
         </ViewFields>
         <Query>
           <GroupBy>

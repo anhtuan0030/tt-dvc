@@ -654,7 +654,7 @@
   <Field Type="Lookup"
          Name="PreviousStep"
          ID="{62a0ff90-0459-4496-98cf-f9ae88488f42}"
-         DisplayName="Bước từ chối"
+         DisplayName="Bước trả hồ sơ"
          Required="FALSE"
          EnforceUniqueValues="FALSE"
          List="Lists/CauHinh"
@@ -796,4 +796,41 @@
          UserSelectionMode="PeopleOnly"
          UserSelectionScope="0"
          Group="[LA-DVC]" />
+
+  <Field Type="Lookup"
+         ID="{14C5BB63-A409-4458-B702-03D5CFB3FD18}"
+         StaticName="TenTrangThaiRef"
+         Name="TenTrangThaiRef"
+         DisplayName="Tên trạng thái"
+         Required="TRUE"
+         EnforceUniqueValues="FALSE"
+         List="Lists/TrangThai"
+         FieldRef="{a5ed0888-aabc-4481-8a19-42df290efd2e}"
+         ShowField="TenTrangThai"
+         UnlimitedLengthInDocumentLibrary="FALSE"
+         RelationshipDeleteBehavior="None"
+         Group="[LA-DVC]" />
+
+  <Field Name="ActionCanBoTiepNhan"
+         ID="{5A91D104-05AB-4ED8-BC85-207EA4A8113A}"
+         DisplayName="Action Cán bộ tiếp nhận"
+         Type="Boolean"
+         Group="[LA-DVC]" />
+  
+    <Field Type="UserMulti" 
+           DisplayName="Người tham gia xử lý" 
+           List="UserInfo" 
+           Required="FALSE" 
+           EnforceUniqueValues="FALSE" 
+           ShowField="ImnName" 
+           UserSelectionMode="PeopleOnly" 
+           UserSelectionScope="0" 
+           Mult="TRUE" 
+           Sortable="FALSE" 
+           ID="{645D6072-D283-4F2B-8672-6D019BDA9A8A}" 
+           StaticName="NguoiThamGiaXuLy" 
+           Name="NguoiThamGiaXuLy"
+           Group="[LA-DVC]" />
+
+    
 </Elements>

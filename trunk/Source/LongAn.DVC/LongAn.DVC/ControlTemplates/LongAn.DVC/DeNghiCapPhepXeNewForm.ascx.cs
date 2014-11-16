@@ -15,25 +15,28 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
 {
     public partial class DeNghiCapPhepXeNewForm : UserControl
     {
-        public List<CauHinh> CauHinh
-        {
-            get
-            {
-                if (ViewState["CauHinh"] != null)
-                {
-                    return (List<CauHinh>)ViewState["CauHinh"];
-                }
-                else
-                {
-                    var deNghis = DeNghiHelper.GetCauHinh("Start");
-                    ViewState["CauHinh"] = deNghis;
-                    return deNghis;
-                }
-            }
-        }
+        #region Properties
+        //public List<CauHinh> CauHinh
+        //{
+        //    get
+        //    {
+        //        if (ViewState["CauHinh"] != null)
+        //        {
+        //            return (List<CauHinh>)ViewState["CauHinh"];
+        //        }
+        //        else
+        //        {
+        //            var deNghis = DeNghiHelper.GetCauHinh("Start");
+        //            ViewState["CauHinh"] = deNghis;
+        //            return deNghis;
+        //        }
+        //    }
+        //}
+        int BuocDuyetID = 0;
         string CapDuyetText = string.Empty;
         int TrangThai = 0;
         int NextStep = 0;
+        #endregion Properties
         protected override void OnInit(EventArgs e)
         {
             base.OnInit(e);
@@ -43,7 +46,7 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
             //    ribbon.TrimById("Ribbon.ListForm.Edit");
             //    //ribbon.CommandUIVisible = false;
             //}
-            var cauHinhs = CauHinh;
+            var cauHinhs = DeNghiHelper.GetCauHinh("Start");
             var isMember = false;
             foreach (var item in cauHinhs)
             {
@@ -53,6 +56,7 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
                     CapDuyetText = item.CapDuyetText;
                     TrangThai = item.TrangThai;
                     NextStep = item.NextStep;
+                    BuocDuyetID = item.BuocDuyetID;
                     break;
                 }
             }
@@ -79,7 +83,11 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
 
         void btnGuiHoSo_Click(object sender, EventArgs e)
         {
-            SaveItem(NextStep, TrangThai, CapDuyetText);
+            var cauHinh = DeNghiHelper.GetCauHinh(NextStep);
+            if (cauHinh != null)
+            {
+                SaveItem(cauHinh.BuocDuyetID, cauHinh.TrangThai, cauHinh.CapDuyetText);
+            }
         }
 
         protected void DeNghiSaveHandler(object sender, EventArgs e)
@@ -94,7 +102,7 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
 
         void btnSave_Click(object sender, EventArgs e)
         {
-            SaveItem(0, TrangThai, CapDuyetText);
+            SaveItem(BuocDuyetID, TrangThai, CapDuyetText);
         }
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -114,11 +122,11 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
             //Set default value
             string deNghiGuid = Guid.NewGuid().ToString();
             SPContext.Current.ListItem[Fields.DeNghiGUID] = deNghiGuid;
-            SPContext.Current.ListItem[Fields.TrangThai] = TrangThai;
-            SPContext.Current.ListItem[Fields.BuocDuyet] = NextStep;
+            SPContext.Current.ListItem[Fields.TrangThai] = trangThai;
+            SPContext.Current.ListItem[Fields.BuocDuyet] = buocDuyet;
             SPContext.Current.ListItem[Fields.NgayNopHoSo] = DateTime.Now;
             SPContext.Current.ListItem[Fields.NguoiDeNghi] = SPContext.Current.Web.CurrentUser;
-            SaveButton.SaveItem(SPContext.Current, false, string.Empty);
+            SaveButton.SaveItem(SPContext.Current, false, note);
             var deNghiList = SPContext.Current.List;
             int itemId = 0;
             SPQuery caml = Camlex.Query().Where(x => (string)x[Constants.FieldDeNghiGUID] == deNghiGuid)
@@ -141,7 +149,7 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
             DeNghiHelper.SaveFileAttachment(fileUpload3, itemId, Constants.AttachmentGiayCamKet);
             DeNghiHelper.SaveFileAttachment(fileUpload4, itemId, Constants.AttachmentCMND);
             //Log to history
-            DeNghiHelper.AddDeNghiHistory(SPContext.Current.Web, itemId, buocDuyet, trangThai, note);
+            DeNghiHelper.AddDeNghiHistory(SPContext.Current.Web, itemId, SPContext.Current.ListItem.Title , buocDuyet, trangThai, note);
             //Redirect to page
             var redirectUrl = Request.QueryString["Source"];
             if (redirectUrl == null || string.IsNullOrEmpty(redirectUrl.ToString()))
