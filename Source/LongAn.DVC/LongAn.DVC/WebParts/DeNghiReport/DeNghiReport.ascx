@@ -31,7 +31,7 @@
 				</div>
                 <div>
                     <div class="grid_2">
-                        <asp:Button ID="btnExportExcel" runat="server" Text="Xuất báo cáo" CssClass="button" align="middle" OnClick="btnExportExcel_Click" />
+                        <asp:Button ID="btnExportExcel" runat="server" Text="Xuất báo cáo" CssClass="button btnExportExcel" align="middle" OnClick="btnExportExcel_Click" />
                     </div>
                     <div class="clear"></div>
                 </div>
@@ -40,3 +40,11 @@
 	</div>
 	<div class="clear"></div>
 </div>
+
+<script type="text/javascript">
+    $(function () {
+        $(".btnExportExcel").click(function () {
+            _spFormOnSubmitCalled = false;
+        });
+    });
+</script>

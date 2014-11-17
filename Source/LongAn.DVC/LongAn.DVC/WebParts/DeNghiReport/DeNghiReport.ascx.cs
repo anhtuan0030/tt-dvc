@@ -168,9 +168,9 @@ namespace LongAn.DVC.WebParts.DeNghiReport
                             var expressions = new List<Expression<Func<SPListItem, bool>>>();
 
                             var expressionsOr = new List<Expression<Func<SPListItem, bool>>>();
-                            expressionsOr.Add(x => (int)x[Constants.FieldTrangThai] == (int)TrangThaiHoSo.DuocCapPhep);
-                            expressionsOr.Add(x => (int)x[Constants.FieldTrangThai] == (int)TrangThaiHoSo.HoanThanh);
-                            expressionsOr.Add(x => (int)x[Constants.FieldTrangThai] == (int)TrangThaiHoSo.ChuaHoanThanh);
+                            expressionsOr.Add(x => (string)x[Constants.FieldTrangThai] == ((int)TrangThaiHoSo.DuocCapPhep).ToString());
+                            expressionsOr.Add(x => (string)x[Constants.FieldTrangThai] == ((int)TrangThaiHoSo.HoanThanh).ToString());
+                            expressionsOr.Add(x => (string)x[Constants.FieldTrangThai] == ((int)TrangThaiHoSo.ChuaHoanThanh).ToString());
 
                             //if (expressionsOr.Count > 0)
                             //{
@@ -178,15 +178,15 @@ namespace LongAn.DVC.WebParts.DeNghiReport
                             expressions.Add(orExpr);
                             //}
 
-                            var expressionsAnd = new List<Expression<Func<SPListItem, bool>>>();
-                            expressionsAnd.Add(x => (DateTime)x[Constants.FieldNgayNopHoSo] >= fromDate);
-                            expressionsAnd.Add(x => (DateTime)x[Constants.FieldNgayNopHoSo] < toDate.AddDays(1));
+                            //var expressionsAnd = new List<Expression<Func<SPListItem, bool>>>();
+                            //expressionsAnd.Add(x => (DateTime)x[Constants.FieldNgayNopHoSo] >= fromDate);
+                            //expressionsAnd.Add(x => (DateTime)x[Constants.FieldNgayNopHoSo] < toDate.AddDays(1));
 
-                            //if (expressionsAnd.Count > 0)
-                            //{
-                                var andExpr = ExpressionsHelper.CombineAnd(expressionsAnd);
-                                expressions.Add(andExpr);
-                            //}
+                            ////if (expressionsAnd.Count > 0)
+                            ////{
+                            //    var andExpr = ExpressionsHelper.CombineAnd(expressionsAnd);
+                            //    expressions.Add(andExpr);
+                            ////}
 
                             caml = Camlex.Query().WhereAll(expressions).ToString();
 
@@ -900,9 +900,80 @@ namespace LongAn.DVC.WebParts.DeNghiReport
 
                                 designer.SetDataSource("CurrentDate", currentDate);
                                 designer.SetDataSource("FromDateToDate", fromDateToDate);
-                                designer.SetDataSource("QuaTai", modelQuaTai);
-                                designer.SetDataSource("QuaKho", modelQuaKho);
-                                designer.SetDataSource("QuaTaiQuaKho", modelQuaTaiQuaKho);
+
+                                //designer.SetDataSource("QuaTai", modelQuaTai);
+                                designer.SetDataSource("QuaTai_Xe2Truc_QuocLo", modelQuaTai.Xe2Truc_QuocLo);
+                                designer.SetDataSource("QuaTai_Xe2Truc_DuongTinh", modelQuaTai.Xe2Truc_DuongTinh);
+                                designer.SetDataSource("QuaTai_Xe2Truc_TongCong", modelQuaTai.Xe2Truc_TongCong);
+                                designer.SetDataSource("QuaTai_Xe3Truc_QuocLo", modelQuaTai.Xe3Truc_QuocLo);
+                                designer.SetDataSource("QuaTai_Xe3Truc_DuongTinh", modelQuaTai.Xe3Truc_DuongTinh);
+                                designer.SetDataSource("QuaTai_Xe3Truc_TongCong", modelQuaTai.Xe3Truc_TongCong);
+                                designer.SetDataSource("QuaTai_Xe4Truc_QuocLo", modelQuaTai.Xe4Truc_QuocLo);
+                                designer.SetDataSource("QuaTai_Xe4Truc_DuongTinh", modelQuaTai.Xe4Truc_DuongTinh);
+                                designer.SetDataSource("QuaTai_Xe4Truc_TongCong", modelQuaTai.Xe4Truc_TongCong);
+                                designer.SetDataSource("QuaTai_XeRM3Truc_QuocLo", modelQuaTai.XeRM3Truc_QuocLo);
+                                designer.SetDataSource("QuaTai_XeRM3Truc_DuongTinh", modelQuaTai.XeRM3Truc_DuongTinh);
+                                designer.SetDataSource("QuaTai_XeRM3Truc_TongCong", modelQuaTai.XeRM3Truc_TongCong);
+                                designer.SetDataSource("QuaTai_XeRM4Truc_QuocLo", modelQuaTai.XeRM4Truc_QuocLo);
+                                designer.SetDataSource("QuaTai_XeRM4Truc_DuongTinh", modelQuaTai.XeRM4Truc_DuongTinh);
+                                designer.SetDataSource("QuaTai_XeRM4Truc_TongCong", modelQuaTai.XeRM4Truc_TongCong);
+                                designer.SetDataSource("QuaTai_XeRM5Truc_QuocLo", modelQuaTai.XeRM5Truc_QuocLo);
+                                designer.SetDataSource("QuaTai_XeRM5Truc_DuongTinh", modelQuaTai.XeRM5Truc_DuongTinh);
+                                designer.SetDataSource("QuaTai_XeRM5Truc_TongCong", modelQuaTai.XeRM5Truc_TongCong);
+                                designer.SetDataSource("QuaTai_TongCong_QuocLo", modelQuaTai.TongCong_QuocLo);
+                                designer.SetDataSource("QuaTai_TongCong_DuongTinh", modelQuaTai.TongCong_DuongTinh);
+                                designer.SetDataSource("QuaTai_TongCong_TongCong", modelQuaTai.TongCong_TongCong);
+
+
+                                //designer.SetDataSource("QuaKho", modelQuaKho);
+                                designer.SetDataSource("QuaKho_Xe2Truc_QuocLo", modelQuaKho.Xe2Truc_QuocLo);
+                                designer.SetDataSource("QuaKho_Xe2Truc_DuongTinh", modelQuaKho.Xe2Truc_DuongTinh);
+                                designer.SetDataSource("QuaKho_Xe2Truc_TongCong", modelQuaKho.Xe2Truc_TongCong);
+                                designer.SetDataSource("QuaKho_Xe3Truc_QuocLo", modelQuaKho.Xe3Truc_QuocLo);
+                                designer.SetDataSource("QuaKho_Xe3Truc_DuongTinh", modelQuaKho.Xe3Truc_DuongTinh);
+                                designer.SetDataSource("QuaKho_Xe3Truc_TongCong", modelQuaKho.Xe3Truc_TongCong);
+                                designer.SetDataSource("QuaKho_Xe4Truc_QuocLo", modelQuaKho.Xe4Truc_QuocLo);
+                                designer.SetDataSource("QuaKho_Xe4Truc_DuongTinh", modelQuaKho.Xe4Truc_DuongTinh);
+                                designer.SetDataSource("QuaKho_Xe4Truc_TongCong", modelQuaKho.Xe4Truc_TongCong);
+                                designer.SetDataSource("QuaKho_XeRM3Truc_QuocLo", modelQuaKho.XeRM3Truc_QuocLo);
+                                designer.SetDataSource("QuaKho_XeRM3Truc_DuongTinh", modelQuaKho.XeRM3Truc_DuongTinh);
+                                designer.SetDataSource("QuaKho_XeRM3Truc_TongCong", modelQuaKho.XeRM3Truc_TongCong);
+                                designer.SetDataSource("QuaKho_XeRM4Truc_QuocLo", modelQuaKho.XeRM4Truc_QuocLo);
+                                designer.SetDataSource("QuaKho_XeRM4Truc_DuongTinh", modelQuaKho.XeRM4Truc_DuongTinh);
+                                designer.SetDataSource("QuaKho_XeRM4Truc_TongCong", modelQuaKho.XeRM4Truc_TongCong);
+                                designer.SetDataSource("QuaKho_XeRM5Truc_QuocLo", modelQuaKho.XeRM5Truc_QuocLo);
+                                designer.SetDataSource("QuaKho_XeRM5Truc_DuongTinh", modelQuaKho.XeRM5Truc_DuongTinh);
+                                designer.SetDataSource("QuaKho_XeRM5Truc_TongCong", modelQuaKho.XeRM5Truc_TongCong);
+                                designer.SetDataSource("QuaKho_TongCong_QuocLo", modelQuaKho.TongCong_QuocLo);
+                                designer.SetDataSource("QuaKho_TongCong_DuongTinh", modelQuaKho.TongCong_DuongTinh);
+                                designer.SetDataSource("QuaKho_TongCong_TongCong", modelQuaKho.TongCong_TongCong);
+
+
+                                //designer.SetDataSource("QuaTaiQuaKho", modelQuaTaiQuaKho);
+                                designer.SetDataSource("QuaTaiQuaKho_Xe2Truc_QuocLo", modelQuaTaiQuaKho.Xe2Truc_QuocLo);
+                                designer.SetDataSource("QuaTaiQuaKho_Xe2Truc_DuongTinh", modelQuaTaiQuaKho.Xe2Truc_DuongTinh);
+                                designer.SetDataSource("QuaTaiQuaKho_Xe2Truc_TongCong", modelQuaTaiQuaKho.Xe2Truc_TongCong);
+                                designer.SetDataSource("QuaTaiQuaKho_Xe3Truc_QuocLo", modelQuaTaiQuaKho.Xe3Truc_QuocLo);
+                                designer.SetDataSource("QuaTaiQuaKho_Xe3Truc_DuongTinh", modelQuaTaiQuaKho.Xe3Truc_DuongTinh);
+                                designer.SetDataSource("QuaTaiQuaKho_Xe3Truc_TongCong", modelQuaTaiQuaKho.Xe3Truc_TongCong);
+                                designer.SetDataSource("QuaTaiQuaKho_Xe4Truc_QuocLo", modelQuaTaiQuaKho.Xe4Truc_QuocLo);
+                                designer.SetDataSource("QuaTaiQuaKho_Xe4Truc_DuongTinh", modelQuaTaiQuaKho.Xe4Truc_DuongTinh);
+                                designer.SetDataSource("QuaTaiQuaKho_Xe4Truc_TongCong", modelQuaTaiQuaKho.Xe4Truc_TongCong);
+                                designer.SetDataSource("QuaTaiQuaKho_XeRM3Truc_QuocLo", modelQuaTaiQuaKho.XeRM3Truc_QuocLo);
+                                designer.SetDataSource("QuaTaiQuaKho_XeRM3Truc_DuongTinh", modelQuaTaiQuaKho.XeRM3Truc_DuongTinh);
+                                designer.SetDataSource("QuaTaiQuaKho_XeRM3Truc_TongCong", modelQuaTaiQuaKho.XeRM3Truc_TongCong);
+                                designer.SetDataSource("QuaTaiQuaKho_XeRM4Truc_QuocLo", modelQuaTaiQuaKho.XeRM4Truc_QuocLo);
+                                designer.SetDataSource("QuaTaiQuaKho_XeRM4Truc_DuongTinh", modelQuaTaiQuaKho.XeRM4Truc_DuongTinh);
+                                designer.SetDataSource("QuaTaiQuaKho_XeRM4Truc_TongCong", modelQuaTaiQuaKho.XeRM4Truc_TongCong);
+                                designer.SetDataSource("QuaTaiQuaKho_XeRM5Truc_QuocLo", modelQuaTaiQuaKho.XeRM5Truc_QuocLo);
+                                designer.SetDataSource("QuaTaiQuaKho_XeRM5Truc_DuongTinh", modelQuaTaiQuaKho.XeRM5Truc_DuongTinh);
+                                designer.SetDataSource("QuaTaiQuaKho_XeRM5Truc_TongCong", modelQuaTaiQuaKho.XeRM5Truc_TongCong);
+                                designer.SetDataSource("QuaTaiQuaKho_TongCong_QuocLo", modelQuaTaiQuaKho.TongCong_QuocLo);
+                                designer.SetDataSource("QuaTaiQuaKho_TongCong_DuongTinh", modelQuaTaiQuaKho.TongCong_DuongTinh);
+                                designer.SetDataSource("QuaTaiQuaKho_TongCong_TongCong", modelQuaTaiQuaKho.TongCong_TongCong);
+
+
+
                                 designer.Process();
 
                                 string exportName = "BaoCaoCapPhepLuuHanhXe" + DateTime.Now.ToString("_yyyyMMdd") + ".xls";
@@ -913,7 +984,8 @@ namespace LongAn.DVC.WebParts.DeNghiReport
                                 this.Page.Response.AppendHeader("Content-Disposition", "attachment; filename=" + exportName);
                                 this.Page.Response.Flush();
                                 this.Page.Response.BinaryWrite(ms.ToArray());
-                                this.Page.Response.End();
+                                //this.Page.Response.End();
+                                HttpContext.Current.ApplicationInstance.CompleteRequest();
                             }
                             catch (Exception ex)
                             {
@@ -938,17 +1010,19 @@ namespace LongAn.DVC.WebParts.DeNghiReport
 
             if (obj != null)
             {
-                if (obj.ToString() == "Quá tải")
+                var arrValues = obj.ToString().Split(new string[] { ";#" }, StringSplitOptions.RemoveEmptyEntries);
+
+                if (obj.ToString().Split(new string[] { ";#" }, StringSplitOptions.RemoveEmptyEntries).Length >= 2)
+                {
+                    result = LoaiCapPhep.QuaTaiVaQuaKho;
+                }
+                else if (arrValues[0] == "Quá tải")
                 {
                     result = LoaiCapPhep.QuaTai;
                 }
-                else if (obj.ToString() == "Quá khổ")
+                else if (arrValues[0] == "Quá khổ")
                 {
                     result = LoaiCapPhep.QuaKho;
-                }
-                else if (obj.ToString().Split(new string[] { ";#" }, StringSplitOptions.RemoveEmptyEntries).Length >= 2)
-                {
-                    result = LoaiCapPhep.QuaTaiVaQuaKho;
                 }
             }
 

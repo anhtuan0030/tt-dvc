@@ -41,7 +41,7 @@ namespace LongAn.DVC.Features.Feature1
             
 
             //provision DVC Master page
-            //web.MasterUrl = site.RootWeb.ServerRelativeUrl + "_catalogs/masterpage/DVC.master";
+            web.MasterUrl = site.RootWeb.ServerRelativeUrl + "_catalogs/masterpage/DVC.master";
             web.CustomMasterUrl = site.RootWeb.ServerRelativeUrl + "_catalogs/masterpage/DVC.master";
             web.Update();
         }
@@ -52,7 +52,7 @@ namespace LongAn.DVC.Features.Feature1
         public override void FeatureDeactivating(SPFeatureReceiverProperties properties)
         {
             var site = (SPSite)properties.Feature.Parent;
-            //site.RootWeb.MasterUrl = site.RootWeb.ServerRelativeUrl + "_catalogs/masterpage/seattle.master";
+            site.RootWeb.MasterUrl = site.RootWeb.ServerRelativeUrl + "_catalogs/masterpage/seattle.master";
             site.RootWeb.CustomMasterUrl = site.RootWeb.ServerRelativeUrl + "_catalogs/masterpage/seattle.master";
             site.RootWeb.Update();
         }

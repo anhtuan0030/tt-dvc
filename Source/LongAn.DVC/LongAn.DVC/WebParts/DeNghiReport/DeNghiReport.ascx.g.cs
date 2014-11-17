@@ -97,7 +97,7 @@ namespace LongAn.DVC.WebParts.DeNghiReport {
             @__ctrl.ApplyStyleSheetSkin(this.Page);
             @__ctrl.ID = "btnExportExcel";
             @__ctrl.Text = "Xuất báo cáo";
-            @__ctrl.CssClass = "button";
+            @__ctrl.CssClass = "button btnExportExcel";
             ((System.Web.UI.IAttributeAccessor)(@__ctrl)).SetAttribute("align", "middle");
             @__ctrl.Click -= new System.EventHandler(this.btnExportExcel_Click);
             @__ctrl.Click += new System.EventHandler(this.btnExportExcel_Click);
@@ -140,9 +140,23 @@ namespace LongAn.DVC.WebParts.DeNghiReport {
             global::System.Web.UI.WebControls.Button @__ctrl3;
             @__ctrl3 = this.@__BuildControlbtnExportExcel();
             @__parser.AddParsedSubObject(@__ctrl3);
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                    </div>\r\n                    <div class=\"clear\"></div>\r\n    " +
-                        "            </div>\r\n            </div>\r\n\t\t</div>\r\n\t</div>\r\n\t<div class=\"clear\"><" +
-                        "/div>\r\n</div>"));
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl(@"
+                    </div>
+                    <div class=""clear""></div>
+                </div>
+            </div>
+		</div>
+	</div>
+	<div class=""clear""></div>
+</div>
+
+<script type=""text/javascript"">
+    $(function () {
+        $("".btnExportExcel"").click(function () {
+            _spFormOnSubmitCalled = false;
+        });
+    });
+</script>"));
         }
         
         [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
