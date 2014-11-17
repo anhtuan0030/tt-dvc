@@ -242,18 +242,24 @@ namespace LongAn.DVC.Helpers
                                 cauHinh.ActionTuChoi = bool.Parse(cauHinhItem[Fields.ActionTuChoi].ToString());
                                 cauHinh.ActionYeuCauBoSung = bool.Parse(cauHinhItem[Fields.ActionYeuCauBoSung].ToString());
                                 cauHinh.ActionPhanCong = bool.Parse(cauHinhItem[Fields.ActionPhanCong].ToString());
-                                cauHinh.ActionCanBoTiepNhan = bool.Parse(cauHinhItem[Fields.ActionCanBoTiepNhan].ToString());
-                                var spGroupCanBoText = cauHinhItem[Fields.SPGroupCanBo];
+                                //cauHinh.ActionCanBoTiepNhan = bool.Parse(cauHinhItem[Fields.ActionCanBoTiepNhan].ToString());
+                                var spGroupPhanCongText = cauHinhItem[Fields.SPGroupPhanCong];
+                                if (spGroupPhanCongText != null && !string.IsNullOrEmpty(spGroupPhanCongText.ToString()))
+                                {
+                                    var spGroupLookup = new SPFieldLookupValue(spGroupPhanCongText.ToString());
+                                    cauHinh.SPGroupPhanCong = web.SiteGroups.GetByID(spGroupLookup.LookupId);
+                                }
+                                var spGroupCanBoText = cauHinhItem[Fields.SPGroupTiepNhan];
                                 if (spGroupCanBoText != null && !string.IsNullOrEmpty(spGroupCanBoText.ToString()))
                                 {
                                     var spGroupLookup = new SPFieldLookupValue(spGroupCanBoText.ToString());
-                                    cauHinh.SPGroupCanBo = web.SiteGroups.GetByID(spGroupLookup.LookupId);
+                                    cauHinh.SPGroupTiepNhan = web.SiteGroups.GetByID(spGroupLookup.LookupId);
                                 }
                                 cauHinh.AllowCapNhatLoaiDuong = bool.Parse(cauHinhItem[Fields.AllowCapNhatLoaiDuong].ToString());
                                 cauHinh.AllowCapNhatNgayHen = bool.Parse(cauHinhItem[Fields.AllowCapNhatNgayHen].ToString());
                                 cauHinh.IsBoSungHoSo = bool.Parse(cauHinhItem[Fields.IsBoSungHoSo].ToString());
-                                cauHinh.IsPhanCong = bool.Parse(cauHinhItem[Fields.IsPhanCong].ToString());
-                                cauHinh.IsXuLyPhanCong = bool.Parse(cauHinhItem[Fields.IsXuLyPhanCong].ToString());
+                                //cauHinh.IsPhanCong = bool.Parse(cauHinhItem[Fields.IsPhanCong].ToString());
+                                //cauHinh.IsXuLyPhanCong = bool.Parse(cauHinhItem[Fields.IsXuLyPhanCong].ToString());
                                 cauHinh.StartEnd = cauHinhItem[Fields.StartEnd] != null ? cauHinhItem[Fields.StartEnd].ToString() : string.Empty;
                                 cauHinh.IsEmail = bool.Parse(cauHinhItem[Fields.IsEmail].ToString());
                                 cauHinh.EmailTemplate = cauHinhItem[Fields.EmailTemplate] != null ? cauHinhItem[Fields.EmailTemplate].ToString() : string.Empty;
@@ -332,11 +338,23 @@ namespace LongAn.DVC.Helpers
                                     cauHinh.ActionTuChoi = bool.Parse(cauHinhItem[Fields.ActionTuChoi].ToString());
                                     cauHinh.ActionYeuCauBoSung = bool.Parse(cauHinhItem[Fields.ActionYeuCauBoSung].ToString());
                                     cauHinh.ActionPhanCong = bool.Parse(cauHinhItem[Fields.ActionPhanCong].ToString());
+                                    var spGroupPhanCongText = cauHinhItem[Fields.SPGroupPhanCong];
+                                    if (spGroupPhanCongText != null && !string.IsNullOrEmpty(spGroupPhanCongText.ToString()))
+                                    {
+                                        var spGroupLookup = new SPFieldLookupValue(spGroupPhanCongText.ToString());
+                                        cauHinh.SPGroupPhanCong = web.SiteGroups.GetByID(spGroupLookup.LookupId);
+                                    }
+                                    var spGroupCanBoText = cauHinhItem[Fields.SPGroupTiepNhan];
+                                    if (spGroupCanBoText != null && !string.IsNullOrEmpty(spGroupCanBoText.ToString()))
+                                    {
+                                        var spGroupLookup = new SPFieldLookupValue(spGroupCanBoText.ToString());
+                                        cauHinh.SPGroupTiepNhan = web.SiteGroups.GetByID(spGroupLookup.LookupId);
+                                    }
                                     cauHinh.AllowCapNhatLoaiDuong = bool.Parse(cauHinhItem[Fields.AllowCapNhatLoaiDuong].ToString());
                                     cauHinh.AllowCapNhatNgayHen = bool.Parse(cauHinhItem[Fields.AllowCapNhatNgayHen].ToString());
                                     cauHinh.IsBoSungHoSo = bool.Parse(cauHinhItem[Fields.IsBoSungHoSo].ToString());
-                                    cauHinh.IsPhanCong = bool.Parse(cauHinhItem[Fields.IsPhanCong].ToString());
-                                    cauHinh.IsXuLyPhanCong = bool.Parse(cauHinhItem[Fields.IsXuLyPhanCong].ToString());
+                                    //cauHinh.IsPhanCong = bool.Parse(cauHinhItem[Fields.IsPhanCong].ToString());
+                                    //cauHinh.IsXuLyPhanCong = bool.Parse(cauHinhItem[Fields.IsXuLyPhanCong].ToString());
                                     cauHinh.StartEnd = cauHinhItem[Fields.StartEnd] != null ? cauHinhItem[Fields.StartEnd].ToString() : string.Empty;
                                     cauHinh.IsEmail = bool.Parse(cauHinhItem[Fields.IsEmail].ToString());
                                     cauHinh.EmailTemplate = cauHinhItem[Fields.EmailTemplate] != null ? cauHinhItem[Fields.EmailTemplate].ToString() : string.Empty;

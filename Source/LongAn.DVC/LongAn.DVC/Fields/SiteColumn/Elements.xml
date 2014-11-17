@@ -723,6 +723,19 @@
          ID="{8eecc07d-1c81-405f-9639-0c80c230a49a}"
          DisplayName="Email Template"
          Type="Note" />
+  <Field Name="SPGroupPhanCong"
+         ID="{AA0EACF4-F001-458C-8787-ECEB3E9B3825}"
+         DisplayName="SP Group phân công"
+         Type="User"
+         Required="FALSE"
+         Group="[LA-DVC]" />
+
+  <Field Name="SPGroupTiepNhan"
+         ID="{5E5DF29F-C1F4-4D40-A369-813DC24967E9}"
+         DisplayName="SP Group tiếp nhận"
+         Type="User"
+         Required="FALSE"
+         Group="[LA-DVC]" />
   
   <!--Lịch sử cấp phép-->
     <Field Type="DateTime"
@@ -831,6 +844,8 @@
            StaticName="NguoiThamGiaXuLy" 
            Name="NguoiThamGiaXuLy"
            Group="[LA-DVC]" />
+
+  
 
     
 </Elements>
