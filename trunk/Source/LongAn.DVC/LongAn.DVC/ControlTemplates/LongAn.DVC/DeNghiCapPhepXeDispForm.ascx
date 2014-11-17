@@ -660,7 +660,7 @@
                                     
                                     <asp:Button ID="btnTuChoi" runat="server" OnClientClick="if(!validateInputs()) return false;" Text="Từ chối" Visible="false" CssClass="button" style="float:left;"/>
                                     
-                                    <asp:Button ID="btnPhanCong" runat="server" OnClientClick="if(!validateInputs()) return false;" Text="Phân công xử lý" Visible="false" CssClass="button" style="float:left;"/>
+                                    <asp:Button ID="btnPhanCong" runat="server" OnClientClick="if(!validateInputs()) return false;" Text="Phân công lại" Visible="false" CssClass="button" style="float:left;"/>
 
                                     <asp:Button ID="btnCanBoTiepNhan" runat="server" OnClientClick="if(!validateInputs()) return false;" Text="Tiếp nhận xử lý" Visible="false" CssClass="button" style="float:left;"/>
                                     

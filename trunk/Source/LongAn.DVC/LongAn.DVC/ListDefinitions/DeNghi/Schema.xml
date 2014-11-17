@@ -326,6 +326,10 @@
                     Name="TenTrangThaiRef"/>
           <FieldRef ID="{C685DDD9-57D5-4B59-9F00-80DEBB73586F}"
                     Name="SoThuTuBienNhan" />
+          <FieldRef Name="IsBoSungHoSo"
+                    ID="{927b86cc-1f41-4889-8818-5dcc631bd660}" />
+          <FieldRef Name="IsPhanCong"
+                    ID="{f68d404e-3861-42b4-a754-371fb5384240}" />
         </FieldRefs>
         <XmlDocuments>
           <XmlDocument NamespaceURI="http://schemas.microsoft.com/sharepoint/events">
@@ -1201,7 +1205,21 @@
              Indexed="FALSE"
              MaxLength="255"
              Group="[LA-DVC]" />
-      
+
+      <Field Name="IsBoSungHoSo"
+             ID="{927b86cc-1f41-4889-8818-5dcc631bd660}"
+             DisplayName="Bổ sung hồ sơ"
+             Type="Boolean"
+             Group="[LA-DVC]" >
+        <Default>0</Default>
+      </Field>
+      <Field Name="IsPhanCong"
+             ID="{f68d404e-3861-42b4-a754-371fb5384240}"
+             DisplayName="Phân công"
+             Type="Boolean"
+             Group="[LA-DVC]">
+        <Default>0</Default>
+      </Field>
       
     </Fields>
     <Views>

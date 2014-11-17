@@ -29,14 +29,14 @@ namespace LongAn.DVC.Helpers
         public bool ActionTuChoi { get; set; }
         public bool ActionYeuCauBoSung { get; set; }
         public bool ActionPhanCong { get; set; }
-        public bool ActionCanBoTiepNhan { get; set; }
-        public SPGroup SPGroupCanBo { get; set; }
+        //public bool ActionCanBoTiepNhan { get; set; }
+        public SPGroup SPGroupPhanCong { get; set; }
+        public SPGroup SPGroupTiepNhan { get; set; }
         public bool AllowCapNhatLoaiDuong { get; set; }
         public bool AllowCapNhatNgayHen { get; set; }
         public bool IsBoSungHoSo { get; set; }
-        public bool IsPhanCong { get; set; }
-
-        public bool IsXuLyPhanCong { get; set; }
+        //public bool IsPhanCong { get; set; }
+        //public bool IsXuLyPhanCong { get; set; }
         public string StartEnd { get; set; }
         public bool IsEmail { get; set; }
         public string EmailTemplate { get; set; }
