@@ -220,7 +220,8 @@ namespace LongAn.DVC.Common
         public const string ActionYeuCauBoSung = "ActionYeuCauBoSung";
         public const string ActionPhanCong = "ActionPhanCong";
         public const string ActionCanBoTiepNhan = "ActionCanBoTiepNhan";
-        public const string SPGroupCanBo = "SPGroupCanBo";
+        public const string SPGroupPhanCong = "SPGroupPhanCong";
+        public const string SPGroupTiepNhan = "SPGroupTiepNhan";
         public const string AllowCapNhatLoaiDuong = "AllowCapNhatLoaiDuong";
         public const string AllowCapNhatNgayHen = "AllowCapNhatNgayHen";
         public const string IsBoSungHoSo = "IsBoSungHoSo";
@@ -297,6 +298,7 @@ namespace LongAn.DVC.Common
         public const string DaBoSung = "DaBoSung";
         public const string NgayBoSung = "NgayBoSung";
         public const string NguoiYeuCau = "NguoiYeuCau";
+
 
     }
 }
