@@ -188,7 +188,7 @@ namespace LongAn.DVC.Helpers
 
         public static CauHinh GetCauHinh(int buocDuyetID)
         {
-            CauHinh cauHinh = new CauHinh();
+            CauHinh cauHinh = null;
             try
             {
                 LoggingServices.LogMessage("Begin funtion GetCauHinh, BuocDuyet: " + buocDuyetID);
@@ -202,6 +202,7 @@ namespace LongAn.DVC.Helpers
                             var cauHinhItem = cauHinhList.GetItemById(buocDuyetID);
                             if (cauHinhItem != null)
                             {
+                                cauHinh = new CauHinh();
                                 cauHinh.BuocDuyetID = cauHinhItem.ID;
                                 cauHinh.BuocDuyet = cauHinhItem[Fields.Title].ToString();
                                 var spGroupText = cauHinhItem[Fields.SPGroup];
@@ -258,7 +259,7 @@ namespace LongAn.DVC.Helpers
                                 cauHinh.AllowCapNhatLoaiDuong = bool.Parse(cauHinhItem[Fields.AllowCapNhatLoaiDuong].ToString());
                                 cauHinh.AllowCapNhatNgayHen = bool.Parse(cauHinhItem[Fields.AllowCapNhatNgayHen].ToString());
                                 cauHinh.IsBoSungHoSo = bool.Parse(cauHinhItem[Fields.IsBoSungHoSo].ToString());
-                                //cauHinh.IsPhanCong = bool.Parse(cauHinhItem[Fields.IsPhanCong].ToString());
+                                cauHinh.IsPhanCong = bool.Parse(cauHinhItem[Fields.IsPhanCong].ToString());
                                 //cauHinh.IsXuLyPhanCong = bool.Parse(cauHinhItem[Fields.IsXuLyPhanCong].ToString());
                                 cauHinh.StartEnd = cauHinhItem[Fields.StartEnd] != null ? cauHinhItem[Fields.StartEnd].ToString() : string.Empty;
                                 cauHinh.IsEmail = bool.Parse(cauHinhItem[Fields.IsEmail].ToString());
@@ -278,7 +279,7 @@ namespace LongAn.DVC.Helpers
 
         public static List<CauHinh> GetCauHinh(string startEnd)
         {
-            List<CauHinh> cauHinhs = new List<CauHinh>();
+            List<CauHinh> cauHinhs = null;
             try
             {
                 LoggingServices.LogMessage("Begin funtion GetCauHinh, StartEnd: " + startEnd);
@@ -295,6 +296,7 @@ namespace LongAn.DVC.Helpers
                             var cauHinhItems = cauHinhList.GetItems(caml);
                             if (cauHinhItems != null && cauHinhItems.Count > 0)
                             {
+                                cauHinhs = new List<CauHinh>();
                                 foreach (SPListItem cauHinhItem in cauHinhItems)
                                 {
                                     CauHinh cauHinh = new CauHinh();
@@ -353,13 +355,14 @@ namespace LongAn.DVC.Helpers
                                     cauHinh.AllowCapNhatLoaiDuong = bool.Parse(cauHinhItem[Fields.AllowCapNhatLoaiDuong].ToString());
                                     cauHinh.AllowCapNhatNgayHen = bool.Parse(cauHinhItem[Fields.AllowCapNhatNgayHen].ToString());
                                     cauHinh.IsBoSungHoSo = bool.Parse(cauHinhItem[Fields.IsBoSungHoSo].ToString());
-                                    //cauHinh.IsPhanCong = bool.Parse(cauHinhItem[Fields.IsPhanCong].ToString());
+                                    cauHinh.IsPhanCong = bool.Parse(cauHinhItem[Fields.IsPhanCong].ToString());
                                     //cauHinh.IsXuLyPhanCong = bool.Parse(cauHinhItem[Fields.IsXuLyPhanCong].ToString());
                                     cauHinh.StartEnd = cauHinhItem[Fields.StartEnd] != null ? cauHinhItem[Fields.StartEnd].ToString() : string.Empty;
                                     cauHinh.IsEmail = bool.Parse(cauHinhItem[Fields.IsEmail].ToString());
                                     cauHinh.EmailTemplate = cauHinhItem[Fields.EmailTemplate] != null ? cauHinhItem[Fields.EmailTemplate].ToString() : string.Empty;
                                     cauHinhs.Add(cauHinh);
                                 }
+                                LoggingServices.LogMessage("Cấu hình count: " + cauHinhs.Count);
                             }
                         }
                     }
@@ -369,7 +372,7 @@ namespace LongAn.DVC.Helpers
             {
                 LoggingServices.LogException(ex);
             }
-            LoggingServices.LogMessage("End funtion GetCauHinh, Cấu hình Count: " + cauHinhs.Count);
+            LoggingServices.LogMessage("End funtion GetCauHinh");
             return cauHinhs;
         }
 

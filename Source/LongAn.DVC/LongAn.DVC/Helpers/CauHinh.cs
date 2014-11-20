@@ -35,7 +35,7 @@ namespace LongAn.DVC.Helpers
         public bool AllowCapNhatLoaiDuong { get; set; }
         public bool AllowCapNhatNgayHen { get; set; }
         public bool IsBoSungHoSo { get; set; }
-        //public bool IsPhanCong { get; set; }
+        public bool IsPhanCong { get; set; }
         //public bool IsXuLyPhanCong { get; set; }
         public string StartEnd { get; set; }
         public bool IsEmail { get; set; }

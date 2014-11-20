@@ -25,7 +25,7 @@
           <Field Name="IsBoSungHoSo">0</Field>
           <Field Name="IsPhanCong">0</Field>
           <Field Name="IsXuLyPhanCong">0</Field>
-          <Field Name="StartEnd">Start</Field>
+          <Field Name="StartEnd">Bắt đầu</Field>
           <Field Name="IsEmail">1</Field>
           <Field Name="EmailTemplate">{0}&#10;{1}&#10;{2}&#10;{3}</Field>
           <Field Name="ID">1</Field>
@@ -48,7 +48,7 @@
           <Field Name="IsBoSungHoSo">0</Field>
           <Field Name="IsPhanCong">0</Field>
           <Field Name="IsXuLyPhanCong">0</Field>
-          <Field Name="StartEnd">Start</Field>
+          <Field Name="StartEnd">Bắt đầu</Field>
           <Field Name="IsEmail">1</Field>
           <Field Name="EmailTemplate">{0}&#10;{1}&#10;{2}&#10;{3}</Field>
           <Field Name="ID">2</Field>
@@ -71,10 +71,33 @@
           <Field Name="IsBoSungHoSo">0</Field>
           <Field Name="IsPhanCong">0</Field>
           <Field Name="IsXuLyPhanCong">0</Field>
-          <Field Name="StartEnd">Process</Field>
+          <Field Name="StartEnd">Yêu cầu bổ sung</Field>
           <Field Name="IsEmail">1</Field>
           <Field Name="EmailTemplate">{0}&#10;{1}&#10;{2}&#10;{3}</Field>
           <Field Name="ID">3</Field>
+        </Row>
+        <Row>
+          <Field Name="Title">Từ chối cấp phép hồ sơ</Field>
+          <Field Name="SPGroup">17;#DVC Nhân viên tiếp nhận</Field>
+          <Field Name="CapDuyetText">Từ chối cấp phép hồ sơ</Field>
+          <Field Name="TrangThai">3;#CBS</Field>
+          <Field Name="IsFix">1</Field>
+          <Field Name="ActionDuyet">0</Field>
+          <Field Name="TieuDeActionDuyet"></Field>
+          <Field Name="NextStep"></Field>
+          <Field Name="ActionTraHoSo">0</Field>
+          <Field Name="ActionTuChoi">0</Field>
+          <Field Name="ActionYeuCauBoSung">0</Field>
+          <Field Name="ActionPhanCong">0</Field>
+          <Field Name="AllowCapNhatLoaiDuong">0</Field>
+          <Field Name="AllowCapNhatNgayHen">0</Field>
+          <Field Name="IsBoSungHoSo">0</Field>
+          <Field Name="IsPhanCong">0</Field>
+          <Field Name="IsXuLyPhanCong">0</Field>
+          <Field Name="StartEnd">Từ chối hồ sơ</Field>
+          <Field Name="IsEmail">1</Field>
+          <Field Name="EmailTemplate">{0}&#10;{1}&#10;{2}&#10;{3}</Field>
+          <Field Name="ID">4</Field>
         </Row>
         <Row>
           <Field Name="Title">Tiếp nhận hồ sơ</Field>
@@ -94,10 +117,10 @@
           <Field Name="IsBoSungHoSo">0</Field>
           <Field Name="IsPhanCong">0</Field>
           <Field Name="IsXuLyPhanCong">0</Field>
-          <Field Name="StartEnd">Process</Field>
+          <Field Name="StartEnd">Xử lý</Field>
           <Field Name="IsEmail">1</Field>
           <Field Name="EmailTemplate">{0}&#10;{1}&#10;{2}&#10;{3}</Field>
-          <Field Name="ID">4</Field>
+          <Field Name="ID">5</Field>
         </Row>
         <Row>
           <Field Name="Title">Xử lý hồ sơ</Field>
@@ -117,10 +140,10 @@
           <Field Name="IsBoSungHoSo">0</Field>
           <Field Name="IsPhanCong">0</Field>
           <Field Name="IsXuLyPhanCong">0</Field>
-          <Field Name="StartEnd">Process</Field>
+          <Field Name="StartEnd">Xử lý</Field>
           <Field Name="IsEmail">1</Field>
           <Field Name="EmailTemplate">{0}&#10;{1}&#10;{2}&#10;{3}</Field>
-          <Field Name="ID">5</Field>
+          <Field Name="ID">6</Field>
         </Row>
         <Row>
           <Field Name="Title">Phân công hồ sơ</Field>
@@ -140,10 +163,10 @@
           <Field Name="IsBoSungHoSo">0</Field>
           <Field Name="IsPhanCong">0</Field>
           <Field Name="IsXuLyPhanCong">1</Field>
-          <Field Name="StartEnd">Process</Field>
+          <Field Name="StartEnd">Xử lý</Field>
           <Field Name="IsEmail">0</Field>
           <Field Name="EmailTemplate">{0}&#10;{1}&#10;{2}&#10;{3}</Field>
-          <Field Name="ID">6</Field>
+          <Field Name="ID">7</Field>
         </Row>
         <Row>
           <Field Name="Title">Cán bộ xử lý hồ sơ</Field>
@@ -163,10 +186,10 @@
           <Field Name="IsBoSungHoSo">0</Field>
           <Field Name="IsPhanCong">0</Field>
           <Field Name="IsXuLyPhanCong">0</Field>
-          <Field Name="StartEnd">Process</Field>
+          <Field Name="StartEnd">Xử lý</Field>
           <Field Name="IsEmail">1</Field>
           <Field Name="EmailTemplate">{0}&#10;{1}&#10;{2}&#10;{3}&#10;{4}</Field>
-          <Field Name="ID">7</Field>
+          <Field Name="ID">8</Field>
         </Row>
         <Row>
           <Field Name="Title">Xét duyệt hồ sơ</Field>
@@ -186,10 +209,10 @@
           <Field Name="IsBoSungHoSo">0</Field>
           <Field Name="IsPhanCong">0</Field>
           <Field Name="IsXuLyPhanCong">0</Field>
-          <Field Name="StartEnd">Process</Field>
+          <Field Name="StartEnd">Xử lý</Field>
           <Field Name="IsEmail">1</Field>
           <Field Name="EmailTemplate">{0}&#10;{1}&#10;{2}&#10;{3}</Field>
-          <Field Name="ID">8</Field>
+          <Field Name="ID">9</Field>
         </Row>
         <Row>
           <Field Name="Title">Cấp phép hồ sơ</Field>
@@ -209,10 +232,10 @@
           <Field Name="IsBoSungHoSo">0</Field>
           <Field Name="IsPhanCong">0</Field>
           <Field Name="IsXuLyPhanCong">0</Field>
-          <Field Name="StartEnd">Process</Field>
+          <Field Name="StartEnd">Xử lý</Field>
           <Field Name="IsEmail">1</Field>
           <Field Name="EmailTemplate">{0}&#10;{1}&#10;{2}&#10;{3}&#10;{4}</Field>
-          <Field Name="ID">9</Field>
+          <Field Name="ID">10</Field>
         </Row>
         <Row>
           <Field Name="Title">Xác nhận hồ sơ</Field>
@@ -234,10 +257,10 @@
           <Field Name="IsBoSungHoSo">0</Field>
           <Field Name="IsPhanCong">0</Field>
           <Field Name="IsXuLyPhanCong">0</Field>
-          <Field Name="StartEnd">End</Field>
+          <Field Name="StartEnd">Kết thúc</Field>
           <Field Name="IsEmail">1</Field>
           <Field Name="EmailTemplate">{0}&#10;{1}&#10;{2}&#10;{3}</Field>
-          <Field Name="ID">10</Field>
+          <Field Name="ID">11</Field>
         </Row>
         <Row>
           <Field Name="Title">Xác nhận hồ sơ hoàn thành</Field>
@@ -256,10 +279,10 @@
           <Field Name="IsBoSungHoSo">0</Field>
           <Field Name="IsPhanCong">0</Field>
           <Field Name="IsXuLyPhanCong">0</Field>
-          <Field Name="StartEnd">End</Field>
+          <Field Name="StartEnd">Kết thúc</Field>
           <Field Name="IsEmail">1</Field>
           <Field Name="EmailTemplate">{0}&#10;{1}&#10;{2}&#10;{3}</Field>
-          <Field Name="ID">11</Field>
+          <Field Name="ID">12</Field>
         </Row>
         <Row>
           <Field Name="Title">Xác nhận hồ sơ chưa hoàn thành</Field>
@@ -278,10 +301,10 @@
           <Field Name="IsBoSungHoSo">0</Field>
           <Field Name="IsPhanCong">0</Field>
           <Field Name="IsXuLyPhanCong">0</Field>
-          <Field Name="StartEnd">End</Field>
+          <Field Name="StartEnd">Kết thúc</Field>
           <Field Name="IsEmail">1</Field>
           <Field Name="EmailTemplate">{0}&#10;{1}&#10;{2}&#10;{3}</Field>
-          <Field Name="ID">12</Field>
+          <Field Name="ID">13</Field>
         </Row>
       </Rows>
     </Data>

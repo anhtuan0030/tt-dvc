@@ -708,11 +708,14 @@
          Type="Choice"
          Required="TRUE"
          Group="[LA-DVC]" >
-    <Default>Process</Default>
+    <Default>Xử lý</Default>
     <CHOICES>
-      <CHOICE>Start</CHOICE>
-      <CHOICE>Process</CHOICE>
-      <CHOICE>End</CHOICE>
+      <CHOICE>Bắt đầu</CHOICE>
+      <CHOICE>Xử lý</CHOICE>
+      <CHOICE>Yêu cầu bổ sung</CHOICE>
+      <CHOICE>Phân công hồ sơ</CHOICE>
+      <CHOICE>Từ chối hồ sơ</CHOICE>
+      <CHOICE>Kết thúc</CHOICE>
     </CHOICES>
   </Field>
   <Field Name="IsEmail"
@@ -798,7 +801,7 @@
          FriendlyDisplayFormat="Disabled"
          Group="[LA-DVC]"></Field>
   <Field Type="User"
-         ID="{0D670887-DEFA-4A3E-A968-819087C602B9}"
+         ID="{33BAFD84-1CF3-42B3-9BCF-91FE210DABD2}"
          Name="NguoiYeuCau"
          StaticName="NguoiYeuCau"
          DisplayName="Người yêu cầu"
@@ -810,6 +813,28 @@
          UserSelectionScope="0"
          Group="[LA-DVC]" />
 
+  <Field Type="Boolean"
+         ID="{8AE4199F-8E4A-49C9-A5A3-1EAA7067C119}"
+         Name="AllowInBienNhan"
+         StaticName="AllowInBienNhan"
+         DisplayName="Được in biên nhận"
+         EnforceUniqueValues="FALSE"
+         Indexed="FALSE"
+         Group="[LA-DVC]">
+    <Default>0</Default>
+  </Field>
+  
+  <Field Type="Boolean"
+         ID="{74443E7F-018E-4051-A6D4-D6918A68E990}"
+         Name="AllowInGiayPhep"
+         StaticName="AllowInGiayPhep"
+         DisplayName="Được in giấy phép"
+         EnforceUniqueValues="FALSE"
+         Indexed="FALSE"
+         Group="[LA-DVC]">
+    <Default>0</Default>
+  </Field>
+
   <Field Type="Lookup"
          ID="{14C5BB63-A409-4458-B702-03D5CFB3FD18}"
          StaticName="TenTrangThaiRef"
@@ -820,6 +845,34 @@
          List="Lists/TrangThai"
          FieldRef="{a5ed0888-aabc-4481-8a19-42df290efd2e}"
          ShowField="TenTrangThai"
+         UnlimitedLengthInDocumentLibrary="FALSE"
+         RelationshipDeleteBehavior="None"
+         Group="[LA-DVC]" />
+
+  <Field Type="Lookup"
+         ID="{3552BD94-E671-468F-A654-EA1663181BD2}"
+         StaticName="AllowInBienNhanRef"
+         Name="AllowInBienNhanRef"
+         DisplayName="Được in biên nhận"
+         Required="TRUE"
+         EnforceUniqueValues="FALSE"
+         List="Lists/CauHinh"
+         FieldRef="{476b93d1-3dc6-48ec-8706-bc7f826f5d40}"
+         ShowField="AllowInBienNhan"
+         UnlimitedLengthInDocumentLibrary="FALSE"
+         RelationshipDeleteBehavior="None"
+         Group="[LA-DVC]" />
+
+  <Field Type="Lookup"
+         ID="{0600B22C-A08D-4303-8CE6-7E3CE9512B92}"
+         StaticName="AllowInGiayPhepRef"
+         Name="AllowInGiayPhepRef"
+         DisplayName="Được in giấy phép"
+         Required="TRUE"
+         EnforceUniqueValues="FALSE"
+         List="Lists/CauHinh"
+         FieldRef="{476b93d1-3dc6-48ec-8706-bc7f826f5d40}"
+         ShowField="AllowInGiayPhep"
          UnlimitedLengthInDocumentLibrary="FALSE"
          RelationshipDeleteBehavior="None"
          Group="[LA-DVC]" />
@@ -845,7 +898,60 @@
            Name="NguoiThamGiaXuLy"
            Group="[LA-DVC]" />
 
-  
+  <Field Type="UserMulti"
+         DisplayName="Người chờ xử lý"
+         List="UserInfo"
+         Required="FALSE"
+         EnforceUniqueValues="FALSE"
+         ShowField="ImnName"
+         UserSelectionMode="PeopleOnly"
+         UserSelectionScope="0"
+         Mult="TRUE"
+         Sortable="FALSE"
+         ID="{C24DDFD7-26C8-4E57-AD1B-03759C2B2F71}"
+         StaticName="NguoiChoXuLy"
+         Name="NguoiChoXuLy"
+         Group="[LA-DVC]" />
 
+  <Field Type="Lookup"
+         ID="{610CF55A-8986-49F7-9E05-C8C93D40852F}"
+         StaticName="IsBoSungHoSoRef"
+         Name="IsBoSungHoSoRef"
+         DisplayName="Hồ sơ cần bổ sung"
+         Required="TRUE"
+         EnforceUniqueValues="FALSE"
+         List="Lists/CauHinh"
+         FieldRef="{476b93d1-3dc6-48ec-8706-bc7f826f5d40}"
+         ShowField="IsBoSungHoSo"
+         UnlimitedLengthInDocumentLibrary="FALSE"
+         RelationshipDeleteBehavior="None"
+         Group="[LA-DVC]" />
+
+  <Field Type="Lookup"
+         ID="{507E6F00-9DDF-4EE0-AF49-10A3D7E04C12}"
+         StaticName="IsPhanCongRef"
+         Name="IsPhanCongRef"
+         DisplayName="Hồ sơ đã phân công"
+         Required="TRUE"
+         EnforceUniqueValues="FALSE"
+         List="Lists/CauHinh"
+         FieldRef="{476b93d1-3dc6-48ec-8706-bc7f826f5d40}"
+         ShowField="IsPhanCong"
+         UnlimitedLengthInDocumentLibrary="FALSE"
+         RelationshipDeleteBehavior="None"
+         Group="[LA-DVC]" />
+  
+  <Field Type="DateTime"
+         ID="{11D81484-15BE-43F4-83E6-D1E2BE5A5EA3}"
+         Name="NgayTiepNhan"
+         StaticName="NgayTiepNhan"
+         DisplayName="Ngày tiếp nhận hồ sơ"
+         Required="FALSE"
+         EnforceUniqueValues="FALSE"
+         Indexed="FALSE"
+         Format="DateTime"
+         FriendlyDisplayFormat="Disabled"
+         Group="[LA-DVC]">
+  </Field>
     
 </Elements>

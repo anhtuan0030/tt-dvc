@@ -139,8 +139,8 @@
           <FieldRef ID="{927b86cc-1f41-4889-8818-5dcc631bd660}"
                     Name="IsBoSungHoSo" />
           
-          <!--<FieldRef ID="{f68d404e-3861-42b4-a754-371fb5384240}"
-                    Name="IsPhanCong" />-->
+          <FieldRef ID="{f68d404e-3861-42b4-a754-371fb5384240}"
+                    Name="IsPhanCong" />
           <!--<FieldRef ID="{e8ed953d-c8e5-4665-8b23-e9592be1ce51}"
                     Name="IsXuLyPhanCong" />-->
           <FieldRef ID="{bf80c732-39e7-4747-b014-d1fb839a2b61}"
@@ -149,6 +149,10 @@
                     Name="IsEmail" />
           <FieldRef ID="{8eecc07d-1c81-405f-9639-0c80c230a49a}"
                     Name="EmailTemplate" />
+          <FieldRef ID="{8AE4199F-8E4A-49C9-A5A3-1EAA7067C119}"
+                    Name="AllowInBienNhan" />
+          <FieldRef ID="{74443E7F-018E-4051-A6D4-D6918A68E990}"
+                    Name="AllowInGiayPhep" />
         </FieldRefs>
       </ContentType>
     </ContentTypes>
@@ -254,7 +258,6 @@
              ID="{05fca844-f731-4dfb-8868-9df6cd991fbb}"
              DisplayName="SP Group"
              Type="User"
-             Required="TRUE"
              Group="[LA-DVC]" />
       <Field Name="CapDuyetText"
              ID="{a5494e0c-28d3-4e6d-ba22-be8b0f6a9d61}"
@@ -371,13 +374,13 @@
              Group="[LA-DVC]" >
         <Default>0</Default>
       </Field>
-      <!--<Field Name="IsPhanCong"
+      <Field Name="IsPhanCong"
              ID="{f68d404e-3861-42b4-a754-371fb5384240}"
              DisplayName="Phân công"
              Type="Boolean"
              Group="[LA-DVC]">
         <Default>0</Default>
-      </Field>-->
+      </Field>
       <!--<Field Name="IsXuLyPhanCong"
              ID="{e8ed953d-c8e5-4665-8b23-e9592be1ce51}"
              DisplayName="Xử lý phân công"
@@ -389,11 +392,15 @@
              Type="Choice"
              Required="TRUE"
              Group="[LA-DVC]" >
-        <Default>Process</Default>
+        <Default>Xử lý</Default>
         <CHOICES>
-          <CHOICE>Start</CHOICE>
-          <CHOICE>Process</CHOICE>
-          <CHOICE>End</CHOICE>
+          <CHOICE>Bắt đầu</CHOICE>
+          <CHOICE>Tiếp nhận hồ sơ</CHOICE>
+          <CHOICE>Xử lý</CHOICE>
+          <CHOICE>Yêu cầu bổ sung</CHOICE>
+          <CHOICE>Phân công hồ sơ</CHOICE>
+          <CHOICE>Từ chối hồ sơ</CHOICE>
+          <CHOICE>Kết thúc</CHOICE>
         </CHOICES>
       </Field>
       <Field Name="IsEmail"
@@ -406,6 +413,29 @@
              DisplayName="Email Template"
              Type="Note"
              Group="[LA-DVC]" />
+
+      <Field Type="Boolean"
+             ID="{8AE4199F-8E4A-49C9-A5A3-1EAA7067C119}"
+             Name="AllowInBienNhan"
+             StaticName="AllowInBienNhan"
+             DisplayName="Được in biên nhận"
+             EnforceUniqueValues="FALSE"
+             Indexed="FALSE"
+             Group="[LA-DVC]">
+        <Default>0</Default>
+      </Field>
+
+      <Field Type="Boolean"
+             ID="{74443E7F-018E-4051-A6D4-D6918A68E990}"
+             Name="AllowInGiayPhep"
+             StaticName="AllowInGiayPhep"
+             DisplayName="Được in giấy phép"
+             EnforceUniqueValues="FALSE"
+             Indexed="FALSE"
+             Group="[LA-DVC]">
+        <Default>0</Default>
+      </Field>
+      
       
     </Fields>
 

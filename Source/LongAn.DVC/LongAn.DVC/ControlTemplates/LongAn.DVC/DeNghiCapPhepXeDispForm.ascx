@@ -65,7 +65,7 @@
         }
         //Validate yeu cau bo sung
         if ($("[id$='divYeuCauBoSung']").length > 0) {
-            if ($("[id$='txtTieuDeYCBS']").text() == "")
+            if ($("[id$='txtTieuDeYCBS']").val() == "")
                 return false;
         }
         return true;
