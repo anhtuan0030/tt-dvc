@@ -53,17 +53,25 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
 
         void btnCanBoTiepNhan_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            LoggingServices.LogMessage("CanBoTiepNhan Click");
+            var cauHinh = DeNghiHelper.GetCauHinh(int.Parse(hdfNextStep.Value));
+            UpdateItem(cauHinh
+                , true
+                , false
+                , SPContext.Current.Web.CurrentUser);
         }
 
         void btnYeuCauBoSung_Click(object sender, EventArgs e)
         {
-            LoggingServices.LogMessage("Begin YeuCaBoSung Click");
+            LoggingServices.LogMessage("YeuCaBoSung Click");
             var cauHinhs = DeNghiHelper.GetCauHinh(Constants.CauHinh_YCBS);
             if (cauHinhs != null && cauHinhs.Count > 0)
             {
                 var cauHinh = cauHinhs[0];
-                UpdateItem(cauHinh.BuocDuyetID, cauHinh.TrangThai, cauHinh.CapDuyetText, true, false, SPContext.Current.Web.CurrentUser);
+                UpdateItem(cauHinh
+                    , true
+                    , false
+                    , SPContext.Current.Web.CurrentUser);
             }
             else
             {
@@ -72,33 +80,61 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
                     redirectUrl = "/";
                 Response.Redirect(redirectUrl);
             }
-            LoggingServices.LogMessage("End YeuCaBoSung Click");
         }
 
         void btnPhanCong_Click(object sender, EventArgs e)
         {
+            LoggingServices.LogMessage("PhanCongLai Click");
             if (!string.IsNullOrEmpty(ddlUsers.SelectedValue))
             {
-                var spUser = SPContext.Current.Web.Users.GetByID(int.Parse(ddlUsers.SelectedValue));
-                UpdateItem(0, 0, "Phân công lại hồ sơ", false, false, spUser);
+                var spUserValue = new SPFieldUserValue(SPContext.Current.Web, int.Parse(ddlUsers.SelectedValue), ddlUsers.SelectedItem.Text);
+                //SPContext.Current.Web.Users.GetByID(int.Parse(ddlUsers.SelectedValue));
+                UpdateItem(null
+                    , false
+                    , false
+                    , spUserValue.User);
             }
         }      
 
         void btnTuChoi_Click(object sender, EventArgs e)
         {
-            
+            LoggingServices.LogMessage("TuChoi Click");
+            var cauHinhs = DeNghiHelper.GetCauHinh(Constants.CauHinh_TCHS);
+            if (cauHinhs != null && cauHinhs.Count > 0)
+            {
+                var cauHinh = cauHinhs[0];
+                UpdateItem(cauHinh
+                    , true
+                    , false
+                    , SPContext.Current.Web.CurrentUser);
+            }
+            else
+            {
+                var redirectUrl = Request.QueryString["Source"];
+                if (redirectUrl == null || string.IsNullOrEmpty(redirectUrl.ToString()))
+                    redirectUrl = "/";
+                Response.Redirect(redirectUrl);
+            }
         }
 
         void btnTraHoSo_Click(object sender, EventArgs e)
         {
+            LoggingServices.LogMessage("End TraHoSo Click");
             var cauHinh = DeNghiHelper.GetCauHinh(int.Parse(hdfPreStep.Value));
-            UpdateItem(cauHinh.BuocDuyetID, cauHinh.TrangThai, cauHinh.CapDuyetText, true, false, SPContext.Current.Web.CurrentUser);
+            UpdateItem(cauHinh
+                , true
+                , false
+                , SPContext.Current.Web.CurrentUser);
+            LoggingServices.LogMessage("End TraHoSo Click");
         }
 
         void btnDuyet_Click(object sender, EventArgs e)
         {
             var cauHinh = DeNghiHelper.GetCauHinh(int.Parse(hdfNextStep.Value));
-            UpdateItem(cauHinh.BuocDuyetID, cauHinh.TrangThai, cauHinh.CapDuyetText, true, false, SPContext.Current.Web.CurrentUser);
+            UpdateItem(cauHinh
+                , true
+                , false
+                , SPContext.Current.Web.CurrentUser);
         }
 
         void btnCancel_Click(object sender, EventArgs e)
@@ -118,118 +154,118 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
                 DeNghiHelper.LoadAttachments(SPContext.Current.ItemId, Constants.AttachmentGiayCamKet, divFileUpload3);
                 DeNghiHelper.LoadAttachments(SPContext.Current.ItemId, Constants.AttachmentCMND, divFileUpload4);
 
-                var isBoSungVal = SPContext.Current.ListItem[Fields.IsBoSungHoSo];
-                var isBoSung =  isBoSungVal != null ? bool.Parse(isBoSungVal.ToString()) : false;
-                if (isBoSung)
+                var buocDuyet = SPContext.Current.ListItem[Fields.BuocDuyet];
+                var buocDuyetValue = new SPFieldLookupValue(buocDuyet.ToString()).LookupId;
+                var cauHinh = DeNghiHelper.GetCauHinh(buocDuyetValue);
+                if (cauHinh != null && !cauHinh.IsBoSungHoSo)
                 {
-                    var buocDuyet = SPContext.Current.ListItem[Fields.BuocDuyet];
-                    var buocDuyetValue = new SPFieldLookupValue(buocDuyet.ToString()).LookupId;
-                    var cauHinh = DeNghiHelper.GetCauHinh(buocDuyetValue);
-                    if (cauHinh != null)
+                    hdfNextStep.Value = cauHinh.NextStep.ToString();
+                    hdfPreStep.Value = cauHinh.PreviousStep.ToString();
+                    var currentMember = DeNghiHelper.IsCurrentUserInGroup(SPContext.Current.Web, cauHinh.SPGroup);
+                    if (currentMember)
                     {
-                        hdfNextStep.Value = cauHinh.NextStep.ToString();
-                        hdfPreStep.Value = cauHinh.PreviousStep.ToString();
-                        var currentMember = DeNghiHelper.IsCurrentUserInGroup(SPContext.Current.Web, cauHinh.SPGroup);
-                        if (currentMember)
+                        #region Action Duyet
+                        if (cauHinh.ActionDuyet)
                         {
-                            #region Action Duyet
-                            if (cauHinh.ActionDuyet)
-                            {
-                                btnDuyet.Visible = true;
-                                btnDuyet.Text = cauHinh.TieuDeActionDuyet != null ? cauHinh.TieuDeActionDuyet : "Duyệt hồ sơ";
-                            }
-                            #endregion Action Duyet
+                            btnDuyet.Visible = true;
+                            btnDuyet.Text = cauHinh.TieuDeActionDuyet != null ? cauHinh.TieuDeActionDuyet : "Duyệt hồ sơ";
+                        }
+                        #endregion Action Duyet
 
-                            #region Action Tra Ho So
-                            if (cauHinh.ActionTraHoSo)
-                            {
-                                btnTraHoSo.Visible = true;
-                                btnTraHoSo.Text = cauHinh.TieuDeActionTraHoSo != null ? cauHinh.TieuDeActionTraHoSo : "Trả hồ sơ";
-                            }
-                            #endregion Action Tra Ho So
+                        #region Action Tra Ho So
+                        if (cauHinh.ActionTraHoSo)
+                        {
+                            btnTraHoSo.Visible = true;
+                            btnTraHoSo.Text = cauHinh.TieuDeActionTraHoSo != null ? cauHinh.TieuDeActionTraHoSo : "Trả hồ sơ";
+                        }
+                        #endregion Action Tra Ho So
 
-                            #region Action Tu Choi
-                            if (cauHinh.ActionTuChoi)
-                            {
-                                btnTuChoi.Visible = true;
-                            }
-                            #endregion Action Tu Choi
+                        #region Action Tu Choi
+                        if (cauHinh.ActionTuChoi)
+                        {
+                            btnTuChoi.Visible = true;
+                        }
+                        #endregion Action Tu Choi
 
-                            #region Action Yeu Cau Bo Sung
-                            if (cauHinh.ActionYeuCauBoSung)
-                            {
-                                btnYeuCauBoSung.Visible = true;
-                                divYeuCauBoSung.Visible = true;
-                            }
-                            #endregion Action Yeu Cau Bo Sung
+                        #region Action Yeu Cau Bo Sung
+                        if (cauHinh.ActionYeuCauBoSung)
+                        {
+                            btnYeuCauBoSung.Visible = true;
+                            divYeuCauBoSung.Visible = true;
+                        }
+                        #endregion Action Yeu Cau Bo Sung
 
-                            #region Cap Nhat Loai Duong
-                            if (cauHinh.AllowCapNhatLoaiDuong)
-                            {
-                                divLoaiDuong.Visible = true;
-                                divLoaiDuongDisp.Visible = false;
-                                SPFieldMultiChoice loaiDuong = (SPFieldMultiChoice)SPContext.Current.List.Fields[new Guid(Constants.FieldIdLoaiDuong)];
-                                chkListLoaiDuong.DataSource = loaiDuong.Choices;
-                                chkListLoaiDuong.DataBind();
+                        #region Cap Nhat Loai Duong
+                        if (cauHinh.AllowCapNhatLoaiDuong)
+                        {
+                            divLoaiDuong.Visible = true;
+                            divLoaiDuongDisp.Visible = false;
+                            SPFieldMultiChoice loaiDuong = (SPFieldMultiChoice)SPContext.Current.List.Fields[new Guid(Constants.FieldIdLoaiDuong)];
+                            chkListLoaiDuong.DataSource = loaiDuong.Choices;
+                            chkListLoaiDuong.DataBind();
 
-                                var currentItem = SPContext.Current.ListItem;
-                                var loaiDuongString = currentItem[Constants.FieldLoaiDuong] != null ? currentItem[Constants.FieldLoaiDuong].ToString() : string.Empty;
-                                for (int i = 0; i < chkListLoaiDuong.Items.Count; i++)
+                            var currentItem = SPContext.Current.ListItem;
+                            var loaiDuongString = currentItem[Constants.FieldLoaiDuong] != null ? currentItem[Constants.FieldLoaiDuong].ToString() : string.Empty;
+                            for (int i = 0; i < chkListLoaiDuong.Items.Count; i++)
+                            {
+                                if (string.IsNullOrEmpty(loaiDuongString))
+                                    break;
+                                if (loaiDuongString.Contains(chkListLoaiDuong.Items[i].Text))
                                 {
-                                    if (string.IsNullOrEmpty(loaiDuongString))
-                                        break;
-                                    if (loaiDuongString.Contains(chkListLoaiDuong.Items[i].Text))
-                                    {
-                                        chkListLoaiDuong.Items[i].Selected = true;
-                                    }
+                                    chkListLoaiDuong.Items[i].Selected = true;
                                 }
-
-                                var lanDuong = currentItem[Constants.FieldLanXeDuocChay] != null ? currentItem[Constants.FieldLanXeDuocChay].ToString() : string.Empty;
-                                txtLanXeDuocChay.Text = lanDuong;
-                                var tocDo = currentItem[Constants.FieldTocDoDuocChay] != null ? currentItem[Constants.FieldTocDoDuocChay].ToString() : string.Empty;
-                                txtTocDoDuocChay.Text = tocDo;
                             }
-                            #endregion Cap Nhat Loai Duong
 
-                            #region Cap Nhat Ngay Hen Tra
-                            if (cauHinh.AllowCapNhatNgayHen)
-                            {
-                                divNgayHen.Visible = true;
-                            }
-                            #endregion Cap Nhat Ngay Hen Tra
+                            var lanDuong = currentItem[Constants.FieldLanXeDuocChay] != null ? currentItem[Constants.FieldLanXeDuocChay].ToString() : string.Empty;
+                            txtLanXeDuocChay.Text = lanDuong;
+                            var tocDo = currentItem[Constants.FieldTocDoDuocChay] != null ? currentItem[Constants.FieldTocDoDuocChay].ToString() : string.Empty;
+                            txtTocDoDuocChay.Text = tocDo;
                         }
-                        
-                        #region Action Phan Cong
-                        if (cauHinh.ActionPhanCong)
+                        #endregion Cap Nhat Loai Duong
+
+                        #region Cap Nhat Ngay Hen Tra
+                        if (cauHinh.AllowCapNhatNgayHen)
                         {
-                            
-                            var isPhanCongVal = SPContext.Current.ListItem[Fields.IsPhanCong];
-                            var isPhanCong = isPhanCongVal != null ? bool.Parse(isPhanCongVal.ToString()) : false;
-                            var isTPP = DeNghiHelper.IsCurrentUserInGroup(SPContext.Current.Web, cauHinh.SPGroupPhanCong);
-                            if (isPhanCong && isTPP)
+                            divNgayHen.Visible = true;
+                            var ngayHenTraVal = DateTime.Now;
+                            var ngayHenTra = SPContext.Current.ListItem[Fields.NgayHenTra];
+                            if (ngayHenTra != null && !string.IsNullOrEmpty(ngayHenTra.ToString()))
                             {
-                                btnPhanCong.Visible = true;
-                                divPhanCongHoSo.Visible = true;
-                                var dataTable = GetCanBoXuLy(cauHinh.SPGroupTiepNhan);
-                                ddlUsers.DataSource = dataTable;
-                                ddlUsers.DataValueField = "ID";
-                                ddlUsers.DataTextField = "Name";
-                                ddlUsers.DataBind();
+                                ngayHenTraVal = DateTime.Parse(ngayHenTra.ToString());
                             }
-                            var isCanBoXuLy = DeNghiHelper.IsCurrentUserInGroup(SPContext.Current.Web, cauHinh.SPGroupTiepNhan);
-                            if(!isPhanCong && isCanBoXuLy)
-                            {
-                                btnCanBoTiepNhan.Visible = true;
-                            }
+                            dtcNgayHenTra.SelectedDate = ngayHenTraVal;
                         }
-                        #endregion Action Phan Cong
+                        #endregion Cap Nhat Ngay Hen Tra
                     }
+                        
+                    #region Action Phan Cong
+                    if (cauHinh.ActionPhanCong)
+                    {
+                        divPhanCongHoSo.Visible = true;
+                        var dataTable = GetCanBoXuLy(cauHinh.SPGroupTiepNhan);
+                        ddlUsers.DataSource = dataTable;
+                        ddlUsers.DataValueField = "ID";
+                        ddlUsers.DataTextField = "Name";
+                        ddlUsers.DataBind();
 
+                        var isTPP = DeNghiHelper.IsCurrentUserInGroup(SPContext.Current.Web, cauHinh.SPGroupPhanCong);
+                        if (cauHinh.IsPhanCong && isTPP)
+                        {
+                            btnPhanCong.Visible = true;
+                        }
+                        var isCanBoXuLy = DeNghiHelper.IsCurrentUserInGroup(SPContext.Current.Web, cauHinh.SPGroupTiepNhan);
+                        if (!cauHinh.IsPhanCong && isCanBoXuLy)
+                        {
+                            btnCanBoTiepNhan.Visible = true;
+                            divPhanCongHoSo.Visible = false;
+                        }
+                    }
+                    #endregion Action Phan Cong
                 }
             }
         }
 
-        void UpdateItem(int buocDuyet, int trangThai, string note, bool isCapNhatBuocDuyet, bool isTiepNhan, SPUser spUser)
+        void UpdateItem(CauHinh newCauHinh, bool isCapNhatBuocDuyet, bool isTiepNhan, SPUser spUser)
         {
             if (!this.Page.IsValid)
                 return;
@@ -241,7 +277,6 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
             
             var deNghiList = SPContext.Current.List;
             var spListItem = deNghiList.GetItemById(SPContext.Current.ItemId);
-            //var currentUser = SPContext.Current.Web.CurrentUser;
             spListItem[Fields.NguoiXuLy] = spUser.ID;
 
             var nguoiThamGiaXuLy = spListItem[Fields.NguoiThamGiaXuLy];
@@ -259,13 +294,20 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
             //Cap nhat buoc duyet va trang thai
             if (isCapNhatBuocDuyet)
             {
-                spListItem[Fields.TrangThai] = trangThai;
-                spListItem[Fields.BuocDuyet] = buocDuyet;
+                spListItem[Fields.TrangThai] = newCauHinh.TrangThai;
+                spListItem[Fields.BuocDuyet] = newCauHinh.BuocDuyetID;
+                //Cap nhat nguoi cho xu ly
+                var nguoiChXuLy = new SPFieldUserValueCollection();
+                foreach (SPUser user in newCauHinh.SPGroup.Users)
+                {
+                    nguoiChXuLy.Add(new SPFieldUserValue(SPContext.Current.Web, user.ID, user.LoginName));
+                }
+                spListItem[Fields.NguoiChoXuLy] = nguoiChXuLy;
             }
             //Cap nhat tiep nhan ho so
             if (isTiepNhan)
             {
-                spListItem[Fields.IsPhanCong] = true;
+                spListItem[Fields.NgayTiepNhan] = DateTime.Now;
             }
             //Cap nhat loai duong
             if (divLoaiDuong.Visible)
@@ -295,7 +337,12 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
             //Cap nhat phan cong ho so
             spListItem.Update();
             //Log to history
-            DeNghiHelper.AddDeNghiHistory(SPContext.Current.Web, SPContext.Current.ItemId, SPContext.Current.ListItem.Title, buocDuyet, trangThai, note);
+            DeNghiHelper.AddDeNghiHistory(SPContext.Current.Web
+                , SPContext.Current.ItemId
+                , SPContext.Current.ListItem.Title
+                , newCauHinh != null ? newCauHinh.BuocDuyetID : new SPFieldLookupValue(SPContext.Current.ListItem[Fields.BuocDuyet].ToString()).LookupId
+                , newCauHinh != null ? newCauHinh.TrangThai : new SPFieldLookupValue(SPContext.Current.ListItem[Fields.TrangThai].ToString()).LookupId
+                , newCauHinh != null ? newCauHinh.CapDuyetText : "TPP Phân công lại");
             //Redirect to page
             var redirectUrl = Request.QueryString["Source"];
             if (redirectUrl == null || string.IsNullOrEmpty(redirectUrl.ToString()))

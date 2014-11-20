@@ -46,7 +46,7 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
             //    ribbon.TrimById("Ribbon.ListForm.Edit");
             //    //ribbon.CommandUIVisible = false;
             //}
-            var cauHinhs = DeNghiHelper.GetCauHinh("Start");
+            var cauHinhs = DeNghiHelper.GetCauHinh(Constants.CauHinh_Start);
             var isMember = false;
             foreach (var item in cauHinhs)
             {
