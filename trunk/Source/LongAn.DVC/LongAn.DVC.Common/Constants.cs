@@ -197,6 +197,8 @@ namespace LongAn.DVC.Common
         public const string CauHinh_End = "Kết thúc";
         public const string CauHinh_YCBS = "Yêu cầu bổ sung";
         public const string CauHinh_PCHS = "Phân công hồ sơ";
+        public const string CauHinh_TCHS = "Từ chối hồ sơ";
+        public const string CauHinh_TNHS = "Tiếp nhận hồ sơ";
     }
 
     public class Fields {
@@ -278,6 +280,7 @@ namespace LongAn.DVC.Common
         public const string NguoiDeNghi = "NguoiDeNghi";
         public const string NamDeNghi = "NamDeNghi";
         public const string NgayNopHoSo = "NgayNopHoSo";
+        public const string NgayTiepNhan = "NgayTiepNhan";
         public const string NgayHenTra = "NgayHenTra";
         public const string NgayThucTra = "NgayThucTra";
         public const string NoteAppend = "NoteAppend";
@@ -288,6 +291,7 @@ namespace LongAn.DVC.Common
         public const string NgayXuLy = "NgayXuLy";
         public const string NguoiXuLy = "NguoiXuLy";
         public const string NguoiThamGiaXuLy = "NguoiThamGiaXuLy";
+        public const string NguoiChoXuLy = "NguoiChoXuLy";
         public const string MoTa = "MoTa";
         //public const string BuocDuyet = "BuocDuyet";
 
