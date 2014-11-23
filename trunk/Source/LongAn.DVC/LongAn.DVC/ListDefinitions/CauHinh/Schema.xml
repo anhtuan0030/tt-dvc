@@ -122,23 +122,23 @@
                     Name="ActionYeuCauBoSung" />
           <FieldRef ID="{eb97fbd8-e796-4940-a54e-a12e4644ef9e}"
                     Name="ActionPhanCong" />
-          
+
           <!--<FieldRef Name="ActionCanBoTiepNhan"
                     ID="{5A91D104-05AB-4ED8-BC85-207EA4A8113A}"/>-->
-          
+
           <FieldRef Name="SPGroupPhanCong"
                     ID="{AA0EACF4-F001-458C-8787-ECEB3E9B3825}" />
-          
+
           <FieldRef ID="{5E5DF29F-C1F4-4D40-A369-813DC24967E9}"
                     Name="SPGroupTiepNhan" />
-          
+
           <FieldRef ID="{b36d0245-0dfa-4a24-9ae6-e3fc5e194052}"
                     Name="AllowCapNhatLoaiDuong" />
           <FieldRef ID="{d0bc18be-83fe-423d-adea-2470c328adb7}"
                     Name="AllowCapNhatNgayHen" />
           <FieldRef ID="{927b86cc-1f41-4889-8818-5dcc631bd660}"
                     Name="IsBoSungHoSo" />
-          
+
           <FieldRef ID="{f68d404e-3861-42b4-a754-371fb5384240}"
                     Name="IsPhanCong" />
           <!--<FieldRef ID="{e8ed953d-c8e5-4665-8b23-e9592be1ce51}"
@@ -341,14 +341,14 @@
              DisplayName="Action Cán bộ tiếp nhận"
              Type="Boolean"
              Group="[LA-DVC]" />-->
-      
+
       <Field Name="SPGroupPhanCong"
              ID="{AA0EACF4-F001-458C-8787-ECEB3E9B3825}"
              DisplayName="SP Group phân công"
              Type="User"
              Required="FALSE"
              Group="[LA-DVC]" />
-      
+
       <Field Name="SPGroupTiepNhan"
              ID="{5E5DF29F-C1F4-4D40-A369-813DC24967E9}"
              DisplayName="SP Group tiếp nhận"
@@ -360,13 +360,13 @@
              DisplayName="Allow Cập nhật loại đường"
              Type="Boolean"
              Group="[LA-DVC]" />
-      
+
       <Field Name="AllowCapNhatNgayHen"
              ID="{d0bc18be-83fe-423d-adea-2470c328adb7}"
              DisplayName="Allow Cập nhật ngày hẹn"
              Type="Boolean"
              Group="[LA-DVC]" />
-      
+
       <Field Name="IsBoSungHoSo"
              ID="{927b86cc-1f41-4889-8818-5dcc631bd660}"
              DisplayName="Bổ sung hồ sơ"
@@ -435,8 +435,8 @@
              Group="[LA-DVC]">
         <Default>0</Default>
       </Field>
-      
-      
+
+
     </Fields>
 
     <Views>

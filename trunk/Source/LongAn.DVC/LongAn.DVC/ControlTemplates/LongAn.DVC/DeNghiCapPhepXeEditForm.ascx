@@ -268,6 +268,9 @@
                                     .custom-label label {
                                         display: inline !important;
                                     }
+                                    .auto-style1 {
+                                        height: 26px;
+                                    }
                                 </style>
                             </div>
                             <div class="clear"></div>
@@ -416,7 +419,7 @@
                         <div class="row">
                             <div class="grid_8">
                                 <SharePoint:FieldLabel ID="FieldLabel38" FieldName="UploadFileTitle1" runat="server" />
-                                <span title="This is a required field." class="ms-accentText"> *</span>
+                                
                             </div>
                             <div class="grid_3" id="divFileUpload1" runat="server">
                                 <asp:FileUpload ID="fileUpload1" runat="server" />
@@ -426,7 +429,7 @@
                         <div class="row">
                             <div class="grid_8">
                                 <SharePoint:FieldLabel ID="FieldLabel40" FieldName="UploadFileTitle2" runat="server" />
-                                <span title="This is a required field." class="ms-accentText"> *</span>
+                                
                             </div>
                             <div class="grid_3" id="divFileUpload2" runat="server">
                                 <asp:FileUpload ID="fileUpload2" runat="server" />
@@ -436,7 +439,7 @@
                         <div class="row">
                             <div class="grid_8">
                                 <SharePoint:FieldLabel ID="FieldLabel41" FieldName="UploadFileTitle3" runat="server" />
-                                <span title="This is a required field." class="ms-accentText"> *</span>
+                                
                             </div>
                             <div class="grid_3"  id="divFileUpload3" runat="server">
                                 <asp:FileUpload ID="fileUpload3" runat="server" />
@@ -446,7 +449,7 @@
                         <div class="row">
                             <div class="grid_8">
                                 <SharePoint:FieldLabel ID="FieldLabel42" FieldName="UploadFileTitle4" runat="server" />
-                                <span title="This is a required field." class="ms-accentText"> *</span>
+                                
                             </div>
                             <div class="grid_3" id="divFileUpload4" runat="server">
                                 <asp:FileUpload ID="fileUpload4" runat="server" />
@@ -462,7 +465,7 @@
                                 <table class="the-table">
                                     <tr style="height: 50px;">
                                         <th>STT</th>
-                                        <th>Tiêu đề</th>
+                                        <th>Mã biên nhận</th>
                                         <th>Mô tả</th>
                                         <th>Ngày yêu cầu</th>
                                         <th>Xác nhận</th>
@@ -496,9 +499,13 @@
                     </div>
 
                     <div class="pull-right">
-                        <asp:Button ID="btnSave" OnClientClick="if (!PreSaveItem(1)) return false;" CssClass="button" runat="server" Text="Lưu hồ sơ" Visible="false" style="float:left;"/>
-                        <asp:Button ID="btnGuiHoSo" OnClientClick="if (!PreSaveItem(1)) return false;" runat="server" Text="Nộp hồ sơ" CssClass="button" Visible="false" style="float:left;"/>
+                        <asp:Button ID="btnSave" OnClientClick="if (!PreSaveItem(1)) return false;" CssClass="button" runat="server" Text="Lưu hồ sơ" style="float:left;"/>
+                        <asp:Button ID="btnNopHoSo" OnClientClick="if (!PreSaveItem(1)) return false;" runat="server" Text="Nộp hồ sơ" CssClass="button" Visible="false" style="float:left;"/>
+                        <asp:Button ID="btnBoSungHoSo" OnClientClick="if (!PreSaveItem(1)) return false;" runat="server" Text="Bổ sung hồ sơ" CssClass="button" Visible="false" style="float:left;"/>
                         <asp:Button ID="btnCancel" runat="server" Text="Đóng" CssClass="button" style="float:left;"/>
+                    </div>
+                    <div style="display:none;">
+                        <asp:HiddenField ID="hdfNextStep" runat="server" />
                     </div>
                 </div>
                 <div class="clearfix"></div>

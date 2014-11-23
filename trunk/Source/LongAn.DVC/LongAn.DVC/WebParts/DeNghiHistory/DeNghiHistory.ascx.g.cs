@@ -160,17 +160,6 @@ namespace LongAn.DVC.WebParts.DeNghiHistory {
             global::System.Web.UI.WebControls.Literal @__ctrl;
             @__ctrl = new global::System.Web.UI.WebControls.Literal();
             @__ctrl.TemplateControl = this;
-            @__ctrl.ID = "literalHanhDong";
-            return @__ctrl;
-        }
-        
-        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
-        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
-            "artCodeGenerator", "12.0.0.0")]
-        private global::System.Web.UI.WebControls.Literal @__BuildControl__control8() {
-            global::System.Web.UI.WebControls.Literal @__ctrl;
-            @__ctrl = new global::System.Web.UI.WebControls.Literal();
-            @__ctrl.TemplateControl = this;
             @__ctrl.ID = "literalMoTa";
             return @__ctrl;
         }
@@ -201,11 +190,6 @@ namespace LongAn.DVC.WebParts.DeNghiHistory {
             global::System.Web.UI.WebControls.Literal @__ctrl5;
             @__ctrl5 = this.@__BuildControl__control7();
             @__parser.AddParsedSubObject(@__ctrl5);
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                            </td>\r\n                            <td>\r\n          " +
-                        "                      "));
-            global::System.Web.UI.WebControls.Literal @__ctrl6;
-            @__ctrl6 = this.@__BuildControl__control8();
-            @__parser.AddParsedSubObject(@__ctrl6);
             @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                            </td>\r\n                        </tr>\r\n             " +
                         "       "));
         }
@@ -272,7 +256,6 @@ namespace LongAn.DVC.WebParts.DeNghiHistory {
                     <th>STT</th>
                     <th>Người xử lý</th>
                     <th>Ngày xử lý</th>
-                    <th>Hành động</th>
                     <th>Mô tả</th>
                 </tr>
                 "));

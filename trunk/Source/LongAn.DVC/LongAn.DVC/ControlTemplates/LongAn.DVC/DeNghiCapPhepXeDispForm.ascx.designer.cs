@@ -958,24 +958,6 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC {
         protected global::System.Web.UI.WebControls.TextBox txtTocDoDuocChay;
         
         /// <summary>
-        /// divYeuCauBoSung control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divYeuCauBoSung;
-        
-        /// <summary>
-        /// txtTieuDeYCBS control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTieuDeYCBS;
-        
-        /// <summary>
         /// divPhanCongHoSo control.
         /// </summary>
         /// <remarks>
@@ -1019,6 +1001,24 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtNhanXet;
+        
+        /// <summary>
+        /// btnInBienNhan control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnInBienNhan;
+        
+        /// <summary>
+        /// btnInGiayPhep control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnInGiayPhep;
         
         /// <summary>
         /// btnDuyet control.

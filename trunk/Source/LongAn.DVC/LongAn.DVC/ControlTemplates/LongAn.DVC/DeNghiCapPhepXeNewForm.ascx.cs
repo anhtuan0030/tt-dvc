@@ -86,7 +86,7 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
             var cauHinh = DeNghiHelper.GetCauHinh(NextStep);
             if (cauHinh != null)
             {
-                SaveItem(cauHinh.BuocDuyetID, cauHinh.TrangThai, cauHinh.CapDuyetText);
+                SaveItem(cauHinh.BuocDuyetID, cauHinh.TrangThai, cauHinh.CapDuyetText, cauHinh.SPGroup);
             }
         }
 
@@ -102,14 +102,14 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
 
         void btnSave_Click(object sender, EventArgs e)
         {
-            SaveItem(BuocDuyetID, TrangThai, CapDuyetText);
+            SaveItem(BuocDuyetID, TrangThai, CapDuyetText, null);
         }
         protected void Page_Load(object sender, EventArgs e)
         {
             
         }
 
-        void SaveItem(int buocDuyet, int trangThai, string note)
+        void SaveItem(int buocDuyet, int trangThai, string note, SPGroup spGroup)
         {
             if (!this.Page.IsValid)
                 return;
@@ -126,6 +126,18 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
             SPContext.Current.ListItem[Fields.BuocDuyet] = buocDuyet;
             SPContext.Current.ListItem[Fields.NgayNopHoSo] = DateTime.Now;
             SPContext.Current.ListItem[Fields.NguoiDeNghi] = SPContext.Current.Web.CurrentUser;
+            SPContext.Current.ListItem[Fields.NguoiChoXuLy] = SPContext.Current.Web.CurrentUser;
+            if (spGroup != null)
+            {
+                //var cauHinh = DeNghiHelper.GetCauHinh(buocDuyet);
+                var nguoiChoXuLy = new SPFieldUserValueCollection();
+                foreach (SPUser user in spGroup.Users)
+                {
+                    nguoiChoXuLy.Add(new SPFieldUserValue(SPContext.Current.Web, user.ID, user.LoginName));
+                }
+                SPContext.Current.ListItem[Fields.NguoiChoXuLy] = nguoiChoXuLy;
+            }
+
             SaveButton.SaveItem(SPContext.Current, false, note);
             var deNghiList = SPContext.Current.List;
             int itemId = 0;

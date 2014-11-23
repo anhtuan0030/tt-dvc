@@ -23,7 +23,7 @@
         }
         $("#linkSearchExpand").click(function () {
             $("#searchform").toggle("slow");
-            if (searchExpandValue == "1") {
+            if ($("[id$='_hdfSearchExpand']").val() == "1") {
                 $("[id$='_hdfSearchExpand']").val("0");
                 $("#linkSearchExpand").removeClass("expanded");
             }
@@ -118,7 +118,7 @@
                     <th>Loại đề nghị</th>
                     <th>Ngày nộp hồ sơ</th>
                     <th>Trạng thái</th>
-                    <th colspan="5">Thao tác</th>
+                    <th colspan="4">Thao tác</th>
                 </tr>
                 <asp:Repeater ID="repeaterLists" runat="server"  OnItemCommand="repeaterLists_ItemCommand" OnItemDataBound="repeaterLists_ItemDataBound">
                     <ItemTemplate>
@@ -143,35 +143,16 @@
                             </td>
                             
                             <td>
-                                <asp:HyperLink ID="hplViewItem" ToolTip="Xem thông tin hồ sơ" CssClass="button view just-icon" runat="server"></asp:HyperLink>
+                                <asp:HyperLink ID="hplXuLy" ToolTip="Xử lý hồ sơ" CssClass="button view just-icon" runat="server"></asp:HyperLink>
                             </td>
                             <td>
-                                <asp:LinkButton ID="lbtDisable1" Enabled="false" ToolTip="Disable" CssClass="button just-icon" style="display:block;" runat="server"></asp:LinkButton>
-                                <asp:LinkButton ID="lbtTiepNhan" ToolTip="Tiếp nhận hồ sơ" CssClass="button edit just-icon" style="display:none;" runat="server"></asp:LinkButton>
-                                <asp:LinkButton ID="lbtHoanThanh" ToolTip="Xác nhận hồ sơ đã được cấp phép" CssClass="button done just-icon" style="display:none;" runat="server"></asp:LinkButton>
-                                <asp:LinkButton ID="lbtPrint" ToolTip="In Biên nhận / Giấy cấp phép" CssClass="button printer just-icon" style="display:none;" runat="server"></asp:LinkButton>
+                                <asp:HyperLink ID="hplChinhSuaBoSung" ToolTip="Chỉnh sửa / Bổ sung hồ sơ" CssClass="button edit just-icon" style="display:none;" runat="server"></asp:HyperLink>
                             </td>
                             <td>
-                                <asp:LinkButton ID="lbtDisable2" Enabled="false" ToolTip="Disable" CssClass="button just-icon" style="display:block;" runat="server"></asp:LinkButton>
-                                <%--<asp:LinkButton ID="lbtChuyenTruongPhong" ToolTip="Chuyển trưởng/phó P.QLHT" CssClass="button send-to-manager just-icon" style="display:none;" runat="server"></asp:LinkButton>--%>
-                                <asp:HyperLink ID="hplChuyenTruongPhong" ToolTip="Chuyển trưởng/phó P.QLHT" CssClass="button up just-icon" style="display:none;" runat="server"></asp:HyperLink>
-
-                                <%--<asp:LinkButton ID="lbtTrinhTruongPhoPQLHT" ToolTip="Trình trưởng/phó P.QLHT" CssClass="button up just-icon" style="display:none;" runat="server"></asp:LinkButton>--%>
-                                <asp:HyperLink ID="hplTrinhTruongPhoPQLHT" ToolTip="Trình trưởng/phó P.QLHT" CssClass="button up just-icon" style="display:none;" runat="server"></asp:HyperLink>
-                                <%--<asp:LinkButton ID="lbtTrinhLanhDaoSo" c></asp:LinkButton>--%>
-                                <asp:HyperLink ID="hplTrinhLanhDaoSo" ToolTip="Trình trưởng/phó P.QLHT" CssClass="button up just-icon" style="display:none;" runat="server"></asp:HyperLink>
-                                <%--<asp:LinkButton ID="lbtDuyetHoSo" ToolTip="Trình trưởng/phó P.QLHT" CssClass="button up just-icon" style="display:none;" runat="server"></asp:LinkButton>--%>
-                                <asp:HyperLink ID="hplDuyetHoSo" ToolTip="Trình trưởng/phó P.QLHT" CssClass="button up just-icon" style="display:none;" runat="server"></asp:HyperLink>
-                                <asp:LinkButton ID="lbtChuaHoanThanh" ToolTip="Xác nhận hồ sơ chưa hoàn thành" CssClass="button none-finish just-icon" style="display:none;" runat="server"></asp:LinkButton>
+                                <asp:LinkButton ID="lbtPrintBienNhan" ToolTip="In Biên nhận" CssClass="button printer just-icon" style="display:none;" runat="server"></asp:LinkButton>
                             </td>
                             <td>
-                                <asp:LinkButton ID="lbtDisable3" Enabled="false" ToolTip="Disable" CssClass="button just-icon" style="display:block;" runat="server"></asp:LinkButton>
-                                <asp:HyperLink ID="hplYeuCauBoSung" ToolTip="Yêu cầu bổ sung hồ sơ" CssClass="button waiting-add just-icon" style="display:none;" runat="server"></asp:HyperLink>
-                                <asp:HyperLink ID="hplPhanCongHoSo" ToolTip="Phân công hồ sơ" CssClass="button edit just-icon" style="display:none;" runat="server"></asp:HyperLink>
-                            </td>
-                            <td>
-                                <asp:LinkButton ID="lbtDisable4" Enabled="false" ToolTip="Disable" CssClass="button just-icon" style="display:block;" runat="server"></asp:LinkButton>
-                                <asp:HyperLink ID="hplTuChoiHoSo" ToolTip="Trả / Từ chối duyệt" CssClass="button rejected-2 just-icon" style="display:none;" runat="server"></asp:HyperLink>
+                                <asp:LinkButton ID="lbtPrintGiayPhep" ToolTip="In Giấy phép" CssClass="button printer just-icon" style="display:none;" runat="server"></asp:LinkButton>
                             </td>
                         </tr>
                     </ItemTemplate>

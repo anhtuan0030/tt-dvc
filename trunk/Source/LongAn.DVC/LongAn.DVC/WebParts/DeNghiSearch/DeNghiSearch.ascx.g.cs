@@ -49,15 +49,43 @@ namespace LongAn.DVC.WebParts.DeNghiSearch {
         
         [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
             "artCodeGenerator", "12.0.0.0")]
-        protected global::System.Web.UI.WebControls.Literal literalMaBienNhan;
+        protected global::System.Web.UI.WebControls.Label lblSoBienNhan;
         
         [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
             "artCodeGenerator", "12.0.0.0")]
-        protected global::System.Web.UI.WebControls.Literal literalDonVi;
+        protected global::System.Web.UI.WebControls.Label lblNgayNhanHoSo;
         
         [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
             "artCodeGenerator", "12.0.0.0")]
-        protected global::System.Web.UI.WebControls.Literal literalTrangThai;
+        protected global::System.Web.UI.WebControls.Label lblNgayHenTra;
+        
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        protected global::System.Web.UI.WebControls.Label lblNgayThucTra;
+        
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        protected global::System.Web.UI.WebControls.Label lblTinhTrangHoSo;
+        
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        protected global::System.Web.UI.WebControls.Label lblSoNgayTreHan;
+        
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        protected global::System.Web.UI.WebControls.Label lblCaNhanToChuc;
+        
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        protected global::System.Web.UI.WebControls.Label lblDiaChi;
+        
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        protected global::System.Web.UI.WebControls.Label lblDienThoai;
+        
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        protected global::System.Web.UI.WebControls.Repeater repeaterLists;
         
         [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebPartCodeGenerator", "12.0.0.0")]
         public static implicit operator global::System.Web.UI.TemplateControl(DeNghiSearch target) 
@@ -95,33 +123,242 @@ namespace LongAn.DVC.WebParts.DeNghiSearch {
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
         [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
             "artCodeGenerator", "12.0.0.0")]
-        private global::System.Web.UI.WebControls.Literal @__BuildControlliteralMaBienNhan() {
-            global::System.Web.UI.WebControls.Literal @__ctrl;
-            @__ctrl = new global::System.Web.UI.WebControls.Literal();
-            this.literalMaBienNhan = @__ctrl;
-            @__ctrl.ID = "literalMaBienNhan";
+        private global::System.Web.UI.WebControls.Label @__BuildControllblSoBienNhan() {
+            global::System.Web.UI.WebControls.Label @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.Label();
+            this.lblSoBienNhan = @__ctrl;
+            @__ctrl.ApplyStyleSheetSkin(this.Page);
+            @__ctrl.ID = "lblSoBienNhan";
+            @__ctrl.Text = "";
             return @__ctrl;
         }
         
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
         [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
             "artCodeGenerator", "12.0.0.0")]
-        private global::System.Web.UI.WebControls.Literal @__BuildControlliteralDonVi() {
-            global::System.Web.UI.WebControls.Literal @__ctrl;
-            @__ctrl = new global::System.Web.UI.WebControls.Literal();
-            this.literalDonVi = @__ctrl;
-            @__ctrl.ID = "literalDonVi";
+        private global::System.Web.UI.WebControls.Label @__BuildControllblNgayNhanHoSo() {
+            global::System.Web.UI.WebControls.Label @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.Label();
+            this.lblNgayNhanHoSo = @__ctrl;
+            @__ctrl.ApplyStyleSheetSkin(this.Page);
+            @__ctrl.ID = "lblNgayNhanHoSo";
+            @__ctrl.Text = "";
             return @__ctrl;
         }
         
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
         [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
             "artCodeGenerator", "12.0.0.0")]
-        private global::System.Web.UI.WebControls.Literal @__BuildControlliteralTrangThai() {
+        private global::System.Web.UI.WebControls.Label @__BuildControllblNgayHenTra() {
+            global::System.Web.UI.WebControls.Label @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.Label();
+            this.lblNgayHenTra = @__ctrl;
+            @__ctrl.ApplyStyleSheetSkin(this.Page);
+            @__ctrl.ID = "lblNgayHenTra";
+            @__ctrl.Text = "";
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.Label @__BuildControllblNgayThucTra() {
+            global::System.Web.UI.WebControls.Label @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.Label();
+            this.lblNgayThucTra = @__ctrl;
+            @__ctrl.ApplyStyleSheetSkin(this.Page);
+            @__ctrl.ID = "lblNgayThucTra";
+            @__ctrl.Text = "";
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.Label @__BuildControllblTinhTrangHoSo() {
+            global::System.Web.UI.WebControls.Label @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.Label();
+            this.lblTinhTrangHoSo = @__ctrl;
+            @__ctrl.ApplyStyleSheetSkin(this.Page);
+            @__ctrl.ID = "lblTinhTrangHoSo";
+            @__ctrl.Text = "";
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.Label @__BuildControllblSoNgayTreHan() {
+            global::System.Web.UI.WebControls.Label @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.Label();
+            this.lblSoNgayTreHan = @__ctrl;
+            @__ctrl.ApplyStyleSheetSkin(this.Page);
+            @__ctrl.ID = "lblSoNgayTreHan";
+            @__ctrl.Text = "";
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.Label @__BuildControllblCaNhanToChuc() {
+            global::System.Web.UI.WebControls.Label @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.Label();
+            this.lblCaNhanToChuc = @__ctrl;
+            @__ctrl.ApplyStyleSheetSkin(this.Page);
+            @__ctrl.ID = "lblCaNhanToChuc";
+            @__ctrl.Text = "";
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.Label @__BuildControllblDiaChi() {
+            global::System.Web.UI.WebControls.Label @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.Label();
+            this.lblDiaChi = @__ctrl;
+            @__ctrl.ApplyStyleSheetSkin(this.Page);
+            @__ctrl.ID = "lblDiaChi";
+            @__ctrl.Text = "";
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.Label @__BuildControllblDienThoai() {
+            global::System.Web.UI.WebControls.Label @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.Label();
+            this.lblDienThoai = @__ctrl;
+            @__ctrl.ApplyStyleSheetSkin(this.Page);
+            @__ctrl.ID = "lblDienThoai";
+            @__ctrl.Text = "";
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.DataBoundLiteralControl @__BuildControl__control3() {
+            global::System.Web.UI.DataBoundLiteralControl @__ctrl;
+            @__ctrl = new global::System.Web.UI.DataBoundLiteralControl(2, 1);
+            @__ctrl.TemplateControl = this;
+            @__ctrl.SetStaticString(0, "\r\n                                    <tr class=\"");
+            @__ctrl.SetStaticString(1, "\">\r\n                                        <td>\r\n                               " +
+                    "             ");
+            @__ctrl.DataBinding += new System.EventHandler(this.@__DataBind__control3);
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        public void @__DataBind__control3(object sender, System.EventArgs e) {
+            System.Web.UI.WebControls.RepeaterItem Container;
+            System.Web.UI.DataBoundLiteralControl target;
+            target = ((System.Web.UI.DataBoundLiteralControl)(sender));
+            Container = ((System.Web.UI.WebControls.RepeaterItem)(target.BindingContainer));
+            target.SetDataBoundString(0, global::System.Convert.ToString((((RepeaterItem)Container).ItemIndex+1) % 2 == 0 ? "even" : "odd", global::System.Globalization.CultureInfo.CurrentCulture));
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.Literal @__BuildControl__control4() {
             global::System.Web.UI.WebControls.Literal @__ctrl;
             @__ctrl = new global::System.Web.UI.WebControls.Literal();
-            this.literalTrangThai = @__ctrl;
-            @__ctrl.ID = "literalTrangThai";
+            @__ctrl.TemplateControl = this;
+            @__ctrl.ID = "literalSTT";
+            @__ctrl.DataBinding += new System.EventHandler(this.@__DataBinding__control4);
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        public void @__DataBinding__control4(object sender, System.EventArgs e) {
+            System.Web.UI.WebControls.Literal dataBindingExpressionBuilderTarget;
+            System.Web.UI.WebControls.RepeaterItem Container;
+            dataBindingExpressionBuilderTarget = ((System.Web.UI.WebControls.Literal)(sender));
+            Container = ((System.Web.UI.WebControls.RepeaterItem)(dataBindingExpressionBuilderTarget.BindingContainer));
+            dataBindingExpressionBuilderTarget.Text = global::System.Convert.ToString((((RepeaterItem)Container).ItemIndex+1) , global::System.Globalization.CultureInfo.CurrentCulture);
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.Literal @__BuildControl__control5() {
+            global::System.Web.UI.WebControls.Literal @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.Literal();
+            @__ctrl.TemplateControl = this;
+            @__ctrl.ID = "literalNgayXuLy";
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.Literal @__BuildControl__control6() {
+            global::System.Web.UI.WebControls.Literal @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.Literal();
+            @__ctrl.TemplateControl = this;
+            @__ctrl.ID = "literalNguoiXuLy";
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.Literal @__BuildControl__control7() {
+            global::System.Web.UI.WebControls.Literal @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.Literal();
+            @__ctrl.TemplateControl = this;
+            @__ctrl.ID = "literalMoTa";
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private void @__BuildControl__control2(System.Web.UI.Control @__ctrl) {
+            global::System.Web.UI.DataBoundLiteralControl @__ctrl1;
+            @__ctrl1 = this.@__BuildControl__control3();
+            System.Web.UI.IParserAccessor @__parser = ((System.Web.UI.IParserAccessor)(@__ctrl));
+            @__parser.AddParsedSubObject(@__ctrl1);
+            global::System.Web.UI.WebControls.Literal @__ctrl2;
+            @__ctrl2 = this.@__BuildControl__control4();
+            @__parser.AddParsedSubObject(@__ctrl2);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                                        </td>\r\n                                " +
+                        "        <td>\r\n                                            "));
+            global::System.Web.UI.WebControls.Literal @__ctrl3;
+            @__ctrl3 = this.@__BuildControl__control5();
+            @__parser.AddParsedSubObject(@__ctrl3);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                                        </td>\r\n                                " +
+                        "        <td>\r\n                                            "));
+            global::System.Web.UI.WebControls.Literal @__ctrl4;
+            @__ctrl4 = this.@__BuildControl__control6();
+            @__parser.AddParsedSubObject(@__ctrl4);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                                        </td>\r\n                                " +
+                        "        <td>\r\n                                            "));
+            global::System.Web.UI.WebControls.Literal @__ctrl5;
+            @__ctrl5 = this.@__BuildControl__control7();
+            @__parser.AddParsedSubObject(@__ctrl5);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                                        </td>\r\n                                " +
+                        "    </tr>\r\n                                "));
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.Repeater @__BuildControlrepeaterLists() {
+            global::System.Web.UI.WebControls.Repeater @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.Repeater();
+            this.repeaterLists = @__ctrl;
+            @__ctrl.ItemTemplate = new System.Web.UI.CompiledTemplateBuilder(new System.Web.UI.BuildTemplateMethod(this.@__BuildControl__control2));
+            @__ctrl.ID = "repeaterLists";
+            @__ctrl.ItemDataBound -= new System.Web.UI.WebControls.RepeaterItemEventHandler(this.repeaterLists_ItemDataBound);
+            @__ctrl.ItemDataBound += new System.Web.UI.WebControls.RepeaterItemEventHandler(this.repeaterLists_ItemDataBound);
             return @__ctrl;
         }
         
@@ -132,80 +369,188 @@ namespace LongAn.DVC.WebParts.DeNghiSearch {
             System.Web.UI.IParserAccessor @__parser = ((System.Web.UI.IParserAccessor)(@__ctrl));
             @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl(@"
 
+<link rel=""stylesheet"" href=""/_layouts/15/LongAn.DVC.Form/css/main.css""/>
+
 <style type=""text/css"">
     .button-custom {
         width: 120px !important;
     }
 </style>
-<div class="""">
-	<div class=""row"">
-		<div class=""grid_12"" id=""main-frame"">
-			<h2 class="""">
-				TRA CỨU HỒ SƠ
-			</h2>
-			<div class=""form"" id=""searchform"">
-				<div class=""row line"">
-                    <div class=""grid_3"" style=""margin-top:10px; text-align:right;"">
-                       Nhập mã biên nhận:                        
-                    </div>
-                    <div class=""grid_4"">
-                        "));
+<div class=""row"">
+	<div class=""grid_12"" id=""main-frame"">
+		<h1 class="""">
+			TRA CỨU HỒ SƠ
+		</h1>
+		<div class=""form"" id=""searchform"">
+			<div class=""row line"">
+                <div class=""grid_3"" style=""margin-top:10px; text-align:right;"">
+                    Nhập mã biên nhận:                        
+                </div>
+                <div class=""grid_4"">
+                    "));
             global::System.Web.UI.WebControls.TextBox @__ctrl1;
             @__ctrl1 = this.@__BuildControltxtMaBienNhan();
             @__parser.AddParsedSubObject(@__ctrl1);
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                    </div>\r\n                    <div class=\"grid_2\">\r\n         " +
-                        "               "));
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                </div>\r\n                <div class=\"grid_2\">\r\n                 " +
+                        "   "));
             global::System.Web.UI.WebControls.Button @__ctrl2;
             @__ctrl2 = this.@__BuildControlbtnTimKiem();
             @__parser.AddParsedSubObject(@__ctrl2);
             @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl(@"
-                    </div>
-                    <div class=""clear""></div>
-				</div>
+                </div>
+                <div class=""clear""></div>
 			</div>
-            <div>
-                <h3><u>Kết quả tra cứu</u></h3>
-                <div class=""row"" style=""padding: 5px 0"">
-                    <div class=""grid_1"">&nbsp;</div>
-                    <div class=""grid_3"" style=""text-align:right"">
-                       Mã biên nhận:                        
+		</div>
+	</div>
+</div>
+
+<div class=""row"">
+    <div class=""grid_12"">
+        <h1>Kết quả tra cứu</h1>
+        <div class=""mr-form"">
+            <div class=""panel-2"" >
+                <h2>Thông tin hồ sơ</h2>
+                <div class=""row"">
+                    <div class=""grid_3"">
+                        Số biên nhận      
                     </div>
-                    <div class=""grid_4"">
-                        <b>"));
-            global::System.Web.UI.WebControls.Literal @__ctrl3;
-            @__ctrl3 = this.@__BuildControlliteralMaBienNhan();
+                    <div class=""grid_9"">
+                        "));
+            global::System.Web.UI.WebControls.Label @__ctrl3;
+            @__ctrl3 = this.@__BuildControllblSoBienNhan();
             @__parser.AddParsedSubObject(@__ctrl3);
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl(@"</b>
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl(@"
                     </div>
                     <div class=""clear""></div>
-				</div>
-                <div class=""row"" style=""padding: 5px 0"">
-                    <div class=""grid_1"">&nbsp;</div>
-                    <div class=""grid_3"" style=""text-align:right"">
-                       Cá nhân / Tổ chức:                        
+                </div>
+                <div class=""row"">
+                    <div class=""grid_3"">
+                        Ngày nhận hồ sơ      
                     </div>
-                    <div class=""grid_4"">
-                        <b>"));
-            global::System.Web.UI.WebControls.Literal @__ctrl4;
-            @__ctrl4 = this.@__BuildControlliteralDonVi();
+                    <div class=""grid_9"">
+                        "));
+            global::System.Web.UI.WebControls.Label @__ctrl4;
+            @__ctrl4 = this.@__BuildControllblNgayNhanHoSo();
             @__parser.AddParsedSubObject(@__ctrl4);
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl(@"</b>
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl(@"
                     </div>
                     <div class=""clear""></div>
-				</div>
-                <div class=""row"" style=""padding: 5px 0"">
-                    <div class=""grid_1"">&nbsp;</div>
-                    <div class=""grid_3"" style=""text-align:right"">
-                       Trạng thái xử lý:                        
+                </div>
+                <div class=""row"">
+                    <div class=""grid_3"">
+                        Ngày hẹn trả hồ sơ      
                     </div>
-                    <div class=""grid_4"">
-                        <b>"));
-            global::System.Web.UI.WebControls.Literal @__ctrl5;
-            @__ctrl5 = this.@__BuildControlliteralTrangThai();
+                    <div class=""grid_9"">
+                        "));
+            global::System.Web.UI.WebControls.Label @__ctrl5;
+            @__ctrl5 = this.@__BuildControllblNgayHenTra();
             @__parser.AddParsedSubObject(@__ctrl5);
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("</b>\r\n                    </div>\r\n                    <div class=\"clear\"></div>\r\n" +
-                        "\t\t\t\t</div>\r\n            </div>\r\n\t\t</div>\r\n\t</div>\r\n\t<div class=\"clear\"></div>\r\n<" +
-                        "/div>"));
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl(@"
+                    </div>
+                    <div class=""clear""></div>
+                </div>
+                <div class=""row"">
+                    <div class=""grid_3"">
+                        Ngày thực trả hồ sơ      
+                    </div>
+                    <div class=""grid_9"">
+                        "));
+            global::System.Web.UI.WebControls.Label @__ctrl6;
+            @__ctrl6 = this.@__BuildControllblNgayThucTra();
+            @__parser.AddParsedSubObject(@__ctrl6);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl(@"
+                    </div>
+                    <div class=""clear""></div>
+                </div>
+                <div class=""row"">
+                    <div class=""grid_3"">
+                        Tình trạng hồ sơ      
+                    </div>
+                    <div class=""grid_9"">
+                        "));
+            global::System.Web.UI.WebControls.Label @__ctrl7;
+            @__ctrl7 = this.@__BuildControllblTinhTrangHoSo();
+            @__parser.AddParsedSubObject(@__ctrl7);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl(@"
+                    </div>
+                    <div class=""clear""></div>
+                </div>
+                <div class=""row"">
+                    <div class=""grid_3"">
+                        Số ngày trễ hạn
+                    </div>
+                    <div class=""grid_9"">
+                        "));
+            global::System.Web.UI.WebControls.Label @__ctrl8;
+            @__ctrl8 = this.@__BuildControllblSoNgayTreHan();
+            @__parser.AddParsedSubObject(@__ctrl8);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl(@"
+                    </div>
+                    <div class=""clear""></div>
+                </div>
+            </div>
+
+            <div class=""panel-2"" >
+                <h2>Thông tin người nộp hồ sơ</h2>
+                <div class=""row"">
+                    <div class=""grid_3"">
+                        Họ tên người nhận
+                    </div>
+                    <div class=""grid_9"">
+                        "));
+            global::System.Web.UI.WebControls.Label @__ctrl9;
+            @__ctrl9 = this.@__BuildControllblCaNhanToChuc();
+            @__parser.AddParsedSubObject(@__ctrl9);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl(@"
+                    </div>
+                    <div class=""clear""></div>
+                </div>
+                <div class=""row"">
+                    <div class=""grid_3"">
+                        Địa chỉ     
+                    </div>
+                    <div class=""grid_9"">
+                        "));
+            global::System.Web.UI.WebControls.Label @__ctrl10;
+            @__ctrl10 = this.@__BuildControllblDiaChi();
+            @__parser.AddParsedSubObject(@__ctrl10);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl(@"
+                    </div>
+                    <div class=""clear""></div>
+                </div>
+                <div class=""row"">
+                    <div class=""grid_3"">
+                        Điện thoại
+                    </div>
+                    <div class=""grid_9"" >
+                        "));
+            global::System.Web.UI.WebControls.Label @__ctrl11;
+            @__ctrl11 = this.@__BuildControllblDienThoai();
+            @__parser.AddParsedSubObject(@__ctrl11);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl(@"
+                    </div>
+                    <div class=""clear""></div>
+                </div>
+            </div>
+
+            <div class=""panel-2"" >
+                <h2>Quá trình thụ hồ sơ</h2>
+                <div class=""row"">
+                    <div class=""grid_12"">
+                        <table class=""the-table"">
+                            <tr style=""height: 50px;"">
+                                <th>STT</th>
+                                <th>Ngày xử lý</th>
+                                <th>Người xử lý</th>
+                                <th>Mô tả</th>
+                            </tr>
+                            "));
+            global::System.Web.UI.WebControls.Repeater @__ctrl12;
+            @__ctrl12 = this.@__BuildControlrepeaterLists();
+            @__parser.AddParsedSubObject(@__ctrl12);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                        </table>\r\n                    </div>\r\n\r\n               " +
+                        "     <div class=\"clear\"></div>\r\n                </div>\r\n            </div>\r\n    " +
+                        "    </div>\r\n    </div>\r\n</div>"));
         }
         
         [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +

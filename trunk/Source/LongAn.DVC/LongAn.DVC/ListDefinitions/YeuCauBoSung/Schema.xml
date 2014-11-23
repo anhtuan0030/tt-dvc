@@ -76,7 +76,7 @@
              DisplayName="Đề nghị"
              Required="FALSE"
              EnforceUniqueValues="FALSE"
-             List="Lists/DeNghiCapPhepXe"
+             List="Lists/DeNghi"
              ShowField="Title"
              UnlimitedLengthInDocumentLibrary="FALSE"
              RelationshipDeleteBehavior="None"

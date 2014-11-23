@@ -859,13 +859,22 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC {
         protected global::System.Web.UI.WebControls.Button btnSave;
         
         /// <summary>
-        /// btnGuiHoSo control.
+        /// btnNopHoSo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnGuiHoSo;
+        protected global::System.Web.UI.WebControls.Button btnNopHoSo;
+        
+        /// <summary>
+        /// btnBoSungHoSo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnBoSungHoSo;
         
         /// <summary>
         /// btnCancel control.
@@ -875,6 +884,15 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnCancel;
+        
+        /// <summary>
+        /// hdfNextStep control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hdfNextStep;
         
         /// <summary>
         /// toolBarTbl control.

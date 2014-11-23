@@ -44,7 +44,6 @@
                     <th>STT</th>
                     <th>Người xử lý</th>
                     <th>Ngày xử lý</th>
-                    <th>Hành động</th>
                     <th>Mô tả</th>
                 </tr>
                 <asp:Repeater ID="repeaterLists" runat="server">
@@ -58,9 +57,6 @@
                             </td>
                             <td>
                                 <asp:Literal ID="literalNgayXuLy" runat="server"></asp:Literal>
-                            </td>
-                            <td>
-                                <asp:Literal ID="literalHanhDong" runat="server"></asp:Literal>
                             </td>
                             <td>
                                 <asp:Literal ID="literalMoTa" runat="server"></asp:Literal>

@@ -264,6 +264,8 @@ namespace LongAn.DVC.Helpers
                                 cauHinh.StartEnd = cauHinhItem[Fields.StartEnd] != null ? cauHinhItem[Fields.StartEnd].ToString() : string.Empty;
                                 cauHinh.IsEmail = bool.Parse(cauHinhItem[Fields.IsEmail].ToString());
                                 cauHinh.EmailTemplate = cauHinhItem[Fields.EmailTemplate] != null ? cauHinhItem[Fields.EmailTemplate].ToString() : string.Empty;
+                                cauHinh.AllowInBienNhan = bool.Parse(cauHinhItem[Fields.AllowInBienNhan].ToString());
+                                cauHinh.AllowInGiayPhep = bool.Parse(cauHinhItem[Fields.AllowInGiayPhep].ToString());
                             }
                         }
                     }
@@ -360,6 +362,8 @@ namespace LongAn.DVC.Helpers
                                     cauHinh.StartEnd = cauHinhItem[Fields.StartEnd] != null ? cauHinhItem[Fields.StartEnd].ToString() : string.Empty;
                                     cauHinh.IsEmail = bool.Parse(cauHinhItem[Fields.IsEmail].ToString());
                                     cauHinh.EmailTemplate = cauHinhItem[Fields.EmailTemplate] != null ? cauHinhItem[Fields.EmailTemplate].ToString() : string.Empty;
+                                    cauHinh.AllowInBienNhan = bool.Parse(cauHinhItem[Fields.AllowInBienNhan].ToString());
+                                    cauHinh.AllowInGiayPhep = bool.Parse(cauHinhItem[Fields.AllowInGiayPhep].ToString());
                                     cauHinhs.Add(cauHinh);
                                 }
                                 LoggingServices.LogMessage("Cấu hình count: " + cauHinhs.Count);
@@ -376,21 +380,64 @@ namespace LongAn.DVC.Helpers
             return cauHinhs;
         }
 
+        public static bool IsCurrentUserInUserCollection(SPWeb spWeb, string spFieldUserValText)
+        {
+            bool isExists = false;
+            if (!string.IsNullOrEmpty(spFieldUserValText))
+            {
+                SPFieldUserValueCollection userValueCollection = new SPFieldUserValueCollection(spWeb, spFieldUserValText);
+                //isExists = (userValueCollection.Find(u => u.LoginName.Contains(spWeb.CurrentUser.LoginName)) != null ? true : false);
+                if (userValueCollection != null && userValueCollection.Count > 0)
+                {
+                    var currentUserID = spWeb.CurrentUser.ID;
+                    foreach (var userValue in userValueCollection)
+                    {
+                        if (userValue.User.ID == currentUserID)
+                        {
+                            isExists = true;
+                            break;
+                        }
+                    }
+                }
+            }
+            return isExists;
+        }
+
         public static bool IsCurrentUserInGroup(SPWeb spWeb, SPGroup spGroup)
         {
             bool isMember = false;
-            var currentLogin = SPContext.Current.Web.CurrentUser.LoginName;
+            var currentLogin = SPContext.Current.Web.CurrentUser;
             try
             {
                 LoggingServices.LogMessage("Begin function IsCurrentUserInGroup, SPWeb " + spWeb.Title + ", SPGroup: " + spGroup.Name);
                 SPSecurity.RunWithElevatedPrivileges(delegate
                 {
+                    SPGroupCollection spGroups = currentLogin.Groups;
+                    foreach (SPGroup group in spGroups)
+                    {
+                        if (group.Name == spGroup.Name)
+                        {
+                            isMember = true;
+                            break;
+                        }
+                    }
                     //using (SPSite site = new SPSite(spWeb.Site.ID))
                     //{
                     //    using (SPWeb web = site.OpenWeb(spWeb.ID))
                     //    {
-                            //isMember = web.IsCurrentUserMemberOfGroup(spGroup.ID);
-                            isMember = spGroup.Users.GetCollection(new string[] { currentLogin }).Count > 0;
+                    //        SPUser user = web.Users.GetByID(currentLogin.ID);
+                    //        SPGroupCollection spGroups = user.Groups;
+                    //        foreach (SPGroup group in spGroups)
+                    //        {
+                    //            if(group.Name == spGroup.Name)
+                    //            {
+                    //                isMember = true;
+                    //                break;
+                    //            }
+                    //        }
+                    //        //isMember = web.IsCurrentUserMemberOfGroup(spGroup.ID);
+                    //        //isMember = spGroup.Users.GetCollection(new string[] { currentLogin }).Count > 0;
+                    //        //isMember = spGroup.ContainsCurrentUser;
                     //    }
                     //}
                 });

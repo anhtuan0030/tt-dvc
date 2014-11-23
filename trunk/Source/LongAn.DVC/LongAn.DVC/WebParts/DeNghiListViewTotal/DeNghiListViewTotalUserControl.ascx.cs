@@ -43,37 +43,6 @@ namespace LongAn.DVC.WebParts.DeNghiListViewTotal
 
         #endregion WebPart Properties
 
-        #region Private Properties
-        private string DeNghiListID
-        {
-            get
-            {
-                if (ViewState[Constants.ConfViewStateDeNghiListId] == null)
-                {
-                    var deNghiUrl = (SPContext.Current.Web.ServerRelativeUrl + Constants.ListUrlDeNghiCapPhep).Replace("//", "/");
-                    var deNghiList = SPContext.Current.Web.GetList(deNghiUrl);
-                    ViewState[Constants.ConfViewStateDeNghiListId] = deNghiList.ID.ToString();
-                }
-                return ViewState[Constants.ConfViewStateDeNghiListId].ToString();
-            }
-        }
-        private CapXuLy CurrentUserRole
-        {
-            get
-            {
-                var currentUserRole = CapXuLy.CaNhanToChuc;
-                if (ViewState[Constants.ConfViewStateCapXuLy] == null)
-                {
-                    currentUserRole = DeNghiHelper.CurrentUserRole(SPContext.Current.Web, SPContext.Current.Web.CurrentUser);
-                    ViewState[Constants.ConfViewStateCapXuLy] = currentUserRole;
-                }
-                else
-                    currentUserRole = (CapXuLy)ViewState[Constants.ConfViewStateCapXuLy];
-                return currentUserRole;
-            }
-        }
-        #endregion Private Properties
-
         #region Paging Properties
         private int CurrentPage
         {
@@ -287,90 +256,6 @@ namespace LongAn.DVC.WebParts.DeNghiListViewTotal
             try
             {
                 LoggingServices.LogMessage("Begin GetDeNghi, Trang Thai Xu Ly: " + trangThaiXuLy);
-
-                var searchConditions = new List<Expression<Func<SPListItem, bool>>>();
-                searchConditions.Add(x => ((string)x[Constants.FieldTrangThai]) == trangThaiXuLy.ToString());
-                if (!string.IsNullOrEmpty(txtTuKhoa.Text.Trim()))
-                    searchConditions.Add(x => ((string)x[Constants.FieldTitle]).Contains(txtTuKhoa.Text.Trim()));
-                if (!string.IsNullOrEmpty(txtCaNhanToChuc.Text.Trim()))
-                    searchConditions.Add(x => ((string)x[Constants.FieldCaNhanToChuc]).Contains(txtCaNhanToChuc.Text.Trim()));
-                if (!string.IsNullOrEmpty(txtSoDienThoai.Text.Trim()))
-                    searchConditions.Add(x => ((string)x[Constants.FieldSoDienThoai]).Contains(txtSoDienThoai.Text.Trim()));
-                if (!dtcNgayDeNghiDen.IsDateEmpty && !dtcNgayDeNghiTu.IsDateEmpty)
-                {
-                    searchConditions.Add(x => (x[Constants.FieldNgayNopHoSo]) >= (DataTypes.DateTime)dtcNgayDeNghiTu.SelectedDate.ToString("yyyy-MM-dd"));
-                    searchConditions.Add(x => (x[Constants.FieldNgayNopHoSo]) <= (DataTypes.DateTime)dtcNgayDeNghiDen.SelectedDate.ToString("yyyy-MM-dd"));
-                }
-
-                var searchExpr = ExpressionsHelper.CombineAnd(searchConditions);
-
-                var userConditions = new List<Expression<Func<SPListItem, bool>>>();
-                switch (CurrentUserRole)
-                {
-                    case CapXuLy.CaNhanToChuc:
-                        break;
-                    case CapXuLy.MotCua:
-                        userConditions.Add(x => x["MotCuaUser"] == (DataTypes.UserId)SPContext.Current.Web.CurrentUser.ID.ToString());
-                        userConditions.Add(x => (DataTypes.User)x["MotCuaUser"] == null);
-                        break;
-                    case CapXuLy.TruongPhoPhong:
-                        userConditions.Add(x => x["TruongPhongUser"] == (DataTypes.UserId)SPContext.Current.Web.CurrentUser.ID.ToString());
-                        userConditions.Add(x => (DataTypes.User)x["TruongPhongUser"] == null);
-                        break;
-                    case CapXuLy.CanBo:
-                        userConditions.Add(x => x["CanBoUser"] == (DataTypes.UserId)SPContext.Current.Web.CurrentUser.ID.ToString());
-                        userConditions.Add(x => (DataTypes.User)x["CanBoUser"] == null);
-                        break;
-                    case CapXuLy.LanhDaoSo:
-                        userConditions.Add(x => x["LanhDaoUser"] == (DataTypes.UserId)SPContext.Current.Web.CurrentUser.ID.ToString());
-                        userConditions.Add(x => (DataTypes.User)x["LanhDaoUser"] == null);
-                        break;
-                    case CapXuLy.VanPhongSo:
-                        break;
-                    default:
-                        break;
-                }
-
-                Expression<Func<Microsoft.SharePoint.SPListItem, bool>> userExpr = null;
-                if (userConditions != null)
-                    userExpr = ExpressionsHelper.CombineOr(userConditions);
-
-                var expressions = new List<Expression<Func<SPListItem, bool>>>();
-                expressions.Add(searchExpr);
-                if (userExpr != null)
-                    expressions.Add(userExpr);
-
-                #region Backup
-                /*
-                expressions.Add(x => ((string)x[Constants.FieldTrangThai]) == trangThaiXuLy.ToString());
-                if (!string.IsNullOrEmpty(txtTuKhoa.Text.Trim()))
-                    expressions.Add(x => ((string)x[Constants.FieldTitle]).Contains(txtTuKhoa.Text.Trim()));
-                if (!string.IsNullOrEmpty(txtCaNhanToChuc.Text.Trim()))
-                    expressions.Add(x => ((string)x[Constants.FieldCaNhanToChuc]).Contains(txtCaNhanToChuc.Text.Trim()));
-                if (!string.IsNullOrEmpty(txtSoDienThoai.Text.Trim()))
-                    expressions.Add(x => ((string)x[Constants.FieldSoDienThoai]).Contains(txtSoDienThoai.Text.Trim()));
-                if (!dtcNgayDeNghiDen.IsDateEmpty && !dtcNgayDeNghiTu.IsDateEmpty)
-                {
-                    expressions.Add(x => (x[Constants.FieldNgayNopHoSo]) >= (DataTypes.DateTime)dtcNgayDeNghiTu.SelectedDate.ToString("yyyy-MM-dd"));
-                    expressions.Add(x => (x[Constants.FieldNgayNopHoSo]) <= (DataTypes.DateTime)dtcNgayDeNghiDen.SelectedDate.ToString("yyyy-MM-dd"));
-                }
-                //caml.ViewFields = string.Concat("<FieldRef Name='ID' />",                                    
-                //                                "<FieldRef Name='Supervisor' />");
-                */
-                #endregion Backup
-
-                var camlQuery = Camlex.Query().WhereAll(expressions).ToString();
-                SPQuery spQuery = new SPQuery();
-                spQuery.Query = camlQuery;
-
-                var deNghiUrl = (SPContext.Current.Web.ServerRelativeUrl + Constants.ListUrlDeNghiCapPhep).Replace("//", "/");
-                var deNghiList = SPContext.Current.Web.GetList(deNghiUrl);
-                dataTable = deNghiList.GetItems(spQuery);
-
-#if DEBUG
-                LoggingServices.LogMessage("Caml query: " + camlQuery);
-                LoggingServices.LogMessage("Data count: " + (dataTable != null ? dataTable.Count : 0));
-#endif
             }
             catch (Exception ex)
             {
@@ -378,30 +263,6 @@ namespace LongAn.DVC.WebParts.DeNghiListViewTotal
             }
             LoggingServices.LogMessage("End GetDeNghi, Trang Thai Xu Ly: " + trangThaiXuLy);
             return dataTable;
-        }
-
-        private void UpdateItem(int itemId, TrangThaiHoSo trangThaiXuLy, CapXuLy capXuLy)
-        {
-            try
-            {
-                LoggingServices.LogMessage("Begin UpdateItem, item id:" + itemId);
-                var web = SPContext.Current.Web;
-                var deNghiList = web.GetList((web.ServerRelativeUrl + Constants.ListUrlDeNghiCapPhep).Replace("//", "/"));
-                var deNghiItem = deNghiList.GetItemById(itemId);
-                deNghiItem[Constants.FieldTrangThai] = (int)trangThaiXuLy;
-                deNghiItem[Constants.FieldCapDuyet] = capXuLy;
-                var currentUserId = SPContext.Current.Web.CurrentUser.ID;
-                if (trangThaiXuLy == TrangThaiHoSo.DaTiepNhan)
-                    deNghiItem[Constants.FieldMotCuaUser] = currentUserId;
-                if (trangThaiXuLy == TrangThaiHoSo.DangXuLy)
-                    deNghiItem[Constants.FieldCanBoUser] = currentUserId;
-                deNghiItem.Update();
-            }
-            catch (Exception ex)
-            {
-                LoggingServices.LogException(ex);
-            }
-            LoggingServices.LogMessage("End UpdateItem, item id:" + itemId);
         }
 
         void InPhieuBienNhan(PrintType type, string itemId)
