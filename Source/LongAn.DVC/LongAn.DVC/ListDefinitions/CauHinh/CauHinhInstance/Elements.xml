@@ -12,10 +12,10 @@
           <Field Name="SPGroup">16;#DVC Người dùng</Field>
           <Field Name="CapDuyetText">Người dùng đăng ký hồ sơ</Field>
           <Field Name="TrangThai">3;#CBS</Field>
-          <Field Name="IsFix">0</Field>
+          <Field Name="IsFix">1</Field>
           <Field Name="ActionDuyet">1</Field>
           <Field Name="TieuDeActionDuyet">Nộp hồ sơ</Field>
-          <Field Name="NextStep">4;#Tiếp nhận hồ sơ</Field>
+          <Field Name="NextStep">5;#Tiếp nhận hồ sơ</Field>
           <Field Name="ActionTraHoSo">0</Field>
           <Field Name="ActionTuChoi">0</Field>
           <Field Name="ActionYeuCauBoSung">0</Field>
@@ -23,11 +23,12 @@
           <Field Name="AllowCapNhatLoaiDuong">0</Field>
           <Field Name="AllowCapNhatNgayHen">0</Field>
           <Field Name="IsBoSungHoSo">0</Field>
-          <Field Name="IsPhanCong">0</Field>
-          <Field Name="IsXuLyPhanCong">0</Field>
           <Field Name="StartEnd">Bắt đầu</Field>
           <Field Name="IsEmail">1</Field>
           <Field Name="EmailTemplate">{0}&#10;{1}&#10;{2}&#10;{3}</Field>
+          <Field Name="AllowInBienNhan">0</Field>
+          <Field Name="AllowInGiayPhep">0</Field>
+          <Field Name="IsPhanCong">0</Field>
           <Field Name="ID">1</Field>
         </Row>
         <Row>
@@ -38,7 +39,7 @@
           <Field Name="IsFix">1</Field>
           <Field Name="ActionDuyet">1</Field>
           <Field Name="TieuDeActionDuyet">Nộp hồ sơ</Field>
-          <Field Name="NextStep">4;#Tiếp nhận hồ sơ</Field>
+          <Field Name="NextStep">5;#Tiếp nhận hồ sơ</Field>
           <Field Name="ActionTraHoSo">0</Field>
           <Field Name="ActionTuChoi">0</Field>
           <Field Name="ActionYeuCauBoSung">0</Field>
@@ -46,11 +47,12 @@
           <Field Name="AllowCapNhatLoaiDuong">0</Field>
           <Field Name="AllowCapNhatNgayHen">0</Field>
           <Field Name="IsBoSungHoSo">0</Field>
-          <Field Name="IsPhanCong">0</Field>
-          <Field Name="IsXuLyPhanCong">0</Field>
           <Field Name="StartEnd">Bắt đầu</Field>
           <Field Name="IsEmail">1</Field>
           <Field Name="EmailTemplate">{0}&#10;{1}&#10;{2}&#10;{3}</Field>
+          <Field Name="AllowInBienNhan">0</Field>
+          <Field Name="AllowInGiayPhep">0</Field>
+          <Field Name="IsPhanCong">0</Field>
           <Field Name="ID">2</Field>
         </Row>
         <Row>
@@ -61,19 +63,20 @@
           <Field Name="IsFix">1</Field>
           <Field Name="ActionDuyet">1</Field>
           <Field Name="TieuDeActionDuyet">Bổ sung hồ sơ</Field>
-          <Field Name="NextStep">4;#Tiếp nhận hồ sơ</Field>
+          <Field Name="NextStep">5;#Tiếp nhận hồ sơ</Field>
           <Field Name="ActionTraHoSo">0</Field>
           <Field Name="ActionTuChoi">0</Field>
           <Field Name="ActionYeuCauBoSung">0</Field>
           <Field Name="ActionPhanCong">0</Field>
           <Field Name="AllowCapNhatLoaiDuong">0</Field>
           <Field Name="AllowCapNhatNgayHen">0</Field>
-          <Field Name="IsBoSungHoSo">0</Field>
-          <Field Name="IsPhanCong">0</Field>
-          <Field Name="IsXuLyPhanCong">0</Field>
+          <Field Name="IsBoSungHoSo">1</Field>
           <Field Name="StartEnd">Yêu cầu bổ sung</Field>
           <Field Name="IsEmail">1</Field>
           <Field Name="EmailTemplate">{0}&#10;{1}&#10;{2}&#10;{3}</Field>
+          <Field Name="AllowInBienNhan">0</Field>
+          <Field Name="AllowInGiayPhep">0</Field>
+          <Field Name="IsPhanCong">0</Field>
           <Field Name="ID">3</Field>
         </Row>
         <Row>
@@ -83,8 +86,6 @@
           <Field Name="TrangThai">3;#CBS</Field>
           <Field Name="IsFix">1</Field>
           <Field Name="ActionDuyet">0</Field>
-          <Field Name="TieuDeActionDuyet"></Field>
-          <Field Name="NextStep"></Field>
           <Field Name="ActionTraHoSo">0</Field>
           <Field Name="ActionTuChoi">0</Field>
           <Field Name="ActionYeuCauBoSung">0</Field>
@@ -92,11 +93,11 @@
           <Field Name="AllowCapNhatLoaiDuong">0</Field>
           <Field Name="AllowCapNhatNgayHen">0</Field>
           <Field Name="IsBoSungHoSo">0</Field>
-          <Field Name="IsPhanCong">0</Field>
-          <Field Name="IsXuLyPhanCong">0</Field>
           <Field Name="StartEnd">Từ chối hồ sơ</Field>
           <Field Name="IsEmail">1</Field>
           <Field Name="EmailTemplate">{0}&#10;{1}&#10;{2}&#10;{3}</Field>
+          <Field Name="AllowInBienNhan">0</Field>
+          <Field Name="AllowInGiayPhep">0</Field>
           <Field Name="ID">4</Field>
         </Row>
         <Row>
@@ -107,7 +108,7 @@
           <Field Name="IsFix">0</Field>
           <Field Name="ActionDuyet">1</Field>
           <Field Name="TieuDeActionDuyet">Tiếp nhận hồ sơ</Field>
-          <Field Name="NextStep">5;#Xử lý hồ sơ</Field>
+          <Field Name="NextStep">6;#Xử lý hồ sơ</Field>
           <Field Name="ActionTraHoSo">0</Field>
           <Field Name="ActionTuChoi">1</Field>
           <Field Name="ActionYeuCauBoSung">0</Field>
@@ -115,11 +116,12 @@
           <Field Name="AllowCapNhatLoaiDuong">0</Field>
           <Field Name="AllowCapNhatNgayHen">0</Field>
           <Field Name="IsBoSungHoSo">0</Field>
-          <Field Name="IsPhanCong">0</Field>
-          <Field Name="IsXuLyPhanCong">0</Field>
-          <Field Name="StartEnd">Xử lý</Field>
+          <Field Name="StartEnd">Tiếp nhận hồ sơ</Field>
           <Field Name="IsEmail">1</Field>
           <Field Name="EmailTemplate">{0}&#10;{1}&#10;{2}&#10;{3}</Field>
+          <Field Name="AllowInBienNhan">0</Field>
+          <Field Name="AllowInGiayPhep">0</Field>
+          <Field Name="IsPhanCong">0</Field>
           <Field Name="ID">5</Field>
         </Row>
         <Row>
@@ -130,7 +132,7 @@
           <Field Name="IsFix">0</Field>
           <Field Name="ActionDuyet">1</Field>
           <Field Name="TieuDeActionDuyet">Chuyển hồ sơ TPP</Field>
-          <Field Name="NextStep">6;#Phân công hồ sơ</Field>
+          <Field Name="NextStep">7;#Phân công hồ sơ</Field>
           <Field Name="ActionTraHoSo">0</Field>
           <Field Name="ActionTuChoi">0</Field>
           <Field Name="ActionYeuCauBoSung">0</Field>
@@ -138,11 +140,12 @@
           <Field Name="AllowCapNhatLoaiDuong">1</Field>
           <Field Name="AllowCapNhatNgayHen">1</Field>
           <Field Name="IsBoSungHoSo">0</Field>
-          <Field Name="IsPhanCong">0</Field>
-          <Field Name="IsXuLyPhanCong">0</Field>
           <Field Name="StartEnd">Xử lý</Field>
           <Field Name="IsEmail">1</Field>
           <Field Name="EmailTemplate">{0}&#10;{1}&#10;{2}&#10;{3}</Field>
+          <Field Name="AllowInBienNhan">0</Field>
+          <Field Name="AllowInGiayPhep">0</Field>
+          <Field Name="IsPhanCong">0</Field>
           <Field Name="ID">6</Field>
         </Row>
         <Row>
@@ -158,14 +161,17 @@
           <Field Name="ActionTuChoi">0</Field>
           <Field Name="ActionYeuCauBoSung">0</Field>
           <Field Name="ActionPhanCong">1</Field>
-          <Field Name="AllowCapNhatLoaiDuong">1</Field>
-          <Field Name="AllowCapNhatNgayHen">1</Field>
+          <Field Name="SPGroupPhanCong">18;#DVC Trưởng phó phòng</Field>
+          <Field Name="SPGroupTiepNhan">19;#DVC Cán bộ xử lý</Field>
+          <Field Name="AllowCapNhatLoaiDuong">0</Field>
+          <Field Name="AllowCapNhatNgayHen">0</Field>
           <Field Name="IsBoSungHoSo">0</Field>
-          <Field Name="IsPhanCong">0</Field>
-          <Field Name="IsXuLyPhanCong">1</Field>
           <Field Name="StartEnd">Xử lý</Field>
-          <Field Name="IsEmail">0</Field>
+          <Field Name="IsEmail">1</Field>
           <Field Name="EmailTemplate">{0}&#10;{1}&#10;{2}&#10;{3}</Field>
+          <Field Name="AllowInBienNhan">0</Field>
+          <Field Name="AllowInGiayPhep">0</Field>
+          <Field Name="IsPhanCong">0</Field>
           <Field Name="ID">7</Field>
         </Row>
         <Row>
@@ -178,17 +184,22 @@
           <Field Name="TieuDeActionDuyet">Trình trưởng phó phòng</Field>
           <Field Name="NextStep">9;#Xét duyệt hồ sơ</Field>
           <Field Name="ActionTraHoSo">1</Field>
+          <Field Name="TieuDeActionTraHoSo">Trả hồ sơ về một cửa</Field>
+          <Field Name="PreviousStep">6;#Xử lý hồ sơ</Field>
           <Field Name="ActionTuChoi">0</Field>
           <Field Name="ActionYeuCauBoSung">0</Field>
-          <Field Name="ActionPhanCong">0</Field>
+          <Field Name="ActionPhanCong">1</Field>
+          <Field Name="SPGroupPhanCong">18;#DVC Trưởng phó phòng</Field>
+          <Field Name="SPGroupTiepNhan">19;#DVC Cán bộ xử lý</Field>
           <Field Name="AllowCapNhatLoaiDuong">0</Field>
           <Field Name="AllowCapNhatNgayHen">0</Field>
           <Field Name="IsBoSungHoSo">0</Field>
-          <Field Name="IsPhanCong">0</Field>
-          <Field Name="IsXuLyPhanCong">0</Field>
           <Field Name="StartEnd">Xử lý</Field>
           <Field Name="IsEmail">1</Field>
           <Field Name="EmailTemplate">{0}&#10;{1}&#10;{2}&#10;{3}&#10;{4}</Field>
+          <Field Name="AllowInBienNhan">0</Field>
+          <Field Name="AllowInGiayPhep">0</Field>
+          <Field Name="IsPhanCong">1</Field>
           <Field Name="ID">8</Field>
         </Row>
         <Row>
@@ -197,21 +208,24 @@
           <Field Name="CapDuyetText">Xét duyệt hồ sơ</Field>
           <Field Name="TrangThai">3;#CBS</Field>
           <Field Name="IsFix">0</Field>
-          <Field Name="ActionDuyet">0</Field>
+          <Field Name="ActionDuyet">1</Field>
           <Field Name="TieuDeActionDuyet">Trình cấp phép hồ sơ</Field>
           <Field Name="NextStep">10;#Cấp phép hồ sơ</Field>
-          <Field Name="ActionTraHoSo">0</Field>
-          <Field Name="ActionTuChoi">0</Field>
+          <Field Name="ActionTraHoSo">1</Field>
+          <Field Name="TieuDeActionTraHoSo">Trả hồ sơ về cán bộ xử lý</Field>
+          <Field Name="PreviousStep">8;#Cán bộ xử lý hồ sơ</Field>
+          <Field Name="ActionTuChoi">1</Field>
           <Field Name="ActionYeuCauBoSung">0</Field>
           <Field Name="ActionPhanCong">0</Field>
           <Field Name="AllowCapNhatLoaiDuong">0</Field>
           <Field Name="AllowCapNhatNgayHen">0</Field>
           <Field Name="IsBoSungHoSo">0</Field>
-          <Field Name="IsPhanCong">0</Field>
-          <Field Name="IsXuLyPhanCong">0</Field>
           <Field Name="StartEnd">Xử lý</Field>
           <Field Name="IsEmail">1</Field>
           <Field Name="EmailTemplate">{0}&#10;{1}&#10;{2}&#10;{3}</Field>
+          <Field Name="AllowInBienNhan">1</Field>
+          <Field Name="AllowInGiayPhep">1</Field>
+          <Field Name="IsPhanCong">0</Field>
           <Field Name="ID">9</Field>
         </Row>
         <Row>
@@ -223,18 +237,21 @@
           <Field Name="ActionDuyet">1</Field>
           <Field Name="TieuDeActionDuyet">Cấp phép hồ sơ</Field>
           <Field Name="NextStep">11;#Xác nhận hồ sơ</Field>
-          <Field Name="ActionTraHoSo">0</Field>
-          <Field Name="ActionTuChoi">0</Field>
-          <Field Name="ActionYeuCauBoSung">0</Field>
+          <Field Name="ActionTraHoSo">1</Field>
+          <Field Name="TieuDeActionTraHoSo">Trả hồ sơ về cho trưởng phòng</Field>
+          <Field Name="PreviousStep">9;#Xét duyệt hồ sơ</Field>
+          <Field Name="ActionTuChoi">1</Field>
+          <Field Name="ActionYeuCauBoSung">1</Field>
           <Field Name="ActionPhanCong">0</Field>
           <Field Name="AllowCapNhatLoaiDuong">0</Field>
           <Field Name="AllowCapNhatNgayHen">0</Field>
           <Field Name="IsBoSungHoSo">0</Field>
-          <Field Name="IsPhanCong">0</Field>
-          <Field Name="IsXuLyPhanCong">0</Field>
           <Field Name="StartEnd">Xử lý</Field>
           <Field Name="IsEmail">1</Field>
           <Field Name="EmailTemplate">{0}&#10;{1}&#10;{2}&#10;{3}&#10;{4}</Field>
+          <Field Name="AllowInBienNhan">1</Field>
+          <Field Name="AllowInGiayPhep">1</Field>
+          <Field Name="IsPhanCong">0</Field>
           <Field Name="ID">10</Field>
         </Row>
         <Row>
@@ -245,21 +262,22 @@
           <Field Name="IsFix">0</Field>
           <Field Name="ActionDuyet">1</Field>
           <Field Name="TieuDeActionDuyet">Xác nhận hoàn thành</Field>
-          <Field Name="NextStep">11</Field>
+          <Field Name="NextStep">12;#Xác nhận hồ sơ hoàn thành</Field>
           <Field Name="ActionTraHoSo">1</Field>
           <Field Name="TieuDeActionTraHoSo">Xác nhận chưa hoàn thành</Field>
-          <Field Name="PreviousStep">12</Field>
+          <Field Name="PreviousStep">13;#Xác nhận hồ sơ chưa hoàn thành</Field>
           <Field Name="ActionTuChoi">0</Field>
           <Field Name="ActionYeuCauBoSung">0</Field>
           <Field Name="ActionPhanCong">0</Field>
           <Field Name="AllowCapNhatLoaiDuong">0</Field>
           <Field Name="AllowCapNhatNgayHen">0</Field>
           <Field Name="IsBoSungHoSo">0</Field>
-          <Field Name="IsPhanCong">0</Field>
-          <Field Name="IsXuLyPhanCong">0</Field>
           <Field Name="StartEnd">Kết thúc</Field>
           <Field Name="IsEmail">1</Field>
           <Field Name="EmailTemplate">{0}&#10;{1}&#10;{2}&#10;{3}</Field>
+          <Field Name="AllowInBienNhan">1</Field>
+          <Field Name="AllowInGiayPhep">1</Field>
+          <Field Name="IsPhanCong">0</Field>
           <Field Name="ID">11</Field>
         </Row>
         <Row>
@@ -269,7 +287,6 @@
           <Field Name="TrangThai">3;#CBS</Field>
           <Field Name="IsFix">1</Field>
           <Field Name="ActionDuyet">0</Field>
-          <Field Name="TieuDeActionDuyet"></Field>
           <Field Name="ActionTraHoSo">0</Field>
           <Field Name="ActionTuChoi">0</Field>
           <Field Name="ActionYeuCauBoSung">0</Field>
@@ -277,11 +294,12 @@
           <Field Name="AllowCapNhatLoaiDuong">0</Field>
           <Field Name="AllowCapNhatNgayHen">0</Field>
           <Field Name="IsBoSungHoSo">0</Field>
-          <Field Name="IsPhanCong">0</Field>
-          <Field Name="IsXuLyPhanCong">0</Field>
           <Field Name="StartEnd">Kết thúc</Field>
           <Field Name="IsEmail">1</Field>
           <Field Name="EmailTemplate">{0}&#10;{1}&#10;{2}&#10;{3}</Field>
+          <Field Name="AllowInBienNhan">1</Field>
+          <Field Name="AllowInGiayPhep">1</Field>
+          <Field Name="IsPhanCong">0</Field>
           <Field Name="ID">12</Field>
         </Row>
         <Row>
@@ -291,7 +309,6 @@
           <Field Name="TrangThai">3;#CBS</Field>
           <Field Name="IsFix">1</Field>
           <Field Name="ActionDuyet">0</Field>
-          <Field Name="TieuDeActionDuyet"></Field>
           <Field Name="ActionTraHoSo">0</Field>
           <Field Name="ActionTuChoi">0</Field>
           <Field Name="ActionYeuCauBoSung">0</Field>
@@ -299,11 +316,12 @@
           <Field Name="AllowCapNhatLoaiDuong">0</Field>
           <Field Name="AllowCapNhatNgayHen">0</Field>
           <Field Name="IsBoSungHoSo">0</Field>
-          <Field Name="IsPhanCong">0</Field>
-          <Field Name="IsXuLyPhanCong">0</Field>
           <Field Name="StartEnd">Kết thúc</Field>
           <Field Name="IsEmail">1</Field>
           <Field Name="EmailTemplate">{0}&#10;{1}&#10;{2}&#10;{3}</Field>
+          <Field Name="AllowInBienNhan">1</Field>
+          <Field Name="AllowInGiayPhep">1</Field>
+          <Field Name="IsPhanCong">0</Field>
           <Field Name="ID">13</Field>
         </Row>
       </Rows>

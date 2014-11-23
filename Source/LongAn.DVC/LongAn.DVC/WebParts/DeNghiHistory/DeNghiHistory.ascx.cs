@@ -46,8 +46,8 @@ namespace LongAn.DVC.WebParts.DeNghiHistory
             DataTable dataTable = null;
             try
             {
-                LoggingServices.LogMessage("Begin GetDeNghiHistory - Mã biên nhận: " + maBienNhan);
-                SPQuery caml = Camlex.Query().Where(x => (string)x[Constants.FieldDeNghi] == maBienNhan)
+                LoggingServices.LogMessage("Begin GetDeNghiHis - Mã biên nhận: " + maBienNhan);
+                SPQuery caml = Camlex.Query().Where(x => (string)x[Fields.Title] == maBienNhan)
                                                     .OrderBy(x => new[] { x["ID"] as Camlex.Asc })
                                                     .ToSPQuery();
                 var deNghiUrl = (SPContext.Current.Web.ServerRelativeUrl + Constants.ListUrlLichSuCapPhep).Replace("//", "/");
@@ -58,7 +58,7 @@ namespace LongAn.DVC.WebParts.DeNghiHistory
             {
                 LoggingServices.LogException(ex);
             }
-            LoggingServices.LogMessage("End GetDeNghi - current user");
+            LoggingServices.LogMessage("End GetDeNghiHis");
             return dataTable;
         }
 

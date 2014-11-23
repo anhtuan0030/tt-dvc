@@ -14,30 +14,6 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
 {
     public partial class DeNghiCapPhepXeDispForm : UserControl
     {
-        #region Properties
-        //public CauHinh CauHinh
-        //{
-        //    get
-        //    {
-        //        if (ViewState["CauHinh"] != null)
-        //        {
-        //            return (CauHinh)ViewState["CauHinh"];
-        //        }
-        //        else
-        //        {
-        //            var buocDuyet = SPContext.Current.ListItem[Fields.BuocDuyet];
-        //            var buocDuyetValue = new SPFieldLookupValue(buocDuyet.ToString()).LookupId;
-        //            if (buocDuyetValue != 0)
-        //            {
-        //                var deNghi = DeNghiHelper.GetCauHinh(buocDuyetValue);
-        //                ViewState["CauHinh"] = deNghi;
-        //                return deNghi;
-        //            }
-        //            return null;
-        //        }
-        //    }
-        //}
-        #endregion Properties
         protected override void OnInit(EventArgs e)
         {
             btnCancel.Click += btnCancel_Click;
@@ -48,7 +24,20 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
             btnCanBoTiepNhan.Click += btnCanBoTiepNhan_Click;
             btnYeuCauBoSung.Click += btnYeuCauBoSung_Click;
 
+            btnInBienNhan.Click += btnInBienNhan_Click;
+            btnInGiayPhep.Click += btnInGiayPhep_Click;
+
             base.OnInit(e);
+        }
+
+        void btnInGiayPhep_Click(object sender, EventArgs e)
+        {
+            InPhieuBienNhan(PrintType.GiayCapPhep, SPContext.Current.ItemId);
+        }
+
+        void btnInBienNhan_Click(object sender, EventArgs e)
+        {
+            InPhieuBienNhan(PrintType.PhieuBienNhan, SPContext.Current.ItemId);
         }
 
         void btnCanBoTiepNhan_Click(object sender, EventArgs e)
@@ -70,7 +59,7 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
                 var cauHinh = cauHinhs[0];
                 UpdateItem(cauHinh
                     , true
-                    , false
+                    , true
                     , SPContext.Current.Web.CurrentUser);
             }
             else
@@ -149,11 +138,6 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
         {
             if (!IsPostBack)
             {
-                DeNghiHelper.LoadAttachments(SPContext.Current.ItemId, Constants.AttachmentGiayDangKy, divFileUpload1);
-                DeNghiHelper.LoadAttachments(SPContext.Current.ItemId, Constants.AttachmentGiayChungNhanKiemDinh, divFileUpload2);
-                DeNghiHelper.LoadAttachments(SPContext.Current.ItemId, Constants.AttachmentGiayCamKet, divFileUpload3);
-                DeNghiHelper.LoadAttachments(SPContext.Current.ItemId, Constants.AttachmentCMND, divFileUpload4);
-
                 var buocDuyet = SPContext.Current.ListItem[Fields.BuocDuyet];
                 var buocDuyetValue = new SPFieldLookupValue(buocDuyet.ToString()).LookupId;
                 var cauHinh = DeNghiHelper.GetCauHinh(buocDuyetValue);
@@ -161,7 +145,9 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
                 {
                     hdfNextStep.Value = cauHinh.NextStep.ToString();
                     hdfPreStep.Value = cauHinh.PreviousStep.ToString();
-                    var currentMember = DeNghiHelper.IsCurrentUserInGroup(SPContext.Current.Web, cauHinh.SPGroup);
+                    //var currentMember = DeNghiHelper.IsCurrentUserInGroup(SPContext.Current.Web, cauHinh.SPGroup);
+                    var nguoiChoXuLy = Convert.ToString(SPContext.Current.ListItem[Fields.NguoiChoXuLy]);
+                    var currentMember = DeNghiHelper.IsCurrentUserInUserCollection(SPContext.Current.Web, nguoiChoXuLy);
                     if (currentMember)
                     {
                         #region Action Duyet
@@ -169,6 +155,8 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
                         {
                             btnDuyet.Visible = true;
                             btnDuyet.Text = cauHinh.TieuDeActionDuyet != null ? cauHinh.TieuDeActionDuyet : "Duyệt hồ sơ";
+                            if (cauHinh.ActionPhanCong && !cauHinh.IsPhanCong)
+                                divPhanCongHoSo.Visible = true;
                         }
                         #endregion Action Duyet
 
@@ -191,7 +179,7 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
                         if (cauHinh.ActionYeuCauBoSung)
                         {
                             btnYeuCauBoSung.Visible = true;
-                            divYeuCauBoSung.Visible = true;
+                            //divYeuCauBoSung.Visible = true;
                         }
                         #endregion Action Yeu Cau Bo Sung
 
@@ -236,12 +224,25 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
                             dtcNgayHenTra.SelectedDate = ngayHenTraVal;
                         }
                         #endregion Cap Nhat Ngay Hen Tra
+
+                        #region Allow In giay bien nhan
+                        if (cauHinh.AllowInBienNhan)
+                        {
+                            btnInBienNhan.Visible = true;
+                        }
+                        #endregion Allow In giay bien nhan
+
+                        #region Allow In giay cap phep
+                        if (cauHinh.AllowInGiayPhep)
+                        {
+                            btnInGiayPhep.Visible = true;
+                        }
+                        #endregion Allow In giay cap phep
                     }
-                        
+
                     #region Action Phan Cong
                     if (cauHinh.ActionPhanCong)
                     {
-                        divPhanCongHoSo.Visible = true;
                         var dataTable = GetCanBoXuLy(cauHinh.SPGroupTiepNhan);
                         ddlUsers.DataSource = dataTable;
                         ddlUsers.DataValueField = "ID";
@@ -251,6 +252,7 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
                         var isTPP = DeNghiHelper.IsCurrentUserInGroup(SPContext.Current.Web, cauHinh.SPGroupPhanCong);
                         if (cauHinh.IsPhanCong && isTPP)
                         {
+                            divPhanCongHoSo.Visible = true;
                             btnPhanCong.Visible = true;
                         }
                         var isCanBoXuLy = DeNghiHelper.IsCurrentUserInGroup(SPContext.Current.Web, cauHinh.SPGroupTiepNhan);
@@ -263,9 +265,14 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
                     #endregion Action Phan Cong
                 }
             }
+            //Load attachment file
+            DeNghiHelper.LoadAttachments(SPContext.Current.ItemId, Constants.AttachmentGiayDangKy, divFileUpload1);
+            DeNghiHelper.LoadAttachments(SPContext.Current.ItemId, Constants.AttachmentGiayChungNhanKiemDinh, divFileUpload2);
+            DeNghiHelper.LoadAttachments(SPContext.Current.ItemId, Constants.AttachmentGiayCamKet, divFileUpload3);
+            DeNghiHelper.LoadAttachments(SPContext.Current.ItemId, Constants.AttachmentCMND, divFileUpload4);
         }
 
-        void UpdateItem(CauHinh newCauHinh, bool isCapNhatBuocDuyet, bool isTiepNhan, SPUser spUser)
+        void UpdateItem(CauHinh newCauHinh, bool isCapNhatBuocDuyet, bool isYeuCauBoSung, SPUser spUser)
         {
             if (!this.Page.IsValid)
                 return;
@@ -279,8 +286,8 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
             var spListItem = deNghiList.GetItemById(SPContext.Current.ItemId);
             spListItem[Fields.NguoiXuLy] = spUser.ID;
 
-            var nguoiThamGiaXuLy = spListItem[Fields.NguoiThamGiaXuLy];
-            if (nguoiThamGiaXuLy != null && !string.IsNullOrEmpty(nguoiThamGiaXuLy.ToString()))
+            var nguoiThamGiaXuLy = Convert.ToString(spListItem[Fields.NguoiThamGiaXuLy]);
+            if (!string.IsNullOrEmpty(nguoiThamGiaXuLy.ToString()))
             {
                 var nguoiThamGiaXuLyLookup = new SPFieldLookupValueCollection(nguoiThamGiaXuLy.ToString());
                 nguoiThamGiaXuLyLookup.Add(new SPFieldLookupValue(spUser.ID, spUser.LoginName));
@@ -294,20 +301,30 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
             //Cap nhat buoc duyet va trang thai
             if (isCapNhatBuocDuyet)
             {
-                spListItem[Fields.TrangThai] = newCauHinh.TrangThai;
-                spListItem[Fields.BuocDuyet] = newCauHinh.BuocDuyetID;
+                spListItem[Fields.TrangThai] = newCauHinh != null ? newCauHinh.TrangThai : new SPFieldLookupValue(SPContext.Current.ListItem[Fields.TrangThai].ToString()).LookupId;
+                spListItem[Fields.BuocDuyet] = newCauHinh != null ? newCauHinh.BuocDuyetID : new SPFieldLookupValue(SPContext.Current.ListItem[Fields.BuocDuyet].ToString()).LookupId;
                 //Cap nhat nguoi cho xu ly
-                var nguoiChXuLy = new SPFieldUserValueCollection();
+                var nguoiChoXuLy = new SPFieldUserValueCollection();
                 foreach (SPUser user in newCauHinh.SPGroup.Users)
                 {
-                    nguoiChXuLy.Add(new SPFieldUserValue(SPContext.Current.Web, user.ID, user.LoginName));
+                    nguoiChoXuLy.Add(new SPFieldUserValue(SPContext.Current.Web, user.ID, user.LoginName));
                 }
-                spListItem[Fields.NguoiChoXuLy] = nguoiChXuLy;
+                spListItem[Fields.NguoiChoXuLy] = nguoiChoXuLy;
             }
             //Cap nhat tiep nhan ho so
-            if (isTiepNhan)
+            if (newCauHinh != null && newCauHinh.StartEnd == Constants.CauHinh_TNHS)
             {
                 spListItem[Fields.NgayTiepNhan] = DateTime.Now;
+            }
+            //Cap nhat ngay thuc tra ho so
+            if (newCauHinh != null && newCauHinh.StartEnd == Constants.CauHinh_End)
+            {
+                spListItem[Fields.NgayThucTra] = DateTime.Now;
+            }
+            //Cap nhat ngay thuc tra ho so
+            if (newCauHinh != null && newCauHinh.StartEnd == Constants.CauHinh_YCBS)
+            {
+                spListItem[Fields.NguoiChoXuLy] = spListItem[Fields.NguoiDeNghi];
             }
             //Cap nhat loai duong
             if (divLoaiDuong.Visible)
@@ -330,11 +347,17 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
                 spListItem[Fields.NgayHenTra] = dtcNgayHenTra.SelectedDate;
             }
             //Cap nhat yeu cau bo sung
-            if (divYeuCauBoSung.Visible)
+            if (isYeuCauBoSung)// divYeuCauBoSung.Visible)
             {
                 AddBoSungYeuCau(spListItem.Title, spListItem.ID, txtNhanXet.Text.Trim(), spUser.ID);
             }
-            //Cap nhat phan cong ho so
+            //Cap nhat phan cong ho so ????
+            if (divPhanCongHoSo.Visible)
+            {
+                //var spUserValue = new SPFieldUserValue(SPContext.Current.Web, int.Parse(ddlUsers.SelectedValue), ddlUsers.SelectedItem.Text);
+                spListItem[Fields.NguoiChoXuLy] = ddlUsers.SelectedValue;
+                spListItem[Fields.NguoiXuLy] = ddlUsers.SelectedValue;
+            }
             spListItem.Update();
             //Log to history
             DeNghiHelper.AddDeNghiHistory(SPContext.Current.Web
@@ -422,6 +445,47 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
             return result;
         }
 
-        
+        void InPhieuBienNhan(PrintType type, int itemId)
+        {
+            try
+            {
+                LoggingServices.LogMessage("Begin InPhieuBienNhan");
+                var web = SPContext.Current.Web;
+                var deNghiList = web.GetList((web.ServerRelativeUrl + Constants.ListUrlDeNghiCapPhep).Replace("//", "/"));
+                string wordLicFile = Microsoft.SharePoint.Utilities.SPUtility.GetVersionedGenericSetupPath(Constants.ConfWordLicFile, 15);
+                Aspose.Words.License wordLic = new Aspose.Words.License();
+                wordLic.SetLicense(wordLicFile);
+
+                string templateFile = string.Empty;
+                SPQuery caml = Camlex.Query().Where(x => x["ID"] == (DataTypes.Counter)itemId.ToString())
+                                                    .ToSPQuery();
+                if (type == PrintType.PhieuBienNhan)
+                    templateFile = Microsoft.SharePoint.Utilities.SPUtility.GetVersionedGenericSetupPath(Constants.ConfWordBienNhanTemplate, 15);
+                else if (type == PrintType.GiayCapPhep)
+                    templateFile = Microsoft.SharePoint.Utilities.SPUtility.GetVersionedGenericSetupPath(Constants.ConfWordGiayPhepTemplate, 15);
+
+                Aspose.Words.Document doc = new Aspose.Words.Document(templateFile);
+                var deNghiItem = deNghiList.GetItems(caml).GetDataTable();
+
+                doc.MailMerge.Execute(deNghiItem);
+
+                string fileName = string.Format(DateTime.Now.ToString("yyyyMMdd_hhmmss"));
+
+                System.IO.MemoryStream ms = new System.IO.MemoryStream();
+                doc.Save(ms, Aspose.Words.SaveFormat.Docx);
+                this.Page.Response.Clear();
+                this.Page.Response.ContentType = "application/vnd.openxmlformats-officedocument.wordprocessingml.document";
+                this.Page.Response.AddHeader("Content-Disposition", string.Format("attachment; filename={0}.docx", fileName));
+                this.Page.Response.BinaryWrite(ms.ToArray());
+                this.Page.Response.Flush();
+                this.Page.Response.Close();
+                this.Page.Response.End();
+            }
+            catch (Exception ex)
+            {
+                LoggingServices.LogException(ex);
+            }
+            LoggingServices.LogMessage("End InPhieuBienNhan");
+        }
     }
 }

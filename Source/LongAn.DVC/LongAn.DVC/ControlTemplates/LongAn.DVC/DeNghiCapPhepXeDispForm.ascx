@@ -58,16 +58,16 @@
         }
         //Validate loai duong
         if ($("[id$='divLoaiDuong']").length > 0) {
-            if (!$("input[id$='_chkListLoaiDuong_1']").prop("checked") && !$("input[id$='_chkListLoaiDuong_1']").prop("checked"))
+            if (!$("input[id$='_chkListLoaiDuong_0']").prop("checked") && !$("input[id$='_chkListLoaiDuong_1']").prop("checked"))
                 return false;
             if ($("input[id$='txtLanXeDuocChay']").val() == "" || $("input[id$='txtTocDoDuocChay']").val() == "")
                 return false;
         }
-        //Validate yeu cau bo sung
-        if ($("[id$='divYeuCauBoSung']").length > 0) {
-            if ($("[id$='txtTieuDeYCBS']").val() == "")
-                return false;
-        }
+        ////Validate yeu cau bo sung
+        //if ($("[id$='divYeuCauBoSung']").length > 0) {
+        //    if ($("[id$='txtTieuDeYCBS']").val() == "")
+        //        return false;
+        //}
         return true;
     }
 
@@ -589,7 +589,7 @@
                                     </div>
                                 </div>
 
-                                <div class="panel-2" id="divYeuCauBoSung" visible="false" runat="server" >
+                                <%--<div class="panel-2" id="divYeuCauBoSung" visible="false" runat="server" >
                                     <h2>Yêu cầu bổ sung</h2>
 
                                     <div class="row">
@@ -604,7 +604,7 @@
                                         </div>
                                         <div class="clear"></div>
                                     </div>
-                                </div>
+                                </div>--%>
 
                                 <div class="panel-2" id="divPhanCongHoSo" visible="false" runat="server">
                                     <h2>Phân công hồ sơ</h2>
@@ -629,7 +629,7 @@
 
                                     <div class="row">
                                         <div class="grid_2">
-                                            Nhận xét trước đó
+                                            Nhận xét / Yêu cầu trước đó
                                         </div>
                                         <div class="grid_9">
                                             <SharePoint:AppendOnlyHistory ID="fldAppendOnlyHistory" FieldName="NoteAppend" runat="server" ControlMode="Display" />
@@ -639,7 +639,7 @@
 
                                     <div class="row">
                                         <div class="grid_2">
-                                            Nhập nhận xét
+                                            Nhập nhận xét / Yêu cầu
                                             
                                         </div>
                                         <div class="grid_9">
@@ -653,6 +653,10 @@
                                 </div>
 
                                 <div class="pull-right">
+
+                                    <asp:Button ID="btnInBienNhan" runat="server" Text="In biên nhận" Visible="false" CssClass="button" style="float:left;"/>
+
+                                    <asp:Button ID="btnInGiayPhep" runat="server" Text="In giấy phép" Visible="false" CssClass="button" style="float:left;"/>
 
                                     <asp:Button ID="btnDuyet" runat="server" OnClientClick="if(!validateInputs()) return false;" Text="" Visible="false" CssClass="button" style="float:left;"/>
                                     

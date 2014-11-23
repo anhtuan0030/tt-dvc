@@ -17,60 +17,28 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
         protected override void OnInit(EventArgs e)
         {
             btnCancel.Click += btnCancel_Click;
+            btnSave.Click +=btnSave_Click;
+            btnNopHoSo.Click += btnNopHoSo_Click;
+            btnBoSungHoSo.Click += btnBoSungHoSo_Click;
             //
-            var currentStatus = int.Parse(SPContext.Current.ListItem[Constants.FieldTrangThai].ToString());
-            var currentUserRole = CapXuLy.CaNhanToChuc;
-            if (ViewState[Constants.ConfViewStateCapXuLy] == null)
-            {
-                currentUserRole = DeNghiHelper.CurrentUserRole(SPContext.Current.Web, SPContext.Current.Web.CurrentUser);
-                ViewState[Constants.ConfViewStateCapXuLy] = currentUserRole;
-            }
-            else
-                currentUserRole = (CapXuLy)ViewState[Constants.ConfViewStateCapXuLy];
-
-            if (currentUserRole == CapXuLy.CaNhanToChuc && 
-                (currentStatus == (int)TrangThaiHoSo.KhoiTao ||
-                currentStatus == (int)TrangThaiHoSo.ChoBoSung))
-            {
-                divDanhSachYeuCauBoSung.Visible = true;
-                if (!IsPostBack)
-                    LoadYeuCauBoSung();
-
-                btnSave.Visible = true;
-                btnGuiHoSo.Visible = true;
-                btnSave.Click += btnSave_Click;
-                btnGuiHoSo.Click += btnGuiHoSo_Click;
-            }
-
             base.OnInit(e);
         }
 
-        void btnGuiHoSo_Click(object sender, EventArgs e)
+        void btnBoSungHoSo_Click(object sender, EventArgs e)
         {
-            UpdateItem(TrangThaiHoSo.ChoTiepNhan);
+            var cauHinh = DeNghiHelper.GetCauHinh(int.Parse(hdfNextStep.Value));
+            UpdateItem(cauHinh, true, false);
+        }
+
+        void btnNopHoSo_Click(object sender, EventArgs e)
+        {
+            var cauHinh = DeNghiHelper.GetCauHinh(int.Parse(hdfNextStep.Value));
+            UpdateItem(cauHinh, true, false);
         }
 
         void btnSave_Click(object sender, EventArgs e)
         {
-            if (!this.Page.IsValid)
-                return;
-
-            var longOperation = new SPLongOperation(this.Page);
-            longOperation.LeadingHTML = "Please wait while the operation is running";
-            longOperation.TrailingHTML = "Once the operation is finished you will be redirected to result page";
-            longOperation.Begin();
-            SaveButton.SaveItem(SPContext.Current, false, "Updated by " + SPContext.Current.Web.CurrentUser.LoginName);
-            //Save file upload
-            var itemId = SPContext.Current.ItemId;
-            DeNghiHelper.SaveFileAttachment(fileUpload1, itemId, Constants.AttachmentGiayDangKy);
-            DeNghiHelper.SaveFileAttachment(fileUpload2, itemId, Constants.AttachmentGiayChungNhanKiemDinh);
-            DeNghiHelper.SaveFileAttachment(fileUpload3, itemId, Constants.AttachmentGiayCamKet);
-            DeNghiHelper.SaveFileAttachment(fileUpload4, itemId, Constants.AttachmentCMND);
-            //Redirect to page
-            var redirectUrl = Request.QueryString["Source"];
-            if (redirectUrl == null || string.IsNullOrEmpty(redirectUrl.ToString()))
-                redirectUrl = "/";
-            longOperation.End(redirectUrl, Microsoft.SharePoint.Utilities.SPRedirectFlags.DoNotEndResponse, HttpContext.Current, "");
+            UpdateItem(null, false, false);
         }
 
         void btnCancel_Click(object sender, EventArgs e)
@@ -84,14 +52,43 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
         {
             if (!IsPostBack)
             {
-                DeNghiHelper.LoadAttachments(SPContext.Current.ItemId, Constants.AttachmentGiayDangKy, divFileUpload1);
-                DeNghiHelper.LoadAttachments(SPContext.Current.ItemId, Constants.AttachmentGiayChungNhanKiemDinh, divFileUpload2);
-                DeNghiHelper.LoadAttachments(SPContext.Current.ItemId, Constants.AttachmentGiayCamKet, divFileUpload3);
-                DeNghiHelper.LoadAttachments(SPContext.Current.ItemId, Constants.AttachmentCMND, divFileUpload4);
+                var buocDuyet = SPContext.Current.ListItem[Fields.BuocDuyet];
+                var buocDuyetValue = new SPFieldLookupValue(buocDuyet.ToString()).LookupId;
+                var cauHinh = DeNghiHelper.GetCauHinh(buocDuyetValue);
+                if (cauHinh != null)
+                {
+                    var spListItem = SPContext.Current.ListItem;
+                    var nguoiDeNghi = spListItem[Fields.NguoiDeNghi];
+                    var nguoiDeNghiVal = new SPFieldLookupValue(nguoiDeNghi.ToString());
+                    if (nguoiDeNghiVal.LookupId == SPContext.Current.Web.CurrentUser.ID
+                        && (cauHinh.StartEnd == Constants.CauHinh_YCBS || cauHinh.StartEnd == Constants.CauHinh_Start))
+                    {
+                        //Show button
+                        hdfNextStep.Value = cauHinh.NextStep.ToString();
+                        //hdfPreStep.Value = cauHinh.PreviousStep.ToString();
+                        if (cauHinh.StartEnd == Constants.CauHinh_Start)
+                            btnNopHoSo.Visible = true;
+                        //Load yeu cau bo sung
+                        LoadYeuCauBoSung();
+                    }
+                    else
+                    {
+                        LoggingServices.LogMessage("Invalid user edit - current NguoiDeNghi: " + nguoiDeNghiVal.LookupValue);
+                        var redirectUrl = Request.QueryString["Source"];
+                        if (redirectUrl == null || string.IsNullOrEmpty(redirectUrl.ToString()))
+                            redirectUrl = "/";
+                        Response.Redirect(redirectUrl, true);
+                    }
+                } 
             }
+            //Load attachment
+            DeNghiHelper.LoadAttachments(SPContext.Current.ItemId, Constants.AttachmentGiayDangKy, divFileUpload1);
+            DeNghiHelper.LoadAttachments(SPContext.Current.ItemId, Constants.AttachmentGiayChungNhanKiemDinh, divFileUpload2);
+            DeNghiHelper.LoadAttachments(SPContext.Current.ItemId, Constants.AttachmentGiayCamKet, divFileUpload3);
+            DeNghiHelper.LoadAttachments(SPContext.Current.ItemId, Constants.AttachmentCMND, divFileUpload4);
         }
 
-        void UpdateItem(TrangThaiHoSo trangThai)
+        void UpdateItem(CauHinh newCauHinh, bool isCapNhatBuocDuyet, bool isBoSungHoSo)
         {
             if (!this.Page.IsValid)
                 return;
@@ -100,9 +97,24 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
             longOperation.LeadingHTML = "Please wait while the operation is running";
             longOperation.TrailingHTML = "Once the operation is finished you will be redirected to result page";
             longOperation.Begin();
-            SPContext.Current.ListItem[Constants.FieldTrangThai] = (int)trangThai;
-            SPContext.Current.ListItem[Constants.FieldCapDuyet] = (int)CapXuLy.MotCua;
-            SaveButton.SaveItem(SPContext.Current, false, "Updated by " + SPContext.Current.Web.CurrentUser.LoginName);
+            var spListItem = SPContext.Current.ListItem;
+            var currentUser = SPContext.Current.Web.CurrentUser;
+            //Cap nhat buoc duyet va trang thai
+            if (isCapNhatBuocDuyet)
+            {
+                spListItem[Fields.TrangThai] = newCauHinh != null ? newCauHinh.TrangThai : new SPFieldLookupValue(SPContext.Current.ListItem[Fields.TrangThai].ToString()).LookupId;
+                spListItem[Fields.BuocDuyet] = newCauHinh != null ? newCauHinh.BuocDuyetID : new SPFieldLookupValue(SPContext.Current.ListItem[Fields.BuocDuyet].ToString()).LookupId;
+                //Cap nhat nguoi cho xu ly
+                var nguoiChoXuLy = new SPFieldUserValueCollection();
+                foreach (SPUser user in newCauHinh.SPGroup.Users)
+                {
+                    nguoiChoXuLy.Add(new SPFieldUserValue(SPContext.Current.Web, user.ID, user.LoginName));
+                }
+                spListItem[Fields.NguoiChoXuLy] = nguoiChoXuLy;
+            }
+            spListItem[Fields.NguoiXuLy] = currentUser.ID;
+            //Save item
+            SaveButton.SaveItem(SPContext.Current, false, "Updated by " + currentUser.LoginName);
             //Save file upload
             var itemId = SPContext.Current.ItemId;
             DeNghiHelper.SaveFileAttachment(fileUpload1, itemId, Constants.AttachmentGiayDangKy);
@@ -124,20 +136,20 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
             try
             {
                 LoggingServices.LogMessage("Begin YeuCauBoSung");
-                SPQuery caml = Camlex.Query().Where(x => x[Constants.FieldDeNghi] == (DataTypes.LookupId)SPContext.Current.ItemId.ToString())
-                                    .OrderBy(x => new[] { x["ID"] as Camlex.Asc })
+                SPQuery caml = Camlex.Query().Where(x => x[Fields.DeNghi] == (DataTypes.LookupId)SPContext.Current.ItemId.ToString())
+                                    .OrderBy(x => new[] { x["ID"] as Camlex.Desc })
                                     .ToSPQuery();
                 var yeuCauBoSungUrl = (SPContext.Current.Web.ServerRelativeUrl + Constants.ListUrlYeuCauBoSung).Replace("//", "/");
                 var yeuCauBoSungList = SPContext.Current.Web.GetList(yeuCauBoSungUrl);
                 var yeuCauBoSungItems = yeuCauBoSungList.GetItems(caml).GetDataTable();
                 if (yeuCauBoSungItems != null && yeuCauBoSungItems.Rows.Count > 0)
                 {
+                    var boSungRow = yeuCauBoSungItems.Select("DaBoSung=0");
+                    if (boSungRow.Length == 0)
+                        btnBoSungHoSo.Visible = true;
                     repeaterLists.DataSource = yeuCauBoSungItems;
                     repeaterLists.DataBind();
-                }
-                else
-                {
-                    divDanhSachYeuCauBoSung.Visible = false;
+                    divDanhSachYeuCauBoSung.Visible = true;
                 }
             }
             catch (Exception ex)
@@ -163,8 +175,8 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
                             var yeuCauBoSungUrl = (web.ServerRelativeUrl + Constants.ListUrlYeuCauBoSung).Replace("//", "/");
                             var yeuCauBoSungList = web.GetList(yeuCauBoSungUrl);
                             var yeuCauBoSungItem = yeuCauBoSungList.GetItemById(itemId);
-                            yeuCauBoSungItem["DaBoSung"] = true;
-                            yeuCauBoSungItem["NgayBoSung"] = DateTime.Now;
+                            yeuCauBoSungItem[Fields.DaBoSung] = true;
+                            yeuCauBoSungItem[Fields.NgayBoSung] = DateTime.Now;
                             yeuCauBoSungItem.Update();
                             web.AllowUnsafeUpdates = false;
                         }
@@ -188,25 +200,23 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
                     string commandAgrument = rowView["ID"].ToString();
 
                     Literal literalTitle = (Literal)e.Item.FindControl("literalTitle");
-                    literalTitle.Text = rowView[Constants.FieldTitle].ToString();
+                    literalTitle.Text = rowView[Fields.Title].ToString();
 
                     Literal literalMoTa = (Literal)e.Item.FindControl("literalMoTa");
-                    literalMoTa.Text = rowView[Constants.FieldMoTa].ToString();
+                    literalMoTa.Text = rowView[Fields.MoTa].ToString();
 
                     Literal literalNgayYeuCau = (Literal)e.Item.FindControl("literalNgayYeuCau");
                     literalNgayYeuCau.Text = rowView[Constants.FieldCreated].ToString();
 
                     LinkButton lbtXacNhan = (LinkButton)e.Item.FindControl("lbtXacNhan");
                     LinkButton lbtDisable = (LinkButton)e.Item.FindControl("lbtDisable");
-                    var daBoSung = bool.Parse(rowView["DaBoSung"].ToString());
-                    var trangThai = int.Parse(SPContext.Current.ListItem[Constants.FieldTrangThai].ToString());
-                    if (trangThai == (int)TrangThaiHoSo.ChoBoSung && !daBoSung)
+                    if (rowView["DaBoSung"].ToString() == "0")
                     {
                         lbtDisable.Style.Add("display", "none");
                         lbtXacNhan.CommandName = "XacNhanBoSungHoSo";
                         lbtXacNhan.Style.Add("display", "block");
                         lbtXacNhan.CommandArgument = commandAgrument;
-                        lbtXacNhan.OnClientClick = "if (!confirm('Bạn có chắc chắn muốn xóa hồ sơ này không?')) return false;";
+                        lbtXacNhan.OnClientClick = "if (!confirm('Bạn có chắc chắn muốn xác nhận đã bổ sung không?')) return false;";
                     }
                 }
             }

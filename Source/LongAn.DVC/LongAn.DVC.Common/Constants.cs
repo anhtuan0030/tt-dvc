@@ -230,8 +230,12 @@ namespace LongAn.DVC.Common
         public const string IsPhanCong = "IsPhanCong";
         public const string IsXuLyPhanCong = "IsXuLyPhanCong";
         public const string StartEnd = "StartEnd";
+        public const string StartEndRef = "StartEndRef";
         public const string IsEmail = "IsEmail";
         public const string EmailTemplate = "EmailTemplate";
+        public const string AllowInBienNhan = "AllowInBienNhan";
+        public const string AllowInGiayPhep = "AllowInGiayPhep";
+        
 
         public const string KinhGui = "KinhGui";
         public const string CaNhanToChuc = "CaNhanToChuc";
@@ -298,7 +302,7 @@ namespace LongAn.DVC.Common
         //public const string MoTa = "MoTa";
 
         public const string TenTrangThai = "TenTrangThai";
-
+        public const string TenTrangThaiRef = "TenTrangThaiRef";
         public const string DaBoSung = "DaBoSung";
         public const string NgayBoSung = "NgayBoSung";
         public const string NguoiYeuCau = "NguoiYeuCau";

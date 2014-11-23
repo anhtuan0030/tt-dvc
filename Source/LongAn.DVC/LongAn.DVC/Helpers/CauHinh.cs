@@ -40,7 +40,8 @@ namespace LongAn.DVC.Helpers
         public string StartEnd { get; set; }
         public bool IsEmail { get; set; }
         public string EmailTemplate { get; set; }
-
+        public bool AllowInBienNhan { get; set; }
+        public bool AllowInGiayPhep { get; set; }
         
         public override string ToString()
         {
