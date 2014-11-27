@@ -436,6 +436,25 @@
         <Default>0</Default>
       </Field>
 
+      <Field Type="Calculated"
+             DisplayName="Cấu hình Cal"
+             EnforceUniqueValues="FALSE"
+             Indexed="FALSE"
+             Format="DateOnly"
+             LCID="1033"
+             ResultType="Text"
+             ReadOnly="TRUE"
+             ID="{42124a30-3e8b-4fea-932d-635a19272fc9}"
+             StaticName="CauHinhCal"
+             Name="CauHinhCal"
+             Required="FALSE"
+             Group="[LA-DVC]">
+        <Formula>="#StartEnd$"&amp;StartEnd</Formula>
+        <FormulaDisplayNames>="#StartEnd$"&amp;[Bắt đầu / Kết thúc]</FormulaDisplayNames>
+        <FieldRefs>
+          <FieldRef Name="StartEnd" />
+        </FieldRefs>
+      </Field>
 
     </Fields>
 
@@ -576,12 +595,10 @@
           <FieldRef Name="AllowCapNhatNgayHen" />
           <FieldRef Name="IsBoSungHoSo" />
           <FieldRef Name="IsPhanCong" />
-          <FieldRef Name="IsXuLyPhanCong" />
-          <FieldRef Name="IsEnd" />
           <FieldRef Name="IsFix" />
           <FieldRef Name="IsEmail" />
           <FieldRef Name="EmailTemplate" />
-          <FieldRef Name="Tr_x1ea3_h_x1ed3_s_x01a1_" />
+          <FieldRef Name="CauHinhCal" />
         </ViewFields>
         <Query>
           <OrderBy>

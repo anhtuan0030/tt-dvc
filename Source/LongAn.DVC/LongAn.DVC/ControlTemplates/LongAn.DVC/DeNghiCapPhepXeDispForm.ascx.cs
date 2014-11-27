@@ -47,7 +47,8 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
             UpdateItem(cauHinh
                 , true
                 , false
-                , SPContext.Current.Web.CurrentUser);
+                , SPContext.Current.Web.CurrentUser
+                , btnCanBoTiepNhan.Text);// Cán bộ tiếp nhận hồ sơ
         }
 
         void btnYeuCauBoSung_Click(object sender, EventArgs e)
@@ -60,7 +61,8 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
                 UpdateItem(cauHinh
                     , true
                     , true
-                    , SPContext.Current.Web.CurrentUser);
+                    , SPContext.Current.Web.CurrentUser
+                    , btnYeuCauBoSung.Text); //Yêu cầu bổ sung hồ sơ
             }
             else
             {
@@ -81,7 +83,8 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
                 UpdateItem(null
                     , false
                     , false
-                    , spUserValue.User);
+                    , spUserValue.User
+                    , btnPhanCong.Text);//Phân công lại hồ sơ
             }
         }      
 
@@ -95,7 +98,8 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
                 UpdateItem(cauHinh
                     , true
                     , false
-                    , SPContext.Current.Web.CurrentUser);
+                    , SPContext.Current.Web.CurrentUser
+                    , btnTuChoi.Text); //Từ chối cấp phép hồ sơ
             }
             else
             {
@@ -108,22 +112,24 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
 
         void btnTraHoSo_Click(object sender, EventArgs e)
         {
-            LoggingServices.LogMessage("End TraHoSo Click");
+            LoggingServices.LogMessage("TraHoSo Click");
             var cauHinh = DeNghiHelper.GetCauHinh(int.Parse(hdfPreStep.Value));
             UpdateItem(cauHinh
                 , true
                 , false
-                , SPContext.Current.Web.CurrentUser);
-            LoggingServices.LogMessage("End TraHoSo Click");
+                , SPContext.Current.Web.CurrentUser
+                , hdfCapDuyetText.Value);
         }
 
         void btnDuyet_Click(object sender, EventArgs e)
         {
+            LoggingServices.LogMessage("Duyet Click");
             var cauHinh = DeNghiHelper.GetCauHinh(int.Parse(hdfNextStep.Value));
             UpdateItem(cauHinh
                 , true
                 , false
-                , SPContext.Current.Web.CurrentUser);
+                , SPContext.Current.Web.CurrentUser
+                , hdfCapDuyetText.Value);
         }
 
         void btnCancel_Click(object sender, EventArgs e)
@@ -143,6 +149,9 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
                 var cauHinh = DeNghiHelper.GetCauHinh(buocDuyetValue);
                 if (cauHinh != null && !cauHinh.IsBoSungHoSo)
                 {
+                    hdfCauHinhID.Value = cauHinh.BuocDuyetID.ToString();
+                    hdfTrangThaiID.Value = cauHinh.TrangThai.ToString();
+                    hdfCapDuyetText.Value = cauHinh.CapDuyetText;
                     hdfNextStep.Value = cauHinh.NextStep.ToString();
                     hdfPreStep.Value = cauHinh.PreviousStep.ToString();
                     //var currentMember = DeNghiHelper.IsCurrentUserInGroup(SPContext.Current.Web, cauHinh.SPGroup);
@@ -221,6 +230,14 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
                             {
                                 ngayHenTraVal = DateTime.Parse(ngayHenTra.ToString());
                             }
+                            else
+                            {
+                                var ngayTiepNhan = SPContext.Current.ListItem[Fields.NgayTiepNhan];
+                                var ngayTiepNhanVal = DateTime.Now;
+                                if (ngayTiepNhan != null && !string.IsNullOrEmpty(ngayTiepNhan.ToString()))
+                                    ngayTiepNhanVal = DateTime.Parse(ngayTiepNhan.ToString());
+                                ngayHenTraVal = CalThamSoNgay(ngayTiepNhanVal, Constants.ConfSoNgayXuLyKey);
+                            }
                             dtcNgayHenTra.SelectedDate = ngayHenTraVal;
                         }
                         #endregion Cap Nhat Ngay Hen Tra
@@ -272,7 +289,58 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
             DeNghiHelper.LoadAttachments(SPContext.Current.ItemId, Constants.AttachmentCMND, divFileUpload4);
         }
 
-        void UpdateItem(CauHinh newCauHinh, bool isCapNhatBuocDuyet, bool isYeuCauBoSung, SPUser spUser)
+
+        private DateTime CalThamSoNgay(DateTime ngayTiepNhan, string key)
+        {
+            DateTime output = ngayTiepNhan;
+            try
+            {
+                SPSecurity.RunWithElevatedPrivileges(delegate()
+                {
+                    using (SPSite site = new SPSite(SPContext.Current.Site.ID))
+                    {
+                        using (SPWeb web = site.OpenWeb(SPContext.Current.Web.ID))
+                        {
+                            var thamSoUrl = (web.ServerRelativeUrl + Constants.ListUrlThamSo).Replace("//", "/");
+                            var thamSoList = web.GetList(thamSoUrl);
+                            SPQuery caml = Camlex.Query().Where(x => (string)x[Fields.Title] == key)
+                                    .ToSPQuery();
+                            var thamSoItem = thamSoList.GetItems(caml);
+                            if (thamSoItem != null && thamSoItem.Count > 0)
+                            {
+                                //Add
+                                int soNgayXuLy = 0;
+                                int.TryParse(thamSoItem[0]["Value"].ToString(), out soNgayXuLy);
+                                output = output.AddDays(soNgayXuLy);
+
+                                //Get weekday
+                                int weekDay = DeNghiHelper.GetFullWorkingDaysBetween(ngayTiepNhan, output);
+                                soNgayXuLy = soNgayXuLy + (soNgayXuLy - weekDay);
+                                output = ngayTiepNhan.AddDays(soNgayXuLy);
+
+                                //Get holiday
+                                var ngayNghiUrl = (web.ServerRelativeUrl + Constants.ListUrlNgayLe).Replace("//", "/");
+                                var ngayNghiList = web.GetList(ngayNghiUrl);
+                                caml = Camlex.Query().Where(x => (DateTime)x["Ngay"] >= ngayTiepNhan && (DateTime)x["Date"] <= output)
+                                    .ToSPQuery();
+                                var ngayLeItems = ngayNghiList.GetItems(caml);
+                                if (ngayLeItems != null && ngayLeItems.Count > 0)
+                                {
+                                    output.AddDays(ngayLeItems.Count);
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+            catch (Exception ex)
+            {
+                LoggingServices.LogException(ex);
+            }
+            return output;
+        }
+
+        void UpdateItem(CauHinh newCauHinh, bool isCapNhatBuocDuyet, bool isYeuCauBoSung, SPUser spUser, string capDuyetText)
         {
             if (!this.Page.IsValid)
                 return;
@@ -351,7 +419,7 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
             {
                 AddBoSungYeuCau(spListItem.Title, spListItem.ID, txtNhanXet.Text.Trim(), spUser.ID);
             }
-            //Cap nhat phan cong ho so ????
+            //Cap nhat phan cong ho so
             if (divPhanCongHoSo.Visible)
             {
                 //var spUserValue = new SPFieldUserValue(SPContext.Current.Web, int.Parse(ddlUsers.SelectedValue), ddlUsers.SelectedItem.Text);
@@ -359,13 +427,15 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
                 spListItem[Fields.NguoiXuLy] = ddlUsers.SelectedValue;
             }
             spListItem.Update();
+
             //Log to history
             DeNghiHelper.AddDeNghiHistory(SPContext.Current.Web
                 , SPContext.Current.ItemId
                 , SPContext.Current.ListItem.Title
-                , newCauHinh != null ? newCauHinh.BuocDuyetID : new SPFieldLookupValue(SPContext.Current.ListItem[Fields.BuocDuyet].ToString()).LookupId
-                , newCauHinh != null ? newCauHinh.TrangThai : new SPFieldLookupValue(SPContext.Current.ListItem[Fields.TrangThai].ToString()).LookupId
-                , newCauHinh != null ? newCauHinh.CapDuyetText : "TPP Phân công lại");
+                , int.Parse(hdfCauHinhID.Value)
+                , int.Parse(hdfTrangThaiID.Value)
+                , capDuyetText);
+
             //Redirect to page
             var redirectUrl = Request.QueryString["Source"];
             if (redirectUrl == null || string.IsNullOrEmpty(redirectUrl.ToString()))

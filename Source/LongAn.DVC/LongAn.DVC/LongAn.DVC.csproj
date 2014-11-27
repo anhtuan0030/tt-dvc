@@ -392,6 +392,18 @@
     <None Include="ListDefinitions\LoaiDeNghi\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{f68eb442-0fa2-44ed-935e-732f1cf9b901}</SharePointProjectItemId>
     </None>
+    <None Include="ListDefinitions\NgayLe\NgayLeInstance\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{c85b9ea4-d7a4-45d4-9c52-d9b5706dc4e6}</SharePointProjectItemId>
+    </None>
+    <None Include="ListDefinitions\NgayLe\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{42aa0393-f028-4b04-bd5e-df6468b532b2}</SharePointProjectItemId>
+    </None>
+    <None Include="ListDefinitions\ThamSo\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{7c2687a1-73e8-496a-aad4-eba690b5e454}</SharePointProjectItemId>
+    </None>
+    <None Include="ListDefinitions\ThamSo\ThamSoInstance\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{1444e28b-032d-45f8-9ac9-8112a4ba54f6}</SharePointProjectItemId>
+    </None>
     <None Include="ListDefinitions\TrangThai\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{e1ac68d3-08a5-4d4f-8b5b-34c5b55cdfea}</SharePointProjectItemId>
     </None>
@@ -548,13 +560,21 @@
     <Content Include="ListDefinitions\Attachment\Upload.aspx" />
     <Content Include="ListDefinitions\DeNghi\DeNghiInstance\Elements.xml" />
     <Content Include="ListDefinitions\DeNghi\Elements.xml" />
-    <Content Include="ListDefinitions\DeNghi\Schema.xml" />
+    <Content Include="ListDefinitions\DeNghi\Schema.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="ListDefinitions\DeNghiHis\Elements.xml" />
     <Content Include="ListDefinitions\DeNghiHis\DeNghiHisInstance\Elements.xml" />
     <Content Include="ListDefinitions\DeNghiHis\Schema.xml" />
     <Content Include="ListDefinitions\LoaiDeNghi\Elements.xml" />
     <Content Include="ListDefinitions\LoaiDeNghi\LoaiDeNghiInstance\Elements.xml" />
     <Content Include="ListDefinitions\LoaiDeNghi\Schema.xml" />
+    <Content Include="ListDefinitions\NgayLe\Elements.xml" />
+    <Content Include="ListDefinitions\NgayLe\NgayLeInstance\Elements.xml" />
+    <Content Include="ListDefinitions\NgayLe\Schema.xml" />
+    <Content Include="ListDefinitions\ThamSo\Elements.xml" />
+    <Content Include="ListDefinitions\ThamSo\Schema.xml" />
+    <Content Include="ListDefinitions\ThamSo\ThamSoInstance\Elements.xml" />
     <Content Include="ListDefinitions\TrangThai\Elements.xml" />
     <Content Include="ListDefinitions\TrangThai\Schema.xml" />
     <Content Include="ListDefinitions\TrangThai\TrangThaiInstance\Elements.xml" />

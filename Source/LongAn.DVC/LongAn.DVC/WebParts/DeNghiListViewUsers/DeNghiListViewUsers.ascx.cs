@@ -1,11 +1,14 @@
 ﻿using CamlexNET;
+using CamlexNET.Impl.Helpers;
 using LongAn.DVC.Common;
 using LongAn.DVC.Helpers;
 using Microsoft.SharePoint;
 using Microsoft.SharePoint.Utilities;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Linq.Expressions;
 using System.Web;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
@@ -36,29 +39,27 @@ namespace LongAn.DVC.WebParts.DeNghiListViewUsers
         {
             if (!this.Page.IsPostBack)
             {
-                //Check permission
-                if (SPContext.Current.Web.CurrentUser == null)
-                {
-                    HttpContext.Current.Response.Redirect(SPContext.Current.Web.ServerRelativeUrl);
-                }
-
-                var currentUserRole = DeNghiHelper.CurrentUserRole(SPContext.Current.Web, SPContext.Current.Web.CurrentUser);
-                if (currentUserRole != CapXuLy.CaNhanToChuc)
-                    HttpContext.Current.Response.Redirect(LinkTrangChu);
-                this.BindItemsList();
                 //Link & Title
                 literalDeNghiTitle.Text = DeNghiTitle;
-                #region Using popup
-                var deNghiUrl = (SPContext.Current.Web.ServerRelativeUrl + Constants.ListUrlDeNghiCapPhep).Replace("//", "/");
                 var currentPage = SPUtility.GetPageUrlPath(HttpContext.Current);
-                //var viewUrl = string.Format(Constants.ConfLinkNewForm, deNghiUrl, currentPage);
-                //lbtAddNew.OnClientClick = viewUrl;
-                #endregion Using popup
-                var viewUrl = string.Format(Constants.ConfLinkPageNewForm, deNghiUrl, currentPage);
-                hplAddNew.NavigateUrl = viewUrl;
-                hplTrangChu.NavigateUrl = LinkTrangChu;
-                hplDanhSachDeNghi.NavigateUrl = LinkDanhSachHoSo;
-                hplThongTinHuongDan.NavigateUrl = LinkThongTinHuongDan;
+                var deNghiUrl = (SPContext.Current.Web.ServerRelativeUrl + Constants.ListUrlDeNghiCapPhep).Replace("//", "/");
+                hdfCurrentUrl.Value = currentPage;
+                hdfDeNghiUrl.Value = deNghiUrl;
+                //Enable add new hyperlink
+                var cauHinhs = DeNghiHelper.GetCauHinh(Constants.CauHinh_Start);
+                var isMember = false;
+                foreach (var item in cauHinhs)
+                {
+                    isMember = DeNghiHelper.IsCurrentUserInGroup(SPContext.Current.Web, item.SPGroup);
+                    if (isMember)
+                    {
+                        var newUrl = string.Format(Constants.ConfLinkPageNewForm, deNghiUrl, currentPage);
+                        hplAddNew.NavigateUrl = newUrl;
+                        divAddNew.Visible = true;
+                        break;
+                    }
+                }
+                this.BindItemsList();
             }
         }
 
@@ -124,40 +125,21 @@ namespace LongAn.DVC.WebParts.DeNghiListViewUsers
         #endregion
 
         #region WebPart Properties
-        [WebBrowsable(true),
-         WebDisplayName("Tiêu đề"),
-         WebDescription("This Accepts text Input"),
-         Personalizable(PersonalizationScope.Shared),
-         Category("LongAn.DVC")]
-        public string DeNghiTitle { get; set; }
 
         [WebBrowsable(true),
          WebDisplayName("Phân trang"),
-         WebDescription("This Accepts number Input"),
+         WebDescription("Cấu hình phân trang"),
          Personalizable(PersonalizationScope.Shared),
          Category("LongAn.DVC")]
         public int PageSize { get; set; }
 
         [WebBrowsable(true),
-         WebDisplayName("Link Trang chủ"),
-         WebDescription("This Accepts text Input"),
+         WebDisplayName("Tiêu đề"),
+         WebDescription("Nhập tiêu đề"),
          Personalizable(PersonalizationScope.Shared),
          Category("LongAn.DVC")]
-        public string LinkTrangChu { get; set; }
+        public string DeNghiTitle { get; set; }
 
-        [WebBrowsable(true),
-         WebDisplayName("Link Danh sách hồ sơ"),
-         WebDescription("This Accepts text Input"),
-         Personalizable(PersonalizationScope.Shared),
-         Category("LongAn.DVC")]
-        public string LinkDanhSachHoSo { get; set; }
-
-        [WebBrowsable(true),
-         WebDisplayName("Link Thông tin hướng dẫn"),
-         WebDescription("This Accepts text Input"),
-         Personalizable(PersonalizationScope.Shared),
-         Category("LongAn.DVC")]
-        public string LinkThongTinHuongDan { get; set; }
         #endregion WebPart Properties
         
         protected void repeaterPage_ItemCommand(object source, RepeaterCommandEventArgs e)
@@ -306,62 +288,31 @@ namespace LongAn.DVC.WebParts.DeNghiListViewUsers
                 DataRowView rowView = (DataRowView)e.Item.DataItem;
                 if (rowView != null)
                 {
-                    string commandAgrument = rowView["ID"].ToString();
+                    var literalTitle = (Literal)e.Item.FindControl("literalTitle");
+                    literalTitle.Text = rowView[Fields.Title].ToString();
 
-                    Literal literalLoaiCapPhep = (Literal)e.Item.FindControl("literalLoaiCapPhep");
-                    literalLoaiCapPhep.Text = rowView[Constants.FieldLoaiDeNghi].ToString();
+                    var literalCaNhanToChuc = (Literal)e.Item.FindControl("literalCaNhanToChuc");
+                    literalCaNhanToChuc.Text = rowView[Fields.CaNhanToChuc].ToString();
 
-                    Literal literalMaBienNhan = (Literal)e.Item.FindControl("literalMaBienNhan");
-                    literalMaBienNhan.Text = rowView[Constants.FieldTitle].ToString();
+                    var literalLoaiCapPhep = (Literal)e.Item.FindControl("literalLoaiCapPhep");
+                    literalLoaiCapPhep.Text = rowView[Fields.LoaiDeNghi].ToString();
 
-                    Literal literalNgayDeNghi = (Literal)e.Item.FindControl("literalNgayDeNghi");
-                    literalNgayDeNghi.Text = rowView[Constants.FieldNgayNopHoSo].ToString();
+                    var literalNgayDeNghi = (Literal)e.Item.FindControl("literalNgayDeNghi");
+                    literalNgayDeNghi.Text = string.IsNullOrEmpty(rowView[Fields.NgayNopHoSo].ToString()) ? string.Empty : Convert.ToDateTime(rowView[Fields.NgayNopHoSo].ToString()).ToString("dd/MM/yyyy");
 
-                    Literal literalTrangThai = (Literal)e.Item.FindControl("literalTrangThai");
-                    literalTrangThai.Text = rowView[Constants.FieldTrangThaiText].ToString();
+                    var literalTrangThai = (Literal)e.Item.FindControl("literalTrangThai");
+                    literalTrangThai.Text = rowView[Fields.TenTrangThaiRef].ToString();
 
-                    var deNghiUrl = (SPContext.Current.Web.ServerRelativeUrl + Constants.ListUrlDeNghiCapPhep).Replace("//", "/");
-                    var currentPage = SPUtility.GetPageUrlPath(HttpContext.Current);
-                    HyperLink lbtViewItem = (HyperLink)e.Item.FindControl("lbtViewItem");
-                    var viewUrl = string.Format(Constants.ConfLinkPageDispForm, deNghiUrl, commandAgrument, currentPage);
-                    lbtViewItem.NavigateUrl = viewUrl;
-
-                    HyperLink lbtEditItem = (HyperLink)e.Item.FindControl("lbtEditItem");
-                    LinkButton lbtDeleteItem = (LinkButton)e.Item.FindControl("lbtDeleteItem");
-                    LinkButton lbtNopHoSo = (LinkButton)e.Item.FindControl("lbtNopHoSo");
-                    LinkButton lbtDisable2 = (LinkButton)e.Item.FindControl("lbtDisable2");
-                    var trangThai = int.Parse(rowView[Constants.FieldTrangThai].ToString());
-                    if (trangThai == (int)TrangThaiHoSo.KhoiTao
-                        || trangThai == (int)TrangThaiHoSo.ChoBoSung)
+                    var hplXuLy = (HyperLink)e.Item.FindControl("hplXuLy");
+                    var startEnd = DeNghiHelper.GetValueFormCauHinhCal(rowView[Fields.CauHinhCalRef].ToString(), Fields.StartEnd);
+                    var rowId = rowView["ID"].ToString();
+                    if (startEnd == Constants.CauHinh_Start || startEnd == Constants.CauHinh_YCBS)
                     {
-                        
-                        var editUrl = string.Format(Constants.ConfLinkPageEditForm, deNghiUrl, commandAgrument, currentPage);
-                        lbtEditItem.NavigateUrl = editUrl;
-                        lbtNopHoSo.CommandName = "OnNopHoSoClick";
-                        lbtNopHoSo.CommandArgument = commandAgrument;
-                        lbtNopHoSo.OnClientClick = "if (!confirm('Bạn có chắc chắn muốn nộp hồ sơ này không?')) return false;";
-                        lbtDeleteItem.Style.Add("display", "block");
-                        lbtDisable2.Style.Add("display", "none");
-                        if(trangThai == (int)TrangThaiHoSo.KhoiTao)
-                        {
-                            lbtDeleteItem.Style.Add("display", "none");
-                            lbtDisable2.Style.Add("display", "block");
-                            lbtDeleteItem.CommandName = "OnDeleteItemClick";
-                            lbtDeleteItem.CommandArgument = commandAgrument;
-                            lbtDeleteItem.OnClientClick = "if (!confirm('Bạn có chắc chắn muốn xóa hồ sơ này không?')) return false;";
-                        }
+                        hplXuLy.NavigateUrl = string.Format(Constants.ConfLinkPageEditForm, hdfDeNghiUrl.Value, rowId, hdfCurrentUrl.Value);
                     }
                     else
                     {
-                        lbtEditItem.Style.Add("display", "none");
-                        lbtDeleteItem.Style.Add("display", "none");
-                        lbtNopHoSo.Style.Add("display", "none");
-                        LinkButton lbtDisable1 = (LinkButton)e.Item.FindControl("lbtDisable1");
-                        lbtDisable1.Style.Add("display", "block");
-                        
-                        lbtDisable2.Style.Add("display", "block");
-                        LinkButton lbtDisable3 = (LinkButton)e.Item.FindControl("lbtDisable3");
-                        lbtDisable3.Style.Add("display", "block");
+                        hplXuLy.NavigateUrl = string.Format(Constants.ConfLinkPageDispForm, hdfDeNghiUrl.Value, rowId, hdfCurrentUrl.Value);
                     }
                 }
             }
@@ -429,25 +380,55 @@ namespace LongAn.DVC.WebParts.DeNghiListViewUsers
             DataTable dataTable = null;
             try
             {
-                LoggingServices.LogMessage("Begin GetDeNghi - current user");
-                SPQuery caml = Camlex.Query().Where(x => x["NguoiDeNghi"] == (DataTypes.UserId)SPContext.Current.Web.CurrentUser.ID.ToString())
-                                                    .OrderBy(x => new[] { x["ID"] as Camlex.Desc })
-                                                    .ToSPQuery();
-                caml.ViewFields = string.Concat("<FieldRef Name='ID' />",
-                                                "<FieldRef Name='Title' />",
-                                                "<FieldRef Name='LoaiDeNghi' />",
-                                                "<FieldRef Name='NgayNopHoSo' />",
-                                                "<FieldRef Name='TrangThai' />",
-                                                "<FieldRef Name='TrangThaiText' />");
+                LoggingServices.LogMessage("Begin GetDeNghi-User");
+
+                var andConditions = new List<Expression<Func<SPListItem, bool>>>();
+                if (!string.IsNullOrEmpty(txtTuKhoa.Text.Trim()))
+                    andConditions.Add(x => ((string)x[Fields.Title]).Contains(txtTuKhoa.Text.Trim()));
+                if (!string.IsNullOrEmpty(txtCaNhanToChuc.Text.Trim()))
+                    andConditions.Add(x => ((string)x[Fields.CaNhanToChuc]).Contains(txtCaNhanToChuc.Text.Trim()));
+                if (!string.IsNullOrEmpty(txtSoDienThoai.Text.Trim()))
+                    andConditions.Add(x => ((string)x[Fields.DienThoai]).Contains(txtSoDienThoai.Text.Trim()));
+                if (!dtcNgayDeNghiDen.IsDateEmpty && !dtcNgayDeNghiTu.IsDateEmpty)
+                {
+                    andConditions.Add(x => (x[Fields.NgayNopHoSo]) >= (DataTypes.DateTime)dtcNgayDeNghiTu.SelectedDate.ToString("yyyy-MM-dd"));
+                    andConditions.Add(x => (x[Fields.NgayNopHoSo]) <= (DataTypes.DateTime)dtcNgayDeNghiDen.SelectedDate.ToString("yyyy-MM-dd"));
+                }
+
+                andConditions.Add(x => x[Fields.NguoiDeNghi] == (DataTypes.UserId)SPContext.Current.Web.CurrentUser.ID.ToString());
+
+                Expression<Func<Microsoft.SharePoint.SPListItem, bool>> andExpr = ExpressionsHelper.CombineAnd(andConditions);
+                var expressions = new List<Expression<Func<SPListItem, bool>>>();
+                expressions.Add(andExpr);
+                var camlQuery = Camlex.Query().WhereAll(expressions).ToString();
+
+                LoggingServices.LogMessage("CAML Query: " + camlQuery);
+
+                SPQuery spQuery = new SPQuery();
+                spQuery.Query = camlQuery;
+                spQuery.ViewFieldsOnly = true;
+                spQuery.ViewFields = string.Concat(
+                                   string.Format("<FieldRef Name='{0}' />", Fields.Title),
+                                   string.Format("<FieldRef Name='{0}' />", Fields.CaNhanToChuc),
+                                   string.Format("<FieldRef Name='{0}' />", Fields.LoaiDeNghi),
+                                   string.Format("<FieldRef Name='{0}' />", Fields.LoaiCapPhep),
+                                   string.Format("<FieldRef Name='{0}' />", Fields.NgayNopHoSo),
+                                   string.Format("<FieldRef Name='{0}' />", Fields.TenTrangThaiRef),
+                                   string.Format("<FieldRef Name='{0}' />", Fields.CauHinhCalRef),
+                                   string.Format("<FieldRef Name='{0}' />", Fields.NguoiXuLy),
+                                   string.Format("<FieldRef Name='{0}' />", Fields.NguoiChoXuLy),
+                                   string.Format("<FieldRef Name='{0}' />", Fields.NguoiDeNghi),
+                                   string.Format("<FieldRef Name='{0}' />", Fields.NguoiThamGiaXuLy),
+                                   "<FieldRef Name='ID' />");
                 var deNghiUrl = (SPContext.Current.Web.ServerRelativeUrl + Constants.ListUrlDeNghiCapPhep).Replace("//", "/");
                 var deNghiList = SPContext.Current.Web.GetList(deNghiUrl);
-                dataTable = deNghiList.GetItems(caml).GetDataTable();
+                dataTable = deNghiList.GetItems(spQuery).GetDataTable();
             }
             catch (Exception ex)
             {
                 LoggingServices.LogException(ex);
             }
-            LoggingServices.LogMessage("End GetDeNghi - current user");
+            LoggingServices.LogMessage("End GetDeNghi-User");
             return dataTable;
         }
     }

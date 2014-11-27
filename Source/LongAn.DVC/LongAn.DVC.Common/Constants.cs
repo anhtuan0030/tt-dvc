@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -105,6 +106,8 @@ namespace LongAn.DVC.Common
         public const string ConfGroupCanBoXuLy = "DVC Cán bộ xử lý";
         public const string ConfGroupLanhDaoSo = "DVC Lãnh đạo sở";
 
+        public const string ConfSoNgayXuLyKey = "Số ngày xử lý đề nghị cấp phép";
+
         public const string ConfWordLicFile = "TEMPLATE\\LAYOUTS\\LongAn.DVC\\lic\\Aspose.Words.lic";
         public const string ConfWordBienNhanTemplate = "TEMPLATE\\LAYOUTS\\LongAn.DVC\\templates\\BienNhanTemplate.docx";
         public const string ConfWordGiayPhepTemplate = "TEMPLATE\\LAYOUTS\\LongAn.DVC\\templates\\GiayPhepTemplate.docx";
@@ -183,6 +186,9 @@ namespace LongAn.DVC.Common
         public const string ListUrlYeuCauBoSung = "/Lists/YeuCauBoSung";
         public const string ListUrlLichSuCapPhep = "/Lists/DeNghiHis";
 
+        public const string ListUrlThamSo = "/Lists/ThamSo";
+        public const string ListUrlNgayLe = "/Lists/NgayLe";
+
         public const string ListUrlCauHinh = "/Lists/CauHinh";
         //Loại attachments
         public const string AttachmentGiayDangKy = "GiayDangKy";
@@ -230,7 +236,7 @@ namespace LongAn.DVC.Common
         public const string IsPhanCong = "IsPhanCong";
         public const string IsXuLyPhanCong = "IsXuLyPhanCong";
         public const string StartEnd = "StartEnd";
-        public const string StartEndRef = "StartEndRef";
+        public const string CauHinhCalRef = "CauHinhCalRef";
         public const string IsEmail = "IsEmail";
         public const string EmailTemplate = "EmailTemplate";
         public const string AllowInBienNhan = "AllowInBienNhan";
@@ -308,5 +314,14 @@ namespace LongAn.DVC.Common
         public const string NguoiYeuCau = "NguoiYeuCau";
 
 
+    }
+
+    public enum DeNghiOption {
+        [Description("Không theo người xử lý")]
+        None,
+        [Description("Chờ xử lý")]
+        Handle,
+        [Description("Đã tham gia xử lý")]
+        Joined
     }
 }

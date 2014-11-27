@@ -77,9 +77,6 @@ namespace LongAn.DVC.WebParts.DeNghiHistory
                     Literal literalNgayXuLy = (Literal)e.Item.FindControl("literalNgayXuLy");
                     literalNgayXuLy.Text = rowView["NgayXuLy"].ToString();
 
-                    Literal literalHanhDong = (Literal)e.Item.FindControl("literalHanhDong");
-                    literalHanhDong.Text = rowView["HanhDong"].ToString();
-
                     Literal literalMoTa = (Literal)e.Item.FindControl("literalMoTa");
                     literalMoTa.Text = rowView["MoTa"].ToString();
                 }

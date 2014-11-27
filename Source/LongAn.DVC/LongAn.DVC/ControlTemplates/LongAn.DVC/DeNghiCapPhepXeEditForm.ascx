@@ -505,6 +505,9 @@
                         <asp:Button ID="btnCancel" runat="server" Text="Đóng" CssClass="button" style="float:left;"/>
                     </div>
                     <div style="display:none;">
+                        <asp:HiddenField ID="hdfCauHinhID" runat="server" />
+                        <asp:HiddenField ID="hdfTrangThaiID" runat="server" />
+                        <asp:HiddenField ID="hdfCapDuyetText" runat="server" />
                         <asp:HiddenField ID="hdfNextStep" runat="server" />
                     </div>
                 </div>

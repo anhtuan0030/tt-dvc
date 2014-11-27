@@ -674,6 +674,9 @@
                                 </div>
 
                                 <div style="display:none;">
+                                    <asp:HiddenField ID="hdfCauHinhID" runat="server" />
+                                    <asp:HiddenField ID="hdfTrangThaiID" runat="server" />
+                                    <asp:HiddenField ID="hdfCapDuyetText" runat="server" />
                                     <asp:HiddenField ID="hdfNextStep" runat="server" />
                                     <asp:HiddenField ID="hdfPreStep" runat="server" />
                                 </div>

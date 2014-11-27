@@ -27,7 +27,7 @@ namespace LongAn.DVC.EventReceivers
                 var currentItem = properties.ListItem;
                 var namDeNghi = DateTime.Now.ToString("yyyy");
                 var soThuTuBienNhan = GenerateBienNhan(properties.Web);
-                currentItem[Constants.FieldTitle] = Constants.ConfMaLinhVucSGTVT + namDeNghi + GenerateBienNhan(properties.Web);
+                currentItem[Constants.FieldTitle] = Constants.ConfMaLinhVucSGTVT + namDeNghi + soThuTuBienNhan;
                 currentItem[Constants.FieldNamDeNghi] = namDeNghi;
                 currentItem[Constants.FieldSoThuTuBienNhan] = int.Parse(soThuTuBienNhan);
                 currentItem.SystemUpdate();

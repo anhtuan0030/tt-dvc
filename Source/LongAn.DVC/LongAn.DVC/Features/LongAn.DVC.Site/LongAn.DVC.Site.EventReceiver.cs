@@ -66,6 +66,7 @@ namespace LongAn.DVC.Features.Site
                     roleDef.BasePermissions =
                     SPBasePermissions.AddListItems |
                     SPBasePermissions.EditListItems |
+                    SPBasePermissions.ViewListItems |
                     SPBasePermissions.ViewVersions |
                     SPBasePermissions.CreateAlerts |
                     SPBasePermissions.ViewPages |

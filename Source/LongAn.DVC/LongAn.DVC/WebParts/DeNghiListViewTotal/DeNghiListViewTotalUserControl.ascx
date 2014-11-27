@@ -54,6 +54,8 @@
                         <a href="/Pages/LichSuLuanChuyenHoSo.aspx" class="button task inline-block" style="padding-left:30px; margin-right:10px;">Lịch sử luân chuyển hồ sơ</a>
                         <a id="linkSearchExpand" href="#" class="button button-expand inline-block">Tìm kiếm</a>
                         <asp:HiddenField ID="hdfSearchExpand" Value="0" runat="server" />
+                        <asp:HiddenField ID="hdfCurrentUrl" Value="0" runat="server" />
+                        <asp:HiddenField ID="hdfDeNghiUrl" Value="0" runat="server" />
                     </div>
                     <div class="pull-left-add" id="divAddNew" runat="server" visible="false">
                         <asp:HyperLink ID="hplAddNew" CssClass="button add-new inline-block danger" runat="server">Thêm mới</asp:HyperLink>
@@ -110,6 +112,7 @@
 			</div>
 			
 			<div class="clearfix"></div>
+
 			<table class="the-table">
 				<tr style="height: 50px;">
                     <th>STT</th>
@@ -118,7 +121,7 @@
                     <th>Loại đề nghị</th>
                     <th>Ngày nộp hồ sơ</th>
                     <th>Trạng thái</th>
-                    <th colspan="4">Thao tác</th>
+                    <th colspan="1">Thao tác</th>
                 </tr>
                 <asp:Repeater ID="repeaterLists" runat="server"  OnItemCommand="repeaterLists_ItemCommand" OnItemDataBound="repeaterLists_ItemDataBound">
                     <ItemTemplate>
@@ -145,7 +148,7 @@
                             <td>
                                 <asp:HyperLink ID="hplXuLy" ToolTip="Xử lý hồ sơ" CssClass="button view just-icon" runat="server"></asp:HyperLink>
                             </td>
-                            <td>
+                            <%--<td>
                                 <asp:HyperLink ID="hplChinhSuaBoSung" ToolTip="Chỉnh sửa / Bổ sung hồ sơ" CssClass="button edit just-icon" style="display:none;" runat="server"></asp:HyperLink>
                             </td>
                             <td>
@@ -153,7 +156,7 @@
                             </td>
                             <td>
                                 <asp:LinkButton ID="lbtPrintGiayPhep" ToolTip="In Giấy phép" CssClass="button printer just-icon" style="display:none;" runat="server"></asp:LinkButton>
-                            </td>
+                            </td>--%>
                         </tr>
                     </ItemTemplate>
                 </asp:Repeater>

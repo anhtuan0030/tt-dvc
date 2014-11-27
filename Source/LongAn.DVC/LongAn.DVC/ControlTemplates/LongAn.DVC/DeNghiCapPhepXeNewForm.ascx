@@ -418,7 +418,7 @@
                                     <div class="row">
                                         <div class="grid_8">
                                             <SharePoint:FieldLabel ID="FieldLabel38" FieldName="UploadFileTitle1" runat="server" />
-                                            <span title="This is a required field." class="ms-accentText">*</span>
+                                            
                                         </div>
                                         <div class="grid_3" id="divFileUpload1" runat="server">
                                             <asp:FileUpload ID="fileUpload1" runat="server" />
@@ -428,7 +428,7 @@
                                     <div class="row">
                                         <div class="grid_8">
                                             <SharePoint:FieldLabel ID="FieldLabel40" FieldName="UploadFileTitle2" runat="server" />
-                                            <span title="This is a required field." class="ms-accentText">*</span>
+                                            
                                         </div>
                                         <div class="grid_3" id="divFileUpload2" runat="server">
                                             <asp:FileUpload ID="fileUpload2" runat="server" />
@@ -438,7 +438,7 @@
                                     <div class="row">
                                         <div class="grid_8">
                                             <SharePoint:FieldLabel ID="FieldLabel41" FieldName="UploadFileTitle3" runat="server" />
-                                            <span title="This is a required field." class="ms-accentText">*</span>
+                                            
                                         </div>
                                         <div class="grid_3" id="divFileUpload3" runat="server">
                                             <asp:FileUpload ID="fileUpload3" runat="server" />
@@ -448,7 +448,7 @@
                                     <div class="row">
                                         <div class="grid_8">
                                             <SharePoint:FieldLabel ID="FieldLabel42" FieldName="UploadFileTitle4" runat="server" />
-                                            <span title="This is a required field." class="ms-accentText">*</span>
+                                            
                                         </div>
                                         <div class="grid_3" id="divFileUpload4" runat="server">
                                             <asp:FileUpload ID="fileUpload4" runat="server" />
@@ -461,6 +461,12 @@
                                     <asp:Button ID="btnSave" OnClientClick="if (!PreSaveItem(0)) return false;" CssClass="button" runat="server" Text="Lưu hồ sơ" Style="float: left;" />
                                     <asp:Button ID="btnGuiHoSo" OnClientClick="if (!PreSaveItem(0)) return false;" CssClass="button" runat="server" Text="Nộp hồ sơ" Style="float: left;" />
                                     <asp:Button ID="btnCancel" runat="server" Text="Hủy" CssClass="button" Style="float: left;" />
+                                </div>
+
+                                <div style="display:none;">
+                                    <asp:HiddenField ID="hdfCauHinhID" runat="server" />
+                                    <asp:HiddenField ID="hdfTrangThaiID" runat="server" />
+                                    <asp:HiddenField ID="hdfCapDuyetText" runat="server" />
                                 </div>
                             </div>
                             <div class="clearfix"></div>
