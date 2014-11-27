@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <ListInstance Title="Cấu hình tham số"
+                OnQuickLaunch="TRUE"
+                TemplateType="10007"
+                Url="Lists/ThamSo"
+                Description="">
+    <Data>
+      <Rows>
+        <Row>
+          <Field Name="ID">1</Field>
+          <Field Name="Title">Số ngày xử lý đề nghị cấp phép</Field>
+          <Field Name="Value">4</Field>
+        </Row>
+      </Rows>
+    </Data>
+  </ListInstance>
+</Elements>

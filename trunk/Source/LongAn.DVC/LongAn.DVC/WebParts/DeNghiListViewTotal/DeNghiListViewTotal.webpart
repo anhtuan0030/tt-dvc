@@ -10,6 +10,15 @@
         <property name="Title" type="string">Đề nghị list view V2</property>
         <property name="Description" type="string">Đề nghị list view Visual Web Part V2</property>
         <property name="ChromeType" type="chrometype">None</property>
+        <property name="PageSize" type="int">10</property>
+        <property name="PageSize"
+                  type="int">10</property>
+        <property name="DeNghiTitle"
+                  type="string">Danh sách đề nghị</property>
+        <property name="Option"
+                  type="DeNghiOption">Handle</property>
+      <property name="DeNghiTrangThai"
+                  type="string">NBS;VTN;CBS;DBS</property>
       </properties>
     </data>
   </webPart>

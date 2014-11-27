@@ -11,9 +11,6 @@
         <property name="Description" type="string">Đề nghị list view users</property>
         <property name="ChromeType" type="chrometype">None</property>
         <property name="DeNghiTitle" type="string">Danh sách đề nghị của tôi</property>
-        <property name="LinkTrangChu" type="string">/</property>
-        <property name="LinkDanhSachHoSo" type="string">/Pages/DeNghiCapPhep.aspx</property>
-        <property name="LinkThongTinHuongDan" type="string">/</property>
         <property name="PageSize" type="int">10</property>
       </properties>
     </data>

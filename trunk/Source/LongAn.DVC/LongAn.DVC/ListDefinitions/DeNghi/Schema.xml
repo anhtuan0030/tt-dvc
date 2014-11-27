@@ -16,6 +16,7 @@
 
 
 
+
       <ContentType ID="0x0100145a0bf38a894d6fabe8baeb45741dc5"
                    Name="Đề nghị Content Type"
                    Group="[LA-DVC]"
@@ -272,6 +273,74 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
           <FieldRef ID="{fa564e0f-0c70-4ab9-b863-0177e6ddd247}"
                     Name="Title" />
           <FieldRef ID="{9513D269-2FC2-4AA2-9916-91BF6150AD7A}"
@@ -406,8 +475,8 @@
                     Name="AllowInBienNhanRef" />
           <FieldRef ID="{0600B22C-A08D-4303-8CE6-7E3CE9512B92}"
                     Name="AllowInGiayPhepRef" />
-          <!--<FieldRef ID="{98D59A15-6535-4EE5-9F40-932B458DE0AA}"
-                    Name="StartEndRef" />-->
+          <FieldRef ID="{98D59A15-6535-4EE5-9F40-932B458DE0AA}"
+                    Name="CauHinhCalRef" />
         </FieldRefs>
         <XmlDocuments>
           <XmlDocument NamespaceURI="http://schemas.microsoft.com/sharepoint/events">
@@ -467,6 +536,74 @@
       </ContentType>
     </ContentTypes>
     <Fields>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1154,6 +1291,8 @@
 
 
 
+
+
           <CHOICE>Quá tải</CHOICE>
           <CHOICE>Quá khổ</CHOICE>
         </CHOICES>
@@ -1169,6 +1308,8 @@
              FillInChoice="FALSE">
         <Default>Quốc lộ</Default>
         <CHOICES>
+
+
 
 
 
@@ -1438,22 +1579,23 @@
              UnlimitedLengthInDocumentLibrary="FALSE"
              RelationshipDeleteBehavior="None"
              Group="[LA-DVC]" />
-
-      <!--<Field Type="Lookup"
+      <Field Type="Lookup"
              ID="{98D59A15-6535-4EE5-9F40-932B458DE0AA}"
-             StaticName="StartEndRef"
-             Name="StartEndRef"
-             DisplayName="Bắt đầu / Kết thúc"
+             StaticName="CauHinhCalRef"
+             Name="CauHinhCalRef"
+             DisplayName="Cấu hình Cal Ref"
              Required="TRUE"
              EnforceUniqueValues="FALSE"
              List="Lists/CauHinh"
              FieldRef="{476b93d1-3dc6-48ec-8706-bc7f826f5d40}"
-             ShowField="StartEnd"
+             ShowField="CauHinhCal"
              UnlimitedLengthInDocumentLibrary="FALSE"
              RelationshipDeleteBehavior="None"
-             Group="[LA-DVC]" />-->
+             Group="[LA-DVC]" />
     </Fields>
     <Views>
+
+
 
 
 
@@ -1475,10 +1617,12 @@
 
 
 
+
           <FieldRef Name="LinkTitleNoMenu"></FieldRef>
         </ViewFields>
         <Query>
           <OrderBy>
+
 
 
 
@@ -1572,23 +1716,32 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
           <FieldRef Name="LinkTitle"></FieldRef>
-          <FieldRef Name="BuocDuyet" />
-          <FieldRef Name="NgayHenTra" />
-          <FieldRef Name="NgayThucTra" />
-          <FieldRef Name="AllowInBienNhanRef" />
-          <FieldRef Name="AllowInGiayPhepRef" />
-          <FieldRef Name="IsBoSungHoSoRef" />
-          <FieldRef Name="IsPhanCongRef" />
-          <FieldRef Name="NguoiChoXuLy" />
           <FieldRef Name="NguoiDeNghi" />
-          <FieldRef Name="NguoiThamGiaXuLy" />
-          <FieldRef Name="NguoiXuLy" />
+          <FieldRef Name="BuocDuyet" />
           <FieldRef Name="NgayNopHoSo" />
           <FieldRef Name="NgayTiepNhan" />
+          <FieldRef Name="NgayHenTra" />
+          <FieldRef Name="NgayThucTra" />
+          <FieldRef Name="NguoiXuLy" />
         </ViewFields>
         <Query>
           <OrderBy>
+
 
 
 

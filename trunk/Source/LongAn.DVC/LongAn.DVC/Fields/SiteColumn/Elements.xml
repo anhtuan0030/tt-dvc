@@ -577,8 +577,8 @@
          UnlimitedLengthInDocumentLibrary="FALSE"
          RelationshipDeleteBehavior="None"
          Group="[LA-DVC]" />
-  
-  
+
+
   <!--Đề nghị Attachment-->
   <Field Type="Lookup"
          ID="{713CEB2E-2D14-4FDF-BA98-DAABFA61C504}"
@@ -590,7 +590,7 @@
          List="Lists/DeNghi"
          ShowField="Title"
          UnlimitedLengthInDocumentLibrary="FALSE"
-         RelationshipDeleteBehavior="None" 
+         RelationshipDeleteBehavior="None"
          Group="[LA-DVC]"/>
   <Field Type="Text"
          ID="{D845F8A0-CFF9-4430-A159-B02F616165D8}"
@@ -602,21 +602,21 @@
          Indexed="FALSE"
          MaxLength="255"
          Group="[LA-DVC]" />
-  
+
   <!--Cấu hình duyệt đề nghị-->
   <Field Name="SPGroup"
          ID="{05fca844-f731-4dfb-8868-9df6cd991fbb}"
          DisplayName="SP Group"
          Type="User"
          Required="TRUE"
-          Group="[LA-DVC]"  />
+         Group="[LA-DVC]"  />
   <Field Name="CapDuyetText"
          ID="{a5494e0c-28d3-4e6d-ba22-be8b0f6a9d61}"
          DisplayName="Ghi chú"
          Type="Text"
-          Group="[LA-DVC]"  />
-  
-  
+         Group="[LA-DVC]"  />
+
+
   <Field Name="IsFix"
          ID="{088664bb-cdc1-4e3e-97ed-b87474c1fe34}"
          DisplayName="Không chỉnh sửa"
@@ -625,7 +625,7 @@
          ID="{3d14bf56-7422-4904-8206-a16c87125be4}"
          DisplayName="Action duyệt"
          Type="Boolean"
-          Group="[LA-DVC]"  />
+         Group="[LA-DVC]"  />
   <Field Name="TieuDeActionDuyet"
          ID="{e078c916-b314-4a41-a1c1-b55bce67706a}"
          DisplayName="Tiêu đề Action duyệt"
@@ -671,37 +671,37 @@
          ID="{3872f348-1d55-4ce3-bd0a-0d0cd29ba090}"
          DisplayName="Action Yêu cầu bổ sung"
          Type="Boolean"
-          Group="[LA-DVC]"  />
+         Group="[LA-DVC]"  />
   <Field Name="ActionPhanCong"
          ID="{eb97fbd8-e796-4940-a54e-a12e4644ef9e}"
          DisplayName="Action Phân công"
          Type="Boolean"
-          Group="[LA-DVC]"  />
+         Group="[LA-DVC]"  />
   <Field Name="AllowCapNhatLoaiDuong"
          ID="{b36d0245-0dfa-4a24-9ae6-e3fc5e194052}"
          DisplayName="Allow Cập nhật loại đường"
          Type="Boolean"
-          Group="[LA-DVC]"  />
+         Group="[LA-DVC]"  />
   <Field Name="AllowCapNhatNgayHen"
          ID="{d0bc18be-83fe-423d-adea-2470c328adb7}"
          DisplayName="Allow Cập nhật ngày hẹn"
          Type="Boolean"
-          Group="[LA-DVC]"  />
+         Group="[LA-DVC]"  />
   <Field Name="IsBoSungHoSo"
          ID="{927b86cc-1f41-4889-8818-5dcc631bd660}"
          DisplayName="Bổ sung hồ sơ"
          Type="Boolean"
-          Group="[LA-DVC]"  />
+         Group="[LA-DVC]"  />
   <Field Name="IsPhanCong"
          ID="{f68d404e-3861-42b4-a754-371fb5384240}"
          DisplayName="Phân công"
          Type="Boolean"
-          Group="[LA-DVC]"  />
+         Group="[LA-DVC]"  />
   <Field Name="IsXuLyPhanCong"
          ID="{e8ed953d-c8e5-4665-8b23-e9592be1ce51}"
          DisplayName="Xử lý phân công"
          Type="Boolean"
-          Group="[LA-DVC]"  />
+         Group="[LA-DVC]"  />
   <Field Name="StartEnd"
          ID="{bf80c732-39e7-4747-b014-d1fb839a2b61}"
          DisplayName="Bắt đầu / Kết thúc"
@@ -739,9 +739,9 @@
          Type="User"
          Required="FALSE"
          Group="[LA-DVC]" />
-  
+
   <!--Lịch sử cấp phép-->
-    <Field Type="DateTime"
+  <Field Type="DateTime"
          ID="{F4C8152D-658E-4D29-BD77-C763F8666769}"
          Name="NgayXuLy"
          StaticName="NgayXuLy"
@@ -770,14 +770,14 @@
          Name="MoTa"
          StaticName="MoTa"
          DisplayName="Mô tả" />
-  
+
   <!--Tình trạng (trạng thái)-->
   <Field Name="TenTrangThai"
          ID="{51d94c36-72e9-4916-9b04-3275b317e8fb}"
          DisplayName="Tên trạng thái"
          Type="Text"
          Required="TRUE"
-          Group="[LA-DVC]"  />
+         Group="[LA-DVC]"  />
   <!--Yêu cầu bổ sung-->
   <Field Type="Boolean"
          ID="{74443E7F-018E-4051-A6D4-D6918A68E990}"
@@ -823,7 +823,7 @@
          Group="[LA-DVC]">
     <Default>0</Default>
   </Field>
-  
+
   <Field Type="Boolean"
          ID="{74443E7F-018E-4051-A6D4-D6918A68E990}"
          Name="AllowInGiayPhep"
@@ -882,21 +882,21 @@
          DisplayName="Action Cán bộ tiếp nhận"
          Type="Boolean"
          Group="[LA-DVC]" />
-  
-    <Field Type="UserMulti" 
-           DisplayName="Người tham gia xử lý" 
-           List="UserInfo" 
-           Required="FALSE" 
-           EnforceUniqueValues="FALSE" 
-           ShowField="ImnName" 
-           UserSelectionMode="PeopleOnly" 
-           UserSelectionScope="0" 
-           Mult="TRUE" 
-           Sortable="FALSE" 
-           ID="{645D6072-D283-4F2B-8672-6D019BDA9A8A}" 
-           StaticName="NguoiThamGiaXuLy" 
-           Name="NguoiThamGiaXuLy"
-           Group="[LA-DVC]" />
+
+  <Field Type="UserMulti"
+         DisplayName="Người tham gia xử lý"
+         List="UserInfo"
+         Required="FALSE"
+         EnforceUniqueValues="FALSE"
+         ShowField="ImnName"
+         UserSelectionMode="PeopleOnly"
+         UserSelectionScope="0"
+         Mult="TRUE"
+         Sortable="FALSE"
+         ID="{645D6072-D283-4F2B-8672-6D019BDA9A8A}"
+         StaticName="NguoiThamGiaXuLy"
+         Name="NguoiThamGiaXuLy"
+         Group="[LA-DVC]" />
 
   <Field Type="UserMulti"
          DisplayName="Người chờ xử lý"
@@ -943,18 +943,18 @@
 
   <Field Type="Lookup"
          ID="{98D59A15-6535-4EE5-9F40-932B458DE0AA}"
-         StaticName="StartEndRef"
-         Name="StartEndRef"
-         DisplayName="Bắt đầu / Kết thúc"
+         StaticName="CauHinhCalRef"
+         Name="CauHinhCalRef"
+         DisplayName="Cấu hình Cal Ref"
          Required="TRUE"
          EnforceUniqueValues="FALSE"
          List="Lists/CauHinh"
          FieldRef="{476b93d1-3dc6-48ec-8706-bc7f826f5d40}"
-         ShowField="StartEnd"
+         ShowField="CauHinhCal"
          UnlimitedLengthInDocumentLibrary="FALSE"
          RelationshipDeleteBehavior="None"
          Group="[LA-DVC]" />
-  
+
   <Field Type="DateTime"
          ID="{11D81484-15BE-43F4-83E6-D1E2BE5A5EA3}"
          Name="NgayTiepNhan"
@@ -967,5 +967,38 @@
          FriendlyDisplayFormat="Disabled"
          Group="[LA-DVC]">
   </Field>
-    
+
+  <Field Type="Calculated"
+         DisplayName="Cấu hình Cal"
+         EnforceUniqueValues="FALSE"
+         Indexed="FALSE"
+         Format="DateOnly"
+         LCID="1033"
+         ResultType="Text"
+         ReadOnly="TRUE"
+         ID="{42124a30-3e8b-4fea-932d-635a19272fc9}"
+         StaticName="CauHinhCal"
+         Name="CauHinhCal"
+         Required="FALSE"
+         Group="[LA-DVC]">
+    <Formula>="#StartEnd$"&amp;StartEnd</Formula>
+    <FormulaDisplayNames>="#StartEnd$$"&amp;[Bắt đầu / Kết thúc]</FormulaDisplayNames>
+    <FieldRefs>
+      <FieldRef Name="StartEnd" />
+    </FieldRefs>
+  </Field>
+
+  <Field Name="Value"
+         ID="{f16ec1a7-c218-4f0a-b93f-07364ddb5a6d}"
+         DisplayName="Value"
+         Type="Text"
+         Group="[LA-DVC]"/>
+
+  <Field Name="Ngay"
+         ID="{a02403c2-1a1f-4628-bcc7-dc03db40c77c}"
+         DisplayName="Ngày"
+         Format="DateOnly"
+         Type="DateTime"
+         Group="[LA-DVC]"/>
+
 </Elements>

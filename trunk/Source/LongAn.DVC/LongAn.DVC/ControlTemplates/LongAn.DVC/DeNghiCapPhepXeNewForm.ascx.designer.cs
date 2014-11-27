@@ -859,6 +859,33 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC {
         protected global::System.Web.UI.WebControls.Button btnCancel;
         
         /// <summary>
+        /// hdfCauHinhID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hdfCauHinhID;
+        
+        /// <summary>
+        /// hdfTrangThaiID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hdfTrangThaiID;
+        
+        /// <summary>
+        /// hdfCapDuyetText control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hdfCapDuyetText;
+        
+        /// <summary>
         /// toolBarTbl control.
         /// </summary>
         /// <remarks>

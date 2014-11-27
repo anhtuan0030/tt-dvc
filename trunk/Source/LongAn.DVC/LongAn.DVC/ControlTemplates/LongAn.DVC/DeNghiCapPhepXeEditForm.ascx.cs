@@ -34,6 +34,13 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
         {
             var cauHinh = DeNghiHelper.GetCauHinh(int.Parse(hdfNextStep.Value));
             UpdateItem(cauHinh, true, false);
+            //Log to history
+            DeNghiHelper.AddDeNghiHistory(SPContext.Current.Web
+                , SPContext.Current.ListItem.ID
+                , SPContext.Current.ListItem.Title
+                , int.Parse(hdfCauHinhID.Value)
+                , int.Parse(hdfTrangThaiID.Value)
+                , hdfCapDuyetText.Value);
         }
 
         void btnSave_Click(object sender, EventArgs e)
@@ -64,6 +71,9 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
                         && (cauHinh.StartEnd == Constants.CauHinh_YCBS || cauHinh.StartEnd == Constants.CauHinh_Start))
                     {
                         //Show button
+                        hdfCauHinhID.Value = cauHinh.BuocDuyetID.ToString();
+                        hdfTrangThaiID.Value = cauHinh.TrangThai.ToString();
+                        hdfCapDuyetText.Value = cauHinh.TrangThai.ToString();
                         hdfNextStep.Value = cauHinh.NextStep.ToString();
                         //hdfPreStep.Value = cauHinh.PreviousStep.ToString();
                         if (cauHinh.StartEnd == Constants.CauHinh_Start)

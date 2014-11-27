@@ -484,8 +484,87 @@ namespace LongAn.DVC.Helpers
             LoggingServices.LogMessage("End AddDeNghiHistory");
         }
 
+        public static string GetValueFormCauHinhCal(string inputText, string field)
+        {
+            if (string.IsNullOrEmpty(inputText))
+                return string.Empty;
 
-        
+            var textInput = inputText.TrimStart('#');
+            var textInputArray = textInput.Split('#');
+
+            var textOuput = textInputArray.FirstOrDefault(x => x.Contains(field + "$"));
+
+            if (string.IsNullOrEmpty(textOuput))
+                return textOuput.Split('$')[1];
+            
+            return string.Empty;
+        }
+
+        public static int GetFullWorkingDaysBetween(DateTime firstDate, DateTime lastDate)
+        {
+            try
+            {
+                //Clean date
+                //firstDate = new DateTime(firstDate.Year, firstDate.Month, firstDate.Day);
+                //lastDate = new DateTime(lastDate.Year, lastDate.Month, lastDate.Day);
+                // Swap the dates if firstDate > lastDate
+                bool isNegative = false;
+                if (firstDate > lastDate)
+                {
+                    DateTime tempDate = firstDate;
+                    firstDate = lastDate;
+                    lastDate = tempDate;
+                    isNegative = true;
+                }
+                double totalTick = lastDate.Subtract(firstDate).Ticks;
+                string stringDate = (totalTick / TimeSpan.TicksPerDay).ToString("#");
+                int days = int.Parse((string.IsNullOrEmpty(stringDate) ? "0" : stringDate));
+                int weekReminder = days % 7;
+                if (weekReminder > 0)
+                {
+                    switch (firstDate.DayOfWeek)
+                    {
+                        case DayOfWeek.Monday:
+                            days = days - ((weekReminder > 5) ? 1 : 0);
+                            // Another way for this:
+                            //days = days - ((int)weekReminder % 5);
+                            // but i think its more expensive
+                            break;
+                        case DayOfWeek.Tuesday:
+                            days = days - ((weekReminder > 4) ? 1 : 0) - ((weekReminder > 5) ? 1 : 0);
+                            // The same from above
+                            //days = days - ((int)weekReminder % 4);
+                            break;
+                        case DayOfWeek.Wednesday:
+                            days = days - ((weekReminder > 3) ? 1 : 0) - ((weekReminder > 4) ? 1 : 0);
+                            break;
+                        case DayOfWeek.Thursday:
+                            days = days - ((weekReminder > 2) ? 1 : 0) - ((weekReminder > 3) ? 1 : 0);
+                            break;
+                        case DayOfWeek.Friday:
+                            days = days - ((weekReminder > 1) ? 1 : 0) - ((weekReminder > 2) ? 1 : 0);
+                            break;
+                        case DayOfWeek.Saturday:
+                            days = days - 1 - ((weekReminder > 1) ? 1 : 0);
+                            break;
+                        case DayOfWeek.Sunday:
+                            days = days - 1;
+                            break;
+                    }
+                }
+                days = days - (2 * ((int)days / 7));
+                
+                if (isNegative)
+                    return int.Parse(string.Format("-{0}", days));
+
+                return days;
+            }
+            catch (Exception ex)
+            {
+                LoggingServices.LogException(ex);
+                return 0;
+            }
+        }
 
         #region Removes
         public static CapXuLy CurrentUserRole(SPWeb spWeb, SPUser user)
@@ -525,7 +604,7 @@ namespace LongAn.DVC.Helpers
         {
             try
             {
-                LoggingServices.LogMessage("Begin AddDeNghiHistory");
+                LoggingServices.LogMessage("Begin AddDeNghiHistory - Biên nhận: " + title);
                 SPSecurity.RunWithElevatedPrivileges(delegate()
                 {
                     using (SPSite site = new SPSite(spWeb.Site.ID))
@@ -553,7 +632,7 @@ namespace LongAn.DVC.Helpers
             {
                 LoggingServices.LogException(ex);
             }
-            LoggingServices.LogMessage("End AddDeNghiHistory");
+            LoggingServices.LogMessage("End AddDeNghiHistory - Biên nhận: " + title);
         }
 
 

@@ -11,54 +11,123 @@
 <link rel="stylesheet" href="/_layouts/15/LongAn.DVC.Form/css/jquery-ui.min.css"/>
 <link rel="stylesheet" href="/_layouts/15/LongAn.DVC.Form/css/superfish.css"/>
 <link rel="stylesheet" href="/_layouts/15/LongAn.DVC.Form/css/main.css"/>
+<link rel="stylesheet" href="/_layouts/15/LongAn.DVC.Form/css/main1.css"/>
 <link href="/_layouts/15/LongAn.DVC.Form/css/form.main.custom.css" rel="stylesheet" />
 
+<script>
+    $(document).ready(function () {
+        var searchExpandValue = $("[id$='_hdfSearchExpand']").val();
+        if (searchExpandValue == "1") {
+            $("#linkSearchExpand").addClass("expanded");
+            $("#searchform").show();
+        }
+        $("#linkSearchExpand").click(function () {
+            $("#searchform").toggle("slow");
+            if ($("[id$='_hdfSearchExpand']").val() == "1") {
+                $("[id$='_hdfSearchExpand']").val("0");
+                $("#linkSearchExpand").removeClass("expanded");
+            }
+            else {
+                $("[id$='_hdfSearchExpand']").val("1");
+                $("#linkSearchExpand").addClass("expanded");
+            }
+        });
+    });
+</script>
 
 <div class="">
 	<div class="row">
 		<div class="grid_12" id="main-frame">
-			<div id="top-control">
-				<asp:HyperLink ID="hplTrangChu" CssClass="button large-button home" Visible="false" runat="server">Trang chủ</asp:HyperLink>
-                <asp:HyperLink ID="hplDanhSachDeNghi" CssClass="button large-button done" runat="server">Danh sách đề nghị</asp:HyperLink>
-                <asp:HyperLink ID="hplThongTinHuongDan" CssClass="button large-button stat" runat="server">Thông tin hướng dẫn</asp:HyperLink>
-				<div class="clear"></div>
-			</div>
-            <div class="row">
+			<div class="row">
                 <div class="pull-left">
                     <h2 class="page-header">
 				        <asp:Literal ID="literalDeNghiTitle" runat="server"></asp:Literal>
 			        </h2>
                 </div>
-
                 <div class="pull-right">
-                    <asp:HyperLink ID="hplAddNew" CssClass="button add-new" style="margin-top: 30px"  runat="server">Thêm mới</asp:HyperLink>
-			    </div>
-
+                    <div class="pull-left-search">
+                        <a id="linkSearchExpand" href="#" class="button button-expand inline-block">Tìm kiếm</a>
+                        <asp:HiddenField ID="hdfSearchExpand" Value="0" runat="server" />
+                        <asp:HiddenField ID="hdfCurrentUrl" Value="0" runat="server" />
+                        <asp:HiddenField ID="hdfDeNghiUrl" Value="0" runat="server" />
+                    </div>
+                    <div class="pull-left-add" id="divAddNew" runat="server" visible="false">
+                        <asp:HyperLink ID="hplAddNew" CssClass="button add-new inline-block danger" runat="server">Thêm mới</asp:HyperLink>
+			        </div>
+                </div>
+                
                 <div class="clear"></div>
             </div>
+			
+			<div class="the-form" id="searchform" style="display:none;">
+				<div class="row line">
+					<div class="grid_2" style="text-align:right;">
+						Mã biên nhận:
+					</div>
+					<div class="grid_3">
+						<asp:TextBox ID="txtTuKhoa" runat="server"></asp:TextBox>
+					</div>
 
-			<div class="clearfix"></div>
+					<div class="grid_2" style="text-align:right;">
+						Đơn vị:
+					</div>
+					<div class="grid_4">
+						<asp:TextBox ID="txtCaNhanToChuc" runat="server"></asp:TextBox>
+					</div>
+					<div class="clear"></div>
+				</div>
+                <div class="row line">
+					<div class="grid_2" style="text-align:right;">
+						Số điện thoại:
+					</div>
+					<div class="grid_3">
+						<asp:TextBox ID="txtSoDienThoai" runat="server"></asp:TextBox>
+					</div>
+                    
+					<div class="grid_2" style="text-align:right;">
+						Ngày đề nghị:
+					</div>
+					<div class="grid_2">
+						<SharePoint:DateTimeControl ID="dtcNgayDeNghiTu" DateOnly="true" LocaleId="1066" runat="server" />
+					</div>
+                    <div class="grid_2">
+                        <SharePoint:DateTimeControl ID="dtcNgayDeNghiDen" DateOnly="true" LocaleId="1066" runat="server" />
+                    </div>
+					<div class="clear"></div>
+				</div>
+				<div class="row line">
+                    <div class="grid_5">&nbsp;</div>
+					<div class="grid_2">
+						<asp:Button ID="btnTimKiem" runat="server" Text="Tìm kiếm" CssClass="button search" align="middle" />
+					</div>
+                    <div class="grid_5">&nbsp;</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+
+            <div class="clearfix"></div>
 			
             <table class="the-table">
-                <tr style="height: 50px;">
+				<tr style="height: 50px;">
                     <th>STT</th>
-                    <th>Mã biên nhận</th>
+                    <th>Biên nhận</th>
+                    <th>Đơn vị đề nghị</th>
                     <th>Loại đề nghị</th>
                     <th>Ngày nộp hồ sơ</th>
                     <th>Trạng thái</th>
-                    <th>Xem</th>
-                    <th>Sửa</th>
-                    <th>Xóa</th>
-                    <th>Nộp</th>
+                    <th colspan="1">Thao tác</th>
                 </tr>
-                <asp:Repeater ID="repeaterLists" runat="server">
+                <asp:Repeater ID="repeaterLists" runat="server"  OnItemCommand="repeaterLists_ItemCommand" OnItemDataBound="repeaterLists_ItemDataBound">
                     <ItemTemplate>
                         <tr class="<%#(((RepeaterItem)Container).ItemIndex+1) % 2 == 0 ? "even" : "odd" %>">
                             <td>
                                 <asp:Literal ID="literalSTT" runat="server" Text="<%#(((RepeaterItem)Container).ItemIndex+1) %>"></asp:Literal>
                             </td>
                             <td>
-                                <asp:Literal ID="literalMaBienNhan" runat="server"></asp:Literal>
+                                <asp:Literal ID="literalTitle" runat="server"></asp:Literal>
+                            </td>
+                            <td>
+                                <asp:Literal ID="literalCaNhanToChuc" runat="server"></asp:Literal>
                             </td>
                             <td>
                                 <asp:Literal ID="literalLoaiCapPhep" runat="server"></asp:Literal>
@@ -69,27 +138,23 @@
                             <td>
                                 <asp:Literal ID="literalTrangThai" runat="server"></asp:Literal>
                             </td>
+                            
                             <td>
-                                <%--<asp:LinkButton ID="lbtViewItem" CssClass="button view just-icon" runat="server"></asp:LinkButton>--%>
-                                <asp:HyperLink ID="lbtViewItem" ToolTip="Xem thông tin hồ sơ" CssClass="button view just-icon" runat="server"></asp:HyperLink>
+                                <asp:HyperLink ID="hplXuLy" ToolTip="Xử lý hồ sơ" CssClass="button view just-icon" runat="server"></asp:HyperLink>
+                            </td>
+                            <%--<td>
+                                <asp:HyperLink ID="hplChinhSuaBoSung" ToolTip="Chỉnh sửa / Bổ sung hồ sơ" CssClass="button edit just-icon" style="display:none;" runat="server"></asp:HyperLink>
                             </td>
                             <td>
-                                <%--<asp:LinkButton ID="lbtEditItem" CssClass="button edit just-icon" runat="server"></asp:LinkButton>--%>
-                                <asp:HyperLink ID="lbtEditItem" ToolTip="Chỉnh sửa đề nghị" CssClass="button edit just-icon" runat="server"></asp:HyperLink>
-                                <asp:LinkButton ID="lbtDisable1" ToolTip="Disabled" Enabled="false" CssClass="button just-icon" style="display:none;" runat="server"></asp:LinkButton>
+                                <asp:LinkButton ID="lbtPrintBienNhan" ToolTip="In Biên nhận" CssClass="button printer just-icon" style="display:none;" runat="server"></asp:LinkButton>
                             </td>
                             <td>
-                                <asp:LinkButton ID="lbtDeleteItem" ToolTip="Xóa đề nghị" CssClass="button remove danger just-icon" runat="server"></asp:LinkButton>
-                                <asp:LinkButton ID="lbtDisable2" ToolTip="Disabled" Enabled="false" CssClass="button just-icon" style="display:none;" runat="server"></asp:LinkButton>
-                            </td>
-                            <td>
-                                <asp:LinkButton ID="lbtNopHoSo" ToolTip="Nộp hồ sơ" CssClass="button up just-icon" runat="server"></asp:LinkButton>
-                                <asp:LinkButton ID="lbtDisable3" ToolTip="Disabled" Enabled="false" CssClass="button just-icon" style="display:none;" runat="server"></asp:LinkButton>
-                            </td>
+                                <asp:LinkButton ID="lbtPrintGiayPhep" ToolTip="In Giấy phép" CssClass="button printer just-icon" style="display:none;" runat="server"></asp:LinkButton>
+                            </td>--%>
                         </tr>
                     </ItemTemplate>
                 </asp:Repeater>
-            </table>
+			</table>
 
 			<div id="divPagging" visible="false" runat="server" class="pag pull-right">
                 <%--<button class="button begin small"></button>--%>
