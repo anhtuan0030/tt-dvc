@@ -41,7 +41,7 @@ namespace LongAn.DVC.Features.Feature1
             
 
             //provision DVC Master page
-            web.MasterUrl = site.RootWeb.ServerRelativeUrl + "_catalogs/masterpage/DVC.master";
+            web.MasterUrl = site.RootWeb.ServerRelativeUrl + "_catalogs/masterpage/DVC_Admin.master";
             web.CustomMasterUrl = site.RootWeb.ServerRelativeUrl + "_catalogs/masterpage/DVC.master";
             web.Update();
         }

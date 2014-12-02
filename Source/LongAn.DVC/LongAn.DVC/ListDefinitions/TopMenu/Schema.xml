@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<List xmlns:ows="Microsoft SharePoint" Title="TopMenu" FolderCreation="FALSE" Direction="$Resources:Direction;" Url="Lists/TopMenu" BaseType="0" xmlns="http://schemas.microsoft.com/sharepoint/">
+  <MetaData>
+    <ContentTypes>
+      <ContentType ID="0x010050AD8019C5D440748D0A9FAAD52089AA" Name="$Resources:core,Item;" Group="$Resources:core,List_Content_Types;" Description="$Resources:core,ItemCTDesc;">
+        <FieldRefs>
+          <FieldRef ID="{fa564e0f-0c70-4ab9-b863-0177e6ddd247}" Name="Title"/>
+          <FieldRef ID="{064327E3-7A2C-4503-A653-78DB22BFE8B4}" Name="Hyperlink" />
+
+          <FieldRef ID="{292FB416-C0FC-4BE3-AE3F-14237EBAEA95}" Name="Parent"/>
+
+          <FieldRef ID="{A5A02209-227B-46C1-8EEA-4D00F992EEB6}" Name="ItemOrder"/>
+          <FieldRef ID="{179E03CC-6B68-42E8-8AED-9DA22DEF03E2}" Name="IsActive"/>
+        </FieldRefs>
+      </ContentType>
+    </ContentTypes>
+    <Fields>
+      <Field ID="{fa564e0f-0c70-4ab9-b863-0177e6ddd247}" Type="Text" Name="Title" DisplayName="Tiêu đề" Required="TRUE" SourceID="http://schemas.microsoft.com/sharepoint/v3" StaticName="Title" MaxLength="255" />
+      <Field Name="LinkTitle" ID="{82642ec8-ef9b-478f-acf9-31f7d45fbc31}" DisplayName="Tiêu đề" Sealed="TRUE" Type="Calculated"/>
+      <Field Name="LinkTitleNoMenu" ID="{bc91a437-52e7-49e1-8c4e-4698904b2b6d}" DisplayName="Tiêu đề" Sealed="TRUE" Type="Calculated"/>
+
+      <Field ID="{064327E3-7A2C-4503-A653-78DB22BFE8B4}" Type="Text" Name="Hyperlink" StaticName="Hyperlink" DisplayName="Hyperlink" Required="TRUE" Description="Điền dấu # nếu không muốn gán link"/>
+
+      <Field ID="{292FB416-C0FC-4BE3-AE3F-14237EBAEA95}" Type="Lookup" ShowField="Title" Name="Parent" StaticName="Parent" DisplayName="Cấp cha" List="Self"/>
+
+      <Field ID="{A5A02209-227B-46C1-8EEA-4D00F992EEB6}" Name="ItemOrder" StaticName="ItemOrder" DisplayName="Thứ tự hiển thị" Type="Number" Description="Hệ thống sẽ tự gán vị trí hiển thị cuối cùng nếu để trống" Min="1" Max="999999999" />
+      <Field Type="Boolean" ID="{179E03CC-6B68-42E8-8AED-9DA22DEF03E2}" StaticName="IsActive" Name="IsActive" DisplayName="Is Active">
+        <Default>1</Default>
+      </Field>
+    </Fields>
+    <Views>
+      <View BaseViewID="0" Type="HTML" MobileView="TRUE" TabularView="FALSE">
+        <Toolbar Type="Standard" />
+        <XslLink Default="TRUE">main.xsl</XslLink>
+        <RowLimit Paged="TRUE">30</RowLimit>
+        <ViewFields>
+          <FieldRef Name="LinkTitleNoMenu"></FieldRef>
+        </ViewFields>
+        <Query>
+          <OrderBy>
+            <FieldRef Name="Modified" Ascending="FALSE"></FieldRef>
+          </OrderBy>
+        </Query>
+        <ParameterBindings>
+          <ParameterBinding Name="AddNewAnnouncement" Location="Resource(wss,addnewitem)" />
+          <ParameterBinding Name="NoAnnouncements" Location="Resource(wss,noXinviewofY_LIST)" />
+          <ParameterBinding Name="NoAnnouncementsHowTo" Location="Resource(wss,noXinviewofY_ONET_HOME)" />
+        </ParameterBindings>
+      </View>
+      <View BaseViewID="1" Type="HTML" WebPartZoneID="Main" DisplayName="$Resources:core,objectiv_schema_mwsidcamlidC24;" DefaultView="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" SetupPath="pages\viewpage.aspx" ImageUrl="/_layouts/15/images/generic.png?rev=23" Url="AllItems.aspx">
+        <Toolbar Type="Standard" />
+        <XslLink Default="TRUE">main.xsl</XslLink>
+        <JSLink>clienttemplates.js</JSLink>
+        <RowLimit Paged="TRUE">100</RowLimit>
+        <ViewFields>
+          <FieldRef Name="ItemOrder"></FieldRef>
+          <FieldRef Name="LinkTitle"></FieldRef>
+          <FieldRef Name="Hyperlink"></FieldRef>
+          <FieldRef Name="Parent"></FieldRef>
+          <FieldRef Name="IsActive"></FieldRef>
+        </ViewFields>
+        <Query>
+          <GroupBy Collapse="FALSE" GroupLimit="30">
+            <FieldRef Name="Parent" />
+          </GroupBy>
+          <OrderBy>
+            <FieldRef Name="ItemOrder"></FieldRef>
+          </OrderBy>
+        </Query>
+        <ParameterBindings>
+          <ParameterBinding Name="NoAnnouncements" Location="Resource(wss,noXinviewofY_LIST)" />
+          <ParameterBinding Name="NoAnnouncementsHowTo" Location="Resource(wss,noXinviewofY_DEFAULT)" />
+        </ParameterBindings>
+      </View>
+    </Views>
+    <Forms>
+      <Form Type="DisplayForm" Url="DispForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
+      <Form Type="EditForm" Url="EditForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
+      <Form Type="NewForm" Url="NewForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
+    </Forms>
+  </MetaData>
+</List>

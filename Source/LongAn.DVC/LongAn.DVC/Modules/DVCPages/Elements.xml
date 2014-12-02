@@ -223,7 +223,7 @@
 
     <File Path="DVCPages\BlankPage.aspx" Url="DeNghiCapPhep.aspx" Type="GhostableInLibrary" ReplaceContent="TRUE" >
       <Property Name="Title" Value="Đề nghị cấp phép"/>
-      <Property Name="PublishingPageLayout" Value="~SiteCollection/_catalogs/masterpage/DVCWebPartPage_Manage.aspx, DVC WebPart page - Manage"/>
+      <Property Name="PublishingPageLayout" Value="~SiteCollection/_catalogs/masterpage/DVCWebPartPage_Home.aspx, DVC WebPart page - Home"/>
 
       <AllUsersWebPart WebPartOrder ="0" WebPartZoneID ="Header">
         <![CDATA[ 
@@ -252,6 +252,71 @@
 
     </File>
 
+
+
+    <File Path="DVCPages\BlankPage.aspx" Url="HoSoCanXuLy.aspx" Type="GhostableInLibrary" ReplaceContent="TRUE" >
+      <Property Name="Title" Value="Hồ sơ cần xử lý"/>
+      <Property Name="PublishingPageLayout" Value="~SiteCollection/_catalogs/masterpage/DVCWebPartPage_Manage.aspx, DVC WebPart page - Manage"/>
+
+      <AllUsersWebPart WebPartOrder ="0" WebPartZoneID ="Header">
+        <![CDATA[ 
+<webParts>
+  <webPart xmlns="http://schemas.microsoft.com/WebPart/v3">
+    <metaData>
+      <type name="LongAn.DVC.WebParts.DeNghiListViewTotal.DeNghiListViewTotal, LongAn.DVC, Version=1.0.0.0, Culture=neutral, PublicKeyToken=53c9d9f0542abb89" />
+      <importErrorMessage>$Resources:core,ImportErrorMessage;</importErrorMessage>
+    </metaData>
+    <data>
+      <properties>
+        <property name="Title" type="string">Đề nghị list view V2</property>
+        <property name="Description" type="string">Đề nghị list view Visual Web Part V2</property>
+        <property name="ChromeType" type="chrometype">None</property>
+        <property name="PageSize" type="int">10</property>
+        <property name="DeNghiTitle" type="string">Hồ sơ cần xử lý</property>
+        <property name="Option" type="DeNghiOption">Handle</property>
+      </properties>
+    </data>
+  </webPart>
+</webParts>
+]]>
+      </AllUsersWebPart>
+
+    </File>
+
+
+
+    <File Path="DVCPages\BlankPage.aspx" Url="HoSoDaThamGiaXuLy.aspx" Type="GhostableInLibrary" ReplaceContent="TRUE" >
+      <Property Name="Title" Value="Hồ sơ đã tham gia xử lý"/>
+      <Property Name="PublishingPageLayout" Value="~SiteCollection/_catalogs/masterpage/DVCWebPartPage_Manage.aspx, DVC WebPart page - Manage"/>
+
+      <AllUsersWebPart WebPartOrder ="0" WebPartZoneID ="Header">
+        <![CDATA[ 
+<webParts>
+  <webPart xmlns="http://schemas.microsoft.com/WebPart/v3">
+    <metaData>
+      <type name="LongAn.DVC.WebParts.DeNghiListViewTotal.DeNghiListViewTotal, LongAn.DVC, Version=1.0.0.0, Culture=neutral, PublicKeyToken=53c9d9f0542abb89" />
+      <importErrorMessage>$Resources:core,ImportErrorMessage;</importErrorMessage>
+    </metaData>
+    <data>
+      <properties>
+        <property name="Title" type="string">Đề nghị list view V2</property>
+        <property name="Description" type="string">Đề nghị list view Visual Web Part V2</property>
+        <property name="ChromeType" type="chrometype">None</property>
+        <property name="PageSize" type="int">10</property>
+        <property name="DeNghiTitle" type="string">Hồ sơ đã tham gia xử lý</property>
+        <property name="Option" type="DeNghiOption">Joined</property>
+      </properties>
+    </data>
+  </webPart>
+</webParts>
+]]>
+      </AllUsersWebPart>
+
+    </File>
+
+
+    <!--
+    
     <File Path="DVCPages\BlankPage.aspx" Url="HoSoChoTiepNhan.aspx" Type="GhostableInLibrary" ReplaceContent="TRUE" >
       <Property Name="Title" Value="Hồ sơ chờ tiếp nhận"/>
       <Property Name="PublishingPageLayout" Value="~SiteCollection/_catalogs/masterpage/DVCWebPartPage_Manage.aspx, DVC WebPart page - Manage"/>
@@ -499,6 +564,8 @@
       </AllUsersWebPart>
     </File>
 
+   
+    
     <File Path="DVCPages\BlankPage.aspx" Url="HoSoChoCapPhep.aspx" Type="GhostableInLibrary" ReplaceContent="TRUE" >
       <Property Name="Title" Value="Hồ sơ chờ cấp phép"/>
       <Property Name="PublishingPageLayout" Value="~SiteCollection/_catalogs/masterpage/DVCWebPartPage_Manage.aspx, DVC WebPart page - Manage"/>
@@ -698,6 +765,9 @@
 ]]>
       </AllUsersWebPart>
     </File>
+    
+        -->
+    
     
     <File Path="DVCPages\BlankPage.aspx" Url="BaoCaoThongKe.aspx" Type="GhostableInLibrary" ReplaceContent="TRUE" >
       <Property Name="Title" Value="Báo cáo thống kê"/>

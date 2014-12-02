@@ -205,6 +205,16 @@ namespace LongAn.DVC.Common
         public const string CauHinh_PCHS = "Phân công hồ sơ";
         public const string CauHinh_TCHS = "Từ chối hồ sơ";
         public const string CauHinh_TNHS = "Tiếp nhận hồ sơ";
+
+        public class TopMenu
+        {
+            public const string LIST_URL = "/Lists/TopMenu";
+            public const string TITLE_COLUMN = "Title";
+            public const string HYPERLINK_COLUMN = "Hyperlink";
+            public const string PARENT_COLUMN = "Parent";
+            public const string ITEM_ORDER_COLUMN = "ItemOrder";
+            public const string IS_ACTIVE_COLUMN = "IsActive";
+        }
     }
 
     public class Fields {

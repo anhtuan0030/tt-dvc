@@ -621,18 +621,19 @@ namespace LongAn.DVC.WebParts.DeNghiListViewUsers {
                         "s\"/>\r\n<link rel=\"stylesheet\" href=\"/_layouts/15/LongAn.DVC.Form/css/main.css\"/>\r" +
                         "\n<link rel=\"stylesheet\" href=\"/_layouts/15/LongAn.DVC.Form/css/main1.css\"/>\r\n<li" +
                         "nk href=\"/_layouts/15/LongAn.DVC.Form/css/form.main.custom.css\" rel=\"stylesheet\"" +
-                        " />\r\n\r\n<script>\r\n    $(document).ready(function () {\r\n        var searchExpandVa" +
-                        "lue = $(\"[id$=\'_hdfSearchExpand\']\").val();\r\n        if (searchExpandValue == \"1\"" +
-                        ") {\r\n            $(\"#linkSearchExpand\").addClass(\"expanded\");\r\n            $(\"#s" +
-                        "earchform\").show();\r\n        }\r\n        $(\"#linkSearchExpand\").click(function ()" +
-                        " {\r\n            $(\"#searchform\").toggle(\"slow\");\r\n            if ($(\"[id$=\'_hdfS" +
-                        "earchExpand\']\").val() == \"1\") {\r\n                $(\"[id$=\'_hdfSearchExpand\']\").v" +
-                        "al(\"0\");\r\n                $(\"#linkSearchExpand\").removeClass(\"expanded\");\r\n     " +
-                        "       }\r\n            else {\r\n                $(\"[id$=\'_hdfSearchExpand\']\").val(" +
-                        "\"1\");\r\n                $(\"#linkSearchExpand\").addClass(\"expanded\");\r\n           " +
-                        " }\r\n        });\r\n    });\r\n</script>\r\n\r\n<div class=\"\">\r\n\t<div class=\"row\">\r\n\t\t<di" +
-                        "v class=\"grid_12\" id=\"main-frame\">\r\n\t\t\t<div class=\"row\">\r\n                <div c" +
-                        "lass=\"pull-left\">\r\n                    <h2 class=\"page-header\">\r\n\t\t\t\t        "));
+                        " />\r\n\r\n<style>\r\n\r\n#searchform .button {\r\n    width: 120px;\r\n}\r\n</style>\r\n\r\n<scri" +
+                        "pt>\r\n    $(document).ready(function () {\r\n        var searchExpandValue = $(\"[id" +
+                        "$=\'_hdfSearchExpand\']\").val();\r\n        if (searchExpandValue == \"1\") {\r\n       " +
+                        "     $(\"#linkSearchExpand\").addClass(\"expanded\");\r\n            $(\"#searchform\")." +
+                        "show();\r\n        }\r\n        $(\"#linkSearchExpand\").click(function () {\r\n        " +
+                        "    $(\"#searchform\").toggle(\"slow\");\r\n            if ($(\"[id$=\'_hdfSearchExpand\'" +
+                        "]\").val() == \"1\") {\r\n                $(\"[id$=\'_hdfSearchExpand\']\").val(\"0\");\r\n  " +
+                        "              $(\"#linkSearchExpand\").removeClass(\"expanded\");\r\n            }\r\n  " +
+                        "          else {\r\n                $(\"[id$=\'_hdfSearchExpand\']\").val(\"1\");\r\n     " +
+                        "           $(\"#linkSearchExpand\").addClass(\"expanded\");\r\n            }\r\n        " +
+                        "});\r\n    });\r\n</script>\r\n\r\n<div class=\"\">\r\n\t<div class=\"row\">\r\n\t\t<div class=\"gri" +
+                        "d_12\" id=\"main-frame\">\r\n\t\t\t<div class=\"row\">\r\n                <div class=\"pull-l" +
+                        "eft\">\r\n                    <h2 class=\"page-header\">\r\n\t\t\t\t        "));
             global::System.Web.UI.WebControls.Literal @__ctrl1;
             @__ctrl1 = this.@__BuildControlliteralDeNghiTitle();
             @__parser.AddParsedSubObject(@__ctrl1);

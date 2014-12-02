@@ -47,7 +47,11 @@
 <SharePoint:CssRegistration Name="/_layouts/15/LongAn.DVC/css/fluid_grid.css" runat="server" />
 <SharePoint:CssRegistration Name="/_layouts/15/LongAn.DVC/css/superfish.css" runat="server" />
 <SharePoint:CssRegistration Name="/_layouts/15/LongAn.DVC/css/main.css" runat="server" />
-
+<style type="text/css">
+#contentBox {
+  margin-left: 220px !important;
+}
+</style>
 </head>
 
 <body>
@@ -525,7 +529,7 @@
             </div>
 		<div id="contentRow">
 <div id="sideNavBox"
-	 class="ms-dialogHidden ms-forceWrap ms-noList" style="display:none">
+	 class="ms-dialogHidden ms-forceWrap ms-noList">
   <SharePoint:AjaxDelta id="DeltaPlaceHolderLeftNavBar" BlockElement="true" CssClass="ms-core-navigation" role="navigation" runat="server">
 	<asp:ContentPlaceHolder id="PlaceHolderLeftNavBar" runat="server">
 				<a id="startNavigation" name="startNavigation" tabIndex="-1"></a>
@@ -623,6 +627,9 @@
 		<asp:ContentPlaceHolder id="PlaceHolderMain" runat="server" />
 	</SharePoint:AjaxDelta>
 </div>
+
+<div style='clear:both'></div>
+
 <SharePoint:AjaxDelta id="DeltaFormDigest" BlockElement="true" runat="server">
 	<asp:ContentPlaceHolder id="PlaceHolderFormDigest" runat="server">
 		<SharePoint:FormDigest runat="server"/>

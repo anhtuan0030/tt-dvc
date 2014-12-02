@@ -14,6 +14,13 @@
 <link rel="stylesheet" href="/_layouts/15/LongAn.DVC.Form/css/main1.css"/>
 <link href="/_layouts/15/LongAn.DVC.Form/css/form.main.custom.css" rel="stylesheet" />
 
+<style>
+
+#searchform .button {
+    width: 120px;
+}
+</style>
+
 <script>
     $(document).ready(function () {
         var searchExpandValue = $("[id$='_hdfSearchExpand']").val();
