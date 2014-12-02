@@ -5,5 +5,6 @@
     <ProjectItemFile Source="DVC.master" Target="DVCMasterPage\" Type="ElementFile" />
     <ProjectItemFile Source="DVCWebPartPage_Home.aspx" Target="DVCMasterPage\" Type="ElementFile" />
     <ProjectItemFile Source="DVCWebPartPage_Manage.aspx" Target="DVCMasterPage\" Type="ElementFile" />
+    <ProjectItemFile Source="DVC_Admin.master" Target="DVCMasterPage\" Type="ElementFile" />
   </Files>
 </ProjectItem>

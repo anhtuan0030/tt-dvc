@@ -143,8 +143,7 @@
                     Name="IsPhanCong" />
           <!--<FieldRef ID="{e8ed953d-c8e5-4665-8b23-e9592be1ce51}"
                     Name="IsXuLyPhanCong" />-->
-          <FieldRef ID="{bf80c732-39e7-4747-b014-d1fb839a2b61}"
-                    Name="IsEnd" />
+
           <FieldRef ID="{eefde6c8-47bb-403d-91c9-a0a0a2181f2c}"
                     Name="IsEmail" />
           <FieldRef ID="{8eecc07d-1c81-405f-9639-0c80c230a49a}"

@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <ListInstance Title="TopMenu" OnQuickLaunch="TRUE" TemplateType="10100" Url="Lists/TopMenu" Description="">
+    <Data>
+      <Rows>
+        <Row>
+          <Field Name="ID">1</Field>
+          <Field Name="Title">Giới thiệu Dịch vụ công</Field>
+          <Field Name="Hyperlink">/</Field>
+          <Field Name="Parent"></Field>
+          <Field Name="ItemOrder">1</Field>
+          <Field Name="IsActive">1</Field>
+        </Row>
+
+        <Row>
+          <Field Name="ID">2</Field>
+          <Field Name="Title">Đăng ký Dịch vụ công</Field>
+          <Field Name="Hyperlink">/Pages/DeNghiCapPhep.aspx</Field>
+          <Field Name="Parent"></Field>
+          <Field Name="ItemOrder">2</Field>
+          <Field Name="IsActive">1</Field>
+        </Row>
+
+        <Row>
+          <Field Name="ID">3</Field>
+          <Field Name="Title">Tra cứu hồ sơ</Field>
+          <Field Name="Hyperlink">/Pages/TraCuuHoSo.aspx</Field>
+          <Field Name="Parent"></Field>
+          <Field Name="ItemOrder">3</Field>
+          <Field Name="IsActive">1</Field>
+        </Row>
+
+        <Row>
+          <Field Name="ID">4</Field>
+          <Field Name="Title">Quản lý hồ sơ</Field>
+          <Field Name="Hyperlink">#</Field>
+          <Field Name="Parent"></Field>
+          <Field Name="ItemOrder">4</Field>
+          <Field Name="IsActive">1</Field>
+        </Row>
+
+        <Row>
+          <Field Name="ID">5</Field>
+          <Field Name="Title">Hồ sơ cần xử lý</Field>
+          <Field Name="Hyperlink">/Pages/HoSoCanXuLy.aspx</Field>
+          <Field Name="Parent">4</Field>
+          <Field Name="ItemOrder">1</Field>
+          <Field Name="IsActive">1</Field>
+        </Row>
+
+        <Row>
+          <Field Name="ID">6</Field>
+          <Field Name="Title">Hồ sơ đã tham gia xử lý</Field>
+          <Field Name="Hyperlink">/Pages/HoSoDaThamGiaXuLy.aspx</Field>
+          <Field Name="Parent">4</Field>
+          <Field Name="ItemOrder">2</Field>
+          <Field Name="IsActive">1</Field>
+        </Row>
+        
+        <Row>
+          <Field Name="ID">7</Field>
+          <Field Name="Title">Báo cáo thống kê</Field>
+          <Field Name="Hyperlink">/Pages/BaoCaoThongKe.aspx</Field>
+          <Field Name="Parent">4</Field>
+          <Field Name="ItemOrder">3</Field>
+          <Field Name="IsActive">1</Field>
+        </Row>
+        
+        <Row>
+          <Field Name="ID">8</Field>
+          <Field Name="Title">Lịch sử luân chuyển hồ sơ</Field>
+          <Field Name="Hyperlink">/Pages/LichSuLuanChuyenHoSo.aspx</Field>
+          <Field Name="Parent">4</Field>
+          <Field Name="ItemOrder">4</Field>
+          <Field Name="IsActive">1</Field>
+        </Row>   
+      </Rows>
+    </Data>
+  </ListInstance>
+</Elements>

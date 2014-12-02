@@ -43,15 +43,15 @@ namespace LongAn.DVC.WebParts.DeNghiReport
                 {
                     HttpContext.Current.Response.Redirect(SPContext.Current.Web.ServerRelativeUrl);
                 }
-                else
-                {
-                    var currentUserRole = DeNghiHelper.CurrentUserRole(SPContext.Current.Web, SPContext.Current.Web.CurrentUser);
+                //else
+                //{
+                //    var currentUserRole = DeNghiHelper.CurrentUserRole(SPContext.Current.Web, SPContext.Current.Web.CurrentUser);
 
-                    if (currentUserRole == CapXuLy.CaNhanToChuc)
-                    {
-                        HttpContext.Current.Response.Redirect(SPContext.Current.Web.ServerRelativeUrl);
-                    }
-                }
+                //    if (currentUserRole == CapXuLy.CaNhanToChuc)
+                //    {
+                //        HttpContext.Current.Response.Redirect(SPContext.Current.Web.ServerRelativeUrl);
+                //    }
+                //}
             }
         }
 

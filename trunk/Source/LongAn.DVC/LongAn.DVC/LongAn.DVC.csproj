@@ -112,6 +112,7 @@
       <DependentUpon>ucUserAuthenticationBox.ascx.cs</DependentUpon>
     </Compile>
     <Compile Include="EventReceivers\DeNghiCapPhepXeEvent.cs" />
+    <Compile Include="EventReceivers\TopMenuER\TopMenuER.cs" />
     <Compile Include="Features\LongAn.DVC.Site.Pages\LongAn.DVC.Site.Pages.EventReceiver.cs">
       <DependentUpon>LongAn.DVC.Site.Pages.feature</DependentUpon>
     </Compile>
@@ -223,8 +224,21 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DeNghiSearch.ascx</DependentUpon>
     </Compile>
+    <Compile Include="WebParts\TopMenu\TopMenu.cs" />
+    <Compile Include="WebParts\TopMenu\TopMenuUserControl.ascx.cs">
+      <DependentUpon>TopMenuUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebParts\TopMenu\TopMenuUserControl.ascx.designer.cs">
+      <DependentUpon>TopMenuUserControl.ascx.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="WebParts\TopMenu\Elements.xml" />
+    <Content Include="WebParts\TopMenu\TopMenuUserControl.ascx" />
+    <None Include="EventReceivers\TopMenuER\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{78506120-a757-4748-89ad-9e0247dc1dc3}</SharePointProjectItemId>
+    </None>
     <None Include="Fields\SiteColumn\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{aa3ce8fd-b1c6-4cd8-8fce-eca431dba944}</SharePointProjectItemId>
     </None>
@@ -243,6 +257,7 @@
     <None Include="key.snk" />
     <Content Include="ControlTemplates\LongAn.DVC\ucCustomTopMenuDVCByUserPermission.ascx" />
     <Content Include="ControlTemplates\LongAn.DVC\ucUserAuthenticationBox.ascx" />
+    <Content Include="EventReceivers\TopMenuER\Elements.xml" />
     <Content Include="Layouts\LongAn.DVC.Form\css\main1.css" />
     <Content Include="Layouts\LongAn.DVC.Form\images\add100.png" />
     <Content Include="Layouts\LongAn.DVC.Form\images\add118.png" />
@@ -404,6 +419,12 @@
     <None Include="ListDefinitions\ThamSo\ThamSoInstance\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{1444e28b-032d-45f8-9ac9-8112a4ba54f6}</SharePointProjectItemId>
     </None>
+    <None Include="ListDefinitions\TopMenu\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{457f06a4-ed27-4d7f-9e50-924c9476fa3b}</SharePointProjectItemId>
+    </None>
+    <None Include="ListDefinitions\TopMenu\TopMenuInstance\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{5165102f-bc4e-4489-bb16-9853d0679a9b}</SharePointProjectItemId>
+    </None>
     <None Include="ListDefinitions\TrangThai\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{e1ac68d3-08a5-4d4f-8b5b-34c5b55cdfea}</SharePointProjectItemId>
     </None>
@@ -419,6 +440,7 @@
     <None Include="Modules\DelegateControlsElements\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{2e453db1-500c-4568-b73d-9de530082008}</SharePointProjectItemId>
     </None>
+    <None Include="Modules\DVCMasterPage\DVC_Admin.master" />
     <None Include="Modules\DVCMasterPage\DVC.master" />
     <None Include="Modules\DVCMasterPage\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{de056ed3-43f9-4dfe-8c29-0ea15883980a}</SharePointProjectItemId>
@@ -467,6 +489,10 @@
     <None Include="WebParts\DeNghiSearch\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{59b1fafa-abee-4313-b46d-4bbf85d86457}</SharePointProjectItemId>
     </None>
+    <None Include="WebParts\TopMenu\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{9b753f99-2e78-4a16-9d91-27fcd3a8f86d}</SharePointProjectItemId>
+    </None>
+    <None Include="WebParts\TopMenu\TopMenu.webpart" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LongAn.DVC.Common\LongAn.DVC.Common.csproj">
@@ -575,6 +601,9 @@
     <Content Include="ListDefinitions\ThamSo\Elements.xml" />
     <Content Include="ListDefinitions\ThamSo\Schema.xml" />
     <Content Include="ListDefinitions\ThamSo\ThamSoInstance\Elements.xml" />
+    <Content Include="ListDefinitions\TopMenu\Elements.xml" />
+    <Content Include="ListDefinitions\TopMenu\Schema.xml" />
+    <Content Include="ListDefinitions\TopMenu\TopMenuInstance\Elements.xml" />
     <Content Include="ListDefinitions\TrangThai\Elements.xml" />
     <Content Include="ListDefinitions\TrangThai\Schema.xml" />
     <Content Include="ListDefinitions\TrangThai\TrangThaiInstance\Elements.xml" />

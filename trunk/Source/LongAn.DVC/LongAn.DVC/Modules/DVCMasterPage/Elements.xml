@@ -13,5 +13,9 @@
       <Property Name="Title" Value="DVC WebPart page - Manage" />
       <Property Name="ContentType" Value="Page Layout" />
     </File>
+    <File Path="DVCMasterPage\DVC_Admin.master" Url="DVC_Admin.master" Type="GhostableInLibrary" ReplaceContent="TRUE">
+      <Property Name="Title" Value="DVC Admin Master Page" />
+      <Property Name="ContentType" Value="Master Page" />
+    </File>
   </Module>
 </Elements>
