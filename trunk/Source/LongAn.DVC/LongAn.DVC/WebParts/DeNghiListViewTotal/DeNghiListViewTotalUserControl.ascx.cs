@@ -237,16 +237,16 @@ namespace LongAn.DVC.WebParts.DeNghiListViewTotal
                 //Or condition
                 var orConditions = new List<Expression<Func<SPListItem, bool>>>();
                 var trangThai = WebPart.DeNghiTrangThai;
-                if (string.IsNullOrEmpty(trangThai.TrimEnd(';').TrimStart(';')))
+                if (!string.IsNullOrEmpty(trangThai))
                 {
-                    var trangThaiArray = trangThai.Split(';');
+                    var trangThaiArray = trangThai.TrimEnd(';').TrimStart(';').Split(';');
                     foreach (var item in trangThaiArray)
                     {
                         orConditions.Add(x => ((string)x[Fields.TrangThai]) == item);
                     }
                 }
                 Expression<Func<Microsoft.SharePoint.SPListItem, bool>> orExpr = null;
-                if (orConditions != null)
+                if (orConditions.Count > 0)
                     orExpr = ExpressionsHelper.CombineOr(orConditions);
 
                 //And condition
@@ -314,7 +314,7 @@ namespace LongAn.DVC.WebParts.DeNghiListViewTotal
             {
                 LoggingServices.LogException(ex);
             }
-            LoggingServices.LogMessage("End GetDeNghi-User");
+            LoggingServices.LogMessage("End GetDeNghi-Admin");
             return dataTable;
         }
 

@@ -28,6 +28,7 @@ namespace LongAn.DVC.Features.Web
         {
             try
             {
+                LoggingServices.LogMessage("Begin EnsureListPermission");
                 //Set list permission
                 var deNghiUrl = (SPContext.Current.Web.ServerRelativeUrl + Constants.ListUrlDeNghiCapPhep).Replace("//", "/");
                 SPList deNghi = web.GetList(deNghiUrl);
@@ -59,6 +60,7 @@ namespace LongAn.DVC.Features.Web
             {
                 LoggingServices.LogException(ex);
             }
+            LoggingServices.LogMessage("End EnsureListPermission");
         }
 
         // Uncomment the method below to handle the event raised before a feature is deactivated.

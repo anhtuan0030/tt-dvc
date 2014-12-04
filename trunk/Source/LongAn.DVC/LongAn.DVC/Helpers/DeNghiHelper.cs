@@ -494,7 +494,7 @@ namespace LongAn.DVC.Helpers
 
             var textOuput = textInputArray.FirstOrDefault(x => x.Contains(field + "$"));
 
-            if (string.IsNullOrEmpty(textOuput))
+            if (!string.IsNullOrEmpty(textOuput))
                 return textOuput.Split('$')[1];
             
             return string.Empty;
