@@ -10,7 +10,6 @@
         <property name="Title" type="string">Đề nghị list view V2</property>
         <property name="Description" type="string">Đề nghị list view Visual Web Part V2</property>
         <property name="ChromeType" type="chrometype">None</property>
-        <property name="PageSize" type="int">10</property>
         <property name="PageSize"
                   type="int">10</property>
         <property name="DeNghiTitle"

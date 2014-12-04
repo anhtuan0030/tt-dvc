@@ -230,19 +230,21 @@
       <webParts>
         <webPart xmlns="http://schemas.microsoft.com/WebPart/v3">
           <metaData>
-            <type name="LongAn.DVC.WebParts.DeNghiListViewUsers.DeNghiListViewUsers, LongAn.DVC, Version=1.0.0.0, Culture=neutral, PublicKeyToken=53c9d9f0542abb89" />
+            <type name="LongAn.DVC.WebParts.DeNghiListViewUser.DeNghiListViewUser, LongAn.DVC, Version=1.0.0.0, Culture=neutral, PublicKeyToken=53c9d9f0542abb89" />
             <importErrorMessage>$Resources:core,ImportErrorMessage;</importErrorMessage>
           </metaData>
           <data>
             <properties>
-              <property name="Title" type="string">Đề nghị list view users</property>
-              <property name="Description" type="string">Đề nghị list view users</property>
-              <property name="DeNghiTitle" type="string">Danh sách đề nghị của tôi</property>
-              <property name="LinkTrangChu" type="string">/</property>
-              <property name="LinkDanhSachHoSo" type="string">/Pages/DeNghiCapPhep.aspx</property>
-              <property name="LinkThongTinHuongDan" type="string">/</property>
-              <property name="PageSize" type="int">10</property>
-              <property name="ChromeType" type="chrometype">None</property>
+              <property name="Title"
+                  type="string">Đề nghị list view user V2</property>
+              <property name="Description"
+                        type="string">Đề nghị list view user Visual Web Part V2</property>
+              <property name="ChromeType"
+                        type="chrometype">None</property>
+              <property name="PageSize"
+                        type="int">10</property>
+              <property name="DeNghiTitle"
+                        type="string">Danh sách đề nghị của tôi</property>
             </properties>
           </data>
         </webPart>
@@ -271,9 +273,14 @@
         <property name="Title" type="string">Đề nghị list view V2</property>
         <property name="Description" type="string">Đề nghị list view Visual Web Part V2</property>
         <property name="ChromeType" type="chrometype">None</property>
-        <property name="PageSize" type="int">10</property>
-        <property name="DeNghiTitle" type="string">Hồ sơ cần xử lý</property>
-        <property name="Option" type="DeNghiOption">Handle</property>
+        <property name="PageSize"
+                  type="int">10</property>
+        <property name="DeNghiTitle"
+                  type="string">Danh sách đề nghị chờ xử lý</property>
+        <property name="Option"
+                  type="DeNghiOption">Handle</property>
+        <property name="DeNghiTrangThai"
+                  type="string"></property>
       </properties>
     </data>
   </webPart>
@@ -302,9 +309,14 @@
         <property name="Title" type="string">Đề nghị list view V2</property>
         <property name="Description" type="string">Đề nghị list view Visual Web Part V2</property>
         <property name="ChromeType" type="chrometype">None</property>
-        <property name="PageSize" type="int">10</property>
-        <property name="DeNghiTitle" type="string">Hồ sơ đã tham gia xử lý</property>
-        <property name="Option" type="DeNghiOption">Joined</property>
+        <property name="PageSize"
+                  type="int">10</property>
+        <property name="DeNghiTitle"
+                  type="string">Danh sách đề nghị đã tham gia xử lý</property>
+        <property name="Option"
+                  type="DeNghiOption">Joined</property>
+        <property name="DeNghiTrangThai"
+                  type="string"></property>
       </properties>
     </data>
   </webPart>

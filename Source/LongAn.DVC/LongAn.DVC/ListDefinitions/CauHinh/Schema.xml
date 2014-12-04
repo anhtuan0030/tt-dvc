@@ -143,14 +143,16 @@
                     Name="IsPhanCong" />
           <!--<FieldRef ID="{e8ed953d-c8e5-4665-8b23-e9592be1ce51}"
                     Name="IsXuLyPhanCong" />-->
-
+          <FieldRef Name="StartEnd"
+                    ID="{bf80c732-39e7-4747-b014-d1fb839a2b61}"/>
+          
           <FieldRef ID="{eefde6c8-47bb-403d-91c9-a0a0a2181f2c}"
                     Name="IsEmail" />
           <FieldRef ID="{8eecc07d-1c81-405f-9639-0c80c230a49a}"
                     Name="EmailTemplate" />
           <FieldRef ID="{8AE4199F-8E4A-49C9-A5A3-1EAA7067C119}"
                     Name="AllowInBienNhan" />
-          <FieldRef ID="{74443E7F-018E-4051-A6D4-D6918A68E990}"
+          <FieldRef ID="{6B43161F-FA7C-445B-9566-1607213F1706}"
                     Name="AllowInGiayPhep" />
         </FieldRefs>
       </ContentType>
@@ -425,7 +427,7 @@
       </Field>
 
       <Field Type="Boolean"
-             ID="{74443E7F-018E-4051-A6D4-D6918A68E990}"
+             ID="{6B43161F-FA7C-445B-9566-1607213F1706}"
              Name="AllowInGiayPhep"
              StaticName="AllowInGiayPhep"
              DisplayName="Được in giấy phép"

@@ -512,7 +512,7 @@
                                             <SharePoint:FieldLabel ID="FieldLabel48"  FieldName="NgayHenTra"  runat="server"  />
                                         </div>
                                         <div class="grid_9 col-xs-2">
-                                            <sharepoint:datetimecontrol id="dtcNgayHenTra" DateOnly="true" runat="server"></sharepoint:datetimecontrol>
+                                            <sharepoint:datetimecontrol id="dtcNgayHenTra" DateOnly="true" LocaleId="1066" runat="server"></sharepoint:datetimecontrol>
                                         </div>
                                         <div class="clear"></div>
                                     </div>

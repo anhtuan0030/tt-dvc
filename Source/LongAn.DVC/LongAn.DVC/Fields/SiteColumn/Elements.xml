@@ -825,7 +825,7 @@
   </Field>
 
   <Field Type="Boolean"
-         ID="{74443E7F-018E-4051-A6D4-D6918A68E990}"
+         ID="{6B43161F-FA7C-445B-9566-1607213F1706}"
          Name="AllowInGiayPhep"
          StaticName="AllowInGiayPhep"
          DisplayName="Được in giấy phép"

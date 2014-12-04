@@ -184,13 +184,13 @@
     <Compile Include="WebParts\DeNghiListViewTotal\DeNghiListViewTotalUserControl.ascx.designer.cs">
       <DependentUpon>DeNghiListViewTotalUserControl.ascx.cs</DependentUpon>
     </Compile>
-    <Compile Include="WebParts\DeNghiListViewUsers\DeNghiListViewUsers.ascx.cs">
-      <DependentUpon>DeNghiListViewUsers.ascx</DependentUpon>
+    <Compile Include="WebParts\DeNghiListViewUser\DeNghiListViewUser.cs" />
+    <Compile Include="WebParts\DeNghiListViewUser\DeNghiListViewUserUserControl.ascx.cs">
+      <DependentUpon>DeNghiListViewUserUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="WebParts\DeNghiListViewUsers\DeNghiListViewUsers.ascx.g.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DeNghiListViewUsers.ascx</DependentUpon>
+    <Compile Include="WebParts\DeNghiListViewUser\DeNghiListViewUserUserControl.ascx.designer.cs">
+      <DependentUpon>DeNghiListViewUserUserControl.ascx.cs</DependentUpon>
     </Compile>
     <Compile Include="WebParts\DeNghiListView\DeNghiListView.ascx.cs">
       <DependentUpon>DeNghiListView.ascx</DependentUpon>
@@ -234,6 +234,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="WebParts\DeNghiListViewUser\DeNghiListViewUserUserControl.ascx" />
+    <Content Include="WebParts\DeNghiListViewUser\Elements.xml" />
     <Content Include="WebParts\TopMenu\Elements.xml" />
     <Content Include="WebParts\TopMenu\TopMenuUserControl.ascx" />
     <None Include="EventReceivers\TopMenuER\SharePointProjectItem.spdata">
@@ -467,9 +469,9 @@
     <None Include="WebParts\DeNghiListViewTotal\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{a1190ef5-4e1a-45b4-b3f0-da0188c7caed}</SharePointProjectItemId>
     </None>
-    <None Include="WebParts\DeNghiListViewUsers\DeNghiListViewUsers.webpart" />
-    <None Include="WebParts\DeNghiListViewUsers\SharePointProjectItem.spdata">
-      <SharePointProjectItemId>{4e3fcc52-b736-4147-b6ef-c1f6bc1ce63c}</SharePointProjectItemId>
+    <None Include="WebParts\DeNghiListViewUser\DeNghiListViewUser.webpart" />
+    <None Include="WebParts\DeNghiListViewUser\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{127069bd-c4eb-4cb3-8a0e-d7b4aff63b11}</SharePointProjectItemId>
     </None>
     <None Include="WebParts\DeNghiListView\DeNghiListView.webpart" />
     <None Include="WebParts\DeNghiListView\SharePointProjectItem.spdata">
@@ -686,11 +688,6 @@
     <Content Include="WebParts\DeNghiHistory\Elements.xml" />
     <Content Include="WebParts\DeNghiListViewTotal\DeNghiListViewTotalUserControl.ascx" />
     <Content Include="WebParts\DeNghiListViewTotal\Elements.xml" />
-    <Content Include="WebParts\DeNghiListViewUsers\DeNghiListViewUsers.ascx">
-      <Generator>SharePointWebPartCodeGenerator</Generator>
-      <LastGenOutput>DeNghiListViewUsers.ascx.g.cs</LastGenOutput>
-    </Content>
-    <Content Include="WebParts\DeNghiListViewUsers\Elements.xml" />
     <Content Include="WebParts\DeNghiListView\DeNghiListView.ascx">
       <Generator>SharePointWebPartCodeGenerator</Generator>
       <LastGenOutput>DeNghiListView.ascx.g.cs</LastGenOutput>

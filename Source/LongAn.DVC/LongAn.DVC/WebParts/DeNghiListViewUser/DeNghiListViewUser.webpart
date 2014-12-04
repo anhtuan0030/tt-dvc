@@ -7,10 +7,16 @@
     </metaData>
     <data>
       <properties>
-        <property name="Title" type="string">Đề nghị list view </property>
-        <property name="Description" type="string">Đề nghị list view Visual Web Part</property>
-        <property name="DeNghiTitle" type="string">Danh sách đề nghị đã tiếp nhận</property>
-        <property name="PageSize" type="int">1</property>
+        <property name="Title"
+                  type="string">Đề nghị list view user V2</property>
+        <property name="Description"
+                  type="string">Đề nghị list view user Visual Web Part V2</property>
+        <property name="ChromeType"
+                  type="chrometype">None</property>
+        <property name="PageSize"
+                  type="int">10</property>
+        <property name="DeNghiTitle"
+                  type="string">Danh sách đề nghị của tôi</property>
       </properties>
     </data>
   </webPart>
