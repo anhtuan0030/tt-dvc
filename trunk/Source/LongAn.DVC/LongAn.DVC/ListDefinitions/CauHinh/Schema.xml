@@ -589,17 +589,8 @@
           <FieldRef Name="ActionDuyet" />
           <FieldRef Name="NextStep" />
           <FieldRef Name="ActionTuChoi" />
-          <FieldRef Name="TieuDeActionTraHoSo" />
           <FieldRef Name="PreviousStep" />
-          <FieldRef Name="ActionYeuCauBoSung" />
-          <FieldRef Name="AllowCapNhatLoaiDuong" />
-          <FieldRef Name="AllowCapNhatNgayHen" />
-          <FieldRef Name="IsBoSungHoSo" />
-          <FieldRef Name="IsPhanCong" />
-          <FieldRef Name="IsFix" />
-          <FieldRef Name="IsEmail" />
-          <FieldRef Name="EmailTemplate" />
-          <FieldRef Name="CauHinhCal" />
+          <FieldRef Name="StartEnd" />
         </ViewFields>
         <Query>
           <OrderBy>
