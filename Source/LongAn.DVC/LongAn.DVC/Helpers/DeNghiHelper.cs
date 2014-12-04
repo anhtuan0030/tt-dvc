@@ -108,6 +108,66 @@ namespace LongAn.DVC.Helpers
             }
             LoggingServices.LogMessage("End Send Email To Nguoi dung");
         }
+
+        public static void SendEmail(SPWeb web, int itemId, string emailTo, string emailTemplate, string caNhanToChuc, string soBienNhan, string tenTrangThai, string nhanXet)
+        {
+            try
+            {
+                LoggingServices.LogMessage("Begin Send Email (2)");
+                StringDictionary headers = new StringDictionary();
+                headers.Add("subject", "[Sở GTVT Long An] - Thông báo");
+                headers.Add("content-type", "text/html");
+                headers.Add("to", emailTo);
+                //headers.Add("cc",strCC);
+                //headers.Add("bcc",strbcc);
+                //headers.Add("from",strFrom);
+
+                var deNghiUrl = (web.ServerRelativeUrl + Constants.ListUrlDeNghiCapPhep).Replace("//", "/");
+                var linkDisplayUrl = string.Format(Constants.ConfLinkPageDispForm, deNghiUrl, itemId, web.ServerRelativeUrl);
+                var fullDisplayUrl = web.Site.MakeFullUrl(linkDisplayUrl);
+                var emailBody = string.Format(emailTemplate, caNhanToChuc, soBienNhan, tenTrangThai, nhanXet);
+                emailBody += "<br />Link:" + fullDisplayUrl;
+
+                LoggingServices.LogMessage("Email to: " + emailTo + ", Content: " + emailBody);
+                SPUtility.SendEmail(web, headers, emailBody);
+            }
+            catch (Exception ex)
+            {
+                LoggingServices.LogException(ex);
+            }
+            LoggingServices.LogMessage("End Send Email (2)");
+        }
+
+        public static void SendEmail(SPWeb web, int itemId, string emailTo, string emailTemplate)
+        {
+            try
+            {
+                LoggingServices.LogMessage("Begin Send Email (1)");
+                StringDictionary headers = new StringDictionary();
+                headers.Add("subject", "[Sở GTVT Long An] - Thông báo");
+                headers.Add("content-type", "text/html");
+                headers.Add("to", emailTo);
+                //headers.Add("cc",strCC);
+                //headers.Add("bcc",strbcc);
+                //headers.Add("from",strFrom);
+
+                var deNghiUrl = (web.ServerRelativeUrl + Constants.ListUrlDeNghiCapPhep).Replace("//", "/");
+                var deNghiItem = web.GetList(deNghiUrl).GetItemById(itemId);
+                var linkDisplayUrl = string.Format(Constants.ConfLinkPageDispForm, deNghiUrl, itemId, web.ServerRelativeUrl);
+                var fullDisplayUrl = web.Site.MakeFullUrl(linkDisplayUrl);
+                var emailBody = string.Format(emailTemplate, deNghiItem[Fields.CaNhanToChuc], deNghiItem[Fields.Title], deNghiItem[Fields.TenTrangThaiRef], string.Empty);
+                emailBody += "<br />Link:" + fullDisplayUrl;
+
+                LoggingServices.LogMessage("Email to: " + emailTo + ", Content: " + emailBody);
+                SPUtility.SendEmail(web, headers, emailBody);
+            }
+            catch (Exception ex)
+            {
+                LoggingServices.LogException(ex);
+            }
+            LoggingServices.LogMessage("End Send Email (1)");
+        }
+
         public static void SaveFileAttachment(FileUpload fileUpload, int deNghiId, string loaiAttachment)
         {
             if (!fileUpload.HasFile)
