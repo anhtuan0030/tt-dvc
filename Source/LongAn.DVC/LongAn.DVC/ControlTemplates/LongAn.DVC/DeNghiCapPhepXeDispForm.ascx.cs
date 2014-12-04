@@ -154,6 +154,21 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
                     hdfCapDuyetText.Value = cauHinh.CapDuyetText;
                     hdfNextStep.Value = cauHinh.NextStep.ToString();
                     hdfPreStep.Value = cauHinh.PreviousStep.ToString();
+
+                    #region Allow In giay bien nhan
+                    if (cauHinh.AllowInBienNhan)
+                    {
+                        btnInBienNhan.Visible = true;
+                    }
+                    #endregion Allow In giay bien nhan
+
+                    #region Allow In giay cap phep
+                    if (cauHinh.AllowInGiayPhep)
+                    {
+                        btnInGiayPhep.Visible = true;
+                    }
+                    #endregion Allow In giay cap phep
+
                     //var currentMember = DeNghiHelper.IsCurrentUserInGroup(SPContext.Current.Web, cauHinh.SPGroup);
                     var nguoiChoXuLy = Convert.ToString(SPContext.Current.ListItem[Fields.NguoiChoXuLy]);
                     var currentMember = DeNghiHelper.IsCurrentUserInUserCollection(SPContext.Current.Web, nguoiChoXuLy);
@@ -241,20 +256,6 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
                             dtcNgayHenTra.SelectedDate = ngayHenTraVal;
                         }
                         #endregion Cap Nhat Ngay Hen Tra
-
-                        #region Allow In giay bien nhan
-                        if (cauHinh.AllowInBienNhan)
-                        {
-                            btnInBienNhan.Visible = true;
-                        }
-                        #endregion Allow In giay bien nhan
-
-                        #region Allow In giay cap phep
-                        if (cauHinh.AllowInGiayPhep)
-                        {
-                            btnInGiayPhep.Visible = true;
-                        }
-                        #endregion Allow In giay cap phep
                     }
 
                     #region Action Phan Cong
@@ -295,6 +296,7 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
             DateTime output = ngayTiepNhan;
             try
             {
+                LoggingServices.LogMessage("Begin CalSoNgayXuLy, NgaTiepNhan: " + ngayTiepNhan.ToString("dd/MM/yyyy"));
                 SPSecurity.RunWithElevatedPrivileges(delegate()
                 {
                     using (SPSite site = new SPSite(SPContext.Current.Site.ID))
@@ -312,7 +314,7 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
                                 int soNgayXuLy = 0;
                                 int.TryParse(thamSoItem[0]["Value"].ToString(), out soNgayXuLy);
                                 output = output.AddDays(soNgayXuLy);
-
+                                LoggingServices.LogMessage("Default SoNgayXuLy: " + soNgayXuLy);
                                 //Get weekday
                                 int weekDay = DeNghiHelper.GetFullWorkingDaysBetween(ngayTiepNhan, output);
                                 soNgayXuLy = soNgayXuLy + (soNgayXuLy - weekDay);
@@ -321,11 +323,12 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
                                 //Get holiday
                                 var ngayNghiUrl = (web.ServerRelativeUrl + Constants.ListUrlNgayLe).Replace("//", "/");
                                 var ngayNghiList = web.GetList(ngayNghiUrl);
-                                caml = Camlex.Query().Where(x => (DateTime)x["Ngay"] >= ngayTiepNhan && (DateTime)x["Date"] <= output)
+                                caml = Camlex.Query().Where(x => (DateTime)x["Ngay"] >= ngayTiepNhan && (DateTime)x["Ngay"] <= output)
                                     .ToSPQuery();
                                 var ngayLeItems = ngayNghiList.GetItems(caml);
                                 if (ngayLeItems != null && ngayLeItems.Count > 0)
                                 {
+                                    LoggingServices.LogMessage("Count NgayLe: " + ngayLeItems.Count);
                                     output.AddDays(ngayLeItems.Count);
                                 }
                             }
@@ -337,6 +340,7 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
             {
                 LoggingServices.LogException(ex);
             }
+            LoggingServices.LogMessage("End CalSoNgayXuLy");
             return output;
         }
 

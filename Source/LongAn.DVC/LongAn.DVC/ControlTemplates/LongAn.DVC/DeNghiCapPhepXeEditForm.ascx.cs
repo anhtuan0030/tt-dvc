@@ -131,7 +131,8 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
             DeNghiHelper.SaveFileAttachment(fileUpload2, itemId, Constants.AttachmentGiayChungNhanKiemDinh);
             DeNghiHelper.SaveFileAttachment(fileUpload3, itemId, Constants.AttachmentGiayCamKet);
             DeNghiHelper.SaveFileAttachment(fileUpload4, itemId, Constants.AttachmentCMND);
-            DeNghiHelper.AddDeNghiHistory(SPContext.Current.Web, CapXuLy.MotCua, itemId, HanhDong.NopHoSo.ToString(), string.Empty);
+            //Add history (không add khi save item)
+            //DeNghiHelper.AddDeNghiHistory(SPContext.Current.Web, CapXuLy.MotCua, itemId, HanhDong.NopHoSo.ToString(), string.Empty);
             //Redirect to page
             var redirectUrl = Request.QueryString["Source"];
             if (redirectUrl == null || string.IsNullOrEmpty(redirectUrl.ToString()))

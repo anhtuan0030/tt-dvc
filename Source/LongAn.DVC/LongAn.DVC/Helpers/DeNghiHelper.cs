@@ -409,7 +409,7 @@ namespace LongAn.DVC.Helpers
             var currentLogin = SPContext.Current.Web.CurrentUser;
             try
             {
-                LoggingServices.LogMessage("Begin function IsCurrentUserInGroup, SPWeb " + spWeb.Title + ", SPGroup: " + spGroup.Name);
+                LoggingServices.LogMessage("Begin function IsCurrentUserInGroup, SPWeb: " + spWeb.Title + ", SPGroup: " + spGroup.Name);
                 SPSecurity.RunWithElevatedPrivileges(delegate
                 {
                     SPGroupCollection spGroups = currentLogin.Groups;
