@@ -1,0 +1,333 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E8D63E74-A00B-4AE9-BD6C-AACC965EAC58}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LongAn.DVC.HomeSite</RootNamespace>
+    <AssemblyName>LongAn.DVC.HomeSite</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetOfficeVersion>15.0</TargetOfficeVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{C1CDDADD-2546-481F-9697-4EA41081F2FC};{14822709-B5A1-4724-98CA-57A101D1B079};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <SandboxedSolution>False</SandboxedSolution>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Camlex.NET, Version=3.6.0.0, Culture=neutral, PublicKeyToken=831792d54d5285b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libs\Camlex.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Publishing, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.SharePoint" />
+    <Reference Include="Microsoft.SharePoint.Client.ServerRuntime" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="EventReceivers\TopMenuER\TopMenuER.cs" />
+    <Compile Include="Features\LongAn.DVC.HomeSite.Site\LongAn.DVC.HomeSite.Site.EventReceiver.cs">
+      <DependentUpon>LongAn.DVC.HomeSite.Site.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\LongAn.DVC.HomeSite.Web\LongAn.DVC.HomeSite.Web.EventReceiver.cs">
+      <DependentUpon>LongAn.DVC.HomeSite.Web.feature</DependentUpon>
+    </Compile>
+    <Compile Include="HomeSiteConstants.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WebParts\DanhSachThuTucHanhChinh\DanhSachThuTucHanhChinh.cs" />
+    <Compile Include="WebParts\DanhSachThuTucHanhChinh\DanhSachThuTucHanhChinhUserControl.ascx.cs">
+      <DependentUpon>DanhSachThuTucHanhChinhUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebParts\DanhSachThuTucHanhChinh\DanhSachThuTucHanhChinhUserControl.ascx.designer.cs">
+      <DependentUpon>DanhSachThuTucHanhChinhUserControl.ascx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WebParts\TopMenuWP\TopMenu.cs" />
+    <Compile Include="WebParts\TopMenuWP\TopMenuUserControl.ascx.cs">
+      <DependentUpon>TopMenuUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebParts\TopMenuWP\TopMenuUserControl.ascx.designer.cs">
+      <DependentUpon>TopMenuUserControl.ascx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WebParts\TraCuuThuTucHanhChinh\TraCuuThuTucHanhChinh.cs" />
+    <Compile Include="WebParts\TraCuuThuTucHanhChinh\TraCuuThuTucHanhChinhUserControl.ascx.cs">
+      <DependentUpon>TraCuuThuTucHanhChinhUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebParts\TraCuuThuTucHanhChinh\TraCuuThuTucHanhChinhUserControl.ascx.designer.cs">
+      <DependentUpon>TraCuuThuTucHanhChinhUserControl.ascx.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="EventReceivers\TopMenuER\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{a5ed9bbf-9bd3-41bf-8e23-eaa2bf66da24}</SharePointProjectItemId>
+    </None>
+    <None Include="Features\LongAn.DVC.HomeSite.Site\LongAn.DVC.HomeSite.Site.feature">
+      <FeatureId>{8949c7d5-f6fa-48d1-9dd4-4f4d716b125c}</FeatureId>
+    </None>
+    <None Include="Features\LongAn.DVC.HomeSite.Web\LongAn.DVC.HomeSite.Web.feature">
+      <FeatureId>{bd0f6121-11a5-4fa2-8fbb-d6ac62cdf7a7}</FeatureId>
+    </None>
+    <None Include="key.snk" />
+    <None Include="Layouts\LongAn.DVC.HomeSite\css\form.main.less" />
+    <None Include="Layouts\LongAn.DVC.HomeSite\css\forms.less" />
+    <None Include="Layouts\LongAn.DVC.HomeSite\css\main.less" />
+    <None Include="Layouts\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{fd5491f3-f348-4d2d-859c-7ae1c8f9cafb}</SharePointProjectItemId>
+    </None>
+    <None Include="ListDefinitions\CoQuanThucHien\CoQuanThucHienInstance\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{94a0ff9e-2e68-46f2-a788-fd43cfb9bc86}</SharePointProjectItemId>
+    </None>
+    <None Include="ListDefinitions\CoQuanThucHien\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{47fb2409-edf6-4106-bdb1-73a4e9a3ef6c}</SharePointProjectItemId>
+    </None>
+    <None Include="ListDefinitions\DichVuCong\DichVuCongInstance\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{b312fe5f-19d0-413c-a486-d91735912bf6}</SharePointProjectItemId>
+    </None>
+    <None Include="ListDefinitions\DichVuCong\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{c1768f83-d808-4d85-a1ab-d9a974d58e56}</SharePointProjectItemId>
+    </None>
+    <None Include="ListDefinitions\LinhVuc\LinhVucInstance\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{ac44d08a-a2b1-4f02-bd76-a0236853f223}</SharePointProjectItemId>
+    </None>
+    <None Include="ListDefinitions\LinhVuc\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{68ddfd94-9a88-4ed0-b4fc-4fb758a49ddf}</SharePointProjectItemId>
+    </None>
+    <None Include="ListDefinitions\LoaiCoQuanThucHien\LoaiCoQuanThucHienInstance\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{c84b434a-96a2-4ae3-b7f5-3ce40182215c}</SharePointProjectItemId>
+    </None>
+    <None Include="ListDefinitions\LoaiCoQuanThucHien\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{c0596683-9337-4460-abee-05bdee31ff1c}</SharePointProjectItemId>
+    </None>
+    <None Include="ListDefinitions\MucDo\MucDoInstance\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{748f0a28-1c9f-4faa-bc0f-2d164c4082e0}</SharePointProjectItemId>
+    </None>
+    <None Include="ListDefinitions\MucDo\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{afc61c80-3b27-4d3c-a728-c17f5f4feefa}</SharePointProjectItemId>
+    </None>
+    <None Include="ListDefinitions\TopMenu\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{09fc28de-9712-4acf-bc28-2e837ed0ded4}</SharePointProjectItemId>
+    </None>
+    <None Include="ListDefinitions\TopMenu\TopMenuInstance\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{9d112860-8ed3-470e-ae14-055480cf5efe}</SharePointProjectItemId>
+    </None>
+    <None Include="Modules\DVCMasterPage\DVC_Admin.master" />
+    <None Include="Modules\DVCMasterPage\DVC.master" />
+    <None Include="Modules\DVCMasterPage\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{56a7e78b-4a66-4a5f-86d5-568a15b5abff}</SharePointProjectItemId>
+    </None>
+    <None Include="Modules\DVCPages\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{d3a363a5-2b23-4dcc-8bdd-402a745af2fd}</SharePointProjectItemId>
+    </None>
+    <None Include="Package\Package.package">
+      <PackageId>{e540972e-e331-4f20-9cc6-807234ddcf19}</PackageId>
+    </None>
+    <None Include="Package\Package.Template.xml">
+      <DependentUpon>Package.package</DependentUpon>
+    </None>
+    <None Include="WebParts\DanhSachThuTucHanhChinh\DanhSachThuTucHanhChinh.webpart" />
+    <None Include="WebParts\DanhSachThuTucHanhChinh\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{9021788a-c0ce-4431-b215-72560c804b94}</SharePointProjectItemId>
+    </None>
+    <None Include="WebParts\TopMenuWP\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{c5e698eb-098c-4ba8-a0bd-c906a33d7a30}</SharePointProjectItemId>
+    </None>
+    <None Include="WebParts\TopMenuWP\TopMenu.webpart" />
+    <None Include="WebParts\TraCuuThuTucHanhChinh\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{88566991-5ae1-419e-875d-f74a8f2d89bf}</SharePointProjectItemId>
+    </None>
+    <None Include="WebParts\TraCuuThuTucHanhChinh\TraCuuThuTucHanhChinh.webpart" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LongAn.DVC.Common\LongAn.DVC.Common.csproj">
+      <Project>{ab96c9c7-818b-4b7f-bb03-18644e9f8a88}</Project>
+      <Name>LongAn.DVC.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="EventReceivers\TopMenuER\Elements.xml" />
+    <Content Include="Features\LongAn.DVC.HomeSite.Site\LongAn.DVC.HomeSite.Site.Template.xml">
+      <DependentUpon>LongAn.DVC.HomeSite.Site.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\LongAn.DVC.HomeSite.Web\LongAn.DVC.HomeSite.Web.Template.xml">
+      <DependentUpon>LongAn.DVC.HomeSite.Web.feature</DependentUpon>
+    </Content>
+    <Content Include="Layouts\LongAn.DVC.HomeSite\css\bootstrap-non-responsive.min.css" />
+    <Content Include="Layouts\LongAn.DVC.HomeSite\css\fluid_grid.css" />
+    <Content Include="Layouts\LongAn.DVC.HomeSite\css\form.main.css" />
+    <Content Include="Layouts\LongAn.DVC.HomeSite\css\forms.css" />
+    <Content Include="Layouts\LongAn.DVC.HomeSite\css\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Layouts\LongAn.DVC.HomeSite\css\images\ui-bg_flat_0_eeeeee_40x100.png" />
+    <Content Include="Layouts\LongAn.DVC.HomeSite\css\images\ui-bg_flat_55_ffffff_40x100.png" />
+    <Content Include="Layouts\LongAn.DVC.HomeSite\css\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Layouts\LongAn.DVC.HomeSite\css\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Layouts\LongAn.DVC.HomeSite\css\images\ui-bg_highlight-soft_100_f6f6f6_1x100.png" />
+    <Content Include="Layouts\LongAn.DVC.HomeSite\css\images\ui-bg_highlight-soft_25_0073ea_1x100.png" />
+    <Content Include="Layouts\LongAn.DVC.HomeSite\css\images\ui-bg_highlight-soft_50_dddddd_1x100.png" />
+    <Content Include="Layouts\LongAn.DVC.HomeSite\css\images\ui-icons_0073ea_256x240.png" />
+    <Content Include="Layouts\LongAn.DVC.HomeSite\css\images\ui-icons_454545_256x240.png" />
+    <Content Include="Layouts\LongAn.DVC.HomeSite\css\images\ui-icons_666666_256x240.png" />
+    <Content Include="Layouts\LongAn.DVC.HomeSite\css\images\ui-icons_ff0084_256x240.png" />
+    <Content Include="Layouts\LongAn.DVC.HomeSite\css\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Layouts\LongAn.DVC.HomeSite\css\jquery-ui.min.css" />
+    <Content Include="Layouts\LongAn.DVC.HomeSite\css\main.css" />
+    <Content Include="Layouts\LongAn.DVC.HomeSite\css\normalize.css" />
+    <Content Include="Layouts\LongAn.DVC.HomeSite\css\superfish.css" />
+    <Content Include="Layouts\LongAn.DVC.HomeSite\images\add-file.png" />
+    <Content Include="Layouts\LongAn.DVC.HomeSite\images\add.png" />
+    <Content Include="Layouts\LongAn.DVC.HomeSite\images\add100.png" />
+    <Content Include="Layouts\LongAn.DVC.HomeSite\images\add118.png" />
+    <Content Include="Layouts\LongAn.DVC.HomeSite\images\add180.png" />
+    <Content Include="Layouts\LongAn.DVC.HomeSite\images\added.png" />
+    <Content Include="Layouts\LongAn.DVC.HomeSite\images\advantage.png" />
+    <Content Include="Layouts\LongAn.DVC.HomeSite\images\approval.png" />
+    <Content Include="Layouts\LongAn.DVC.HomeSite\images\arrow-01.png" />
+    <Content Include="Layouts\LongAn.DVC.HomeSite\images\arrow-2.png" />
+    <Content Include="Layouts\LongAn.DVC.HomeSite\images\arrows.png" />
+    <Content Include="Layouts\LongAn.DVC.HomeSite\images\attachment.png" />
+    <Content Include="Layouts\LongAn.DVC.HomeSite\images\backup.png" />
+    <Content Include="Layouts\LongAn.DVC.HomeSite\images\banner-1.png" />
+    <Content Include="Layouts\LongAn.DVC.HomeSite\images\banner-dvc.jpg" />
+    <Content Include="Layouts\LongAn.DVC.HomeSite\images\banner.png" />
+    <Content Include="Layouts\LongAn.DVC.HomeSite\images\building.png" />
+    <Content Include="Layouts\LongAn.DVC.HomeSite\images\calculator.png" />
+    <Content Include="Layouts\LongAn.DVC.HomeSite\images\calendar.png" />
+    <Content Include="Layouts\LongAn.DVC.HomeSite\images\calendar2.png" />
+    <Content Include="Layouts\LongAn.DVC.HomeSite\images\check.png" />
+    <Content Include="Layouts\LongAn.DVC.HomeSite\images\default-logo.jpg" />
+    <Content Include="Layouts\LongAn.DVC.HomeSite\images\denied.png" />
+    <Content Include="Layouts\LongAn.DVC.HomeSite\images\done.png" />
+    <Content Include="Layouts\LongAn.DVC.HomeSite\images\down53.png" />
+    <Content Include="Layouts\LongAn.DVC.HomeSite\images\edit4.png" />
+    <Content Include="Layouts\LongAn.DVC.HomeSite\images\end.png" />
+    <Content Include="Layouts\LongAn.DVC.HomeSite\images\excel.png" />
+    <Content Include="Layouts\LongAn.DVC.HomeSite\images\exit.png" />
+    <Content Include="Layouts\LongAn.DVC.HomeSite\images\expand-down.png" />
+    <Content Include="Layouts\LongAn.DVC.HomeSite\images\expand-up.png" />
+    <Content Include="Layouts\LongAn.DVC.HomeSite\images\home.png" />
+    <Content Include="Layouts\LongAn.DVC.HomeSite\images\icon-04.png" />
+    <Content Include="Layouts\LongAn.DVC.HomeSite\images\index-02.png" />
+    <Content Include="Layouts\LongAn.DVC.HomeSite\images\index-03.png" />
+    <Content Include="Layouts\LongAn.DVC.HomeSite\images\index_banner-07.png" />
+    <Content Include="Layouts\LongAn.DVC.HomeSite\images\index_banner-08.png" />
+    <Content Include="Layouts\LongAn.DVC.HomeSite\images\index_banner-09.png" />
+    <Content Include="Layouts\LongAn.DVC.HomeSite\images\index_bullet.png" />
+    <Content Include="Layouts\LongAn.DVC.HomeSite\images\index_button.png" />
+    <Content Include="Layouts\LongAn.DVC.HomeSite\images\index_icon.png" />
+    <Content Include="Layouts\LongAn.DVC.HomeSite\images\index_logo.png" />
+    <Content Include="Layouts\LongAn.DVC.HomeSite\images\item.png" />
+    <Content Include="Layouts\LongAn.DVC.HomeSite\images\more7.png" />
+    <Content Include="Layouts\LongAn.DVC.HomeSite\images\next.png" />
+    <Content Include="Layouts\LongAn.DVC.HomeSite\images\overlay-05.png" />
+    <Content Include="Layouts\LongAn.DVC.HomeSite\images\prev.png" />
+    <Content Include="Layouts\LongAn.DVC.HomeSite\images\printer.png" />
+    <Content Include="Layouts\LongAn.DVC.HomeSite\images\printer70.png" />
+    <Content Include="Layouts\LongAn.DVC.HomeSite\images\process.png" />
+    <Content Include="Layouts\LongAn.DVC.HomeSite\images\refresh55.png" />
+    <Content Include="Layouts\LongAn.DVC.HomeSite\images\rejected-2.png" />
+    <Content Include="Layouts\LongAn.DVC.HomeSite\images\rejected.png" />
+    <Content Include="Layouts\LongAn.DVC.HomeSite\images\remove.png" />
+    <Content Include="Layouts\LongAn.DVC.HomeSite\images\restore.png" />
+    <Content Include="Layouts\LongAn.DVC.HomeSite\images\search.png" />
+    <Content Include="Layouts\LongAn.DVC.HomeSite\images\send-to-manager.png" />
+    <Content Include="Layouts\LongAn.DVC.HomeSite\images\sent-to-manager.png" />
+    <Content Include="Layouts\LongAn.DVC.HomeSite\images\shadow.png" />
+    <Content Include="Layouts\LongAn.DVC.HomeSite\images\shadow_01.png" />
+    <Content Include="Layouts\LongAn.DVC.HomeSite\images\sign.png" />
+    <Content Include="Layouts\LongAn.DVC.HomeSite\images\start.png" />
+    <Content Include="Layouts\LongAn.DVC.HomeSite\images\stat.png" />
+    <Content Include="Layouts\LongAn.DVC.HomeSite\images\task.png" />
+    <Content Include="Layouts\LongAn.DVC.HomeSite\images\top-banner-2-lines.png" />
+    <Content Include="Layouts\LongAn.DVC.HomeSite\images\top-banner.jpg" />
+    <Content Include="Layouts\LongAn.DVC.HomeSite\images\top-banner.png" />
+    <Content Include="Layouts\LongAn.DVC.HomeSite\images\up.png" />
+    <Content Include="Layouts\LongAn.DVC.HomeSite\images\wait-add.png" />
+    <Content Include="Layouts\LongAn.DVC.HomeSite\images\waiting.png" />
+    <Content Include="Layouts\LongAn.DVC.HomeSite\images\word.png" />
+    <Content Include="Layouts\LongAn.DVC.HomeSite\images\_banner.png" />
+    <Content Include="Layouts\LongAn.DVC.HomeSite\images\_index_logo.png" />
+    <Content Include="Layouts\LongAn.DVC.HomeSite\js\datepicker-vi.js" />
+    <Content Include="Layouts\LongAn.DVC.HomeSite\js\detectizr.min.js" />
+    <Content Include="Layouts\LongAn.DVC.HomeSite\js\hoverIntent.js" />
+    <Content Include="Layouts\LongAn.DVC.HomeSite\js\jquery-1.8.3.min.js" />
+    <Content Include="Layouts\LongAn.DVC.HomeSite\js\jquery-ui.min.js" />
+    <Content Include="Layouts\LongAn.DVC.HomeSite\js\modernizr.js" />
+    <Content Include="Layouts\LongAn.DVC.HomeSite\js\script.js" />
+    <Content Include="Layouts\LongAn.DVC.HomeSite\js\superfish.js" />
+    <Content Include="Libs\Camlex.NET.dll" />
+    <Content Include="ListDefinitions\CoQuanThucHien\CoQuanThucHienInstance\Elements.xml" />
+    <Content Include="ListDefinitions\CoQuanThucHien\Elements.xml" />
+    <Content Include="ListDefinitions\CoQuanThucHien\Schema.xml" />
+    <Content Include="ListDefinitions\DichVuCong\DichVuCongInstance\Elements.xml" />
+    <Content Include="ListDefinitions\DichVuCong\Elements.xml" />
+    <Content Include="ListDefinitions\DichVuCong\Schema.xml" />
+    <Content Include="ListDefinitions\LinhVuc\Elements.xml" />
+    <Content Include="ListDefinitions\LinhVuc\LinhVucInstance\Elements.xml" />
+    <Content Include="ListDefinitions\LinhVuc\Schema.xml" />
+    <Content Include="ListDefinitions\LoaiCoQuanThucHien\Elements.xml" />
+    <Content Include="ListDefinitions\LoaiCoQuanThucHien\LoaiCoQuanThucHienInstance\Elements.xml" />
+    <Content Include="ListDefinitions\LoaiCoQuanThucHien\Schema.xml" />
+    <Content Include="ListDefinitions\MucDo\Elements.xml" />
+    <Content Include="ListDefinitions\MucDo\MucDoInstance\Elements.xml" />
+    <Content Include="ListDefinitions\MucDo\Schema.xml" />
+    <Content Include="ListDefinitions\TopMenu\Elements.xml" />
+    <Content Include="ListDefinitions\TopMenu\Schema.xml" />
+    <Content Include="ListDefinitions\TopMenu\TopMenuInstance\Elements.xml" />
+    <Content Include="Modules\DVCMasterPage\DVCWebPartPage_Home.aspx" />
+    <Content Include="Modules\DVCMasterPage\DVCWebPartPage_Manage.aspx" />
+    <Content Include="Modules\DVCMasterPage\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Modules\DVCPages\BlankPage.aspx" />
+    <Content Include="Modules\DVCPages\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Modules\DVCPages\Homepage.aspx" />
+    <Content Include="WebParts\DanhSachThuTucHanhChinh\DanhSachThuTucHanhChinhUserControl.ascx" />
+    <Content Include="WebParts\DanhSachThuTucHanhChinh\Elements.xml" />
+    <Content Include="WebParts\TopMenuWP\Elements.xml" />
+    <Content Include="WebParts\TopMenuWP\TopMenuUserControl.ascx" />
+    <Content Include="WebParts\TraCuuThuTucHanhChinh\Elements.xml" />
+    <Content Include="WebParts\TraCuuThuTucHanhChinh\TraCuuThuTucHanhChinhUserControl.ascx" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(VSToolsPath)\SharePointTools\Microsoft.VisualStudio.SharePoint.targets" Condition="'$(VSToolsPath)' != ''" />
+</Project>

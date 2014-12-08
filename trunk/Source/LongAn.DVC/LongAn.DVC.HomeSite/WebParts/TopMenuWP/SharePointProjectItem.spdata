@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ProjectItem Type="Microsoft.VisualStudio.SharePoint.VisualWebPart" DefaultFile="TopMenuUserControl.ascx" SupportedTrustLevels="FullTrust" SupportedDeploymentScopes="Site" xmlns="http://schemas.microsoft.com/VisualStudio/2010/SharePointTools/SharePointProjectItemModel">
+  <Files>
+    <ProjectItemFile Source="Elements.xml" Target="TopMenuWP\" Type="ElementManifest" />
+    <ProjectItemFile Source="TopMenu.webpart" Target="TopMenuWP\" Type="ElementFile" />
+    <ProjectItemFile Source="TopMenuUserControl.ascx" Target="CONTROLTEMPLATES\LongAn.DVC.HomeSite.WebParts\TopMenu\" Type="TemplateFile" />
+  </Files>
+  <SafeControls>
+    <SafeControl Name="SafeControlEntry1" Assembly="$SharePoint.Project.AssemblyFullName$" Namespace="LongAn.DVC.HomeSite.WebParts.TopMenu" TypeName="*" IsSafe="true" IsSafeAgainstScript="false" />
+  </SafeControls>
+</ProjectItem>

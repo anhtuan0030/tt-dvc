@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <ListInstance Title="TopMenu" OnQuickLaunch="TRUE" TemplateType="10001" Url="Lists/TopMenu" Description="">
+    <Data>
+      <Rows>
+        <Row>
+          <Field Name="ID">1</Field>
+          <Field Name="Title">Cổng thông tin</Field>
+          <Field Name="Hyperlink">#</Field>
+          <Field Name="Parent"></Field>
+          <Field Name="ItemOrder">1</Field>
+          <Field Name="IsActive">1</Field>
+        </Row>
+
+        <Row>
+          <Field Name="ID">2</Field>
+          <Field Name="Title">Tra cứu hồ sơ</Field>
+          <Field Name="Hyperlink">#</Field>
+          <Field Name="Parent"></Field>
+          <Field Name="ItemOrder">2</Field>
+          <Field Name="IsActive">1</Field>
+        </Row>
+
+        <Row>
+          <Field Name="ID">3</Field>
+          <Field Name="Title">Thủ tục hành chính</Field>
+          <Field Name="Hyperlink">/Pages/ThuTucHanhChinh.aspx</Field>
+          <Field Name="Parent"></Field>
+          <Field Name="ItemOrder">3</Field>
+          <Field Name="IsActive">1</Field>
+        </Row>
+  
+      </Rows>
+    </Data>
+  </ListInstance>
+</Elements>

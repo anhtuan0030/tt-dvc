@@ -1,0 +1,78 @@
+using System;
+using System.Runtime.InteropServices;
+using System.Security.Permissions;
+using Microsoft.SharePoint;
+using Microsoft.SharePoint.Publishing;
+using LongAn.DVC.Common;
+using LongAn.DVC.Common.Extensions;
+
+namespace LongAn.DVC.HomeSite.Features.Feature1
+{
+    /// <summary>
+    /// This class handles events raised during feature activation, deactivation, installation, uninstallation, and upgrade.
+    /// </summary>
+    /// <remarks>
+    /// The GUID attached to this class may be used during packaging and should not be modified.
+    /// </remarks>
+
+    [Guid("18af4fdb-7a83-48e4-8fd2-08e647945a61")]
+    public class LongAnDVCHomeSiteSiteEventReceiver : SPFeatureReceiver
+    {
+        // Uncomment the method below to handle the event raised after a feature has been activated.
+
+        public override void FeatureActivated(SPFeatureReceiverProperties properties)
+        {
+            var site = (SPSite)properties.Feature.Parent;
+            var web = site.RootWeb;
+
+            if (PublishingWeb.IsPublishingWeb(web))
+            {
+                PublishingWeb pubWeb = PublishingWeb.GetPublishingWeb(web);
+                //Get the file name
+                SPFile welcomeFile = web.GetFile("Pages/ThuTucHanhChinh.aspx");
+                //Assign the new filename to the DefaultPage property
+                pubWeb.DefaultPage = welcomeFile;
+                //Update the Publishing Web.
+                pubWeb.Update();
+            }
+
+
+            //provision DVC Master page
+            web.MasterUrl = site.RootWeb.ServerRelativeUrl.TrimEnd('/') + "/_catalogs/masterpage/DVC_Admin.master";
+            web.CustomMasterUrl = site.RootWeb.ServerRelativeUrl.TrimEnd('/') + "/_catalogs/masterpage/DVC.master";
+            web.Update();
+        }
+
+
+        // Uncomment the method below to handle the event raised before a feature is deactivated.
+
+        public override void FeatureDeactivating(SPFeatureReceiverProperties properties)
+        {
+            var site = (SPSite)properties.Feature.Parent;
+            site.RootWeb.MasterUrl = site.RootWeb.ServerRelativeUrl.TrimEnd('/') + "/_catalogs/masterpage/seattle.master";
+            site.RootWeb.CustomMasterUrl = site.RootWeb.ServerRelativeUrl.TrimEnd('/') + "/_catalogs/masterpage/seattle.master";
+            site.RootWeb.Update();
+        }
+
+
+        // Uncomment the method below to handle the event raised after a feature has been installed.
+
+        //public override void FeatureInstalled(SPFeatureReceiverProperties properties)
+        //{
+        //}
+
+
+        // Uncomment the method below to handle the event raised before a feature is uninstalled.
+
+        //public override void FeatureUninstalling(SPFeatureReceiverProperties properties)
+        //{
+        //}
+
+        // Uncomment the method below to handle the event raised when a feature is upgrading.
+
+        //public override void FeatureUpgrading(SPFeatureReceiverProperties properties, string upgradeActionName, System.Collections.Generic.IDictionary<string, string> parameters)
+        //{
+        //}
+
+    }
+}
