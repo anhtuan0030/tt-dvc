@@ -4,7 +4,7 @@
          Sequence="10"
          ControlSrc="~/_CONTROLTEMPLATES/15/LongAn.DVC/ucUserAuthenticationBox.ascx"/>
 
-  <Control Id="AdditionalPageHead"
+  <!--<Control Id="AdditionalPageHead"
          Sequence="10"
-         ControlSrc="~/_CONTROLTEMPLATES/15/LongAn.DVC/ucCustomTopMenuDVCByUserPermission.ascx"/>
+         ControlSrc="~/_CONTROLTEMPLATES/15/LongAn.DVC/ucCustomTopMenuDVCByUserPermission.ascx"/>-->
 </Elements>

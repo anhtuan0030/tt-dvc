@@ -16,33 +16,39 @@ namespace LongAn.DVC.WebParts.TopMenu
         {
             if (!Page.IsPostBack)
             {
-                string liMenus = "<li class='home'><a href='" + SPContext.Current.Site.RootWeb.ServerRelativeUrl + "'>Trang chủ</a></li>";
-
-                SPWeb spWeb = SPContext.Current.Web;
-
-                string topmenuUrl = (spWeb.ServerRelativeUrl + Constants.TopMenu.LIST_URL).Replace("//", "/");
-                SPList spListTopMenu = spWeb.GetList(topmenuUrl);
-
-
-                if (spListTopMenu != null)
+                try
                 {
-                    string camlFirstLevel = string.Empty;
-                    var firstLevelExpressionsAnd = new List<Expression<Func<SPListItem, bool>>>();
-                    firstLevelExpressionsAnd.Add(x => x[Constants.TopMenu.PARENT_COLUMN] == null);
-                    firstLevelExpressionsAnd.Add(x => (bool)x[Constants.TopMenu.IS_ACTIVE_COLUMN] == true);
-                    camlFirstLevel = Camlex.Query().WhereAll(firstLevelExpressionsAnd).OrderBy(x => x[Constants.TopMenu.ITEM_ORDER_COLUMN] as Camlex.Asc).ToString();
+                    //string liMenus = "<li class='home'><a href='" + SPContext.Current.Site.RootWeb.ServerRelativeUrl + "'>Trang chủ</a></li>";
+                    string liMenus = "<li class='home'><a href='/'>Trang chủ</a></li>";
 
-                    SPQuery firstLevelQry = new SPQuery();
-                    firstLevelQry.Query = camlFirstLevel;
-                    SPListItemCollection firstLevelItems = spListTopMenu.GetItems(firstLevelQry);
+                    SPWeb spWeb = SPContext.Current.Web;
 
-                    foreach (SPListItem firstLevelItem in firstLevelItems)
+                    string topmenuUrl = (spWeb.ServerRelativeUrl + Constants.TopMenu.LIST_URL).Replace("//", "/");
+                    SPList spListTopMenu = spWeb.GetList(topmenuUrl);
+
+
+                    if (spListTopMenu != null)
                     {
-                        liMenus += "<li><a href='" + firstLevelItem[Constants.TopMenu.HYPERLINK_COLUMN] + "'>" + firstLevelItem[Constants.TopMenu.TITLE_COLUMN] + "</a>" + GetChildrenNode(spListTopMenu, firstLevelItem) + "</li>";
-                    }
-                }
+                        string camlFirstLevel = string.Empty;
+                        var firstLevelExpressionsAnd = new List<Expression<Func<SPListItem, bool>>>();
+                        firstLevelExpressionsAnd.Add(x => x[Constants.TopMenu.PARENT_COLUMN] == null);
+                        firstLevelExpressionsAnd.Add(x => (bool)x[Constants.TopMenu.IS_ACTIVE_COLUMN] == true);
+                        camlFirstLevel = Camlex.Query().WhereAll(firstLevelExpressionsAnd).OrderBy(x => x[Constants.TopMenu.ITEM_ORDER_COLUMN] as Camlex.Asc).ToString();
 
-                ltTopMenu.Text = liMenus;
+                        SPQuery firstLevelQry = new SPQuery();
+                        firstLevelQry.Query = camlFirstLevel;
+                        SPListItemCollection firstLevelItems = spListTopMenu.GetItems(firstLevelQry);
+
+                        foreach (SPListItem firstLevelItem in firstLevelItems)
+                        {
+                            liMenus += "<li><a href='" + firstLevelItem[Constants.TopMenu.HYPERLINK_COLUMN] + "'>" + firstLevelItem[Constants.TopMenu.TITLE_COLUMN] + "</a>" + GetChildrenNode(spListTopMenu, firstLevelItem) + "</li>";
+                        }
+                    }
+
+                    ltTopMenu.Text = liMenus;
+                }
+                catch (Exception ex)
+                { }
             }
         }
 

@@ -9,7 +9,7 @@
 <asp:Panel ID="pnlUserInfoBox" runat="server" Visible="false" CssClass="hidden-box">
 <script type="text/javascript">
     $(function () {
-        var newLI = "<li style='float:right'><a class='menuUserInfo' href='/_layouts/signout.aspx'>Thoát</a></li>";
+        var newLI = "<li style='float:right'><a class='menuUserInfo' href='<%: currentWebUrl %>/_layouts/signout.aspx'>Thoát</a></li>";
         newLI += "<li style='float:right'><a class='menuUserInfo'>Xin chào, <b><%: currentUsername %></b></a></li>";
 
         $(".sf-menu").append(newLI);
