@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<List xmlns:ows="Microsoft SharePoint" Title="DichVuCong" FolderCreation="FALSE" Direction="$Resources:Direction;" Url="Lists/DichVuCong" BaseType="0" xmlns="http://schemas.microsoft.com/sharepoint/">
+  <MetaData>
+    <ContentTypes>
+      <ContentType ID="0x0100D4F264AC3F8F41E3B64310B2F87EC354" Name="$Resources:core,Item;" Group="$Resources:core,List_Content_Types;" Description="$Resources:core,ItemCTDesc;">
+        <FieldRefs>
+          <FieldRef ID="{57BB81DC-ED25-4D68-82B3-B35A46BED40D}" Name="LoaiCoQuanThucHien"/>
+          <FieldRef ID="{7269480A-78C2-4906-A25A-D1618978780A}" Name="CoQuanThucHien"/>
+          <FieldRef ID="{B4E7106F-8A04-46F1-B619-92DC0759CD9B}" Name="LinhVuc"/>
+          <FieldRef ID="{61CF0258-1934-4D2E-9C5A-8794941D269C}" Name="MucDo"/>         
+          
+          <FieldRef ID="{fa564e0f-0c70-4ab9-b863-0177e6ddd247}" Name="Title"/>
+
+          <FieldRef ID="{605C7057-36AF-469B-A1A0-D455F2F4DE81}" Name="Hyperlink"/>
+        </FieldRefs>
+      </ContentType>
+    </ContentTypes>
+    <Fields>
+      <Field ID="{fa564e0f-0c70-4ab9-b863-0177e6ddd247}" Type="Text" Name="Title" DisplayName="$Resources:core,Title;" Required="TRUE" SourceID="http://schemas.microsoft.com/sharepoint/v3" StaticName="Title" MaxLength="255" />
+
+      <Field ID="{57BB81DC-ED25-4D68-82B3-B35A46BED40D}" Type="Lookup" ShowField="Title" Name="LoaiCoQuanThucHien" StaticName="LoaiCoQuanThucHien" DisplayName="Loại cơ quan thực hiện" List="Lists/LoaiCoQuanThucHien" Required="TRUE"/>
+      <Field ID="{7269480A-78C2-4906-A25A-D1618978780A}" Type="Lookup" ShowField="Title" Name="CoQuanThucHien" StaticName="CoQuanThucHien" DisplayName="Cơ quan thực hiện" List="Lists/CoQuanThucHien" Required="TRUE"/>
+      <Field ID="{B4E7106F-8A04-46F1-B619-92DC0759CD9B}" Type="Lookup" ShowField="Title" Name="LinhVuc" StaticName="LinhVuc" DisplayName="Lĩnh vực" List="Lists/LinhVuc" Required="TRUE"/>
+      <Field ID="{61CF0258-1934-4D2E-9C5A-8794941D269C}" Type="Lookup" ShowField="Title" Name="MucDo" StaticName="MucDo" DisplayName="Mức độ" List="Lists/MucDo" Required="TRUE"/>
+
+      <Field ID="{605C7057-36AF-469B-A1A0-D455F2F4DE81}" Type="Text" Name="Hyperlink" StaticName="Hyperlink" DisplayName="Hyperlink" Required="TRUE" Description="Điền dấu # nếu không muốn gán link"/>
+    </Fields>
+    <Views>
+      <View BaseViewID="0" Type="HTML" MobileView="TRUE" TabularView="FALSE">
+        <Toolbar Type="Standard" />
+        <XslLink Default="TRUE">main.xsl</XslLink>
+        <RowLimit Paged="TRUE">30</RowLimit>
+        <ViewFields>
+          <FieldRef Name="LinkTitleNoMenu"></FieldRef>
+        </ViewFields>
+        <Query>
+          <OrderBy>
+            <FieldRef Name="Modified" Ascending="FALSE"></FieldRef>
+          </OrderBy>
+        </Query>
+        <ParameterBindings>
+          <ParameterBinding Name="AddNewAnnouncement" Location="Resource(wss,addnewitem)" />
+          <ParameterBinding Name="NoAnnouncements" Location="Resource(wss,noXinviewofY_LIST)" />
+          <ParameterBinding Name="NoAnnouncementsHowTo" Location="Resource(wss,noXinviewofY_ONET_HOME)" />
+        </ParameterBindings>
+      </View>
+      <View BaseViewID="1" Type="HTML" WebPartZoneID="Main" DisplayName="$Resources:core,objectiv_schema_mwsidcamlidC24;" DefaultView="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" SetupPath="pages\viewpage.aspx" ImageUrl="/_layouts/15/images/generic.png?rev=23" Url="AllItems.aspx">
+        <Toolbar Type="Standard" />
+        <XslLink Default="TRUE">main.xsl</XslLink>
+        <JSLink>clienttemplates.js</JSLink>
+        <RowLimit Paged="TRUE">100</RowLimit>
+        <ViewFields>
+          <FieldRef Name="LinhVuc"></FieldRef>
+          <FieldRef Name="MucDo"></FieldRef>
+          <FieldRef Name="LinkTitle"></FieldRef>
+          <FieldRef Name="Hyperlink"></FieldRef>
+        </ViewFields>
+        <Query>
+          <GroupBy Collapse="FALSE" GroupLimit="30">
+            <FieldRef Name="LoaiCoQuanThucHien" />
+            <FieldRef Name="CoQuanThucHien" />
+          </GroupBy>
+          <OrderBy>
+            <FieldRef Name="LinhVuc"></FieldRef>
+            <FieldRef Name="MucDo"></FieldRef>
+            <FieldRef Name="Title"></FieldRef>
+          </OrderBy>
+        </Query>
+        <ParameterBindings>
+          <ParameterBinding Name="NoAnnouncements" Location="Resource(wss,noXinviewofY_LIST)" />
+          <ParameterBinding Name="NoAnnouncementsHowTo" Location="Resource(wss,noXinviewofY_DEFAULT)" />
+        </ParameterBindings>
+      </View>
+    </Views>
+    <Forms>
+      <Form Type="DisplayForm" Url="DispForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
+      <Form Type="EditForm" Url="EditForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
+      <Form Type="NewForm" Url="NewForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
+    </Forms>
+  </MetaData>
+</List>

@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <ListInstance Title="CoQuanThucHien"
+                OnQuickLaunch="TRUE"
+                TemplateType="10003"
+                Url="Lists/CoQuanThucHien"
+                Description="">
+    <Data>
+      <Rows>
+        <Row>
+          <Field Name="ID">1</Field>
+          <Field Name="Title">Ban quản lý các KCN</Field>
+        </Row>
+        <Row>
+          <Field Name="ID">2</Field>
+          <Field Name="Title">Sở lao động, thương binh và xã hội</Field>
+        </Row>
+        <Row>
+          <Field Name="ID">3</Field>
+          <Field Name="Title">Sở thông tin và truyền thông</Field>
+        </Row>
+        <Row>
+          <Field Name="ID">4</Field>
+          <Field Name="Title">Sở giao thông vận tải</Field>
+        </Row>
+      </Rows>
+    </Data>
+  </ListInstance>
+</Elements>

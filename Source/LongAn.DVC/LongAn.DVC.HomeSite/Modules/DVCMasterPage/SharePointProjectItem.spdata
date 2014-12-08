@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ProjectItem Type="Microsoft.VisualStudio.SharePoint.Module" DefaultFile="Elements.xml" SupportedTrustLevels="All" SupportedDeploymentScopes="Web, Site" xmlns="http://schemas.microsoft.com/VisualStudio/2010/SharePointTools/SharePointProjectItemModel">
+  <Files>
+    <ProjectItemFile Source="Elements.xml" Target="DVCMasterPage\" Type="ElementManifest" />
+    <ProjectItemFile Source="DVC.master" Target="DVCMasterPage\" Type="ElementFile" />
+    <ProjectItemFile Source="DVCWebPartPage_Home.aspx" Target="DVCMasterPage\" Type="ElementFile" />
+    <ProjectItemFile Source="DVCWebPartPage_Manage.aspx" Target="DVCMasterPage\" Type="ElementFile" />
+    <ProjectItemFile Source="DVC_Admin.master" Target="DVCMasterPage\" Type="ElementFile" />
+  </Files>
+</ProjectItem>

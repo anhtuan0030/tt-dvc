@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <Module Name="DVCPages" Url="Pages">
+
+    <File Path="DVCPages\BlankPage.aspx" Url="ThuTucHanhChinh.aspx" Type="GhostableInLibrary" ReplaceContent="TRUE" >
+      <Property Name="Title" Value="Thủ tục hành chính"/>
+      <Property Name="PublishingPageLayout" Value="~SiteCollection/_catalogs/masterpage/DVCWebPartPage_Home.aspx, DVC WebPart page - Home"/>
+
+      <AllUsersWebPart WebPartOrder ="0" WebPartZoneID ="LeftColumn">
+        <![CDATA[ 
+      <webParts>
+        <webPart xmlns="http://schemas.microsoft.com/WebPart/v3">
+          <metaData>
+            <type name="LongAn.DVC.HomeSite.WebParts.DanhSachThuTucHanhChinh.DanhSachThuTucHanhChinh, LongAn.DVC.HomeSite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=fbfd99b31029d97f" />
+            <importErrorMessage>$Resources:core,ImportErrorMessage;</importErrorMessage>
+          </metaData>
+          <data>
+            <properties>
+              <property name="Title" type="string">Danh sách thủ tục hành chính</property>
+              <property name="ChromeType" type="chrometype">None</property>
+            </properties>
+          </data>
+        </webPart>
+      </webParts>
+]]>
+      </AllUsersWebPart>
+
+      <AllUsersWebPart WebPartOrder ="0" WebPartZoneID ="Header">
+        <![CDATA[ 
+      <webParts>
+        <webPart xmlns="http://schemas.microsoft.com/WebPart/v3">
+          <metaData>
+            <type name="LongAn.DVC.HomeSite.WebParts.TraCuuThuTucHanhChinh.TraCuuThuTucHanhChinh, LongAn.DVC.HomeSite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=fbfd99b31029d97f" />
+            <importErrorMessage>$Resources:core,ImportErrorMessage;</importErrorMessage>
+          </metaData>
+          <data>
+            <properties>
+              <property name="Title" type="string">Tra cứu thủ tục hành chính</property>
+              <property name="ChromeType" type="chrometype">None</property>
+            </properties>
+          </data>
+        </webPart>
+      </webParts>
+]]>
+      </AllUsersWebPart>
+    </File>
+
+
+  </Module>
+</Elements>

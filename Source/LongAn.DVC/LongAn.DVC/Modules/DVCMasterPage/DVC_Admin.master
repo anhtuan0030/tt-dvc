@@ -385,7 +385,7 @@
 		<!-- Begin Banner -->
         <div class="row">
             <div class="grid_12">
-                <a href="/">
+                <a href='<SharePoint:ProjectProperty Property="Url" runat="server"/>'>
                     <img class="img-responsive" src="/_layouts/15/LongAn.DVC/images/banner-1.png" alt="banner"/>
                 </a>
             </div>

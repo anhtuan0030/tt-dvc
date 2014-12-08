@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <ListInstance Title="LoaiCoQuanThucHien"
+                OnQuickLaunch="TRUE"
+                TemplateType="10002"
+                Url="Lists/LoaiCoQuanThucHien"
+                Description="">
+    <Data>
+      <Rows>
+        <Row>
+          <Field Name="ID">1</Field>
+          <Field Name="Title">Sở ban ngành</Field>
+        </Row>
+        <Row>
+          <Field Name="ID">2</Field>
+          <Field Name="Title">Huyện thị</Field>
+        </Row>
+      </Rows>
+    </Data>
+  </ListInstance>
+</Elements>

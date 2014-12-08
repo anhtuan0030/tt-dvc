@@ -16,7 +16,7 @@ namespace LongAn.DVC.WebParts.TopMenu
         {
             if (!Page.IsPostBack)
             {
-                string liMenus = "<li class='home'><a href='/'>Trang chủ</a></li>";
+                string liMenus = "<li class='home'><a href='" + SPContext.Current.Site.RootWeb.ServerRelativeUrl + "'>Trang chủ</a></li>";
 
                 SPWeb spWeb = SPContext.Current.Web;
 
