@@ -35,12 +35,37 @@ namespace LongAn.DVC.FormsBasedAuthentication.Webparts.FBALoginWebPart
                 Login1.Visible = false;
                 pnlAuthorize.Visible = true;
 
-                lblUserName.Text = SPContext.Current.Web.CurrentUser.Name;
+                string userName = SPContext.Current.Web.CurrentUser.Name;
+
+                lblUserName.Text = userName.IndexOf("|") != -1 ? userName.Split('|')[userName.Split('|').Length - 1] : userName;
             }
             else
             {
                 Login1.Visible = true;
                 pnlAuthorize.Visible = false;
+            }
+
+            if (!Page.IsPostBack)
+            {
+                SPWeb spWeb = SPContext.Current.Site.RootWeb;
+
+                Login1.CreateUserUrl = spWeb.ServerRelativeUrl.TrimEnd('/') + "/Pages/DangKyTaiKhoan.aspx";
+
+
+                HyperLink createUserLink = Login1.FindControl("CreateUserLink") as HyperLink;
+                if (createUserLink != null)
+                {
+                    createUserLink.NavigateUrl = spWeb.ServerRelativeUrl.TrimEnd('/') + "/Pages/DangKyTaiKhoan.aspx";
+                }
+
+                HyperLink passwordRecoveryLink = Login1.FindControl("PasswordRecoveryLink") as HyperLink;
+                if (passwordRecoveryLink != null)
+                {
+                    passwordRecoveryLink.NavigateUrl = spWeb.ServerRelativeUrl.TrimEnd('/') + "/Pages/KhoiPhucMatKhau.aspx";
+                }
+
+                lnkLogOff.NavigateUrl = spWeb.ServerRelativeUrl.TrimEnd('/') + "/_layouts/signout.aspx";
+                lnkChangePassword.NavigateUrl = spWeb.ServerRelativeUrl.TrimEnd('/') + "/_Layouts/15/FBA/ChangePassword.aspx?Source=" + SPEncode.UrlEncode(spWeb.ServerRelativeUrl.TrimEnd('/'));
             }
         }
 

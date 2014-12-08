@@ -676,6 +676,8 @@
 		<!-- End Footer -->
 
 		</div>
+
+    <SharePoint:DelegateControl runat="server" AllowMultipleControls="true" ControlId="UserAuthenticationBox"/>
 </SharePoint:SharePointForm>
 <SharePoint:AjaxDelta id="DeltaPlaceHolderUtilityContent" runat="server">
 		<asp:ContentPlaceHolder id="PlaceHolderUtilityContent" runat="server"/>

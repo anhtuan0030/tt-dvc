@@ -9,12 +9,15 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
     public partial class ucUserAuthenticationBox : UserControl
     {
         public string currentUsername = string.Empty;
+        public string currentWebUrl = string.Empty;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (SPContext.Current.Web.CurrentUser != null)
             {
                 pnlUserInfoBox.Visible = true;
                 currentUsername = SPContext.Current.Web.CurrentUser.Name;
+                currentWebUrl = SPContext.Current.Site.RootWeb.ServerRelativeUrl.TrimEnd('/');
             }
         }
     }
