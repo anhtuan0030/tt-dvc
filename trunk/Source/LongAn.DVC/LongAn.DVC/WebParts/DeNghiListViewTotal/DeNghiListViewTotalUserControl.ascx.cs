@@ -440,6 +440,7 @@ namespace LongAn.DVC.WebParts.DeNghiListViewTotal
                 literalDeNghiTitle.Text = WebPart.DeNghiTitle;
                 var currentPage = SPUtility.GetPageUrlPath(HttpContext.Current);
                 var deNghiUrl = (SPContext.Current.Web.ServerRelativeUrl + Constants.ListUrlDeNghiCapPhep).Replace("//", "/");
+                hplLichSuLuanChuyenHoSo.NavigateUrl = (SPContext.Current.Web.ServerRelativeUrl + Constants.PageLichSuLuanChuyenHoSo).Replace("//", "/");
                 hdfCurrentUrl.Value = currentPage;
                 hdfDeNghiUrl.Value = deNghiUrl;
                 //Enable add new hyperlink

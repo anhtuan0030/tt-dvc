@@ -985,6 +985,24 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl divNhanXet;
         
         /// <summary>
+        /// FieldLabel49 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Microsoft.SharePoint.WebControls.FieldLabel FieldLabel49;
+        
+        /// <summary>
+        /// FormField41 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Microsoft.SharePoint.WebControls.FormField FormField41;
+        
+        /// <summary>
         /// fldAppendOnlyHistory control.
         /// </summary>
         /// <remarks>

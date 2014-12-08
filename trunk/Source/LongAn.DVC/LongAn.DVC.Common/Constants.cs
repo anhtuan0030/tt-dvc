@@ -81,6 +81,11 @@ namespace LongAn.DVC.Common
 
     public class Constants
     {
+
+        public const string SyncReportJobName = "LongAn-DVC Report Sync Job";
+        public const string SiteIdProperty = "DVC_Site_ID";
+        public const string WebIdProperty = "DVC_Web_ID";
+        public const string ConnectionString = "DVC_ConnectionString";
         //Configurations
         public const string ConfSoThuTuBienNhan = "0000000";
 
@@ -190,6 +195,9 @@ namespace LongAn.DVC.Common
         public const string ListUrlNgayLe = "/Lists/NgayLe";
 
         public const string ListUrlCauHinh = "/Lists/CauHinh";
+
+        public const string PageLichSuLuanChuyenHoSo = "/Pages/LichSuLuanChuyenHoSo.aspx";
+
         //Loại attachments
         public const string AttachmentGiayDangKy = "GiayDangKy";
         public const string AttachmentGiayChungNhanKiemDinh = "GiayChungNhanKiemDinh";

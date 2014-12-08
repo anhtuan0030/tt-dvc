@@ -3,6 +3,8 @@ using System.Runtime.InteropServices;
 using System.Security.Permissions;
 using Microsoft.SharePoint;
 using LongAn.DVC.Common;
+using Microsoft.SharePoint.Administration;
+using LongAn.DVC.TimerJobs;
 
 namespace LongAn.DVC.Features.Web
 {
@@ -22,6 +24,7 @@ namespace LongAn.DVC.Features.Web
         {
             var web = (SPWeb)properties.Feature.Parent;
             EnsureListPermission(web);
+            CreateJob(web, Constants.SyncReportJobName);
         }
 
         void EnsureListPermission(SPWeb web)
@@ -61,6 +64,52 @@ namespace LongAn.DVC.Features.Web
                 LoggingServices.LogException(ex);
             }
             LoggingServices.LogMessage("End EnsureListPermission");
+        }
+
+        private static void DeleteJob(SPWeb web, string jobName)
+        {
+            try
+            {
+                LoggingServices.LogMessage("Begin Delete Job: " + jobName);
+                foreach (SPJobDefinition job in web.Site.WebApplication.JobDefinitions)
+                {
+                    if (job.Name == jobName)
+                    {
+                        job.Delete();
+                        break;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                LoggingServices.LogException(ex);
+            }
+            LoggingServices.LogMessage("End Delete Job: " + jobName);
+        }
+
+        private static void CreateJob(SPWeb web, string jobName)
+        {
+            try
+            {
+                LoggingServices.LogMessage("Begin Create Timesheet HO job");
+                //Delete exists job
+                DeleteJob(web, jobName);
+                //Create new job
+                SyncReportJob job = new SyncReportJob(jobName, web.Site.WebApplication);
+                job.Properties[Constants.SiteIdProperty] = web.Site.ID.ToString();
+                job.Properties[Constants.WebIdProperty] = web.ID.ToString();
+                //Schedule
+                SPDailySchedule schedule = new SPDailySchedule();
+                schedule.BeginHour = 22;
+                schedule.BeginMinute = 5;
+                schedule.EndHour = 10;
+                job.Schedule = schedule;
+                job.Update();
+            }
+            catch (Exception ex)
+            {
+                LoggingServices.LogException(ex);
+            }
         }
 
         // Uncomment the method below to handle the event raised before a feature is deactivated.
