@@ -50,7 +50,7 @@ namespace LongAn.DVC.WebParts.DeNghiSearch
                     lblTinhTrangHoSo.Text = dataRow[Fields.TenTrangThaiRef].ToString();
                     if (!string.IsNullOrEmpty(ngayHenTra) && !string.IsNullOrEmpty(ngayThucTra))
                     {
-                        lblSoNgayTreHan.Text = (Convert.ToDateTime(ngayThucTra) - Convert.ToDateTime(ngayHenTra)).TotalDays.ToString();
+                        lblSoNgayTreHan.Text = (Convert.ToDateTime(ngayThucTra) - Convert.ToDateTime(ngayHenTra)).Days.ToString();
                     }
 
                     lblCaNhanToChuc.Text = dataRow[Fields.CaNhanToChuc].ToString();

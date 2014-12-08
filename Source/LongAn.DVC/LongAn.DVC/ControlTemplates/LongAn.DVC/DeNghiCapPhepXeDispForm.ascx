@@ -629,6 +629,16 @@
 
                                     <div class="row">
                                         <div class="grid_2">
+                                            <SharePoint:FieldLabel ID="FieldLabel49"  FieldName="TenTrangThaiRef"  runat="server"/>
+                                        </div>
+                                        <div class="grid_9">
+                                            <SharePoint:FormField  runat="server" ID="FormField41" FieldName="TenTrangThaiRef" />
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="grid_2">
                                             Nhận xét / Yêu cầu trước đó
                                         </div>
                                         <div class="grid_9">

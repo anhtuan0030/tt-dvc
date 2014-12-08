@@ -20,39 +20,51 @@ namespace LongAn.DVC.EventReceivers
         public override void ItemAdded(SPItemEventProperties properties)
         {
             base.ItemAdded(properties);
+            LoggingServices.LogMessage("Begin ItemAdded");
 
-            #region Generate BienNhan
-            using (DisableItemEvent disableItem = new DisableItemEvent())
+            try
             {
-                var currentItem = properties.ListItem;
-                var namDeNghi = DateTime.Now.ToString("yyyy");
-                var soThuTuBienNhan = GenerateBienNhan(properties.Web);
-                currentItem[Constants.FieldTitle] = Constants.ConfMaLinhVucSGTVT + namDeNghi + soThuTuBienNhan;
-                currentItem[Constants.FieldNamDeNghi] = namDeNghi;
-                currentItem[Constants.FieldSoThuTuBienNhan] = int.Parse(soThuTuBienNhan);
-                currentItem.SystemUpdate();
-            }
-            #endregion Generate BienNhan
-
-            #region Update permission
-            SPUser currentUser = properties.Web.CurrentUser;
-            SPSecurity.RunWithElevatedPrivileges(delegate()
-            {
-                using (SPSite site = new SPSite(properties.Web.Site.ID))
+                #region Generate BienNhan
+                using (DisableItemEvent disableItem = new DisableItemEvent())
                 {
-                    using (SPWeb web = site.OpenWeb(properties.Web.ID))
-                    {
-                        SPListItem currentItem = web.Lists[properties.ListId].GetItemById(properties.ListItemId);
-                        SPRoleDefinitionCollection roleDefinitions = web.RoleDefinitions;
-                        SPRoleDefinition editNotDeleteRoleDefinition = roleDefinitions[Constants.ConfPermissionDeNghi];
-                        currentItem.BreakRoleInheritance(true);
-                        currentItem.SetPermissions(currentUser, editNotDeleteRoleDefinition);
-                        SPGroup group = web.SiteGroups[Constants.ConfGroupNguoiDung];
-                        currentItem.RemovePermissions(group);
-                    }
+                    var currentItem = properties.ListItem;
+                    var namDeNghi = DateTime.Now.ToString("yyyy");
+                    var soThuTuBienNhan = GenerateBienNhan(properties.Web);
+                    var soBienNhan = Constants.ConfMaLinhVucSGTVT + namDeNghi + soThuTuBienNhan;
+                    currentItem[Constants.FieldTitle] = soBienNhan;
+                    currentItem[Constants.FieldNamDeNghi] = namDeNghi;
+                    currentItem[Constants.FieldSoThuTuBienNhan] = int.Parse(soThuTuBienNhan);
+                    LoggingServices.LogMessage("SoBienNhan: " + soBienNhan + ", NamDeNghi: " + namDeNghi);
+                    currentItem.SystemUpdate();
                 }
-            });
-            #endregion Update permission
+                #endregion Generate BienNhan
+
+                #region Update permission
+                SPUser currentUser = properties.Web.CurrentUser;
+                SPSecurity.RunWithElevatedPrivileges(delegate()
+                {
+                    using (SPSite site = new SPSite(properties.Web.Site.ID))
+                    {
+                        using (SPWeb web = site.OpenWeb(properties.Web.ID))
+                        {
+                            SPListItem currentItem = web.Lists[properties.ListId].GetItemById(properties.ListItemId);
+                            SPRoleDefinitionCollection roleDefinitions = web.RoleDefinitions;
+                            SPRoleDefinition editNotDeleteRoleDefinition = roleDefinitions[Constants.ConfPermissionDeNghi];
+                            currentItem.BreakRoleInheritance(true);
+                            currentItem.SetPermissions(currentUser, editNotDeleteRoleDefinition);
+                            SPGroup group = web.SiteGroups[Constants.ConfGroupNguoiDung];
+                            currentItem.RemovePermissions(group);
+                        }
+                    }
+                });
+                #endregion Update permission
+            }
+            catch (Exception ex)
+            {
+                LoggingServices.LogException(ex);
+            }
+
+            LoggingServices.LogMessage("End ItemAdded");
         }
 
         public override void ItemUpdating(SPItemEventProperties properties)
@@ -76,8 +88,8 @@ namespace LongAn.DVC.EventReceivers
             string bienNhan = string.Empty;
             try
             {
-                LoggingServices.LogMessage("Begin ItemAdded SetSoBienNhan");
-                SPQuery caml = Camlex.Query().Where(x => (string)x[Constants.FieldNamDeNghi] == DateTime.Now.ToString("yyyy"))
+                LoggingServices.LogMessage("Begin GenerateBienNhan");
+                SPQuery caml = Camlex.Query().Where(x => (string)x[Fields.NamDeNghi] == DateTime.Now.ToString("yyyy"))
                                              .OrderBy(x => new[] { x["ID"] as Camlex.Desc }).ToSPQuery();
                 caml.RowLimit = 1;
                 SPSecurity.RunWithElevatedPrivileges(delegate()
@@ -86,11 +98,12 @@ namespace LongAn.DVC.EventReceivers
                     {
                         using (SPWeb web = site.OpenWeb(spWeb.ID))
                         {
-                            var deNghiList = web.GetList(Constants.ListUrlDeNghiCapPhep);
+                            var deNghiUrl = (web.ServerRelativeUrl + Constants.ListUrlDeNghiCapPhep).Replace("//", "/");
+                            var deNghiList = web.GetList(deNghiUrl);
                             var deNghiListItems = deNghiList.GetItems(caml);
                             string soThuTuBienNhan = Constants.ConfSoThuTuBienNhan + "1";
                             if (deNghiListItems != null && deNghiListItems.Count > 0)
-                                soThuTuBienNhan = Constants.ConfSoThuTuBienNhan + 
+                                soThuTuBienNhan = Constants.ConfSoThuTuBienNhan +
                                     (int.Parse(deNghiListItems[0][Constants.FieldSoThuTuBienNhan].ToString()) + 1);
                             bienNhan = soThuTuBienNhan.Substring(soThuTuBienNhan.Length - 7);
                         }
@@ -101,7 +114,7 @@ namespace LongAn.DVC.EventReceivers
             {
                 LoggingServices.LogException(ex);
             }
-            LoggingServices.LogMessage("End ItemAdded SetSoBienNhan");
+            LoggingServices.LogMessage("End GenerateBienNhan");
             return bienNhan;
         }
         #endregion Private functions

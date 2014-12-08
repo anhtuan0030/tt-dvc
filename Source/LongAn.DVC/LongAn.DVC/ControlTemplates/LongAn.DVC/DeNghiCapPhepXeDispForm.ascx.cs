@@ -353,7 +353,8 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
             longOperation.LeadingHTML = "Please wait while the operation is running";
             longOperation.TrailingHTML = "Once the operation is finished you will be redirected to result page";
             longOperation.Begin();
-            
+
+            var emailTo = string.Empty;
             var deNghiList = SPContext.Current.List;
             var spListItem = deNghiList.GetItemById(SPContext.Current.ItemId);
             spListItem[Fields.NguoiXuLy] = spUser.ID;
@@ -370,33 +371,42 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
                 spListItem[Fields.NguoiThamGiaXuLy] = spUser.ID;
             }
             spListItem[Fields.NoteAppend] = txtNhanXet.Text.Trim();
+            
+            //Get all nguoi cho xu ly (spgroup next step)
+            var nguoiChoXuLy = new SPFieldUserValueCollection();
+            foreach (SPUser user in newCauHinh.SPGroup.Users)
+            {
+                emailTo += user.Email + ";";
+                nguoiChoXuLy.Add(new SPFieldUserValue(SPContext.Current.Web, user.ID, user.LoginName));
+            }
+            LoggingServices.LogMessage("Email NguoiChoXuLy: " + emailTo);
             //Cap nhat buoc duyet va trang thai
             if (isCapNhatBuocDuyet)
             {
                 spListItem[Fields.TrangThai] = newCauHinh != null ? newCauHinh.TrangThai : new SPFieldLookupValue(SPContext.Current.ListItem[Fields.TrangThai].ToString()).LookupId;
                 spListItem[Fields.BuocDuyet] = newCauHinh != null ? newCauHinh.BuocDuyetID : new SPFieldLookupValue(SPContext.Current.ListItem[Fields.BuocDuyet].ToString()).LookupId;
                 //Cap nhat nguoi cho xu ly
-                var nguoiChoXuLy = new SPFieldUserValueCollection();
-                foreach (SPUser user in newCauHinh.SPGroup.Users)
-                {
-                    nguoiChoXuLy.Add(new SPFieldUserValue(SPContext.Current.Web, user.ID, user.LoginName));
-                }
                 spListItem[Fields.NguoiChoXuLy] = nguoiChoXuLy;
             }
             //Cap nhat tiep nhan ho so
             if (newCauHinh != null && newCauHinh.StartEnd == Constants.CauHinh_TNHS)
             {
                 spListItem[Fields.NgayTiepNhan] = DateTime.Now;
+                LoggingServices.LogMessage("Updated NgayTiepNhan - (Start/End = 'Tiếp nhận hồ sơ')");
             }
             //Cap nhat ngay thuc tra ho so
             if (newCauHinh != null && newCauHinh.StartEnd == Constants.CauHinh_End)
             {
                 spListItem[Fields.NgayThucTra] = DateTime.Now;
+                LoggingServices.LogMessage("Updated NgayThucTra - (Start/End = 'Kết thúc')");
             }
-            //Cap nhat ngay thuc tra ho so
+            //Cap nhat nguoi xu ly ho so ( truong hop YCBS) -> tra ve cho nguoi tao
             if (newCauHinh != null && newCauHinh.StartEnd == Constants.CauHinh_YCBS)
             {
-                spListItem[Fields.NguoiChoXuLy] = spListItem[Fields.NguoiDeNghi];
+                var spFieldUserValue = new SPFieldUserValue(SPContext.Current.Web, spListItem[Fields.NguoiDeNghi].ToString());
+                spListItem[Fields.NguoiChoXuLy] = spFieldUserValue;
+                emailTo = spFieldUserValue.User.Email;
+                LoggingServices.LogMessage("Updated NguoiChoXuLy = NguoiDeNghi - (Start/End = 'Yêu cầu bổ sung')");
             }
             //Cap nhat loai duong
             if (divLoaiDuong.Visible)
@@ -412,11 +422,13 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
                 spListItem[Fields.LoaiDuong] = values;
                 spListItem[Fields.LanXeDuocChay] = txtLanXeDuocChay.Text.Trim();
                 spListItem[Fields.TocDoDuocChay] = txtTocDoDuocChay.Text.Trim();
+                LoggingServices.LogMessage("Updated LoaiDuong table");
             }
             //Cap nhat ngay hen tra
             if (divNgayHen.Visible)
             {
                 spListItem[Fields.NgayHenTra] = dtcNgayHenTra.SelectedDate;
+                LoggingServices.LogMessage("Updated NgayHenTra");
             }
             //Cap nhat yeu cau bo sung
             if (isYeuCauBoSung)// divYeuCauBoSung.Visible)
@@ -429,6 +441,7 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
                 //var spUserValue = new SPFieldUserValue(SPContext.Current.Web, int.Parse(ddlUsers.SelectedValue), ddlUsers.SelectedItem.Text);
                 spListItem[Fields.NguoiChoXuLy] = ddlUsers.SelectedValue;
                 spListItem[Fields.NguoiXuLy] = ddlUsers.SelectedValue;
+                LoggingServices.LogMessage("Updated PhanCongHoSo - NguoiChoXuLy = " + ddlUsers.SelectedItem.Text);
             }
             spListItem.Update();
 

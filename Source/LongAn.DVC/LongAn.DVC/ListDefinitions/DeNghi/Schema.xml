@@ -1522,7 +1522,6 @@
              StaticName="SoThuTuBienNhan"
              DisplayName="Số thứ tự biên nhận"
              Required="FALSE"
-             Hidden="TRUE"
              EnforceUniqueValues="FALSE"
              Indexed="FALSE"
              MaxLength="255"

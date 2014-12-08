@@ -51,7 +51,8 @@
                 </div>
                 <div class="pull-right">
                     <div class="pull-left-search">
-                        <a href="/Pages/LichSuLuanChuyenHoSo.aspx" class="button task inline-block" style="padding-left:30px; margin-right:10px;">Lịch sử luân chuyển hồ sơ</a>
+                        <%--<a href="#" class="button task inline-block" style="padding-left:30px; margin-right:10px;">Lịch sử luân chuyển hồ sơ</a>--%>
+                        <asp:HyperLink ID="hplLichSuLuanChuyenHoSo" class="button task inline-block" style="padding-left:30px; margin-right:10px;" runat="server">Lịch sử luân chuyển hồ sơ</asp:HyperLink>
                         <a id="linkSearchExpand" href="#" class="button button-expand inline-block">Tìm kiếm</a>
                         <asp:HiddenField ID="hdfSearchExpand" Value="0" runat="server" />
                         <asp:HiddenField ID="hdfCurrentUrl" Value="0" runat="server" />

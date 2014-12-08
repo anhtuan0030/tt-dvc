@@ -125,6 +125,7 @@
     <Compile Include="Helpers\CauHinh.cs" />
     <Compile Include="Helpers\DeNghiArgument.cs" />
     <Compile Include="Helpers\DeNghiHelper.cs" />
+    <Compile Include="Helpers\SqlHelpers.cs" />
     <Compile Include="Layouts\LongAn.DVC\DeNghiAppPage.aspx.cs">
       <DependentUpon>DeNghiAppPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -168,6 +169,7 @@
       <DependentUpon>YeuCauBoSung.aspx.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TimerJobs\SyncReportJob.cs" />
     <Compile Include="WebParts\DeNghiHistory\DeNghiHistory.ascx.cs">
       <DependentUpon>DeNghiHistory.ascx</DependentUpon>
     </Compile>
