@@ -401,6 +401,7 @@
           <CHOICE>Yêu cầu bổ sung</CHOICE>
           <CHOICE>Phân công hồ sơ</CHOICE>
           <CHOICE>Từ chối hồ sơ</CHOICE>
+          <CHOICE>Xác nhận hồ sơ</CHOICE>
           <CHOICE>Kết thúc</CHOICE>
         </CHOICES>
       </Field>

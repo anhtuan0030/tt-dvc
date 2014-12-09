@@ -44,7 +44,9 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
         {
             LoggingServices.LogMessage("CanBoTiepNhan Click");
             var cauHinh = DeNghiHelper.GetCauHinh(int.Parse(hdfNextStep.Value));
-            UpdateItem(cauHinh
+            UpdateItem(
+                Actions.None
+                , cauHinh
                 , true
                 , false
                 , SPContext.Current.Web.CurrentUser
@@ -58,7 +60,9 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
             if (cauHinhs != null && cauHinhs.Count > 0)
             {
                 var cauHinh = cauHinhs[0];
-                UpdateItem(cauHinh
+                UpdateItem(
+                    Actions.None
+                    , cauHinh
                     , true
                     , true
                     , SPContext.Current.Web.CurrentUser
@@ -80,7 +84,9 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
             {
                 var spUserValue = new SPFieldUserValue(SPContext.Current.Web, int.Parse(ddlUsers.SelectedValue), ddlUsers.SelectedItem.Text);
                 //SPContext.Current.Web.Users.GetByID(int.Parse(ddlUsers.SelectedValue));
-                UpdateItem(null
+                UpdateItem(
+                    Actions.None
+                    , null
                     , false
                     , false
                     , spUserValue.User
@@ -95,7 +101,9 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
             if (cauHinhs != null && cauHinhs.Count > 0)
             {
                 var cauHinh = cauHinhs[0];
-                UpdateItem(cauHinh
+                UpdateItem(
+                    Actions.Cancel
+                    , cauHinh
                     , true
                     , false
                     , SPContext.Current.Web.CurrentUser
@@ -114,7 +122,9 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
         {
             LoggingServices.LogMessage("TraHoSo Click");
             var cauHinh = DeNghiHelper.GetCauHinh(int.Parse(hdfPreStep.Value));
-            UpdateItem(cauHinh
+            UpdateItem(
+                Actions.Reject
+                , cauHinh
                 , true
                 , false
                 , SPContext.Current.Web.CurrentUser
@@ -125,7 +135,9 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
         {
             LoggingServices.LogMessage("Duyet Click");
             var cauHinh = DeNghiHelper.GetCauHinh(int.Parse(hdfNextStep.Value));
-            UpdateItem(cauHinh
+            UpdateItem(
+                Actions.Approve
+                , cauHinh
                 , true
                 , false
                 , SPContext.Current.Web.CurrentUser
@@ -154,6 +166,7 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
                     hdfCapDuyetText.Value = cauHinh.CapDuyetText;
                     hdfNextStep.Value = cauHinh.NextStep.ToString();
                     hdfPreStep.Value = cauHinh.PreviousStep.ToString();
+                    hdfStartEnd.Value = cauHinh.StartEnd;
 
                     #region Allow In giay bien nhan
                     if (cauHinh.AllowInBienNhan)
@@ -344,7 +357,7 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
             return output;
         }
 
-        void UpdateItem(CauHinh newCauHinh, bool isCapNhatBuocDuyet, bool isYeuCauBoSung, SPUser spUser, string capDuyetText)
+        void UpdateItem(Actions action, CauHinh newCauHinh, bool isCapNhatBuocDuyet, bool isYeuCauBoSung, SPUser spUser, string capDuyetText)
         {
             if (!this.Page.IsValid)
                 return;
@@ -353,12 +366,55 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
             longOperation.LeadingHTML = "Please wait while the operation is running";
             longOperation.TrailingHTML = "Once the operation is finished you will be redirected to result page";
             longOperation.Begin();
-
             var emailTo = string.Empty;
             var deNghiList = SPContext.Current.List;
-            var spListItem = deNghiList.GetItemById(SPContext.Current.ItemId);
+            var itemId = SPContext.Current.ItemId;
+            var spListItem = deNghiList.GetItemById(itemId);
+            //Nguoi xu ly
             spListItem[Fields.NguoiXuLy] = spUser.ID;
+            //Ghi chu / nhan xet
+            spListItem[Fields.NoteAppend] = txtNhanXet.Text.Trim();
 
+            #region Action Duyet (nextstep)
+            if (action == Actions.Approve)
+            {
+                //Cap nhat ngay duoc cap phep (Start/End = 'Kết thúc')
+                if (hdfStartEnd.Value == Constants.CauHinh_End)
+                {
+                    spListItem[Fields.NgayDuocCapPhep] = DateTime.Now;
+                    LoggingServices.LogMessage("Updated NgayDuocCapPhep - (Start/End = 'Kết thúc')");
+                }
+                //Cap nhat tiep nhan ho so (Start/End = 'Tiếp nhận hồ sơ')
+                if (hdfStartEnd.Value == Constants.CauHinh_TNHS)
+                {
+                    spListItem[Fields.NgayTiepNhan] = DateTime.Now;
+                    LoggingServices.LogMessage("Updated NgayTiepNhan - (Start/End = 'Tiếp nhận hồ sơ')");
+                }
+                //Cap nhat tình trạng trả hồ sơ (Start/End = 'Xác nhận hồ sơ')
+                if (hdfStartEnd.Value == Constants.CauHinh_XNHS)
+                {
+                    spListItem[Fields.TinhTrangTraHoSo] = Constants.TinhTrangTraHoSo_DaTra;
+                    LoggingServices.LogMessage("Updated TinhTrangTraHoSo - (Start/End = 'Xác nhận hồ sơ') - Đã trả");
+                }
+            }
+            else if (action == Actions.Reject)
+            {
+                //Cap nhat tình trạng trả hồ sơ (Start/End = 'Xác nhận hồ sơ')
+                if (hdfStartEnd.Value == Constants.CauHinh_XNHS)
+                {
+                    spListItem[Fields.TinhTrangTraHoSo] = Constants.TinhTrangTraHoSo_ChuaTra;
+                    LoggingServices.LogMessage("Updated TinhTrangTraHoSo - (Start/End = 'Xác nhận hồ sơ') - Chưa trả)");
+                }
+                
+            }
+            else if (action == Actions.Cancel)
+            {
+                spListItem[Fields.NgayHuyHoSo] = DateTime.Now;
+                LoggingServices.LogMessage("Updated NgayHuyHoSo - Cancel");
+            }
+            #endregion Action Duyet (nextstep)
+
+            #region NguoiThamGiaXuLy
             var nguoiThamGiaXuLy = Convert.ToString(spListItem[Fields.NguoiThamGiaXuLy]);
             if (!string.IsNullOrEmpty(nguoiThamGiaXuLy.ToString()))
             {
@@ -370,14 +426,17 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
             {
                 spListItem[Fields.NguoiThamGiaXuLy] = spUser.ID;
             }
-            spListItem[Fields.NoteAppend] = txtNhanXet.Text.Trim();
+            #endregion NguoiThamGiaXuLy
             
-            //Get all nguoi cho xu ly (spgroup next step)
+            #region NguoiChoXuLy
             var nguoiChoXuLy = new SPFieldUserValueCollection();
-            foreach (SPUser user in newCauHinh.SPGroup.Users)
+            if (newCauHinh.SPGroup != null)
             {
-                emailTo += user.Email + ";";
-                nguoiChoXuLy.Add(new SPFieldUserValue(SPContext.Current.Web, user.ID, user.LoginName));
+                foreach (SPUser user in newCauHinh.SPGroup.Users)
+                {
+                    emailTo += user.Email + ";";
+                    nguoiChoXuLy.Add(new SPFieldUserValue(SPContext.Current.Web, user.ID, user.LoginName));
+                }   
             }
             LoggingServices.LogMessage("Email NguoiChoXuLy: " + emailTo);
             //Cap nhat buoc duyet va trang thai
@@ -388,19 +447,15 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
                 //Cap nhat nguoi cho xu ly
                 spListItem[Fields.NguoiChoXuLy] = nguoiChoXuLy;
             }
-            //Cap nhat tiep nhan ho so
-            if (newCauHinh != null && newCauHinh.StartEnd == Constants.CauHinh_TNHS)
-            {
-                spListItem[Fields.NgayTiepNhan] = DateTime.Now;
-                LoggingServices.LogMessage("Updated NgayTiepNhan - (Start/End = 'Tiếp nhận hồ sơ')");
-            }
-            //Cap nhat ngay thuc tra ho so
-            if (newCauHinh != null && newCauHinh.StartEnd == Constants.CauHinh_End)
+            #endregion NguoiChoXuLy
+
+            //Cap nhat ngay thuc tra ho so (Start/End = Xác nhận hoàn thành / Xác nhận chưa hoàn thành)
+            if (hdfStartEnd.Value == Constants.CauHinh_XNHS)
             {
                 spListItem[Fields.NgayThucTra] = DateTime.Now;
                 LoggingServices.LogMessage("Updated NgayThucTra - (Start/End = 'Kết thúc')");
             }
-            //Cap nhat nguoi xu ly ho so ( truong hop YCBS) -> tra ve cho nguoi tao
+            //Cap nhat nguoi xu ly ho so (truong hop YCBS) -> tra ve cho nguoi tao
             if (newCauHinh != null && newCauHinh.StartEnd == Constants.CauHinh_YCBS)
             {
                 var spFieldUserValue = new SPFieldUserValue(SPContext.Current.Web, spListItem[Fields.NguoiDeNghi].ToString());
@@ -442,6 +497,22 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
                 spListItem[Fields.NguoiChoXuLy] = ddlUsers.SelectedValue;
                 spListItem[Fields.NguoiXuLy] = ddlUsers.SelectedValue;
                 LoggingServices.LogMessage("Updated PhanCongHoSo - NguoiChoXuLy = " + ddlUsers.SelectedItem.Text);
+            }
+            //Send email
+            if (newCauHinh.IsEmail)
+            {
+                LoggingServices.LogMessage("SendEmail");
+                var caNhanToChuc = spListItem[Fields.CaNhanToChuc] != null ? spListItem[Fields.CaNhanToChuc].ToString() : string.Empty;
+                var soBienNhan = spListItem[Fields.Title] != null ? spListItem[Fields.Title].ToString() : string.Empty;
+                var tenTrangThai = spListItem[Fields.TenTrangThaiRef] != null ? spListItem[Fields.TenTrangThaiRef].ToString() : string.Empty;
+                DeNghiHelper.SendEmail(SPContext.Current.Web,
+                    itemId,
+                    emailTo,
+                    newCauHinh.EmailTemplate,
+                    caNhanToChuc,
+                    soBienNhan,
+                    tenTrangThai,
+                    txtNhanXet.Text);
             }
             spListItem.Update();
 
