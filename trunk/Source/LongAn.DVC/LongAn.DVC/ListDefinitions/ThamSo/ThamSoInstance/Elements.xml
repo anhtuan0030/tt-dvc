@@ -14,7 +14,7 @@
         </Row>
         <Row>
           <Field Name="ID">2</Field>
-          <Field Name="Title">ConnectionString</Field>
+          <Field Name="Title">DVC_ConnectionString</Field>
           <Field Name="Value">server=(local);database=DVC_LONGAN;Integrated Security=False;User ID=sa;Password=sa;</Field>
         </Row>
       </Rows>

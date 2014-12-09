@@ -689,6 +689,7 @@
                                     <asp:HiddenField ID="hdfCapDuyetText" runat="server" />
                                     <asp:HiddenField ID="hdfNextStep" runat="server" />
                                     <asp:HiddenField ID="hdfPreStep" runat="server" />
+                                    <asp:HiddenField ID="hdfStartEnd" Value="0" runat="server" />
                                 </div>
 
                                 <div class="clearfix"></div>

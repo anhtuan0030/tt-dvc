@@ -100,9 +100,10 @@ namespace LongAn.DVC.Features.Web
                 job.Properties[Constants.WebIdProperty] = web.ID.ToString();
                 //Schedule
                 SPDailySchedule schedule = new SPDailySchedule();
-                schedule.BeginHour = 22;
+                schedule.BeginHour = 21;
                 schedule.BeginMinute = 5;
-                schedule.EndHour = 10;
+                schedule.EndHour = 23;
+                schedule.EndMinute = 30;
                 job.Schedule = schedule;
                 job.Update();
             }

@@ -86,6 +86,9 @@ namespace LongAn.DVC.Common
         public const string SiteIdProperty = "DVC_Site_ID";
         public const string WebIdProperty = "DVC_Web_ID";
         public const string ConnectionString = "DVC_ConnectionString";
+
+        public const string TinhTrangTraHoSo_ChuaTra = "Chưa trả";
+        public const string TinhTrangTraHoSo_DaTra = "Đã trả";
         //Configurations
         public const string ConfSoThuTuBienNhan = "0000000";
 
@@ -213,6 +216,7 @@ namespace LongAn.DVC.Common
         public const string CauHinh_PCHS = "Phân công hồ sơ";
         public const string CauHinh_TCHS = "Từ chối hồ sơ";
         public const string CauHinh_TNHS = "Tiếp nhận hồ sơ";
+        public const string CauHinh_XNHS = "Xác nhận hồ sơ";//Xác nhận hồ sơ
 
         public class TopMenu
         {
@@ -310,7 +314,10 @@ namespace LongAn.DVC.Common
         public const string NgayNopHoSo = "NgayNopHoSo";
         public const string NgayTiepNhan = "NgayTiepNhan";
         public const string NgayHenTra = "NgayHenTra";
+        public const string NgayDuocCapPhep = "NgayDuocCapPhep";
         public const string NgayThucTra = "NgayThucTra";
+        public const string TinhTrangTraHoSo = "TinhTrangTraHoSo";
+        public const string NgayHuyHoSo = "NgayHuyHoSo";
         public const string NoteAppend = "NoteAppend";
         public const string BuocDuyet = "BuocDuyet";
         //public const string TrangThai = "TrangThai";
@@ -341,5 +348,17 @@ namespace LongAn.DVC.Common
         Handle,
         [Description("Đã tham gia xử lý")]
         Joined
+    }
+
+    public enum Actions
+    {
+        [Description("Lưu, cập nhật thông tin")]
+        None,
+        [Description("Duyệt, đi tới bước kế tiếp")]
+        Approve,
+        [Description("Trả về, quay lại bước sau")]
+        Reject,
+        [Description("Hủy hồ sơ, không cấp phép")]
+        Cancel
     }
 }
