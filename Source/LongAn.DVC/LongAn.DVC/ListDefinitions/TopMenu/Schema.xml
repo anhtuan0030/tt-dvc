@@ -11,6 +11,10 @@
 
           <FieldRef ID="{A5A02209-227B-46C1-8EEA-4D00F992EEB6}" Name="ItemOrder"/>
           <FieldRef ID="{179E03CC-6B68-42E8-8AED-9DA22DEF03E2}" Name="IsActive"/>
+
+          <FieldRef ID="{1C53C1BE-5C3E-486D-8DC5-D0722B3EA31A}" Name="IsActive"/>
+          <FieldRef ID="{BB787995-2DCC-4F8E-AB45-AAF976D2FA14}" Name="ShowTotalOption"/>
+          <FieldRef ID="{8FC057CB-0586-4525-94C1-F1EC0F9FD89D}" Name="ShowTotalStatus"/>
         </FieldRefs>
       </ContentType>
     </ContentTypes>
@@ -27,6 +31,18 @@
       <Field Type="Boolean" ID="{179E03CC-6B68-42E8-8AED-9DA22DEF03E2}" StaticName="IsActive" Name="IsActive" DisplayName="Is Active">
         <Default>1</Default>
       </Field>
+      <Field Type="Boolean" ID="{1C53C1BE-5C3E-486D-8DC5-D0722B3EA31A}" StaticName="ShowTotal" Name="ShowTotal" DisplayName="Hiển thị tổng số hồ sơ">
+        <Default>0</Default>
+      </Field>
+      <Field ID="{BB787995-2DCC-4F8E-AB45-AAF976D2FA14}" Type="Choice" Name="ShowTotalOption" DisplayName="Loại tổng số hồ sơ">
+        <Default>Handle</Default>
+        <CHOICES>
+          <CHOICE>None</CHOICE>
+          <CHOICE>Handle</CHOICE>
+          <CHOICE>Joined</CHOICE>
+        </CHOICES>
+      </Field>
+      <Field ID="{8FC057CB-0586-4525-94C1-F1EC0F9FD89D}" Type="Text" Name="ShowTotalStatus" StaticName="ShowTotalStatus" DisplayName="Trạng thái hồ sơ" Description="Cách nhau bằng dấu ;"/>
     </Fields>
     <Views>
       <View BaseViewID="0" Type="HTML" MobileView="TRUE" TabularView="FALSE">
@@ -58,6 +74,7 @@
           <FieldRef Name="Hyperlink"></FieldRef>
           <FieldRef Name="Parent"></FieldRef>
           <FieldRef Name="IsActive"></FieldRef>
+          <FieldRef Name="ShowTotal"></FieldRef>
         </ViewFields>
         <Query>
           <GroupBy Collapse="FALSE" GroupLimit="30">
