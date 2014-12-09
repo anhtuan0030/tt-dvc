@@ -294,7 +294,9 @@
     <Content Include="ListDefinitions\CoQuanThucHien\Schema.xml" />
     <Content Include="ListDefinitions\DichVuCong\DichVuCongInstance\Elements.xml" />
     <Content Include="ListDefinitions\DichVuCong\Elements.xml" />
-    <Content Include="ListDefinitions\DichVuCong\Schema.xml" />
+    <Content Include="ListDefinitions\DichVuCong\Schema.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="ListDefinitions\LinhVuc\Elements.xml" />
     <Content Include="ListDefinitions\LinhVuc\LinhVucInstance\Elements.xml" />
     <Content Include="ListDefinitions\LinhVuc\Schema.xml" />
