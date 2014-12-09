@@ -55,13 +55,21 @@ namespace LongAn.DVC.HomeSite.WebParts.DanhSachThuTucHanhChinh
                                                     .Select(group => new
                                                     {
                                                         GroupName = group.Key.ToString().Split(new string[] { ";#" }, StringSplitOptions.RemoveEmptyEntries)[1],
+                                                        GroupId = group.Key.ToString().Split(new string[] { ";#" }, StringSplitOptions.RemoveEmptyEntries)[0],
                                                         Count = group.Count()
                                                     })
                                                     .OrderBy(item => item.GroupName);
 
                             foreach (var data in results)
                             {
-                                htmlTabContent += "<li><img src='" + webUrl + "_layouts/15/LongAn.DVC.HomeSite/images/default-logo.jpg' /><a href='#'>" + data.GroupName + "</a><p>Tổng số thủ tục: " + data.Count.ToString() + "</p><div class='clearfix'></div></li>";
+                                string url = "#";
+                                SPListItem coquan = spListCoQuan.GetItemById(Convert.ToInt32(data.GroupId));
+                                if (coquan != null)
+                                {
+                                    url = coquan["Hyperlink"] != null ? coquan["Hyperlink"].ToString() : "#";
+                                }
+
+                                htmlTabContent += "<li><img src='" + webUrl + "_layouts/15/LongAn.DVC.HomeSite/images/default-logo.jpg' /><a href='" + url + "'>" + data.GroupName + "</a><p>Tổng số thủ tục: " + data.Count.ToString() + "</p><div class='clearfix'></div></li>";
                             }
 
                             htmlTabContent += "</ul></li></ul></div>";

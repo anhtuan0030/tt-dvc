@@ -69,5 +69,4 @@
 			{MSOLayout_MakeInvisibleIfEmpty();}</SharePointWebControls:ScriptBlock>
 		</div>
 	</div>
-<SharePoint:DelegateControl runat="server" AllowMultipleControls="true" ControlId="UserAuthenticationBox"/>
 </asp:Content>
