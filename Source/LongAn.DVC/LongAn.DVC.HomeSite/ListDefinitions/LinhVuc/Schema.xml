@@ -4,12 +4,16 @@
     <ContentTypes>
       <ContentType ID="0x0100BDBE2EFF02BB4C9CA984B9DDBD6181A3" Name="$Resources:core,Item;" Group="$Resources:core,List_Content_Types;" Description="$Resources:core,ItemCTDesc;">
         <FieldRefs>
+          <FieldRef ID="{57BB81DC-ED25-4D68-82B3-B35A46BED40D}" Name="LoaiCoQuanThucHien"/>
+          <FieldRef ID="{7269480A-78C2-4906-A25A-D1618978780A}" Name="CoQuanThucHien"/>
           <FieldRef ID="{fa564e0f-0c70-4ab9-b863-0177e6ddd247}" Name="Title"/>
         </FieldRefs>
       </ContentType>
     </ContentTypes>
     <Fields>
       <Field ID="{fa564e0f-0c70-4ab9-b863-0177e6ddd247}" Type="Text" Name="Title" DisplayName="$Resources:core,Title;" Required="TRUE" SourceID="http://schemas.microsoft.com/sharepoint/v3" StaticName="Title" MaxLength="255" />
+      <Field ID="{57BB81DC-ED25-4D68-82B3-B35A46BED40D}" Type="Lookup" ShowField="Title" Name="LoaiCoQuanThucHien" StaticName="LoaiCoQuanThucHien" DisplayName="Loại cơ quan thực hiện" List="Lists/LoaiCoQuanThucHien" Required="TRUE"/>
+      <Field ID="{7269480A-78C2-4906-A25A-D1618978780A}" Type="Lookup" ShowField="Title" Name="CoQuanThucHien" StaticName="CoQuanThucHien" DisplayName="Cơ quan thực hiện" List="Lists/CoQuanThucHien" Required="TRUE"/>
     </Fields>
     <Views>
       <View BaseViewID="0" Type="HTML" MobileView="TRUE" TabularView="FALSE">
@@ -36,10 +40,14 @@
         <JSLink>clienttemplates.js</JSLink>
         <RowLimit Paged="TRUE">100</RowLimit>
         <ViewFields>
+          <FieldRef Name="LoaiCoQuanThucHien"></FieldRef>
+          <FieldRef Name="CoQuanThucHien"></FieldRef>
           <FieldRef Name="LinkTitle"></FieldRef>
         </ViewFields>
         <Query>
           <OrderBy>
+            <FieldRef Name="LoaiCoQuanThucHien"></FieldRef>
+            <FieldRef Name="CoQuanThucHien"></FieldRef>
             <FieldRef Name="Title"></FieldRef>
           </OrderBy>
         </Query>

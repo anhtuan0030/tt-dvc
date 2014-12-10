@@ -49,6 +49,7 @@ namespace LongAn.DVC.HomeSite.WebParts.TraCuuThuTucHanhChinh
 
         private void BindDropDownList(SPListItemCollection itemCol, DropDownList ddl)
         {
+            ddl.Items.Clear();
             ddl.Items.Add(new ListItem("Tất cả", "0"));
 
             var list = itemCol.Cast<SPListItem>().Select(item => new { Title = item.Title, Value = item.ID.ToString() }).OrderBy(item => item.Title);
@@ -185,7 +186,7 @@ namespace LongAn.DVC.HomeSite.WebParts.TraCuuThuTucHanhChinh
                             {
                                 var dvcItem = resultDVC[i];
                                 //set value DVC
-                                htmlResults += "<div class='doc-item'><div class='num'><div class='corner'>&nbsp;</div><div class='number'>" + (i + 1).ToString() + "</div></div><a href='" + dvcItem.Link + "'>" + dvcItem.DVCTitle + "</a><div class='label'>" + dvcItem.MucDo + "</div><div class='clearfix'></div></div>";
+                                htmlResults += "<div class='doc-item'><div class='num'><div class='corner'>&nbsp;</div><div class='number'>" + (i + 1).ToString() + "</div></div><a href='" + dvcItem.Link + "'>" + dvcItem.DVCTitle + "</a><div style='float: right; padding: 10px; margin-right: 80px; background-color: #ff7f01;'><a href='" + dvcItem.Link + "' style='color:white;font-weight: bold;'>Đăng ký</a></div><div class='label'>" + dvcItem.MucDo + "</div><div class='clearfix'></div></div>";
                             }
 
                             //close for DVC
@@ -210,6 +211,87 @@ namespace LongAn.DVC.HomeSite.WebParts.TraCuuThuTucHanhChinh
                     ltTotalRecords.Text = string.Empty;
                     ltResults.Text = string.Empty;
                 }
+            }
+        }
+
+        protected void ddlLoaiCoQuan_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SPWeb spWeb = SPContext.Current.Web;
+
+            string webUrl = spWeb.ServerRelativeUrl.TrimEnd('/');
+
+            SPList spListCoQuan = spWeb.GetList(webUrl + HomeSiteConstants.ListCoQuan);
+            SPList spListLinhVuc = spWeb.GetList(webUrl + HomeSiteConstants.ListLinhVuc);
+
+
+
+            if (ddlLoaiCoQuan.SelectedValue != "0")
+            {
+                string camlCoQuan = string.Empty;
+                var coquanExpressionsAnd = new List<Expression<Func<SPListItem, bool>>>();
+                coquanExpressionsAnd.Add(x => x["LoaiCoQuanThucHien"] == (DataTypes.LookupId)ddlLoaiCoQuan.SelectedValue);
+
+                camlCoQuan = Camlex.Query().WhereAll(coquanExpressionsAnd).ToString();
+
+                SPQuery qryCoQuan = new SPQuery();
+                qryCoQuan.Query = camlCoQuan;
+                SPListItemCollection coQuanItems = spListCoQuan.GetItems(qryCoQuan);
+                BindDropDownList(coQuanItems, ddlCoQuan);
+
+
+
+                string camlLinhVuc = string.Empty;
+                var linhvucExpressionsAnd = new List<Expression<Func<SPListItem, bool>>>();
+                linhvucExpressionsAnd.Add(x => x["LoaiCoQuanThucHien"] == (DataTypes.LookupId)ddlLoaiCoQuan.SelectedValue);
+
+                camlLinhVuc = Camlex.Query().WhereAll(linhvucExpressionsAnd).ToString();
+
+                SPQuery qryLinhVuc = new SPQuery();
+                qryLinhVuc.Query = camlLinhVuc;
+                SPListItemCollection linhvucItems = spListLinhVuc.GetItems(qryLinhVuc);
+                BindDropDownList(linhvucItems, ddlLinhVuc);
+            }
+            else
+            {
+                SPListItemCollection coQuanItems = spListCoQuan.Items;
+                BindDropDownList(coQuanItems, ddlCoQuan);
+
+                SPListItemCollection linhVucItems = spListLinhVuc.Items;
+                BindDropDownList(linhVucItems, ddlLinhVuc);
+            }
+        }
+
+        protected void ddlCoQuan_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SPWeb spWeb = SPContext.Current.Web;
+
+            string webUrl = spWeb.ServerRelativeUrl.TrimEnd('/');
+
+            SPList spListLinhVuc = spWeb.GetList(webUrl + HomeSiteConstants.ListLinhVuc);
+
+
+            if (ddlCoQuan.SelectedValue != "0")
+            {
+                string camlLinhVuc = string.Empty;
+                var linhvucExpressionsAnd = new List<Expression<Func<SPListItem, bool>>>();
+                linhvucExpressionsAnd.Add(x => x["CoQuanThucHien"] == (DataTypes.LookupId)ddlCoQuan.SelectedValue);
+
+                if (ddlLoaiCoQuan.SelectedValue != "0")
+                {
+                    linhvucExpressionsAnd.Add(x => x["LoaiCoQuanThucHien"] == (DataTypes.LookupId)ddlLoaiCoQuan.SelectedValue);
+                }
+
+                camlLinhVuc = Camlex.Query().WhereAll(linhvucExpressionsAnd).ToString();
+
+                SPQuery qryLinhVuc = new SPQuery();
+                qryLinhVuc.Query = camlLinhVuc;
+                SPListItemCollection linhvucItems = spListLinhVuc.GetItems(qryLinhVuc);
+                BindDropDownList(linhvucItems, ddlLinhVuc);
+            }
+            else
+            {
+                SPListItemCollection linhVucItems = spListLinhVuc.Items;
+                BindDropDownList(linhVucItems, ddlLinhVuc);
             }
         }
     }
