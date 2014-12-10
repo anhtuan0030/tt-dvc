@@ -14,12 +14,12 @@
     <div class="main-box-content">
         <div class="field-row">
             <label for="loai-co-quan">Loại cơ quan thực hiện</label>
-            <asp:DropDownList ID="ddlLoaiCoQuan" runat="server"></asp:DropDownList>
+            <asp:DropDownList ID="ddlLoaiCoQuan" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlLoaiCoQuan_SelectedIndexChanged"></asp:DropDownList>
             <div class="clear"></div>
         </div>
         <div class="field-row">
             <label for="co-quan-thuc-hien">Cơ quan thực hiện</label>
-            <asp:DropDownList ID="ddlCoQuan" runat="server"></asp:DropDownList>
+            <asp:DropDownList ID="ddlCoQuan" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlCoQuan_SelectedIndexChanged"></asp:DropDownList>
             <div class="clear"></div>
         </div>
         <div class="field-row">

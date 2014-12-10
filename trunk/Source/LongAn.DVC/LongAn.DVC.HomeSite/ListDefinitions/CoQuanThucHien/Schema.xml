@@ -4,6 +4,7 @@
     <ContentTypes>
       <ContentType ID="0x010005D572DD610449F5B1E856113FF52083" Name="$Resources:core,Item;" Group="$Resources:core,List_Content_Types;" Description="$Resources:core,ItemCTDesc;">
         <FieldRefs>
+          <FieldRef ID="{57BB81DC-ED25-4D68-82B3-B35A46BED40D}" Name="LoaiCoQuanThucHien"/>
           <FieldRef ID="{fa564e0f-0c70-4ab9-b863-0177e6ddd247}" Name="Title"/>
           <FieldRef ID="{D94BA95B-85C4-49D8-88E2-D3D6D28CF0C0}" Name="Hyperlink"/>
         </FieldRefs>
@@ -12,6 +13,7 @@
     <Fields>
       <Field ID="{fa564e0f-0c70-4ab9-b863-0177e6ddd247}" Type="Text" Name="Title" DisplayName="$Resources:core,Title;" Required="TRUE" SourceID="http://schemas.microsoft.com/sharepoint/v3" StaticName="Title" MaxLength="255" />
       <Field ID="{D94BA95B-85C4-49D8-88E2-D3D6D28CF0C0}" Type="Text" Name="Hyperlink" StaticName="Hyperlink" DisplayName="Hyperlink" Required="TRUE" Description="Điền dấu # nếu không muốn gán link"/>
+      <Field ID="{57BB81DC-ED25-4D68-82B3-B35A46BED40D}" Type="Lookup" ShowField="Title" Name="LoaiCoQuanThucHien" StaticName="LoaiCoQuanThucHien" DisplayName="Loại cơ quan thực hiện" List="Lists/LoaiCoQuanThucHien" Required="TRUE"/>
     </Fields>
     
     <Views>
@@ -39,11 +41,13 @@
         <JSLink>clienttemplates.js</JSLink>
         <RowLimit Paged="TRUE">30</RowLimit>
         <ViewFields>
+          <FieldRef Name="LoaiCoQuanThucHien"></FieldRef>
           <FieldRef Name="LinkTitle"></FieldRef>
           <FieldRef Name="Hyperlink"></FieldRef>
         </ViewFields>
         <Query>
           <OrderBy>
+            <FieldRef Name="LoaiCoQuanThucHien"></FieldRef>
             <FieldRef Name="Title"></FieldRef>
           </OrderBy>
         </Query>
