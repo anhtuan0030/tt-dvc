@@ -318,8 +318,6 @@ ul.bullet-1 li a {
   padding: 5px 10px;
   float: left;
   width: 250px;
-  -webkit-appearance: inherit;
-  -moz-appearance: inherit;
 }
 .field-row select {
   width: 270px;

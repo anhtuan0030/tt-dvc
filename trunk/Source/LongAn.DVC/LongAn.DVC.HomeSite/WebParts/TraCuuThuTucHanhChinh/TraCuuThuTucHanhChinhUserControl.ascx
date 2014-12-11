@@ -39,7 +39,7 @@
         </div>
         <div class="field-row field-set">
             <asp:Button ID="btnSearch" runat="server" Text="Tra cứu" CssClass="btn button search" OnClick="btnSearch_Click"/>
-            <asp:Button ID="btnRefresh" runat="server" Text="Làm mới" CssClass="btn button refresh"/>
+            <asp:Button ID="btnRefresh" runat="server" Text="Làm mới" CssClass="btn button refresh" OnClientClick="javascript: window.location.href = window.location.href; return false;"/>
             <div class="clear"></div>
         </div>
 
