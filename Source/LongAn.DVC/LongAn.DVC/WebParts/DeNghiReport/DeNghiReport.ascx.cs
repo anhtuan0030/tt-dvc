@@ -167,26 +167,27 @@ namespace LongAn.DVC.WebParts.DeNghiReport
 
                             var expressions = new List<Expression<Func<SPListItem, bool>>>();
 
-                            var expressionsOr = new List<Expression<Func<SPListItem, bool>>>();
-                            expressionsOr.Add(x => (string)x[Constants.FieldTrangThai] == ((int)TrangThaiHoSo.DuocCapPhep).ToString());
-                            expressionsOr.Add(x => (string)x[Constants.FieldTrangThai] == ((int)TrangThaiHoSo.HoanThanh).ToString());
-                            expressionsOr.Add(x => (string)x[Constants.FieldTrangThai] == ((int)TrangThaiHoSo.ChuaHoanThanh).ToString());
+                            //var expressionsOr = new List<Expression<Func<SPListItem, bool>>>();
+                            //expressionsOr.Add(x => (string)x[Constants.FieldTrangThai] == ((int)TrangThaiHoSo.DuocCapPhep).ToString());
+                            //expressionsOr.Add(x => (string)x[Constants.FieldTrangThai] == ((int)TrangThaiHoSo.HoanThanh).ToString());
+                            //expressionsOr.Add(x => (string)x[Constants.FieldTrangThai] == ((int)TrangThaiHoSo.ChuaHoanThanh).ToString());
 
                             //if (expressionsOr.Count > 0)
                             //{
-                            var orExpr = ExpressionsHelper.CombineOr(expressionsOr);
-                            expressions.Add(orExpr);
+                            //var orExpr = ExpressionsHelper.CombineOr(expressionsOr);
+                            //expressions.Add(orExpr);
                             //}
 
-                            //var expressionsAnd = new List<Expression<Func<SPListItem, bool>>>();
-                            //expressionsAnd.Add(x => (DateTime)x[Constants.FieldNgayNopHoSo] >= fromDate);
-                            //expressionsAnd.Add(x => (DateTime)x[Constants.FieldNgayNopHoSo] < toDate.AddDays(1));
+                            var expressionsAnd = new List<Expression<Func<SPListItem, bool>>>();
+                            //expressionsAnd.Add(x => x[Fields.NgayDuocCapPhep] != null);
+                            expressionsAnd.Add(x => (DateTime)x[Fields.NgayDuocCapPhep] >= fromDate);
+                            expressionsAnd.Add(x => (DateTime)x[Fields.NgayDuocCapPhep] < toDate.AddDays(1));
 
-                            ////if (expressionsAnd.Count > 0)
-                            ////{
-                            //    var andExpr = ExpressionsHelper.CombineAnd(expressionsAnd);
-                            //    expressions.Add(andExpr);
-                            ////}
+                            //if (expressionsAnd.Count > 0)
+                            //{
+                            var andExpr = ExpressionsHelper.CombineAnd(expressionsAnd);
+                            expressions.Add(andExpr);
+                            //}
 
                             caml = Camlex.Query().WhereAll(expressions).ToString();
 
