@@ -13,6 +13,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
+using System.Linq;
 
 namespace LongAn.DVC.WebParts.DeNghiListViewTotal
 {
@@ -284,7 +285,7 @@ namespace LongAn.DVC.WebParts.DeNghiListViewTotal
                     if (andExpr != null)
                         expressions.Add(andExpr);
 
-                    var camlQuery = Camlex.Query().WhereAll(expressions).ToString();
+                    var camlQuery = Camlex.Query().WhereAll(expressions).OrderBy(x => new[] { x["ID"] as Camlex.Desc }).ToString();
 
                     LoggingServices.LogMessage("CAML Query: " + camlQuery);
 
@@ -297,6 +298,7 @@ namespace LongAn.DVC.WebParts.DeNghiListViewTotal
                                        string.Format("<FieldRef Name='{0}' />", Fields.LoaiDeNghi),
                                        string.Format("<FieldRef Name='{0}' />", Fields.LoaiCapPhep),
                                        string.Format("<FieldRef Name='{0}' />", Fields.NgayNopHoSo),
+                                       string.Format("<FieldRef Name='{0}' />", Fields.NgayHenTra),
                                        string.Format("<FieldRef Name='{0}' />", Fields.TenTrangThaiRef),
                                        string.Format("<FieldRef Name='{0}' />", Fields.CauHinhCalRef),
                                        string.Format("<FieldRef Name='{0}' />", Fields.NguoiXuLy),
@@ -369,8 +371,8 @@ namespace LongAn.DVC.WebParts.DeNghiListViewTotal
                 DataRowView rowView = (DataRowView)e.Item.DataItem;
                 if (rowView != null)
                 {
-                    var literalTitle = (Literal)e.Item.FindControl("literalTitle");
-                    literalTitle.Text = rowView[Fields.Title].ToString();
+                    var hplTitle = (HyperLink)e.Item.FindControl("hplTitle");
+                    hplTitle.Text = rowView[Fields.Title].ToString();
 
                     var literalCaNhanToChuc = (Literal)e.Item.FindControl("literalCaNhanToChuc");
                     literalCaNhanToChuc.Text = rowView[Fields.CaNhanToChuc].ToString();
@@ -381,10 +383,14 @@ namespace LongAn.DVC.WebParts.DeNghiListViewTotal
                     var literalNgayDeNghi = (Literal)e.Item.FindControl("literalNgayDeNghi");
                     literalNgayDeNghi.Text = string.IsNullOrEmpty(rowView[Fields.NgayNopHoSo].ToString()) ? string.Empty : Convert.ToDateTime(rowView[Fields.NgayNopHoSo].ToString()).ToString("dd/MM/yyyy");
 
+                    var literalNgayHenTra = (Literal)e.Item.FindControl("literalNgayHenTra");
+                    literalNgayHenTra.Text = string.IsNullOrEmpty(rowView[Fields.NgayHenTra].ToString()) ? string.Empty : Convert.ToDateTime(rowView[Fields.NgayHenTra].ToString()).ToString("dd/MM/yyyy");
+
+
                     var literalTrangThai = (Literal)e.Item.FindControl("literalTrangThai");
                     literalTrangThai.Text = rowView[Fields.TenTrangThaiRef].ToString();
 
-                    var hplXuLy = (HyperLink)e.Item.FindControl("hplXuLy");
+                    //var hplXuLy = (HyperLink)e.Item.FindControl("hplXuLy");
                     //var startEnd = DeNghiHelper.GetValueFormCauHinhCal(rowView[Fields.CauHinhCalRef].ToString(), Fields.StartEnd);
                     var rowId = rowView["ID"].ToString();
                     //if (startEnd == Constants.CauHinh_Start || startEnd == Constants.CauHinh_YCBS)
@@ -393,7 +399,7 @@ namespace LongAn.DVC.WebParts.DeNghiListViewTotal
                     //}
                     //else
                     //{
-                        hplXuLy.NavigateUrl = string.Format(Constants.ConfLinkPageDispForm, hdfDeNghiUrl.Value, rowId, hdfCurrentUrl.Value);
+                    hplTitle.NavigateUrl = string.Format(Constants.ConfLinkPageDispForm, hdfDeNghiUrl.Value, rowId, hdfCurrentUrl.Value);
                     //}
                 }
             }
@@ -440,7 +446,7 @@ namespace LongAn.DVC.WebParts.DeNghiListViewTotal
                 literalDeNghiTitle.Text = WebPart.DeNghiTitle;
                 var currentPage = SPUtility.GetPageUrlPath(HttpContext.Current);
                 var deNghiUrl = (SPContext.Current.Web.ServerRelativeUrl + Constants.ListUrlDeNghiCapPhep).Replace("//", "/");
-                hplLichSuLuanChuyenHoSo.NavigateUrl = (SPContext.Current.Web.ServerRelativeUrl + Constants.PageLichSuLuanChuyenHoSo).Replace("//", "/");
+                //hplLichSuLuanChuyenHoSo.NavigateUrl = (SPContext.Current.Web.ServerRelativeUrl + Constants.PageLichSuLuanChuyenHoSo).Replace("//", "/");
                 hdfCurrentUrl.Value = currentPage;
                 hdfDeNghiUrl.Value = deNghiUrl;
                 //Enable add new hyperlink

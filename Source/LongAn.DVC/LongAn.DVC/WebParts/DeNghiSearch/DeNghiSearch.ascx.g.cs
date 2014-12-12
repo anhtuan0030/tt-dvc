@@ -45,6 +45,22 @@ namespace LongAn.DVC.WebParts.DeNghiSearch {
         
         [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
             "artCodeGenerator", "12.0.0.0")]
+        protected global::System.Web.UI.WebControls.TextBox txtCaNhanToChuc;
+        
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        protected global::System.Web.UI.WebControls.TextBox txtSoDienThoai;
+        
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        protected global::Microsoft.SharePoint.WebControls.DateTimeControl dtcNgayDeNghiTu;
+        
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        protected global::Microsoft.SharePoint.WebControls.DateTimeControl dtcNgayDeNghiDen;
+        
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
         protected global::System.Web.UI.WebControls.Button btnTimKiem;
         
         [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
@@ -87,6 +103,10 @@ namespace LongAn.DVC.WebParts.DeNghiSearch {
             "artCodeGenerator", "12.0.0.0")]
         protected global::System.Web.UI.WebControls.Repeater repeaterLists;
         
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divResult;
+        
         [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebPartCodeGenerator", "12.0.0.0")]
         public static implicit operator global::System.Web.UI.TemplateControl(DeNghiSearch target) 
         {
@@ -108,6 +128,56 @@ namespace LongAn.DVC.WebParts.DeNghiSearch {
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
         [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
             "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.TextBox @__BuildControltxtCaNhanToChuc() {
+            global::System.Web.UI.WebControls.TextBox @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.TextBox();
+            this.txtCaNhanToChuc = @__ctrl;
+            @__ctrl.ApplyStyleSheetSkin(this.Page);
+            @__ctrl.ID = "txtCaNhanToChuc";
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.TextBox @__BuildControltxtSoDienThoai() {
+            global::System.Web.UI.WebControls.TextBox @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.TextBox();
+            this.txtSoDienThoai = @__ctrl;
+            @__ctrl.ApplyStyleSheetSkin(this.Page);
+            @__ctrl.ID = "txtSoDienThoai";
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::Microsoft.SharePoint.WebControls.DateTimeControl @__BuildControldtcNgayDeNghiTu() {
+            global::Microsoft.SharePoint.WebControls.DateTimeControl @__ctrl;
+            @__ctrl = new global::Microsoft.SharePoint.WebControls.DateTimeControl();
+            this.dtcNgayDeNghiTu = @__ctrl;
+            @__ctrl.ID = "dtcNgayDeNghiTu";
+            @__ctrl.DateOnly = true;
+            @__ctrl.LocaleId = 1066;
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::Microsoft.SharePoint.WebControls.DateTimeControl @__BuildControldtcNgayDeNghiDen() {
+            global::Microsoft.SharePoint.WebControls.DateTimeControl @__ctrl;
+            @__ctrl = new global::Microsoft.SharePoint.WebControls.DateTimeControl();
+            this.dtcNgayDeNghiDen = @__ctrl;
+            @__ctrl.ID = "dtcNgayDeNghiDen";
+            @__ctrl.DateOnly = true;
+            @__ctrl.LocaleId = 1066;
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
         private global::System.Web.UI.WebControls.Button @__BuildControlbtnTimKiem() {
             global::System.Web.UI.WebControls.Button @__ctrl;
             @__ctrl = new global::System.Web.UI.WebControls.Button();
@@ -115,7 +185,7 @@ namespace LongAn.DVC.WebParts.DeNghiSearch {
             @__ctrl.ApplyStyleSheetSkin(this.Page);
             @__ctrl.ID = "btnTimKiem";
             @__ctrl.Text = "Tìm kiếm";
-            @__ctrl.CssClass = "button search button-custom";
+            @__ctrl.CssClass = "button search";
             ((System.Web.UI.IAttributeAccessor)(@__ctrl)).SetAttribute("align", "middle");
             return @__ctrl;
         }
@@ -194,7 +264,7 @@ namespace LongAn.DVC.WebParts.DeNghiSearch {
             this.lblSoNgayTreHan = @__ctrl;
             @__ctrl.ApplyStyleSheetSkin(this.Page);
             @__ctrl.ID = "lblSoNgayTreHan";
-            @__ctrl.Text = "";
+            @__ctrl.Text = "0";
             return @__ctrl;
         }
         
@@ -365,47 +435,15 @@ namespace LongAn.DVC.WebParts.DeNghiSearch {
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
         [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
             "artCodeGenerator", "12.0.0.0")]
-        private void @__BuildControlTree(global::LongAn.DVC.WebParts.DeNghiSearch.DeNghiSearch @__ctrl) {
+        private global::System.Web.UI.HtmlControls.HtmlGenericControl @__BuildControldivResult() {
+            global::System.Web.UI.HtmlControls.HtmlGenericControl @__ctrl;
+            @__ctrl = new global::System.Web.UI.HtmlControls.HtmlGenericControl("div");
+            this.divResult = @__ctrl;
+            @__ctrl.ID = "divResult";
+            @__ctrl.Visible = false;
+            ((System.Web.UI.IAttributeAccessor)(@__ctrl)).SetAttribute("class", "grid_12");
             System.Web.UI.IParserAccessor @__parser = ((System.Web.UI.IParserAccessor)(@__ctrl));
             @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl(@"
-
-<link rel=""stylesheet"" href=""/_layouts/15/LongAn.DVC.Form/css/main.css""/>
-
-<style type=""text/css"">
-    .button-custom {
-        width: 120px !important;
-    }
-</style>
-<div class=""row"">
-	<div class=""grid_12"" id=""main-frame"">
-		<h1 class="""">
-			TRA CỨU HỒ SƠ
-		</h1>
-		<div class=""form"" id=""searchform"">
-			<div class=""row line"">
-                <div class=""grid_3"" style=""margin-top:10px; text-align:right;"">
-                    Nhập mã biên nhận:                        
-                </div>
-                <div class=""grid_4"">
-                    "));
-            global::System.Web.UI.WebControls.TextBox @__ctrl1;
-            @__ctrl1 = this.@__BuildControltxtMaBienNhan();
-            @__parser.AddParsedSubObject(@__ctrl1);
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                </div>\r\n                <div class=\"grid_2\">\r\n                 " +
-                        "   "));
-            global::System.Web.UI.WebControls.Button @__ctrl2;
-            @__ctrl2 = this.@__BuildControlbtnTimKiem();
-            @__parser.AddParsedSubObject(@__ctrl2);
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl(@"
-                </div>
-                <div class=""clear""></div>
-			</div>
-		</div>
-	</div>
-</div>
-
-<div class=""row"">
-    <div class=""grid_12"">
         <h1>Kết quả tra cứu</h1>
         <div class=""mr-form"">
             <div class=""panel-2"" >
@@ -416,9 +454,9 @@ namespace LongAn.DVC.WebParts.DeNghiSearch {
                     </div>
                     <div class=""grid_9"">
                         "));
-            global::System.Web.UI.WebControls.Label @__ctrl3;
-            @__ctrl3 = this.@__BuildControllblSoBienNhan();
-            @__parser.AddParsedSubObject(@__ctrl3);
+            global::System.Web.UI.WebControls.Label @__ctrl1;
+            @__ctrl1 = this.@__BuildControllblSoBienNhan();
+            @__parser.AddParsedSubObject(@__ctrl1);
             @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl(@"
                     </div>
                     <div class=""clear""></div>
@@ -429,9 +467,9 @@ namespace LongAn.DVC.WebParts.DeNghiSearch {
                     </div>
                     <div class=""grid_9"">
                         "));
-            global::System.Web.UI.WebControls.Label @__ctrl4;
-            @__ctrl4 = this.@__BuildControllblNgayNhanHoSo();
-            @__parser.AddParsedSubObject(@__ctrl4);
+            global::System.Web.UI.WebControls.Label @__ctrl2;
+            @__ctrl2 = this.@__BuildControllblNgayNhanHoSo();
+            @__parser.AddParsedSubObject(@__ctrl2);
             @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl(@"
                     </div>
                     <div class=""clear""></div>
@@ -442,9 +480,9 @@ namespace LongAn.DVC.WebParts.DeNghiSearch {
                     </div>
                     <div class=""grid_9"">
                         "));
-            global::System.Web.UI.WebControls.Label @__ctrl5;
-            @__ctrl5 = this.@__BuildControllblNgayHenTra();
-            @__parser.AddParsedSubObject(@__ctrl5);
+            global::System.Web.UI.WebControls.Label @__ctrl3;
+            @__ctrl3 = this.@__BuildControllblNgayHenTra();
+            @__parser.AddParsedSubObject(@__ctrl3);
             @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl(@"
                     </div>
                     <div class=""clear""></div>
@@ -455,9 +493,9 @@ namespace LongAn.DVC.WebParts.DeNghiSearch {
                     </div>
                     <div class=""grid_9"">
                         "));
-            global::System.Web.UI.WebControls.Label @__ctrl6;
-            @__ctrl6 = this.@__BuildControllblNgayThucTra();
-            @__parser.AddParsedSubObject(@__ctrl6);
+            global::System.Web.UI.WebControls.Label @__ctrl4;
+            @__ctrl4 = this.@__BuildControllblNgayThucTra();
+            @__parser.AddParsedSubObject(@__ctrl4);
             @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl(@"
                     </div>
                     <div class=""clear""></div>
@@ -468,9 +506,9 @@ namespace LongAn.DVC.WebParts.DeNghiSearch {
                     </div>
                     <div class=""grid_9"">
                         "));
-            global::System.Web.UI.WebControls.Label @__ctrl7;
-            @__ctrl7 = this.@__BuildControllblTinhTrangHoSo();
-            @__parser.AddParsedSubObject(@__ctrl7);
+            global::System.Web.UI.WebControls.Label @__ctrl5;
+            @__ctrl5 = this.@__BuildControllblTinhTrangHoSo();
+            @__parser.AddParsedSubObject(@__ctrl5);
             @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl(@"
                     </div>
                     <div class=""clear""></div>
@@ -481,9 +519,9 @@ namespace LongAn.DVC.WebParts.DeNghiSearch {
                     </div>
                     <div class=""grid_9"">
                         "));
-            global::System.Web.UI.WebControls.Label @__ctrl8;
-            @__ctrl8 = this.@__BuildControllblSoNgayTreHan();
-            @__parser.AddParsedSubObject(@__ctrl8);
+            global::System.Web.UI.WebControls.Label @__ctrl6;
+            @__ctrl6 = this.@__BuildControllblSoNgayTreHan();
+            @__parser.AddParsedSubObject(@__ctrl6);
             @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl(@"
                     </div>
                     <div class=""clear""></div>
@@ -498,9 +536,9 @@ namespace LongAn.DVC.WebParts.DeNghiSearch {
                     </div>
                     <div class=""grid_9"">
                         "));
-            global::System.Web.UI.WebControls.Label @__ctrl9;
-            @__ctrl9 = this.@__BuildControllblCaNhanToChuc();
-            @__parser.AddParsedSubObject(@__ctrl9);
+            global::System.Web.UI.WebControls.Label @__ctrl7;
+            @__ctrl7 = this.@__BuildControllblCaNhanToChuc();
+            @__parser.AddParsedSubObject(@__ctrl7);
             @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl(@"
                     </div>
                     <div class=""clear""></div>
@@ -511,9 +549,9 @@ namespace LongAn.DVC.WebParts.DeNghiSearch {
                     </div>
                     <div class=""grid_9"">
                         "));
-            global::System.Web.UI.WebControls.Label @__ctrl10;
-            @__ctrl10 = this.@__BuildControllblDiaChi();
-            @__parser.AddParsedSubObject(@__ctrl10);
+            global::System.Web.UI.WebControls.Label @__ctrl8;
+            @__ctrl8 = this.@__BuildControllblDiaChi();
+            @__parser.AddParsedSubObject(@__ctrl8);
             @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl(@"
                     </div>
                     <div class=""clear""></div>
@@ -524,9 +562,9 @@ namespace LongAn.DVC.WebParts.DeNghiSearch {
                     </div>
                     <div class=""grid_9"" >
                         "));
-            global::System.Web.UI.WebControls.Label @__ctrl11;
-            @__ctrl11 = this.@__BuildControllblDienThoai();
-            @__parser.AddParsedSubObject(@__ctrl11);
+            global::System.Web.UI.WebControls.Label @__ctrl9;
+            @__ctrl9 = this.@__BuildControllblDienThoai();
+            @__parser.AddParsedSubObject(@__ctrl9);
             @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl(@"
                     </div>
                     <div class=""clear""></div>
@@ -545,12 +583,78 @@ namespace LongAn.DVC.WebParts.DeNghiSearch {
                                 <th>Mô tả</th>
                             </tr>
                             "));
-            global::System.Web.UI.WebControls.Repeater @__ctrl12;
-            @__ctrl12 = this.@__BuildControlrepeaterLists();
-            @__parser.AddParsedSubObject(@__ctrl12);
+            global::System.Web.UI.WebControls.Repeater @__ctrl10;
+            @__ctrl10 = this.@__BuildControlrepeaterLists();
+            @__parser.AddParsedSubObject(@__ctrl10);
             @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                        </table>\r\n                    </div>\r\n\r\n               " +
                         "     <div class=\"clear\"></div>\r\n                </div>\r\n            </div>\r\n    " +
-                        "    </div>\r\n    </div>\r\n</div>"));
+                        "    </div>\r\n    "));
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private void @__BuildControlTree(global::LongAn.DVC.WebParts.DeNghiSearch.DeNghiSearch @__ctrl) {
+            System.Web.UI.IParserAccessor @__parser = ((System.Web.UI.IParserAccessor)(@__ctrl));
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl(@"
+
+<link rel=""stylesheet"" href=""/_layouts/15/LongAn.DVC.Form/css/main.css""/>
+
+<style type=""text/css"">
+    .button-custom {
+        width: 120px !important;
+    }
+</style>
+<div class=""row"">
+	<div class=""grid_12"" id=""main-frame"">
+		<h1 class="""">
+			TRA CỨU HỒ SƠ
+		</h1>
+		<div class=""form"" id=""searchform"">
+            <div class=""row line"">
+					<div class=""grid_2"" style=""text-align:right;"">
+						Mã biên nhận:
+					</div>
+					<div class=""grid_3"">
+						"));
+            global::System.Web.UI.WebControls.TextBox @__ctrl1;
+            @__ctrl1 = this.@__BuildControltxtMaBienNhan();
+            @__parser.AddParsedSubObject(@__ctrl1);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t<div class=\"grid_2\" style=\"text-align:right;\">\r\n\t\t\t\t\t\tTên C" +
+                        "á nhân/Tổ chức:\r\n\t\t\t\t\t</div>\r\n\t\t\t\t\t<div class=\"grid_4\">\r\n\t\t\t\t\t\t"));
+            global::System.Web.UI.WebControls.TextBox @__ctrl2;
+            @__ctrl2 = this.@__BuildControltxtCaNhanToChuc();
+            @__parser.AddParsedSubObject(@__ctrl2);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n\t\t\t\t\t</div>\r\n\t\t\t\t\t<div class=\"clear\"></div>\r\n\t\t\t\t</div>\r\n                <div c" +
+                        "lass=\"row line\">\r\n\t\t\t\t\t<div class=\"grid_2\" style=\"text-align:right;\">\r\n\t\t\t\t\t\tSố " +
+                        "điện thoại:\r\n\t\t\t\t\t</div>\r\n\t\t\t\t\t<div class=\"grid_3\">\r\n\t\t\t\t\t\t"));
+            global::System.Web.UI.WebControls.TextBox @__ctrl3;
+            @__ctrl3 = this.@__BuildControltxtSoDienThoai();
+            @__parser.AddParsedSubObject(@__ctrl3);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n\t\t\t\t\t</div>\r\n                    \r\n\t\t\t\t\t<div class=\"grid_2\" style=\"text-align:r" +
+                        "ight;\">\r\n\t\t\t\t\t\tNgày đề nghị:\r\n\t\t\t\t\t</div>\r\n\t\t\t\t\t<div class=\"grid_2\">\r\n\t\t\t\t\t\t"));
+            global::Microsoft.SharePoint.WebControls.DateTimeControl @__ctrl4;
+            @__ctrl4 = this.@__BuildControldtcNgayDeNghiTu();
+            @__parser.AddParsedSubObject(@__ctrl4);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n\t\t\t\t\t</div>\r\n                    <div class=\"grid_2\">\r\n                        " +
+                        ""));
+            global::Microsoft.SharePoint.WebControls.DateTimeControl @__ctrl5;
+            @__ctrl5 = this.@__BuildControldtcNgayDeNghiDen();
+            @__parser.AddParsedSubObject(@__ctrl5);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                    </div>\r\n\t\t\t\t\t<div class=\"clear\"></div>\r\n\t\t\t\t</div>\r\n       " +
+                        "         <div class=\"row line\">\r\n                    <div class=\"grid_5\">&nbsp;<" +
+                        "/div>\r\n\t\t\t\t\t<div class=\"grid_2\">\r\n\t\t\t\t\t\t"));
+            global::System.Web.UI.WebControls.Button @__ctrl6;
+            @__ctrl6 = this.@__BuildControlbtnTimKiem();
+            @__parser.AddParsedSubObject(@__ctrl6);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n\t\t\t\t\t</div>\r\n                    <div class=\"grid_5\">&nbsp;</div>\r\n\t\t\t\t\t<div cl" +
+                        "ass=\"clear\"></div>\r\n\t\t\t\t</div>\r\n\t\t</div>\r\n\t</div>\r\n</div>\r\n\r\n<div class=\"row\">\r\n" +
+                        "    "));
+            global::System.Web.UI.HtmlControls.HtmlGenericControl @__ctrl7;
+            @__ctrl7 = this.@__BuildControldivResult();
+            @__parser.AddParsedSubObject(@__ctrl7);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n</div>"));
         }
         
         [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +

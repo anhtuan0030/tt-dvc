@@ -56,18 +56,18 @@
                 <h1>Đề nghị cấp phép lưu hành xe quá tải trọng, xe quá khổ</h1>
                 <div class="mr-form">
                     <div class="panel-1">
-                        <div class="row">
-                        <div class="grid_2">
-                            <SharePoint:FieldLabel ID="FieldLabel1"  FieldName="KinhGui"  runat="server"  />
-                        </div>
-                        <div class="field-required-data grid_9">
-                            <SharePoint:FormField  runat="server" ID="FormField1"  FieldName="KinhGui"  /> 
-                        </div>
-                        <div class="grid_1">
-                            <span class="star">(*)</span>
-                        </div>
-                        <div class="clear"></div>
-                    </div>
+                        <%--<div class="row">
+                            <div class="grid_2">
+                                <SharePoint:FieldLabel ID="FieldLabel1"  FieldName="KinhGui"  runat="server"  />
+                            </div>
+                            <div class="field-required-data grid_9">
+                                <SharePoint:FormField  runat="server" ID="FormField1"  FieldName="KinhGui"  /> 
+                            </div>
+                            <div class="grid_1">
+                                <span class="star">(*)</span>
+                            </div>
+                            <div class="clear"></div>
+                        </div>--%>
                         <div class="row">
                             <div class="grid_2">
                                 <SharePoint:FieldLabel ID="FieldLabel2" FieldName="CaNhanToChuc" runat="server"  />
@@ -399,14 +399,14 @@
                             <div class="grid_3">
                                 <SharePoint:FieldLabel ID="FieldLabel36"  FieldName="ThoiGiaDeNghiLuuHanhTu"  runat="server" />
                             </div>
-                            <div class="grid_3 date-picker">
+                            <div class="grid_3">
                                 <SharePoint:FormField  runat="server" ID="FormField36" CssClass="field-required" FieldName="ThoiGiaDeNghiLuuHanhTu"/>
                                 <%--<span class="star">(*)</span>--%>
                             </div>
                             <div class="grid_3">
                                 <SharePoint:FieldLabel ID="FieldLabel37"  FieldName="ThoiGiaDeNghiLuuHanhDen"  runat="server"  />
                             </div>
-                            <div class="grid_2 col-xs-2 date-picker">
+                            <div class="grid_2 col-xs-2">
                                 <SharePoint:FormField  runat="server" ID="FormField37" CssClass="field-required" FieldName="ThoiGiaDeNghiLuuHanhDen"/>
                             </div>
                             <div class="clear"></div>
@@ -423,6 +423,20 @@
                             </div>
                             <div class="grid_3" id="divFileUpload1" runat="server">
                                 <asp:FileUpload ID="fileUpload1" runat="server" />
+                                <table style="width:100%;">
+                                    <asp:Repeater ID="repeaterFileUpload1" runat="server">
+                                        <ItemTemplate>
+                                            <tr>
+                                                <td style="width:90%">
+                                                    <asp:HyperLink ID="hplFile" runat="server"></asp:HyperLink>
+                                                </td>
+                                                <td style="width:10%">
+                                                    <asp:LinkButton ID="lbtDelete" runat="server">Xóa</asp:LinkButton>
+                                                </td>
+                                            </tr>
+                                        </ItemTemplate>
+                                    </asp:Repeater>
+                                </table>
                             </div>
                             <div class="clear"></div>
                         </div>
@@ -433,6 +447,20 @@
                             </div>
                             <div class="grid_3" id="divFileUpload2" runat="server">
                                 <asp:FileUpload ID="fileUpload2" runat="server" />
+                                <table style="width:100%;">
+                                    <asp:Repeater ID="repeaterFileUpload2" runat="server">
+                                        <ItemTemplate>
+                                            <tr>
+                                                <td style="width:90%">
+                                                    <asp:HyperLink ID="hplFile" runat="server"></asp:HyperLink>
+                                                </td>
+                                                <td style="width:10%">
+                                                    <asp:LinkButton ID="lbtDelete" runat="server">Xóa</asp:LinkButton>
+                                                </td>
+                                            </tr>
+                                        </ItemTemplate>
+                                    </asp:Repeater>
+                                </table>
                             </div>
                             <div class="clear"></div>
                         </div>
@@ -441,8 +469,22 @@
                                 <SharePoint:FieldLabel ID="FieldLabel41" FieldName="UploadFileTitle3" runat="server" />
                                 
                             </div>
-                            <div class="grid_3"  id="divFileUpload3" runat="server">
+                            <div class="grid_3" id="divFileUpload3" runat="server">
                                 <asp:FileUpload ID="fileUpload3" runat="server" />
+                                <table style="width:100%;">
+                                    <asp:Repeater ID="repeaterFileUpload3" runat="server">
+                                        <ItemTemplate>
+                                            <tr>
+                                                <td style="width:90%">
+                                                    <asp:HyperLink ID="hplFile" runat="server"></asp:HyperLink>
+                                                </td>
+                                                <td style="width:10%">
+                                                    <asp:LinkButton ID="lbtDelete" runat="server">Xóa</asp:LinkButton>
+                                                </td>
+                                            </tr>
+                                        </ItemTemplate>
+                                    </asp:Repeater>
+                                </table>
                             </div>
                             <div class="clear"></div>
                         </div>
@@ -453,6 +495,20 @@
                             </div>
                             <div class="grid_3" id="divFileUpload4" runat="server">
                                 <asp:FileUpload ID="fileUpload4" runat="server" />
+                                <table style="width:100%;">
+                                    <asp:Repeater ID="repeaterFileUpload4" runat="server">
+                                        <ItemTemplate>
+                                            <tr>
+                                                <td style="width:90%">
+                                                    <asp:HyperLink ID="hplFile" runat="server"></asp:HyperLink>
+                                                </td>
+                                                <td style="width:10%">
+                                                    <asp:LinkButton ID="lbtDelete" runat="server">Xóa</asp:LinkButton>
+                                                </td>
+                                            </tr>
+                                        </ItemTemplate>
+                                    </asp:Repeater>
+                                </table>
                             </div>
                             <div class="clear"></div>
                         </div>

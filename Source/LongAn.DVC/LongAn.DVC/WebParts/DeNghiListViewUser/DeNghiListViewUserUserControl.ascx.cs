@@ -267,8 +267,8 @@ namespace LongAn.DVC.WebParts.DeNghiListViewUser
                 DataRowView rowView = (DataRowView)e.Item.DataItem;
                 if (rowView != null)
                 {
-                    var literalTitle = (Literal)e.Item.FindControl("literalTitle");
-                    literalTitle.Text = rowView[Fields.Title].ToString();
+                    var hplTitle = (HyperLink)e.Item.FindControl("hplTitle");
+                    hplTitle.Text = rowView[Fields.Title].ToString();
 
                     var literalCaNhanToChuc = (Literal)e.Item.FindControl("literalCaNhanToChuc");
                     literalCaNhanToChuc.Text = rowView[Fields.CaNhanToChuc].ToString();
@@ -282,16 +282,22 @@ namespace LongAn.DVC.WebParts.DeNghiListViewUser
                     var literalTrangThai = (Literal)e.Item.FindControl("literalTrangThai");
                     literalTrangThai.Text = rowView[Fields.TenTrangThaiRef].ToString();
 
-                    var hplXuLy = (HyperLink)e.Item.FindControl("hplXuLy");
                     var startEnd = DeNghiHelper.GetValueFormCauHinhCal(rowView[Fields.CauHinhCalRef].ToString(), Fields.StartEnd);
                     var rowId = rowView["ID"].ToString();
+
+                    var lbtDelete = (LinkButton)e.Item.FindControl("lbtDelete");
+                    lbtDelete.CommandArgument = rowId;
+                    lbtDelete.CommandName = "OnDeleteItemClick";
+                    if (startEnd == Constants.CauHinh_Start)
+                        lbtDelete.Style.Add("display", "block");
+                    
                     if (startEnd == Constants.CauHinh_Start || startEnd == Constants.CauHinh_YCBS)
                     {
-                        hplXuLy.NavigateUrl = string.Format(Constants.ConfLinkPageEditForm, hdfDeNghiUrl.Value, rowId, hdfCurrentUrl.Value);
+                        hplTitle.NavigateUrl = string.Format(Constants.ConfLinkPageEditForm, hdfDeNghiUrl.Value, rowId, hdfCurrentUrl.Value);
                     }
                     else
                     {
-                        hplXuLy.NavigateUrl = string.Format(Constants.ConfLinkPageDispForm, hdfDeNghiUrl.Value, rowId, hdfCurrentUrl.Value);
+                        hplTitle.NavigateUrl = string.Format(Constants.ConfLinkPageDispForm, hdfDeNghiUrl.Value, rowId, hdfCurrentUrl.Value);
                     }
                 }
             }
@@ -331,27 +337,27 @@ namespace LongAn.DVC.WebParts.DeNghiListViewUser
                 }
                 LoggingServices.LogMessage("End OnDeleteItemClick, item id:" + commandText);
             }
-            else if (e.CommandName == "OnNopHoSoClick")
-            {
-                try
-                {
-                    LoggingServices.LogMessage("Begin OnNopHoSoClick, item id:" + commandText);
-                    var web = SPContext.Current.Web;
-                    var deNghiList = web.GetList((web.ServerRelativeUrl + Constants.ListUrlDeNghiCapPhep).Replace("//", "/"));
-                    var deNghiItem = deNghiList.GetItemById(int.Parse(commandText));
-                    deNghiItem[Constants.FieldTrangThai] = (int)TrangThaiHoSo.ChoTiepNhan;
-                    deNghiItem[Constants.FieldCapDuyet] = (int)CapXuLy.MotCua;
-                    deNghiItem[Constants.FieldNgayNopHoSo] = DateTime.Now;
-                    deNghiItem.Update();
-                    DeNghiHelper.AddDeNghiHistory(web, CapXuLy.CaNhanToChuc, int.Parse(commandText), HanhDong.NopHoSo.ToString(), string.Empty);
-                    this.BindItemsList();
-                }
-                catch (Exception ex)
-                {
-                    LoggingServices.LogException(ex);
-                }
-                LoggingServices.LogMessage("End OnNopHoSoClick, item id:" + commandText);
-            }
+            //else if (e.CommandName == "OnNopHoSoClick")
+            //{
+            //    try
+            //    {
+            //        LoggingServices.LogMessage("Begin OnNopHoSoClick, item id:" + commandText);
+            //        var web = SPContext.Current.Web;
+            //        var deNghiList = web.GetList((web.ServerRelativeUrl + Constants.ListUrlDeNghiCapPhep).Replace("//", "/"));
+            //        var deNghiItem = deNghiList.GetItemById(int.Parse(commandText));
+            //        deNghiItem[Constants.FieldTrangThai] = (int)TrangThaiHoSo.ChoTiepNhan;
+            //        deNghiItem[Constants.FieldCapDuyet] = (int)CapXuLy.MotCua;
+            //        deNghiItem[Constants.FieldNgayNopHoSo] = DateTime.Now;
+            //        deNghiItem.Update();
+            //        DeNghiHelper.AddDeNghiHistory(web, CapXuLy.CaNhanToChuc, int.Parse(commandText), HanhDong.NopHoSo.ToString(), string.Empty);
+            //        this.BindItemsList();
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        LoggingServices.LogException(ex);
+            //    }
+            //    LoggingServices.LogMessage("End OnNopHoSoClick, item id:" + commandText);
+            //}
         }
 
         private DataTable GetDeNghi()
@@ -379,8 +385,10 @@ namespace LongAn.DVC.WebParts.DeNghiListViewUser
                 Expression<Func<Microsoft.SharePoint.SPListItem, bool>> andExpr = ExpressionsHelper.CombineAnd(andConditions);
                 var expressions = new List<Expression<Func<SPListItem, bool>>>();
                 expressions.Add(andExpr);
-                var camlQuery = Camlex.Query().WhereAll(expressions).ToString();
-
+                //var camlQuery = Camlex.Query().WhereAll(expressions).ToString();
+                var camlQuery = Camlex.Query().WhereAll(expressions).OrderBy(x => new[] { x["ID"] as Camlex.Desc }).ToString();
+                //camlQuery = Camlex.Query().OrderBy(camlQuery,
+                //        x => new[] { x["ID"] as Camlex.Desc }).ToString();
                 LoggingServices.LogMessage("CAML Query: " + camlQuery);
 
                 SPQuery spQuery = new SPQuery();
@@ -392,6 +400,7 @@ namespace LongAn.DVC.WebParts.DeNghiListViewUser
                                    string.Format("<FieldRef Name='{0}' />", Fields.LoaiDeNghi),
                                    string.Format("<FieldRef Name='{0}' />", Fields.LoaiCapPhep),
                                    string.Format("<FieldRef Name='{0}' />", Fields.NgayNopHoSo),
+                                   string.Format("<FieldRef Name='{0}' />", Fields.NgayHenTra),
                                    string.Format("<FieldRef Name='{0}' />", Fields.TenTrangThaiRef),
                                    string.Format("<FieldRef Name='{0}' />", Fields.CauHinhCalRef),
                                    string.Format("<FieldRef Name='{0}' />", Fields.NguoiXuLy),

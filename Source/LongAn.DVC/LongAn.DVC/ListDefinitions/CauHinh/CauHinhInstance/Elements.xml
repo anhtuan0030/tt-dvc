@@ -22,6 +22,7 @@
           <Field Name="ActionPhanCong">0</Field>
           <Field Name="AllowCapNhatLoaiDuong">0</Field>
           <Field Name="AllowCapNhatNgayHen">0</Field>
+          <Field Name="AllowCapNhatNgayLuuHanh">0</Field>
           <Field Name="IsBoSungHoSo">0</Field>
           <Field Name="StartEnd">Bắt đầu</Field>
           <Field Name="IsEmail">1</Field>
@@ -46,6 +47,7 @@
           <Field Name="ActionPhanCong">0</Field>
           <Field Name="AllowCapNhatLoaiDuong">0</Field>
           <Field Name="AllowCapNhatNgayHen">0</Field>
+          <Field Name="AllowCapNhatNgayLuuHanh">0</Field>
           <Field Name="IsBoSungHoSo">0</Field>
           <Field Name="StartEnd">Bắt đầu</Field>
           <Field Name="IsEmail">1</Field>
@@ -70,6 +72,7 @@
           <Field Name="ActionPhanCong">0</Field>
           <Field Name="AllowCapNhatLoaiDuong">0</Field>
           <Field Name="AllowCapNhatNgayHen">0</Field>
+          <Field Name="AllowCapNhatNgayLuuHanh">0</Field>
           <Field Name="IsBoSungHoSo">1</Field>
           <Field Name="StartEnd">Yêu cầu bổ sung</Field>
           <Field Name="IsEmail">1</Field>
@@ -92,6 +95,7 @@
           <Field Name="ActionPhanCong">0</Field>
           <Field Name="AllowCapNhatLoaiDuong">0</Field>
           <Field Name="AllowCapNhatNgayHen">0</Field>
+          <Field Name="AllowCapNhatNgayLuuHanh">0</Field>
           <Field Name="IsBoSungHoSo">0</Field>
           <Field Name="StartEnd">Từ chối hồ sơ</Field>
           <Field Name="IsEmail">1</Field>
@@ -114,7 +118,8 @@
           <Field Name="ActionYeuCauBoSung">0</Field>
           <Field Name="ActionPhanCong">0</Field>
           <Field Name="AllowCapNhatLoaiDuong">0</Field>
-          <Field Name="AllowCapNhatNgayHen">0</Field>
+          <Field Name="AllowCapNhatNgayHen">1</Field>
+          <Field Name="AllowCapNhatNgayLuuHanh">0</Field>
           <Field Name="IsBoSungHoSo">0</Field>
           <Field Name="StartEnd">Tiếp nhận hồ sơ</Field>
           <Field Name="IsEmail">1</Field>
@@ -139,6 +144,7 @@
           <Field Name="ActionPhanCong">0</Field>
           <Field Name="AllowCapNhatLoaiDuong">1</Field>
           <Field Name="AllowCapNhatNgayHen">1</Field>
+          <Field Name="AllowCapNhatNgayLuuHanh">0</Field>
           <Field Name="IsBoSungHoSo">0</Field>
           <Field Name="StartEnd">Xử lý</Field>
           <Field Name="IsEmail">1</Field>
@@ -165,6 +171,7 @@
           <Field Name="SPGroupTiepNhan">19;#DVC Cán bộ xử lý</Field>
           <Field Name="AllowCapNhatLoaiDuong">0</Field>
           <Field Name="AllowCapNhatNgayHen">0</Field>
+          <Field Name="AllowCapNhatNgayLuuHanh">0</Field>
           <Field Name="IsBoSungHoSo">0</Field>
           <Field Name="StartEnd">Xử lý</Field>
           <Field Name="IsEmail">1</Field>
@@ -193,6 +200,7 @@
           <Field Name="SPGroupTiepNhan">19;#DVC Cán bộ xử lý</Field>
           <Field Name="AllowCapNhatLoaiDuong">0</Field>
           <Field Name="AllowCapNhatNgayHen">0</Field>
+          <Field Name="AllowCapNhatNgayLuuHanh">0</Field>
           <Field Name="IsBoSungHoSo">0</Field>
           <Field Name="StartEnd">Xử lý</Field>
           <Field Name="IsEmail">1</Field>
@@ -219,6 +227,7 @@
           <Field Name="ActionPhanCong">0</Field>
           <Field Name="AllowCapNhatLoaiDuong">0</Field>
           <Field Name="AllowCapNhatNgayHen">0</Field>
+          <Field Name="AllowCapNhatNgayLuuHanh">0</Field>
           <Field Name="IsBoSungHoSo">0</Field>
           <Field Name="StartEnd">Xử lý</Field>
           <Field Name="IsEmail">1</Field>
@@ -245,6 +254,7 @@
           <Field Name="ActionPhanCong">0</Field>
           <Field Name="AllowCapNhatLoaiDuong">0</Field>
           <Field Name="AllowCapNhatNgayHen">0</Field>
+          <Field Name="AllowCapNhatNgayLuuHanh">0</Field>
           <Field Name="IsBoSungHoSo">0</Field>
           <Field Name="StartEnd">Xử lý</Field>
           <Field Name="IsEmail">1</Field>
@@ -271,6 +281,7 @@
           <Field Name="ActionPhanCong">0</Field>
           <Field Name="AllowCapNhatLoaiDuong">0</Field>
           <Field Name="AllowCapNhatNgayHen">0</Field>
+          <Field Name="AllowCapNhatNgayLuuHanh">0</Field>
           <Field Name="IsBoSungHoSo">0</Field>
           <Field Name="StartEnd">Kết thúc</Field>
           <Field Name="IsEmail">1</Field>
@@ -293,6 +304,7 @@
           <Field Name="ActionPhanCong">0</Field>
           <Field Name="AllowCapNhatLoaiDuong">0</Field>
           <Field Name="AllowCapNhatNgayHen">0</Field>
+          <Field Name="AllowCapNhatNgayLuuHanh">0</Field>
           <Field Name="IsBoSungHoSo">0</Field>
           <Field Name="StartEnd">Kết thúc</Field>
           <Field Name="IsEmail">1</Field>
@@ -315,6 +327,7 @@
           <Field Name="ActionPhanCong">0</Field>
           <Field Name="AllowCapNhatLoaiDuong">0</Field>
           <Field Name="AllowCapNhatNgayHen">0</Field>
+          <Field Name="AllowCapNhatNgayLuuHanh">0</Field>
           <Field Name="IsBoSungHoSo">0</Field>
           <Field Name="StartEnd">Kết thúc</Field>
           <Field Name="IsEmail">1</Field>

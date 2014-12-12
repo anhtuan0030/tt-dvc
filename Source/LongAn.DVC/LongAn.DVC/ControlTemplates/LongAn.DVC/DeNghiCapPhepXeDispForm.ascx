@@ -47,10 +47,10 @@
                 return false;
         }
         //Validate nhan xet
-        if ($("[id$='divNhanXet']").length > 0) {
-            if ($("[id$='txtNhanXet']").val() == "")
-                return false;
-        }
+        //if ($("[id$='divNhanXet']").length > 0) {
+        //    if ($("[id$='txtNhanXet']").val() == "")
+        //        return false;
+        //}
         //Validate ngay hen
         if ($("[id$='divNgayHen']").length > 0) {
             if ($("input[id$='NgayHenTraDate']").val() == "")
@@ -451,13 +451,13 @@
                                         <div class="grid_3">
                                             <SharePoint:FieldLabel ID="FieldLabel36"  FieldName="ThoiGiaDeNghiLuuHanhTu"  runat="server" />
                                         </div>
-                                        <div class="grid_3 date-picker">
+                                        <div class="grid_3">
                                             <SharePoint:FormField  runat="server" ID="FormField36" CssClass="field-required" FieldName="ThoiGiaDeNghiLuuHanhTu"/>
                                         </div>
                                         <div class="grid_3">
                                             <SharePoint:FieldLabel ID="FieldLabel37"  FieldName="ThoiGiaDeNghiLuuHanhDen"  runat="server"  />
                                         </div>
-                                        <div class="grid_2 col-xs-2 date-picker">
+                                        <div class="grid_2 col-xs-2">
                                             <SharePoint:FormField  runat="server" ID="FormField37" CssClass="field-required" FieldName="ThoiGiaDeNghiLuuHanhDen"/>
                                         </div>
                                         <div class="clear"></div>
@@ -499,6 +499,26 @@
                                             
                                         </div>
                                         <div class="grid_3" id="divFileUpload4" runat="server">
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </div>
+
+                                <div class="panel-2" id="divNgayLuuHanh" visible="false" runat="server">
+                                    <h2>Thời gian lưu hành</h2>
+
+                                    <div class="row">
+                                        <div class="grid_3">
+                                            <SharePoint:FieldLabel ID="FieldLabel50"  FieldName="ThoiGiaDeNghiLuuHanhTu"  runat="server" />
+                                        </div>
+                                        <div class="grid_3">
+                                            <sharepoint:datetimecontrol id="dtcThoiGianLuuHanhTu" DateOnly="true" LocaleId="1066" runat="server"></sharepoint:datetimecontrol>
+                                        </div>
+                                        <div class="grid_3">
+                                            <SharePoint:FieldLabel ID="FieldLabel51"  FieldName="ThoiGiaDeNghiLuuHanhDen"  runat="server"  />
+                                        </div>
+                                        <div class="grid_2 col-xs-2">
+                                            <sharepoint:datetimecontrol id="dtcThoiGianLuuHanhDen" DateOnly="true" LocaleId="1066" runat="server"></sharepoint:datetimecontrol>
                                         </div>
                                         <div class="clear"></div>
                                     </div>
@@ -589,23 +609,6 @@
                                     </div>
                                 </div>
 
-                                <%--<div class="panel-2" id="divYeuCauBoSung" visible="false" runat="server" >
-                                    <h2>Yêu cầu bổ sung</h2>
-
-                                    <div class="row">
-                                        <div class="grid_2">
-                                            Tiêu đề
-                                        </div>
-                                        <div class="grid_9">
-                                            <asp:TextBox ID="txtTieuDeYCBS" runat="server"></asp:TextBox>
-                                        </div>
-                                        <div class="grid_1">
-                                            <span class="star">(*)</span>
-                                        </div>
-                                        <div class="clear"></div>
-                                    </div>
-                                </div>--%>
-
                                 <div class="panel-2" id="divPhanCongHoSo" visible="false" runat="server">
                                     <h2>Phân công hồ sơ</h2>
 
@@ -625,7 +628,7 @@
                                 </div>
 
                                 <div class="panel-2" id="divNhanXet" runat="server" >
-                                    <h2>Nhận xét / Ghi chú</h2>
+                                    <h2>Lịch sử xử lý hồ sơ</h2>
 
                                     <div class="row">
                                         <div class="grid_2">
@@ -647,6 +650,12 @@
                                         <div class="clear"></div>
                                     </div>
 
+                                    
+                                </div>
+
+                                <div class="panel-2" id="divNhanXetAdmin" runat="server" >
+                                    <h2>Nhận xét / Ghi chú</h2>
+
                                     <div class="row">
                                         <div class="grid_2">
                                             Nhập nhận xét / Yêu cầu
@@ -655,11 +664,10 @@
                                         <div class="grid_9">
                                             <asp:TextBox ID="txtNhanXet" TextMode="MultiLine" runat="server"></asp:TextBox>
                                         </div>
-                                        <div class="grid_1">
-                                            <span class="star">(*)</span>
-                                        </div>
                                         <div class="clear"></div>
                                     </div>
+
+                                    
                                 </div>
 
                                 <div class="pull-right">

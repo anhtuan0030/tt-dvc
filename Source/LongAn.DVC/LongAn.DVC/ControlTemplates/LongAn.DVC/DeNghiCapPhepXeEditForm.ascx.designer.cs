@@ -22,24 +22,6 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC {
         protected global::System.Web.UI.UserControl toolBarTbltop;
         
         /// <summary>
-        /// FieldLabel1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Microsoft.SharePoint.WebControls.FieldLabel FieldLabel1;
-        
-        /// <summary>
-        /// FormField1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Microsoft.SharePoint.WebControls.FormField FormField1;
-        
-        /// <summary>
         /// FieldLabel2 control.
         /// </summary>
         /// <remarks>
@@ -751,6 +733,15 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC {
         protected global::System.Web.UI.WebControls.FileUpload fileUpload1;
         
         /// <summary>
+        /// repeaterFileUpload1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater repeaterFileUpload1;
+        
+        /// <summary>
         /// FieldLabel40 control.
         /// </summary>
         /// <remarks>
@@ -776,6 +767,15 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.FileUpload fileUpload2;
+        
+        /// <summary>
+        /// repeaterFileUpload2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater repeaterFileUpload2;
         
         /// <summary>
         /// FieldLabel41 control.
@@ -805,6 +805,15 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC {
         protected global::System.Web.UI.WebControls.FileUpload fileUpload3;
         
         /// <summary>
+        /// repeaterFileUpload3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater repeaterFileUpload3;
+        
+        /// <summary>
         /// FieldLabel42 control.
         /// </summary>
         /// <remarks>
@@ -830,6 +839,15 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.FileUpload fileUpload4;
+        
+        /// <summary>
+        /// repeaterFileUpload4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater repeaterFileUpload4;
         
         /// <summary>
         /// divDanhSachYeuCauBoSung control.

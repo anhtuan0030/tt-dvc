@@ -805,6 +805,51 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl divFileUpload4;
         
         /// <summary>
+        /// divNgayLuuHanh control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divNgayLuuHanh;
+        
+        /// <summary>
+        /// FieldLabel50 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Microsoft.SharePoint.WebControls.FieldLabel FieldLabel50;
+        
+        /// <summary>
+        /// dtcThoiGianLuuHanhTu control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Microsoft.SharePoint.WebControls.DateTimeControl dtcThoiGianLuuHanhTu;
+        
+        /// <summary>
+        /// FieldLabel51 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Microsoft.SharePoint.WebControls.FieldLabel FieldLabel51;
+        
+        /// <summary>
+        /// dtcThoiGianLuuHanhDen control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Microsoft.SharePoint.WebControls.DateTimeControl dtcThoiGianLuuHanhDen;
+        
+        /// <summary>
         /// divNgayHen control.
         /// </summary>
         /// <remarks>
@@ -1010,6 +1055,15 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Microsoft.SharePoint.WebControls.AppendOnlyHistory fldAppendOnlyHistory;
+        
+        /// <summary>
+        /// divNhanXetAdmin control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divNhanXetAdmin;
         
         /// <summary>
         /// txtNhanXet control.

@@ -33,6 +33,8 @@ namespace LongAn.DVC.Helpers
         public SPGroup SPGroupPhanCong { get; set; }
         public SPGroup SPGroupTiepNhan { get; set; }
         public bool AllowCapNhatLoaiDuong { get; set; }
+
+        public bool AllowCapNhatNgayLuuHanh { get; set; }
         public bool AllowCapNhatNgayHen { get; set; }
         public bool IsBoSungHoSo { get; set; }
         public bool IsPhanCong { get; set; }

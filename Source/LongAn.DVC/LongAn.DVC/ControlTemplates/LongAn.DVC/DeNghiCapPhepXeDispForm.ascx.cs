@@ -168,20 +168,6 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
                     hdfPreStep.Value = cauHinh.PreviousStep.ToString();
                     hdfStartEnd.Value = cauHinh.StartEnd;
 
-                    #region Allow In giay bien nhan
-                    if (cauHinh.AllowInBienNhan)
-                    {
-                        btnInBienNhan.Visible = true;
-                    }
-                    #endregion Allow In giay bien nhan
-
-                    #region Allow In giay cap phep
-                    if (cauHinh.AllowInGiayPhep)
-                    {
-                        btnInGiayPhep.Visible = true;
-                    }
-                    #endregion Allow In giay cap phep
-
                     //var currentMember = DeNghiHelper.IsCurrentUserInGroup(SPContext.Current.Web, cauHinh.SPGroup);
                     var nguoiChoXuLy = Convert.ToString(SPContext.Current.ListItem[Fields.NguoiChoXuLy]);
                     var currentMember = DeNghiHelper.IsCurrentUserInUserCollection(SPContext.Current.Web, nguoiChoXuLy);
@@ -246,6 +232,8 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
                             var tocDo = currentItem[Constants.FieldTocDoDuocChay] != null ? currentItem[Constants.FieldTocDoDuocChay].ToString() : string.Empty;
                             txtTocDoDuocChay.Text = tocDo;
                         }
+                        else
+                            divLoaiDuongDisp.Visible = true;
                         #endregion Cap Nhat Loai Duong
 
                         #region Cap Nhat Ngay Hen Tra
@@ -269,31 +257,91 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
                             dtcNgayHenTra.SelectedDate = ngayHenTraVal;
                         }
                         #endregion Cap Nhat Ngay Hen Tra
+
+                        #region Cap Nhat Ngay Luu Hanh
+                        if (cauHinh.AllowCapNhatNgayLuuHanh)
+                        {
+                            divNgayLuuHanh.Visible = true;
+                            var ngayLuuHanhTu = DateTime.Now;
+                            var ngayLuuHanhDen = DateTime.Now;
+                            var luuHanhTu = SPContext.Current.ListItem[Fields.ThoiGiaDeNghiLuuHanhTu];
+                            if (luuHanhTu != null && !string.IsNullOrEmpty(luuHanhTu.ToString()))
+                            {
+                                ngayLuuHanhTu = DateTime.Parse(luuHanhTu.ToString());
+                            }
+                            var luuHanhDen = SPContext.Current.ListItem[Fields.ThoiGiaDeNghiLuuHanhDen];
+                            if (luuHanhDen != null && !string.IsNullOrEmpty(luuHanhDen.ToString()))
+                            {
+                                ngayLuuHanhDen = DateTime.Parse(luuHanhDen.ToString());
+                            }
+                            dtcThoiGianLuuHanhTu.SelectedDate = ngayLuuHanhTu;
+                            dtcThoiGianLuuHanhDen.SelectedDate = ngayLuuHanhDen;
+                        }
+                        #endregion Cap Nhat Ngay Luu Hanh
                     }
 
                     #region Action Phan Cong
                     if (cauHinh.ActionPhanCong)
                     {
-                        var dataTable = GetCanBoXuLy(cauHinh.SPGroupTiepNhan);
-                        ddlUsers.DataSource = dataTable;
-                        ddlUsers.DataValueField = "ID";
-                        ddlUsers.DataTextField = "Name";
-                        ddlUsers.DataBind();
+                        LoggingServices.LogMessage(string.Format("ActionPhanCong: {0}, SPGroupTiepNhan: {1}, SPGroupPhanCong: {2}",
+                            cauHinh.ActionPhanCong,
+                            cauHinh.SPGroupTiepNhan == null ? "NULL" : cauHinh.SPGroupTiepNhan.Name,
+                            cauHinh.SPGroupPhanCong == null ? "NULL" : cauHinh.SPGroupPhanCong.Name));
+                        if (cauHinh.SPGroupPhanCong != null && cauHinh.SPGroupPhanCong != null)
+                        {
+                            var dataTable = GetCanBoXuLy(cauHinh.SPGroupTiepNhan);
+                            ddlUsers.DataSource = dataTable;
+                            ddlUsers.DataValueField = "ID";
+                            ddlUsers.DataTextField = "Name";
+                            ddlUsers.DataBind();
 
-                        var isTPP = DeNghiHelper.IsCurrentUserInGroup(SPContext.Current.Web, cauHinh.SPGroupPhanCong);
-                        if (cauHinh.IsPhanCong && isTPP)
-                        {
-                            divPhanCongHoSo.Visible = true;
-                            btnPhanCong.Visible = true;
-                        }
-                        var isCanBoXuLy = DeNghiHelper.IsCurrentUserInGroup(SPContext.Current.Web, cauHinh.SPGroupTiepNhan);
-                        if (!cauHinh.IsPhanCong && isCanBoXuLy)
-                        {
-                            btnCanBoTiepNhan.Visible = true;
-                            divPhanCongHoSo.Visible = false;
+                            var isTPP = DeNghiHelper.IsCurrentUserInGroup(SPContext.Current.Web, cauHinh.SPGroupPhanCong);
+                            if (cauHinh.IsPhanCong && isTPP)
+                            {
+                                divPhanCongHoSo.Visible = true;
+                                btnPhanCong.Visible = true;
+                            }
+                            var isCanBoXuLy = DeNghiHelper.IsCurrentUserInGroup(SPContext.Current.Web, cauHinh.SPGroupTiepNhan);
+                            if (!cauHinh.IsPhanCong && isCanBoXuLy)
+                            {
+                                btnCanBoTiepNhan.Visible = true;
+                                divPhanCongHoSo.Visible = false;
+                            }
                         }
                     }
                     #endregion Action Phan Cong
+
+                    #region Allow In giay bien nhan
+                    var currentUserGroups = SPContext.Current.Web.CurrentUser.Groups;
+                    var isNguoiDung = false;
+                    var isCanBo = false;
+                    var isMotCua = false;
+                    foreach (SPGroup group in currentUserGroups)
+                    {
+                        if (group.Name == Constants.ConfGroupCanBoXuLy)
+                            isCanBo = true;
+                        else if (group.Name == Constants.ConfGroupNguoiDung)
+                            isNguoiDung = true;
+                        else if (group.Name == Constants.ConfGroupNhanVienTiepNhan)
+                            isMotCua = true;
+                    }
+                    if (cauHinh.AllowInBienNhan && (isNguoiDung || isMotCua))
+                    {
+                        btnInBienNhan.Visible = true;
+                    }
+                    if (isNguoiDung)
+                        divNhanXetAdmin.Visible = false;
+                    #endregion Allow In giay bien nhan
+
+                    #region Allow In giay cap phep
+                    if (cauHinh.AllowInGiayPhep && isCanBo)
+                    {
+                        btnInGiayPhep.Visible = true;
+                    }
+                    #endregion Allow In giay cap phep
+
+                    LoggingServices.LogMessage(string.Format("AllowInBienNhan: {0}, AllowInGiayPhep: {1}, IsNguoiDung: {2}, IsMotCua: {3}, IsCanBo: {4}",
+                        cauHinh.AllowInBienNhan, cauHinh.AllowInGiayPhep, isNguoiDung, isMotCua, isCanBo));
                 }
             }
             //Load attachment file
@@ -325,10 +373,11 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
                             {
                                 //Add
                                 int soNgayXuLy = 0;
-                                int.TryParse(thamSoItem[0]["Value"].ToString(), out soNgayXuLy);
+                                int.TryParse(thamSoItem[0]["ValueConfig"].ToString(), out soNgayXuLy);
                                 output = output.AddDays(soNgayXuLy);
                                 LoggingServices.LogMessage("Default SoNgayXuLy: " + soNgayXuLy);
                                 //Get weekday
+                                ngayTiepNhan = ngayTiepNhan.AddDays(1);
                                 int weekDay = DeNghiHelper.GetFullWorkingDaysBetween(ngayTiepNhan, output);
                                 soNgayXuLy = soNgayXuLy + (soNgayXuLy - weekDay);
                                 output = ngayTiepNhan.AddDays(soNgayXuLy);
@@ -485,6 +534,13 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
                 spListItem[Fields.NgayHenTra] = dtcNgayHenTra.SelectedDate;
                 LoggingServices.LogMessage("Updated NgayHenTra");
             }
+            //Cap nhat ngay luu hanh
+            if (divNgayLuuHanh.Visible)
+            {
+                spListItem[Fields.ThoiGiaDeNghiLuuHanhTu] = dtcThoiGianLuuHanhTu.SelectedDate;
+                spListItem[Fields.ThoiGiaDeNghiLuuHanhDen] = dtcThoiGianLuuHanhDen.SelectedDate;
+                LoggingServices.LogMessage("Updated NgayLuuHanh");
+            }
             //Cap nhat yeu cau bo sung
             if (isYeuCauBoSung)// divYeuCauBoSung.Visible)
             {
@@ -624,7 +680,11 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
 
                 Aspose.Words.Document doc = new Aspose.Words.Document(templateFile);
                 var deNghiItem = deNghiList.GetItems(caml).GetDataTable();
-
+                var thoiGianDeNghiLuuHanhDen = deNghiItem.Rows[0][Fields.ThoiGiaDeNghiLuuHanhDen].ToString();
+                DateTime thoiGianDeNghiLuuHanhDenDate = string.IsNullOrEmpty(thoiGianDeNghiLuuHanhDen) == null ? DateTime.Today : DateTime.Parse(thoiGianDeNghiLuuHanhDen);
+                var fieldNgay = new string[] {"Ngay", "Thang", "Nam" };
+                var fieldValue = new object[] { thoiGianDeNghiLuuHanhDenDate.ToString("dd"), thoiGianDeNghiLuuHanhDenDate.ToString("MM"), thoiGianDeNghiLuuHanhDenDate.ToString("yyyy") };
+                doc.MailMerge.Execute(fieldNgay, fieldValue);
                 doc.MailMerge.Execute(deNghiItem);
 
                 string fileName = string.Format(DateTime.Now.ToString("yyyyMMdd_hhmmss"));

@@ -707,6 +707,11 @@
          DisplayName="Allow Cập nhật loại đường"
          Type="Boolean"
          Group="[LA-DVC]"  />
+  <Field Name="AllowCapNhatNgayLuuHanh"
+        ID="{C8B9A1F8-7AAB-462A-A6A3-AD298A317EE8}"
+        DisplayName="Allow Cập nhật ngày hẹn"
+        Type="Boolean"
+        Group="[LA-DVC]" />
   <Field Name="AllowCapNhatNgayHen"
          ID="{d0bc18be-83fe-423d-adea-2470c328adb7}"
          DisplayName="Allow Cập nhật ngày hẹn"
@@ -1013,7 +1018,7 @@
     </FieldRefs>
   </Field>
 
-  <Field Name="Value"
+  <Field Name="ValueConfig"
          ID="{f16ec1a7-c218-4f0a-b93f-07364ddb5a6d}"
          DisplayName="Value"
          Type="Text"
