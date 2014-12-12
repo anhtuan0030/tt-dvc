@@ -60,7 +60,7 @@ namespace LongAn.DVC.Common.Extensions
                 }
                 taskList = web.Lists[wfTaskList];
             }
-            catch (ArgumentException exc)
+            catch (ArgumentException ex)
             {
                 // Create workflow tasks list
                 Guid listGuid = web.Lists.Add(wfTaskList, "", SPListTemplateType.Tasks);
