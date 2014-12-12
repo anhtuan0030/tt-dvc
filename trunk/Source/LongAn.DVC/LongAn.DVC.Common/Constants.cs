@@ -253,6 +253,7 @@ namespace LongAn.DVC.Common
         public const string SPGroupPhanCong = "SPGroupPhanCong";
         public const string SPGroupTiepNhan = "SPGroupTiepNhan";
         public const string AllowCapNhatLoaiDuong = "AllowCapNhatLoaiDuong";
+        public const string AllowCapNhatNgayLuuHanh = "AllowCapNhatNgayLuuHanh";
         public const string AllowCapNhatNgayHen = "AllowCapNhatNgayHen";
         public const string IsBoSungHoSo = "IsBoSungHoSo";
         public const string IsPhanCong = "IsPhanCong";
