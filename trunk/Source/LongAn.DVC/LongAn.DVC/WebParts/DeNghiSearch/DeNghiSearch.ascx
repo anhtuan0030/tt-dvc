@@ -20,24 +20,55 @@
 			TRA CỨU HỒ SƠ
 		</h1>
 		<div class="form" id="searchform">
-			<div class="row line">
-                <div class="grid_3" style="margin-top:10px; text-align:right;">
-                    Nhập mã biên nhận:                        
-                </div>
-                <div class="grid_4">
-                    <asp:TextBox ID="txtMaBienNhan" runat="server"></asp:TextBox>
-                </div>
-                <div class="grid_2">
-                    <asp:Button ID="btnTimKiem" runat="server" Text="Tìm kiếm" CssClass="button search button-custom" align="middle" />
-                </div>
-                <div class="clear"></div>
-			</div>
+            <div class="row line">
+					<div class="grid_2" style="text-align:right;">
+						Mã biên nhận:
+					</div>
+					<div class="grid_3">
+						<asp:TextBox ID="txtMaBienNhan" runat="server"></asp:TextBox>
+					</div>
+
+					<div class="grid_2" style="text-align:right;">
+						Tên Cá nhân/Tổ chức:
+					</div>
+					<div class="grid_4">
+						<asp:TextBox ID="txtCaNhanToChuc" runat="server"></asp:TextBox>
+					</div>
+					<div class="clear"></div>
+				</div>
+                <div class="row line">
+					<div class="grid_2" style="text-align:right;">
+						Số điện thoại:
+					</div>
+					<div class="grid_3">
+						<asp:TextBox ID="txtSoDienThoai" runat="server"></asp:TextBox>
+					</div>
+                    
+					<div class="grid_2" style="text-align:right;">
+						Ngày đề nghị:
+					</div>
+					<div class="grid_2">
+						<SharePoint:DateTimeControl ID="dtcNgayDeNghiTu" DateOnly="true" LocaleId="1066" runat="server" />
+					</div>
+                    <div class="grid_2">
+                        <SharePoint:DateTimeControl ID="dtcNgayDeNghiDen" DateOnly="true" LocaleId="1066" runat="server" />
+                    </div>
+					<div class="clear"></div>
+				</div>
+                <div class="row line">
+                    <div class="grid_5">&nbsp;</div>
+					<div class="grid_2">
+						<asp:Button ID="btnTimKiem" runat="server" Text="Tìm kiếm" CssClass="button search" align="middle" />
+					</div>
+                    <div class="grid_5">&nbsp;</div>
+					<div class="clear"></div>
+				</div>
 		</div>
 	</div>
 </div>
 
 <div class="row">
-    <div class="grid_12">
+    <div id="divResult" visible="false" runat="server" class="grid_12">
         <h1>Kết quả tra cứu</h1>
         <div class="mr-form">
             <div class="panel-2" >
@@ -92,7 +123,7 @@
                         Số ngày trễ hạn
                     </div>
                     <div class="grid_9">
-                        <asp:Label ID="lblSoNgayTreHan" runat="server" Text=""></asp:Label>
+                        <asp:Label ID="lblSoNgayTreHan" runat="server" Text="0"></asp:Label>
                     </div>
                     <div class="clear"></div>
                 </div>

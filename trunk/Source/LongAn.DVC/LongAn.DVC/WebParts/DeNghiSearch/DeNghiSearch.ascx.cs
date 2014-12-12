@@ -1,9 +1,12 @@
 ﻿using CamlexNET;
+using CamlexNET.Impl.Helpers;
 using LongAn.DVC.Common;
 using Microsoft.SharePoint;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Linq.Expressions;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 
@@ -35,22 +38,29 @@ namespace LongAn.DVC.WebParts.DeNghiSearch
                 var dataTable = GetDeNghi();
                 if (dataTable != null && dataTable.Rows.Count > 0)
                 {
+                    divResult.Visible = true;
                     var dataRow = dataTable.Rows[0];
                     lblSoBienNhan.Text = dataRow[Fields.Title].ToString();
                     var ngayTiepNhan = dataRow[Fields.NgayTiepNhan].ToString();
                     if (!string.IsNullOrEmpty(ngayTiepNhan))
                         lblNgayNhanHoSo.Text = Convert.ToDateTime(ngayTiepNhan).ToString("dd/MM/yyyy");
-                    var ngayHenTra = dataRow[Fields.NgayHenTra].ToString();
 
+                    var ngayHenTra = dataRow[Fields.NgayHenTra].ToString();
                     if (!string.IsNullOrEmpty(ngayHenTra))
                         lblNgayHenTra.Text = Convert.ToDateTime(ngayHenTra).ToString("dd/MM/yyyy");
+
                     var ngayThucTra = dataRow[Fields.NgayThucTra].ToString();
                     if (!string.IsNullOrEmpty(ngayThucTra))
                         lblNgayThucTra.Text = Convert.ToDateTime(ngayThucTra).ToString("dd/MM/yyyy");
-                    lblTinhTrangHoSo.Text = dataRow[Fields.TenTrangThaiRef].ToString();
-                    if (!string.IsNullOrEmpty(ngayHenTra) && !string.IsNullOrEmpty(ngayThucTra))
+                        
+                    var ngayDuocCapPhep = dataRow[Fields.NgayDuocCapPhep].ToString();
+                    if (!string.IsNullOrEmpty(ngayDuocCapPhep))
+                        lblTinhTrangHoSo.Text = dataRow[Fields.TenTrangThaiRef].ToString();
+                    if (!string.IsNullOrEmpty(ngayHenTra) && !string.IsNullOrEmpty(ngayDuocCapPhep))
                     {
-                        lblSoNgayTreHan.Text = (Convert.ToDateTime(ngayThucTra) - Convert.ToDateTime(ngayHenTra)).Days.ToString();
+                        int soNgayTreHan = (Convert.ToDateTime(ngayDuocCapPhep) - Convert.ToDateTime(ngayHenTra)).Days;
+                        //if (soNgayTreHan < 0)
+                        lblSoNgayTreHan.Text = soNgayTreHan.ToString();
                     }
 
                     lblCaNhanToChuc.Text = dataRow[Fields.CaNhanToChuc].ToString();
@@ -119,13 +129,37 @@ namespace LongAn.DVC.WebParts.DeNghiSearch
                     {
                         using (SPWeb web = site.OpenWeb(SPContext.Current.Web.ID))
                         {
-                            SPQuery caml = Camlex.Query().Where(x => (string)x[Fields.Title] == txtMaBienNhan.Text.Trim())
-                                                   .OrderBy(x => new[] { x["ID"] as Camlex.Desc })
-                                                   .ToSPQuery();
-                            caml.RowLimit = 1;
-                            var deNghiUrl = (web.ServerRelativeUrl + Constants.ListUrlDeNghiCapPhep).Replace("//", "/");
-                            var deNghiList = web.GetList(deNghiUrl);
-                            dataTable = deNghiList.GetItems(caml).GetDataTable();
+                            //And condition
+                            var andConditions = new List<Expression<Func<SPListItem, bool>>>();
+                            if (!string.IsNullOrEmpty(txtMaBienNhan.Text.Trim()))
+                                andConditions.Add(x => ((string)x[Fields.Title]).Contains(txtMaBienNhan.Text.Trim()));
+                            if (!string.IsNullOrEmpty(txtCaNhanToChuc.Text.Trim()))
+                                andConditions.Add(x => ((string)x[Fields.CaNhanToChuc]).Contains(txtCaNhanToChuc.Text.Trim()));
+                            if (!string.IsNullOrEmpty(txtSoDienThoai.Text.Trim()))
+                                andConditions.Add(x => ((string)x[Fields.DienThoai]).Contains(txtSoDienThoai.Text.Trim()));
+
+                            if (!dtcNgayDeNghiDen.IsDateEmpty && !dtcNgayDeNghiTu.IsDateEmpty)
+                            {
+                                andConditions.Add(x => (x[Fields.NgayNopHoSo]) >= (DataTypes.DateTime)dtcNgayDeNghiTu.SelectedDate.ToString("yyyy-MM-dd"));
+                                andConditions.Add(x => (x[Fields.NgayNopHoSo]) <= (DataTypes.DateTime)dtcNgayDeNghiDen.SelectedDate.ToString("yyyy-MM-dd"));
+                            }
+
+                            Expression<Func<Microsoft.SharePoint.SPListItem, bool>> andExpr = null;
+                            if (andConditions != null && andConditions.Count > 0)
+                            {
+                                andExpr = ExpressionsHelper.CombineAnd(andConditions);
+                                var expressions = new List<Expression<Func<SPListItem, bool>>>();
+                                expressions.Add(andExpr);
+                                SPQuery caml = Camlex.Query().WhereAll(expressions).ToSPQuery();
+
+                                //SPQuery caml = Camlex.Query().Where(x => (string)x[Fields.Title] == txtMaBienNhan.Text.Trim())
+                                //                       .OrderBy(x => new[] { x["ID"] as Camlex.Desc })
+                                //                       .ToSPQuery();
+                                caml.RowLimit = 1;
+                                var deNghiUrl = (web.ServerRelativeUrl + Constants.ListUrlDeNghiCapPhep).Replace("//", "/");
+                                var deNghiList = web.GetList(deNghiUrl);
+                                dataTable = deNghiList.GetItems(caml).GetDataTable();
+                            }
                         }
                     }
                    

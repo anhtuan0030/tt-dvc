@@ -136,6 +136,9 @@
                     Name="AllowCapNhatLoaiDuong" />
           <FieldRef ID="{d0bc18be-83fe-423d-adea-2470c328adb7}"
                     Name="AllowCapNhatNgayHen" />
+          <FieldRef Name="AllowCapNhatNgayLuuHanh"
+                    ID="{C8B9A1F8-7AAB-462A-A6A3-AD298A317EE8}"/>
+          
           <FieldRef ID="{927b86cc-1f41-4889-8818-5dcc631bd660}"
                     Name="IsBoSungHoSo" />
 
@@ -356,9 +359,16 @@
              Type="User"
              Required="FALSE"
              Group="[LA-DVC]" />
+      
       <Field Name="AllowCapNhatLoaiDuong"
              ID="{b36d0245-0dfa-4a24-9ae6-e3fc5e194052}"
              DisplayName="Allow Cập nhật loại đường"
+             Type="Boolean"
+             Group="[LA-DVC]" />
+
+      <Field Name="AllowCapNhatNgayLuuHanh"
+             ID="{C8B9A1F8-7AAB-462A-A6A3-AD298A317EE8}"
+             DisplayName="Allow Cập nhật ngày lưu hành"
              Type="Boolean"
              Group="[LA-DVC]" />
 

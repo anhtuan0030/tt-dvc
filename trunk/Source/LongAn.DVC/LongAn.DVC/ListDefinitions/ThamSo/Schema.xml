@@ -16,7 +16,7 @@
           <FieldRef ID="{fa564e0f-0c70-4ab9-b863-0177e6ddd247}"
                     Name="Title" />
           <FieldRef ID="{f16ec1a7-c218-4f0a-b93f-07364ddb5a6d}"
-                    Name="Value" />
+                    Name="ValueConfig" />
         </FieldRefs>
       </ContentType>
       <ContentTypeRef ID="0x01">
@@ -34,7 +34,7 @@
              SourceID="http://schemas.microsoft.com/sharepoint/v3"
              StaticName="Title"
              MaxLength="255" />
-      <Field Name="Value"
+      <Field Name="ValueConfig"
              ID="{f16ec1a7-c218-4f0a-b93f-07364ddb5a6d}"
              DisplayName="Giá trị"
              Type="Text" />

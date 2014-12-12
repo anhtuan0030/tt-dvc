@@ -20,8 +20,100 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
             btnSave.Click +=btnSave_Click;
             btnNopHoSo.Click += btnNopHoSo_Click;
             btnBoSungHoSo.Click += btnBoSungHoSo_Click;
+            repeaterFileUpload1.ItemDataBound += repeaterFileUpload_ItemDataBound;
+            repeaterFileUpload2.ItemDataBound += repeaterFileUpload_ItemDataBound;
+            repeaterFileUpload3.ItemDataBound += repeaterFileUpload_ItemDataBound;
+            repeaterFileUpload4.ItemDataBound += repeaterFileUpload_ItemDataBound;
+
+            repeaterFileUpload1.ItemCommand += repeaterFileUpload_ItemCommand;
+            repeaterFileUpload2.ItemCommand += repeaterFileUpload_ItemCommand;
+            repeaterFileUpload3.ItemCommand += repeaterFileUpload_ItemCommand;
+            repeaterFileUpload4.ItemCommand += repeaterFileUpload_ItemCommand;
             //
             base.OnInit(e);
+        }
+
+        void repeaterFileUpload_ItemCommand(object source, RepeaterCommandEventArgs e)
+        {
+            if (e.CommandName == "DeleteFileUpload")
+            {
+                string commandText = e.CommandArgument.ToString();
+                try
+                {
+                    LoggingServices.LogMessage("Begin DeleteFileUpload, item id:" + commandText);
+
+                    SPSecurity.RunWithElevatedPrivileges(delegate()
+                    {
+                        using (SPSite site = new SPSite(SPContext.Current.Site.ID))
+                        {
+                            using (SPWeb web = site.OpenWeb(SPContext.Current.Web.ID))
+                            {
+                                web.AllowUnsafeUpdates = true;
+                                var deNghiUrl = (web.ServerRelativeUrl + Constants.ListUrlDeNghiAttachment).Replace("//", "/");
+                                var deNghiAttachmentList = web.GetList(deNghiUrl);
+                                var commandTextArray = commandText.Split('|');
+                                var fileUpload = deNghiAttachmentList.GetItemById(int.Parse(commandTextArray[0]));
+                                fileUpload.Delete();
+                                switch (commandTextArray[1])
+                                {
+                                    case Constants.AttachmentGiayDangKy:
+                                        repeaterFileUpload1.DataSource = DeNghiHelper.LoadAttachments(SPContext.Current.ItemId, Constants.AttachmentGiayDangKy);
+                                        repeaterFileUpload1.DataBind();
+                                        break;
+                                    case Constants.AttachmentGiayChungNhanKiemDinh:
+                                        repeaterFileUpload2.DataSource = DeNghiHelper.LoadAttachments(SPContext.Current.ItemId, Constants.AttachmentGiayChungNhanKiemDinh);
+                                        repeaterFileUpload2.DataBind();
+                                        break;
+                                    case Constants.AttachmentGiayCamKet:
+                                        repeaterFileUpload3.DataSource = DeNghiHelper.LoadAttachments(SPContext.Current.ItemId, Constants.AttachmentGiayCamKet);
+                                        repeaterFileUpload3.DataBind();
+                                        break;
+                                    default:
+                                        repeaterFileUpload4.DataSource = DeNghiHelper.LoadAttachments(SPContext.Current.ItemId, Constants.AttachmentCMND);
+                                        repeaterFileUpload4.DataBind();
+                                        break;
+                                }
+                                web.AllowUnsafeUpdates = false;
+                            }
+                        }
+                    });
+                    
+                }
+                catch (Exception ex)
+                {
+                    LoggingServices.LogException(ex);
+                }
+                LoggingServices.LogMessage("End DeleteFileUpload, item id:" + commandText);
+            }
+        }
+
+        void repeaterFileUpload_ItemDataBound(object sender, RepeaterItemEventArgs e)
+        {
+            try
+            {
+                LoggingServices.LogMessage("Begin ItemDataBound FileUplad");
+                DataRowView rowView = (DataRowView)e.Item.DataItem;
+                if (rowView != null)
+                {
+                    string commandAgrument = rowView["ID"].ToString();
+                    commandAgrument += "|" + rowView[Constants.FieldLoaiAttachment].ToString();
+                    var deNghiUrl = (SPContext.Current.Web.ServerRelativeUrl + Constants.ListUrlDeNghiAttachment).Replace("//", "/");
+                    HyperLink hplFile = (HyperLink)e.Item.FindControl("hplFile");
+                    hplFile.NavigateUrl = string.Format("{0}/{1}", deNghiUrl, rowView["LinkFileName"]);
+                    hplFile.Text = rowView["LinkFileName"].ToString().Substring(18);
+                    hplFile.Target = "_blank";
+                    
+                    LinkButton lbtDelete = (LinkButton)e.Item.FindControl("lbtDelete");
+                    lbtDelete.CommandArgument = commandAgrument;
+                    lbtDelete.CommandName = "DeleteFileUpload";
+                    lbtDelete.OnClientClick = "if (!confirm('Bạn có chắc chắn muốn xóa file đính kèm này không?')) return false;";
+                }
+            }
+            catch (Exception ex)
+            {
+                LoggingServices.LogException(ex);
+            }
+            LoggingServices.LogMessage("End ItemDataBound FileUplad");
         }
 
         void btnBoSungHoSo_Click(object sender, EventArgs e)
@@ -89,13 +181,18 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
                             redirectUrl = "/";
                         Response.Redirect(redirectUrl, true);
                     }
-                } 
+                }
+
+                //Load attachment
+                repeaterFileUpload1.DataSource = DeNghiHelper.LoadAttachments(SPContext.Current.ItemId, Constants.AttachmentGiayDangKy);
+                repeaterFileUpload1.DataBind();
+                repeaterFileUpload2.DataSource = DeNghiHelper.LoadAttachments(SPContext.Current.ItemId, Constants.AttachmentGiayChungNhanKiemDinh);
+                repeaterFileUpload2.DataBind();
+                repeaterFileUpload3.DataSource = DeNghiHelper.LoadAttachments(SPContext.Current.ItemId, Constants.AttachmentGiayCamKet);
+                repeaterFileUpload3.DataBind();
+                repeaterFileUpload4.DataSource = DeNghiHelper.LoadAttachments(SPContext.Current.ItemId, Constants.AttachmentCMND);
+                repeaterFileUpload4.DataBind();
             }
-            //Load attachment
-            DeNghiHelper.LoadAttachments(SPContext.Current.ItemId, Constants.AttachmentGiayDangKy, divFileUpload1);
-            DeNghiHelper.LoadAttachments(SPContext.Current.ItemId, Constants.AttachmentGiayChungNhanKiemDinh, divFileUpload2);
-            DeNghiHelper.LoadAttachments(SPContext.Current.ItemId, Constants.AttachmentGiayCamKet, divFileUpload3);
-            DeNghiHelper.LoadAttachments(SPContext.Current.ItemId, Constants.AttachmentCMND, divFileUpload4);
         }
 
         void UpdateItem(CauHinh newCauHinh, bool isCapNhatBuocDuyet, bool isBoSungHoSo)

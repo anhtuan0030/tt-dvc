@@ -55,7 +55,7 @@ namespace LongAn.DVC.TimerJobs
                         var items = thamSoList.GetItems(caml);
                         if (items != null && items.Count > 0)
                         {
-                            var connectionString = items[0]["Value"].ToString();
+                            var connectionString = items[0]["ValueConfig"].ToString();
                             LoggingServices.LogMessage("DVC Connection String: " + connectionString);
                             //Get List DeNghi
                             var deNghiList = web.GetList((web.ServerRelativeUrl + Constants.ListUrlDeNghiCapPhep).Replace("//", "/"));
@@ -127,7 +127,8 @@ namespace LongAn.DVC.TimerJobs
                                 daGQQuaHan = dataRows != null ? dataRows.Count() : 0;
                                 daGQDungHan = dtDaGiaiQuyet.Rows.Count - daGQQuaHan;
                             }
-                            LoggingServices.LogMessage("Caml DaGiaiQuyet: " + camlTonTruoc.Query);
+                            LoggingServices.LogMessage("Caml DaGiaiQuyet: " + camlDaGiaiQuyet.Query);
+                            LoggingServices.LogMessage("DaGQDungHan: " + daGQDungHan + ", DaGQQuaHan:" + daGQQuaHan);
 
                             #endregion Calc DaGiaiQuyet
 
@@ -143,6 +144,7 @@ namespace LongAn.DVC.TimerJobs
                                     chuaGQQuaHan = dataRows != null ? dataRows.Count() : 0;
                                     chuaGQTrongHan = tonTruoc + moiNhan - chuaGQQuaHan;   
                                 }
+                                LoggingServices.LogMessage("ChuaGQTrongHan: " + chuaGQTrongHan + ", ChuaGQQuaHan: " + chuaGQQuaHan);
 	                        }
                             
                             #endregion Calc ChuaGiaiQuyet

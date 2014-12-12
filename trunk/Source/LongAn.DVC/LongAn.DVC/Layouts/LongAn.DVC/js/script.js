@@ -10,16 +10,16 @@ jQuery(document).ready(function($){
         _this.addClass('active');
     });
 
-    if ($(".date-picker input").length > 0)
-    {
-        $(".date-picker input").datepicker({
-            showOn: "button",
-            buttonImage: "/_layouts/15/LongAn.DVC/images/calendar.png",
-            buttonImageOnly: true,
-            dateFormat: 'dd-mm-yy',
-            regional: 'vi'
-        });
-    }
+    //if ($(".date-picker input").length > 0)
+    //{
+    //    $(".date-picker input").datepicker({
+    //        showOn: "button",
+    //        buttonImage: "/_layouts/15/LongAn.DVC/images/calendar.png",
+    //        buttonImageOnly: true,
+    //        dateFormat: 'dd-mm-yy',
+    //        regional: 'vi'
+    //    });
+    //}
 
     $(".btn-up").click(function () {
         $("#s4-workspace").scrollTo(".container_12", 500);

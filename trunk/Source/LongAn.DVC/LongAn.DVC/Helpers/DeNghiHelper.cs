@@ -215,6 +215,28 @@ namespace LongAn.DVC.Helpers
             page.Response.End();
 
         }
+
+        public static System.Data.DataTable LoadAttachments(int itemId, string type)
+        {
+            System.Data.DataTable dataTable = null;
+            try
+            {
+                LoggingServices.LogMessage("Begin LoadAttachments: ItemId: " + itemId + ", type: " + type);
+                SPQuery caml = Camlex.Query().Where(x => x[Constants.FieldDeNghi] == (DataTypes.LookupId)itemId.ToString()
+                                                    && (string)x[Constants.FieldLoaiAttachment] == type)
+                                    .OrderBy(x => new[] { x["ID"] as Camlex.Asc })
+                                    .ToSPQuery();
+                var deNghiUrl = (SPContext.Current.Web.ServerRelativeUrl + Constants.ListUrlDeNghiAttachment).Replace("//", "/");
+                var deNghiAttachmentList = SPContext.Current.Web.GetList(deNghiUrl);
+                dataTable = deNghiAttachmentList.GetItems(caml).GetDataTable();
+            }
+            catch (Exception ex)
+            {
+                LoggingServices.LogException(ex);
+            }
+            LoggingServices.LogMessage("End LoadAttachments: ItemId: " + itemId + ", type: " + type);
+            return dataTable;
+        }
         public static void LoadAttachments(int itemId, string type, Control div)
         {
             try
@@ -318,6 +340,7 @@ namespace LongAn.DVC.Helpers
                                 }
                                 cauHinh.AllowCapNhatLoaiDuong = bool.Parse(cauHinhItem[Fields.AllowCapNhatLoaiDuong].ToString());
                                 cauHinh.AllowCapNhatNgayHen = bool.Parse(cauHinhItem[Fields.AllowCapNhatNgayHen].ToString());
+                                cauHinh.AllowCapNhatNgayLuuHanh = bool.Parse(cauHinhItem[Fields.AllowCapNhatNgayLuuHanh].ToString());
                                 cauHinh.IsBoSungHoSo = bool.Parse(cauHinhItem[Fields.IsBoSungHoSo].ToString());
                                 cauHinh.IsPhanCong = bool.Parse(cauHinhItem[Fields.IsPhanCong].ToString());
                                 //cauHinh.IsXuLyPhanCong = bool.Parse(cauHinhItem[Fields.IsXuLyPhanCong].ToString());
@@ -415,6 +438,7 @@ namespace LongAn.DVC.Helpers
                                         cauHinh.SPGroupTiepNhan = web.SiteGroups.GetByID(spGroupLookup.LookupId);
                                     }
                                     cauHinh.AllowCapNhatLoaiDuong = bool.Parse(cauHinhItem[Fields.AllowCapNhatLoaiDuong].ToString());
+                                    cauHinh.AllowCapNhatNgayLuuHanh = bool.Parse(cauHinhItem[Fields.AllowCapNhatNgayLuuHanh].ToString());
                                     cauHinh.AllowCapNhatNgayHen = bool.Parse(cauHinhItem[Fields.AllowCapNhatNgayHen].ToString());
                                     cauHinh.IsBoSungHoSo = bool.Parse(cauHinhItem[Fields.IsBoSungHoSo].ToString());
                                     cauHinh.IsPhanCong = bool.Parse(cauHinhItem[Fields.IsPhanCong].ToString());

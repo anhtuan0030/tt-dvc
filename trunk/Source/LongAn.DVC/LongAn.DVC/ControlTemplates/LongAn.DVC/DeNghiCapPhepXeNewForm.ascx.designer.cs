@@ -22,24 +22,6 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC {
         protected global::System.Web.UI.UserControl toolBarTbltop;
         
         /// <summary>
-        /// FieldLabel1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Microsoft.SharePoint.WebControls.FieldLabel FieldLabel1;
-        
-        /// <summary>
-        /// FormField1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Microsoft.SharePoint.WebControls.FormField FormField1;
-        
-        /// <summary>
         /// FieldLabel2 control.
         /// </summary>
         /// <remarks>

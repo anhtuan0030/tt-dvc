@@ -10,12 +10,12 @@
         <Row>
           <Field Name="ID">1</Field>
           <Field Name="Title">Số ngày xử lý đề nghị cấp phép</Field>
-          <Field Name="Value">4</Field>
+          <Field Name="ValueConfig">4</Field>
         </Row>
         <Row>
           <Field Name="ID">2</Field>
           <Field Name="Title">DVC_ConnectionString</Field>
-          <Field Name="Value">server=(local);database=DVC_LONGAN;Integrated Security=False;User ID=sa;Password=sa;</Field>
+          <Field Name="ValueConfig">server=(local);database=DVC_LONGAN;Integrated Security=False;User ID=sa;Password=sa;</Field>
         </Row>
       </Rows>
     </Data>

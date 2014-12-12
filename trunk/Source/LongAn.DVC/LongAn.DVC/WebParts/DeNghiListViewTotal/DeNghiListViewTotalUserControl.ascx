@@ -52,9 +52,9 @@
                 <div class="pull-right">
                     <div class="pull-left-search">
                         <%--<a href="#" class="button task inline-block" style="padding-left:30px; margin-right:10px;">Lịch sử luân chuyển hồ sơ</a>--%>
-                        <asp:HyperLink ID="hplLichSuLuanChuyenHoSo" class="button task inline-block" style="padding-left:30px; margin-right:10px;" runat="server">Lịch sử luân chuyển hồ sơ</asp:HyperLink>
+                        <%--<asp:HyperLink ID="hplLichSuLuanChuyenHoSo" class="button task inline-block" style="padding-left:30px; margin-right:10px;" runat="server">Lịch sử luân chuyển hồ sơ</asp:HyperLink>--%>
                         <a id="linkSearchExpand" href="#" class="button button-expand inline-block">Tìm kiếm</a>
-                        <asp:HiddenField ID="hdfSearchExpand" Value="0" runat="server" />
+                        <asp:HiddenField ID="hdfSearchExpand" Value="1" runat="server" />
                         <asp:HiddenField ID="hdfCurrentUrl" Value="0" runat="server" />
                         <asp:HiddenField ID="hdfDeNghiUrl" Value="0" runat="server" />
                     </div>
@@ -118,11 +118,12 @@
 				<tr style="height: 50px;">
                     <th>STT</th>
                     <th>Biên nhận</th>
-                    <th>Đơn vị đề nghị</th>
+                    <th>Tên Cá nhân/Tổ chức</th>
                     <th>Loại đề nghị</th>
-                    <th>Ngày nộp hồ sơ</th>
+                    <th>Ngày nộp</th>
+                    <th>Ngày hẹn trả</th>
                     <th>Trạng thái</th>
-                    <th colspan="1">Thao tác</th>
+                    <%--<th colspan="1">Thao tác</th>--%>
                 </tr>
                 <asp:Repeater ID="repeaterLists" runat="server"  OnItemCommand="repeaterLists_ItemCommand" OnItemDataBound="repeaterLists_ItemDataBound">
                     <ItemTemplate>
@@ -131,7 +132,8 @@
                                 <asp:Literal ID="literalSTT" runat="server" Text="<%#(((RepeaterItem)Container).ItemIndex+1) %>"></asp:Literal>
                             </td>
                             <td>
-                                <asp:Literal ID="literalTitle" runat="server"></asp:Literal>
+                                <%--<asp:Literal ID="literalTitle" runat="server"></asp:Literal>--%>
+                                <asp:HyperLink ID="hplTitle" ToolTip="" runat="server"></asp:HyperLink>
                             </td>
                             <td>
                                 <asp:Literal ID="literalCaNhanToChuc" runat="server"></asp:Literal>
@@ -143,21 +145,16 @@
                                 <asp:Literal ID="literalNgayDeNghi" runat="server"></asp:Literal>
                             </td>
                             <td>
+                                <asp:Literal ID="literalNgayHenTra" runat="server"></asp:Literal>
+                            </td>
+                            <td>
                                 <asp:Literal ID="literalTrangThai" runat="server"></asp:Literal>
                             </td>
                             
-                            <td>
-                                <asp:HyperLink ID="hplXuLy" ToolTip="Xử lý hồ sơ" CssClass="button view just-icon" runat="server"></asp:HyperLink>
-                            </td>
                             <%--<td>
-                                <asp:HyperLink ID="hplChinhSuaBoSung" ToolTip="Chỉnh sửa / Bổ sung hồ sơ" CssClass="button edit just-icon" style="display:none;" runat="server"></asp:HyperLink>
-                            </td>
-                            <td>
-                                <asp:LinkButton ID="lbtPrintBienNhan" ToolTip="In Biên nhận" CssClass="button printer just-icon" style="display:none;" runat="server"></asp:LinkButton>
-                            </td>
-                            <td>
-                                <asp:LinkButton ID="lbtPrintGiayPhep" ToolTip="In Giấy phép" CssClass="button printer just-icon" style="display:none;" runat="server"></asp:LinkButton>
+                                <asp:HyperLink ID="hplXuLy" ToolTip="Xử lý hồ sơ" CssClass="button view just-icon" runat="server"></asp:HyperLink>
                             </td>--%>
+                            
                         </tr>
                     </ItemTemplate>
                 </asp:Repeater>
