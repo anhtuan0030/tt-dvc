@@ -28,8 +28,8 @@
 						<asp:TextBox ID="txtMaBienNhan" runat="server"></asp:TextBox>
 					</div>
 
-					<div class="grid_2" style="text-align:right;">
-						Tên Cá nhân/Tổ chức:
+					<div class="grid_3" style="text-align:right;">
+						Tên cá nhân/tổ chức:
 					</div>
 					<div class="grid_4">
 						<asp:TextBox ID="txtCaNhanToChuc" runat="server"></asp:TextBox>
@@ -44,8 +44,8 @@
 						<asp:TextBox ID="txtSoDienThoai" runat="server"></asp:TextBox>
 					</div>
                     
-					<div class="grid_2" style="text-align:right;">
-						Ngày đề nghị:
+					<div class="grid_3" style="text-align:right;">
+						Ngày nộp:
 					</div>
 					<div class="grid_2">
 						<SharePoint:DateTimeControl ID="dtcNgayDeNghiTu" DateOnly="true" LocaleId="1066" runat="server" />

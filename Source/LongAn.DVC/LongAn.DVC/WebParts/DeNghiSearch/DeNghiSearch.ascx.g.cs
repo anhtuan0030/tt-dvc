@@ -621,8 +621,8 @@ namespace LongAn.DVC.WebParts.DeNghiSearch {
             global::System.Web.UI.WebControls.TextBox @__ctrl1;
             @__ctrl1 = this.@__BuildControltxtMaBienNhan();
             @__parser.AddParsedSubObject(@__ctrl1);
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t<div class=\"grid_2\" style=\"text-align:right;\">\r\n\t\t\t\t\t\tTên C" +
-                        "á nhân/Tổ chức:\r\n\t\t\t\t\t</div>\r\n\t\t\t\t\t<div class=\"grid_4\">\r\n\t\t\t\t\t\t"));
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t<div class=\"grid_3\" style=\"text-align:right;\">\r\n\t\t\t\t\t\tTên c" +
+                        "á nhân/tổ chức:\r\n\t\t\t\t\t</div>\r\n\t\t\t\t\t<div class=\"grid_4\">\r\n\t\t\t\t\t\t"));
             global::System.Web.UI.WebControls.TextBox @__ctrl2;
             @__ctrl2 = this.@__BuildControltxtCaNhanToChuc();
             @__parser.AddParsedSubObject(@__ctrl2);
@@ -632,8 +632,8 @@ namespace LongAn.DVC.WebParts.DeNghiSearch {
             global::System.Web.UI.WebControls.TextBox @__ctrl3;
             @__ctrl3 = this.@__BuildControltxtSoDienThoai();
             @__parser.AddParsedSubObject(@__ctrl3);
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n\t\t\t\t\t</div>\r\n                    \r\n\t\t\t\t\t<div class=\"grid_2\" style=\"text-align:r" +
-                        "ight;\">\r\n\t\t\t\t\t\tNgày đề nghị:\r\n\t\t\t\t\t</div>\r\n\t\t\t\t\t<div class=\"grid_2\">\r\n\t\t\t\t\t\t"));
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n\t\t\t\t\t</div>\r\n                    \r\n\t\t\t\t\t<div class=\"grid_3\" style=\"text-align:r" +
+                        "ight;\">\r\n\t\t\t\t\t\tNgày nộp:\r\n\t\t\t\t\t</div>\r\n\t\t\t\t\t<div class=\"grid_2\">\r\n\t\t\t\t\t\t"));
             global::Microsoft.SharePoint.WebControls.DateTimeControl @__ctrl4;
             @__ctrl4 = this.@__BuildControldtcNgayDeNghiTu();
             @__parser.AddParsedSubObject(@__ctrl4);
