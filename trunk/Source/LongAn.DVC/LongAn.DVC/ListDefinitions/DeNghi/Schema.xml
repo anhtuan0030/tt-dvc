@@ -533,9 +533,9 @@
           </XmlDocument>
           <XmlDocument NamespaceURI="http://schemas.microsoft.com/sharepoint/v3/contenttype/forms">
             <FormTemplates xmlns="http://schemas.microsoft.com/sharepoint/v3/contenttype/forms">
-              <New>DeNghiCapPhepXeNewTemplate</New>
-              <Edit>DeNghiCapPhepXeEditTemplate</Edit>
-              <Display>DeNghiCapPhepXeDispTemplate</Display>
+              <New>DeNghiNewTemplate</New>
+              <Edit>DeNghiEditTemplate</Edit>
+              <Display>DeNghiDispTemplate</Display>
             </FormTemplates>
           </XmlDocument>
         </XmlDocuments>

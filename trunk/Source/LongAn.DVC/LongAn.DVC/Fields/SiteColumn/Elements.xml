@@ -1031,4 +1031,17 @@
          Type="DateTime"
          Group="[LA-DVC]"/>
 
+  <Field Name="NghiLeLamBu"
+             ID="{8D264E7F-7C83-4465-B4E8-7DC0ADBBC4AC}"
+             DisplayName="Nghỉ lễ / Làm bù"
+             Type="Choice"
+             Required="TRUE"
+             Group="[LA-DVC]" >
+    <Default>Nghỉ lễ</Default>
+    <CHOICES>
+      <CHOICE>Làm bù</CHOICE>
+      <CHOICE>Nghỉ lễ</CHOICE>
+    </CHOICES>
+  </Field>
+
 </Elements>

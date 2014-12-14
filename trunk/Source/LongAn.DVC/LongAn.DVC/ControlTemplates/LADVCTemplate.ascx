@@ -12,6 +12,10 @@
 <%@ Register Src="~/_controltemplates/15/LongAn.DVC/DeNghiCapPhepXeEditForm.ascx" TagPrefix="uc" TagName="DeNghiCapPhepXeEditForm" %>
 <%@ Register Src="~/_controltemplates/15/LongAn.DVC/DeNghiCapPhepXeDispForm.ascx" TagPrefix="uc" TagName="DeNghiCapPhepXeDispForm" %>
 
+<%@ Register Src="~/_controltemplates/15/LongAn.DVC/DeNghiNewForm.ascx" TagPrefix="uc" TagName="DeNghiNewForm" %>
+<%@ Register Src="~/_controltemplates/15/LongAn.DVC/DeNghiEditForm.ascx" TagPrefix="uc" TagName="DeNghiEditForm" %>
+<%@ Register Src="~/_controltemplates/15/LongAn.DVC/DeNghiDispForm.ascx" TagPrefix="uc" TagName="DeNghiDispForm" %>
+
 <SharePoint:RenderingTemplate ID="DeNghiCapPhepXeNewTemplate" runat="server">
   <Template>
         <uc:DeNghiCapPhepXeNewForm ID="DeNghiCapPhepXeNewTemplate1" runat="server" />
@@ -27,5 +31,23 @@
 <SharePoint:RenderingTemplate ID="DeNghiCapPhepXeDispTemplate" runat="server">
   <Template>
         <uc:DeNghiCapPhepXeDispForm ID="DeNghiCapPhepXeDispTemplate1" runat="server" />
+  </Template>
+</SharePoint:RenderingTemplate>
+
+<SharePoint:RenderingTemplate ID="DeNghiNewTemplate" runat="server">
+  <Template>
+        <uc:DeNghiNewForm ID="DeNghiNewTemplate1" runat="server" />
+  </Template>
+</SharePoint:RenderingTemplate>
+
+<SharePoint:RenderingTemplate ID="DeNghiEditTemplate" runat="server">
+  <Template>
+        <uc:DeNghiEditForm ID="DeNghiEditTemplate1" runat="server" />
+  </Template>
+</SharePoint:RenderingTemplate>
+
+<SharePoint:RenderingTemplate ID="DeNghiDispTemplate" runat="server">
+  <Template>
+        <uc:DeNghiDispForm ID="DeNghiDispTemplate1" runat="server" />
   </Template>
 </SharePoint:RenderingTemplate>

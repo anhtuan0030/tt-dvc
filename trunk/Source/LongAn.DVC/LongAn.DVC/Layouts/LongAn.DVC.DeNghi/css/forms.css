@@ -1,0 +1,148 @@
+.container {
+  max-width: 1024px;
+}
+a {
+  text-decoration: none;
+}
+.mr-form {
+  margin-bottom: 20px;
+}
+.mr-form input[type="text"],
+.mr-form select {
+  width: 100%;
+}
+.mr-form textarea {
+  width: 100%;
+  height: 80px;
+}
+.mr-form .star {
+  color: red;
+}
+.mr-form .row {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+body.default .mr-form .panel-1,
+body.default .mr-form .panel-2 {
+  padding: 20px 10px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+body.default .mr-form .panel-1 {
+  background: #ebe9d8;
+}
+body.default .mr-form .panel-2 {
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border: 1px solid #858a70;
+}
+body.default .mr-form label {
+  font-size: 12px;
+  font-weight: normal;
+}
+body.default .mr-form input[type="text"],
+body.default .mr-form input[type="password"] {
+  border: 1px solid #858a70;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+}
+body.default h1 {
+  background: #dde6ed;
+  color: #303257;
+  text-transform: uppercase;
+  padding: 10px;
+  font-size: 13px;
+}
+body.default h2 {
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+body.default h3 {
+  font-size: 12px;
+  font-weight: bold;
+}
+body.style-1 .mr-form .panel-1,
+body.style-1 .mr-form .panel-2 {
+  padding: 20px 10px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+body.style-1 .mr-form .panel-1 {
+  background: #fafafa;
+}
+body.style-1 .mr-form .panel-2 {
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border: 1px solid #858a70;
+}
+body.style-1 .mr-form label {
+  color: #01648d;
+  display: block;
+  margin-top: 5px;
+  font-weight: normal;
+}
+body.style-1 .mr-form input[type="text"],
+body.style-1 .mr-form input[type="password"] {
+  border: 1px solid #01648d;
+  width: 100%;
+  margin-top: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+body.style-1 .mr-form button {
+  border: none;
+  background: #0293bf;
+  color: #fff;
+  display: inline-block;
+  padding: 5px 10px;
+  text-align: center;
+}
+body.style-1 .mr-form button:hover {
+  background: #01648d;
+}
+body.style-1 h1 {
+  background: #dde6ed;
+  color: #303257;
+  text-transform: uppercase;
+  padding: 10px;
+  font-size: 13px;
+}
+body.style-1 h2 {
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+body.style-1 h3 {
+  font-size: 12px;
+  font-weight: bold;
+}
+body.default .date-picker input[type="text"],
+body.style-1 .date-picker input[type="text"] {
+  width: 80px;
+  float: left;
+  margin-right: 8px;
+}
+body.default .date-picker img,
+body.style-1 .date-picker img {
+  float: left;
+  margin-right: 5px;
+  margin-top: 4px;
+}
+body.default .date-picker:after,
+body.style-1 .date-picker:after {
+  clear: both;
+  content: ' ';
+  display: block;
+}

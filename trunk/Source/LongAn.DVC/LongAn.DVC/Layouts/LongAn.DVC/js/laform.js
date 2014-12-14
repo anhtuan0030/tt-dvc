@@ -11,7 +11,7 @@ function PreSaveAction(formType)
     $(".field-required-data").each(function () {
         var input = $(this).find("input");
         if (input.val() == "") {
-            var errorHtml = '<span class="ms-formvalidation"><span role="alert">Trường không được để trống<br></span></span>';
+            var errorHtml = '<span class="ms-formvalidation"><span role="alert">Trường bắt buộc nhập!<br></span></span>';
             input.after(errorHtml);
             result = false;
         }

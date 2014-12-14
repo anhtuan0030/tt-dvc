@@ -87,6 +87,11 @@ namespace LongAn.DVC.Common
         public const string WebIdProperty = "DVC_Web_ID";
         public const string ConnectionString = "DVC_ConnectionString";
 
+        public const string DanhMucTuyenDuong = "/Pages/DanhMucTuyenDuong.aspx";
+
+        public const string NghiLeLamBu_NghiLe = "Nghỉ lễ";
+        public const string NghiLeLamBu_LamBu = "Làm bù";
+
         public const string TinhTrangTraHoSo_ChuaTra = "Chưa trả";
         public const string TinhTrangTraHoSo_DaTra = "Đã trả";
         //Configurations
