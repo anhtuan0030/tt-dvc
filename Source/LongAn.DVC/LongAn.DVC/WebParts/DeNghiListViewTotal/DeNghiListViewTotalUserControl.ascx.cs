@@ -273,7 +273,7 @@ namespace LongAn.DVC.WebParts.DeNghiListViewTotal
                 }
                 
                 Expression<Func<Microsoft.SharePoint.SPListItem, bool>> andExpr = null;
-                if (andConditions != null)
+                if (andConditions != null && andConditions.Count > 0 )
                     andExpr = ExpressionsHelper.CombineAnd(andConditions);
 
                 //Query
