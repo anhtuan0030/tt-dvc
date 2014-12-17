@@ -44,7 +44,8 @@ namespace LongAn.DVC.Helpers
         public string EmailTemplate { get; set; }
         public bool AllowInBienNhan { get; set; }
         public bool AllowInGiayPhep { get; set; }
-        
+        public bool AllowEditDeNghi { get; set; }
+        public bool AllowThamDinh { get; set; }
         public override string ToString()
         {
             return BuocDuyet;

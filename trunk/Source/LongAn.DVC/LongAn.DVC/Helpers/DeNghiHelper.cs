@@ -350,6 +350,8 @@ namespace LongAn.DVC.Helpers
                                 cauHinh.EmailTemplate = cauHinhItem[Fields.EmailTemplate] != null ? cauHinhItem[Fields.EmailTemplate].ToString() : string.Empty;
                                 cauHinh.AllowInBienNhan = bool.Parse(cauHinhItem[Fields.AllowInBienNhan].ToString());
                                 cauHinh.AllowInGiayPhep = bool.Parse(cauHinhItem[Fields.AllowInGiayPhep].ToString());
+                                cauHinh.AllowEditDeNghi = bool.Parse(cauHinhItem[Fields.AllowEditDeNghi].ToString());
+                                cauHinh.AllowThamDinh = bool.Parse(cauHinhItem[Fields.AllowThamDinh].ToString());
                             }
                         }
                     }

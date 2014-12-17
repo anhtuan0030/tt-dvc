@@ -865,6 +865,28 @@
     <Default>0</Default>
   </Field>
 
+  <Field Type="Boolean"
+             ID="{E186E7ED-FCDC-4458-AAEE-6AEE86338C34}"
+             Name="AllowEditDeNghi"
+             StaticName="AllowEditDeNghi"
+             DisplayName="Được phép chỉnh sửa đề nghị"
+             EnforceUniqueValues="FALSE"
+             Indexed="FALSE"
+             Group="[LA-DVC]">
+    <Default>0</Default>
+  </Field>
+
+  <Field Type="Boolean"
+             ID="{9EB4917F-5680-4882-A64E-899AA6878C33}"
+             Name="AllowThamDinh"
+             StaticName="AllowThamDinh"
+             DisplayName="Được thẩm định hồ sơ"
+             EnforceUniqueValues="FALSE"
+             Indexed="FALSE"
+             Group="[LA-DVC]">
+    <Default>0</Default>
+  </Field>
+
   <Field Type="Lookup"
          ID="{14C5BB63-A409-4458-B702-03D5CFB3FD18}"
          StaticName="TenTrangThaiRef"

@@ -121,6 +121,8 @@
                         <br />
                         <div class="pull-left-search">
                             <a id="linkShowHideDetail" href="#" class="button button-expand inline-block">Ẩn/Hiện chi tiết đề nghị</a>
+                            &nbsp;
+                            <asp:HyperLink ID="hplEditHoSo" class="button inline-block" runat="server">Chỉnh sửa hồ sơ</asp:HyperLink>
                             <asp:HiddenField ID="hdfShowHideDetail" Value="0" runat="server" />
                         </div>
 
@@ -515,7 +517,7 @@
                             <div class=" row_5">
                                 01
                             </div>
-                            <div class=" row_45">
+                            <div class="row_45">
                                 <SharePoint:FieldLabel ID="FieldLabel38" FieldName="UploadFileTitle1" runat="server" />
                             </div>
                             <div class=" row_5">
@@ -533,7 +535,7 @@
                             <div class=" row_5">
                                 02
                             </div>
-                            <div class=" row_45">
+                            <div class="row_45">
                                 <SharePoint:FieldLabel ID="FieldLabel40" FieldName="UploadFileTitle2" runat="server" />
                             </div>
                             <div class=" row_5">
@@ -551,7 +553,7 @@
                             <div class=" row_5">
                                 03
                             </div>
-                            <div class=" row_45">
+                            <div class="row_45">
                                 <SharePoint:FieldLabel ID="FieldLabel41" FieldName="UploadFileTitle3" runat="server" />
                             </div>
                             <div class=" row_5">
@@ -569,7 +571,7 @@
                             <div class=" row_5">
                                 04
                             </div>
-                            <div class=" row_45">
+                            <div class="row_45">
                                 <SharePoint:FieldLabel ID="FieldLabel42" FieldName="UploadFileTitle4" runat="server" />
                             </div>
                             <div class=" row_5">

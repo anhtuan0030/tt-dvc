@@ -2,6 +2,12 @@
  * Created by 
  */
 
+$(function () {
+    $(".row_45 nobr").each(function () {	
+        $(this).parent().html($(this).text());
+    });
+});
+
 //Check upload file: 0-newform, 1-editform
 function PreSaveAction(formType)
 {
@@ -11,17 +17,20 @@ function PreSaveAction(formType)
     $(".field-required-data").each(function () {
         var input = $(this).find("input");
         if (input.val() == "") {
-            var errorHtml = '<span class="ms-formvalidation"><span role="alert">Trường bắt buộc nhập!<br></span></span>';
+            var parentTag = $(this).parent(".row");
+            var titleText = parentTag.find(".grid_2 nobr").text();
+            var errorHtml = '<span class="ms-formvalidation"><span role="alert">' + titleText + ' bắt buộc nhập!<br></span></span>';
             input.after(errorHtml);
             result = false;
         }
     });
+
     if (formType == 0)
     {
         //File upload
         $("[id*='fileUpload']").each(function () {
             if ($(this).val() == "") {
-                var errorHtml = '<span class="ms-formvalidation"><span role="alert">Chưa attach file đính kèm<br></span></span>';
+                var errorHtml = '<span class="ms-formvalidation"><span role="alert">Chưa chọn tập tin đính kèm<br></span></span>';
                 $(this).after(errorHtml);
                 result = false;
             }

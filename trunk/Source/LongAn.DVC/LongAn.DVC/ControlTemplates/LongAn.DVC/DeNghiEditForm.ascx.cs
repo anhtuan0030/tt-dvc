@@ -159,8 +159,13 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
                     var spListItem = SPContext.Current.ListItem;
                     var nguoiDeNghi = spListItem[Fields.NguoiDeNghi];
                     var nguoiDeNghiVal = new SPFieldLookupValue(nguoiDeNghi.ToString());
-                    if (nguoiDeNghiVal.LookupId == SPContext.Current.Web.CurrentUser.ID
+                    var goThroughQueryString = Request.QueryString["GoThrough"];
+                    var goThrough = false;
+                    if (goThroughQueryString != null && goThroughQueryString.ToString() == "True")
+                        goThrough = true;
+                    if ((nguoiDeNghiVal.LookupId == SPContext.Current.Web.CurrentUser.ID
                         && (cauHinh.StartEnd == Constants.CauHinh_YCBS || cauHinh.StartEnd == Constants.CauHinh_Start))
+                        || goThrough)
                     {
                         //Show button
                         hdfCauHinhID.Value = cauHinh.BuocDuyetID.ToString();

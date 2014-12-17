@@ -157,6 +157,16 @@
                     Name="AllowInBienNhan" />
           <FieldRef ID="{6B43161F-FA7C-445B-9566-1607213F1706}"
                     Name="AllowInGiayPhep" />
+          
+          <FieldRef ID="{E186E7ED-FCDC-4458-AAEE-6AEE86338C34}"
+             Name="AllowEditDeNghi" />
+
+          <FieldRef ID="{9EB4917F-5680-4882-A64E-899AA6878C33}"
+             Name="AllowThamDinh" />
+
+          <FieldRef ID="{42124a30-3e8b-4fea-932d-635a19272fc9}"
+             Name="CauHinhCal" />
+          
         </FieldRefs>
       </ContentType>
     </ContentTypes>
@@ -442,6 +452,28 @@
              Name="AllowInGiayPhep"
              StaticName="AllowInGiayPhep"
              DisplayName="Được in giấy phép"
+             EnforceUniqueValues="FALSE"
+             Indexed="FALSE"
+             Group="[LA-DVC]">
+        <Default>0</Default>
+      </Field>
+
+      <Field Type="Boolean"
+             ID="{E186E7ED-FCDC-4458-AAEE-6AEE86338C34}"
+             Name="AllowEditDeNghi"
+             StaticName="AllowEditDeNghi"
+             DisplayName="Được phép chỉnh sửa đề nghị"
+             EnforceUniqueValues="FALSE"
+             Indexed="FALSE"
+             Group="[LA-DVC]">
+        <Default>0</Default>
+      </Field>
+
+      <Field Type="Boolean"
+             ID="{9EB4917F-5680-4882-A64E-899AA6878C33}"
+             Name="AllowThamDinh"
+             StaticName="AllowThamDinh"
+             DisplayName="Được thẩm định hồ sơ"
              EnforceUniqueValues="FALSE"
              Indexed="FALSE"
              Group="[LA-DVC]">
