@@ -269,7 +269,8 @@ namespace LongAn.DVC.Common
         public const string EmailTemplate = "EmailTemplate";
         public const string AllowInBienNhan = "AllowInBienNhan";
         public const string AllowInGiayPhep = "AllowInGiayPhep";
-        
+        public const string AllowEditDeNghi = "AllowEditDeNghi";
+        public const string AllowThamDinh = "AllowThamDinh";
 
         public const string KinhGui = "KinhGui";
         public const string CaNhanToChuc = "CaNhanToChuc";
