@@ -276,6 +276,17 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
                             dtcThoiGianLuuHanhDen.SelectedDate = ngayLuuHanhDen;
                         }
                         #endregion Cap Nhat Ngay Luu Hanh
+
+                        #region Edit Ho So
+                        if (cauHinh.AllowEditDeNghi)
+                        {
+                            var redirectUrl = Request.QueryString["Source"];
+                            var deNghiUrl = (SPContext.Current.Web.ServerRelativeUrl + Constants.ListUrlDeNghiCapPhep).Replace("//", "/");
+                            var editUrl = string.Format(Constants.ConfLinkPageEditForm, deNghiUrl, SPContext.Current.ItemId, redirectUrl) + "&GoThrough=True";
+                            hplEditHoSo.NavigateUrl = editUrl;
+                            hplEditHoSo.Visible = true;
+                        }
+                        #endregion Edit Ho so
                     }
 
                     #region Action Phan Cong
