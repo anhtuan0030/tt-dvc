@@ -9,10 +9,13 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Globalization;
 using System.IO;
 using System.Linq.Expressions;
 using System.Web;
+using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
+using System.Linq;
 
 namespace LongAn.DVC.WebParts.DeNghiReport
 {
@@ -52,7 +55,29 @@ namespace LongAn.DVC.WebParts.DeNghiReport
                 //        HttpContext.Current.Response.Redirect(SPContext.Current.Web.ServerRelativeUrl);
                 //    }
                 //}
+
+                DateTime firstDateOfQuarter = new DateTime(2014, 10, 1); //the first day of Q4 2014
+                DateTime currentDate = DateTime.Today;
+
+                do
+                {
+                    ddlQuarterPicker.Items.Add(new ListItem { Text = "Quý " + GetQuarter(firstDateOfQuarter).ToString() + " năm " + firstDateOfQuarter.Year.ToString(), Value = firstDateOfQuarter.ToString("yyyy-MM-dd") });
+                    firstDateOfQuarter = firstDateOfQuarter.AddMonths(3);
+                }
+                while (currentDate > firstDateOfQuarter);
             }
+        }
+
+        protected int GetQuarter(DateTime date)
+        {
+            if (date.Month >= 1 && date.Month <= 3)
+                return 1;
+            else if (date.Month >= 4 && date.Month <= 6)
+                return 2;
+            else if (date.Month >= 7 && date.Month <= 9)
+                return 3;
+            else
+                return 4;
         }
 
         protected void GenerateReport(DateTime fromDate, DateTime toDate)
@@ -1058,6 +1083,218 @@ namespace LongAn.DVC.WebParts.DeNghiReport
             if (!dtcFromDate.IsDateEmpty && dtcFromDate.IsValid && !dtcToDate.IsDateEmpty && dtcToDate.IsValid)
             {
                 GenerateReport(dtcFromDate.SelectedDate, dtcToDate.SelectedDate);
+            }
+        }
+
+        protected void btnExportExcelQuarter_Click(object sender, EventArgs e)
+        {
+            DateTime fromDate = DateTime.ParseExact(ddlQuarterPicker.SelectedValue, "yyyy-MM-dd", CultureInfo.InvariantCulture);
+            DateTime toDate = fromDate.AddMonths(3).AddDays(-1);
+            GenerateReportByQuarter(fromDate, toDate);
+        }
+
+        protected void GenerateReportByQuarter(DateTime fromDate, DateTime toDate)
+        {
+            try
+            {
+                SPSecurity.RunWithElevatedPrivileges(delegate()
+                {
+                    using (SPSite site = new SPSite(SPContext.Current.Site.ID))
+                    {
+                        using (SPWeb web = site.OpenWeb(SPContext.Current.Web.ID))
+                        {
+                            string deNghiUrl = (web.ServerRelativeUrl + Constants.ListUrlDeNghiCapPhep).Replace("//", "/");
+                            SPList deNghiList = web.GetList(deNghiUrl);
+
+                            //Define Query to get data
+                            var viewFields = string.Concat(
+                                       string.Format("<FieldRef Name='{0}' />", Fields.Title),
+                                       string.Format("<FieldRef Name='{0}' />", Fields.CaNhanToChuc),
+                                       string.Format("<FieldRef Name='{0}' />", Fields.NgayTiepNhan),
+                                       string.Format("<FieldRef Name='{0}' />", Fields.NgayNopHoSo),
+                                       string.Format("<FieldRef Name='{0}' />", Fields.NgayHenTra),
+                                       string.Format("<FieldRef Name='{0}' />", Fields.NgayThucTra),
+                                       string.Format("<FieldRef Name='{0}' />", Fields.NgayDuocCapPhep),
+                                       string.Format("<FieldRef Name='{0}' />", Fields.NgayBoSung),
+                                       "<FieldRef Name='ID' />");
+
+                            #region Calc TonTruoc
+                            SPQuery camlTonTruoc = Camlex.Query().Where(x => (DateTime)x[Fields.NgayTiepNhan] < fromDate
+                                                        && ((((DateTime)x[Fields.NgayDuocCapPhep] >= fromDate && (DateTime)x[Fields.NgayDuocCapPhep] <= toDate) || ((DateTime)x[Fields.NgayHuyHoSo] >= fromDate && (DateTime)x[Fields.NgayHuyHoSo] <= toDate))
+                                                            || (x[Fields.NgayDuocCapPhep] == null && x[Fields.NgayHuyHoSo] == null))
+                                                        )
+                                                        .ToSPQuery();
+                            camlTonTruoc.ViewFields = viewFields;
+                            camlTonTruoc.ViewFieldsOnly = true;
+                            var tonTruocItems = deNghiList.GetItems(camlTonTruoc);
+                            var tonTruoc = 0;
+                            if (tonTruocItems != null)
+                                tonTruoc = tonTruocItems.Count;
+                            LoggingServices.LogMessage("Caml TonTruoc: " + camlTonTruoc.Query + ", ItemCount: " + tonTruoc);
+                            #endregion Calc TonTruoc
+
+                            #region Calc DaHuy
+                            //SPQuery camlDaHuy = Camlex.Query()
+                            //                        .Where(x => x[Fields.NgayHuyHoSo] == (DataTypes.DateTime)date.ToString())
+                            //                        .ToSPQuery();
+                            //camlDaHuy.ViewFields = viewFields;
+                            //camlDaHuy.ViewFieldsOnly = true;
+                            //var daHuy = 0;
+                            //var daHuyItems = deNghiList.GetItems(camlDaHuy);
+                            //if (daHuyItems != null)
+                            //    daHuy = daHuyItems.Count;
+                            //LoggingServices.LogMessage("Caml DaHuy: " + camlDaHuy.Query + ", ItemCount: " + daHuy);
+                            #endregion Calc DaHuy
+
+                            #region Calc MoiNhan
+                            SPQuery camlMoiNhan = Camlex.Query()
+                                                    .Where(x => (DateTime)x[Fields.NgayTiepNhan] >= fromDate && (DateTime)x[Fields.NgayTiepNhan] <= toDate)
+                                                    .ToSPQuery();
+                            camlMoiNhan.ViewFields = viewFields;
+                            camlMoiNhan.ViewFieldsOnly = true;
+                            var moiNhan = 0;
+                            var moiNhanItems = deNghiList.GetItems(camlMoiNhan);
+                            if (moiNhanItems != null)
+                                moiNhan = moiNhanItems.Count;
+                            LoggingServices.LogMessage("Caml MoiNhan: " + camlMoiNhan.Query + ", ItemCount: " + moiNhan);
+                            #endregion Calc MoiNhan
+
+
+                            #region Calc DaGiaiQuyet
+                            SPQuery camlDaGiaiQuyet = Camlex.Query()
+                                                    .Where(x => (((DateTime)x[Fields.NgayTiepNhan] < fromDate && (((DateTime)x[Fields.NgayDuocCapPhep] >= fromDate && (DateTime)x[Fields.NgayDuocCapPhep] <= toDate) || ((DateTime)x[Fields.NgayHuyHoSo] >= fromDate && (DateTime)x[Fields.NgayHuyHoSo] <= toDate)))
+                                                                    || ((DateTime)x[Fields.NgayTiepNhan] >= fromDate && (DateTime)x[Fields.NgayTiepNhan] <= toDate))
+                                                                && (x[Fields.NgayDuocCapPhep] != null || x[Fields.NgayHuyHoSo] != null)
+                                                        )
+                                                    .ToSPQuery();
+                            camlDaGiaiQuyet.ViewFields = viewFields;
+                            camlDaGiaiQuyet.ViewFieldsOnly = true;
+
+                            var daGiaiQuyet_DungHan = 0;
+                            var daGiaiQuyet_QuaHan = 0;
+
+                            var daGiaiQuyetItems = deNghiList.GetItems(camlDaGiaiQuyet);
+                            if (daGiaiQuyetItems != null)
+                            {
+                                daGiaiQuyet_DungHan = daGiaiQuyetItems.Cast<SPListItem>().Where(item => (DateTime)item[Fields.NgayDuocCapPhep] <= (DateTime)item[Fields.NgayHenTra])
+                                                        .Select(item => new
+                                                        {
+                                                            Title = item["Title"].ToString()
+                                                        })
+                                                        .ToList().Count;
+
+                                daGiaiQuyet_QuaHan = daGiaiQuyetItems.Cast<SPListItem>().Where(item => (DateTime)item[Fields.NgayDuocCapPhep] > (DateTime)item[Fields.NgayHenTra])
+                                                        .Select(item => new
+                                                        {
+                                                            Title = item["Title"].ToString()
+                                                        })
+                                                        .ToList().Count;
+                            }
+
+                            LoggingServices.LogMessage("Caml DaGiaiQuyet: " + camlDaGiaiQuyet.Query + ", ItemCount daGiaiQuyet_DungHan: " + daGiaiQuyet_DungHan);
+                            LoggingServices.LogMessage("Caml DaGiaiQuyet: " + camlDaGiaiQuyet.Query + ", ItemCount daGiaiQuyet_QuaHan: " + daGiaiQuyet_QuaHan);
+                            #endregion Calc DaGiaiQuyet
+
+                            #region Calc DaGiaiQuyet_QuaHan
+                            //SPQuery camlDaGiaiQuyet_QuaHan = Camlex.Query()
+                            //                        .Where(x => (DateTime)x[Fields.NgayNopHoSo] >= fromDate && (DateTime)x[Fields.NgayNopHoSo] <= toDate)
+                            //                        .ToSPQuery();
+                            //camlDaGiaiQuyet_QuaHan.ViewFields = viewFields;
+                            //camlDaGiaiQuyet_QuaHan.ViewFieldsOnly = true;
+                            //var daGiaiQuyet_QuaHan = 0;
+                            //var daGiaiQuyet_QuaHanItems = deNghiList.GetItems(camlDaGiaiQuyet_QuaHan);
+                            //if (daGiaiQuyet_QuaHanItems != null)
+                            //    daGiaiQuyet_QuaHan = daGiaiQuyet_QuaHanItems.Count;
+                            //LoggingServices.LogMessage("Caml DaGiaiQuyet_QuaHan: " + camlDaGiaiQuyet_QuaHan.Query + ", ItemCount: " + daGiaiQuyet_QuaHan);
+                            #endregion Calc DaGiaiQuyet_QuaHan
+
+                            #region Calc DangGiaiQuyet
+                            SPQuery camlDangGiaiQuyet = Camlex.Query()
+                                                    .Where(x => (((DateTime)x[Fields.NgayTiepNhan] < fromDate)
+                                                                    || ((DateTime)x[Fields.NgayTiepNhan] >= fromDate && (DateTime)x[Fields.NgayTiepNhan] <= toDate))
+                                                                && (x[Fields.NgayDuocCapPhep] == null && x[Fields.NgayHuyHoSo] == null)
+                                                        )
+                                                    .ToSPQuery();
+                            camlDangGiaiQuyet.ViewFields = viewFields;
+                            camlDangGiaiQuyet.ViewFieldsOnly = true;
+                            var dangGiaiQuyet_ChuaDenHan = 0;
+                            var dangGiaiQuyet_QuaHan = 0;
+                            var dangGiaiQuyetItems = deNghiList.GetItems(camlDangGiaiQuyet);
+                            if (dangGiaiQuyetItems != null)
+                            {
+                                dangGiaiQuyet_ChuaDenHan = dangGiaiQuyetItems.Cast<SPListItem>().Where(item => (DateTime)item[Fields.NgayHenTra] <= DateTime.Today)
+                                                            .Select(item => new
+                                                            {
+                                                                Title = item["Title"].ToString()
+                                                            })
+                                                            .ToList().Count;
+
+                                dangGiaiQuyet_QuaHan = dangGiaiQuyetItems.Cast<SPListItem>().Where(item => (DateTime)item[Fields.NgayHenTra] > DateTime.Today)
+                                                            .Select(item => new
+                                                            {
+                                                                Title = item["Title"].ToString()
+                                                            })
+                                                            .ToList().Count;
+                                                            }
+                            LoggingServices.LogMessage("Caml DangGiaiQuyet: " + camlDangGiaiQuyet.Query + ", ItemCount dangGiaiQuyet_ChuaDenHan: " + dangGiaiQuyet_ChuaDenHan);
+                            LoggingServices.LogMessage("Caml DangGiaiQuyet: " + camlDangGiaiQuyet.Query + ", ItemCount dangGiaiQuyet_QuaHan: " + dangGiaiQuyet_QuaHan);
+                            #endregion Calc DangGiaiQuyet
+
+                            #region Calc DangGiaiQuyet_QuaHan
+                            //SPQuery camlDangGiaiQuyet_QuaHan = Camlex.Query()
+                            //                        .Where(x => (DateTime)x[Fields.NgayNopHoSo] >= fromDate && (DateTime)x[Fields.NgayNopHoSo] <= toDate)
+                            //                        .ToSPQuery();
+                            //camlDangGiaiQuyet_QuaHan.ViewFields = viewFields;
+                            //camlDangGiaiQuyet_QuaHan.ViewFieldsOnly = true;
+                            //var dangGiaiQuyet_QuaHan = 0;
+                            //var dangGiaiQuyet_QuaHanItems = deNghiList.GetItems(camlDangGiaiQuyet_QuaHan);
+                            //if (dangGiaiQuyet_QuaHanItems != null)
+                            //    dangGiaiQuyet_QuaHan = dangGiaiQuyet_QuaHanItems.Count;
+                            //LoggingServices.LogMessage("Caml DangGiaiQuyet_QuaHan: " + camlDangGiaiQuyet_QuaHan.Query + ", ItemCount: " + dangGiaiQuyet_QuaHan);
+                            #endregion Calc DangGiaiQuyet_QuaHan
+
+                            #region [Export Word]
+                            try
+                            {
+                                string licenseFile = SPUtility.GetVersionedGenericSetupPath(Constants.AsposeCellLicPath, 15);
+                                //Set license
+                                string wordLicFile = Microsoft.SharePoint.Utilities.SPUtility.GetVersionedGenericSetupPath(Constants.ConfWordLicFile, 15);
+                                Aspose.Words.License wordLic = new Aspose.Words.License();
+                                wordLic.SetLicense(wordLicFile);
+
+                                string templateFile = Microsoft.SharePoint.Utilities.SPUtility.GetVersionedGenericSetupPath(Constants.DeNghiReportQuarterPath, 15);
+                                Aspose.Words.Document doc = new Aspose.Words.Document(templateFile);
+
+                                // Fill the fields in the document with user data.
+                                doc.MailMerge.Execute(
+                                    new string[] { "NgayBC", "ThangBC", "NamBC", "Quy", "Nam", "NhanGiaiQuyet_Tong", "NhanGiaiQuyet_ChuyenKyTruoc", "NhanGiaiQuyet_MoiTiepNhan", "DaGiaiQuyet_Tong", "DaGiaiQuyet_DungHan", "DaGiaiQuyet_QuaHan", "DangGiaiQuyet_Tong", "DangGiaiQuyet_ChuaDenHan", "DangGiaiQuyet_QuaHan" },
+                                    new object[] { DateTime.Today.ToString("dd"), DateTime.Today.ToString("MM"), DateTime.Today.ToString("yyyy"), GetQuarter(fromDate).ToString(), fromDate.ToString("yyyy"), tonTruoc + moiNhan, tonTruoc, moiNhan, daGiaiQuyet_DungHan + daGiaiQuyet_QuaHan, daGiaiQuyet_DungHan, daGiaiQuyet_QuaHan, dangGiaiQuyet_ChuaDenHan + dangGiaiQuyet_QuaHan, dangGiaiQuyet_ChuaDenHan, dangGiaiQuyet_QuaHan });
+
+                                string exportName = "TinhHinhKetQuaGiaiQuyetTTHC_Quy" + GetQuarter(fromDate).ToString() + "_" + fromDate.ToString("yyyy") + DateTime.Now.ToString("_yyyyMMdd") + ".docx";
+                                MemoryStream ms = new MemoryStream();
+                                doc.Save(ms, Aspose.Words.SaveFormat.Docx);
+
+                                //Response to client
+                                this.Page.Response.ContentType = "application/vnd.openxmlformats-officedocument.wordprocessingml.document";
+                                this.Page.Response.AppendHeader("Content-Disposition", "attachment; filename=" + exportName);
+                                this.Page.Response.Flush();
+                                this.Page.Response.BinaryWrite(ms.ToArray());
+                                //this.Page.Response.End();
+                                HttpContext.Current.ApplicationInstance.CompleteRequest();
+                            }
+                            catch (Exception ex)
+                            {
+                                LoggingServices.LogException(ex);
+                            }
+                            #endregion [Export Word]
+                        }
+                    }
+
+                });
+            }
+            catch (Exception ex)
+            {
+                LoggingServices.LogException(ex);
             }
         }
     }

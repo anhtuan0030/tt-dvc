@@ -149,6 +149,9 @@ namespace LongAn.DVC.Common
         //Excel Template Path
         public const string DeNghiReportPath = "TEMPLATE\\LAYOUTS\\LongAn.DVC\\ExcelTemplates\\BaoCaoCapPhepLuuHanhXe.xls";
 
+        //Word Template Path
+        public const string DeNghiReportQuarterPath = "TEMPLATE\\LAYOUTS\\LongAn.DVC\\templates\\TinhHinhKetQuaGiaiQuyetTTHCTemplate.docx";
+
         //DeNghi attachments
         public const string FieldNguoiDeNghi = "NguoiDeNghi";
         public const string FieldLoaiDeNghi = "LoaiDeNghi";
