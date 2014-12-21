@@ -51,6 +51,14 @@ namespace LongAn.DVC.WebParts.DeNghiReport {
             "artCodeGenerator", "12.0.0.0")]
         protected global::System.Web.UI.WebControls.Button btnExportExcel;
         
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        protected global::System.Web.UI.WebControls.DropDownList ddlQuarterPicker;
+        
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        protected global::System.Web.UI.WebControls.Button btnExportExcelQuarter;
+        
         [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebPartCodeGenerator", "12.0.0.0")]
         public static implicit operator global::System.Web.UI.TemplateControl(DeNghiReport target) 
         {
@@ -107,9 +115,58 @@ namespace LongAn.DVC.WebParts.DeNghiReport {
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
         [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
             "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.DropDownList @__BuildControlddlQuarterPicker() {
+            global::System.Web.UI.WebControls.DropDownList @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.DropDownList();
+            this.ddlQuarterPicker = @__ctrl;
+            @__ctrl.ApplyStyleSheetSkin(this.Page);
+            @__ctrl.ID = "ddlQuarterPicker";
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.Button @__BuildControlbtnExportExcelQuarter() {
+            global::System.Web.UI.WebControls.Button @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.Button();
+            this.btnExportExcelQuarter = @__ctrl;
+            @__ctrl.ApplyStyleSheetSkin(this.Page);
+            @__ctrl.ID = "btnExportExcelQuarter";
+            @__ctrl.Text = "Xuất báo cáo";
+            @__ctrl.CssClass = "button btnExportExcel";
+            ((System.Web.UI.IAttributeAccessor)(@__ctrl)).SetAttribute("align", "middle");
+            @__ctrl.CausesValidation = false;
+            @__ctrl.Click -= new System.EventHandler(this.btnExportExcelQuarter_Click);
+            @__ctrl.Click += new System.EventHandler(this.btnExportExcelQuarter_Click);
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
         private void @__BuildControlTree(global::LongAn.DVC.WebParts.DeNghiReport.DeNghiReport @__ctrl) {
             System.Web.UI.IParserAccessor @__parser = ((System.Web.UI.IParserAccessor)(@__ctrl));
             @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl(@"
+
+<style type=""text/css"">
+.form {
+  border: 1px solid #dedede;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  padding: 15px;
+}
+
+.form .row.line {
+  margin-bottom: 15px;
+}
+
+.form .button {
+  padding-bottom: 10px;
+  padding-top: 10px;
+  width: 90%;
+}
+</style>
 
 <div>
 	<div class=""row"">
@@ -149,7 +206,37 @@ namespace LongAn.DVC.WebParts.DeNghiReport {
 	</div>
 	<div class=""clear""></div>
 </div>
-
+<div>
+	<div class=""row"">
+		<div class=""grid_12"">
+			<h2>
+				BÁO CÁO TÌNH HÌNH, KẾT QUẢ GIẢI QUYẾT THỦ TỤC HÀNH CHÍNH 
+			</h2>
+            <div class=""form"">
+				<div class=""row line"">
+                    <div class=""grid_2"">
+                       Chọn quý:                        
+                    </div>
+                    <div class=""grid_10"">
+                        "));
+            global::System.Web.UI.WebControls.DropDownList @__ctrl4;
+            @__ctrl4 = this.@__BuildControlddlQuarterPicker();
+            @__parser.AddParsedSubObject(@__ctrl4);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                    </div>\r\n                    <div class=\"clear\"></div>\r\n\t\t\t\t" +
+                        "</div>\r\n                <div>\r\n                    <div class=\"grid_2\">\r\n       " +
+                        "                 "));
+            global::System.Web.UI.WebControls.Button @__ctrl5;
+            @__ctrl5 = this.@__BuildControlbtnExportExcelQuarter();
+            @__parser.AddParsedSubObject(@__ctrl5);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl(@"
+                    </div>
+                    <div class=""clear""></div>
+                </div>
+            </div>
+		</div>
+	</div>
+	<div class=""clear""></div>
+</div>
 <script type=""text/javascript"">
     $(function () {
         $("".btnExportExcel"").click(function () {

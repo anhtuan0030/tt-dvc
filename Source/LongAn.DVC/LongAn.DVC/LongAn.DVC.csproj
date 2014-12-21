@@ -14,7 +14,7 @@
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{C1CDDADD-2546-481F-9697-4EA41081F2FC};{14822709-B5A1-4724-98CA-57A101D1B079};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <SandboxedSolution>False</SandboxedSolution>
-    <ActiveDeploymentConfiguration>No Activation</ActiveDeploymentConfiguration>
+    <ActiveDeploymentConfiguration>Upgrade Solution %28CKSDev%29</ActiveDeploymentConfiguration>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -489,6 +489,7 @@
     <Content Include="Layouts\LongAn.DVC\lic\Aspose.Words.lic" />
     <None Include="Layouts\LongAn.DVC\templates\BienNhanTemplate.docx" />
     <None Include="Layouts\LongAn.DVC\templates\GiayPhepTemplate.docx" />
+    <None Include="Layouts\LongAn.DVC\templates\TinhHinhKetQuaGiaiQuyetTTHCTemplate.docx" />
     <None Include="Layouts\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{63f3bd6e-81ab-4ca6-9ff1-2a04a2c99eb3}</SharePointProjectItemId>
     </None>
