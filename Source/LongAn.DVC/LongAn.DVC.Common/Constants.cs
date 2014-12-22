@@ -118,6 +118,7 @@ namespace LongAn.DVC.Common
         public const string ConfGroupTruongPhoPhong = "DVC Trưởng phó phòng";
         public const string ConfGroupCanBoXuLy = "DVC Cán bộ xử lý";
         public const string ConfGroupLanhDaoSo = "DVC Lãnh đạo sở";
+        public const string ConfGroupCanBoThamDinh = "DVC Cán bộ thẩm định";
 
         public const string ConfSoNgayXuLyKey = "Số ngày xử lý đề nghị cấp phép";
 
@@ -225,6 +226,7 @@ namespace LongAn.DVC.Common
         public const string CauHinh_TCHS = "Từ chối hồ sơ";
         public const string CauHinh_TNHS = "Tiếp nhận hồ sơ";
         public const string CauHinh_XNHS = "Xác nhận hồ sơ";//Xác nhận hồ sơ
+        public const string CauHinh_TDHS = "Thẩm định hồ sơ";
 
         public class TopMenu
         {
@@ -268,6 +270,10 @@ namespace LongAn.DVC.Common
         public const string IsXuLyPhanCong = "IsXuLyPhanCong";
         public const string StartEnd = "StartEnd";
         public const string CauHinhCalRef = "CauHinhCalRef";
+
+        public const string NgayThamDinhTu = "NgayThamDinhTu";
+        public const string NgayThamDinhDen = "NgayThamDinhDen";
+
         public const string IsEmail = "IsEmail";
         public const string EmailTemplate = "EmailTemplate";
         public const string AllowInBienNhan = "AllowInBienNhan";
@@ -358,6 +364,14 @@ namespace LongAn.DVC.Common
         Handle,
         [Description("Đã tham gia xử lý")]
         Joined
+    }
+
+    public enum DeNghiTreHanOption
+    {
+        [Description("Hồ sơ trễ hạn")]
+        Late,
+        [Description("Hồ sơ sắp trễ hạn")]
+        CommingLate
     }
 
     public enum Actions
