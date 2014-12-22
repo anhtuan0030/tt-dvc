@@ -172,9 +172,17 @@
                                         <SharePoint:FormField runat="server" ID="FormField4" FieldName="DienThoai" />
                                     </div>
                                     <div class="grid_1">
-                                        
+                                        &nbsp;
                                     </div>
-                                    <div class="clear"></div>
+                                    <div class="grid_2 right_text validate">
+                                        <SharePoint:FieldLabel ID="FieldLabel47" FieldName="DienThoaiBan" runat="server" />
+                                    </div>
+                                    <div class="field-required-data grid_2">
+                                        <SharePoint:FormField runat="server" ID="FormField1" FieldName="DienThoaiBan" />
+                                    </div>
+                                    <div class="grid_1">
+                                        &nbsp;
+                                    </div>
                                     <div class="clear"></div>
                                 </div>
                             </div>
@@ -229,7 +237,7 @@
                                         <SharePoint:FieldLabel ID="FieldLabel9" FieldName="BienSoDangKyRoMooc" runat="server" />
                                     </div>
                                     <div class="grid_4">
-                                        <input type="text" name="bien-so-ro-mooc" id="bien-so-ro-mooc" value="" />
+                                        <SharePoint:FormField runat="server" ID="FormField9" FieldName="BienSoDangKyRoMooc" />
                                     </div>
                                     <div class="clear"></div>
                                 </div>
@@ -757,6 +765,7 @@
                         </div>
 
                         <div class="pull-right">
+                            <asp:Button ID="btnThamDinhHoSo" runat="server" Text="Thẩm định hồ sơ" Visible="false" CssClass="button" Style="float: left;" />
 
                             <asp:Button ID="btnInBienNhan" runat="server" Text="In biên nhận" Visible="false" CssClass="button" Style="float: left;" />
 

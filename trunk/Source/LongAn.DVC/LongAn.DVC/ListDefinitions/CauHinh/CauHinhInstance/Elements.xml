@@ -204,7 +204,7 @@
           <Field Name="IsBoSungHoSo">0</Field>
           <Field Name="StartEnd">Xử lý</Field>
           <Field Name="IsEmail">1</Field>
-          <Field Name="EmailTemplate">{0}&#10;{1}&#10;{2}&#10;{3}&#10;{4}</Field>
+          <Field Name="EmailTemplate">{0}&#10;{1}&#10;{2}&#10;{3}</Field>
           <Field Name="AllowInBienNhan">0</Field>
           <Field Name="AllowInGiayPhep">0</Field>
           <Field Name="IsPhanCong">1</Field>
@@ -258,7 +258,7 @@
           <Field Name="IsBoSungHoSo">0</Field>
           <Field Name="StartEnd">Xử lý</Field>
           <Field Name="IsEmail">1</Field>
-          <Field Name="EmailTemplate">{0}&#10;{1}&#10;{2}&#10;{3}&#10;{4}</Field>
+          <Field Name="EmailTemplate">{0}&#10;{1}&#10;{2}&#10;{3}</Field>
           <Field Name="AllowInBienNhan">1</Field>
           <Field Name="AllowInGiayPhep">1</Field>
           <Field Name="IsPhanCong">0</Field>
@@ -336,6 +336,31 @@
           <Field Name="AllowInGiayPhep">1</Field>
           <Field Name="IsPhanCong">0</Field>
           <Field Name="ID">13</Field>
+        </Row>
+
+        <Row>
+          <Field Name="Title">Cán bộ thẩm định hồ sơ</Field>
+          <Field Name="SPGroup">17;#DVC Nhân viên tiếp nhận</Field>
+          <Field Name="CapDuyetText">Cán bộ thẩm định hồ sơ</Field>
+          <Field Name="TrangThai">3;#CBS</Field>
+          <Field Name="IsFix">1</Field>
+          <Field Name="ActionDuyet">0</Field>
+          <Field Name="ActionTraHoSo">0</Field>
+          <Field Name="ActionTuChoi">0</Field>
+          <Field Name="ActionYeuCauBoSung">0</Field>
+          <Field Name="ActionPhanCong">0</Field>
+          <Field Name="AllowCapNhatLoaiDuong">0</Field>
+          <Field Name="AllowCapNhatNgayHen">0</Field>
+          <Field Name="AllowCapNhatNgayLuuHanh">0</Field>
+          <Field Name="IsBoSungHoSo">0</Field>
+          <Field Name="StartEnd">Xử lý</Field>
+          <Field Name="IsEmail">1</Field>
+          <Field Name="EmailTemplate">{0}&#10;{1}&#10;{2}&#10;{3}</Field>
+          <Field Name="AllowInBienNhan">0</Field>
+          <Field Name="AllowInGiayPhep">0</Field>
+          <Field Name="IsPhanCong">0</Field>
+          <Field Name="AllowThamDinh">1</Field>
+          <Field Name="ID">14</Field>
         </Row>
       </Rows>
     </Data>

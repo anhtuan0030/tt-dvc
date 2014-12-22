@@ -34,10 +34,11 @@ namespace LongAn.DVC.Features.Site
             web.CreateNewGroup(Constants.ConfGroupTruongPhoPhong, Constants.ConfGroupTruongPhoPhong, SPRoleType.Reader);
             web.CreateNewGroup(Constants.ConfGroupCanBoXuLy, Constants.ConfGroupCanBoXuLy, SPRoleType.Reader);
             web.CreateNewGroup(Constants.ConfGroupLanhDaoSo, Constants.ConfGroupLanhDaoSo, SPRoleType.Reader);
+            web.CreateNewGroup(Constants.ConfGroupCanBoThamDinh, Constants.ConfGroupCanBoThamDinh, SPRoleType.Reader);
             try
             {
-                SPGroup authenticatedGroup = web.SiteGroups[Constants.ConfGroupNguoiDung];
-                authenticatedGroup.Users.Add("NT Authority\\Authenticated Users", string.Empty, "Authenticated Users", string.Empty);
+                //SPGroup authenticatedGroup = web.SiteGroups[Constants.ConfGroupNguoiDung];
+                //authenticatedGroup.Users.Add("NT Authority\\Authenticated Users", string.Empty, "Authenticated Users", string.Empty);
             }
             catch (Exception ex)
             {
