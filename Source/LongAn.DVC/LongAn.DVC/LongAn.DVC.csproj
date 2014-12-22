@@ -247,6 +247,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DeNghiSearch.ascx</DependentUpon>
     </Compile>
+    <Compile Include="WebParts\DeNghiTreHan\DeNghiTreHan.cs" />
+    <Compile Include="WebParts\DeNghiTreHan\DeNghiTreHanUserControl.ascx.cs">
+      <DependentUpon>DeNghiTreHanUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebParts\DeNghiTreHan\DeNghiTreHanUserControl.ascx.designer.cs">
+      <DependentUpon>DeNghiTreHanUserControl.ascx.cs</DependentUpon>
+    </Compile>
     <Compile Include="WebParts\TopMenu\TopMenu.cs" />
     <Compile Include="WebParts\TopMenu\TopMenuUserControl.ascx.cs">
       <DependentUpon>TopMenuUserControl.ascx</DependentUpon>
@@ -342,6 +350,8 @@
     <Content Include="Layouts\LongAn.DVC.DeNghi\js\superfish.js" />
     <Content Include="WebParts\DeNghiListViewUser\DeNghiListViewUserUserControl.ascx" />
     <Content Include="WebParts\DeNghiListViewUser\Elements.xml" />
+    <Content Include="WebParts\DeNghiTreHan\DeNghiTreHanUserControl.ascx" />
+    <Content Include="WebParts\DeNghiTreHan\Elements.xml" />
     <Content Include="WebParts\TopMenu\Elements.xml" />
     <Content Include="WebParts\TopMenu\TopMenuUserControl.ascx" />
     <None Include="EventReceivers\TopMenuER\SharePointProjectItem.spdata">
@@ -605,6 +615,10 @@
     <None Include="WebParts\DeNghiSearch\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{59b1fafa-abee-4313-b46d-4bbf85d86457}</SharePointProjectItemId>
     </None>
+    <None Include="WebParts\DeNghiTreHan\DeNghiTreHan.webpart" />
+    <None Include="WebParts\DeNghiTreHan\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{e05c4985-bbb9-49bc-908f-43572d3e7c41}</SharePointProjectItemId>
+    </None>
     <None Include="WebParts\TopMenu\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{9b753f99-2e78-4a16-9d91-27fcd3a8f86d}</SharePointProjectItemId>
     </None>
@@ -694,7 +708,9 @@
     <Content Include="Libs\Aspose.Words.dll" />
     <Content Include="ListDefinitions\CauHinh\CauHinhInstance\Elements.xml" />
     <Content Include="ListDefinitions\CauHinh\Elements.xml" />
-    <Content Include="ListDefinitions\CauHinh\Schema.xml" />
+    <Content Include="ListDefinitions\CauHinh\Schema.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="ListDefinitions\Attachment\AttachmentInstance\Elements.xml" />
     <Content Include="ListDefinitions\Attachment\EditDlg.htm" />
     <Content Include="ListDefinitions\Attachment\Elements.xml" />

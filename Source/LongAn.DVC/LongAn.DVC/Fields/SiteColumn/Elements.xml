@@ -36,12 +36,24 @@
          ID="{62402081-8AC4-4980-BCF4-6654C6DC202F}"
          Name="DienThoai"
          StaticName="DienThoai"
+         DisplayName="Điện thoại di động"
+         Required="TRUE"
+         EnforceUniqueValues="FALSE"
+         Indexed="FALSE"
+         MaxLength="255"
+         Group="[LA-DVC]" />
+
+  <Field Type="Text"
+         ID="{CF3EE195-AD47-42EF-872E-8486F874C720}"
+         Name="DienThoaiBan"
+         StaticName="DienThoaiBan"
          DisplayName="Điện thoại"
          Required="TRUE"
          EnforceUniqueValues="FALSE"
          Indexed="FALSE"
          MaxLength="255"
          Group="[LA-DVC]" />
+  
   <Field Type="Text"
          ID="{F3B44ED0-68B5-47A5-8866-62DB7D6FB688}"
          Name="LoaiXe"
@@ -1005,6 +1017,30 @@
          ShowField="CauHinhCal"
          UnlimitedLengthInDocumentLibrary="FALSE"
          RelationshipDeleteBehavior="None"
+         Group="[LA-DVC]" />
+
+  <Field Type="DateTime"
+             ID="{C864C3FA-C54D-4BE0-B4C5-4685205B4CA2}"
+             Name="NgayThamDinhTu"
+             StaticName="NgayThamDinhTu"
+             DisplayName="Thẩm định từ ngày"
+             Required="FALSE"
+             EnforceUniqueValues="FALSE"
+             Indexed="FALSE"
+             Format="DateTime"
+             FriendlyDisplayFormat="Disabled"
+             Group="[LA-DVC]" />
+
+  <Field Type="DateTime"
+         ID="{0922126F-FF82-49FE-9F87-46EF6125FEAB}"
+         Name="NgayThamDinhDen"
+         StaticName="NgayThamDinhDen"
+         DisplayName="Thẩm định đến ngày"
+         Required="FALSE"
+         EnforceUniqueValues="FALSE"
+         Indexed="FALSE"
+         Format="DateTime"
+         FriendlyDisplayFormat="Disabled"
          Group="[LA-DVC]" />
 
   <Field Type="DateTime"

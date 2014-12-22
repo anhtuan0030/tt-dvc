@@ -76,7 +76,7 @@
                                     <div class="clear"></div>
                                 </div>--%>
                                 <div class="row">
-                                    <div class="grid_2">
+                                    <div class="grid_2 validate">
                                         <SharePoint:FieldLabel ID="FieldLabel2" FieldName="CaNhanToChuc" runat="server" />
                                     </div>
                                     <div class="field-required-data grid_9">
@@ -89,7 +89,7 @@
                                     <div class="clear"></div>
                                 </div>
                                 <div class="row">
-                                    <div class="grid_2">
+                                    <div class="grid_2 validate">
                                         <SharePoint:FieldLabel ID="FieldLabel3" FieldName="DiaChi" runat="server" />
                                     </div>
                                     <div class="grid_9">
@@ -101,7 +101,7 @@
                                     <div class="clear"></div>
                                 </div>
                                 <div class="row">
-                                    <div class="grid_2">
+                                    <div class="grid_2 validate">
                                         <SharePoint:FieldLabel ID="FieldLabel4" FieldName="DienThoai" runat="server" />
                                     </div>
                                     <div class="field-required-data grid_3">
@@ -110,7 +110,15 @@
                                     <div class="grid_1">
                                         <span class="star">(*)</span>
                                     </div>
-                                    <div class="clear"></div>
+                                    <div class="grid_2 right_text validate">
+                                        <SharePoint:FieldLabel ID="FieldLabel1" FieldName="DienThoaiBan" runat="server" />
+                                    </div>
+                                    <div class="field-required-data grid_2">
+                                        <SharePoint:FormField runat="server" ID="FormField1" FieldName="DienThoaiBan" />
+                                    </div>
+                                    <div class="grid_1">
+                                        <span class="star">(*)</span>
+                                    </div>
                                     <div class="clear"></div>
                                 </div>
                             </div>
@@ -118,7 +126,7 @@
                             <h2>Phương tiện vận tải</h2>
                             <div class="bg-2 format-1">
                                 <div class="row">
-                                    <div class="grid_2">
+                                    <div class="grid_2 validate">
                                         <SharePoint:FieldLabel ID="FieldLabel5" FieldName="LoaiXe" runat="server" />
                                     </div>
                                     <div class="field-required-data grid_9">
@@ -131,7 +139,7 @@
                                     <div class="clear"></div>
                                 </div>
                                 <div class="row">
-                                    <div class="grid_2">
+                                    <div class="grid_2 validate">
                                         <SharePoint:FieldLabel ID="FieldLabel6" FieldName="NhanHieuXe" runat="server" />
                                     </div>
                                     <div class="field-required-data grid_2">
@@ -140,7 +148,7 @@
                                     <div class="grid_1">
                                         <span class="star">(*)</span>
                                     </div>
-                                    <div class="grid_2 right_text">
+                                    <div class="grid_2 right_text validate">
                                         <SharePoint:FieldLabel ID="FieldLabel7" FieldName="BienSoDangKy" runat="server" />
                                     </div>
                                     <div class="field-required-data grid_2">
@@ -165,7 +173,7 @@
                                         <SharePoint:FieldLabel ID="FieldLabel9" FieldName="BienSoDangKyRoMooc" runat="server" />
                                     </div>
                                     <div class="grid_4">
-                                        <input type="text" name="bien-so-ro-mooc" id="bien-so-ro-mooc" value="" />
+                                        <SharePoint:FormField runat="server" ID="FormField9" FieldName="BienSoDangKyRoMooc" />
                                     </div>
                                     <div class="clear"></div>
                                 </div>
@@ -412,7 +420,7 @@
                                     <div class="clear"></div>
                                 </div>
                                 <div class="row">
-                                    <div class="grid_2">
+                                    <div class="grid_2 validate">
                                         <SharePoint:FieldLabel ID="FieldLabel36" FieldName="ThoiGiaDeNghiLuuHanhTu" runat="server" />
                                     </div>
                                     <div class="field-required-data grid_2">
@@ -422,7 +430,7 @@
                                     <div class="grid_2">
                                         <span class="star">(*)</span>
                                     </div>
-                                    <div class="grid_1 right_text">
+                                    <div class="grid_1 right_text validate">
                                         <SharePoint:FieldLabel ID="FieldLabel37" FieldName="ThoiGiaDeNghiLuuHanhDen" runat="server" />
                                     </div>
                                     <div class="field-required-data grid_2 col-xs-2">

@@ -890,5 +890,75 @@
       </AllUsersWebPart>
 
     </File>
+
+
+    <File Path="DVCPages\BlankPage.aspx" Url="HoSoSapTreHan.aspx" Type="GhostableInLibrary" ReplaceContent="TRUE" >
+      <Property Name="Title" Value="Hồ sơ sắp trễ hạn"/>
+      <Property Name="PublishingPageLayout" Value="~SiteCollection/_catalogs/masterpage/DVCWebPartPage_Manage.aspx, DVC WebPart page - Manage"/>
+
+      <AllUsersWebPart WebPartOrder ="0" WebPartZoneID ="Header">
+        <![CDATA[ 
+<webParts>
+  <webPart xmlns="http://schemas.microsoft.com/WebPart/v3">
+    <metaData>
+      <type name="LongAn.DVC.WebParts.DeNghiTreHan.DeNghiTreHan, LongAn.DVC, Version=1.0.0.0, Culture=neutral, PublicKeyToken=53c9d9f0542abb89" />
+      <importErrorMessage>$Resources:core,ImportErrorMessage;</importErrorMessage>
+    </metaData>
+    <data>
+      <properties>
+        <property name="Title" type="string">Đề nghị trễ hạn</property>
+        <property name="Description" type="string">Đề nghị trễ hạn Visual Web Part</property>
+        <property name="ChromeType" type="chrometype">None</property>
+        <property name="PageSize"
+                  type="int">10</property>
+        <property name="DeNghiTitle"
+                  type="string">Danh sách đề nghị sắp trễ hạn</property>
+        <property name="Option"
+                  type="DeNghiOption">CommingLate</property>
+        <property name="NumDay"
+                  type="int">2</property>
+      </properties>
+    </data>
+  </webPart>
+</webParts>
+]]>
+      </AllUsersWebPart>
+
+    </File>
+
+    <File Path="DVCPages\BlankPage.aspx" Url="HoSoDaTreHan.aspx" Type="GhostableInLibrary" ReplaceContent="TRUE" >
+      <Property Name="Title" Value="Hồ sơ đã trễ hạn"/>
+      <Property Name="PublishingPageLayout" Value="~SiteCollection/_catalogs/masterpage/DVCWebPartPage_Manage.aspx, DVC WebPart page - Manage"/>
+
+      <AllUsersWebPart WebPartOrder ="0" WebPartZoneID ="Header">
+        <![CDATA[ 
+<webParts>
+  <webPart xmlns="http://schemas.microsoft.com/WebPart/v3">
+    <metaData>
+      <type name="LongAn.DVC.WebParts.DeNghiTreHan.DeNghiTreHan, LongAn.DVC, Version=1.0.0.0, Culture=neutral, PublicKeyToken=53c9d9f0542abb89" />
+      <importErrorMessage>$Resources:core,ImportErrorMessage;</importErrorMessage>
+    </metaData>
+    <data>
+      <properties>
+        <property name="Title" type="string">Đề nghị trễ hạn</property>
+        <property name="Description" type="string">Đề nghị trễ hạn Visual Web Part</property>
+        <property name="ChromeType" type="chrometype">None</property>
+        <property name="PageSize"
+                  type="int">10</property>
+        <property name="DeNghiTitle"
+                  type="string">Danh sách đề nghị sắp trễ hạn</property>
+        <property name="Option"
+                  type="DeNghiOption">Late</property>
+        <property name="NumDay"
+                  type="int">2</property>
+      </properties>
+    </data>
+  </webPart>
+</webParts>
+]]>
+      </AllUsersWebPart>
+
+    </File>
+    
   </Module>
 </Elements>

@@ -18,7 +18,7 @@ function PreSaveAction(formType)
         var input = $(this).find("input");
         if (input.val() == "") {
             var parentTag = $(this).parent(".row");
-            var titleText = parentTag.find(".grid_2 nobr").text();
+            var titleText = parentTag.find(".validate nobr").text();
             var errorHtml = '<span class="ms-formvalidation"><span role="alert">' + titleText + ' bắt buộc nhập!<br></span></span>';
             input.after(errorHtml);
             result = false;

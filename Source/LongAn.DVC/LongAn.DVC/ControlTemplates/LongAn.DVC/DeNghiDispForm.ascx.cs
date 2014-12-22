@@ -24,8 +24,34 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
 
             btnInBienNhan.Click += btnInBienNhan_Click;
             btnInGiayPhep.Click += btnInGiayPhep_Click;
+            btnThamDinhHoSo.Click += btnThamDinhHoSo_Click;
 
             base.OnInit(e);
+        }
+
+        void btnThamDinhHoSo_Click(object sender, EventArgs e)
+        {
+            LoggingServices.LogMessage("ThamDinhHoSo Click");
+            var cauHinhs = DeNghiHelper.GetCauHinh(Constants.CauHinh_TDHS);
+            if (cauHinhs != null && cauHinhs.Count > 0)
+            {
+                var cauHinh = cauHinhs[0];
+                UpdateItem(
+                    Actions.None
+                    , cauHinh
+                    , true
+                    , true
+                    , true // Is tham dinh
+                    , SPContext.Current.Web.CurrentUser
+                    , btnThamDinhHoSo.Text); //Tham dinh ho so
+            }
+            else
+            {
+                var redirectUrl = Request.QueryString["Source"];
+                if (redirectUrl == null || string.IsNullOrEmpty(redirectUrl.ToString()))
+                    redirectUrl = "/";
+                Response.Redirect(redirectUrl);
+            }
         }
 
         void btnInGiayPhep_Click(object sender, EventArgs e)
@@ -47,6 +73,7 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
                 , cauHinh
                 , true
                 , false
+                , false // Is tham dinh
                 , SPContext.Current.Web.CurrentUser
                 , btnCanBoTiepNhan.Text);// Cán bộ tiếp nhận hồ sơ
         }
@@ -63,6 +90,7 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
                     , cauHinh
                     , true
                     , true
+                    , false // Is tham dinh
                     , SPContext.Current.Web.CurrentUser
                     , btnYeuCauBoSung.Text); //Yêu cầu bổ sung hồ sơ
             }
@@ -87,6 +115,7 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
                     , null
                     , false
                     , false
+                    , false // Is tham dinh
                     , spUserValue.User
                     , btnPhanCong.Text);//Phân công lại hồ sơ
             }
@@ -104,6 +133,7 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
                     , cauHinh
                     , true
                     , false
+                    , false // Is tham dinh
                     , SPContext.Current.Web.CurrentUser
                     , btnTuChoi.Text); //Từ chối cấp phép hồ sơ
             }
@@ -125,6 +155,7 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
                 , cauHinh
                 , true
                 , false
+                , false // Is tham dinh
                 , SPContext.Current.Web.CurrentUser
                 , hdfCapDuyetText.Value);
         }
@@ -138,6 +169,7 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
                 , cauHinh
                 , true
                 , false
+                , false // Is tham dinh
                 , SPContext.Current.Web.CurrentUser
                 , hdfCapDuyetText.Value);
         }
@@ -325,6 +357,7 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
                     var isNguoiDung = false;
                     var isCanBo = false;
                     var isMotCua = false;
+                    var isCanBoThamDinh = false;
                     foreach (SPGroup group in currentUserGroups)
                     {
                         if (group.Name == Constants.ConfGroupCanBoXuLy)
@@ -333,6 +366,8 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
                             isNguoiDung = true;
                         else if (group.Name == Constants.ConfGroupNhanVienTiepNhan)
                             isMotCua = true;
+                        else if (group.Name == Constants.ConfGroupCanBoThamDinh)
+                            isCanBoThamDinh = true;
                     }
                     if (cauHinh.AllowInBienNhan && (isNguoiDung || isMotCua))
                     {
@@ -348,6 +383,13 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
                         btnInGiayPhep.Visible = true;
                     }
                     #endregion Allow In giay cap phep
+
+                    #region Allow Tham dinh ho so
+                    if (cauHinh.AllowThamDinh && isCanBoThamDinh)
+                    {
+                        btnThamDinhHoSo.Visible = true;
+                    }
+                    #endregion Allow Tham dinh ho so
 
                     LoggingServices.LogMessage(string.Format("AllowInBienNhan: {0}, AllowInGiayPhep: {1}, IsNguoiDung: {2}, IsMotCua: {3}, IsCanBo: {4}",
                         cauHinh.AllowInBienNhan, cauHinh.AllowInGiayPhep, isNguoiDung, isMotCua, isCanBo));
@@ -427,7 +469,7 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
             return output;
         }
 
-        void UpdateItem(Actions action, CauHinh newCauHinh, bool isCapNhatBuocDuyet, bool isYeuCauBoSung, SPUser spUser, string capDuyetText)
+        void UpdateItem(Actions action, CauHinh newCauHinh, bool isCapNhatBuocDuyet, bool isYeuCauBoSung, bool isThamDinh, SPUser spUser, string capDuyetText)
         {
             if (!this.Page.IsValid)
                 return;
@@ -455,16 +497,22 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
                     LoggingServices.LogMessage("Updated NgayDuocCapPhep - (Start/End = 'Kết thúc')");
                 }
                 //Cap nhat tiep nhan ho so (Start/End = 'Tiếp nhận hồ sơ')
-                if (hdfStartEnd.Value == Constants.CauHinh_TNHS)
+                else if (hdfStartEnd.Value == Constants.CauHinh_TNHS)
                 {
                     spListItem[Fields.NgayTiepNhan] = DateTime.Now;
                     LoggingServices.LogMessage("Updated NgayTiepNhan - (Start/End = 'Tiếp nhận hồ sơ')");
                 }
                 //Cap nhat tình trạng trả hồ sơ (Start/End = 'Xác nhận hồ sơ')
-                if (hdfStartEnd.Value == Constants.CauHinh_XNHS)
+                else if (hdfStartEnd.Value == Constants.CauHinh_XNHS)
                 {
                     spListItem[Fields.TinhTrangTraHoSo] = Constants.TinhTrangTraHoSo_DaTra;
                     LoggingServices.LogMessage("Updated TinhTrangTraHoSo - (Start/End = 'Xác nhận hồ sơ') - Đã trả");
+                }
+                //Cập nhật ngày hoàn thành thẩm định
+                else if (hdfStartEnd.Value == Constants.CauHinh_TDHS)
+                {
+                    spListItem[Fields.NgayThamDinhDen] = DateTime.Now;
+                    LoggingServices.LogMessage("Updated NgayThamDinhDen - (Start/End = 'Thẩm định hồ sơ') - Hoàn thành thẩm định");
                 }
             }
             else if (action == Actions.Reject)
@@ -567,13 +615,35 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
             {
                 AddBoSungYeuCau(spListItem.Title, spListItem.ID, txtNhanXet.Text.Trim(), spUser.ID);
             }
+            //Cap nhat ngay tham dinh tu
+            if(isThamDinh)
+            {
+                spListItem[Fields.NgayThamDinhTu] = DateTime.Now;
+            }
             //Cap nhat phan cong ho so
             if (divPhanCongHoSo.Visible)
             {
+                var canboXuLy = new SPFieldUserValueCollection();
+                canboXuLy.Add(new SPFieldUserValue(SPContext.Current.Web, int.Parse(ddlUsers.SelectedValue), ddlUsers.SelectedItem.Text));
                 //var spUserValue = new SPFieldUserValue(SPContext.Current.Web, int.Parse(ddlUsers.SelectedValue), ddlUsers.SelectedItem.Text);
-                spListItem[Fields.NguoiChoXuLy] = ddlUsers.SelectedValue;
+                
+                LoggingServices.LogMessage("PhanCongHoSo - NguoiChoXuLy = " + ddlUsers.SelectedItem.Text);
+                //Xử lý cán bộ thẩm định
+                var groupCanBoThamDinh = SPContext.Current.Web.SiteGroups.GetByName(Constants.ConfGroupCanBoThamDinh);
+                string canBoThamDinh = string.Empty;
+                if (groupCanBoThamDinh != null)
+                {
+                    foreach (SPUser user in groupCanBoThamDinh.Users)
+                    {
+                        emailTo += user.Email + ";";
+                        canboXuLy.Add(new SPFieldUserValue(SPContext.Current.Web, user.ID, user.LoginName));
+                        canBoThamDinh += user.Name + ";";
+                    }
+                }
+                LoggingServices.LogMessage("PhanCongHoSo - CanBoThamDinh = " + canBoThamDinh);
+                //
+                spListItem[Fields.NguoiChoXuLy] = canboXuLy;
                 spListItem[Fields.NguoiXuLy] = ddlUsers.SelectedValue;
-                LoggingServices.LogMessage("Updated PhanCongHoSo - NguoiChoXuLy = " + ddlUsers.SelectedItem.Text);
             }
             //Send email
             if (newCauHinh.IsEmail)

@@ -351,6 +351,8 @@
                     Name="DiaChi" />
           <FieldRef ID="{62402081-8AC4-4980-BCF4-6654C6DC202F}"
                     Name="DienThoai" />
+          <FieldRef ID="{CF3EE195-AD47-42EF-872E-8486F874C720}"
+                    Name="DienThoaiBan" />
           <FieldRef ID="{F3B44ED0-68B5-47A5-8866-62DB7D6FB688}"
                     Name="LoaiXe" />
           <FieldRef ID="{C8F0CA07-A2BC-490D-A354-1B0C944385F1}"
@@ -473,16 +475,20 @@
                     Name="TenTrangThaiRef" />
           <FieldRef ID="{C685DDD9-57D5-4B59-9F00-80DEBB73586F}"
                     Name="SoThuTuBienNhan" />
-          <FieldRef ID="{610CF55A-8986-49F7-9E05-C8C93D40852F}"
-                    Name="IsBoSungHoSoRef" />
-          <FieldRef ID="{507E6F00-9DDF-4EE0-AF49-10A3D7E04C12}"
-                    Name="IsPhanCongRef" />
-          <FieldRef ID="{3552BD94-E671-468F-A654-EA1663181BD2}"
-                    Name="AllowInBienNhanRef" />
-          <FieldRef ID="{0600B22C-A08D-4303-8CE6-7E3CE9512B92}"
-                    Name="AllowInGiayPhepRef" />
+          <!--<FieldRef ID="{610CF55A-8986-49F7-9E05-C8C93D40852F}"
+                    Name="IsBoSungHoSoRef" />-->
+          <!--<FieldRef ID="{507E6F00-9DDF-4EE0-AF49-10A3D7E04C12}"
+                    Name="IsPhanCongRef" />-->
+          <!--<FieldRef ID="{3552BD94-E671-468F-A654-EA1663181BD2}"
+                    Name="AllowInBienNhanRef" />-->
+          <!--<FieldRef ID="{0600B22C-A08D-4303-8CE6-7E3CE9512B92}"
+                    Name="AllowInGiayPhepRef" />-->
           <FieldRef ID="{98D59A15-6535-4EE5-9F40-932B458DE0AA}"
                     Name="CauHinhCalRef" />
+          <FieldRef ID="{C864C3FA-C54D-4BE0-B4C5-4685205B4CA2}"
+             Name="NgayThamDinhTu" />
+          <FieldRef ID="{0922126F-FF82-49FE-9F87-46EF6125FEAB}"
+             Name="NgayThamDinhDen" />
         </FieldRefs>
         <XmlDocuments>
           <XmlDocument NamespaceURI="http://schemas.microsoft.com/sharepoint/events">
@@ -914,6 +920,17 @@
              Indexed="FALSE"
              MaxLength="255"
              Group="[LA-DVC]" />
+      <Field Type="Text"
+         ID="{CF3EE195-AD47-42EF-872E-8486F874C720}"
+         Name="DienThoaiBan"
+         StaticName="DienThoaiBan"
+         DisplayName="Điện thoại"
+         Required="TRUE"
+         EnforceUniqueValues="FALSE"
+         Indexed="FALSE"
+         MaxLength="255"
+         Group="[LA-DVC]" />
+      
       <Field Type="Text"
              ID="{F3B44ED0-68B5-47A5-8866-62DB7D6FB688}"
              Name="LoaiXe"
@@ -1562,7 +1579,7 @@
              Indexed="FALSE"
              MaxLength="255"
              Group="[LA-DVC]" />
-      <Field Type="Lookup"
+      <!--<Field Type="Lookup"
              ID="{610CF55A-8986-49F7-9E05-C8C93D40852F}"
              StaticName="IsBoSungHoSoRef"
              Name="IsBoSungHoSoRef"
@@ -1574,8 +1591,8 @@
              ShowField="IsBoSungHoSo"
              UnlimitedLengthInDocumentLibrary="FALSE"
              RelationshipDeleteBehavior="None"
-             Group="[LA-DVC]" />
-      <Field Type="Lookup"
+             Group="[LA-DVC]" />-->
+      <!--<Field Type="Lookup"
              ID="{507E6F00-9DDF-4EE0-AF49-10A3D7E04C12}"
              StaticName="IsPhanCongRef"
              Name="IsPhanCongRef"
@@ -1587,8 +1604,8 @@
              ShowField="IsPhanCong"
              UnlimitedLengthInDocumentLibrary="FALSE"
              RelationshipDeleteBehavior="None"
-             Group="[LA-DVC]" />
-      <Field Type="Lookup"
+             Group="[LA-DVC]" />-->
+      <!--<Field Type="Lookup"
              ID="{3552BD94-E671-468F-A654-EA1663181BD2}"
              StaticName="AllowInBienNhanRef"
              Name="AllowInBienNhanRef"
@@ -1600,8 +1617,8 @@
              ShowField="AllowInBienNhan"
              UnlimitedLengthInDocumentLibrary="FALSE"
              RelationshipDeleteBehavior="None"
-             Group="[LA-DVC]" />
-      <Field Type="Lookup"
+             Group="[LA-DVC]" />-->
+      <!--<Field Type="Lookup"
              ID="{0600B22C-A08D-4303-8CE6-7E3CE9512B92}"
              StaticName="AllowInGiayPhepRef"
              Name="AllowInGiayPhepRef"
@@ -1613,7 +1630,7 @@
              ShowField="AllowInGiayPhep"
              UnlimitedLengthInDocumentLibrary="FALSE"
              RelationshipDeleteBehavior="None"
-             Group="[LA-DVC]" />
+             Group="[LA-DVC]" />-->
       <Field Type="Lookup"
              ID="{98D59A15-6535-4EE5-9F40-932B458DE0AA}"
              StaticName="CauHinhCalRef"
@@ -1627,6 +1644,31 @@
              UnlimitedLengthInDocumentLibrary="FALSE"
              RelationshipDeleteBehavior="None"
              Group="[LA-DVC]" />
+
+      <Field Type="DateTime"
+             ID="{C864C3FA-C54D-4BE0-B4C5-4685205B4CA2}"
+             Name="NgayThamDinhTu"
+             StaticName="NgayThamDinhTu"
+             DisplayName="Thẩm định từ ngày"
+             Required="FALSE"
+             EnforceUniqueValues="FALSE"
+             Indexed="FALSE"
+             Format="DateTime"
+             FriendlyDisplayFormat="Disabled"
+             Group="[LA-DVC]" />
+
+      <Field Type="DateTime"
+             ID="{0922126F-FF82-49FE-9F87-46EF6125FEAB}"
+             Name="NgayThamDinhDen"
+             StaticName="NgayThamDinhDen"
+             DisplayName="Thẩm định đến ngày"
+             Required="FALSE"
+             EnforceUniqueValues="FALSE"
+             Indexed="FALSE"
+             Format="DateTime"
+             FriendlyDisplayFormat="Disabled"
+             Group="[LA-DVC]" />
+      
     </Fields>
     <Views>
 
