@@ -28,6 +28,8 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
                 isMember = DeNghiHelper.IsCurrentUserInGroup(SPContext.Current.Web, item.SPGroup);
                 if (isMember)
                 {
+                    if (item.SPGroup.Name == Constants.ConfGroupNhanVienTiepNhan)
+                        hdfHiddenFag.Value = "1";
                     hdfCauHinhID.Value = item.BuocDuyetID.ToString();
                     hdfTrangThaiID.Value = item.TrangThai.ToString();
                     hdfCapDuyetText.Value = item.CapDuyetText.ToString();
