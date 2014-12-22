@@ -75,7 +75,8 @@
                                     </div>
                                     <div class="clear"></div>
                                 </div>--%>
-                                <div class="row">
+                                <div class="row row_validate">
+                                    
                                     <div class="grid_2 validate">
                                         <SharePoint:FieldLabel ID="FieldLabel2" FieldName="CaNhanToChuc" runat="server" />
                                     </div>
@@ -88,7 +89,7 @@
                                     </div>
                                     <div class="clear"></div>
                                 </div>
-                                <div class="row">
+                                <div class="row row_validate">
                                     <div class="grid_2 validate">
                                         <SharePoint:FieldLabel ID="FieldLabel3" FieldName="DiaChi" runat="server" />
                                     </div>
@@ -101,20 +102,24 @@
                                     <div class="clear"></div>
                                 </div>
                                 <div class="row">
-                                    <div class="grid_2 validate">
-                                        <SharePoint:FieldLabel ID="FieldLabel4" FieldName="DienThoai" runat="server" />
-                                    </div>
-                                    <div class="field-required-data grid_2">
-                                        <SharePoint:FormField runat="server" ID="FormField4" FieldName="DienThoai" />
+                                    <div class="row_validate">
+                                        <div class="grid_2 validate">
+                                            <SharePoint:FieldLabel ID="FieldLabel4" FieldName="DienThoai" runat="server" />
+                                        </div>
+                                        <div class="field-required-data grid_2">
+                                            <SharePoint:FormField runat="server" ID="FormField4" FieldName="DienThoai" />
+                                        </div>
                                     </div>
                                     <div class="grid_1">
                                         <span class="star">(*)</span>
                                     </div>
-                                    <div class="grid_2 right_text validate">
-                                        <SharePoint:FieldLabel ID="FieldLabel1" FieldName="DienThoaiBan" runat="server" />
-                                    </div>
-                                    <div class="field-required-data grid_2">
-                                        <SharePoint:FormField runat="server" ID="FormField1" FieldName="DienThoaiBan" />
+                                    <div class="row_validate">
+                                        <div class="grid_2 right_text validate">
+                                            <SharePoint:FieldLabel ID="FieldLabel1" FieldName="DienThoaiBan" runat="server" />
+                                        </div>
+                                        <div class="field-required-data grid_2">
+                                            <SharePoint:FormField runat="server" ID="FormField1" FieldName="DienThoaiBan" />
+                                        </div>
                                     </div>
                                     <div class="grid_1">
                                         <span class="star">(*)</span>
@@ -125,7 +130,7 @@
                             <div class="clear"></div>
                             <h2>Phương tiện vận tải</h2>
                             <div class="bg-2 format-1">
-                                <div class="row">
+                                <div class="row row_validate">
                                     <div class="grid_2 validate">
                                         <SharePoint:FieldLabel ID="FieldLabel5" FieldName="LoaiXe" runat="server" />
                                     </div>
@@ -138,20 +143,24 @@
                                     <div class="clear"></div>
                                 </div>
                                 <div class="row">
-                                    <div class="grid_2 validate">
-                                        <SharePoint:FieldLabel ID="FieldLabel6" FieldName="NhanHieuXe" runat="server" />
-                                    </div>
-                                    <div class="field-required-data grid_2">
-                                        <SharePoint:FormField runat="server" ID="FormField6" FieldName="NhanHieuXe" />
+                                    <div class="row_validate">
+                                        <div class="grid_2 validate">
+                                            <SharePoint:FieldLabel ID="FieldLabel6" FieldName="NhanHieuXe" runat="server" />
+                                        </div>
+                                        <div class="field-required-data grid_2">
+                                            <SharePoint:FormField runat="server" ID="FormField6" FieldName="NhanHieuXe" />
+                                        </div>
                                     </div>
                                     <div class="grid_1">
                                         <span class="star">(*)</span>
                                     </div>
-                                    <div class="grid_2 right_text validate">
-                                        <SharePoint:FieldLabel ID="FieldLabel7" FieldName="BienSoDangKy" runat="server" />
-                                    </div>
-                                    <div class="field-required-data grid_2">
-                                        <SharePoint:FormField runat="server" ID="FormField7" FieldName="BienSoDangKy" />
+                                    <div class="row_validate">
+                                        <div class="grid_2 right_text validate">
+                                            <SharePoint:FieldLabel ID="FieldLabel7" FieldName="BienSoDangKy" runat="server" />
+                                        </div>
+                                        <div class="field-required-data grid_2">
+                                            <SharePoint:FormField runat="server" ID="FormField7" FieldName="BienSoDangKy" />
+                                        </div>
                                     </div>
                                     <div class="grid_1">
                                         <span class="star">(*)</span>
@@ -419,21 +428,25 @@
                                     <div class="clear"></div>
                                 </div>
                                 <div class="row">
-                                    <div class="grid_2 validate">
-                                        <SharePoint:FieldLabel ID="FieldLabel36" FieldName="ThoiGiaDeNghiLuuHanhTu" runat="server" />
-                                    </div>
-                                    <div class="field-required-data grid_2">
-                                        <SharePoint:FormField runat="server" ID="FormField36" CssClass="field-required" FieldName="ThoiGiaDeNghiLuuHanhTu" />
+                                    <div class="row_validate">
+                                        <div class="grid_2 validate">
+                                            <SharePoint:FieldLabel ID="FieldLabel36" FieldName="ThoiGiaDeNghiLuuHanhTu" runat="server" />
+                                        </div>
+                                        <div class="field-required-data grid_2">
+                                            <SharePoint:FormField runat="server" ID="FormField36" CssClass="field-required" FieldName="ThoiGiaDeNghiLuuHanhTu" />
                                         
+                                        </div>
                                     </div>
                                     <div class="grid_2">
                                         <span class="star">(*)</span>
                                     </div>
-                                    <div class="grid_1 right_text validate">
-                                        <SharePoint:FieldLabel ID="FieldLabel37" FieldName="ThoiGiaDeNghiLuuHanhDen" runat="server" />
-                                    </div>
-                                    <div class="field-required-data grid_2 col-xs-2">
-                                        <SharePoint:FormField runat="server" ID="FormField37" CssClass="field-required" FieldName="ThoiGiaDeNghiLuuHanhDen" />
+                                    <div class="row_validate">
+                                        <div class="grid_1 right_text validate">
+                                            <SharePoint:FieldLabel ID="FieldLabel37" FieldName="ThoiGiaDeNghiLuuHanhDen" runat="server" />
+                                        </div>
+                                        <div class="field-required-data grid_2 col-xs-2">
+                                            <SharePoint:FormField runat="server" ID="FormField37" CssClass="field-required" FieldName="ThoiGiaDeNghiLuuHanhDen" />
+                                        </div>
                                     </div>
                                     <div class="grid_2">
                                         <span class="star">(*)</span>
@@ -458,8 +471,11 @@
                                 Bản sao
                             </div>
                             <div class=" row_30">Tập tin</div>
+                            <div class=" row_5">
+                                &nbsp;
+                            </div>
                         </div>
-                        <div id="data_div">
+                        <div id="data_div" class="row_validate">
                             <div class="row_5">
                                 01
                             </div>
@@ -476,26 +492,34 @@
                                 <asp:FileUpload ID="fileUpload1" runat="server" />
                                 <span class="star">(*)</span>
                             </div>
+                            <div class="row_5">
+                                <input id="chkFileUpload1" class="checkbox_upload" type="checkbox" />
+                            </div>
+                            
                         </div>
-                        <div id="data_div" class="bg-3">
-                            <div class=" row_5">
+                        <div id="data_div" class="bg-3 row_validate">
+                            <div class="row_5">
                                 02
                             </div>
-                            <div class=" row_45">
+                            <div class="row_45">
                                 <SharePoint:FieldLabel ID="FieldLabel40" FieldName="UploadFileTitle2" runat="server" />
                             </div>
-                            <div class=" row_5">
+                            <div class="row_5">
                                 1
                             </div>
-                            <div class=" row_5">
+                            <div class="row_5">
                                 1
                             </div>
-                            <div class=" row_30">
+                            <div class="row_30">
                                 <asp:FileUpload ID="fileUpload2" runat="server" />
                                 <span class="star">(*)</span>
                             </div>
+                            <div class="row_5">
+                                <input id="chkFileUpload2" class="checkbox_upload" type="checkbox" />
+                            </div>
+                            
                         </div>
-                        <div id="data_div">
+                        <div id="data_div" class="row_validate">
                             <div class=" row_5">
                                 03
                             </div>
@@ -512,8 +536,12 @@
                                 <asp:FileUpload ID="fileUpload3" runat="server" />
                                 <span class="star">(*)</span>
                             </div>
+                            <div class="row_5">
+                                <input id="chkFileUpload3" class="checkbox_upload" type="checkbox" />
+                            </div>
+                            
                         </div>
-                        <div id="data_div" class="bg-3">
+                        <div id="data_div" class="bg-3 row_validate">
                             <div class=" row_5">
                                 04
                             </div>
@@ -530,6 +558,10 @@
                                 <asp:FileUpload ID="fileUpload4" runat="server" />
                                 <span class="star">(*)</span>
                             </div>
+                            <div class="row_5">
+                                <input id="chkFileUpload4" class="checkbox_upload" type="checkbox" />
+                            </div>
+                            
                         </div>
                         <!--End DS tap tin dinh kem-->
                         <div class="clear"></div>
@@ -544,6 +576,7 @@
                             <asp:HiddenField ID="hdfCauHinhID" runat="server" />
                             <asp:HiddenField ID="hdfTrangThaiID" runat="server" />
                             <asp:HiddenField ID="hdfCapDuyetText" runat="server" />
+                            <asp:HiddenField ID="hdfHiddenFag" runat="server" />
                         </div>
                         <div class="clearfix"></div>
                     </div>
