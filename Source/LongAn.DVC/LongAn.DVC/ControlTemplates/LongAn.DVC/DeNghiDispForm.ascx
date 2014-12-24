@@ -122,7 +122,7 @@
                         <div class="pull-left-search">
                             <a id="linkShowHideDetail" href="#" class="button button-expand inline-block">Ẩn/Hiện chi tiết đề nghị</a>
                             &nbsp;
-                            <asp:HyperLink ID="hplEditHoSo" class="button inline-block" runat="server">Chỉnh sửa hồ sơ</asp:HyperLink>
+                            <asp:HyperLink ID="hplEditHoSo" class="button inline-block" Visible="false" runat="server">Chỉnh sửa hồ sơ</asp:HyperLink>
                             <asp:HiddenField ID="hdfShowHideDetail" Value="0" runat="server" />
                         </div>
 

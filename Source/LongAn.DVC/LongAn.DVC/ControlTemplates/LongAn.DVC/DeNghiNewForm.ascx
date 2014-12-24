@@ -492,7 +492,7 @@
                                 <asp:FileUpload ID="fileUpload1" runat="server" />
                                 <span class="star">(*)</span>
                             </div>
-                            <div class="row_5">
+                            <div class="">
                                 <input id="chkFileUpload1" class="checkbox_upload" type="checkbox" />
                             </div>
                             
@@ -514,7 +514,7 @@
                                 <asp:FileUpload ID="fileUpload2" runat="server" />
                                 <span class="star">(*)</span>
                             </div>
-                            <div class="row_5">
+                            <div class="">
                                 <input id="chkFileUpload2" class="checkbox_upload" type="checkbox" />
                             </div>
                             
@@ -536,7 +536,7 @@
                                 <asp:FileUpload ID="fileUpload3" runat="server" />
                                 <span class="star">(*)</span>
                             </div>
-                            <div class="row_5">
+                            <div class="">
                                 <input id="chkFileUpload3" class="checkbox_upload" type="checkbox" />
                             </div>
                             
@@ -558,7 +558,7 @@
                                 <asp:FileUpload ID="fileUpload4" runat="server" />
                                 <span class="star">(*)</span>
                             </div>
-                            <div class="row_5">
+                            <div class="">
                                 <input id="chkFileUpload4" class="checkbox_upload" type="checkbox" />
                             </div>
                             
