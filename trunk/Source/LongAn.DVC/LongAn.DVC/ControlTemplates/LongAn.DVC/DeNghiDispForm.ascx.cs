@@ -3,6 +3,7 @@ using LongAn.DVC.Common;
 using LongAn.DVC.Helpers;
 using Microsoft.SharePoint;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -40,7 +41,7 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
                     Actions.None
                     , cauHinh
                     , true
-                    , true
+                    , false // Is yeu cau bo sung
                     , true // Is tham dinh
                     , SPContext.Current.Web.CurrentUser
                     , btnThamDinhHoSo.Text); //Tham dinh ho so
@@ -388,6 +389,8 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
                     if (cauHinh.AllowThamDinh && isCanBoThamDinh)
                     {
                         btnThamDinhHoSo.Visible = true;
+                        btnDuyet.Visible = false;
+                        btnTraHoSo.Visible = false;
                     }
                     #endregion Allow Tham dinh ho so
 
@@ -624,23 +627,29 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
             if (divPhanCongHoSo.Visible)
             {
                 var canboXuLy = new SPFieldUserValueCollection();
-                canboXuLy.Add(new SPFieldUserValue(SPContext.Current.Web, int.Parse(ddlUsers.SelectedValue), ddlUsers.SelectedItem.Text));
+                canboXuLy.Add(new SPFieldUserValue(SPContext.Current.Web, ddlUsers.SelectedValue));
                 //var spUserValue = new SPFieldUserValue(SPContext.Current.Web, int.Parse(ddlUsers.SelectedValue), ddlUsers.SelectedItem.Text);
                 
                 LoggingServices.LogMessage("PhanCongHoSo - NguoiChoXuLy = " + ddlUsers.SelectedItem.Text);
+
+                var canBoThamDinh = GetCanBoThamDinh();
+                if (canBoThamDinh != null && canboXuLy.Count > 0)
+                    canboXuLy.AddRange(canBoThamDinh);
+
                 //Xử lý cán bộ thẩm định
-                var groupCanBoThamDinh = SPContext.Current.Web.SiteGroups.GetByName(Constants.ConfGroupCanBoThamDinh);
-                string canBoThamDinh = string.Empty;
-                if (groupCanBoThamDinh != null)
-                {
-                    foreach (SPUser user in groupCanBoThamDinh.Users)
-                    {
-                        emailTo += user.Email + ";";
-                        canboXuLy.Add(new SPFieldUserValue(SPContext.Current.Web, user.ID, user.LoginName));
-                        canBoThamDinh += user.Name + ";";
-                    }
-                }
-                LoggingServices.LogMessage("PhanCongHoSo - CanBoThamDinh = " + canBoThamDinh);
+                //var groupCanBoThamDinh = SPContext.Current.Web.SiteGroups.GetByName(Constants.ConfGroupCanBoThamDinh);
+                //string canBoThamDinh = string.Empty;
+                //if (groupCanBoThamDinh != null)
+                //{
+                //    foreach (SPUser user in groupCanBoThamDinh.Users)
+                //    {
+                //        emailTo += user.Email + ";";
+                //        canboXuLy.Add(new SPFieldUserValue(SPContext.Current.Web, user.ID, user.LoginName));
+                        
+                //        canBoThamDinh += user.Name + ";";
+                //    }
+                //}
+                //LoggingServices.LogMessage("PhanCongHoSo - CanBoThamDinh = " + canBoThamDinh);
                 //
                 spListItem[Fields.NguoiChoXuLy] = canboXuLy;
                 spListItem[Fields.NguoiXuLy] = ddlUsers.SelectedValue;
@@ -676,6 +685,41 @@ namespace LongAn.DVC.ControlTemplates.LongAn.DVC
             if (redirectUrl == null || string.IsNullOrEmpty(redirectUrl.ToString()))
                 redirectUrl = "/";
             longOperation.End(redirectUrl, Microsoft.SharePoint.Utilities.SPRedirectFlags.DoNotEndResponse, System.Web.HttpContext.Current, "");
+        }
+
+        List<SPFieldUserValue> GetCanBoThamDinh()
+        {
+            var output = new List<SPFieldUserValue>();
+            try
+            {
+                SPSecurity.RunWithElevatedPrivileges(delegate()
+                {
+                    using (SPSite site = new SPSite(SPContext.Current.Site.ID))
+                    {
+                        using (SPWeb web = site.OpenWeb(SPContext.Current.Web.ID))
+                        {
+                            var groupCanBoThamDinh = web.SiteGroups[Constants.ConfGroupCanBoThamDinh];
+                            string canBoThamDinh = string.Empty;
+                            if (groupCanBoThamDinh != null)
+                            {
+                                foreach (SPUser user in groupCanBoThamDinh.Users)
+                                {
+                                    //emailTo += user.Email + ";";
+                                    output.Add(new SPFieldUserValue(web, user.ID, user.LoginName));
+
+                                    canBoThamDinh += user.Name + ";";
+                                }
+                                LoggingServices.LogMessage("PhanCongHoSo - CanBoThamDinh: " + canBoThamDinh);
+                            }
+                        }
+                    }
+                });
+            }
+            catch (Exception ex)
+            {
+                LoggingServices.LogException(ex);
+            }
+            return output;
         }
 
         void AddBoSungYeuCau(string soBienNhan, int deNghiId, string noiDung, int nguoiYeuCau)

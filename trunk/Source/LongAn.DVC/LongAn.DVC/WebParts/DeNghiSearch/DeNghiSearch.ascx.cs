@@ -60,7 +60,12 @@ namespace LongAn.DVC.WebParts.DeNghiSearch
                     {
                         int soNgayTreHan = (Convert.ToDateTime(ngayDuocCapPhep) - Convert.ToDateTime(ngayHenTra)).Days;
                         //if (soNgayTreHan < 0)
-                        lblSoNgayTreHan.Text = soNgayTreHan.ToString();
+                        var ngayThamDinhTu = dataRow[Fields.NgayThamDinhTu].ToString();
+                        var ngayThamDinhDen = dataRow[Fields.NgayThamDinhDen].ToString();
+                        int soNgayThamDinh = 0;
+                        if(!string.IsNullOrEmpty(ngayThamDinhTu) && !string.IsNullOrEmpty(ngayThamDinhDen))
+                            soNgayThamDinh = (Convert.ToDateTime(ngayThamDinhDen) - Convert.ToDateTime(ngayThamDinhTu)).Days;
+                        lblSoNgayTreHan.Text = (soNgayTreHan - soNgayThamDinh).ToString();
                     }
 
                     lblCaNhanToChuc.Text = dataRow[Fields.CaNhanToChuc].ToString();
