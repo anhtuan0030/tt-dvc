@@ -254,10 +254,14 @@ namespace LongAn.DVC.WebParts.DeNghiTreHan
                     var ngayHenTraQuery = DateTime.Now.AddDays(WebPart.NumDay);
                     andConditions.Add(x => (x[Fields.NgayHenTra]) >= (DataTypes.DateTime)ngayHenTraQuery.ToString("yyyy-MM-dd"));
                 }
-                else
+                else if(WebPart.Option == DeNghiTreHanOption.Late)
                 {
                     //Da tre han
                     andConditions.Add(x => (x[Fields.NgayHenTra]) <= (DataTypes.DateTime)DateTime.Today.ToString("yyyy-MM-dd"));
+                }
+                else
+                {
+                    andConditions.Add(x => (x[Fields.NgayTiepNhan] == null));
                 }
                 
                 Expression<Func<Microsoft.SharePoint.SPListItem, bool>> andExpr = null;
