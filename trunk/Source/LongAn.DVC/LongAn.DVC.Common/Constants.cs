@@ -371,7 +371,9 @@ namespace LongAn.DVC.Common
         [Description("Hồ sơ trễ hạn")]
         Late,
         [Description("Hồ sơ sắp trễ hạn")]
-        CommingLate
+        CommingLate,
+        [Description("Hồ sơ chưa tiếp nhận")]
+        NotReceiving
     }
 
     public enum Actions

@@ -175,6 +175,20 @@
     <Compile Include="Layouts\LongAn.DVC\PhanCongHoSo.aspx.designer.cs">
       <DependentUpon>PhanCongHoSo.aspx.cs</DependentUpon>
     </Compile>
+    <Compile Include="Layouts\LongAn.DVC\PreviewInBienNhan.aspx.cs">
+      <DependentUpon>PreviewInBienNhan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Layouts\LongAn.DVC\PreviewInBienNhan.aspx.designer.cs">
+      <DependentUpon>PreviewInBienNhan.aspx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layouts\LongAn.DVC\PreviewInGiayPhep.aspx.cs">
+      <DependentUpon>PreviewInGiayPhep.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Layouts\LongAn.DVC\PreviewInGiayPhep.aspx.designer.cs">
+      <DependentUpon>PreviewInGiayPhep.aspx.cs</DependentUpon>
+    </Compile>
     <Compile Include="Layouts\LongAn.DVC\TuChoiHoSo.aspx.cs">
       <DependentUpon>TuChoiHoSo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -348,6 +362,80 @@
     <Content Include="Layouts\LongAn.DVC.DeNghi\js\modernizr.js" />
     <Content Include="Layouts\LongAn.DVC.DeNghi\js\script.js" />
     <Content Include="Layouts\LongAn.DVC.DeNghi\js\superfish.js" />
+    <Content Include="Layouts\LongAn.DVC\AppPages\css\bootstrap-non-responsive.min.css" />
+    <Content Include="Layouts\LongAn.DVC\AppPages\css\fluid_grid.css" />
+    <Content Include="Layouts\LongAn.DVC\AppPages\css\form.main.css" />
+    <Content Include="Layouts\LongAn.DVC\AppPages\css\forms.css" />
+    <Content Include="Layouts\LongAn.DVC\AppPages\css\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Layouts\LongAn.DVC\AppPages\css\images\ui-bg_flat_0_eeeeee_40x100.png" />
+    <Content Include="Layouts\LongAn.DVC\AppPages\css\images\ui-bg_flat_55_ffffff_40x100.png" />
+    <Content Include="Layouts\LongAn.DVC\AppPages\css\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Layouts\LongAn.DVC\AppPages\css\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Layouts\LongAn.DVC\AppPages\css\images\ui-bg_highlight-soft_100_f6f6f6_1x100.png" />
+    <Content Include="Layouts\LongAn.DVC\AppPages\css\images\ui-bg_highlight-soft_25_0073ea_1x100.png" />
+    <Content Include="Layouts\LongAn.DVC\AppPages\css\images\ui-bg_highlight-soft_50_dddddd_1x100.png" />
+    <Content Include="Layouts\LongAn.DVC\AppPages\css\images\ui-icons_0073ea_256x240.png" />
+    <Content Include="Layouts\LongAn.DVC\AppPages\css\images\ui-icons_454545_256x240.png" />
+    <Content Include="Layouts\LongAn.DVC\AppPages\css\images\ui-icons_666666_256x240.png" />
+    <Content Include="Layouts\LongAn.DVC\AppPages\css\images\ui-icons_ff0084_256x240.png" />
+    <Content Include="Layouts\LongAn.DVC\AppPages\css\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Layouts\LongAn.DVC\AppPages\css\jquery-ui.min.css" />
+    <Content Include="Layouts\LongAn.DVC\AppPages\css\main.css" />
+    <Content Include="Layouts\LongAn.DVC\AppPages\css\normalize.css" />
+    <Content Include="Layouts\LongAn.DVC\AppPages\css\superfish.css" />
+    <Content Include="Layouts\LongAn.DVC\AppPages\images\add-file.png" />
+    <Content Include="Layouts\LongAn.DVC\AppPages\images\add.png" />
+    <Content Include="Layouts\LongAn.DVC\AppPages\images\added.png" />
+    <Content Include="Layouts\LongAn.DVC\AppPages\images\advantage.png" />
+    <Content Include="Layouts\LongAn.DVC\AppPages\images\attachment.png" />
+    <Content Include="Layouts\LongAn.DVC\AppPages\images\backup.png" />
+    <Content Include="Layouts\LongAn.DVC\AppPages\images\banner.png" />
+    <Content Include="Layouts\LongAn.DVC\AppPages\images\calculator.png" />
+    <Content Include="Layouts\LongAn.DVC\AppPages\images\calendar.png" />
+    <Content Include="Layouts\LongAn.DVC\AppPages\images\calendar2.png" />
+    <Content Include="Layouts\LongAn.DVC\AppPages\images\done.png" />
+    <Content Include="Layouts\LongAn.DVC\AppPages\images\down53.png" />
+    <Content Include="Layouts\LongAn.DVC\AppPages\images\edit4.png" />
+    <Content Include="Layouts\LongAn.DVC\AppPages\images\end.png" />
+    <Content Include="Layouts\LongAn.DVC\AppPages\images\excel.png" />
+    <Content Include="Layouts\LongAn.DVC\AppPages\images\exit.png" />
+    <Content Include="Layouts\LongAn.DVC\AppPages\images\expand-down.png" />
+    <Content Include="Layouts\LongAn.DVC\AppPages\images\expand-up.png" />
+    <Content Include="Layouts\LongAn.DVC\AppPages\images\home.png" />
+    <Content Include="Layouts\LongAn.DVC\AppPages\images\icon-04.png" />
+    <Content Include="Layouts\LongAn.DVC\AppPages\images\index-02.png" />
+    <Content Include="Layouts\LongAn.DVC\AppPages\images\index-03.png" />
+    <Content Include="Layouts\LongAn.DVC\AppPages\images\index_banner-07.png" />
+    <Content Include="Layouts\LongAn.DVC\AppPages\images\index_banner-08.png" />
+    <Content Include="Layouts\LongAn.DVC\AppPages\images\index_banner-09.png" />
+    <Content Include="Layouts\LongAn.DVC\AppPages\images\index_bullet.png" />
+    <Content Include="Layouts\LongAn.DVC\AppPages\images\index_button.png" />
+    <Content Include="Layouts\LongAn.DVC\AppPages\images\index_icon.png" />
+    <Content Include="Layouts\LongAn.DVC\AppPages\images\index_logo.png" />
+    <Content Include="Layouts\LongAn.DVC\AppPages\images\item.png" />
+    <Content Include="Layouts\LongAn.DVC\AppPages\images\more7.png" />
+    <Content Include="Layouts\LongAn.DVC\AppPages\images\next.png" />
+    <Content Include="Layouts\LongAn.DVC\AppPages\images\overlay-05.png" />
+    <Content Include="Layouts\LongAn.DVC\AppPages\images\prev.png" />
+    <Content Include="Layouts\LongAn.DVC\AppPages\images\printer.png" />
+    <Content Include="Layouts\LongAn.DVC\AppPages\images\process.png" />
+    <Content Include="Layouts\LongAn.DVC\AppPages\images\remove.png" />
+    <Content Include="Layouts\LongAn.DVC\AppPages\images\restore.png" />
+    <Content Include="Layouts\LongAn.DVC\AppPages\images\search.png" />
+    <Content Include="Layouts\LongAn.DVC\AppPages\images\shadow.png" />
+    <Content Include="Layouts\LongAn.DVC\AppPages\images\shadow_01.png" />
+    <Content Include="Layouts\LongAn.DVC\AppPages\images\start.png" />
+    <Content Include="Layouts\LongAn.DVC\AppPages\images\stat.png" />
+    <Content Include="Layouts\LongAn.DVC\AppPages\images\task.png" />
+    <Content Include="Layouts\LongAn.DVC\AppPages\images\top-banner.jpg" />
+    <Content Include="Layouts\LongAn.DVC\AppPages\images\top-banner.png" />
+    <Content Include="Layouts\LongAn.DVC\AppPages\images\up.png" />
+    <Content Include="Layouts\LongAn.DVC\AppPages\images\waiting.png" />
+    <Content Include="Layouts\LongAn.DVC\AppPages\images\word.png" />
+    <Content Include="Layouts\LongAn.DVC\AppPages\images\_banner.png" />
+    <Content Include="Layouts\LongAn.DVC\AppPages\images\_index_logo.png" />
+    <Content Include="Layouts\LongAn.DVC\PreviewInBienNhan.aspx" />
+    <Content Include="Layouts\LongAn.DVC\PreviewInGiayPhep.aspx" />
     <Content Include="WebParts\DeNghiListViewUser\DeNghiListViewUserUserControl.ascx" />
     <Content Include="WebParts\DeNghiListViewUser\Elements.xml" />
     <Content Include="WebParts\DeNghiTreHan\DeNghiTreHanUserControl.ascx" />
@@ -405,6 +493,9 @@
     <None Include="Layouts\LongAn.DVC.Form\images\banner-1" />
     <None Include="Layouts\LongAn.DVC.Form\js\.DS_Store" />
     <None Include="Layouts\LongAn.DVC.Form\js\detectizr.min.map" />
+    <None Include="Layouts\LongAn.DVC\AppPages\css\form.main.less" />
+    <None Include="Layouts\LongAn.DVC\AppPages\css\forms.less" />
+    <None Include="Layouts\LongAn.DVC\AppPages\css\main.less" />
     <None Include="Layouts\LongAn.DVC\css\bootstrap-theme.css.map" />
     <None Include="Layouts\LongAn.DVC\css\bootstrap.css.map" />
     <None Include="Layouts\LongAn.DVC\fonts\glyphicons-halflings-regular.eot" />
