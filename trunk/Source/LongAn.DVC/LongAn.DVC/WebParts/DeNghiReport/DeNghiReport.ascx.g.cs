@@ -49,7 +49,327 @@ namespace LongAn.DVC.WebParts.DeNghiReport {
         
         [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
             "artCodeGenerator", "12.0.0.0")]
+        protected global::System.Web.UI.WebControls.Button btnViewReport;
+        
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
         protected global::System.Web.UI.WebControls.Button btnExportExcel;
+        
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        protected global::System.Web.UI.WebControls.Label lblCurrentDateQKQT;
+        
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        protected global::System.Web.UI.WebControls.Label lblFromDateToDateQKQT;
+        
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        protected global::System.Web.UI.WebControls.Label lblQuaTaiQuaKho_Xe2Truc_QuocLo;
+        
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        protected global::System.Web.UI.WebControls.Label lblQuaTaiQuaKho_Xe3Truc_QuocLo;
+        
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        protected global::System.Web.UI.WebControls.Label lblQuaTaiQuaKho_Xe4Truc_QuocLo;
+        
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        protected global::System.Web.UI.WebControls.Label lblQuaTaiQuaKho_XeRM3Truc_QuocLo;
+        
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        protected global::System.Web.UI.WebControls.Label lblQuaTaiQuaKho_XeRM4Truc_QuocLo;
+        
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        protected global::System.Web.UI.WebControls.Label lblQuaTaiQuaKho_XeRM5Truc_QuocLo;
+        
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        protected global::System.Web.UI.WebControls.Label lblQuaTaiQuaKho_TongCong_QuocLo;
+        
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        protected global::System.Web.UI.WebControls.Label lblQuaTaiQuaKho_TongCong_QuocLo8;
+        
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        protected global::System.Web.UI.WebControls.Label lblQuaTaiQuaKho_Xe2Truc_DuongTinh;
+        
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        protected global::System.Web.UI.WebControls.Label lblQuaTaiQuaKho_Xe3Truc_DuongTinh;
+        
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        protected global::System.Web.UI.WebControls.Label lblQuaTaiQuaKho_Xe4Truc_DuongTinh;
+        
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        protected global::System.Web.UI.WebControls.Label lblQuaTaiQuaKho_XeRM3Truc_DuongTinh;
+        
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        protected global::System.Web.UI.WebControls.Label lblQuaTaiQuaKho_XeRM4Truc_DuongTinh;
+        
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        protected global::System.Web.UI.WebControls.Label lblQuaTaiQuaKho_XeRM5Truc_DuongTinh;
+        
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        protected global::System.Web.UI.WebControls.Label lblQuaTaiQuaKho_TongCong_DuongTinh;
+        
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        protected global::System.Web.UI.WebControls.Label lblQuaTaiQuaKho_TongCong_DuongTinh8;
+        
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        protected global::System.Web.UI.WebControls.Label lblQuaTaiQuaKho_Xe2Truc_TongCong;
+        
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        protected global::System.Web.UI.WebControls.Label lblQuaTaiQuaKho_Xe3Truc_TongCong;
+        
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        protected global::System.Web.UI.WebControls.Label lblQuaTaiQuaKho_Xe4Truc_TongCong;
+        
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        protected global::System.Web.UI.WebControls.Label lblQuaTaiQuaKho_XeRM3Truc_TongCong;
+        
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        protected global::System.Web.UI.WebControls.Label lblQuaTaiQuaKho_XeRM4Truc_TongCong;
+        
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        protected global::System.Web.UI.WebControls.Label lblQuaTaiQuaKho_XeRM5Truc_TongCong;
+        
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        protected global::System.Web.UI.WebControls.Label lblQuaTaiQuaKho_TongCong_TongCong;
+        
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        protected global::System.Web.UI.WebControls.Label lblQuaTaiQuaKho_TongCong_TongCong8;
+        
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        protected global::System.Web.UI.WebControls.Label lblCurrentDateQK;
+        
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        protected global::System.Web.UI.WebControls.Label lblFromDateToDateQK;
+        
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        protected global::System.Web.UI.WebControls.Label lblQuaKho_Xe2Truc_QuocLo;
+        
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        protected global::System.Web.UI.WebControls.Label lblQuaKho_Xe3Truc_QuocLo;
+        
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        protected global::System.Web.UI.WebControls.Label lblQuaKho_Xe4Truc_QuocLo;
+        
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        protected global::System.Web.UI.WebControls.Label lblQuaKho_XeRM3Truc_QuocLo;
+        
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        protected global::System.Web.UI.WebControls.Label lblQuaKho_XeRM4Truc_QuocLo;
+        
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        protected global::System.Web.UI.WebControls.Label lblQuaKho_XeRM5Truc_QuocLo;
+        
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        protected global::System.Web.UI.WebControls.Label lblQuaKho_TongCong_QuocLo;
+        
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        protected global::System.Web.UI.WebControls.Label lblQuaKho_TongCong_QuocLo8;
+        
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        protected global::System.Web.UI.WebControls.Label lblQuaKho_Xe2Truc_DuongTinh;
+        
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        protected global::System.Web.UI.WebControls.Label lblQuaKho_Xe3Truc_DuongTinh;
+        
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        protected global::System.Web.UI.WebControls.Label lblQuaKho_Xe4Truc_DuongTinh;
+        
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        protected global::System.Web.UI.WebControls.Label lblQuaKho_XeRM3Truc_DuongTinh;
+        
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        protected global::System.Web.UI.WebControls.Label lblQuaKho_XeRM4Truc_DuongTinh;
+        
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        protected global::System.Web.UI.WebControls.Label lblQuaKho_XeRM5Truc_DuongTinh;
+        
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        protected global::System.Web.UI.WebControls.Label lblQuaKho_TongCong_DuongTinh;
+        
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        protected global::System.Web.UI.WebControls.Label lblQuaKho_TongCong_DuongTinh8;
+        
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        protected global::System.Web.UI.WebControls.Label lblQuaKho_Xe2Truc_TongCong;
+        
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        protected global::System.Web.UI.WebControls.Label lblQuaKho_Xe3Truc_TongCong;
+        
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        protected global::System.Web.UI.WebControls.Label lblQuaKho_Xe4Truc_TongCong;
+        
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        protected global::System.Web.UI.WebControls.Label lblQuaKho_XeRM3Truc_TongCong;
+        
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        protected global::System.Web.UI.WebControls.Label lblQuaKho_XeRM4Truc_TongCong;
+        
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        protected global::System.Web.UI.WebControls.Label lblQuaKho_XeRM5Truc_TongCong;
+        
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        protected global::System.Web.UI.WebControls.Label lblQuaKho_TongCong_TongCong;
+        
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        protected global::System.Web.UI.WebControls.Label lblQuaKho_TongCong_TongCong8;
+        
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        protected global::System.Web.UI.WebControls.Label lblCurrentDateQT;
+        
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        protected global::System.Web.UI.WebControls.Label lblFromDateToDateQT;
+        
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        protected global::System.Web.UI.WebControls.Label lblQuaTai_Xe2Truc_QuocLo;
+        
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        protected global::System.Web.UI.WebControls.Label lblQuaTai_Xe3Truc_QuocLo;
+        
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        protected global::System.Web.UI.WebControls.Label lblQuaTai_Xe4Truc_QuocLo;
+        
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        protected global::System.Web.UI.WebControls.Label lblQuaTai_XeRM3Truc_QuocLo;
+        
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        protected global::System.Web.UI.WebControls.Label lblQuaTai_XeRM4Truc_QuocLo;
+        
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        protected global::System.Web.UI.WebControls.Label lblQuaTai_XeRM5Truc_QuocLo;
+        
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        protected global::System.Web.UI.WebControls.Label lblQuaTai_TongCong_QuocLo;
+        
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        protected global::System.Web.UI.WebControls.Label lblQuaTai_TongCong_QuocLo8;
+        
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        protected global::System.Web.UI.WebControls.Label lblQuaTai_Xe2Truc_DuongTinh;
+        
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        protected global::System.Web.UI.WebControls.Label lblQuaTai_Xe3Truc_DuongTinh;
+        
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        protected global::System.Web.UI.WebControls.Label lblQuaTai_Xe4Truc_DuongTinh;
+        
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        protected global::System.Web.UI.WebControls.Label lblQuaTai_XeRM3Truc_DuongTinh;
+        
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        protected global::System.Web.UI.WebControls.Label lblQuaTai_XeRM4Truc_DuongTinh;
+        
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        protected global::System.Web.UI.WebControls.Label lblQuaTai_XeRM5Truc_DuongTinh;
+        
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        protected global::System.Web.UI.WebControls.Label lblQuaTai_TongCong_DuongTinh;
+        
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        protected global::System.Web.UI.WebControls.Label lblQuaTai_TongCong_DuongTinh8;
+        
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        protected global::System.Web.UI.WebControls.Label lblQuaTai_Xe2Truc_TongCong;
+        
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        protected global::System.Web.UI.WebControls.Label lblQuaTai_Xe3Truc_TongCong;
+        
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        protected global::System.Web.UI.WebControls.Label lblQuaTai_Xe4Truc_TongCong;
+        
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        protected global::System.Web.UI.WebControls.Label lblQuaTai_XeRM3Truc_TongCong;
+        
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        protected global::System.Web.UI.WebControls.Label lblQuaTai_XeRM4Truc_TongCong;
+        
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        protected global::System.Web.UI.WebControls.Label lblQuaTai_XeRM5Truc_TongCong;
+        
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        protected global::System.Web.UI.WebControls.Label lblQuaTai_TongCong_TongCong;
+        
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        protected global::System.Web.UI.WebControls.Label lblQuaTai_TongCong_TongCong8;
+        
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        protected global::System.Web.UI.WebControls.Panel pnlViewBaoCaoCapPhepLuuHanh;
         
         [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
             "artCodeGenerator", "12.0.0.0")]
@@ -98,6 +418,23 @@ namespace LongAn.DVC.WebParts.DeNghiReport {
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
         [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
             "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.Button @__BuildControlbtnViewReport() {
+            global::System.Web.UI.WebControls.Button @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.Button();
+            this.btnViewReport = @__ctrl;
+            @__ctrl.ApplyStyleSheetSkin(this.Page);
+            @__ctrl.ID = "btnViewReport";
+            @__ctrl.Text = "Xem báo cáo";
+            @__ctrl.CssClass = "button btnViewReport";
+            ((System.Web.UI.IAttributeAccessor)(@__ctrl)).SetAttribute("align", "middle");
+            @__ctrl.Click -= new System.EventHandler(this.btnViewReport_Click);
+            @__ctrl.Click += new System.EventHandler(this.btnViewReport_Click);
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
         private global::System.Web.UI.WebControls.Button @__BuildControlbtnExportExcel() {
             global::System.Web.UI.WebControls.Button @__ctrl;
             @__ctrl = new global::System.Web.UI.WebControls.Button();
@@ -109,6 +446,1561 @@ namespace LongAn.DVC.WebParts.DeNghiReport {
             ((System.Web.UI.IAttributeAccessor)(@__ctrl)).SetAttribute("align", "middle");
             @__ctrl.Click -= new System.EventHandler(this.btnExportExcel_Click);
             @__ctrl.Click += new System.EventHandler(this.btnExportExcel_Click);
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.Label @__BuildControllblCurrentDateQKQT() {
+            global::System.Web.UI.WebControls.Label @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.Label();
+            this.lblCurrentDateQKQT = @__ctrl;
+            @__ctrl.ApplyStyleSheetSkin(this.Page);
+            @__ctrl.ID = "lblCurrentDateQKQT";
+            @__ctrl.Text = "";
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.Label @__BuildControllblFromDateToDateQKQT() {
+            global::System.Web.UI.WebControls.Label @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.Label();
+            this.lblFromDateToDateQKQT = @__ctrl;
+            @__ctrl.ApplyStyleSheetSkin(this.Page);
+            @__ctrl.ID = "lblFromDateToDateQKQT";
+            @__ctrl.Text = "";
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.Label @__BuildControllblQuaTaiQuaKho_Xe2Truc_QuocLo() {
+            global::System.Web.UI.WebControls.Label @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.Label();
+            this.lblQuaTaiQuaKho_Xe2Truc_QuocLo = @__ctrl;
+            @__ctrl.ApplyStyleSheetSkin(this.Page);
+            @__ctrl.ID = "lblQuaTaiQuaKho_Xe2Truc_QuocLo";
+            @__ctrl.Text = "";
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.Label @__BuildControllblQuaTaiQuaKho_Xe3Truc_QuocLo() {
+            global::System.Web.UI.WebControls.Label @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.Label();
+            this.lblQuaTaiQuaKho_Xe3Truc_QuocLo = @__ctrl;
+            @__ctrl.ApplyStyleSheetSkin(this.Page);
+            @__ctrl.ID = "lblQuaTaiQuaKho_Xe3Truc_QuocLo";
+            @__ctrl.Text = "";
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.Label @__BuildControllblQuaTaiQuaKho_Xe4Truc_QuocLo() {
+            global::System.Web.UI.WebControls.Label @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.Label();
+            this.lblQuaTaiQuaKho_Xe4Truc_QuocLo = @__ctrl;
+            @__ctrl.ApplyStyleSheetSkin(this.Page);
+            @__ctrl.ID = "lblQuaTaiQuaKho_Xe4Truc_QuocLo";
+            @__ctrl.Text = "";
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.Label @__BuildControllblQuaTaiQuaKho_XeRM3Truc_QuocLo() {
+            global::System.Web.UI.WebControls.Label @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.Label();
+            this.lblQuaTaiQuaKho_XeRM3Truc_QuocLo = @__ctrl;
+            @__ctrl.ApplyStyleSheetSkin(this.Page);
+            @__ctrl.ID = "lblQuaTaiQuaKho_XeRM3Truc_QuocLo";
+            @__ctrl.Text = "";
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.Label @__BuildControllblQuaTaiQuaKho_XeRM4Truc_QuocLo() {
+            global::System.Web.UI.WebControls.Label @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.Label();
+            this.lblQuaTaiQuaKho_XeRM4Truc_QuocLo = @__ctrl;
+            @__ctrl.ApplyStyleSheetSkin(this.Page);
+            @__ctrl.ID = "lblQuaTaiQuaKho_XeRM4Truc_QuocLo";
+            @__ctrl.Text = "";
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.Label @__BuildControllblQuaTaiQuaKho_XeRM5Truc_QuocLo() {
+            global::System.Web.UI.WebControls.Label @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.Label();
+            this.lblQuaTaiQuaKho_XeRM5Truc_QuocLo = @__ctrl;
+            @__ctrl.ApplyStyleSheetSkin(this.Page);
+            @__ctrl.ID = "lblQuaTaiQuaKho_XeRM5Truc_QuocLo";
+            @__ctrl.Text = "";
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.Label @__BuildControllblQuaTaiQuaKho_TongCong_QuocLo() {
+            global::System.Web.UI.WebControls.Label @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.Label();
+            this.lblQuaTaiQuaKho_TongCong_QuocLo = @__ctrl;
+            @__ctrl.ApplyStyleSheetSkin(this.Page);
+            @__ctrl.ID = "lblQuaTaiQuaKho_TongCong_QuocLo";
+            @__ctrl.Text = "";
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.Label @__BuildControllblQuaTaiQuaKho_TongCong_QuocLo8() {
+            global::System.Web.UI.WebControls.Label @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.Label();
+            this.lblQuaTaiQuaKho_TongCong_QuocLo8 = @__ctrl;
+            @__ctrl.ApplyStyleSheetSkin(this.Page);
+            @__ctrl.ID = "lblQuaTaiQuaKho_TongCong_QuocLo8";
+            @__ctrl.Text = "";
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.Label @__BuildControllblQuaTaiQuaKho_Xe2Truc_DuongTinh() {
+            global::System.Web.UI.WebControls.Label @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.Label();
+            this.lblQuaTaiQuaKho_Xe2Truc_DuongTinh = @__ctrl;
+            @__ctrl.ApplyStyleSheetSkin(this.Page);
+            @__ctrl.ID = "lblQuaTaiQuaKho_Xe2Truc_DuongTinh";
+            @__ctrl.Text = "";
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.Label @__BuildControllblQuaTaiQuaKho_Xe3Truc_DuongTinh() {
+            global::System.Web.UI.WebControls.Label @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.Label();
+            this.lblQuaTaiQuaKho_Xe3Truc_DuongTinh = @__ctrl;
+            @__ctrl.ApplyStyleSheetSkin(this.Page);
+            @__ctrl.ID = "lblQuaTaiQuaKho_Xe3Truc_DuongTinh";
+            @__ctrl.Text = "";
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.Label @__BuildControllblQuaTaiQuaKho_Xe4Truc_DuongTinh() {
+            global::System.Web.UI.WebControls.Label @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.Label();
+            this.lblQuaTaiQuaKho_Xe4Truc_DuongTinh = @__ctrl;
+            @__ctrl.ApplyStyleSheetSkin(this.Page);
+            @__ctrl.ID = "lblQuaTaiQuaKho_Xe4Truc_DuongTinh";
+            @__ctrl.Text = "";
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.Label @__BuildControllblQuaTaiQuaKho_XeRM3Truc_DuongTinh() {
+            global::System.Web.UI.WebControls.Label @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.Label();
+            this.lblQuaTaiQuaKho_XeRM3Truc_DuongTinh = @__ctrl;
+            @__ctrl.ApplyStyleSheetSkin(this.Page);
+            @__ctrl.ID = "lblQuaTaiQuaKho_XeRM3Truc_DuongTinh";
+            @__ctrl.Text = "";
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.Label @__BuildControllblQuaTaiQuaKho_XeRM4Truc_DuongTinh() {
+            global::System.Web.UI.WebControls.Label @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.Label();
+            this.lblQuaTaiQuaKho_XeRM4Truc_DuongTinh = @__ctrl;
+            @__ctrl.ApplyStyleSheetSkin(this.Page);
+            @__ctrl.ID = "lblQuaTaiQuaKho_XeRM4Truc_DuongTinh";
+            @__ctrl.Text = "";
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.Label @__BuildControllblQuaTaiQuaKho_XeRM5Truc_DuongTinh() {
+            global::System.Web.UI.WebControls.Label @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.Label();
+            this.lblQuaTaiQuaKho_XeRM5Truc_DuongTinh = @__ctrl;
+            @__ctrl.ApplyStyleSheetSkin(this.Page);
+            @__ctrl.ID = "lblQuaTaiQuaKho_XeRM5Truc_DuongTinh";
+            @__ctrl.Text = "";
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.Label @__BuildControllblQuaTaiQuaKho_TongCong_DuongTinh() {
+            global::System.Web.UI.WebControls.Label @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.Label();
+            this.lblQuaTaiQuaKho_TongCong_DuongTinh = @__ctrl;
+            @__ctrl.ApplyStyleSheetSkin(this.Page);
+            @__ctrl.ID = "lblQuaTaiQuaKho_TongCong_DuongTinh";
+            @__ctrl.Text = "";
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.Label @__BuildControllblQuaTaiQuaKho_TongCong_DuongTinh8() {
+            global::System.Web.UI.WebControls.Label @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.Label();
+            this.lblQuaTaiQuaKho_TongCong_DuongTinh8 = @__ctrl;
+            @__ctrl.ApplyStyleSheetSkin(this.Page);
+            @__ctrl.ID = "lblQuaTaiQuaKho_TongCong_DuongTinh8";
+            @__ctrl.Text = "";
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.Label @__BuildControllblQuaTaiQuaKho_Xe2Truc_TongCong() {
+            global::System.Web.UI.WebControls.Label @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.Label();
+            this.lblQuaTaiQuaKho_Xe2Truc_TongCong = @__ctrl;
+            @__ctrl.ApplyStyleSheetSkin(this.Page);
+            @__ctrl.ID = "lblQuaTaiQuaKho_Xe2Truc_TongCong";
+            @__ctrl.Text = "";
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.Label @__BuildControllblQuaTaiQuaKho_Xe3Truc_TongCong() {
+            global::System.Web.UI.WebControls.Label @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.Label();
+            this.lblQuaTaiQuaKho_Xe3Truc_TongCong = @__ctrl;
+            @__ctrl.ApplyStyleSheetSkin(this.Page);
+            @__ctrl.ID = "lblQuaTaiQuaKho_Xe3Truc_TongCong";
+            @__ctrl.Text = "";
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.Label @__BuildControllblQuaTaiQuaKho_Xe4Truc_TongCong() {
+            global::System.Web.UI.WebControls.Label @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.Label();
+            this.lblQuaTaiQuaKho_Xe4Truc_TongCong = @__ctrl;
+            @__ctrl.ApplyStyleSheetSkin(this.Page);
+            @__ctrl.ID = "lblQuaTaiQuaKho_Xe4Truc_TongCong";
+            @__ctrl.Text = "";
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.Label @__BuildControllblQuaTaiQuaKho_XeRM3Truc_TongCong() {
+            global::System.Web.UI.WebControls.Label @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.Label();
+            this.lblQuaTaiQuaKho_XeRM3Truc_TongCong = @__ctrl;
+            @__ctrl.ApplyStyleSheetSkin(this.Page);
+            @__ctrl.ID = "lblQuaTaiQuaKho_XeRM3Truc_TongCong";
+            @__ctrl.Text = "";
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.Label @__BuildControllblQuaTaiQuaKho_XeRM4Truc_TongCong() {
+            global::System.Web.UI.WebControls.Label @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.Label();
+            this.lblQuaTaiQuaKho_XeRM4Truc_TongCong = @__ctrl;
+            @__ctrl.ApplyStyleSheetSkin(this.Page);
+            @__ctrl.ID = "lblQuaTaiQuaKho_XeRM4Truc_TongCong";
+            @__ctrl.Text = "";
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.Label @__BuildControllblQuaTaiQuaKho_XeRM5Truc_TongCong() {
+            global::System.Web.UI.WebControls.Label @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.Label();
+            this.lblQuaTaiQuaKho_XeRM5Truc_TongCong = @__ctrl;
+            @__ctrl.ApplyStyleSheetSkin(this.Page);
+            @__ctrl.ID = "lblQuaTaiQuaKho_XeRM5Truc_TongCong";
+            @__ctrl.Text = "";
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.Label @__BuildControllblQuaTaiQuaKho_TongCong_TongCong() {
+            global::System.Web.UI.WebControls.Label @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.Label();
+            this.lblQuaTaiQuaKho_TongCong_TongCong = @__ctrl;
+            @__ctrl.ApplyStyleSheetSkin(this.Page);
+            @__ctrl.ID = "lblQuaTaiQuaKho_TongCong_TongCong";
+            @__ctrl.Text = "";
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.Label @__BuildControllblQuaTaiQuaKho_TongCong_TongCong8() {
+            global::System.Web.UI.WebControls.Label @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.Label();
+            this.lblQuaTaiQuaKho_TongCong_TongCong8 = @__ctrl;
+            @__ctrl.ApplyStyleSheetSkin(this.Page);
+            @__ctrl.ID = "lblQuaTaiQuaKho_TongCong_TongCong8";
+            @__ctrl.Text = "";
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.Label @__BuildControllblCurrentDateQK() {
+            global::System.Web.UI.WebControls.Label @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.Label();
+            this.lblCurrentDateQK = @__ctrl;
+            @__ctrl.ApplyStyleSheetSkin(this.Page);
+            @__ctrl.ID = "lblCurrentDateQK";
+            @__ctrl.Text = "";
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.Label @__BuildControllblFromDateToDateQK() {
+            global::System.Web.UI.WebControls.Label @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.Label();
+            this.lblFromDateToDateQK = @__ctrl;
+            @__ctrl.ApplyStyleSheetSkin(this.Page);
+            @__ctrl.ID = "lblFromDateToDateQK";
+            @__ctrl.Text = "";
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.Label @__BuildControllblQuaKho_Xe2Truc_QuocLo() {
+            global::System.Web.UI.WebControls.Label @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.Label();
+            this.lblQuaKho_Xe2Truc_QuocLo = @__ctrl;
+            @__ctrl.ApplyStyleSheetSkin(this.Page);
+            @__ctrl.ID = "lblQuaKho_Xe2Truc_QuocLo";
+            @__ctrl.Text = "";
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.Label @__BuildControllblQuaKho_Xe3Truc_QuocLo() {
+            global::System.Web.UI.WebControls.Label @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.Label();
+            this.lblQuaKho_Xe3Truc_QuocLo = @__ctrl;
+            @__ctrl.ApplyStyleSheetSkin(this.Page);
+            @__ctrl.ID = "lblQuaKho_Xe3Truc_QuocLo";
+            @__ctrl.Text = "";
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.Label @__BuildControllblQuaKho_Xe4Truc_QuocLo() {
+            global::System.Web.UI.WebControls.Label @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.Label();
+            this.lblQuaKho_Xe4Truc_QuocLo = @__ctrl;
+            @__ctrl.ApplyStyleSheetSkin(this.Page);
+            @__ctrl.ID = "lblQuaKho_Xe4Truc_QuocLo";
+            @__ctrl.Text = "";
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.Label @__BuildControllblQuaKho_XeRM3Truc_QuocLo() {
+            global::System.Web.UI.WebControls.Label @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.Label();
+            this.lblQuaKho_XeRM3Truc_QuocLo = @__ctrl;
+            @__ctrl.ApplyStyleSheetSkin(this.Page);
+            @__ctrl.ID = "lblQuaKho_XeRM3Truc_QuocLo";
+            @__ctrl.Text = "";
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.Label @__BuildControllblQuaKho_XeRM4Truc_QuocLo() {
+            global::System.Web.UI.WebControls.Label @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.Label();
+            this.lblQuaKho_XeRM4Truc_QuocLo = @__ctrl;
+            @__ctrl.ApplyStyleSheetSkin(this.Page);
+            @__ctrl.ID = "lblQuaKho_XeRM4Truc_QuocLo";
+            @__ctrl.Text = "";
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.Label @__BuildControllblQuaKho_XeRM5Truc_QuocLo() {
+            global::System.Web.UI.WebControls.Label @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.Label();
+            this.lblQuaKho_XeRM5Truc_QuocLo = @__ctrl;
+            @__ctrl.ApplyStyleSheetSkin(this.Page);
+            @__ctrl.ID = "lblQuaKho_XeRM5Truc_QuocLo";
+            @__ctrl.Text = "";
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.Label @__BuildControllblQuaKho_TongCong_QuocLo() {
+            global::System.Web.UI.WebControls.Label @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.Label();
+            this.lblQuaKho_TongCong_QuocLo = @__ctrl;
+            @__ctrl.ApplyStyleSheetSkin(this.Page);
+            @__ctrl.ID = "lblQuaKho_TongCong_QuocLo";
+            @__ctrl.Text = "";
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.Label @__BuildControllblQuaKho_TongCong_QuocLo8() {
+            global::System.Web.UI.WebControls.Label @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.Label();
+            this.lblQuaKho_TongCong_QuocLo8 = @__ctrl;
+            @__ctrl.ApplyStyleSheetSkin(this.Page);
+            @__ctrl.ID = "lblQuaKho_TongCong_QuocLo8";
+            @__ctrl.Text = "";
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.Label @__BuildControllblQuaKho_Xe2Truc_DuongTinh() {
+            global::System.Web.UI.WebControls.Label @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.Label();
+            this.lblQuaKho_Xe2Truc_DuongTinh = @__ctrl;
+            @__ctrl.ApplyStyleSheetSkin(this.Page);
+            @__ctrl.ID = "lblQuaKho_Xe2Truc_DuongTinh";
+            @__ctrl.Text = "";
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.Label @__BuildControllblQuaKho_Xe3Truc_DuongTinh() {
+            global::System.Web.UI.WebControls.Label @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.Label();
+            this.lblQuaKho_Xe3Truc_DuongTinh = @__ctrl;
+            @__ctrl.ApplyStyleSheetSkin(this.Page);
+            @__ctrl.ID = "lblQuaKho_Xe3Truc_DuongTinh";
+            @__ctrl.Text = "";
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.Label @__BuildControllblQuaKho_Xe4Truc_DuongTinh() {
+            global::System.Web.UI.WebControls.Label @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.Label();
+            this.lblQuaKho_Xe4Truc_DuongTinh = @__ctrl;
+            @__ctrl.ApplyStyleSheetSkin(this.Page);
+            @__ctrl.ID = "lblQuaKho_Xe4Truc_DuongTinh";
+            @__ctrl.Text = "";
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.Label @__BuildControllblQuaKho_XeRM3Truc_DuongTinh() {
+            global::System.Web.UI.WebControls.Label @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.Label();
+            this.lblQuaKho_XeRM3Truc_DuongTinh = @__ctrl;
+            @__ctrl.ApplyStyleSheetSkin(this.Page);
+            @__ctrl.ID = "lblQuaKho_XeRM3Truc_DuongTinh";
+            @__ctrl.Text = "";
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.Label @__BuildControllblQuaKho_XeRM4Truc_DuongTinh() {
+            global::System.Web.UI.WebControls.Label @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.Label();
+            this.lblQuaKho_XeRM4Truc_DuongTinh = @__ctrl;
+            @__ctrl.ApplyStyleSheetSkin(this.Page);
+            @__ctrl.ID = "lblQuaKho_XeRM4Truc_DuongTinh";
+            @__ctrl.Text = "";
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.Label @__BuildControllblQuaKho_XeRM5Truc_DuongTinh() {
+            global::System.Web.UI.WebControls.Label @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.Label();
+            this.lblQuaKho_XeRM5Truc_DuongTinh = @__ctrl;
+            @__ctrl.ApplyStyleSheetSkin(this.Page);
+            @__ctrl.ID = "lblQuaKho_XeRM5Truc_DuongTinh";
+            @__ctrl.Text = "";
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.Label @__BuildControllblQuaKho_TongCong_DuongTinh() {
+            global::System.Web.UI.WebControls.Label @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.Label();
+            this.lblQuaKho_TongCong_DuongTinh = @__ctrl;
+            @__ctrl.ApplyStyleSheetSkin(this.Page);
+            @__ctrl.ID = "lblQuaKho_TongCong_DuongTinh";
+            @__ctrl.Text = "";
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.Label @__BuildControllblQuaKho_TongCong_DuongTinh8() {
+            global::System.Web.UI.WebControls.Label @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.Label();
+            this.lblQuaKho_TongCong_DuongTinh8 = @__ctrl;
+            @__ctrl.ApplyStyleSheetSkin(this.Page);
+            @__ctrl.ID = "lblQuaKho_TongCong_DuongTinh8";
+            @__ctrl.Text = "";
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.Label @__BuildControllblQuaKho_Xe2Truc_TongCong() {
+            global::System.Web.UI.WebControls.Label @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.Label();
+            this.lblQuaKho_Xe2Truc_TongCong = @__ctrl;
+            @__ctrl.ApplyStyleSheetSkin(this.Page);
+            @__ctrl.ID = "lblQuaKho_Xe2Truc_TongCong";
+            @__ctrl.Text = "";
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.Label @__BuildControllblQuaKho_Xe3Truc_TongCong() {
+            global::System.Web.UI.WebControls.Label @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.Label();
+            this.lblQuaKho_Xe3Truc_TongCong = @__ctrl;
+            @__ctrl.ApplyStyleSheetSkin(this.Page);
+            @__ctrl.ID = "lblQuaKho_Xe3Truc_TongCong";
+            @__ctrl.Text = "";
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.Label @__BuildControllblQuaKho_Xe4Truc_TongCong() {
+            global::System.Web.UI.WebControls.Label @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.Label();
+            this.lblQuaKho_Xe4Truc_TongCong = @__ctrl;
+            @__ctrl.ApplyStyleSheetSkin(this.Page);
+            @__ctrl.ID = "lblQuaKho_Xe4Truc_TongCong";
+            @__ctrl.Text = "";
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.Label @__BuildControllblQuaKho_XeRM3Truc_TongCong() {
+            global::System.Web.UI.WebControls.Label @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.Label();
+            this.lblQuaKho_XeRM3Truc_TongCong = @__ctrl;
+            @__ctrl.ApplyStyleSheetSkin(this.Page);
+            @__ctrl.ID = "lblQuaKho_XeRM3Truc_TongCong";
+            @__ctrl.Text = "";
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.Label @__BuildControllblQuaKho_XeRM4Truc_TongCong() {
+            global::System.Web.UI.WebControls.Label @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.Label();
+            this.lblQuaKho_XeRM4Truc_TongCong = @__ctrl;
+            @__ctrl.ApplyStyleSheetSkin(this.Page);
+            @__ctrl.ID = "lblQuaKho_XeRM4Truc_TongCong";
+            @__ctrl.Text = "";
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.Label @__BuildControllblQuaKho_XeRM5Truc_TongCong() {
+            global::System.Web.UI.WebControls.Label @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.Label();
+            this.lblQuaKho_XeRM5Truc_TongCong = @__ctrl;
+            @__ctrl.ApplyStyleSheetSkin(this.Page);
+            @__ctrl.ID = "lblQuaKho_XeRM5Truc_TongCong";
+            @__ctrl.Text = "";
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.Label @__BuildControllblQuaKho_TongCong_TongCong() {
+            global::System.Web.UI.WebControls.Label @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.Label();
+            this.lblQuaKho_TongCong_TongCong = @__ctrl;
+            @__ctrl.ApplyStyleSheetSkin(this.Page);
+            @__ctrl.ID = "lblQuaKho_TongCong_TongCong";
+            @__ctrl.Text = "";
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.Label @__BuildControllblQuaKho_TongCong_TongCong8() {
+            global::System.Web.UI.WebControls.Label @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.Label();
+            this.lblQuaKho_TongCong_TongCong8 = @__ctrl;
+            @__ctrl.ApplyStyleSheetSkin(this.Page);
+            @__ctrl.ID = "lblQuaKho_TongCong_TongCong8";
+            @__ctrl.Text = "";
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.Label @__BuildControllblCurrentDateQT() {
+            global::System.Web.UI.WebControls.Label @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.Label();
+            this.lblCurrentDateQT = @__ctrl;
+            @__ctrl.ApplyStyleSheetSkin(this.Page);
+            @__ctrl.ID = "lblCurrentDateQT";
+            @__ctrl.Text = "";
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.Label @__BuildControllblFromDateToDateQT() {
+            global::System.Web.UI.WebControls.Label @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.Label();
+            this.lblFromDateToDateQT = @__ctrl;
+            @__ctrl.ApplyStyleSheetSkin(this.Page);
+            @__ctrl.ID = "lblFromDateToDateQT";
+            @__ctrl.Text = "";
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.Label @__BuildControllblQuaTai_Xe2Truc_QuocLo() {
+            global::System.Web.UI.WebControls.Label @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.Label();
+            this.lblQuaTai_Xe2Truc_QuocLo = @__ctrl;
+            @__ctrl.ApplyStyleSheetSkin(this.Page);
+            @__ctrl.ID = "lblQuaTai_Xe2Truc_QuocLo";
+            @__ctrl.Text = "";
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.Label @__BuildControllblQuaTai_Xe3Truc_QuocLo() {
+            global::System.Web.UI.WebControls.Label @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.Label();
+            this.lblQuaTai_Xe3Truc_QuocLo = @__ctrl;
+            @__ctrl.ApplyStyleSheetSkin(this.Page);
+            @__ctrl.ID = "lblQuaTai_Xe3Truc_QuocLo";
+            @__ctrl.Text = "";
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.Label @__BuildControllblQuaTai_Xe4Truc_QuocLo() {
+            global::System.Web.UI.WebControls.Label @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.Label();
+            this.lblQuaTai_Xe4Truc_QuocLo = @__ctrl;
+            @__ctrl.ApplyStyleSheetSkin(this.Page);
+            @__ctrl.ID = "lblQuaTai_Xe4Truc_QuocLo";
+            @__ctrl.Text = "";
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.Label @__BuildControllblQuaTai_XeRM3Truc_QuocLo() {
+            global::System.Web.UI.WebControls.Label @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.Label();
+            this.lblQuaTai_XeRM3Truc_QuocLo = @__ctrl;
+            @__ctrl.ApplyStyleSheetSkin(this.Page);
+            @__ctrl.ID = "lblQuaTai_XeRM3Truc_QuocLo";
+            @__ctrl.Text = "";
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.Label @__BuildControllblQuaTai_XeRM4Truc_QuocLo() {
+            global::System.Web.UI.WebControls.Label @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.Label();
+            this.lblQuaTai_XeRM4Truc_QuocLo = @__ctrl;
+            @__ctrl.ApplyStyleSheetSkin(this.Page);
+            @__ctrl.ID = "lblQuaTai_XeRM4Truc_QuocLo";
+            @__ctrl.Text = "";
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.Label @__BuildControllblQuaTai_XeRM5Truc_QuocLo() {
+            global::System.Web.UI.WebControls.Label @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.Label();
+            this.lblQuaTai_XeRM5Truc_QuocLo = @__ctrl;
+            @__ctrl.ApplyStyleSheetSkin(this.Page);
+            @__ctrl.ID = "lblQuaTai_XeRM5Truc_QuocLo";
+            @__ctrl.Text = "";
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.Label @__BuildControllblQuaTai_TongCong_QuocLo() {
+            global::System.Web.UI.WebControls.Label @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.Label();
+            this.lblQuaTai_TongCong_QuocLo = @__ctrl;
+            @__ctrl.ApplyStyleSheetSkin(this.Page);
+            @__ctrl.ID = "lblQuaTai_TongCong_QuocLo";
+            @__ctrl.Text = "";
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.Label @__BuildControllblQuaTai_TongCong_QuocLo8() {
+            global::System.Web.UI.WebControls.Label @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.Label();
+            this.lblQuaTai_TongCong_QuocLo8 = @__ctrl;
+            @__ctrl.ApplyStyleSheetSkin(this.Page);
+            @__ctrl.ID = "lblQuaTai_TongCong_QuocLo8";
+            @__ctrl.Text = "";
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.Label @__BuildControllblQuaTai_Xe2Truc_DuongTinh() {
+            global::System.Web.UI.WebControls.Label @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.Label();
+            this.lblQuaTai_Xe2Truc_DuongTinh = @__ctrl;
+            @__ctrl.ApplyStyleSheetSkin(this.Page);
+            @__ctrl.ID = "lblQuaTai_Xe2Truc_DuongTinh";
+            @__ctrl.Text = "";
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.Label @__BuildControllblQuaTai_Xe3Truc_DuongTinh() {
+            global::System.Web.UI.WebControls.Label @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.Label();
+            this.lblQuaTai_Xe3Truc_DuongTinh = @__ctrl;
+            @__ctrl.ApplyStyleSheetSkin(this.Page);
+            @__ctrl.ID = "lblQuaTai_Xe3Truc_DuongTinh";
+            @__ctrl.Text = "";
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.Label @__BuildControllblQuaTai_Xe4Truc_DuongTinh() {
+            global::System.Web.UI.WebControls.Label @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.Label();
+            this.lblQuaTai_Xe4Truc_DuongTinh = @__ctrl;
+            @__ctrl.ApplyStyleSheetSkin(this.Page);
+            @__ctrl.ID = "lblQuaTai_Xe4Truc_DuongTinh";
+            @__ctrl.Text = "";
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.Label @__BuildControllblQuaTai_XeRM3Truc_DuongTinh() {
+            global::System.Web.UI.WebControls.Label @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.Label();
+            this.lblQuaTai_XeRM3Truc_DuongTinh = @__ctrl;
+            @__ctrl.ApplyStyleSheetSkin(this.Page);
+            @__ctrl.ID = "lblQuaTai_XeRM3Truc_DuongTinh";
+            @__ctrl.Text = "";
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.Label @__BuildControllblQuaTai_XeRM4Truc_DuongTinh() {
+            global::System.Web.UI.WebControls.Label @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.Label();
+            this.lblQuaTai_XeRM4Truc_DuongTinh = @__ctrl;
+            @__ctrl.ApplyStyleSheetSkin(this.Page);
+            @__ctrl.ID = "lblQuaTai_XeRM4Truc_DuongTinh";
+            @__ctrl.Text = "";
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.Label @__BuildControllblQuaTai_XeRM5Truc_DuongTinh() {
+            global::System.Web.UI.WebControls.Label @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.Label();
+            this.lblQuaTai_XeRM5Truc_DuongTinh = @__ctrl;
+            @__ctrl.ApplyStyleSheetSkin(this.Page);
+            @__ctrl.ID = "lblQuaTai_XeRM5Truc_DuongTinh";
+            @__ctrl.Text = "";
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.Label @__BuildControllblQuaTai_TongCong_DuongTinh() {
+            global::System.Web.UI.WebControls.Label @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.Label();
+            this.lblQuaTai_TongCong_DuongTinh = @__ctrl;
+            @__ctrl.ApplyStyleSheetSkin(this.Page);
+            @__ctrl.ID = "lblQuaTai_TongCong_DuongTinh";
+            @__ctrl.Text = "";
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.Label @__BuildControllblQuaTai_TongCong_DuongTinh8() {
+            global::System.Web.UI.WebControls.Label @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.Label();
+            this.lblQuaTai_TongCong_DuongTinh8 = @__ctrl;
+            @__ctrl.ApplyStyleSheetSkin(this.Page);
+            @__ctrl.ID = "lblQuaTai_TongCong_DuongTinh8";
+            @__ctrl.Text = "";
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.Label @__BuildControllblQuaTai_Xe2Truc_TongCong() {
+            global::System.Web.UI.WebControls.Label @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.Label();
+            this.lblQuaTai_Xe2Truc_TongCong = @__ctrl;
+            @__ctrl.ApplyStyleSheetSkin(this.Page);
+            @__ctrl.ID = "lblQuaTai_Xe2Truc_TongCong";
+            @__ctrl.Text = "";
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.Label @__BuildControllblQuaTai_Xe3Truc_TongCong() {
+            global::System.Web.UI.WebControls.Label @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.Label();
+            this.lblQuaTai_Xe3Truc_TongCong = @__ctrl;
+            @__ctrl.ApplyStyleSheetSkin(this.Page);
+            @__ctrl.ID = "lblQuaTai_Xe3Truc_TongCong";
+            @__ctrl.Text = "";
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.Label @__BuildControllblQuaTai_Xe4Truc_TongCong() {
+            global::System.Web.UI.WebControls.Label @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.Label();
+            this.lblQuaTai_Xe4Truc_TongCong = @__ctrl;
+            @__ctrl.ApplyStyleSheetSkin(this.Page);
+            @__ctrl.ID = "lblQuaTai_Xe4Truc_TongCong";
+            @__ctrl.Text = "";
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.Label @__BuildControllblQuaTai_XeRM3Truc_TongCong() {
+            global::System.Web.UI.WebControls.Label @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.Label();
+            this.lblQuaTai_XeRM3Truc_TongCong = @__ctrl;
+            @__ctrl.ApplyStyleSheetSkin(this.Page);
+            @__ctrl.ID = "lblQuaTai_XeRM3Truc_TongCong";
+            @__ctrl.Text = "";
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.Label @__BuildControllblQuaTai_XeRM4Truc_TongCong() {
+            global::System.Web.UI.WebControls.Label @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.Label();
+            this.lblQuaTai_XeRM4Truc_TongCong = @__ctrl;
+            @__ctrl.ApplyStyleSheetSkin(this.Page);
+            @__ctrl.ID = "lblQuaTai_XeRM4Truc_TongCong";
+            @__ctrl.Text = "";
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.Label @__BuildControllblQuaTai_XeRM5Truc_TongCong() {
+            global::System.Web.UI.WebControls.Label @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.Label();
+            this.lblQuaTai_XeRM5Truc_TongCong = @__ctrl;
+            @__ctrl.ApplyStyleSheetSkin(this.Page);
+            @__ctrl.ID = "lblQuaTai_XeRM5Truc_TongCong";
+            @__ctrl.Text = "";
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.Label @__BuildControllblQuaTai_TongCong_TongCong() {
+            global::System.Web.UI.WebControls.Label @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.Label();
+            this.lblQuaTai_TongCong_TongCong = @__ctrl;
+            @__ctrl.ApplyStyleSheetSkin(this.Page);
+            @__ctrl.ID = "lblQuaTai_TongCong_TongCong";
+            @__ctrl.Text = "";
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.Label @__BuildControllblQuaTai_TongCong_TongCong8() {
+            global::System.Web.UI.WebControls.Label @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.Label();
+            this.lblQuaTai_TongCong_TongCong8 = @__ctrl;
+            @__ctrl.ApplyStyleSheetSkin(this.Page);
+            @__ctrl.ID = "lblQuaTai_TongCong_TongCong8";
+            @__ctrl.Text = "";
+            return @__ctrl;
+        }
+        
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
+            "artCodeGenerator", "12.0.0.0")]
+        private global::System.Web.UI.WebControls.Panel @__BuildControlpnlViewBaoCaoCapPhepLuuHanh() {
+            global::System.Web.UI.WebControls.Panel @__ctrl;
+            @__ctrl = new global::System.Web.UI.WebControls.Panel();
+            this.pnlViewBaoCaoCapPhepLuuHanh = @__ctrl;
+            @__ctrl.ApplyStyleSheetSkin(this.Page);
+            @__ctrl.ID = "pnlViewBaoCaoCapPhepLuuHanh";
+            @__ctrl.Visible = false;
+            @__ctrl.CssClass = "container_table style-1";
+            System.Web.UI.IParserAccessor @__parser = ((System.Web.UI.IParserAccessor)(@__ctrl));
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl(@"
+
+                <ul class=""tabs"">
+                    <li>
+                        <input type=""radio"" checked name=""tabs"" id=""tab1"">
+                        <label for=""tab1"">QUÁ TẢI TRỌNG - QUÁ KHỔ</label>
+                        <div id=""tab-content1"" class=""tab-content animated fadeIn"">
+                            <div class=""text-right border-bottom_dash"">PHỤ LỤC 6a</div>
+                            <div class="""">
+                                <div class=""row"">
+                                    <div class=""grid_4  text-center style-text-3"">UBND TỈNH LONG AN<br>
+                                        <span class=""border-bottom""><strong>SỞ GIAO THÔNG VẬN TẢI</strong></span><br>
+                                        Số:               /SGTVT-GLHX.</div>
+                                    <div class=""grid_7  text-center style-text-3"">
+                                        CỘNG HOÀ XÃ HỘI CHỦ NGHĨA VIỆT NAM<br>
+                                        <span class=""border-bottom"">Độc lập - Tự do - Hạnh phúc</span><br>
+                                        <em>"));
+            global::System.Web.UI.WebControls.Label @__ctrl1;
+            @__ctrl1 = this.@__BuildControllblCurrentDateQKQT();
+            @__parser.AddParsedSubObject(@__ctrl1);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl(@"</em>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class=""clear""></div>
+
+                            <h1 class=""container_table text-center"">BÁO CÁO CẤP GIẤY PHÉP LƯU HÀNH CHO XE QUÁ TẢI TRỌNG VÀ XE QUÁ KHỔ GIỚI HẠN</h1>
+                            <div class=""container_table text-center"">"));
+            global::System.Web.UI.WebControls.Label @__ctrl2;
+            @__ctrl2 = this.@__BuildControllblFromDateToDateQKQT();
+            @__parser.AddParsedSubObject(@__ctrl2);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("</div>\r\n                            <div class=\"container_table text-center\"><str" +
+                        "ong>Kính gửi: Tổng Cục Đường Bộ Việt Nam</strong></div>\r\n                       " +
+                        "     <table border=\"1\" bordercolor=\"#dcdcdc\" cellspacing=\"0\" cellpadding=\"0\" wid" +
+                        "th=\"100%\" class=\"report-table style-text-3\">\r\n                                <t" +
+                        "r class=\"bg-5\">\r\n                                    <td width=\"6%\"><strong>&nbs" +
+                        "p;</strong></td>\r\n                                    <td width=\"9%\" class=\"padd" +
+                        "ing style-text-4\"><strong>Xe 02 trục đơn</strong></td>\r\n                        " +
+                        "            <td width=\"7%\" class=\"padding style-text-4\"><strong>Xe 03 trục</stro" +
+                        "ng></td>\r\n                                    <td width=\"7%\" class=\"padding styl" +
+                        "e-text-4\"><strong>Xe 04 trục</strong></td>\r\n                                    " +
+                        "<td width=\"12%\" class=\"padding style-text-4\"><strong>Tổ hợp xe - sơ mi rơ mooc (" +
+                        "03 trục)</strong></td>\r\n                                    <td width=\"12%\" clas" +
+                        "s=\"padding style-text-4\"><strong>Tổ hợp xe - sơ mi rơ mooc (04 trục)</strong></t" +
+                        "d>\r\n                                    <td width=\"12%\" class=\"padding style-tex" +
+                        "t-4\"><strong>Tổ hợp xe - sơ mi rơ mooc (05 trục)</strong></td>\r\n                " +
+                        "                    <td width=\"7%\" class=\"padding style-text-4\"><strong>Tổng cộn" +
+                        "g</strong></td>\r\n                                    <td width=\"13%\" class=\"padd" +
+                        "ing style-text-4\"><strong>Vận    chuyển hàng quá tải trọng, quá khổ giới hạn</st" +
+                        "rong></td>\r\n                                    <td width=\"15%\" class=\"padding t" +
+                        "ext-center\"><strong>Ghi chú</strong></td>\r\n                                </tr>" +
+                        "\r\n                                <tr class=\"text-center\">\r\n                    " +
+                        "                <td class=\"text-center\">&nbsp;</td>\r\n                           " +
+                        "         <td class=\"text-center padding-1\">1</td>\r\n                             " +
+                        "       <td class=\"text-center\">2</td>\r\n                                    <td c" +
+                        "lass=\"text-center\">3</td>\r\n                                    <td class=\"text-c" +
+                        "enter\">4</td>\r\n                                    <td class=\"text-center\">5</td" +
+                        ">\r\n                                    <td class=\"text-center\">6</td>\r\n         " +
+                        "                           <td class=\"text-center\">7</td>\r\n                     " +
+                        "               <td class=\"text-center\">8</td>\r\n                                 " +
+                        "   <td class=\"text-center\">9</td>\r\n                                </tr>\r\n      " +
+                        "                          <tr>\r\n                                    <td nowrap c" +
+                        "lass=\"padding\">Quốc    lộ </td>\r\n<td class=\"text-center\">"));
+            global::System.Web.UI.WebControls.Label @__ctrl3;
+            @__ctrl3 = this.@__BuildControllblQuaTaiQuaKho_Xe2Truc_QuocLo();
+            @__parser.AddParsedSubObject(@__ctrl3);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("</td>\r\n<td class=\"text-center\">"));
+            global::System.Web.UI.WebControls.Label @__ctrl4;
+            @__ctrl4 = this.@__BuildControllblQuaTaiQuaKho_Xe3Truc_QuocLo();
+            @__parser.AddParsedSubObject(@__ctrl4);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("</td>\r\n<td class=\"text-center\">"));
+            global::System.Web.UI.WebControls.Label @__ctrl5;
+            @__ctrl5 = this.@__BuildControllblQuaTaiQuaKho_Xe4Truc_QuocLo();
+            @__parser.AddParsedSubObject(@__ctrl5);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("</td>\r\n<td class=\"text-center\">"));
+            global::System.Web.UI.WebControls.Label @__ctrl6;
+            @__ctrl6 = this.@__BuildControllblQuaTaiQuaKho_XeRM3Truc_QuocLo();
+            @__parser.AddParsedSubObject(@__ctrl6);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("</td>\r\n<td class=\"text-center\">"));
+            global::System.Web.UI.WebControls.Label @__ctrl7;
+            @__ctrl7 = this.@__BuildControllblQuaTaiQuaKho_XeRM4Truc_QuocLo();
+            @__parser.AddParsedSubObject(@__ctrl7);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("</td>\r\n<td class=\"text-center\">"));
+            global::System.Web.UI.WebControls.Label @__ctrl8;
+            @__ctrl8 = this.@__BuildControllblQuaTaiQuaKho_XeRM5Truc_QuocLo();
+            @__parser.AddParsedSubObject(@__ctrl8);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("</td>\r\n<td class=\"text-center\">"));
+            global::System.Web.UI.WebControls.Label @__ctrl9;
+            @__ctrl9 = this.@__BuildControllblQuaTaiQuaKho_TongCong_QuocLo();
+            @__parser.AddParsedSubObject(@__ctrl9);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("</td>\r\n<td class=\"text-center\">"));
+            global::System.Web.UI.WebControls.Label @__ctrl10;
+            @__ctrl10 = this.@__BuildControllblQuaTaiQuaKho_TongCong_QuocLo8();
+            @__parser.AddParsedSubObject(@__ctrl10);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl(@"</td>
+                                    <td class=""text-center""></td>
+                                </tr>
+                                <tr>
+                                    <td nowrap class=""padding"">Đường    tỉnh</td>
+<td class=""text-center"">"));
+            global::System.Web.UI.WebControls.Label @__ctrl11;
+            @__ctrl11 = this.@__BuildControllblQuaTaiQuaKho_Xe2Truc_DuongTinh();
+            @__parser.AddParsedSubObject(@__ctrl11);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("</td>\r\n<td class=\"text-center\">"));
+            global::System.Web.UI.WebControls.Label @__ctrl12;
+            @__ctrl12 = this.@__BuildControllblQuaTaiQuaKho_Xe3Truc_DuongTinh();
+            @__parser.AddParsedSubObject(@__ctrl12);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("</td>\r\n<td class=\"text-center\">"));
+            global::System.Web.UI.WebControls.Label @__ctrl13;
+            @__ctrl13 = this.@__BuildControllblQuaTaiQuaKho_Xe4Truc_DuongTinh();
+            @__parser.AddParsedSubObject(@__ctrl13);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("</td>\r\n<td class=\"text-center\">"));
+            global::System.Web.UI.WebControls.Label @__ctrl14;
+            @__ctrl14 = this.@__BuildControllblQuaTaiQuaKho_XeRM3Truc_DuongTinh();
+            @__parser.AddParsedSubObject(@__ctrl14);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("</td>\r\n<td class=\"text-center\">"));
+            global::System.Web.UI.WebControls.Label @__ctrl15;
+            @__ctrl15 = this.@__BuildControllblQuaTaiQuaKho_XeRM4Truc_DuongTinh();
+            @__parser.AddParsedSubObject(@__ctrl15);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("</td>\r\n<td class=\"text-center\">"));
+            global::System.Web.UI.WebControls.Label @__ctrl16;
+            @__ctrl16 = this.@__BuildControllblQuaTaiQuaKho_XeRM5Truc_DuongTinh();
+            @__parser.AddParsedSubObject(@__ctrl16);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("</td>\r\n<td class=\"text-center\">"));
+            global::System.Web.UI.WebControls.Label @__ctrl17;
+            @__ctrl17 = this.@__BuildControllblQuaTaiQuaKho_TongCong_DuongTinh();
+            @__parser.AddParsedSubObject(@__ctrl17);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("</td>\r\n<td class=\"text-center\">"));
+            global::System.Web.UI.WebControls.Label @__ctrl18;
+            @__ctrl18 = this.@__BuildControllblQuaTaiQuaKho_TongCong_DuongTinh8();
+            @__parser.AddParsedSubObject(@__ctrl18);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl(@"</td>
+                                    <td class=""text-center""></td>
+                                </tr>
+                                <tr>
+                                    <td nowrap class=""padding""><strong>Tổng    cộng</strong></td>
+<td class=""text-center"">"));
+            global::System.Web.UI.WebControls.Label @__ctrl19;
+            @__ctrl19 = this.@__BuildControllblQuaTaiQuaKho_Xe2Truc_TongCong();
+            @__parser.AddParsedSubObject(@__ctrl19);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("</td>\r\n<td class=\"text-center\">"));
+            global::System.Web.UI.WebControls.Label @__ctrl20;
+            @__ctrl20 = this.@__BuildControllblQuaTaiQuaKho_Xe3Truc_TongCong();
+            @__parser.AddParsedSubObject(@__ctrl20);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("</td>\r\n<td class=\"text-center\">"));
+            global::System.Web.UI.WebControls.Label @__ctrl21;
+            @__ctrl21 = this.@__BuildControllblQuaTaiQuaKho_Xe4Truc_TongCong();
+            @__parser.AddParsedSubObject(@__ctrl21);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("</td>\r\n<td class=\"text-center\">"));
+            global::System.Web.UI.WebControls.Label @__ctrl22;
+            @__ctrl22 = this.@__BuildControllblQuaTaiQuaKho_XeRM3Truc_TongCong();
+            @__parser.AddParsedSubObject(@__ctrl22);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("</td>\r\n<td class=\"text-center\">"));
+            global::System.Web.UI.WebControls.Label @__ctrl23;
+            @__ctrl23 = this.@__BuildControllblQuaTaiQuaKho_XeRM4Truc_TongCong();
+            @__parser.AddParsedSubObject(@__ctrl23);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("</td>\r\n<td class=\"text-center\">"));
+            global::System.Web.UI.WebControls.Label @__ctrl24;
+            @__ctrl24 = this.@__BuildControllblQuaTaiQuaKho_XeRM5Truc_TongCong();
+            @__parser.AddParsedSubObject(@__ctrl24);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("</td>\r\n<td class=\"text-center\">"));
+            global::System.Web.UI.WebControls.Label @__ctrl25;
+            @__ctrl25 = this.@__BuildControllblQuaTaiQuaKho_TongCong_TongCong();
+            @__parser.AddParsedSubObject(@__ctrl25);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("</td>\r\n<td class=\"text-center\">"));
+            global::System.Web.UI.WebControls.Label @__ctrl26;
+            @__ctrl26 = this.@__BuildControllblQuaTaiQuaKho_TongCong_TongCong8();
+            @__parser.AddParsedSubObject(@__ctrl26);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl(@"</td>
+                                    <td class=""text-center""></td>
+                                </tr>
+                            </table>
+                            <div class=""clear""></div>
+                            <div class=""warning"">*Ghi chú: Mỗi Giấy Phép Lưu  hành xe cấp cho cả hai tuyến (Quốc lộ và Đường tỉnh)</div>
+                        </div>
+                    </li>
+                    <li>
+                        <input type=""radio"" name=""tabs"" id=""tab2"">
+                        <label for=""tab2"">QUÁ KHỔ</label>
+                        <div id=""tab-content2"" class=""tab-content animated fadeIn"">
+                            <div class="" text-right border-bottom_dash"">PHỤ LỤC 6b</div>
+                            <div class="""">
+                                <div class=""row"">
+                                    <div class=""grid_4  text-center style-text-3"">UBND TỈNH LONG AN<br>
+                                        <span class=""border-bottom""><strong>SỞ GIAO THÔNG VẬN TẢI</strong></span><br>
+                                        Số:               /SGTVT-GLHX.</div>
+                                    <div class=""grid_7  text-center style-text-3"">
+                                        CỘNG HOÀ XÃ HỘI CHỦ NGHĨA VIỆT NAM<br>
+                                        <span class=""border-bottom"">Độc lập - Tự do - Hạnh phúc</span><br>
+                                        <em>"));
+            global::System.Web.UI.WebControls.Label @__ctrl27;
+            @__ctrl27 = this.@__BuildControllblCurrentDateQK();
+            @__parser.AddParsedSubObject(@__ctrl27);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl(@"</em>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class=""clear""></div>
+
+                            <h1 class=""container_table text-center"">BÁO CÁO CẤP GIẤY PHÉP LƯU HÀNH CHO XE QUÁ KHỔ GIỚI HẠN</h1>
+                            <div class=""container_table text-center"">"));
+            global::System.Web.UI.WebControls.Label @__ctrl28;
+            @__ctrl28 = this.@__BuildControllblFromDateToDateQK();
+            @__parser.AddParsedSubObject(@__ctrl28);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("</div>\r\n                            <div class=\"container_table text-center\"><str" +
+                        "ong>Kính gửi: Tổng Cục Đường Bộ Việt Nam</strong></div>\r\n                       " +
+                        "     <table border=\"1\" bordercolor=\"#dcdcdc\" cellspacing=\"0\" cellpadding=\"0\" wid" +
+                        "th=\"100%\" class=\"report-table style-text-3\">\r\n                                <t" +
+                        "r class=\"bg-5\">\r\n                                    <td width=\"6%\"><strong>&nbs" +
+                        "p;</strong></td>\r\n                                    <td width=\"9%\" class=\"padd" +
+                        "ing style-text-4\"><strong>Xe 02 trục đơn</strong></td>\r\n                        " +
+                        "            <td width=\"7%\" class=\"padding style-text-4\"><strong>Xe 03 trục</stro" +
+                        "ng></td>\r\n                                    <td width=\"7%\" class=\"padding styl" +
+                        "e-text-4\"><strong>Xe 04 trục</strong></td>\r\n                                    " +
+                        "<td width=\"12%\" class=\"padding style-text-4\"><strong>Tổ hợp xe - sơ mi rơ mooc (" +
+                        "03    trục)</strong></td>\r\n                                    <td width=\"12%\" c" +
+                        "lass=\"padding style-text-4\"><strong>Tổ hợp xe - sơ mi rơ mooc (04    trục)</stro" +
+                        "ng></td>\r\n                                    <td width=\"12%\" class=\"padding sty" +
+                        "le-text-4\"><strong>Tổ hợp xe - sơ mi rơ mooc (05    trục)</strong></td>\r\n       " +
+                        "                             <td width=\"7%\" class=\"padding style-text-4\"><strong" +
+                        ">Tổng cộng</strong></td>\r\n                                    <td width=\"12%\" cl" +
+                        "ass=\"padding style-text-4\"><strong>Vận chuyển hàng quá khổ giới hạn</strong></td" +
+                        ">\r\n                                    <td width=\"15%\" class=\"padding text_cente" +
+                        "r\"><strong>Ghi chú</strong></td>\r\n                                </tr>\r\n       " +
+                        "                         <tr class=\"text-center\">\r\n                             " +
+                        "       <td class=\"text-center\">&nbsp;</td>\r\n                                    " +
+                        "<td class=\"text-center padding-1\">1</td>\r\n                                    <t" +
+                        "d class=\"text-center\">2</td>\r\n                                    <td class=\"tex" +
+                        "t-center\">3</td>\r\n                                    <td class=\"text-center\">4<" +
+                        "/td>\r\n                                    <td class=\"text-center\">5</td>\r\n      " +
+                        "                              <td class=\"text-center\">6</td>\r\n                  " +
+                        "                  <td class=\"text-center\">7</td>\r\n                              " +
+                        "      <td class=\"text-center\">8</td>\r\n                                    <td cl" +
+                        "ass=\"text-center\">9</td>\r\n                                </tr>\r\n               " +
+                        "                 <tr>\r\n                                    <td nowrap class=\"pad" +
+                        "ding\">Quốc    lộ </td>\r\n<td class=\"text-center\">"));
+            global::System.Web.UI.WebControls.Label @__ctrl29;
+            @__ctrl29 = this.@__BuildControllblQuaKho_Xe2Truc_QuocLo();
+            @__parser.AddParsedSubObject(@__ctrl29);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("</td>\r\n<td class=\"text-center\">"));
+            global::System.Web.UI.WebControls.Label @__ctrl30;
+            @__ctrl30 = this.@__BuildControllblQuaKho_Xe3Truc_QuocLo();
+            @__parser.AddParsedSubObject(@__ctrl30);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("</td>\r\n<td class=\"text-center\">"));
+            global::System.Web.UI.WebControls.Label @__ctrl31;
+            @__ctrl31 = this.@__BuildControllblQuaKho_Xe4Truc_QuocLo();
+            @__parser.AddParsedSubObject(@__ctrl31);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("</td>\r\n<td class=\"text-center\">"));
+            global::System.Web.UI.WebControls.Label @__ctrl32;
+            @__ctrl32 = this.@__BuildControllblQuaKho_XeRM3Truc_QuocLo();
+            @__parser.AddParsedSubObject(@__ctrl32);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("</td>\r\n<td class=\"text-center\">"));
+            global::System.Web.UI.WebControls.Label @__ctrl33;
+            @__ctrl33 = this.@__BuildControllblQuaKho_XeRM4Truc_QuocLo();
+            @__parser.AddParsedSubObject(@__ctrl33);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("</td>\r\n<td class=\"text-center\">"));
+            global::System.Web.UI.WebControls.Label @__ctrl34;
+            @__ctrl34 = this.@__BuildControllblQuaKho_XeRM5Truc_QuocLo();
+            @__parser.AddParsedSubObject(@__ctrl34);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("</td>\r\n<td class=\"text-center\">"));
+            global::System.Web.UI.WebControls.Label @__ctrl35;
+            @__ctrl35 = this.@__BuildControllblQuaKho_TongCong_QuocLo();
+            @__parser.AddParsedSubObject(@__ctrl35);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("</td>\r\n<td class=\"text-center\">"));
+            global::System.Web.UI.WebControls.Label @__ctrl36;
+            @__ctrl36 = this.@__BuildControllblQuaKho_TongCong_QuocLo8();
+            @__parser.AddParsedSubObject(@__ctrl36);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl(@"</td>
+                                    <td class=""text-center""></td>
+                                </tr>
+                                <tr>
+                                    <td nowrap class=""padding"">Đường    tỉnh</td>
+<td class=""text-center"">"));
+            global::System.Web.UI.WebControls.Label @__ctrl37;
+            @__ctrl37 = this.@__BuildControllblQuaKho_Xe2Truc_DuongTinh();
+            @__parser.AddParsedSubObject(@__ctrl37);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("</td>\r\n<td class=\"text-center\">"));
+            global::System.Web.UI.WebControls.Label @__ctrl38;
+            @__ctrl38 = this.@__BuildControllblQuaKho_Xe3Truc_DuongTinh();
+            @__parser.AddParsedSubObject(@__ctrl38);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("</td>\r\n<td class=\"text-center\">"));
+            global::System.Web.UI.WebControls.Label @__ctrl39;
+            @__ctrl39 = this.@__BuildControllblQuaKho_Xe4Truc_DuongTinh();
+            @__parser.AddParsedSubObject(@__ctrl39);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("</td>\r\n<td class=\"text-center\">"));
+            global::System.Web.UI.WebControls.Label @__ctrl40;
+            @__ctrl40 = this.@__BuildControllblQuaKho_XeRM3Truc_DuongTinh();
+            @__parser.AddParsedSubObject(@__ctrl40);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("</td>\r\n<td class=\"text-center\">"));
+            global::System.Web.UI.WebControls.Label @__ctrl41;
+            @__ctrl41 = this.@__BuildControllblQuaKho_XeRM4Truc_DuongTinh();
+            @__parser.AddParsedSubObject(@__ctrl41);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("</td>\r\n<td class=\"text-center\">"));
+            global::System.Web.UI.WebControls.Label @__ctrl42;
+            @__ctrl42 = this.@__BuildControllblQuaKho_XeRM5Truc_DuongTinh();
+            @__parser.AddParsedSubObject(@__ctrl42);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("</td>\r\n<td class=\"text-center\">"));
+            global::System.Web.UI.WebControls.Label @__ctrl43;
+            @__ctrl43 = this.@__BuildControllblQuaKho_TongCong_DuongTinh();
+            @__parser.AddParsedSubObject(@__ctrl43);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("</td>\r\n<td class=\"text-center\">"));
+            global::System.Web.UI.WebControls.Label @__ctrl44;
+            @__ctrl44 = this.@__BuildControllblQuaKho_TongCong_DuongTinh8();
+            @__parser.AddParsedSubObject(@__ctrl44);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl(@"</td>
+                                    <td class=""text-center""></td>
+                                </tr>
+                                <tr>
+                                    <td nowrap class=""padding""><strong>Tổng    cộng</strong></td>
+<td class=""text-center"">"));
+            global::System.Web.UI.WebControls.Label @__ctrl45;
+            @__ctrl45 = this.@__BuildControllblQuaKho_Xe2Truc_TongCong();
+            @__parser.AddParsedSubObject(@__ctrl45);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("</td>\r\n<td class=\"text-center\">"));
+            global::System.Web.UI.WebControls.Label @__ctrl46;
+            @__ctrl46 = this.@__BuildControllblQuaKho_Xe3Truc_TongCong();
+            @__parser.AddParsedSubObject(@__ctrl46);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("</td>\r\n<td class=\"text-center\">"));
+            global::System.Web.UI.WebControls.Label @__ctrl47;
+            @__ctrl47 = this.@__BuildControllblQuaKho_Xe4Truc_TongCong();
+            @__parser.AddParsedSubObject(@__ctrl47);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("</td>\r\n<td class=\"text-center\">"));
+            global::System.Web.UI.WebControls.Label @__ctrl48;
+            @__ctrl48 = this.@__BuildControllblQuaKho_XeRM3Truc_TongCong();
+            @__parser.AddParsedSubObject(@__ctrl48);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("</td>\r\n<td class=\"text-center\">"));
+            global::System.Web.UI.WebControls.Label @__ctrl49;
+            @__ctrl49 = this.@__BuildControllblQuaKho_XeRM4Truc_TongCong();
+            @__parser.AddParsedSubObject(@__ctrl49);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("</td>\r\n<td class=\"text-center\">"));
+            global::System.Web.UI.WebControls.Label @__ctrl50;
+            @__ctrl50 = this.@__BuildControllblQuaKho_XeRM5Truc_TongCong();
+            @__parser.AddParsedSubObject(@__ctrl50);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("</td>\r\n<td class=\"text-center\">"));
+            global::System.Web.UI.WebControls.Label @__ctrl51;
+            @__ctrl51 = this.@__BuildControllblQuaKho_TongCong_TongCong();
+            @__parser.AddParsedSubObject(@__ctrl51);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("</td>\r\n<td class=\"text-center\">"));
+            global::System.Web.UI.WebControls.Label @__ctrl52;
+            @__ctrl52 = this.@__BuildControllblQuaKho_TongCong_TongCong8();
+            @__parser.AddParsedSubObject(@__ctrl52);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl(@"</td>
+                                    <td class=""text-center""></td>
+                                </tr>
+                            </table>
+                            <div class=""clear""></div>
+                            <div class=""warning"">*Ghi chú: Mỗi Giấy Phép Lưu  hành xe cấp cho cả hai tuyến (Quốc lộ và Đường tỉnh)</div>
+                        </div>
+                    </li>
+                    <li>
+                        <input type=""radio"" name=""tabs"" id=""tab3"">
+                        <label for=""tab3"">QUÁ TẢI TRỌNG</label>
+                        <div id=""tab-content3"" class=""tab-content animated fadeIn"">
+                            <div class="" text-right border-bottom_dash"">PHỤ LỤC 6c</div>
+                            <div class="""">
+                                <div class=""row"">
+                                    <div class=""grid_4  text-center style-text-3"">UBND TỈNH LONG AN<br>
+                                        <span class=""border-bottom""><strong>SỞ GIAO THÔNG VẬN TẢI</strong></span><br>
+                                        Số:               /SGTVT-GLHX.</div>
+                                    <div class=""grid_7  text-center style-text-3"">
+                                        CỘNG HOÀ XÃ HỘI CHỦ NGHĨA VIỆT NAM<br>
+                                        <span class=""border-bottom"">Độc lập - Tự do - Hạnh phúc</span><br>
+                                        <em>"));
+            global::System.Web.UI.WebControls.Label @__ctrl53;
+            @__ctrl53 = this.@__BuildControllblCurrentDateQT();
+            @__parser.AddParsedSubObject(@__ctrl53);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl(@"</em>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class=""clear""></div>
+                            <h1 class=""container_table text-center"">BÁO CÁO CẤP GIẤY PHÉP LƯU HÀNH CHO XE QUÁ TẢI TRỌNG</h1>
+                            <div class=""container_table text-center"">"));
+            global::System.Web.UI.WebControls.Label @__ctrl54;
+            @__ctrl54 = this.@__BuildControllblFromDateToDateQT();
+            @__parser.AddParsedSubObject(@__ctrl54);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("</div>\r\n                            <div class=\"container_table text-center\"><str" +
+                        "ong>Kính gửi: Tổng Cục Đường Bộ Việt Nam</strong></div>\r\n                       " +
+                        "     <table border=\"1\" bordercolor=\"#dcdcdc\" cellspacing=\"0\" cellpadding=\"0\" wid" +
+                        "th=\"100%\" class=\"report-table style-text-3\">\r\n                                <t" +
+                        "r class=\"bg-5\">\r\n                                    <td width=\"6%\"><strong>&nbs" +
+                        "p;</strong></td>\r\n                                    <td width=\"9%\" class=\"padd" +
+                        "ing style-text-4\"><strong>Xe 02 trục đơn</strong></td>\r\n                        " +
+                        "            <td width=\"7%\" class=\"padding style-text-4\"><strong>Xe 03 trục</stro" +
+                        "ng></td>\r\n                                    <td width=\"7%\" class=\"padding styl" +
+                        "e-text-4\"><strong>Xe 04 trục</strong></td>\r\n                                    " +
+                        "<td width=\"12%\" class=\"padding style-text-4\"><strong>Tổ hợp xe - sơ mi rơ mooc (" +
+                        "03    trục)</strong></td>\r\n                                    <td width=\"12%\" c" +
+                        "lass=\"padding style-text-4\"><strong>Tổ hợp xe - sơ mi rơ mooc (04    trục)</stro" +
+                        "ng></td>\r\n                                    <td width=\"12%\" class=\"padding sty" +
+                        "le-text-4\"><strong>Tổ hợp xe - sơ mi rơ mooc (05    trục)</strong></td>\r\n       " +
+                        "                             <td width=\"7%\" class=\"padding style-text-4\"><strong" +
+                        ">Tổng cộng</strong></td>\r\n                                    <td width=\"13%\" cl" +
+                        "ass=\"padding style-text-4\"><strong>Vận chuyển hàng quá tải trọng</strong></td>\r\n" +
+                        "                                    <td width=\"15%\" class=\"padding text_center s" +
+                        "tyle-text-4\"><strong>Ghi chú</strong></td>\r\n                                </tr" +
+                        ">\r\n                                <tr class=\"text-center\">\r\n                   " +
+                        "                 <td class=\"text-center\">&nbsp;</td>\r\n                          " +
+                        "          <td class=\"text-center padding-1\">1</td>\r\n                            " +
+                        "        <td class=\"text-center\">2</td>\r\n                                    <td " +
+                        "class=\"text-center\">3</td>\r\n                                    <td class=\"text-" +
+                        "center\">4</td>\r\n                                    <td class=\"text-center\">5</t" +
+                        "d>\r\n                                    <td class=\"text-center\">6</td>\r\n        " +
+                        "                            <td class=\"text-center\">7</td>\r\n                    " +
+                        "                <td class=\"text-center\">8</td>\r\n                                " +
+                        "    <td class=\"text-center\">9</td>\r\n                                </tr>\r\n     " +
+                        "                           <tr>\r\n                                    <td nowrap " +
+                        "class=\"padding\">Quốc    lộ </td>\r\n                                    <td class=" +
+                        "\"text-center\">"));
+            global::System.Web.UI.WebControls.Label @__ctrl55;
+            @__ctrl55 = this.@__BuildControllblQuaTai_Xe2Truc_QuocLo();
+            @__parser.AddParsedSubObject(@__ctrl55);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("</td>\r\n                                    <td class=\"text-center\">"));
+            global::System.Web.UI.WebControls.Label @__ctrl56;
+            @__ctrl56 = this.@__BuildControllblQuaTai_Xe3Truc_QuocLo();
+            @__parser.AddParsedSubObject(@__ctrl56);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("</td>\r\n                                    <td class=\"text-center\">"));
+            global::System.Web.UI.WebControls.Label @__ctrl57;
+            @__ctrl57 = this.@__BuildControllblQuaTai_Xe4Truc_QuocLo();
+            @__parser.AddParsedSubObject(@__ctrl57);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("</td>\r\n                                    <td class=\"text-center\">"));
+            global::System.Web.UI.WebControls.Label @__ctrl58;
+            @__ctrl58 = this.@__BuildControllblQuaTai_XeRM3Truc_QuocLo();
+            @__parser.AddParsedSubObject(@__ctrl58);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("</td>\r\n                                    <td class=\"text-center\">"));
+            global::System.Web.UI.WebControls.Label @__ctrl59;
+            @__ctrl59 = this.@__BuildControllblQuaTai_XeRM4Truc_QuocLo();
+            @__parser.AddParsedSubObject(@__ctrl59);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("</td>\r\n                                    <td class=\"text-center\">"));
+            global::System.Web.UI.WebControls.Label @__ctrl60;
+            @__ctrl60 = this.@__BuildControllblQuaTai_XeRM5Truc_QuocLo();
+            @__parser.AddParsedSubObject(@__ctrl60);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("</td>\r\n                                    <td class=\"text-center\">"));
+            global::System.Web.UI.WebControls.Label @__ctrl61;
+            @__ctrl61 = this.@__BuildControllblQuaTai_TongCong_QuocLo();
+            @__parser.AddParsedSubObject(@__ctrl61);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("</td>\r\n                                    <td class=\"text-center\">"));
+            global::System.Web.UI.WebControls.Label @__ctrl62;
+            @__ctrl62 = this.@__BuildControllblQuaTai_TongCong_QuocLo8();
+            @__parser.AddParsedSubObject(@__ctrl62);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl(@"</td>
+
+                                    <td class=""text-center""></td>
+                                </tr>
+                                <tr>
+                                    <td nowrap class=""padding"">Đường    tỉnh</td>
+                                    <td class=""text-center"">"));
+            global::System.Web.UI.WebControls.Label @__ctrl63;
+            @__ctrl63 = this.@__BuildControllblQuaTai_Xe2Truc_DuongTinh();
+            @__parser.AddParsedSubObject(@__ctrl63);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("</td>\r\n                                    <td class=\"text-center\">"));
+            global::System.Web.UI.WebControls.Label @__ctrl64;
+            @__ctrl64 = this.@__BuildControllblQuaTai_Xe3Truc_DuongTinh();
+            @__parser.AddParsedSubObject(@__ctrl64);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("</td>\r\n                                    <td class=\"text-center\">"));
+            global::System.Web.UI.WebControls.Label @__ctrl65;
+            @__ctrl65 = this.@__BuildControllblQuaTai_Xe4Truc_DuongTinh();
+            @__parser.AddParsedSubObject(@__ctrl65);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("</td>\r\n                                    <td class=\"text-center\">"));
+            global::System.Web.UI.WebControls.Label @__ctrl66;
+            @__ctrl66 = this.@__BuildControllblQuaTai_XeRM3Truc_DuongTinh();
+            @__parser.AddParsedSubObject(@__ctrl66);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("</td>\r\n                                    <td class=\"text-center\">"));
+            global::System.Web.UI.WebControls.Label @__ctrl67;
+            @__ctrl67 = this.@__BuildControllblQuaTai_XeRM4Truc_DuongTinh();
+            @__parser.AddParsedSubObject(@__ctrl67);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("</td>\r\n                                    <td class=\"text-center\">"));
+            global::System.Web.UI.WebControls.Label @__ctrl68;
+            @__ctrl68 = this.@__BuildControllblQuaTai_XeRM5Truc_DuongTinh();
+            @__parser.AddParsedSubObject(@__ctrl68);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("</td>\r\n                                    <td class=\"text-center\">"));
+            global::System.Web.UI.WebControls.Label @__ctrl69;
+            @__ctrl69 = this.@__BuildControllblQuaTai_TongCong_DuongTinh();
+            @__parser.AddParsedSubObject(@__ctrl69);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("</td>\r\n                                    <td class=\"text-center\">"));
+            global::System.Web.UI.WebControls.Label @__ctrl70;
+            @__ctrl70 = this.@__BuildControllblQuaTai_TongCong_DuongTinh8();
+            @__parser.AddParsedSubObject(@__ctrl70);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl(@"</td>
+                                    <td class=""text-center""></td>
+                                </tr>
+                                <tr>
+                                    <td nowrap class=""padding""><strong>Tổng    cộng</strong></td>
+                                    <td class=""text-center"">"));
+            global::System.Web.UI.WebControls.Label @__ctrl71;
+            @__ctrl71 = this.@__BuildControllblQuaTai_Xe2Truc_TongCong();
+            @__parser.AddParsedSubObject(@__ctrl71);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("</td>\r\n                                    <td class=\"text-center\">"));
+            global::System.Web.UI.WebControls.Label @__ctrl72;
+            @__ctrl72 = this.@__BuildControllblQuaTai_Xe3Truc_TongCong();
+            @__parser.AddParsedSubObject(@__ctrl72);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("</td>\r\n                                    <td class=\"text-center\">"));
+            global::System.Web.UI.WebControls.Label @__ctrl73;
+            @__ctrl73 = this.@__BuildControllblQuaTai_Xe4Truc_TongCong();
+            @__parser.AddParsedSubObject(@__ctrl73);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("</td>\r\n                                    <td class=\"text-center\">"));
+            global::System.Web.UI.WebControls.Label @__ctrl74;
+            @__ctrl74 = this.@__BuildControllblQuaTai_XeRM3Truc_TongCong();
+            @__parser.AddParsedSubObject(@__ctrl74);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("</td>\r\n                                    <td class=\"text-center\">"));
+            global::System.Web.UI.WebControls.Label @__ctrl75;
+            @__ctrl75 = this.@__BuildControllblQuaTai_XeRM4Truc_TongCong();
+            @__parser.AddParsedSubObject(@__ctrl75);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("</td>\r\n                                    <td class=\"text-center\">"));
+            global::System.Web.UI.WebControls.Label @__ctrl76;
+            @__ctrl76 = this.@__BuildControllblQuaTai_XeRM5Truc_TongCong();
+            @__parser.AddParsedSubObject(@__ctrl76);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("</td>\r\n                                    <td class=\"text-center\">"));
+            global::System.Web.UI.WebControls.Label @__ctrl77;
+            @__ctrl77 = this.@__BuildControllblQuaTai_TongCong_TongCong();
+            @__parser.AddParsedSubObject(@__ctrl77);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("</td>\r\n                                    <td class=\"text-center\">"));
+            global::System.Web.UI.WebControls.Label @__ctrl78;
+            @__ctrl78 = this.@__BuildControllblQuaTai_TongCong_TongCong8();
+            @__parser.AddParsedSubObject(@__ctrl78);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl(@"</td>
+                                    <td class=""text-center""></td>
+                                </tr>
+                            </table>
+                            <div class=""clear""></div>
+                            <div class=""warning"">*Ghi chú: Mỗi Giấy Phép Lưu  hành xe cấp cho cả hai tuyến (Quốc lộ và Đường tỉnh)</div>
+                        </div>
+                    </li>
+                </ul>
+
+            "));
             return @__ctrl;
         }
         
@@ -147,40 +2039,65 @@ namespace LongAn.DVC.WebParts.DeNghiReport {
             "artCodeGenerator", "12.0.0.0")]
         private void @__BuildControlTree(global::LongAn.DVC.WebParts.DeNghiReport.DeNghiReport @__ctrl) {
             System.Web.UI.IParserAccessor @__parser = ((System.Web.UI.IParserAccessor)(@__ctrl));
-            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl(@"
-
-<style type=""text/css"">
-.form {
-  border: 1px solid #dedede;
-  margin-bottom: 15px;
-  margin-top: 15px;
-  padding: 15px;
-}
-
-.form .row.line {
-  margin-bottom: 15px;
-}
-
-.form .button {
-  padding-bottom: 10px;
-  padding-top: 10px;
-  width: 90%;
-}
-</style>
-
-<div>
-	<div class=""row"">
-		<div class=""grid_12"">
-			<h2>
-				BÁO CÁO CẤP PHÉP LƯU HÀNH
-			</h2>
-            <div class=""form"" id=""searchform"">
-				<div class=""row line"">
-                    <div class=""grid_2"" style=""margin-top:10px"">
-                       Từ ngày:                        
-                    </div>
-                    <div class=""grid_4"">
-                        "));
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n\r\n<style type=\"text/css\">\r\n.form {\r\n  border: 1px solid #dedede;\r\n  margin-bott" +
+                        "om: 15px;\r\n  margin-top: 15px;\r\n  padding: 15px;\r\n}\r\n\r\n.form .row.line {\r\n  marg" +
+                        "in-bottom: 15px;\r\n}\r\n\r\n.form .button {\r\n  padding-bottom: 10px;\r\n  padding-top: " +
+                        "10px;\r\n  width: 90%;\r\n}\r\n\r\n/*CSS - TINA*/\r\n.tittle{ text-transform:uppercase; fo" +
+                        "nt-weight:bold; color:#fff}\r\n.no-border-bottom{ border-bottom:none;}\r\n#data_div{" +
+                        "float:left; margin-left:10px;width:930px;border-radius:0px; padding:15px; text-t" +
+                        "ransform: color:#fff; font-size:13px; border-radius:5px; border-bottom:1px #dcdc" +
+                        "dc dashed;}\r\n#data_div:hover{float:left; margin-left:10px;width:930px;border-rad" +
+                        "ius:0px; padding:15px; text-transform: color:#fff; font-size:13px; border-radius" +
+                        ":5px; background:#98CEF5;}\r\n.bg{background:#17bdde;}\r\n.bg-2{background:#dde6ed;}" +
+                        "\r\n.bg-3{background:#C8F8FC;}\r\n.bg-5{background:#bcffcd;}\r\n.format-1{ padding-top" +
+                        ":15px; padding-bottom:15px; border-radius:5px; margin-bottom:15px; border:1px #c" +
+                        "cc solid;}\r\n.row_5{float: left; width:5%; line-height:22px;padding-right:15px;}\r" +
+                        "\n.row_45{float: left; width:45%; line-height:22px; padding-left:15px; padding-ri" +
+                        "ght:15px;}\r\n.row_30{float: left; width:30%; line-height:22px; padding-left:5px; " +
+                        "padding-right:5px;}\r\n.right{ float:right}\r\n.text_center{ text-align:center}\r\n.te" +
+                        "xt_right{ text-align: right}\r\n\r\n.warning {background :#fce1c1;\r\n\tborder: 1px sol" +
+                        "id #e1b37c;\r\n\tcolor : #c37820;\r\n}\r\n.style-text-1{ color:#f66; margin-top:5px;}\r\n" +
+                        ".style-text-2{ color:#333; margin-top:5px;}\r\n.style-text-3{ margin-top:25px; mar" +
+                        "gin-bottom:15px;}\r\n.style-text-4{ font-size:11px; text-align:center}\r\n.style-p{ " +
+                        "text-align:left; padding:5px;}\r\n.border-bottom{border-bottom:1px #333 solid; pad" +
+                        "ding-bottom:5px;}\r\n.border-top{ border-top:2px #666 dotted; margin-top:20px;}\r\n." +
+                        "border-bottom_dash{border-bottom:1px #dcdcdc dashed; padding-bottom:3px;}\r\n.pad_" +
+                        "left_c1{ padding-left:15px;}\r\n.pad_left_c2{ padding-left:30px;}\r\n.padding-1{padd" +
+                        "ing:2px;}\r\n.padding{padding:10px;}\r\n.color_red{ color:#f00}\r\n.color_green{ color" +
+                        ":green}\r\n.p{ line-height:25px; text-align:justify;}\r\n.size_11{ font-size:11px;}\r" +
+                        "\ntable tr td{ padding-left:5px;padding-right:5px}\r\n\r\n/* Tabs Css */\r\n.tabs input" +
+                        "[type=radio] {\r\n    position: absolute;\r\n    /*top: -9999px;*/\r\n    left: -9999p" +
+                        "x;\r\n}\r\n.tabs {\r\n  width: 100%;\r\n  float: left;\r\n  list-style: none;\r\n  position:" +
+                        " relative;\r\n  padding: 0;\r\n  margin: 10px auto;\r\n  clear:both;\r\n  margin-bottom:" +
+                        "600px;\r\n}\r\n.tabs li{\r\n  float: left; \r\n}\r\n\r\n.tabs label {\r\n    display: block;\r\n" +
+                        "    padding: 10px 20px;\r\n    border-radius: 2px 2px 0 0;\r\n    color: #333;\r\n    " +
+                        "font-size: 17px;\r\n    font-weight: normal;\r\n    font-family: arial;\r\n    backgro" +
+                        "und: rgba(255,255,255,0.2);\r\n    cursor: pointer;\r\n    position: relative;\r\n    " +
+                        "top: 3px;\r\n    -webkit-transition: all 0.2s ease-in-out;\r\n    -moz-transition: a" +
+                        "ll 0.2s ease-in-out;\r\n    -o-transition: all 0.2s ease-in-out;\r\n    transition: " +
+                        "all 0.2s ease-in-out;\r\n}\r\n.tabs label:hover {\r\n  background:#dcdcdc;\r\n  top: 0;\r" +
+                        "\n}\r\n\r\n[id^=tab]:checked + label {\r\n  background: #dcdcdc;\r\n  color:#333;\r\n  top:" +
+                        " 0;\r\n}\r\n\r\n[id^=tab]:checked ~ [id^=tab-content] {\r\n    display: block;\r\n}\r\n.tab-" +
+                        "content{\r\n  z-index: 2;\r\n  display: none;\r\n  text-align: left;\r\n  width: 100%;\r\n" +
+                        "  font-size: 13px;\r\n  line-height: 140%;\r\n  padding-top: 10px;\r\n  background: #e" +
+                        "ee;\r\n  border:1px #dcdcdc solid;\r\n  padding: 15px;\r\n  color:#333;\r\n  position: a" +
+                        "bsolute;\r\n  /*top: 53px;*/\r\n  left: 0;\r\n  box-sizing: border-box;\r\n  -webkit-ani" +
+                        "mation-duration: 0.5s;\r\n  -o-animation-duration: 0.5s;\r\n  -moz-animation-duratio" +
+                        "n: 0.5s;\r\n  animation-duration: 0.5s;\r\n}\r\n.container_table .tab-content h1{\r\n   " +
+                        " font-size:20px;\r\n    color: #303257;\r\n    padding: 10px;\r\n    text-transform: u" +
+                        "ppercase;\r\n    font-family: Arial,\"Helvetica Neue\",Helvetica,sans-serif;\r\n}\r\n.fa" +
+                        "deIn {\r\n    animation-name: fadeIn;\r\n}\r\n.btt{\r\n  border: none;\r\n  background: gr" +
+                        "een;\r\n  color: #fff;\r\n  display: inline-block;\r\n  padding: 5px 10px;\r\n  text-ali" +
+                        "gn: center;\r\n  border-radius:5px; width:150px; \r\n}\r\n.btt button:hover {\r\n  backg" +
+                        "round: #01648d;\r\n}\r\n.text-bold{ font-weight:bold}\r\n\r\n.report-table {\r\n    border" +
+                        "-collapse: collapse;\r\n    border: 1px solid #dcdcdc;\r\n}\r\n.report-table td {\r\n   " +
+                        " border: 1px solid #dcdcdc;\r\n}\r\n.container_table, .container_table .row {\r\nline-" +
+                        "height: 25px;\r\n}\r\n</style>\r\n\r\n<div>\r\n\t<div class=\"row\">\r\n\t\t<div class=\"grid_12\">" +
+                        "\r\n\t\t\t<h2>\r\n\t\t\t\tBÁO CÁO CẤP PHÉP LƯU HÀNH\r\n\t\t\t</h2>\r\n            <div class=\"form" +
+                        "\" id=\"searchform\">\r\n\t\t\t\t<div class=\"row line\">\r\n                    <div class=\"" +
+                        "grid_2\" style=\"margin-top:10px\">\r\n                       Từ ngày:               " +
+                        "         \r\n                    </div>\r\n                    <div class=\"grid_4\">\r" +
+                        "\n                        "));
             global::Microsoft.SharePoint.WebControls.DateTimeControl @__ctrl1;
             @__ctrl1 = this.@__BuildControldtcFromDate();
             @__parser.AddParsedSubObject(@__ctrl1);
@@ -195,13 +2112,20 @@ namespace LongAn.DVC.WebParts.DeNghiReport {
                         "</div>\r\n                <div>\r\n                    <div class=\"grid_2\">\r\n       " +
                         "                 "));
             global::System.Web.UI.WebControls.Button @__ctrl3;
-            @__ctrl3 = this.@__BuildControlbtnExportExcel();
+            @__ctrl3 = this.@__BuildControlbtnViewReport();
             @__parser.AddParsedSubObject(@__ctrl3);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                    </div>\r\n                    <div class=\"grid_1\">\r\n\r\n       " +
+                        "             </div>\r\n                    <div class=\"grid_2\">\r\n                 " +
+                        "       "));
+            global::System.Web.UI.WebControls.Button @__ctrl4;
+            @__ctrl4 = this.@__BuildControlbtnExportExcel();
+            @__parser.AddParsedSubObject(@__ctrl4);
+            @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                    </div>\r\n                    <div class=\"clear\"></div>\r\n    " +
+                        "            </div>\r\n            </div>\r\n\r\n            "));
+            global::System.Web.UI.WebControls.Panel @__ctrl5;
+            @__ctrl5 = this.@__BuildControlpnlViewBaoCaoCapPhepLuuHanh();
+            @__parser.AddParsedSubObject(@__ctrl5);
             @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl(@"
-                    </div>
-                    <div class=""clear""></div>
-                </div>
-            </div>
 		</div>
 	</div>
 	<div class=""clear""></div>
@@ -219,15 +2143,15 @@ namespace LongAn.DVC.WebParts.DeNghiReport {
                     </div>
                     <div class=""grid_10"">
                         "));
-            global::System.Web.UI.WebControls.DropDownList @__ctrl4;
-            @__ctrl4 = this.@__BuildControlddlQuarterPicker();
-            @__parser.AddParsedSubObject(@__ctrl4);
+            global::System.Web.UI.WebControls.DropDownList @__ctrl6;
+            @__ctrl6 = this.@__BuildControlddlQuarterPicker();
+            @__parser.AddParsedSubObject(@__ctrl6);
             @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl("\r\n                    </div>\r\n                    <div class=\"clear\"></div>\r\n\t\t\t\t" +
                         "</div>\r\n                <div>\r\n                    <div class=\"grid_2\">\r\n       " +
                         "                 "));
-            global::System.Web.UI.WebControls.Button @__ctrl5;
-            @__ctrl5 = this.@__BuildControlbtnExportExcelQuarter();
-            @__parser.AddParsedSubObject(@__ctrl5);
+            global::System.Web.UI.WebControls.Button @__ctrl7;
+            @__ctrl7 = this.@__BuildControlbtnExportExcelQuarter();
+            @__parser.AddParsedSubObject(@__ctrl7);
             @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl(@"
                     </div>
                     <div class=""clear""></div>
