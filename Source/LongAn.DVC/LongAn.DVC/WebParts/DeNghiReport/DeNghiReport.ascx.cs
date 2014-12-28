@@ -1297,6 +1297,955 @@ namespace LongAn.DVC.WebParts.DeNghiReport
                 LoggingServices.LogException(ex);
             }
         }
+
+        protected void btnViewReport_Click(object sender, EventArgs e)
+        {
+            if (!dtcFromDate.IsDateEmpty && dtcFromDate.IsValid && !dtcToDate.IsDateEmpty && dtcToDate.IsValid)
+            {
+                GenerateViewReport(dtcFromDate.SelectedDate, dtcToDate.SelectedDate);
+            }
+        }
+
+        protected void GenerateViewReport(DateTime fromDate, DateTime toDate)
+        {
+            try
+            {
+                SPSecurity.RunWithElevatedPrivileges(delegate()
+                {
+                    using (SPSite site = new SPSite(SPContext.Current.Site.ID))
+                    {
+                        using (SPWeb web = site.OpenWeb(SPContext.Current.Web.ID))
+                        {
+                            #region Variable Qua Tai - QT
+                            //int QT_2Truc_QuocLo = 0;
+                            //int QT_2Truc_DuongTinh = 0;
+                            //int QT_2Truc_TongCong = 0;
+
+                            //int QT_3Truc_QuocLo = 0;
+                            //int QT_3Truc_DuongTinh = 0;
+                            //int QT_3Truc_TongCong = 0;
+
+                            //int QT_4Truc_QuocLo = 0;
+                            //int QT_4Truc_DuongTinh = 0;
+                            //int QT_4Truc_TongCong = 0;
+
+                            //int QT_RM3Truc_QuocLo = 0;
+                            //int QT_RM3Truc_DuongTinh = 0;
+                            //int QT_RM3Truc_TongCong = 0;
+
+                            //int QT_RM4Truc_QuocLo = 0;
+                            //int QT_RM4Truc_DuongTinh = 0;
+                            //int QT_RM4Truc_TongCong = 0;
+
+                            //int QT_RM5Truc_QuocLo = 0;
+                            //int QT_RM5Truc_DuongTinh = 0;
+                            //int QT_RM5Truc_TongCong = 0;
+
+                            //int QT_TongCong_QuocLo = 0;
+                            //int QT_TongCong_DuongTinh = 0;
+                            //int QT_TongCong_TongCong = 0;
+                            #endregion Variable Qua Tai - QT
+
+                            #region Variable Qua Kho - QK
+                            //int QK_2Truc_QuocLo = 0;
+                            //int QK_2Truc_DuongTinh = 0;
+                            //int QK_2Truc_TongCong = 0;
+
+                            //int QK_3Truc_QuocLo = 0;
+                            //int QK_3Truc_DuongTinh = 0;
+                            //int QK_3Truc_TongCong = 0;
+
+                            //int QK_4Truc_QuocLo = 0;
+                            //int QK_4Truc_DuongTinh = 0;
+                            //int QK_4Truc_TongCong = 0;
+
+                            //int QK_RM3Truc_QuocLo = 0;
+                            //int QK_RM3Truc_DuongTinh = 0;
+                            //int QK_RM3Truc_TongCong = 0;
+
+                            //int QK_RM4Truc_QuocLo = 0;
+                            //int QK_RM4Truc_DuongTinh = 0;
+                            //int QK_RM4Truc_TongCong = 0;
+
+                            //int QK_RM5Truc_QuocLo = 0;
+                            //int QK_RM5Truc_DuongTinh = 0;
+                            //int QK_RM5Truc_TongCong = 0;
+
+                            //int QK_TongCong_QuocLo = 0;
+                            //int QK_TongCong_DuongTinh = 0;
+                            //int QK_TongCong_TongCong = 0;
+                            #endregion Variable Qua Kho - QK
+
+                            #region Variable Qua Tai va Qua Kho - QTQK
+                            //int QTQK_2Truc_QuocLo = 0;
+                            //int QTQK_2Truc_DuongTinh = 0;
+                            //int QTQK_2Truc_TongCong = 0;
+
+                            //int QTQK_3Truc_QuocLo = 0;
+                            //int QTQK_3Truc_DuongTinh = 0;
+                            //int QTQK_3Truc_TongCong = 0;
+
+                            //int QTQK_4Truc_QuocLo = 0;
+                            //int QTQK_4Truc_DuongTinh = 0;
+                            //int QTQK_4Truc_TongCong = 0;
+
+                            //int QTQK_RM3Truc_QuocLo = 0;
+                            //int QTQK_RM3Truc_DuongTinh = 0;
+                            //int QTQK_RM3Truc_TongCong = 0;
+
+                            //int QTQK_RM4Truc_QuocLo = 0;
+                            //int QTQK_RM4Truc_DuongTinh = 0;
+                            //int QTQK_RM4Truc_TongCong = 0;
+
+                            //int QTQK_RM5Truc_QuocLo = 0;
+                            //int QTQK_RM5Truc_DuongTinh = 0;
+                            //int QTQK_RM5Truc_TongCong = 0;
+
+                            //int QTQK_TongCong_QuocLo = 0;
+                            //int QTQK_TongCong_DuongTinh = 0;
+                            //int QTQK_TongCong_TongCong = 0;
+                            #endregion Variable Qua Tai va Qua Kho - QTQK
+
+                            DeNghiReportModel modelQuaTai = new DeNghiReportModel();
+                            DeNghiReportModel modelQuaKho = new DeNghiReportModel();
+                            DeNghiReportModel modelQuaTaiQuaKho = new DeNghiReportModel();
+
+
+                            string deNghiUrl = (web.ServerRelativeUrl + Constants.ListUrlDeNghiCapPhep).Replace("//", "/");
+                            SPList deNghiList = web.GetList(deNghiUrl);
+
+                            string caml = string.Empty;
+
+                            var expressions = new List<Expression<Func<SPListItem, bool>>>();
+
+                            //var expressionsOr = new List<Expression<Func<SPListItem, bool>>>();
+                            //expressionsOr.Add(x => (string)x[Constants.FieldTrangThai] == ((int)TrangThaiHoSo.DuocCapPhep).ToString());
+                            //expressionsOr.Add(x => (string)x[Constants.FieldTrangThai] == ((int)TrangThaiHoSo.HoanThanh).ToString());
+                            //expressionsOr.Add(x => (string)x[Constants.FieldTrangThai] == ((int)TrangThaiHoSo.ChuaHoanThanh).ToString());
+
+                            //if (expressionsOr.Count > 0)
+                            //{
+                            //var orExpr = ExpressionsHelper.CombineOr(expressionsOr);
+                            //expressions.Add(orExpr);
+                            //}
+
+                            var expressionsAnd = new List<Expression<Func<SPListItem, bool>>>();
+                            //expressionsAnd.Add(x => x[Fields.NgayDuocCapPhep] != null);
+                            expressionsAnd.Add(x => (DateTime)x[Fields.NgayDuocCapPhep] >= fromDate);
+                            expressionsAnd.Add(x => (DateTime)x[Fields.NgayDuocCapPhep] < toDate.AddDays(1));
+
+                            //if (expressionsAnd.Count > 0)
+                            //{
+                            var andExpr = ExpressionsHelper.CombineAnd(expressionsAnd);
+                            expressions.Add(andExpr);
+                            //}
+
+                            caml = Camlex.Query().WhereAll(expressions).ToString();
+
+                            SPQuery spQuery = new SPQuery();
+                            spQuery.Query = caml;
+
+                            SPListItemCollection items = deNghiList.GetItems(spQuery);
+
+                            if (items != null && items.Count > 0)
+                            {
+                                foreach (SPListItem item in items)
+                                {
+                                    try
+                                    {
+                                        bool isAddedAlready = false;
+
+                                        int soTrucCuaXe = 0;
+
+                                        bool resultSoTrucCuaXe = false;
+                                        if (item[Constants.FieldSoTrucCuaXe] != null)
+                                        {
+                                            resultSoTrucCuaXe = int.TryParse(item[Constants.FieldSoTrucCuaXe].ToString(), out soTrucCuaXe);
+                                        }
+
+                                        int soTrucCuaRoMooc = 0;
+
+                                        bool resultSoTrucCuaRoMooc = false;
+                                        if (item[Constants.FieldSoTrucCuaRoMooc] != null)
+                                        {
+                                            resultSoTrucCuaRoMooc = int.TryParse(item[Constants.FieldSoTrucCuaRoMooc].ToString(), out soTrucCuaRoMooc);
+                                        }
+
+                                        LoaiCapPhep loaiCapPhep = GetLoaiCapPhep(item[Constants.FieldLoaiCapPhep]);
+
+                                        LoaiDuong loaiDuong = GetLoaiDuong(item[Constants.FieldLoaiDuong]);
+
+                                        if (resultSoTrucCuaXe == true)
+                                        {
+                                            switch (soTrucCuaXe)
+                                            {
+                                                case 2:
+                                                    switch (loaiCapPhep)
+                                                    {
+                                                        case LoaiCapPhep.QuaTai:
+                                                            switch (loaiDuong)
+                                                            {
+                                                                case LoaiDuong.QuocLo:
+                                                                    modelQuaTai.Xe2Truc_QuocLo += 1;
+                                                                    modelQuaTai.Xe2Truc_TongCong += 1;
+
+                                                                    modelQuaTai.TongCong_QuocLo += 1;
+                                                                    modelQuaTai.TongCong_TongCong += 1;
+                                                                    isAddedAlready = true;
+                                                                    break;
+                                                                case LoaiDuong.DuongTinh:
+                                                                    modelQuaTai.Xe2Truc_DuongTinh += 1;
+                                                                    modelQuaTai.Xe2Truc_TongCong += 1;
+
+                                                                    modelQuaTai.TongCong_DuongTinh += 1;
+                                                                    modelQuaTai.TongCong_TongCong += 1;
+                                                                    isAddedAlready = true;
+                                                                    break;
+                                                                case LoaiDuong.QuocLoVaDuongTinh:
+                                                                    modelQuaTai.Xe2Truc_QuocLo += 1;
+                                                                    modelQuaTai.Xe2Truc_DuongTinh += 1;
+                                                                    modelQuaTai.Xe2Truc_TongCong += 1;
+
+                                                                    modelQuaTai.TongCong_QuocLo += 1;
+                                                                    modelQuaTai.TongCong_DuongTinh += 1;
+                                                                    modelQuaTai.TongCong_TongCong += 1;
+                                                                    isAddedAlready = true;
+                                                                    break;
+                                                            }
+                                                            break;
+                                                        case LoaiCapPhep.QuaKho:
+                                                            switch (loaiDuong)
+                                                            {
+                                                                case LoaiDuong.QuocLo:
+                                                                    modelQuaKho.Xe2Truc_QuocLo += 1;
+                                                                    modelQuaKho.Xe2Truc_TongCong += 1;
+
+                                                                    modelQuaKho.TongCong_QuocLo += 1;
+                                                                    modelQuaKho.TongCong_TongCong += 1;
+                                                                    isAddedAlready = true;
+                                                                    break;
+                                                                case LoaiDuong.DuongTinh:
+                                                                    modelQuaKho.Xe2Truc_DuongTinh += 1;
+                                                                    modelQuaKho.Xe2Truc_TongCong += 1;
+
+                                                                    modelQuaKho.TongCong_DuongTinh += 1;
+                                                                    modelQuaKho.TongCong_TongCong += 1;
+                                                                    isAddedAlready = true;
+                                                                    break;
+                                                                case LoaiDuong.QuocLoVaDuongTinh:
+                                                                    modelQuaKho.Xe2Truc_QuocLo += 1;
+                                                                    modelQuaKho.Xe2Truc_DuongTinh += 1;
+                                                                    modelQuaKho.Xe2Truc_TongCong += 1;
+
+                                                                    modelQuaKho.TongCong_QuocLo += 1;
+                                                                    modelQuaKho.TongCong_DuongTinh += 1;
+                                                                    modelQuaKho.TongCong_TongCong += 1;
+                                                                    isAddedAlready = true;
+                                                                    break;
+                                                            }
+                                                            break;
+                                                        case LoaiCapPhep.QuaTaiVaQuaKho:
+                                                            switch (loaiDuong)
+                                                            {
+                                                                case LoaiDuong.QuocLo:
+                                                                    modelQuaTaiQuaKho.Xe2Truc_QuocLo += 1;
+                                                                    modelQuaTaiQuaKho.Xe2Truc_TongCong += 1;
+
+                                                                    modelQuaTaiQuaKho.TongCong_QuocLo += 1;
+                                                                    modelQuaTaiQuaKho.TongCong_TongCong += 1;
+                                                                    isAddedAlready = true;
+                                                                    break;
+                                                                case LoaiDuong.DuongTinh:
+                                                                    modelQuaTaiQuaKho.Xe2Truc_DuongTinh += 1;
+                                                                    modelQuaTaiQuaKho.Xe2Truc_TongCong += 1;
+
+                                                                    modelQuaTaiQuaKho.TongCong_DuongTinh += 1;
+                                                                    modelQuaTaiQuaKho.TongCong_TongCong += 1;
+                                                                    isAddedAlready = true;
+                                                                    break;
+                                                                case LoaiDuong.QuocLoVaDuongTinh:
+                                                                    modelQuaTaiQuaKho.Xe2Truc_QuocLo += 1;
+                                                                    modelQuaTaiQuaKho.Xe2Truc_DuongTinh += 1;
+                                                                    modelQuaTaiQuaKho.Xe2Truc_TongCong += 1;
+
+                                                                    modelQuaTaiQuaKho.TongCong_QuocLo += 1;
+                                                                    modelQuaTaiQuaKho.TongCong_DuongTinh += 1;
+                                                                    modelQuaTaiQuaKho.TongCong_TongCong += 1;
+                                                                    isAddedAlready = true;
+                                                                    break;
+                                                            }
+                                                            break;
+                                                    }
+                                                    break;
+                                                case 3:
+                                                    switch (loaiCapPhep)
+                                                    {
+                                                        case LoaiCapPhep.QuaTai:
+                                                            switch (loaiDuong)
+                                                            {
+                                                                case LoaiDuong.QuocLo:
+                                                                    modelQuaTai.Xe3Truc_QuocLo += 1;
+                                                                    modelQuaTai.Xe3Truc_TongCong += 1;
+
+                                                                    modelQuaTai.TongCong_QuocLo += 1;
+                                                                    modelQuaTai.TongCong_TongCong += 1;
+                                                                    isAddedAlready = true;
+                                                                    break;
+                                                                case LoaiDuong.DuongTinh:
+                                                                    modelQuaTai.Xe3Truc_DuongTinh += 1;
+                                                                    modelQuaTai.Xe3Truc_TongCong += 1;
+
+                                                                    modelQuaTai.TongCong_DuongTinh += 1;
+                                                                    modelQuaTai.TongCong_TongCong += 1;
+                                                                    isAddedAlready = true;
+                                                                    break;
+                                                                case LoaiDuong.QuocLoVaDuongTinh:
+                                                                    modelQuaTai.Xe3Truc_QuocLo += 1;
+                                                                    modelQuaTai.Xe3Truc_DuongTinh += 1;
+                                                                    modelQuaTai.Xe3Truc_TongCong += 1;
+
+                                                                    modelQuaTai.TongCong_QuocLo += 1;
+                                                                    modelQuaTai.TongCong_DuongTinh += 1;
+                                                                    modelQuaTai.TongCong_TongCong += 1;
+                                                                    isAddedAlready = true;
+                                                                    break;
+                                                            }
+                                                            break;
+                                                        case LoaiCapPhep.QuaKho:
+                                                            switch (loaiDuong)
+                                                            {
+                                                                case LoaiDuong.QuocLo:
+                                                                    modelQuaKho.Xe3Truc_QuocLo += 1;
+                                                                    modelQuaKho.Xe3Truc_TongCong += 1;
+
+                                                                    modelQuaKho.TongCong_QuocLo += 1;
+                                                                    modelQuaKho.TongCong_TongCong += 1;
+                                                                    isAddedAlready = true;
+                                                                    break;
+                                                                case LoaiDuong.DuongTinh:
+                                                                    modelQuaKho.Xe3Truc_DuongTinh += 1;
+                                                                    modelQuaKho.Xe3Truc_TongCong += 1;
+
+                                                                    modelQuaKho.TongCong_DuongTinh += 1;
+                                                                    modelQuaKho.TongCong_TongCong += 1;
+                                                                    isAddedAlready = true;
+                                                                    break;
+                                                                case LoaiDuong.QuocLoVaDuongTinh:
+                                                                    modelQuaKho.Xe3Truc_QuocLo += 1;
+                                                                    modelQuaKho.Xe3Truc_DuongTinh += 1;
+                                                                    modelQuaKho.Xe3Truc_TongCong += 1;
+
+                                                                    modelQuaKho.TongCong_QuocLo += 1;
+                                                                    modelQuaKho.TongCong_DuongTinh += 1;
+                                                                    modelQuaKho.TongCong_TongCong += 1;
+                                                                    isAddedAlready = true;
+                                                                    break;
+                                                            }
+                                                            break;
+                                                        case LoaiCapPhep.QuaTaiVaQuaKho:
+                                                            switch (loaiDuong)
+                                                            {
+                                                                case LoaiDuong.QuocLo:
+                                                                    modelQuaTaiQuaKho.Xe3Truc_QuocLo += 1;
+                                                                    modelQuaTaiQuaKho.Xe3Truc_TongCong += 1;
+
+                                                                    modelQuaTaiQuaKho.TongCong_QuocLo += 1;
+                                                                    modelQuaTaiQuaKho.TongCong_TongCong += 1;
+                                                                    isAddedAlready = true;
+                                                                    break;
+                                                                case LoaiDuong.DuongTinh:
+                                                                    modelQuaTaiQuaKho.Xe3Truc_DuongTinh += 1;
+                                                                    modelQuaTaiQuaKho.Xe3Truc_TongCong += 1;
+
+                                                                    modelQuaTaiQuaKho.TongCong_DuongTinh += 1;
+                                                                    modelQuaTaiQuaKho.TongCong_TongCong += 1;
+                                                                    isAddedAlready = true;
+                                                                    break;
+                                                                case LoaiDuong.QuocLoVaDuongTinh:
+                                                                    modelQuaTaiQuaKho.Xe3Truc_QuocLo += 1;
+                                                                    modelQuaTaiQuaKho.Xe3Truc_DuongTinh += 1;
+                                                                    modelQuaTaiQuaKho.Xe3Truc_TongCong += 1;
+
+                                                                    modelQuaTaiQuaKho.TongCong_QuocLo += 1;
+                                                                    modelQuaTaiQuaKho.TongCong_DuongTinh += 1;
+                                                                    modelQuaTaiQuaKho.TongCong_TongCong += 1;
+                                                                    isAddedAlready = true;
+                                                                    break;
+                                                            }
+                                                            break;
+                                                    }
+                                                    break;
+                                                case 4:
+                                                    switch (loaiCapPhep)
+                                                    {
+                                                        case LoaiCapPhep.QuaTai:
+                                                            switch (loaiDuong)
+                                                            {
+                                                                case LoaiDuong.QuocLo:
+                                                                    modelQuaTai.Xe4Truc_QuocLo += 1;
+                                                                    modelQuaTai.Xe4Truc_TongCong += 1;
+
+                                                                    modelQuaTai.TongCong_QuocLo += 1;
+                                                                    modelQuaTai.TongCong_TongCong += 1;
+                                                                    isAddedAlready = true;
+                                                                    break;
+                                                                case LoaiDuong.DuongTinh:
+                                                                    modelQuaTai.Xe4Truc_DuongTinh += 1;
+                                                                    modelQuaTai.Xe4Truc_TongCong += 1;
+
+                                                                    modelQuaTai.TongCong_DuongTinh += 1;
+                                                                    modelQuaTai.TongCong_TongCong += 1;
+                                                                    isAddedAlready = true;
+                                                                    break;
+                                                                case LoaiDuong.QuocLoVaDuongTinh:
+                                                                    modelQuaTai.Xe4Truc_QuocLo += 1;
+                                                                    modelQuaTai.Xe4Truc_DuongTinh += 1;
+                                                                    modelQuaTai.Xe4Truc_TongCong += 1;
+
+                                                                    modelQuaTai.TongCong_QuocLo += 1;
+                                                                    modelQuaTai.TongCong_DuongTinh += 1;
+                                                                    modelQuaTai.TongCong_TongCong += 1;
+                                                                    isAddedAlready = true;
+                                                                    break;
+                                                            }
+                                                            break;
+                                                        case LoaiCapPhep.QuaKho:
+                                                            switch (loaiDuong)
+                                                            {
+                                                                case LoaiDuong.QuocLo:
+                                                                    modelQuaKho.Xe4Truc_QuocLo += 1;
+                                                                    modelQuaKho.Xe4Truc_TongCong += 1;
+
+                                                                    modelQuaKho.TongCong_QuocLo += 1;
+                                                                    modelQuaKho.TongCong_TongCong += 1;
+                                                                    isAddedAlready = true;
+                                                                    break;
+                                                                case LoaiDuong.DuongTinh:
+                                                                    modelQuaKho.Xe4Truc_DuongTinh += 1;
+                                                                    modelQuaKho.Xe4Truc_TongCong += 1;
+
+                                                                    modelQuaKho.TongCong_DuongTinh += 1;
+                                                                    modelQuaKho.TongCong_TongCong += 1;
+                                                                    isAddedAlready = true;
+                                                                    break;
+                                                                case LoaiDuong.QuocLoVaDuongTinh:
+                                                                    modelQuaKho.Xe4Truc_QuocLo += 1;
+                                                                    modelQuaKho.Xe4Truc_DuongTinh += 1;
+                                                                    modelQuaKho.Xe4Truc_TongCong += 1;
+
+                                                                    modelQuaKho.TongCong_QuocLo += 1;
+                                                                    modelQuaKho.TongCong_DuongTinh += 1;
+                                                                    modelQuaKho.TongCong_TongCong += 1;
+                                                                    isAddedAlready = true;
+                                                                    break;
+                                                            }
+                                                            break;
+                                                        case LoaiCapPhep.QuaTaiVaQuaKho:
+                                                            switch (loaiDuong)
+                                                            {
+                                                                case LoaiDuong.QuocLo:
+                                                                    modelQuaTaiQuaKho.Xe4Truc_QuocLo += 1;
+                                                                    modelQuaTaiQuaKho.Xe4Truc_TongCong += 1;
+
+                                                                    modelQuaTaiQuaKho.TongCong_QuocLo += 1;
+                                                                    modelQuaTaiQuaKho.TongCong_TongCong += 1;
+                                                                    isAddedAlready = true;
+                                                                    break;
+                                                                case LoaiDuong.DuongTinh:
+                                                                    modelQuaTaiQuaKho.Xe4Truc_DuongTinh += 1;
+                                                                    modelQuaTaiQuaKho.Xe4Truc_TongCong += 1;
+
+                                                                    modelQuaTaiQuaKho.TongCong_DuongTinh += 1;
+                                                                    modelQuaTaiQuaKho.TongCong_TongCong += 1;
+                                                                    isAddedAlready = true;
+                                                                    break;
+                                                                case LoaiDuong.QuocLoVaDuongTinh:
+                                                                    modelQuaTaiQuaKho.Xe4Truc_QuocLo += 1;
+                                                                    modelQuaTaiQuaKho.Xe4Truc_DuongTinh += 1;
+                                                                    modelQuaTaiQuaKho.Xe4Truc_TongCong += 1;
+
+                                                                    modelQuaTaiQuaKho.TongCong_QuocLo += 1;
+                                                                    modelQuaTaiQuaKho.TongCong_DuongTinh += 1;
+                                                                    modelQuaTaiQuaKho.TongCong_TongCong += 1;
+                                                                    isAddedAlready = true;
+                                                                    break;
+                                                            }
+                                                            break;
+                                                    }
+                                                    break;
+                                            }
+                                        }
+
+                                        if (resultSoTrucCuaRoMooc == true)
+                                        {
+                                            switch (soTrucCuaRoMooc)
+                                            {
+                                                case 3:
+                                                    switch (loaiCapPhep)
+                                                    {
+                                                        case LoaiCapPhep.QuaTai:
+                                                            switch (loaiDuong)
+                                                            {
+                                                                case LoaiDuong.QuocLo:
+                                                                    modelQuaTai.XeRM3Truc_QuocLo += 1;
+                                                                    modelQuaTai.XeRM3Truc_TongCong += 1;
+
+                                                                    if (isAddedAlready == false)
+                                                                    {
+                                                                        modelQuaTai.TongCong_QuocLo += 1;
+                                                                        modelQuaTai.TongCong_TongCong += 1;
+                                                                    }
+                                                                    break;
+                                                                case LoaiDuong.DuongTinh:
+                                                                    modelQuaTai.XeRM3Truc_DuongTinh += 1;
+                                                                    modelQuaTai.XeRM3Truc_TongCong += 1;
+
+                                                                    if (isAddedAlready == false)
+                                                                    {
+                                                                        modelQuaTai.TongCong_DuongTinh += 1;
+                                                                        modelQuaTai.TongCong_TongCong += 1;
+                                                                    }
+                                                                    break;
+                                                                case LoaiDuong.QuocLoVaDuongTinh:
+                                                                    modelQuaTai.XeRM3Truc_QuocLo += 1;
+                                                                    modelQuaTai.XeRM3Truc_DuongTinh += 1;
+                                                                    modelQuaTai.XeRM3Truc_TongCong += 1;
+
+                                                                    if (isAddedAlready == false)
+                                                                    {
+                                                                        modelQuaTai.TongCong_QuocLo += 1;
+                                                                        modelQuaTai.TongCong_DuongTinh += 1;
+                                                                        modelQuaTai.TongCong_TongCong += 1;
+                                                                    }
+                                                                    break;
+                                                            }
+                                                            break;
+                                                        case LoaiCapPhep.QuaKho:
+                                                            switch (loaiDuong)
+                                                            {
+                                                                case LoaiDuong.QuocLo:
+                                                                    modelQuaKho.XeRM3Truc_QuocLo += 1;
+                                                                    modelQuaKho.XeRM3Truc_TongCong += 1;
+
+                                                                    if (isAddedAlready == false)
+                                                                    {
+                                                                        modelQuaKho.TongCong_QuocLo += 1;
+                                                                        modelQuaKho.TongCong_TongCong += 1;
+                                                                    }
+                                                                    break;
+                                                                case LoaiDuong.DuongTinh:
+                                                                    modelQuaKho.XeRM3Truc_DuongTinh += 1;
+                                                                    modelQuaKho.XeRM3Truc_TongCong += 1;
+
+                                                                    if (isAddedAlready == false)
+                                                                    {
+                                                                        modelQuaKho.TongCong_DuongTinh += 1;
+                                                                        modelQuaKho.TongCong_TongCong += 1;
+                                                                    }
+                                                                    break;
+                                                                case LoaiDuong.QuocLoVaDuongTinh:
+                                                                    modelQuaKho.XeRM3Truc_QuocLo += 1;
+                                                                    modelQuaKho.XeRM3Truc_DuongTinh += 1;
+                                                                    modelQuaKho.XeRM3Truc_TongCong += 1;
+
+                                                                    if (isAddedAlready == false)
+                                                                    {
+                                                                        modelQuaKho.TongCong_QuocLo += 1;
+                                                                        modelQuaKho.TongCong_DuongTinh += 1;
+                                                                        modelQuaKho.TongCong_TongCong += 1;
+                                                                    }
+                                                                    break;
+                                                            }
+                                                            break;
+                                                        case LoaiCapPhep.QuaTaiVaQuaKho:
+                                                            switch (loaiDuong)
+                                                            {
+                                                                case LoaiDuong.QuocLo:
+                                                                    modelQuaTaiQuaKho.XeRM3Truc_QuocLo += 1;
+                                                                    modelQuaTaiQuaKho.XeRM3Truc_TongCong += 1;
+
+                                                                    if (isAddedAlready == false)
+                                                                    {
+                                                                        modelQuaTaiQuaKho.TongCong_QuocLo += 1;
+                                                                        modelQuaTaiQuaKho.TongCong_TongCong += 1;
+                                                                    }
+                                                                    break;
+                                                                case LoaiDuong.DuongTinh:
+                                                                    modelQuaTaiQuaKho.XeRM3Truc_DuongTinh += 1;
+                                                                    modelQuaTaiQuaKho.XeRM3Truc_TongCong += 1;
+
+                                                                    if (isAddedAlready == false)
+                                                                    {
+                                                                        modelQuaTaiQuaKho.TongCong_DuongTinh += 1;
+                                                                        modelQuaTaiQuaKho.TongCong_TongCong += 1;
+                                                                    }
+                                                                    break;
+                                                                case LoaiDuong.QuocLoVaDuongTinh:
+                                                                    modelQuaTaiQuaKho.XeRM3Truc_QuocLo += 1;
+                                                                    modelQuaTaiQuaKho.XeRM3Truc_DuongTinh += 1;
+                                                                    modelQuaTaiQuaKho.XeRM3Truc_TongCong += 1;
+
+                                                                    if (isAddedAlready == false)
+                                                                    {
+                                                                        modelQuaTaiQuaKho.TongCong_QuocLo += 1;
+                                                                        modelQuaTaiQuaKho.TongCong_DuongTinh += 1;
+                                                                        modelQuaTaiQuaKho.TongCong_TongCong += 1;
+                                                                    }
+                                                                    break;
+                                                            }
+                                                            break;
+                                                    }
+                                                    break;
+                                                case 4:
+                                                    switch (loaiCapPhep)
+                                                    {
+                                                        case LoaiCapPhep.QuaTai:
+                                                            switch (loaiDuong)
+                                                            {
+                                                                case LoaiDuong.QuocLo:
+                                                                    modelQuaTai.XeRM4Truc_QuocLo += 1;
+                                                                    modelQuaTai.XeRM4Truc_TongCong += 1;
+
+                                                                    if (isAddedAlready == false)
+                                                                    {
+                                                                        modelQuaTai.TongCong_QuocLo += 1;
+                                                                        modelQuaTai.TongCong_TongCong += 1;
+                                                                    }
+                                                                    break;
+                                                                case LoaiDuong.DuongTinh:
+                                                                    modelQuaTai.XeRM4Truc_DuongTinh += 1;
+                                                                    modelQuaTai.XeRM4Truc_TongCong += 1;
+
+                                                                    if (isAddedAlready == false)
+                                                                    {
+                                                                        modelQuaTai.TongCong_DuongTinh += 1;
+                                                                        modelQuaTai.TongCong_TongCong += 1;
+                                                                    }
+                                                                    break;
+                                                                case LoaiDuong.QuocLoVaDuongTinh:
+                                                                    modelQuaTai.XeRM4Truc_QuocLo += 1;
+                                                                    modelQuaTai.XeRM4Truc_DuongTinh += 1;
+                                                                    modelQuaTai.XeRM4Truc_TongCong += 1;
+
+                                                                    if (isAddedAlready == false)
+                                                                    {
+                                                                        modelQuaTai.TongCong_QuocLo += 1;
+                                                                        modelQuaTai.TongCong_DuongTinh += 1;
+                                                                        modelQuaTai.TongCong_TongCong += 1;
+                                                                    }
+                                                                    break;
+                                                            }
+                                                            break;
+                                                        case LoaiCapPhep.QuaKho:
+                                                            switch (loaiDuong)
+                                                            {
+                                                                case LoaiDuong.QuocLo:
+                                                                    modelQuaKho.XeRM4Truc_QuocLo += 1;
+                                                                    modelQuaKho.XeRM4Truc_TongCong += 1;
+
+                                                                    if (isAddedAlready == false)
+                                                                    {
+                                                                        modelQuaKho.TongCong_QuocLo += 1;
+                                                                        modelQuaKho.TongCong_TongCong += 1;
+                                                                    }
+                                                                    break;
+                                                                case LoaiDuong.DuongTinh:
+                                                                    modelQuaKho.XeRM4Truc_DuongTinh += 1;
+                                                                    modelQuaKho.XeRM4Truc_TongCong += 1;
+
+                                                                    if (isAddedAlready == false)
+                                                                    {
+                                                                        modelQuaKho.TongCong_DuongTinh += 1;
+                                                                        modelQuaKho.TongCong_TongCong += 1;
+                                                                    }
+                                                                    break;
+                                                                case LoaiDuong.QuocLoVaDuongTinh:
+                                                                    modelQuaKho.XeRM4Truc_QuocLo += 1;
+                                                                    modelQuaKho.XeRM4Truc_DuongTinh += 1;
+                                                                    modelQuaKho.XeRM4Truc_TongCong += 1;
+
+                                                                    if (isAddedAlready == false)
+                                                                    {
+                                                                        modelQuaKho.TongCong_QuocLo += 1;
+                                                                        modelQuaKho.TongCong_DuongTinh += 1;
+                                                                        modelQuaKho.TongCong_TongCong += 1;
+                                                                    }
+                                                                    break;
+                                                            }
+                                                            break;
+                                                        case LoaiCapPhep.QuaTaiVaQuaKho:
+                                                            switch (loaiDuong)
+                                                            {
+                                                                case LoaiDuong.QuocLo:
+                                                                    modelQuaTaiQuaKho.XeRM4Truc_QuocLo += 1;
+                                                                    modelQuaTaiQuaKho.XeRM4Truc_TongCong += 1;
+
+                                                                    if (isAddedAlready == false)
+                                                                    {
+                                                                        modelQuaTaiQuaKho.TongCong_QuocLo += 1;
+                                                                        modelQuaTaiQuaKho.TongCong_TongCong += 1;
+                                                                    }
+                                                                    break;
+                                                                case LoaiDuong.DuongTinh:
+                                                                    modelQuaTaiQuaKho.XeRM4Truc_DuongTinh += 1;
+                                                                    modelQuaTaiQuaKho.XeRM4Truc_TongCong += 1;
+
+                                                                    if (isAddedAlready == false)
+                                                                    {
+                                                                        modelQuaTaiQuaKho.TongCong_DuongTinh += 1;
+                                                                        modelQuaTaiQuaKho.TongCong_TongCong += 1;
+                                                                    }
+                                                                    break;
+                                                                case LoaiDuong.QuocLoVaDuongTinh:
+                                                                    modelQuaTaiQuaKho.XeRM4Truc_QuocLo += 1;
+                                                                    modelQuaTaiQuaKho.XeRM4Truc_DuongTinh += 1;
+                                                                    modelQuaTaiQuaKho.XeRM4Truc_TongCong += 1;
+
+                                                                    if (isAddedAlready == false)
+                                                                    {
+                                                                        modelQuaTaiQuaKho.TongCong_QuocLo += 1;
+                                                                        modelQuaTaiQuaKho.TongCong_DuongTinh += 1;
+                                                                        modelQuaTaiQuaKho.TongCong_TongCong += 1;
+                                                                    }
+                                                                    break;
+                                                            }
+                                                            break;
+                                                    }
+                                                    break;
+                                                case 5:
+                                                    switch (loaiCapPhep)
+                                                    {
+                                                        case LoaiCapPhep.QuaTai:
+                                                            switch (loaiDuong)
+                                                            {
+                                                                case LoaiDuong.QuocLo:
+                                                                    modelQuaTai.XeRM5Truc_QuocLo += 1;
+                                                                    modelQuaTai.XeRM5Truc_TongCong += 1;
+
+                                                                    if (isAddedAlready == false)
+                                                                    {
+                                                                        modelQuaTai.TongCong_QuocLo += 1;
+                                                                        modelQuaTai.TongCong_TongCong += 1;
+                                                                    }
+                                                                    break;
+                                                                case LoaiDuong.DuongTinh:
+                                                                    modelQuaTai.XeRM5Truc_DuongTinh += 1;
+                                                                    modelQuaTai.XeRM5Truc_TongCong += 1;
+
+                                                                    if (isAddedAlready == false)
+                                                                    {
+                                                                        modelQuaTai.TongCong_DuongTinh += 1;
+                                                                        modelQuaTai.TongCong_TongCong += 1;
+                                                                    }
+                                                                    break;
+                                                                case LoaiDuong.QuocLoVaDuongTinh:
+                                                                    modelQuaTai.XeRM5Truc_QuocLo += 1;
+                                                                    modelQuaTai.XeRM5Truc_DuongTinh += 1;
+                                                                    modelQuaTai.XeRM5Truc_TongCong += 1;
+
+                                                                    if (isAddedAlready == false)
+                                                                    {
+                                                                        modelQuaTai.TongCong_QuocLo += 1;
+                                                                        modelQuaTai.TongCong_DuongTinh += 1;
+                                                                        modelQuaTai.TongCong_TongCong += 1;
+                                                                    }
+                                                                    break;
+                                                            }
+                                                            break;
+                                                        case LoaiCapPhep.QuaKho:
+                                                            switch (loaiDuong)
+                                                            {
+                                                                case LoaiDuong.QuocLo:
+                                                                    modelQuaKho.XeRM5Truc_QuocLo += 1;
+                                                                    modelQuaKho.XeRM5Truc_TongCong += 1;
+
+                                                                    if (isAddedAlready == false)
+                                                                    {
+                                                                        modelQuaKho.TongCong_QuocLo += 1;
+                                                                        modelQuaKho.TongCong_TongCong += 1;
+                                                                    }
+                                                                    break;
+                                                                case LoaiDuong.DuongTinh:
+                                                                    modelQuaKho.XeRM5Truc_DuongTinh += 1;
+                                                                    modelQuaKho.XeRM5Truc_TongCong += 1;
+
+                                                                    if (isAddedAlready == false)
+                                                                    {
+                                                                        modelQuaKho.TongCong_DuongTinh += 1;
+                                                                        modelQuaKho.TongCong_TongCong += 1;
+                                                                    }
+                                                                    break;
+                                                                case LoaiDuong.QuocLoVaDuongTinh:
+                                                                    modelQuaKho.XeRM5Truc_QuocLo += 1;
+                                                                    modelQuaKho.XeRM5Truc_DuongTinh += 1;
+                                                                    modelQuaKho.XeRM5Truc_TongCong += 1;
+
+                                                                    if (isAddedAlready == false)
+                                                                    {
+                                                                        modelQuaKho.TongCong_QuocLo += 1;
+                                                                        modelQuaKho.TongCong_DuongTinh += 1;
+                                                                        modelQuaKho.TongCong_TongCong += 1;
+                                                                    }
+                                                                    break;
+                                                            }
+                                                            break;
+                                                        case LoaiCapPhep.QuaTaiVaQuaKho:
+                                                            switch (loaiDuong)
+                                                            {
+                                                                case LoaiDuong.QuocLo:
+                                                                    modelQuaTaiQuaKho.XeRM5Truc_QuocLo += 1;
+                                                                    modelQuaTaiQuaKho.XeRM5Truc_TongCong += 1;
+
+                                                                    if (isAddedAlready == false)
+                                                                    {
+                                                                        modelQuaTaiQuaKho.TongCong_QuocLo += 1;
+                                                                        modelQuaTaiQuaKho.TongCong_TongCong += 1;
+                                                                    }
+                                                                    break;
+                                                                case LoaiDuong.DuongTinh:
+                                                                    modelQuaTaiQuaKho.XeRM5Truc_DuongTinh += 1;
+                                                                    modelQuaTaiQuaKho.XeRM5Truc_TongCong += 1;
+
+                                                                    if (isAddedAlready == false)
+                                                                    {
+                                                                        modelQuaTaiQuaKho.TongCong_DuongTinh += 1;
+                                                                        modelQuaTaiQuaKho.TongCong_TongCong += 1;
+                                                                    }
+                                                                    break;
+                                                                case LoaiDuong.QuocLoVaDuongTinh:
+                                                                    modelQuaTaiQuaKho.XeRM5Truc_QuocLo += 1;
+                                                                    modelQuaTaiQuaKho.XeRM5Truc_DuongTinh += 1;
+                                                                    modelQuaTaiQuaKho.XeRM5Truc_TongCong += 1;
+
+                                                                    if (isAddedAlready == false)
+                                                                    {
+                                                                        modelQuaTaiQuaKho.TongCong_QuocLo += 1;
+                                                                        modelQuaTaiQuaKho.TongCong_DuongTinh += 1;
+                                                                        modelQuaTaiQuaKho.TongCong_TongCong += 1;
+                                                                    }
+                                                                    break;
+                                                            }
+                                                            break;
+                                                    }
+                                                    break;
+                                            }
+                                        }
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        LoggingServices.LogException(ex);
+                                    }
+                                }
+                            }
+
+                            #region [Generate View]
+                            try
+                            {
+
+                                string currentDate = string.Format("Long An, ngày {0} tháng {1} năm {2}", DateTime.Now.ToString("dd"), DateTime.Now.ToString("MM"), DateTime.Now.ToString("yyyy"));
+                                lblCurrentDateQKQT.Text = currentDate;
+                                lblCurrentDateQK.Text = currentDate;
+                                lblCurrentDateQT.Text = currentDate;
+
+                                string fromDateToDate = string.Format("Thời gian báo cáo: từ {0} đến {1}", fromDate.ToString("dd/MM/yyyy"), toDate.ToString("dd/MM/yyyy"));
+                                lblFromDateToDateQKQT.Text = fromDateToDate;
+                                lblFromDateToDateQK.Text = fromDateToDate;
+                                lblFromDateToDateQT.Text = fromDateToDate;
+
+                                lblQuaTai_Xe2Truc_QuocLo.Text = modelQuaTai.Xe2Truc_QuocLo.ToString();
+                                lblQuaTai_Xe2Truc_DuongTinh.Text = modelQuaTai.Xe2Truc_DuongTinh.ToString();
+                                lblQuaTai_Xe2Truc_TongCong.Text = modelQuaTai.Xe2Truc_TongCong.ToString();
+                                lblQuaTai_Xe3Truc_QuocLo.Text = modelQuaTai.Xe3Truc_QuocLo.ToString();
+                                lblQuaTai_Xe3Truc_DuongTinh.Text = modelQuaTai.Xe3Truc_DuongTinh.ToString();
+                                lblQuaTai_Xe3Truc_TongCong.Text = modelQuaTai.Xe3Truc_TongCong.ToString();
+                                lblQuaTai_Xe4Truc_QuocLo.Text = modelQuaTai.Xe4Truc_QuocLo.ToString();
+                                lblQuaTai_Xe4Truc_DuongTinh.Text = modelQuaTai.Xe4Truc_DuongTinh.ToString();
+                                lblQuaTai_Xe4Truc_TongCong.Text = modelQuaTai.Xe4Truc_TongCong.ToString();
+                                lblQuaTai_XeRM3Truc_QuocLo.Text = modelQuaTai.XeRM3Truc_QuocLo.ToString();
+                                lblQuaTai_XeRM3Truc_DuongTinh.Text = modelQuaTai.XeRM3Truc_DuongTinh.ToString();
+                                lblQuaTai_XeRM3Truc_TongCong.Text = modelQuaTai.XeRM3Truc_TongCong.ToString();
+                                lblQuaTai_XeRM4Truc_QuocLo.Text = modelQuaTai.XeRM4Truc_QuocLo.ToString();
+                                lblQuaTai_XeRM4Truc_DuongTinh.Text = modelQuaTai.XeRM4Truc_DuongTinh.ToString();
+                                lblQuaTai_XeRM4Truc_TongCong.Text = modelQuaTai.XeRM4Truc_TongCong.ToString();
+                                lblQuaTai_XeRM5Truc_QuocLo.Text = modelQuaTai.XeRM5Truc_QuocLo.ToString();
+                                lblQuaTai_XeRM5Truc_DuongTinh.Text = modelQuaTai.XeRM5Truc_DuongTinh.ToString();
+                                lblQuaTai_XeRM5Truc_TongCong.Text = modelQuaTai.XeRM5Truc_TongCong.ToString();
+                                lblQuaTai_TongCong_QuocLo.Text = modelQuaTai.TongCong_QuocLo.ToString();
+                                lblQuaTai_TongCong_DuongTinh.Text = modelQuaTai.TongCong_DuongTinh.ToString();
+                                lblQuaTai_TongCong_TongCong.Text = modelQuaTai.TongCong_TongCong.ToString();
+                                lblQuaTai_TongCong_QuocLo8.Text = modelQuaTai.TongCong_QuocLo.ToString();
+                                lblQuaTai_TongCong_DuongTinh8.Text = modelQuaTai.TongCong_DuongTinh.ToString();
+                                lblQuaTai_TongCong_TongCong8.Text = modelQuaTai.TongCong_TongCong.ToString();
+
+                                lblQuaKho_Xe2Truc_QuocLo.Text = modelQuaKho.Xe2Truc_QuocLo.ToString();
+                                lblQuaKho_Xe2Truc_DuongTinh.Text = modelQuaKho.Xe2Truc_DuongTinh.ToString();
+                                lblQuaKho_Xe2Truc_TongCong.Text = modelQuaKho.Xe2Truc_TongCong.ToString();
+                                lblQuaKho_Xe3Truc_QuocLo.Text = modelQuaKho.Xe3Truc_QuocLo.ToString();
+                                lblQuaKho_Xe3Truc_DuongTinh.Text = modelQuaKho.Xe3Truc_DuongTinh.ToString();
+                                lblQuaKho_Xe3Truc_TongCong.Text = modelQuaKho.Xe3Truc_TongCong.ToString();
+                                lblQuaKho_Xe4Truc_QuocLo.Text = modelQuaKho.Xe4Truc_QuocLo.ToString();
+                                lblQuaKho_Xe4Truc_DuongTinh.Text = modelQuaKho.Xe4Truc_DuongTinh.ToString();
+                                lblQuaKho_Xe4Truc_TongCong.Text = modelQuaKho.Xe4Truc_TongCong.ToString();
+                                lblQuaKho_XeRM3Truc_QuocLo.Text = modelQuaKho.XeRM3Truc_QuocLo.ToString();
+                                lblQuaKho_XeRM3Truc_DuongTinh.Text = modelQuaKho.XeRM3Truc_DuongTinh.ToString();
+                                lblQuaKho_XeRM3Truc_TongCong.Text = modelQuaKho.XeRM3Truc_TongCong.ToString();
+                                lblQuaKho_XeRM4Truc_QuocLo.Text = modelQuaKho.XeRM4Truc_QuocLo.ToString();
+                                lblQuaKho_XeRM4Truc_DuongTinh.Text = modelQuaKho.XeRM4Truc_DuongTinh.ToString();
+                                lblQuaKho_XeRM4Truc_TongCong.Text = modelQuaKho.XeRM4Truc_TongCong.ToString();
+                                lblQuaKho_XeRM5Truc_QuocLo.Text = modelQuaKho.XeRM5Truc_QuocLo.ToString();
+                                lblQuaKho_XeRM5Truc_DuongTinh.Text = modelQuaKho.XeRM5Truc_DuongTinh.ToString();
+                                lblQuaKho_XeRM5Truc_TongCong.Text = modelQuaKho.XeRM5Truc_TongCong.ToString();
+                                lblQuaKho_TongCong_QuocLo.Text = modelQuaKho.TongCong_QuocLo.ToString();
+                                lblQuaKho_TongCong_DuongTinh.Text = modelQuaKho.TongCong_DuongTinh.ToString();
+                                lblQuaKho_TongCong_TongCong.Text = modelQuaKho.TongCong_TongCong.ToString();
+                                lblQuaKho_TongCong_QuocLo8.Text = modelQuaKho.TongCong_QuocLo.ToString();
+                                lblQuaKho_TongCong_DuongTinh8.Text = modelQuaKho.TongCong_DuongTinh.ToString();
+                                lblQuaKho_TongCong_TongCong8.Text = modelQuaKho.TongCong_TongCong.ToString();
+
+                                lblQuaTaiQuaKho_Xe2Truc_QuocLo.Text = modelQuaTaiQuaKho.Xe2Truc_QuocLo.ToString();
+                                lblQuaTaiQuaKho_Xe2Truc_DuongTinh.Text = modelQuaTaiQuaKho.Xe2Truc_DuongTinh.ToString();
+                                lblQuaTaiQuaKho_Xe2Truc_TongCong.Text = modelQuaTaiQuaKho.Xe2Truc_TongCong.ToString();
+                                lblQuaTaiQuaKho_Xe3Truc_QuocLo.Text = modelQuaTaiQuaKho.Xe3Truc_QuocLo.ToString();
+                                lblQuaTaiQuaKho_Xe3Truc_DuongTinh.Text = modelQuaTaiQuaKho.Xe3Truc_DuongTinh.ToString();
+                                lblQuaTaiQuaKho_Xe3Truc_TongCong.Text = modelQuaTaiQuaKho.Xe3Truc_TongCong.ToString();
+                                lblQuaTaiQuaKho_Xe4Truc_QuocLo.Text = modelQuaTaiQuaKho.Xe4Truc_QuocLo.ToString();
+                                lblQuaTaiQuaKho_Xe4Truc_DuongTinh.Text = modelQuaTaiQuaKho.Xe4Truc_DuongTinh.ToString();
+                                lblQuaTaiQuaKho_Xe4Truc_TongCong.Text = modelQuaTaiQuaKho.Xe4Truc_TongCong.ToString();
+                                lblQuaTaiQuaKho_XeRM3Truc_QuocLo.Text = modelQuaTaiQuaKho.XeRM3Truc_QuocLo.ToString();
+                                lblQuaTaiQuaKho_XeRM3Truc_DuongTinh.Text = modelQuaTaiQuaKho.XeRM3Truc_DuongTinh.ToString();
+                                lblQuaTaiQuaKho_XeRM3Truc_TongCong.Text = modelQuaTaiQuaKho.XeRM3Truc_TongCong.ToString();
+                                lblQuaTaiQuaKho_XeRM4Truc_QuocLo.Text = modelQuaTaiQuaKho.XeRM4Truc_QuocLo.ToString();
+                                lblQuaTaiQuaKho_XeRM4Truc_DuongTinh.Text = modelQuaTaiQuaKho.XeRM4Truc_DuongTinh.ToString();
+                                lblQuaTaiQuaKho_XeRM4Truc_TongCong.Text = modelQuaTaiQuaKho.XeRM4Truc_TongCong.ToString();
+                                lblQuaTaiQuaKho_XeRM5Truc_QuocLo.Text = modelQuaTaiQuaKho.XeRM5Truc_QuocLo.ToString();
+                                lblQuaTaiQuaKho_XeRM5Truc_DuongTinh.Text = modelQuaTaiQuaKho.XeRM5Truc_DuongTinh.ToString();
+                                lblQuaTaiQuaKho_XeRM5Truc_TongCong.Text = modelQuaTaiQuaKho.XeRM5Truc_TongCong.ToString();
+                                lblQuaTaiQuaKho_TongCong_QuocLo.Text = modelQuaTaiQuaKho.TongCong_QuocLo.ToString();
+                                lblQuaTaiQuaKho_TongCong_DuongTinh.Text = modelQuaTaiQuaKho.TongCong_DuongTinh.ToString();
+                                lblQuaTaiQuaKho_TongCong_TongCong.Text = modelQuaTaiQuaKho.TongCong_TongCong.ToString();
+                                lblQuaTaiQuaKho_TongCong_QuocLo8.Text = modelQuaTaiQuaKho.TongCong_QuocLo.ToString();
+                                lblQuaTaiQuaKho_TongCong_DuongTinh8.Text = modelQuaTaiQuaKho.TongCong_DuongTinh.ToString();
+                                lblQuaTaiQuaKho_TongCong_TongCong8.Text = modelQuaTaiQuaKho.TongCong_TongCong.ToString();
+
+
+                                pnlViewBaoCaoCapPhepLuuHanh.Visible = true;
+                            }
+                            catch (Exception ex)
+                            {
+                                LoggingServices.LogException(ex);
+                            }
+                            #endregion [Generate View]
+
+                        }
+                    }
+
+                });
+            }
+            catch (Exception ex)
+            {
+                LoggingServices.LogException(ex);
+            }
+        }
     }
 
     public class DeNghiReportModel
